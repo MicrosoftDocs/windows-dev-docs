@@ -1,10 +1,11 @@
 ---
 title: winget hash command
 description: Generates the SHA256 hash for an installer.
-ms.date: 07/11/2024
+ms.date: 07/19/2026
 ms.topic: article
 ms.localizationpriority: medium
 ms.custom: sfi-image-nochange
+no-loc: [winget, hash, --disable-interactivity, --file, --help, --ignore-warnings, --logs, --msix, --no-proxy, --nowarn, --open-logs, --proxy, --verbose, --verbose-logs, --wait]
 ---
 
 # hash command (winget)

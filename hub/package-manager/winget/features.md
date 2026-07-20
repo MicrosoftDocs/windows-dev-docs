@@ -1,8 +1,9 @@
 ---
 title: features Command
 description: Displays the list of experimental features available and the state.
-ms.date: 07/16/2025
+ms.date: 07/19/2026
 ms.topic: overview
+no-loc: [winget, features, --disable-interactivity, --help, --ignore-warnings, --info, --logs, --no-proxy, --nowarn, --open-logs, --proxy, --verbose, --verbose-logs, --wait]
 ---
 
 # features command (winget)

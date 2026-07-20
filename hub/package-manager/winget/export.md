@@ -1,9 +1,10 @@
 ---
 title: export Command
 description: exports the list of installed applications.
-ms.date: 07/11/2024
+ms.date: 07/19/2026
 ms.topic: overview
 ms.localizationpriority: medium
+no-loc: [winget, export, --accept-source-agreements, --disable-interactivity, --help, --ignore-warnings, --include-versions, --logs, --no-proxy, --nowarn, --open-logs, --output, --proxy, --source, --verbose, --verbose-logs, --wait]
 ---
 
 # export command (winget)

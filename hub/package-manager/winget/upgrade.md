@@ -1,8 +1,8 @@
 ---
 title: upgrade Command
 description: upgrades the specified application.
-ms.date: 07/07/2025
-no-loc: [winget, upgrade, update]
+ms.date: 07/19/2026
+no-loc: [winget, update, upgrade, --accept-package-agreements, --accept-source-agreements, --all, --allow-reboot, --architecture, --authentication-account, --authentication-mode, --custom, --disable-interactivity, --exact, --force, --header, --help, --id, --ignore-local-archive-malware-scan, --ignore-security-hash, --ignore-warnings, --include-pinned, --include-unknown, --installer-type, --interactive, --locale, --location, --log, --logs, --manifest, --moniker, --name, --no-proxy, --nowarn, --open-logs, --override, --pinned, --proxy, --purge, --query, --recurse, --scope, --silent, --skip-dependencies, --source, --uninstall-previous, --unknown, --verbose, --verbose-logs, --version, --wait]
 ms.topic: overview
 ---
 

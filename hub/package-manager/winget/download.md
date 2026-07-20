@@ -1,9 +1,10 @@
 ---
 title: winget download command
 description: Downloads an installer for a package.
-ms.date: 07/18/2025
+ms.date: 07/19/2026
 ms.topic: how-to
 ms.custom: sfi-ga-nochange
+no-loc: [winget, download, --accept-package-agreements, --accept-source-agreements, --architecture, --authentication-account, --authentication-mode, --disable-interactivity, --download-directory, --exact, --header, --help, --id, --ignore-security-hash, --ignore-warnings, --installer-type, --locale, --logs, --manifest, --moniker, --name, --no-proxy, --nowarn, --open-logs, --platform, --proxy, --query, --scope, --skip-dependencies, --skip-license, --skip-microsoft-store-package-license, --source, --verbose, --verbose-logs, --version, --wait]
 ---
 
 # download command (winget)

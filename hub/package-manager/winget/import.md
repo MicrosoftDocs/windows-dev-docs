@@ -1,8 +1,9 @@
 ---
 title: import Command
 description: imports the list of installed applications.
-ms.date: 07/07/2025
+ms.date: 07/19/2026
 ms.topic: overview
+no-loc: [winget, import, --accept-package-agreements, --accept-source-agreements, --disable-interactivity, --help, --ignore-unavailable, --ignore-versions, --ignore-warnings, --import-file, --logs, --no-proxy, --no-upgrade, --nowarn, --open-logs, --proxy, --verbose, --verbose-logs, --wait]
 ---
 
 # import command (winget)

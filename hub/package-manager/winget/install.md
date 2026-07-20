@@ -1,8 +1,8 @@
 ---
 title: install Command
 description: Installs the specified application.
-ms.date: 07/15/2025
-no-loc: [winget, install, add]
+ms.date: 07/19/2026
+no-loc: [winget, add, configure, export, import, install, settings, source, --accept-package-agreements, --accept-source-agreements, --allow-reboot, --architecture, --authentication-account, --authentication-mode, --custom, --dependency-source, --disable, --disable-interactivity, --enable, --exact, --force, --header, --help, --id, --ignore-local-archive-malware-scan, --ignore-security-hash, --ignore-warnings, --installer-type, --interactive, --locale, --location, --log, --logs, --manifest, --moniker, --name, --no-proxy, --no-upgrade, --nowarn, --open-logs, --override, --proxy, --query, --rename, --scope, --silent, --skip-dependencies, --source, --uninstall-previous, --verbose, --verbose-logs, --version, --wait]
 ms.topic: overview
 ---
 

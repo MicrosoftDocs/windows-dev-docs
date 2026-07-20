@@ -1,8 +1,9 @@
 ---
 title: info Command
 description: Displays metadata about the system, including version numbers, system architecture, log location, links to legal agreements, and Group Policy state.
-ms.date: 07/17/2025
+ms.date: 07/19/2026
 ms.topic: article
+no-loc: [winget, info, --info]
 ---
 
 # info command (winget)

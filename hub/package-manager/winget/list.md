@@ -1,8 +1,8 @@
 ---
 title: list Command
 description: Displays the list of listed apps and if an update is available.
-ms.date: 03/24/2026
-no-loc: [winget, list]
+ms.date: 07/19/2026
+no-loc: [winget, list, --accept-source-agreements, --authentication-account, --authentication-mode, --cmd, --command, --count, --details, --disable-interactivity, --exact, --header, --help, --id, --ignore-warnings, --include-pinned, --include-unknown, --list, --logs, --moniker, --name, --no-proxy, --nowarn, --open-logs, --pinned, --proxy, --query, --scope, --source, --tag, --unknown, --upgrade-available, --verbose, --verbose-logs, --wait]
 ms.topic: overview
 ---
 
