@@ -1,16 +1,16 @@
 ---
-title: settings command
+title: '`settings` Command'
 description: Provides customizations for the Windows Package Manager.
 ms.date: 07/19/2026
-no-loc: [winget, config, install, settings, source, --architecture, --disable, --disable-interactivity, --enable, --help, --ignore-warnings, --installer-type, --locale, --logs, --no-proxy, --nowarn, --open-logs, --proxy, --scope, --verbose, --verbose-logs, --wait]
+no-loc: [winget, settings, config]
 ms.topic: article
 ---
 
 # settings command (winget)
 
-The **settings** command of [WinGet](./index.md) allows you to customize your Windows Package Manager client experience. You can change defaults and try out experimental features that are available in your client.
+The **`settings`** command of [`winget`](./index.md) allows you to customize your Windows Package Manager client experience. You can change defaults and try out experimental features that are available in your client.
 
-The **settings** command will launch your default JSON editor. Windows by default will launch Notepad as an option.  We recommend using a tool like [Visual Studio code](https://code.visualstudio.com/).  
+The **`settings`** command will launch your default JSON editor. Windows by default will launch Notepad as an option.  We recommend using a tool like [Visual Studio Code](https://code.visualstudio.com/).  
 
 >[!NOTE]
 >You can easily install Visual Studio Code by typing `winget install Microsoft.VisualStudioCode`
@@ -25,27 +25,27 @@ The following aliases are available for this command:
 
 The following sub-commands are available.
 
-| Sub-Command | Description |
-|-------------|-------------|
-| **export** | Exports settings. |
-| **set** | Sets the value of an administrator setting. |
-| **reset** | Resets an administrator setting to its default value. |
+| Sub-Command  |                      Description                      |
+|--------------|-------------------------------------------------------|
+| **`export`** | Exports settings.                                     |
+| **set**      | Sets the value of an administrator setting.           |
+| **`reset`**  | Resets an administrator setting to its default value. |
 
 ## Options
 The following options are available:
 
-| Argument      | Description |
-|-------------|-------------|
-| **--enable** | Enables the specified administrator setting. |
-| **--disable** | Disables the specified administrator setting. |
-| **-?,--help** | Shows help about the selected command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Opens the default logs location. |
-| **--verbose,--verbose-logs** | Enables verbose logging for winget. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disables interactive prompts. |
-| **--proxy** | Sets a proxy to use for this execution. |
-| **--no-proxy** | Disables the use of proxy for this execution. |
+|              Argument               |                    Description                    |
+|-------------------------------------|---------------------------------------------------|
+| **`--enable`**                      | Enables the specified administrator setting.      |
+| **`--disable`**                     | Disables the specified administrator setting.     |
+| **`-?`, `--help`**                  | Shows help about the selected command.            |
+| **`--wait`**                        | Prompts the user to press any key before exiting. |
+| **`--logs`, `--open-logs`**         | Opens the default logs location.                  |
+| **`--verbose`, `--verbose-logs`**   | Enables verbose logging for winget.               |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                       |
+| **`--disable-interactivity`**       | Disables interactive prompts.                     |
+| **`--proxy`**                       | Sets a proxy to use for this execution.           |
+| **`--no-proxy`**                    | Disables the use of proxy for this execution.     |
 
 ## Use the winget settings command
 
@@ -159,12 +159,12 @@ The `channels` setting restricts logging output to specific log channels. Specia
 
 The `file` settings control automatic cleanup of log files in the default log directory. Cleanup runs at the start of each WinGet process and applies only to the default log location.
 
-| Setting | Description | Default |
-|---------|-------------|---------|
-| `ageLimitInDays` | Maximum age in days of files in the log directory; older files are deleted. Set to `0` to disable. | 7 |
-| `totalSizeLimitInMB` | Maximum total size in megabytes of all files in the log directory; the oldest files are deleted first. Set to `0` to disable. | 128 |
-| `countLimit` | Maximum number of files in the log directory; the oldest files are deleted first. Set to `0` to disable. | 0 (disabled) |
-| `individualSizeLimitInMB` | Maximum size in megabytes of a single log file. If a file would exceed this limit, logs wrap. Set to `0` to disable. | 16 |
+|          Setting          |                                                          Description                                                          |   Default    |
+|---------------------------|-------------------------------------------------------------------------------------------------------------------------------|--------------|
+| `ageLimitInDays`          | Maximum age in days of files in the log directory; older files are deleted. Set to `0` to disable.                            | 7            |
+| `totalSizeLimitInMB`      | Maximum total size in megabytes of all files in the log directory; the oldest files are deleted first. Set to `0` to disable. | 128          |
+| `countLimit`              | Maximum number of files in the log directory; the oldest files are deleted first. Set to `0` to disable.                      | 0 (disabled) |
+| `individualSizeLimitInMB` | Maximum size in megabytes of a single log file. If a file would exceed this limit, logs wrap. Set to `0` to disable.          | 16           |
 
 ```json
 "logging": {

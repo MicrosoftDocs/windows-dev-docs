@@ -1,16 +1,16 @@
 ---
-title: uninstall Command
-description: uninstalls the specified application.
+title: '`uninstall` Command'
+description: Uninstalls the specified application.
 ms.date: 07/19/2026
-no-loc: [winget, list, remove, uninstall, --accept-source-agreements, --all, --all-versions, --authentication-account, --authentication-mode, --disable-interactivity, --exact, --force, --header, --help, --id, --ignore-warnings, --interactive, --log, --logs, --manifest, --moniker, --name, --no-proxy, --nowarn, --open-logs, --preserve, --product-code, --proxy, --purge, --query, --scope, --silent, --source, --verbose, --verbose-logs, --version, --wait]
+no-loc: [winget, uninstall, remove]
 ms.topic: overview
 ---
 
 # uninstall command (winget)
 
-The **uninstall** command of [WinGet](index.md) uninstalls the specified application.
+The **`uninstall`** command of [`winget`](index.md) uninstalls the specified application.
 
-The **uninstall** command requires that you specify the exact application name to uninstall. If there is any ambiguity, you will be prompted to further filter the **uninstall** command to an exact application.
+The **`uninstall`** command requires that you specify the exact application name to uninstall. If there is any ambiguity, you will be prompted to further filter the **`uninstall`** command to an exact application.
 
 ## Aliases
 
@@ -21,7 +21,9 @@ The following aliases are available for this command:
 
 ## Usage
 
-`winget uninstall [[-q] <query>] [<options>]`
+```cmd
+winget uninstall [[-q] <query>] [<options>]
+```
 
 :::image type="content" source="./images/uninstall.png" alt-text="Screenshot of entering the winget uninstall command in a command line of Windows Terminal." lightbox="./images/uninstall.png":::
 
@@ -32,9 +34,9 @@ The following aliases are available for this command:
 
 The following arguments are available.
 
-| Argument      | Description |
-|-------------|-------------|
-| **-q,--query**  |  The query used to search for an app. |
+|      Argument       |             Description              |
+|---------------------|--------------------------------------|
+| **`-q`, `--query`** | The query used to search for an app. |
 
 > [!NOTE]
 > The query argument is positional. Wild-card style syntax is not supported. This is most often the string of characters you expect to help find the package you are uninstalling.
@@ -43,36 +45,36 @@ The following arguments are available.
 
 The options allow you to customize the uninstall experience to meet your needs.
 
-| Option      | Description |
-|-------------|-------------|
-| **-m, --manifest** |   Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the uninstall experience from a [local YAML file](install.md#local-install). |
-| **--id**    |  Limits the uninstall to the ID of the application.   |
-| **--name**   |  Limits the search to the name of the application. |
-| **--moniker**   | Limits the search to the moniker listed for the application. |
-| **--product-code** | Filters using the product code. |
-| **-v, --version**  |  Enables you to specify an exact version to uninstall. If not specified, latest will uninstall the highest versioned application. |
-| **--all,--all-versions** | Uninstall all versions. |
-| **-s, --source**   |  Restricts the search to the source name provided. Must be followed by the source name. |
-| **-e, --exact**   |   Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring. |
-| **--scope** | Select installed package scope filter (user or machine). |
-| **-i, --interactive** |  Runs the uninstaller in interactive mode. The default experience shows uninstaller progress. |
-| **-h, --silent** |  Runs the uninstaller in silent mode. This suppresses all UI. The default experience shows uninstaller progress. |
-| **--force** | Direct run the command and continue with non security related issues. |
-| **--purge** | Deletes all files and directories in the package directory (portable). |
-| **--preserve** | Retains all files and directories created by the package (portable). |
-| **-o, --log**  |  Directs the logging to a log file. You must provide a path to a file that you have the write rights to. |
-| **--header** | Optional Windows-Package-Manager REST source HTTP header. |
-| **--authentication-mode** | Specify authentication window preference (silent, silentPreferred or interactive). |
-| **--authentication-account** | Specify the account to be used for authentication. |
-| **--accept-source-agreements** | Used to accept the source license agreement, and avoid the prompt. |
-| **-?,--help** | Shows help about the selected command. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Open the default logs location. |
-| **--verbose, --verbose-logs** | Used to override the logging setting and create a verbose log. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disable interactive prompts. |
-| **--proxy** | Set a proxy to use for this execution. |
-| **--no-proxy** | Disable the use of proxy for this execution. |
+|               Option                |                                                                              Description                                                                               |
+|-------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **`-m`, `--manifest`**              | Must be followed by the path to the manifest (YAML) file. You can use the manifest to run the uninstall experience from a [local YAML file](install.md#local-install). |
+| **`--id`**                          | Limits the uninstall to the ID of the application.                                                                                                                     |
+| **`--name`**                        | Limits the search to the name of the application.                                                                                                                      |
+| **`--moniker`**                     | Limits the search to the moniker listed for the application.                                                                                                           |
+| **`--product-code`**                | Filters using the product code.                                                                                                                                        |
+| **`-v`, `--version`**               | Enables you to specify an exact version to uninstall. If not specified, latest will uninstall the highest versioned application.                                       |
+| **`--all`, `--all-versions`**       | Uninstall all versions.                                                                                                                                                |
+| **`-s`, `--source`**                | Restricts the search to the source name provided. Must be followed by the source name.                                                                                 |
+| **`-e`, `--exact`**                 | Uses the exact string in the query, including checking for case-sensitivity. It will not use the default behavior of a substring.                                      |
+| **`--scope`**                       | Select installed package scope filter (user or machine).                                                                                                               |
+| **`-i`, `--interactive`**           | Runs the uninstaller in interactive mode. The default experience shows uninstaller progress.                                                                           |
+| **`-h`, `--silent`**                | Runs the uninstaller in silent mode. This suppresses all UI. The default experience shows uninstaller progress.                                                        |
+| **`--force`**                       | Direct run the command and continue with non security related issues.                                                                                                  |
+| **`--purge`**                       | Deletes all files and directories in the package directory (portable).                                                                                                 |
+| **`--preserve`**                    | Retains all files and directories created by the package (portable).                                                                                                   |
+| **`-o`, `--log`**                   | Directs the logging to a log file. You must provide a path to a file that you have the write rights to.                                                                |
+| **`--header`**                      | Optional Windows-Package-Manager REST source HTTP header.                                                                                                              |
+| **`--authentication-mode`**         | Specify authentication window preference (silent, silentPreferred or interactive).                                                                                     |
+| **`--authentication-account`**      | Specify the account to be used for authentication.                                                                                                                     |
+| **`--accept-source-agreements`**    | Used to accept the source license agreement, and avoid the prompt.                                                                                                     |
+| **`-?`, `--help`**                  | Shows help about the selected command.                                                                                                                                 |
+| **`--wait`**                        | Prompts the user to press any key before exiting.                                                                                                                      |
+| **`--logs`, `--open-logs`**         | Open the default logs location.                                                                                                                                        |
+| **`--verbose`, `--verbose-logs`**   | Used to override the logging setting and create a verbose log.                                                                                                         |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs.                                                                                                                                            |
+| **`--disable-interactivity`**       | Disable interactive prompts.                                                                                                                                           |
+| **`--proxy`**                       | Set a proxy to use for this execution.                                                                                                                                 |
+| **`--no-proxy`**                    | Disable the use of proxy for this execution.                                                                                                                           |
 
 After you have successfully identified the application intended to uninstall, winget will execute the uninstall command.
 
@@ -80,19 +82,19 @@ After you have successfully identified the application intended to uninstall, wi
 
 The following example uninstalls a specific version of an application.
 
-```CMD
+```cmd
 winget uninstall --name powertoys --version 0.15.2
 ```
 
 The following example uninstalls an application using its ID.
 
-```CMD
+```cmd
 winget uninstall --id "{24559D0F-481C-F3BE-8DD0-D908923A38F8}"
 ```
 
 The following example uninstalls multiple applications.
 
-```CMD
+```cmd
 winget uninstall Microsoft.NuGet Microsoft.Edit
 ```
 
@@ -102,4 +104,4 @@ If the query provided to **winget** does not result in a single application to u
 
 ## Uninstalling apps not installed with Windows Package Manager
 
-As mentioned in [**list**](list.md), the **winget list** command will display more than just apps installed with the **winget**. You may still use winget commands to remove these apps from your device.
+As mentioned in [**`list`**](list.md), the **winget list** command will display more than just apps installed with the **winget**. You may still use winget commands to remove these apps from your device.
