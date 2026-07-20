@@ -9,9 +9,9 @@ ms.author: jken
 
 # Get started with WinUI
 
-WinUI 3 is the native UI framework for building Windows desktop apps. It is part of the Windows App SDK — a set of APIs and tools that are separate from the Windows operating system itself and must be installed on the target machine or packaged alongside your app. WinUI 3 supports both C# and C++ and is not a cross-platform or web-based framework.
+:::image type="content" source="images/minesweeper-then-and-now.png" alt-text="A modern WinUI 3 Minesweeper app alongside the classic Windows Minesweeper, showing the evolution of Windows app development.":::
 
-:::image type="content" source="images/minesweeper-then-and-now.png" alt-text="Minesweeper on Windows 3.1 alongside a version created with the help of GitHub Copilot running on Windows 11.":::
+WinUI 3 is the native UI framework for building Windows desktop apps. It is part of the Windows App SDK — a set of APIs and tools that are separate from the Windows operating system itself and must be installed on the target machine or packaged alongside your app. WinUI 3 supports both C# and C++ and is not a cross-platform or web-based framework.
 
 > [!IMPORTANT]
 > WinUI 3 is distinct from UWP. WinUI 3 uses the `Microsoft.UI.Xaml` namespace and runs as a desktop process; UWP uses `Windows.UI.Xaml` and runs in an app container. WinUI 3 supports packaged (MSIX), packaged with external location, and unpackaged distribution — the right choice depends on your deployment scenario. See [Choose a distribution method](../package-and-deploy/choose-distribution-path.md) for guidance.
