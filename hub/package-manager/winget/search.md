@@ -1,8 +1,8 @@
 ---
 title: search Command
 description: Queries the sources for available applications that can be installed
-ms.date: 07/08/2025
-no-loc: [winget, search, find]
+ms.date: 07/19/2026
+no-loc: [winget, find, search, --accept-source-agreements, --authentication-account, --authentication-mode, --cmd, --command, --count, --disable-interactivity, --exact, --header, --help, --id, --ignore-warnings, --logs, --moniker, --name, --no-proxy, --nowarn, --open-logs, --proxy, --query, --source, --tag, --verbose, --verbose-logs, --versions, --wait]
 ms.topic: overview
 ---
 

@@ -1,8 +1,9 @@
 ---
 title: Set up WinGet MCP Server
 description: Learn how to set up the WinGet MCP server for use with AI agents in Visual Studio Code and GitHub Copilot CLI, including prerequisites, finding the executable path, and configuration.
-ms.date: 03/24/2026
+ms.date: 07/19/2026
 ms.topic: how-to
+no-loc: [winget, configure, --enable]
 ---
 
 # Set up WinGet MCP Server

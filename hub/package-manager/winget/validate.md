@@ -1,9 +1,10 @@
 ---
 title: winget validate Command
 description: Validates a manifest file for submitting software to the Microsoft Community Package Manifest Repository on GitHub.
-ms.date: 12/11/2024
+ms.date: 07/19/2026
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [winget, validate, --disable-interactivity, --help, --ignore-warnings, --logs, --manifest, --no-proxy, --nowarn, --open-logs, --proxy, --verbose, --verbose-logs, --wait]
 ---
 
 # validate command (winget)

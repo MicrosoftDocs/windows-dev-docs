@@ -1,8 +1,9 @@
 ---
 title: dscv3 Command
 description: DSC v3 Command based resource.
-ms.date: 07/15/2025
+ms.date: 07/19/2026
 ms.topic: overview
+no-loc: [winget, dsc, --disable-interactivity, --help, --ignore-warnings, --logs, --manifest, --no-proxy, --nowarn, --open-logs, --output, --proxy, --verbose, --verbose-logs, --wait]
 ---
 
 # dscv3 command (winget)

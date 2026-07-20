@@ -1,8 +1,8 @@
 ---
 title: repair Command
 description: Repairs the specified application.
-ms.date: 07/15/2025
-no-loc: [winget, repair, fix]
+ms.date: 07/19/2026
+no-loc: [winget, fix, repair, --accept-package-agreements, --accept-source-agreements, --architecture, --authentication-account, --authentication-mode, --disable-interactivity, --exact, --force, --header, --help, --id, --ignore-local-archive-malware-scan, --ignore-security-hash, --ignore-warnings, --interactive, --locale, --log, --logs, --manifest, --moniker, --name, --no-proxy, --nowarn, --open-logs, --product-code, --proxy, --query, --scope, --silent, --source, --verbose, --verbose-logs, --version, --wait]
 ms.topic: overview
 ---
 

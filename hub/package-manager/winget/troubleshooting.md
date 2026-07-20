@@ -1,8 +1,9 @@
 ---
 title: Debugging and troubleshooting issues with WinGet
 description: Provides information on logging and WinGet diagnostics.
-ms.date: 03/24/2026
+ms.date: 07/19/2026
 ms.topic: troubleshooting-general
+no-loc: [winget, install, list, search, settings, source, --info, --logs, --open-logs, --verbose, --verbose-logs]
 ---
 
 # Debugging and troubleshooting issues with the WinGet tool

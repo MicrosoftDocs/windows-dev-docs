@@ -1,8 +1,8 @@
 ---
 title: settings command
 description: Provides customizations for the Windows Package Manager.
-ms.date: 03/24/2026
-no-loc: [winget, settings, config]
+ms.date: 07/19/2026
+no-loc: [winget, config, install, settings, source, --architecture, --disable, --disable-interactivity, --enable, --help, --ignore-warnings, --installer-type, --locale, --logs, --no-proxy, --nowarn, --open-logs, --proxy, --scope, --verbose, --verbose-logs, --wait]
 ms.topic: article
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: uninstall Command
 description: uninstalls the specified application.
-ms.date: 07/07/2025
-no-loc: [winget, uninstall, remove]
+ms.date: 07/19/2026
+no-loc: [winget, list, remove, uninstall, --accept-source-agreements, --all, --all-versions, --authentication-account, --authentication-mode, --disable-interactivity, --exact, --force, --header, --help, --id, --ignore-warnings, --interactive, --log, --logs, --manifest, --moniker, --name, --no-proxy, --nowarn, --open-logs, --preserve, --product-code, --proxy, --purge, --query, --scope, --silent, --source, --verbose, --verbose-logs, --version, --wait]
 ms.topic: overview
 ---
 

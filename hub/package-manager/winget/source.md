@@ -1,8 +1,8 @@
 ---
 title: The WinGet source command
 description: Use the WinGet source command and subcommands to list and manage the sources WinGet accesses.
-ms.date: 03/24/2026
-no-loc: [winget, source, refresh]
+ms.date: 07/19/2026
+no-loc: [winget, refresh, source, --accept-source-agreements, --arg, --disable-interactivity, --explicit, --force, --header, --help, --ignore-warnings, --logs, --name, --no-proxy, --nowarn, --open-logs, --proxy, --source, --trust-level, --type, --verbose, --verbose-logs, --wait]
 ms.topic: reference
 ms.custom: kr2b-contr-experiment
 ---

@@ -1,8 +1,9 @@
 ---
 title: Use WinGet MCP Server
 description: Learn how to use the WinGet MCP server with AI agents in Visual Studio Code and GitHub Copilot CLI, including available commands, example prompts, tips, troubleshooting, and limitations.
-ms.date: 03/24/2026
+ms.date: 07/19/2026
 ms.topic: how-to
+no-loc: [winget, install, search]
 ---
 
 # Use WinGet MCP Server

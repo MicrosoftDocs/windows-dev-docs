@@ -1,8 +1,9 @@
 ---
 title: pin Command
 description: Pin a package to a specific version or within a specific version range using WinGet, the Windows Package Manager client.
-ms.date: 07/11/2024
+ms.date: 07/19/2026
 ms.topic: reference
+no-loc: [winget, pin, upgrade, --accept-source-agreements, --all, --authentication-account, --authentication-mode, --blocking, --cmd, --command, --disable-interactivity, --exact, --force, --header, --help, --id, --ignore-warnings, --include-pinned, --installed, --logs, --moniker, --name, --no-proxy, --nowarn, --open-logs, --proxy, --query, --source, --tag, --verbose, --verbose-logs, --version, --wait]
 ---
 
 # pin command (winget)

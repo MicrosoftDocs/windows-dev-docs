@@ -1,9 +1,10 @@
 ---
 title: winget help Command
 description: Displays help for all the supported commands.
-ms.date: 04/28/2020
+ms.date: 07/19/2026
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [winget, help, --help]
 ---
 
 # help command (winget)

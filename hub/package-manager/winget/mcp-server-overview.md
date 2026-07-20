@@ -1,8 +1,9 @@
 ---
 title: WinGet MCP Server overview
 description: The Windows Package Manager includes a Model Context Protocol (MCP) server that enables AI agents and tools to discover and install packages through a standardized interface.
-ms.date: 03/24/2026
+ms.date: 07/19/2026
 ms.topic: overview
+no-loc: [winget]
 ---
 
 # WinGet MCP Server overview

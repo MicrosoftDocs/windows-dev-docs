@@ -1,8 +1,8 @@
 ---
 title: configure Command
 description: Uses a winget configuration file to begin setting up your Windows machine to a desired development environment state.
-ms.date: 12/11/2025
-no-loc: [winget, configure, configuration, dsc]
+ms.date: 07/19/2026
+no-loc: [winget, configuration, configure, dsc, export, import, install, --accept-configuration-agreements, --all, --disable, --disable-interactivity, --enable, --file, --help, --history, --ignore-warnings, --logs, --module, --module-path, --no-proxy, --nowarn, --open-logs, --package-id, --processor-path, --proxy, --resource, --suppress-initial-details, --verbose, --verbose-logs, --wait]
 ms.topic: overview
 ---
 

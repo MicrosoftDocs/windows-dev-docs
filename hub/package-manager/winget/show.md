@@ -1,8 +1,8 @@
 ---
 title: show Command
 description: Displays details for the specified application, including details on the source of the application as well as the metadata associated with the application.
-ms.date: 07/08/2025
-no-loc: [winget, show, view]
+ms.date: 07/19/2026
+no-loc: [winget, show, view, --accept-source-agreements, --architecture, --authentication-account, --authentication-mode, --disable-interactivity, --exact, --header, --help, --id, --ignore-warnings, --installer-type, --locale, --logs, --manifest, --moniker, --name, --no-proxy, --nowarn, --open-logs, --proxy, --query, --scope, --source, --verbose, --verbose-logs, --version, --versions, --wait]
 ms.topic: overview
 ---
 
