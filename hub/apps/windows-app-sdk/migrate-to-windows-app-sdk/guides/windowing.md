@@ -215,7 +215,7 @@ For more info, and code examples, see [Change Windows.UI.Core.CoreDispatcher to 
 
 ## Modifier keys and keyboard state
 
-In UWP, you detect the state of modifier keys (Ctrl, Shift, Alt) by calling [**CoreWindow.GetForCurrentThread().GetKeyState**](/uwp/api/windows.ui.core.corewindow.getkeystate). In the Windows App SDK, `CoreWindow` is not available. Instead, use [**Microsoft.UI.Input.InputKeyboardSource.GetKeyStateForCurrentThread**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputkeyboardsource.getkeystateforcurrentthread), which provides the same functionality without requiring a window reference.
+In UWP, you detect the state of modifier keys (Ctrl, Shift, Alt) by calling [**CoreWindow.GetForCurrentThread().GetKeyState**](/uwp/api/windows.ui.core.corewindow.getkeystate). In the Windows App SDK, `CoreWindow` is not supported for desktop apps. Instead, use [**Microsoft.UI.Input.InputKeyboardSource.GetKeyStateForCurrentThread**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputkeyboardsource.getkeystateforcurrentthread), which provides the same functionality without requiring a window reference.
 
 ### UWP
 
