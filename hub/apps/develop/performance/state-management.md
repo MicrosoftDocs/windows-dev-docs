@@ -114,7 +114,7 @@ Use the `Closing` event on `Microsoft.UI.Windowing.AppWindow` to save critical s
 > [!IMPORTANT]
 > In WinUI 3, the `Window.Closed` event does not support cancellation. To prompt the user before closing (for example, to save unsaved changes), use the `Microsoft.UI.Windowing.AppWindow.Closing` event instead, which provides an `AppWindowClosingEventArgs` object with a `Cancel` property.
 >
-> <!-- TODO (SME review): confirm the minimum Windows App SDK version that supports AppWindowClosingEventArgs.Cancel — sources disagree on whether this requires 1.3 or 1.4. -->
+
 
 ```csharp
 // In your Window constructor or initialization code:
