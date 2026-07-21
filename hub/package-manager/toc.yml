@@ -6,9 +6,17 @@ items:
       - name: Overview
         href: ../package-manager/winget/index.md
       - name: WinGet MCP Server
-        href: ../package-manager/winget/mcp-server.md
+        items:
+          - name: WinGet MCP Server overview
+            href: ../package-manager/winget/mcp-server-overview.md
+          - name: Set up the MCP Server
+            href: ../package-manager/winget/mcp-server-setup.md
+          - name: Use the MCP Server
+            href: ../package-manager/winget/mcp-server-usage.md
       - name: configure command
         href: ../package-manager/winget/configure.md
+      - name: dscv3 command
+        href: ../package-manager/winget/dscv3.md
       - name: download command
         href: ../package-manager/winget/download.md
       - name: export command
