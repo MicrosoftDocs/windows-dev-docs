@@ -50,6 +50,8 @@
       the docs require APIs from a newer release.
     -->
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="4.67.2" />
+    <PackageReference Include="Microsoft.Identity.Client.Broker" Version="4.67.2" />
 
     <!--
       OpenCvSharp4 is a third-party package referenced by the OpenCV camera/media
