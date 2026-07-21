@@ -2,7 +2,7 @@
 title: What's new for Windows app developers
 description: Learn what's new for developers in Windows 11 and tools
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 07/02/2026
+ms.date: 07/22/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -21,8 +21,8 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
     :::column:::
         ![Windows App SDK icon](images/wasdk-hero.png)<br>
         **Windows App SDK**</br>
-        Latest stable: 2.2.0</br>
-        [View release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.2.0)</br>
+        Latest stable: 2.3.1</br>
+        [View release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.3.1)</br>
         [View downloads](../windows-app-sdk/downloads.md)
     :::column-end:::
     :::column:::
@@ -48,10 +48,11 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 
 ## Highlights – July 2026
 
-- **Windows App SDK 2.2**: The latest stable release adds the `VideoScaler` API for real-time AI video upscaling, `ApplicationData.GetForUnpackaged()` giving unpackaged apps a first-class WinRT entry point for app data storage, new `XamlBindingHelper` overloads, and a batch of WinUI and Windows ML reliability fixes — [Release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.2.0)
-- **PowerToys 0.100**: A milestone release featuring a redesigned Shortcut Guide that detects the active app and shows relevant shortcuts as a side pane, a new Command Palette Extension Gallery for browsing and installing extensions, multi-monitor Dock support, and an upgrade to .NET 10. Download the latest patch (v0.100.2) — [PowerToys 0.100 release notes](https://github.com/microsoft/PowerToys/releases/tag/v0.100.0)
+- **Windows App SDK 2.3.1**: The latest stable release (July 16) adds the **Structured JSON Output API** for generating language-model responses constrained to a caller-supplied JSON Schema, the **XamlOptionalChanges API** for opting into optional breaking changes before XAML initialization, a **CompositionEngine API** (Limited Access Feature) that lets apps use the OS as the engine for Composition APIs, Video Super Resolution improvements (NPU detection fix + CPU support), ARM64EC support for Windows ML, and a massive batch of XAML performance optimizations — [Release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-231)
+- **Visual Studio 2026 is here**: Faster, smarter, and a hit with early adopters — now with AI-driven development improvements, integrated Copilot agents for debugging and profiling, and backward compatibility with VS 2022 projects — [Visual Studio 2026 announcement](https://devblogs.microsoft.com/visualstudio/visual-studio-2026-is-here-faster-smarter-and-a-hit-with-early-adopters/)
+- **.NET 11 Preview 6**: Features union type support in C#, async validation APIs, AI/agentic workflow enhancements, NativeAOT improvements, and enhanced runtime/JIT performance — [.NET 11 Preview 6](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-6/)
+- **PowerToys 0.100**: A milestone release featuring a redesigned Shortcut Guide that detects the active app and shows relevant shortcuts as a side pane, a new Command Palette Extension Gallery for browsing and installing extensions, multi-monitor Dock support, and an upgrade to .NET 10 — [PowerToys 0.100 release notes](https://github.com/microsoft/PowerToys/releases/tag/v0.100.0)
 - **WSL Containers**: Run Linux containers on Windows using the new `wslc.exe` CLI or the `Microsoft.WSL.Containers` NuGet package, which provides C#, C++, and C projections for programmatically pulling, running, and interacting with Linux containers — including stdin/stdout, file mounts, networking, and GPU access — from your Windows app — [WSL Containers overview](/windows/wsl/wsl-container)
-- **Windows Intelligent Terminal v0.1**: An experimental, open-source fork of Windows Terminal with native agent integration, automatic error detection, and a built-in agent pane for pair-programming in the shell — [Announcing Intelligent Terminal version 0.1](https://devblogs.microsoft.com/commandline/announcing-intelligent-terminal-version-0-1/)
 
 ---
 

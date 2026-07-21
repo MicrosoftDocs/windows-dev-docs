@@ -77,24 +77,24 @@ The current version of the **WinGet** tool supports the following commands.
 
 | Command | Description |
 |---------|-------------|
-| [install](install.md) | Installs the specified application. |
-| [show](show.md) | Displays details for the specified application. |
-| [source](source.md) | Adds, edits, removes, and updates the Windows Package Manager repositories accessed by **WinGet**. |
-| [search](search.md) | Searches for an application. |
-| [list](list.md) | Display installed packages. |
-| [upgrade](upgrade.md) |  Upgrades the given specified application. |
-| [uninstall](uninstall.md) | Uninstalls the specified application. |
-| [hash](hash.md) | Generates the SHA256 hash for the installer. |
-| [validate](validate.md) | Validates a manifest file for submission to the Windows Package Manager repository. |
-| [settings](settings.md) | Open settings. |
-| [features](features.md) | Shows the status of experimental features. |
-| [export](export.md) | Exports a list of the installed packages. |
-| [import](import.md) | Installs all the packages in a file. |
-| [pin](pinning.md) | Manage package pins. |
-| [configure](configure.md) | Configures the system into a desired state. |
-| [download](download.md) | Downloads the specified application's installer. |
-| [repair](repair.md) | Repairs the selected application. |
-| [dscv3](dscv3.md) | PowerShell Desired State Configuration (DSC) v3 resource commands. |
+| [`install`](install.md) | Installs the specified application. |
+| [`show`](show.md) | Displays details for the specified application. |
+| [`source`](source.md) | Adds, edits, removes, and updates the Windows Package Manager repositories accessed by **WinGet**. |
+| [`search`](search.md) | Searches for an application. |
+| [`list`](list.md) | Display installed packages. |
+| [`upgrade`](upgrade.md) |  Upgrades the given specified application. |
+| [`uninstall`](uninstall.md) | Uninstalls the specified application. |
+| [`hash`](hash.md) | Generates the SHA256 hash for the installer. |
+| [`validate`](validate.md) | Validates a manifest file for submission to the Windows Package Manager repository. |
+| [`settings`](settings.md) | Open settings. |
+| [`features`](features.md) | Shows the status of experimental features. |
+| [`export`](export.md) | Exports a list of the installed packages. |
+| [`import`](import.md) | Installs all the packages in a file. |
+| [`pin`](pinning.md) | Manage package pins. |
+| [`configure`](configure.md) | Configures the system into a desired state. |
+| [`download`](download.md) | Downloads the specified application's installer. |
+| [`repair`](repair.md) | Repairs the selected application. |
+| [`dscv3`](dscv3.md) | PowerShell Desired State Configuration (DSC) v3 resource commands. |
 
 ### Options
 
@@ -102,16 +102,16 @@ The **WinGet** tool supports the following options.
 
 | Option | Description |
 |--------------|-------------|
-| **-v, --version** | Returns the current version of WinGet. |
-| **--info** | Provides you with all detailed information on WinGet, including the links to the license, privacy statement, and configured group policies. |
-| **-?, --help** | Shows additional help for WinGet. |
-| **--wait** | Prompts the user to press any key before exiting. |
-| **--logs,--open-logs** | Opens the default logs location. |
-| **--verbose,--verbose-logs** | Enables verbose logging for winget. |
-| **--nowarn,--ignore-warnings** | Suppresses warning outputs. |
-| **--disable-interactivity** | Disables interactive prompts. |
-| **--proxy** | Sets a proxy to use for this execution. |
-| **--no-proxy** | Disables the use of proxy for this execution. |
+| **`-v`, `--version`** | Returns the current version of WinGet. |
+| **`--info`** | Provides you with all detailed information on WinGet, including the links to the license, privacy statement, and configured group policies. |
+| **`-?`, `--help`** | Shows additional help for WinGet. |
+| **`--wait`** | Prompts the user to press any key before exiting. |
+| **`--logs`, `--open-logs`** | Opens the default logs location. |
+| **`--verbose`, `--verbose-logs`** | Enables verbose logging for winget. |
+| **`--nowarn`, `--ignore-warnings`** | Suppresses warning outputs. |
+| **`--disable-interactivity`** | Disables interactive prompts. |
+| **`--proxy`** | Sets a proxy to use for this execution. |
+| **`--no-proxy`** | Disables the use of proxy for this execution. |
 
 ## Supported installer formats
 

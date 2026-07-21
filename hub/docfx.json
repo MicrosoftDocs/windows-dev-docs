@@ -108,7 +108,7 @@
                 "python/**": "windows-python"
             },
             "ms.service": {
-                "apps/trace-processing/**": "traceprocessor",
+                "apps/trace-processing/**": "dotnet-traceprocessing",
                 "apps/**": "windows-app-sdk",
                 "apps/windows-dotnet-maui/**": "windows-dev-apps",
                 "web/**": "windows",
