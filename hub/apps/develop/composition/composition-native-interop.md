@@ -1,20 +1,12 @@
 ---
 title: Composition native interoperation for WinUI and Windows App SDK
 description: The Microsoft.UI.Composition API in Windows App SDK provides native interoperation interfaces allowing content to be moved directly into the compositor for WinUI apps.
-ms.date: 03/16/2026
+ms.date: 07/20/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
 
 # Composition native interoperation with DirectX and Direct2D
-
-> [!IMPORTANT]
-> This article is being adapted from UWP documentation for Windows App SDK/WinUI. Some code examples in this article still reference UWP-specific APIs such as `CoreWindow`, `CoreApplicationView`, and `CoreDispatcher`, which are **not available** in WinUI/Windows App SDK. The WinUI equivalents are:
-> - `CoreWindow` → Use [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) or the WinUI [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class
-> - `CoreDispatcher` → Use [DispatcherQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue)
-> - `CoreApplicationView` → Use [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) or [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow)
->
-> The composition interop interfaces (ICompositorInterop, ICompositionDrawingSurfaceInterop, etc.) work the same way with `Microsoft.UI.Composition` objects.
 
 The Microsoft.UI.Composition API provides the [**ICompositorInterop**](/windows/desktop/api/windows.ui.composition.interop/nn-windows-ui-composition-interop-icompositorinterop), [**ICompositionDrawingSurfaceInterop**](/windows/desktop/api/windows.ui.composition.interop/nn-windows-ui-composition-interop-icompositiondrawingsurfaceinterop), and [**ICompositionGraphicsDeviceInterop**](/windows/desktop/api/windows.ui.composition.interop/nn-windows-ui-composition-interop-icompositiongraphicsdeviceinterop) native interoperation interfaces allowing content to be moved directly into the compositor.
 
@@ -42,10 +34,9 @@ For performance reasons, when an application calls [**BeginDraw**](/windows/desk
 
 The following code example illustrates an interoperation scenario for composition interop in a Windows App SDK context. The example combines types from the Windows Runtime-based surface area of Microsoft.UI.Composition, together with types from the interop headers, and code that renders text using the COM-based DirectWrite and Direct2D APIs. The example uses [**BeginDraw**](/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-begindraw) and [**EndDraw**](/windows/desktop/api/windows.ui.composition.interop/nf-windows-ui-composition-interop-icompositiondrawingsurfaceinterop-enddraw) to make it seamless to interoperate between these technologies. The example uses DirectWrite to lay out the text, and then it uses Direct2D to render it. The composition graphics device accepts the Direct2D device directly at initialization time. This allows **BeginDraw** to return an **ID2D1DeviceContext** interface pointer, which is considerably more efficient than having the application create a Direct2D context to wrap a returned ID3D11Texture2D interface at each drawing operation.
 
-To try out the C++/WinRT code example below, first create a new WinUI app project in Visual Studio (for requirements, see [Visual Studio support for C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Replace the contents of your `pch.h` and `App.cpp` source code files with the code listings below, then build and run. The application renders the string "Hello, World!" in black text on a transparent background.
+To try out the C++/WinRT code example below, first create a new **Blank App, Packaged (WinUI 3 in Desktop)** project in Visual Studio (see [Visual Studio support for C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package)). Replace the contents of your `pch.h` and `App.cpp` source code files with the code listings below, then build and run. The application creates a Win32 window and uses `ICompositorDesktopInterop` to render the string "Hello, World!" in black text on a transparent background using the composition layer.
 
 ```cppwinrt
-// NOTE: This example uses UWP-specific APIs. For WinUI, replace CoreWindow with your app's Window handle.
 // pch.h
 #pragma once
 #include <windows.h>
@@ -56,23 +47,20 @@ To try out the C++/WinRT code example below, first create a new WinUI app projec
 #include <Windows.ui.composition.interop.h>
 #include <unknwn.h>
 
-#include <winrt/Windows.ApplicationModel.Core.h>
 #include <winrt/Windows.Foundation.h>
 #include <winrt/Windows.Graphics.DirectX.h>
 #include <winrt/Windows.Graphics.DirectX.Direct3D11.h>
 #include <winrt/Microsoft.UI.Composition.h>
-#include <winrt/Windows.UI.Core.h>
-#include <winrt/Windows.UI.Input.h>
+#include <winrt/Microsoft.UI.Dispatching.h>
 ```
 
 ```cppwinrt
-// NOTE: This example uses UWP-specific APIs. For WinUI, replace CoreWindow with your app's Window handle.
 // App.cpp
 //*********************************************************
 //
 // Copyright (c) Microsoft. All rights reserved.
 // This code is licensed under the MIT License (MIT).
-// THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
 // INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. 
 // IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
@@ -85,14 +73,12 @@ To try out the C++/WinRT code example below, first create a new WinUI app projec
 #include "pch.h"
 
 using namespace winrt;
-using namespace winrt::Windows::ApplicationModel::Core;
 using namespace winrt::Windows::Foundation;
 using namespace winrt::Windows::Foundation::Numerics;
 using namespace winrt::Windows::Graphics::DirectX;
 using namespace winrt::Windows::Graphics::DirectX::Direct3D11;
-using namespace winrt::Windows::UI;
 using namespace winrt::Microsoft::UI::Composition;
-using namespace winrt::Windows::UI::Core;
+using namespace winrt::Microsoft::UI::Dispatching;
 
 namespace abi
 {
@@ -157,7 +143,6 @@ private:
 
     // The device that owns the surface.
     CompositionGraphicsDevice m_compositionGraphicsDevice{ nullptr };
-    //winrt::com_ptr<abi::ICompositionGraphicsDevice> m_compositionGraphicsDevice2;
 
     // For managing our event notifier.
     winrt::event_token m_deviceReplacedEventToken;
@@ -316,17 +301,8 @@ private:
     DWORD m_cookie{ 0 };
 };
 
-struct SampleApp : implements<SampleApp, IFrameworkViewSource, IFrameworkView>
+struct SampleApp
 {
-    IFrameworkView CreateView()
-    {
-        return *this;
-    }
-
-    void Initialize(CoreApplicationView const&)
-    {
-    }
-
     // Run once when the application starts up
     void Initialize()
     {
@@ -344,27 +320,17 @@ struct SampleApp : implements<SampleApp, IFrameworkViewSource, IFrameworkView>
         m_compositionGraphicsDevice = compositionGraphicsDeviceIface.as<CompositionGraphicsDevice>();
     }
 
-    void Load(hstring const&)
-    {
-    }
-
-    void Uninitialize()
-    {
-    }
-
-    void Run()
-    {
-        CoreWindow window = CoreWindow::GetForCurrentThread();
-        window.Activate();
-
-        CoreDispatcher dispatcher = window.Dispatcher();
-        dispatcher.ProcessEvents(CoreProcessEventsOption::ProcessUntilQuit);
-    }
-
-    void SetWindow(CoreWindow const& window)
+    void SetWindow(HWND hwnd)
     {
         m_compositor = Compositor{};
-        m_target = m_compositor.CreateTargetForCurrentView();
+
+        // Create a desktop window target using the native interop interface
+        auto compositorDesktopInterop = m_compositor.as<::ICompositorDesktopInterop>();
+        winrt::com_ptr<::IDesktopWindowTarget> desktopTarget;
+        winrt::check_hresult(compositorDesktopInterop->CreateDesktopWindowTarget(
+            hwnd, false, desktopTarget.put()));
+        m_target = desktopTarget.as<CompositionTarget>();
+
         ContainerVisual root = m_compositor.CreateContainerVisual();
         m_target.Root(root);
 
@@ -391,7 +357,10 @@ struct SampleApp : implements<SampleApp, IFrameworkViewSource, IFrameworkView>
             )
         );
 
-        Rect windowBounds{ window.Bounds() };
+        RECT clientRect{};
+        GetClientRect(hwnd, &clientRect);
+        float width = static_cast<float>(clientRect.right - clientRect.left);
+        float height = static_cast<float>(clientRect.bottom - clientRect.top);
         std::wstring text{ L"Hello, World!" };
 
         winrt::check_hresult(
@@ -399,14 +368,14 @@ struct SampleApp : implements<SampleApp, IFrameworkViewSource, IFrameworkView>
                 text.c_str(),
                 (uint32_t)text.size(),
                 m_textFormat.get(),
-                windowBounds.Width,
-                windowBounds.Height,
+                width,
+                height,
                 m_textLayout.put()
             )
         );
 
         Visual textVisual{ CreateVisualFromTextLayout(m_textLayout) };
-        textVisual.Size({ windowBounds.Width, windowBounds.Height });
+        textVisual.Size({ width, height });
         root.Children().InsertAtTop(textVisual);
     }
 
@@ -456,14 +425,12 @@ private:
     Compositor m_compositor{ nullptr };
     winrt::com_ptr<::ID2D1Device> m_d2dDevice;
     winrt::com_ptr<::IDXGIDevice> m_dxgiDevice;
-    //winrt::com_ptr<abi::ICompositionGraphicsDevice> m_compositionGraphicsDevice;
     CompositionGraphicsDevice m_compositionGraphicsDevice{ nullptr };
     std::vector<SampleText> m_textSurfaces;
     DeviceLostHelper m_deviceLostHelper;
     winrt::com_ptr<::IDWriteFactory> m_dWriteFactory;
     winrt::com_ptr<::IDWriteTextFormat> m_textFormat;
     winrt::com_ptr<::IDWriteTextLayout> m_textLayout;
-
 
     // This helper creates a Direct2D device, and registers for a device loss
     // notification on the underlying Direct3D device. When that notification is
@@ -532,9 +499,52 @@ private:
     }
 };
 
-int __stdcall wWinMain(HINSTANCE, HINSTANCE, PWSTR, int)
+LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-    CoreApplication::Run(winrt::make<SampleApp>());
+    switch (message)
+    {
+    case WM_DESTROY:
+        PostQuitMessage(0);
+        return 0;
+    default:
+        return DefWindowProc(hwnd, message, wParam, lParam);
+    }
+}
+
+int __stdcall wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR, int nCmdShow)
+{
+    winrt::init_apartment(winrt::apartment_type::single_threaded);
+
+    // A DispatcherQueue is required before creating a Compositor.
+    auto controller = DispatcherQueueController::CreateOnCurrentThread();
+
+    WNDCLASSEX wcex{};
+    wcex.cbSize = sizeof(WNDCLASSEX);
+    wcex.style = CS_HREDRAW | CS_VREDRAW;
+    wcex.lpfnWndProc = WndProc;
+    wcex.hInstance = hInstance;
+    wcex.hCursor = LoadCursor(nullptr, IDC_ARROW);
+    wcex.lpszClassName = L"CompositionInteropSample";
+    RegisterClassEx(&wcex);
+
+    HWND hwnd = CreateWindowEx(
+        0, L"CompositionInteropSample", L"Composition Native Interop",
+        WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, CW_USEDEFAULT,
+        800, 600, nullptr, nullptr, hInstance, nullptr);
+
+    ShowWindow(hwnd, nCmdShow);
+
+    SampleApp app;
+    app.SetWindow(hwnd);
+
+    MSG msg{};
+    while (GetMessage(&msg, nullptr, 0, 0))
+    {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    }
+
+    return static_cast<int>(msg.wParam);
 }
 ```
 

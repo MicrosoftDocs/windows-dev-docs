@@ -1,8 +1,8 @@
 ---
 title: IAccessKeyManagerStaticsDisplayMode.EnterDisplayMode method
-description: Specifies that keytips for currently valid access keys should be displayed and the access keys enabled.
+description: Learn about the IAccessKeyManagerStaticsDisplayMode.EnterDisplayMode method, which displays keytips for valid access keys and enables them for a given XamlRoot.
 ms.topic: article
-ms.date: 07/28/2023
+ms.date: 07/20/2026
 ms.localizationpriority: low
 ---
 
@@ -18,7 +18,7 @@ Specifies that keytips for currently valid access keys should be displayed and t
 [uuid(3e602318-59f6-5f2c-9752-bcbb9c907d45)]
 interface IAccessKeyManagerStaticsDisplayMode 
 {
-    void EnterDisplayMode(Windows.UI.Xaml.XamlRoot xamlRoot);
+    void EnterDisplayMode(Microsoft.UI.Xaml.XamlRoot xamlRoot);
 };
 ```
 
