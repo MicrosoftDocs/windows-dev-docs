@@ -4,7 +4,7 @@ title: Keyboard accelerators
 label: Keyboard accelerators
 template: detail.hbs
 keywords: keyboard, accelerator, accelerator key, keyboard shortcuts, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.date: 07/09/2021
+ms.date: 07/21/2026
 ms.topic: article
 pm-contact: chigy
 design-contact: miguelrb
@@ -256,19 +256,21 @@ Some controls, when they have focus, support built-in keyboard accelerators that
 
 While we don't recommend overriding default control behaviors due to user familiarity and expectations, you can override a control's built-in keyboard accelerator. The following example shows how to override the Control+C keyboard accelerator for a [TextBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox) through the [PreviewKeyDown](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.previewkeydown) event handler: 
 
-``` csharp
- private void TextBlock_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
- {
-    var ctrlState = CoreWindow.GetForCurrentThread().GetKeyState(Windows.System.VirtualKey.Control);
-    var isCtrlDown = ctrlState == CoreVirtualKeyStates.Down || ctrlState 
-        ==  (CoreVirtualKeyStates.Down | CoreVirtualKeyStates.Locked);
+```csharp
+private void TextBlock_PreviewKeyDown(object sender, KeyRoutedEventArgs e)
+{
+    var ctrlState =
+        Microsoft.UI.Input.InputKeyboardSource.GetKeyStateForCurrentThread(
+            Windows.System.VirtualKey.Control);
+    var isCtrlDown =
+        ctrlState.HasFlag(Windows.UI.Core.CoreVirtualKeyStates.Down);
     if (isCtrlDown && e.Key == Windows.System.VirtualKey.C)
     {
         // Your custom keyboard accelerator behavior.
-        
+
         e.Handled = true;
     }
- }
+}
 ```  
 
 ## Disable a keyboard accelerator
