@@ -2,7 +2,7 @@
 title: Windowing functionality migration
 description: Guidance for migrating window management from UWP (ApplicationView, CoreWindow) to Microsoft.UI.Windowing.AppWindow in the Windows App SDK.
 ms.topic: how-to
-ms.date: 07/05/2026
+ms.date: 07/21/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, windowing
 ms.localizationpriority: medium
 ---
@@ -16,6 +16,7 @@ This topic contains guidance related to window management, including migrating f
 * [**Microsoft.UI.Windowing.AppWindow**](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow)
 * [**Windows.UI.Core.CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher) property
 * [**Microsoft.UI.Window.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue) property
+* [**Microsoft.UI.Input.InputKeyboardSource.GetKeyStateForCurrentThread**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputkeyboardsource.getkeystateforcurrentthread) method
 
 ## Summary of API and/or feature differences
 
@@ -211,6 +212,37 @@ Some use cases for UWP's [**Windows.UI.Core.CoreWindow**](/uwp/api/windows.ui.co
 For example, if you're using the [**Windows.UI.Core.CoreWindow.Dispatcher**](/uwp/api/windows.ui.core.corewindow.dispatcher) property in your UWP app, then the solution is *not* to migrate to the [**Microsoft.UI.Xaml.Window.Dispatcher**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcher) property (which always returns null). Instead, migrate to the [**Microsoft.UI.Xaml.Window.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue) property, which returns a [**Microsoft.UI.Dispatching.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue).
 
 For more info, and code examples, see [Change Windows.UI.Core.CoreDispatcher to Microsoft.UI.Dispatching.DispatcherQueue](threading.md#change-windowsuicorecoredispatcher-to-microsoftuidispatchingdispatcherqueue).
+
+## Modifier keys and keyboard state
+
+In UWP, you detect the state of modifier keys (Ctrl, Shift, Alt) by calling [**CoreWindow.GetForCurrentThread().GetKeyState**](/uwp/api/windows.ui.core.corewindow.getkeystate). In the Windows App SDK, `CoreWindow` is not available. Instead, use [**Microsoft.UI.Input.InputKeyboardSource.GetKeyStateForCurrentThread**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputkeyboardsource.getkeystateforcurrentthread), which provides the same functionality without requiring a window reference.
+
+### UWP
+
+```csharp
+using Windows.System;
+using Windows.UI.Core;
+
+var ctrlState = CoreWindow.GetForCurrentThread().GetKeyState(VirtualKey.Control);
+bool isControlPressed = (ctrlState & CoreVirtualKeyStates.Down) == CoreVirtualKeyStates.Down;
+```
+
+### Windows App SDK
+
+```csharp
+using Windows.System;
+using Windows.UI.Core;
+using Microsoft.UI.Input;
+
+var ctrlState = InputKeyboardSource.GetKeyStateForCurrentThread(VirtualKey.Control);
+bool isControlPressed = (ctrlState & CoreVirtualKeyStates.Down) == CoreVirtualKeyStates.Down;
+```
+
+The `GetKeyStateForCurrentThread` method is a static method on [**InputKeyboardSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputkeyboardsource), so you don't need a reference to the window or any input object. You can call it from anywhere on the UI thread, including from within event handlers such as `PointerPressed` or `Click`, to check whether a modifier key is held down.
+
+| UWP | Windows App SDK |
+|-----|-----------------|
+| [**CoreWindow.GetForCurrentThread().GetKeyState**](/uwp/api/windows.ui.core.corewindow.getkeystate) | [**InputKeyboardSource.GetKeyStateForCurrentThread**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.inputkeyboardsource.getkeystateforcurrentthread) |
 
 ## Related topics
 
