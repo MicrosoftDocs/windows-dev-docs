@@ -2,7 +2,7 @@
 title: "Quick start: Create your first WinUI 3 app"
 description: Create, build, and run your first WinUI 3 app with the Windows App SDK using Visual Studio 2026 or the .NET command line.
 ms.topic: quickstart
-ms.date: 07/06/2026
+ms.date: 07/21/2026
 author: GrantMeStrength
 ms.author: jken
 keywords: windows, desktop development
@@ -115,6 +115,21 @@ If you prefer to install tools manually:
    An empty app window opens. You've built and launched your first WinUI 3 app! 🎉
 
 ---
+
+## Troubleshooting
+
+If you run into issues building or running your first app, try these common fixes:
+
+| Problem | Solution |
+|---------|----------|
+| **WinUI templates don't appear in Visual Studio** | Open the Visual Studio Installer, select **Modify**, and confirm the **WinUI application development** workload is checked. Restart Visual Studio after modifying the installation. See the tip in [Set up your development environment](#set-up-your-development-environment) for details. |
+| **Build fails with SDK version errors** | Open the Visual Studio Installer and select **Individual components**. Verify that the Windows SDK version your project targets is installed. In your project file, confirm that `TargetFramework` matches the installed SDK (for example, `net10.0-windows10.0.26100.0`). |
+| **NuGet restore failures** | Clear the local NuGet cache and restore again. In a terminal, run: `dotnet nuget locals all --clear` then `dotnet restore`. |
+| **"Developer Mode not enabled" error** | Open Windows Settings > **[System > Advanced](ms-settings:developers)** and toggle **Developer Mode** to **On**. See [Enable Developer Mode](/windows/advanced-settings/developer-mode) for more information. |
+| **Changes not recognized after first SDK install** | After installing or updating the Windows App SDK or Visual Studio workloads for the first time, restart Visual Studio so it picks up the new components. |
+
+> [!TIP]
+> If none of the above resolves your issue, search the [Windows App SDK GitHub issues](https://github.com/microsoft/WindowsAppSDK/issues) or ask on [Microsoft Q&A](/answers/tags/windows-app-sdk).
 
 ## Next steps
 
