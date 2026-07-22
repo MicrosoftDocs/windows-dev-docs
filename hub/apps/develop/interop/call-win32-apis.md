@@ -11,7 +11,7 @@ ms.author: jken
 
 # Call Win32 APIs from a C# Windows app
 
-The recommended way to call Win32 APIs from C# is [**CsWin32**](https://github.com/microsoft/CsWin32), a source generator that produces type-safe, AOT-compatible P/Invoke wrappers at compile time. CsWin32 works with any C# project type—WinUI 3, WPF, WinForms, console, or class library—and eliminates the need to hand-write `DllImport` or `LibraryImport` declarations.
+The recommended way to call Win32 APIs from C# is [**CsWin32**](https://github.com/microsoft/CsWin32), a source generator that produces type-safe P/Invoke wrappers at compile time. CsWin32 works with any C# project type—WinUI 3, WPF, WinForms, console, or class library—and eliminates the need to hand-write `DllImport` or `LibraryImport` declarations.
 
 You list the Win32 function names you need in a text file, and CsWin32 generates the correct signatures, structs, constants, and COM interfaces automatically from Windows SDK metadata.
 
@@ -19,10 +19,13 @@ You list the Win32 function names you need in a text file, and CsWin32 generates
 
 | Approach | When to use | Pros | Cons |
 |----------|-------------|------|------|
-| **CsWin32** (recommended) | Any Win32/native API call from C# | Type-safe, always current with SDK metadata, handles marshaling and structs, AOT-compatible | Requires NuGet package; generated code is not visible by default |
+| **CsWin32** (recommended) | Any Win32/native API call from C# | Type-safe, generated from official Windows SDK metadata, handles marshaling and structs, AOT-friendly *with configuration* | Requires NuGet package; generated code is not visible by default |
 | **LibraryImport** (.NET 7+) | One-off calls where you know the exact signature | Source-generated, AOT-compatible, no runtime marshaling | You write and maintain every signature manually |
-| **DllImport** (legacy) | Existing code, or .NET Framework projects | Works everywhere, extensive community examples | Runtime marshaling, not AOT-compatible, error-prone signatures |
+| **DllImport** (legacy) | Existing code, or .NET Framework projects | Works everywhere, extensive community examples | Runtime marshaling, error-prone signatures |
 | **C#/WinRT** | Windows Runtime APIs (`Windows.*` namespaces) | Projected .NET types, natural C# experience | Only for WinRT APIs, not raw Win32 |
+
+> [!NOTE]
+> CsWin32's default output uses the .NET runtime marshaller and is **not** automatically AOT-compatible. For NativeAOT or trimming, enable `CsWin32RunAsBuildTask` and `DisableRuntimeMarshalling`—see the [CsWin32 AOT guidance](https://github.com/microsoft/CsWin32#aot-compatibility).
 
 > [!TIP]
 > If the API you need is in a `Windows.*` namespace (for example, `Windows.Storage` or `Windows.Media`), it's a Windows Runtime API. Use a WinRT projection instead of P/Invoke. See [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md).
@@ -32,6 +35,9 @@ You list the Win32 function names you need in a text file, and CsWin32 generates
 - Visual Studio 2022 (version 17.4 or later) or the .NET 8+ SDK
 - An existing C# project (WinUI 3, WPF, WinForms, or console)
 
+> [!NOTE]
+> Targeting .NET Framework or .NET Standard? Set `<LangVersion>9</LangVersion>` (or later) in your project file, and add the `System.Memory` and `System.Runtime.CompilerServices.Unsafe` NuGet packages.
+
 ## Step 1: Install the CsWin32 NuGet package
 
 In your project directory, run:
@@ -40,13 +46,7 @@ In your project directory, run:
 dotnet add package Microsoft.Windows.CsWin32
 ```
 
-CsWin32 generates code that uses pointers and unsafe contexts. Add `AllowUnsafeBlocks` to your project file if it isn't already set:
-
-```xml
-<PropertyGroup>
-  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-</PropertyGroup>
-```
+CsWin32 generates code that uses pointers and unsafe contexts. The NuGet package enables `AllowUnsafeBlocks` automatically. If your project explicitly sets `<AllowUnsafeBlocks>false</AllowUnsafeBlocks>`, remove that line or change it to `true`, otherwise the generated code won't compile.
 
 ## Step 2: Request the APIs you need
 
@@ -117,4 +117,4 @@ See the [CsWin32 configuration reference](https://github.com/microsoft/CsWin32#c
 - [Walkthrough: WinUI 3 app with Win32 interop](../../winui/winui3/desktop-winui3-app-with-basic-interop.md) — a deeper example that customizes a title bar using CsWin32
 - [CsWin32 on GitHub](https://github.com/microsoft/CsWin32) — source, samples, and issue tracker
 - [Platform Invoke (P/Invoke)](/dotnet/standard/native-interop/pinvoke) — .NET documentation on P/Invoke fundamentals
-- [Use WinRT COM interop classes in .NET](../../desktop/modernize/winrt-com-interop-csharp.md) — for WinRT COM-based interop scenarios (HWND passing, pickers, etc.)
+- [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md) — for WinRT COM-based interop scenarios (HWND passing, pickers, etc.)
