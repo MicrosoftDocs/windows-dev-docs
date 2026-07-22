@@ -4,7 +4,7 @@ title: Windows data binding and MVVM
 description: Learn how data binding in the Model-View-ViewModel (MVVM) pattern enables loose coupling between UI and non-UI code for better maintainability.
 author: GrantMeStrength
 ms.author: jken
-ms.date: 07/22/2026
+ms.date: 07/16/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui, mvvm
 ms.localizationpriority: medium
@@ -49,13 +49,83 @@ In particular, you can get a lot of benefit simply by understanding and applying
 
 For additional guidance on using MVVM, see the [CommunityToolkit MVVM](/dotnet/communitytoolkit/mvvm/) library, which provides base classes like `ObservableObject` and `RelayCommand`, along with source generators (via `[ObservableProperty]` and `[RelayCommand]` attributes) that eliminate boilerplate code. The [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery) also demonstrates data binding and MVVM patterns with WinUI 3.
 
+## CommunityToolkit.Mvvm example
+
+The following example shows a complete ViewModel using CommunityToolkit.Mvvm 8.x source generators. The `[ObservableProperty]` attribute generates the property and change notification, and `[RelayCommand]` generates the `ICommand` implementation:
+
+```csharp
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+
+public partial class CustomerViewModel : ObservableObject
+{
+    private readonly ICustomerService _customerService;
+
+    public CustomerViewModel(ICustomerService customerService)
+    {
+        _customerService = customerService;
+    }
+
+    [ObservableProperty]
+    [NotifyCanExecuteChangedFor(nameof(SaveCommand))]
+    private string _name = string.Empty;
+
+    [ObservableProperty]
+    private bool _isBusy;
+
+    [RelayCommand(CanExecute = nameof(CanSave))]
+    private async Task SaveAsync()
+    {
+        IsBusy = true;
+        await _customerService.SaveAsync(Name);
+        IsBusy = false;
+    }
+
+    private bool CanSave() => !string.IsNullOrWhiteSpace(Name);
+}
+```
+
+Bind this ViewModel to a page using `{x:Bind}`:
+
+```xml
+<Page x:Class="MyApp.Views.CustomerPage"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+        <TextBox Text="{x:Bind ViewModel.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <Button Content="Save" Command="{x:Bind ViewModel.SaveCommand}" />
+        <ProgressRing IsActive="{x:Bind ViewModel.IsBusy, Mode=OneWay}" />
+    </StackPanel>
+</Page>
+```
+
+The page's code-behind exposes the `ViewModel` property that `{x:Bind}` references:
+
+```csharp
+// CustomerPage.xaml.cs
+public sealed partial class CustomerPage : Page
+{
+    public CustomerViewModel ViewModel { get; }
+
+    public CustomerPage()
+    {
+        // Resolve via DI; see Architecture patterns for WinUI 3 desktop apps
+        // for how to configure App.GetService<T>() with Microsoft.Extensions.DependencyInjection.
+        ViewModel = App.GetService<CustomerViewModel>();
+        InitializeComponent();
+    }
+}
+```
+
+For guidance on combining MVVM with dependency injection, configuration, and enterprise patterns, see [Architecture patterns for WinUI 3 desktop apps](../architecture-patterns.md).
+
 ## See also
 
 ### Topics
 
 [Data binding in depth](data-binding-in-depth.md)  
 [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension)  
-[MVVM performance tips for WinUI apps](../performance/mvvm-performance-tips.md)
+[MVVM performance tips for WinUI apps](../performance/mvvm-performance-tips.md)  
+[Architecture patterns for WinUI 3 desktop apps](../architecture-patterns.md)
 
 ### WinUI 3 and MVVM resources
 

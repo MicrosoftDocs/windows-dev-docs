@@ -30,7 +30,7 @@ A loose file layout places your app's content in a folder instead of building an
 - Enable [developer mode](/windows/apps/get-started/enable-your-device-for-development) and [device discovery](/windows/apps/get-started/enable-your-device-for-development#device-discovery) on all devices.
 
 > [!IMPORTANT]
-> Loose file registration is available only on devices that support the SMB (Network Share) protocol — Desktop and Xbox.
+> Loose file registration is available only on devices that support the SMB (Network Share) protocol.
 
 ## Register with WinAppDeployCmd
 

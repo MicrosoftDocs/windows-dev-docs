@@ -101,6 +101,9 @@ global using Microsoft.UI.Composition;
 global using static Microsoft.UI.Win32Interop;
 global using WinRT.Interop;
 
+// Credential storage
+global using Windows.Security.Credentials;
+
 // User activities
 global using Windows.ApplicationModel.UserActivities;
 

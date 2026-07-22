@@ -11,6 +11,13 @@ ms.date: 07/08/2026
 
 Each release of the Windows SDK adds new functionality that you might want to take advantage of. However, not all your customers update their devices to the latest version of Windows at the same time. You want your app to work on the broadest possible range of devices while also taking advantage of new features when available.
 
+## Prerequisites
+
+- Windows App SDK 1.0 or later
+- Visual Studio 2022 or later with the Windows application development workload
+
+## Overview
+
 Follow these three steps to support the broadest range of Windows devices:
 
 1. Configure your Visual Studio project to target the latest APIs. This affects what the compiler has access to at build time.

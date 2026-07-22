@@ -3,7 +3,7 @@ title: Tools for profiling and performance
 description: Learn about Visual Studio diagnostic tools and Windows Performance Toolkit for profiling and improving Windows App SDK app performance.
 author: GrantMeStrength
 ms.author: jken
-ms.topic: article
+ms.topic: concept-article
 ms.date: 07/08/2026
 ---
 

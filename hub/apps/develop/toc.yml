@@ -950,6 +950,14 @@ items:
                 href: performance/optimize-xaml-layout.md
               - name: Optimize XAML loading
                 href: performance/optimize-xaml-loading.md
+          - name: Manage app state effectively
+            href: performance/state-management.md
+          - name: Tools for profiling and performance
+            href: performance/profiling-tools.md
+          - name: XAML analysis and best practices
+            href: performance/xaml-analysis.md
+          - name: Optimize background activity
+            href: performance/optimize-background-activity.md
       - name: Security and identity
         items:
           - name: Overview
@@ -1017,7 +1025,13 @@ items:
               - name: "Tutorial: Create a Windows Hello login service"
                 href: security/windows-hello-auth-service.md
       - name: Testing
-        href: testing/index.md
+        items:
+          - name: Overview
+            href: testing/index.md
+          - name: Loose file registration
+            href: testing/loose-file-registration.md
+          - name: Version adaptive apps
+            href: testing/version-adaptive-apps.md
       - name: Threading and async
         items:
           - name: Overview
