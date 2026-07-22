@@ -32,7 +32,7 @@ Push notifications can be broken down into these four separate stages.
 In the Windows App SDK, the push notifications feature uses identity from Azure App Registration (Microsoft Entra ID), which removes the requirement of having a Package Family Name (PFN) from Partner Center in order to use push notifications.
 
 * For a **UWP app**, you sign up and register the application in [Windows Store Partner Center](/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification#create-an-app-in-windows-store).
-* For a **Windows App SDK app**, you create an Azure account, and create an [Azure App Registration (Microsoft Entra ID)](../../../develop/notifications/push-notifications/push-quickstart.md#configure-your-apps-identity-in-azure-active-directory-aad).
+* For a **Windows App SDK app**, you create an Azure account, and create an [Azure App Registration (Microsoft Entra ID)](../../../develop/notifications/push-notifications/push-quickstart.md#configure-your-apps-identity-in-microsoft-entra-id).
 
 ### Channel requests
 

@@ -12,8 +12,6 @@ ms.localizationpriority: medium
 
 The Windows Share Sheet allows you to receive content (shared from other apps) through your app. This guide explains how to register your app as a **Share Target** and handle shared content across packaged apps (MSIX), Progressive Web Apps (PWAs), and unpackaged Win32 apps.
 
-## In this article
-
 | Section | What you'll find |
 |--|--|
 | [Before you declare capabilities](#before-you-declare-capabilities) | Declare only the file types and formats your app handles |

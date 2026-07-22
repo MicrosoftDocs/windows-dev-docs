@@ -12,8 +12,6 @@ ms.localizationpriority: medium
 
 The Windows Share Sheet is a system-provided UI that lets users send content from your app to other Windows apps. This guide explains how to implement the Share contract across packaged apps (MSIX), Progressive Web Apps (PWAs), and unpackaged Win32 apps.
 
-## In this article
-
 | Section | What you'll find |
 |--|--|
 | [Choose your sharing approach](#choose-your-sharing-approach) | Pick the right API set for UWP, desktop, or PWA apps |
