@@ -87,17 +87,24 @@ Providing rich, complete metadata helps Microsoft validate your app more efficie
 
 ## What are the recommended best practices for writing the app description and listing features?
 
-A good app description should:
+A well-written Store listing can help customers quickly understand your app's value and encourage downloads.
 
-- Be **clear, concise, and engaging**
-- Highlight the **main value proposition** of the app
-- Use **bullet points** to list features for easy readability
-- Avoid technical jargon unless it's a developer tool
-- Use **keywords naturally** to help with search discoverability
+When writing your app description:
+* Start with a clear and compelling value proposition in the first few sentences. Explain what makes your app unique and why customers should choose it.
+* Use clear, concise, and engaging language that is easy to understand.
+* Highlight the key benefits and functionality of your app.
+* Use short paragraphs and bullet points to improve readability and make the content easier to scan.
+* Include a feature list to quickly communicate what your app does.
+* Avoid unnecessary technical jargon unless your audience expects it.
+* Use keywords naturally to improve discoverability in Store search results.
+* Clearly explain any free trials, subscriptions, in-app purchases, or add-ons that affect functionality.
+* Use proper spelling, grammar, punctuation, and standard capitalization.
+* Do not include HTML, code snippets, or URLs in the description field. Instead, provide support, privacy policy, and website links in their designated submission fields.
+* Localize descriptions for all supported languages to provide a better experience for global customers.
 
-Also, localize your descriptions for all languages you support to better connect with global users.
+You can also review listings for similar apps in the Microsoft Store to understand how they communicate value and differentiate their offerings.
 
-How many screenshots should developers include in their Store listing?
+## How many screenshots should developers include in their Store listing?
 
 While only **one screenshot per device family** is required, Microsoft recommends including **5–8 high-quality screenshots** for each supported device type (PC, tablet, Xbox, etc.). 
 
@@ -167,35 +174,6 @@ Choosing a compelling name is crucial to attracting customers and making your ap
 - **Avoid trailing differentiators**. Don't include differentiating information (such as version numbers or dates) at the end of your app's title. Such details may be cut off in some views, causing confusion. If necessary, differentiate your apps using distinct logos or images.
 
 - **Avoid emojis and special characters**. The Microsoft Store does not allow emojis or other unsupported special characters in app names.
-
-## How can I write an effective app description for the Microsoft Store?</strong></summary>
-
-A great description helps your app stand out, clearly communicating value and encouraging downloads. Follow these guidelines:
-
-- **Grab attention early**. The first sentences are crucial. Clearly state your app’s unique benefits and why it’s valuable to the user.
-
-- **Make it user-friendly**. Clearly describe key features, benefits, and available in-app purchases. Include any necessary legal disclosures relevant to the markets you serve.
-
-- **Use short paragraphs and lists**. Keep your description easy to scan by using short paragraphs, bullet points, and clear headings.
-
-  > [!NOTE]
-  > A concise, bulleted list of product features displayed under your description can quickly inform potential users about your app’s capabilities.
-
-- **Write engagingly**. Avoid overly technical or dry language. Use a conversational tone that clearly and enthusiastically conveys your app's purpose.
-
-- **Be concise but comprehensive**. A good length is generally between 200 and 3,000 words—long enough to provide clarity, short enough to maintain interest.
-
-- **Clarify free trials and add-ons**. Clearly describe the details of any free trials or additional features offered via in-app purchases, ensuring users understand exactly what they're getting.
-
-- **Standard capitalization and punctuation**. Avoid all-caps or irregular punctuation, which are difficult to read.
-
-- **Check spelling and grammar**. Mistakes reflect poorly on your app’s perceived quality. Review thoroughly or have someone proofread your description.
-
-- **Avoid URLs and misplaced info**. The description field doesn’t support clickable links. Include URLs and support information in designated areas of your app submission.
-
-- **Plain text only**. HTML or other formatting code is not supported and will not display correctly.
-
-- **Learn from others**. Review descriptions of similar apps in the Store for inspiration on effectively highlighting unique features and benefits.
 
 > [!TIP]
 > For detailed information about **How to submit your app**, please see the [Submit your app](../publish-your-app/msix/reserve-your-apps-name.md) section.

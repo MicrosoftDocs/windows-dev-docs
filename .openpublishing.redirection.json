@@ -1,6 +1,86 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/publish/create-customer-segments.md",
+      "redirect_url": "/windows/apps/publish/create-customer-groups",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/create-and-run-your-first-experiment-with-a-b-testing.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/manage-your-experiment.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/define-your-experiment-in-the-dev-center-dashboard.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/code-your-experiment-in-your-app.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/create-a-project-and-define-remote-variables-in-the-dev-center-dashboard.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "uwp/monetize/run-app-experiments-with-a-b-testing.md",
+      "redirect_url": "/windows/uwp/monetize",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/add-on/write-great-app-description.md",
+      "redirect_url": "/windows/apps/publish/faq/submit-your-app#what-are-the-recommended-best-practices-for-writing-the-app-description-and-listing-features",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/pwa/app-package-requirements.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/pwa/turn-your-website-pwa",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/faqs/notifications.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/manage-submission-options#notifications",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/add-on/overview.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/add-on/what-are-add-ons",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/faq/open-developer-account.md",
+      "redirect_url": "/windows/apps/publish/partner-center/open-a-developer-account?tabs=individual#frequently-asked-questions-faqs",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/faq/microsoft-store-policies-and-resources.md",
+      "redirect_url": "/windows/apps/publish/faq/get-your-app-certified",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/partner-center/pwa/manage-app-name-reservations.md",
+      "redirect_url": "/windows/apps/publish/partner-center/msix/manage-app-name-reservations",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/whats-new-msix-app-overview-page.md",
+      "redirect_url": "/windows/apps/publish/create-app-submission",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/create-known-user-groups.md",
+      "redirect_url": "/windows/apps/publish/create-customer-groups",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/publish/improved-health-report.md",
       "redirect_url": "/windows/apps/publish/analyze-app-performance/health-report",
       "redirect_document_id": false

@@ -84,7 +84,7 @@ The **Custom events** chart shows the total occurrences for custom events that y
 
 Custom events are implemented using the [StoreServicesCustomEventLogger.Log](/uwp/api/microsoft.services.store.engagement.storeservicescustomeventlogger.log) method in the [Microsoft Store Services SDK](/windows/uwp/monetize/microsoft-store-services-sdk).
 
-For more info, see [Log custom events for Dev Center](/windows/uwp/monetize/log-custom-events-for-dev-center).
+For more info, see [Log custom events for Partner Center](/windows/uwp/monetize/log-custom-events-for-dev-center).
 
 ## Custom events breakdown
 
