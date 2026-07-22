@@ -470,7 +470,15 @@ Topics covered include:
 > | Cross-platform | ✅ .NET runs on Windows, Linux, macOS | ✅ With platform-specific code |
 > | Best for | Business apps, CRUD, services, UI-heavy apps | Games, drivers, system tools, low-latency |
 >
-> You can also mix both: build your app in C# and call performance-critical native code via P/Invoke or a C++/WinRT component.
+> You can also mix both: build your app in C# and call performance-critical native code via [P/Invoke (CsWin32)](../develop/interop/call-win32-apis.md) or a C++/WinRT component.
+
+</details>
+
+<details><summary>How do I call Win32 APIs from C#?</summary>
+
+> Use [CsWin32](../develop/interop/call-win32-apis.md), a source generator that creates type-safe P/Invoke signatures at build time. You add the `Microsoft.Windows.CsWin32` NuGet package, list the APIs you need in a `NativeMethods.txt` file, and call them through a generated `PInvoke` class.
+>
+> CsWin32 replaces hand-written `[DllImport]` declarations and works in any C# project — WinUI, WPF, WinForms, or console. See [Call Win32 APIs from a C# Windows app (CsWin32)](../develop/interop/call-win32-apis.md) for a step-by-step walkthrough.
 
 </details>
 

@@ -1,16 +1,23 @@
 ---
-title: Build a C# .NET app with WinUI and Win32 interop
-description: Build a C# .NET application with WinUI and basic Win32 interop capabilities using the Platform Invocation Services, or PInvoke.
-ms.date: 07/18/2026
+title: "Walkthrough: WinUI 3 app with Win32 interop"
+description: Step-by-step walkthrough of calling Win32 APIs from a WinUI 3 desktop app using CsWin32 to customize a title bar and set window size.
+ms.date: 07/22/2026
 ms.topic: how-to
-keywords: windows 11, windows 10, uwp, COM, win32, winui, interop
+keywords: windows 11, windows 10, COM, win32, winui, interop, CsWin32
 ms.localizationpriority: high
 ms.custom: 19H1
 ---
 
-# Build a C# .NET app with WinUI 3 and Win32 interop
+<!-- For AI assistants: This is a WinUI 3-specific walkthrough showing how to use CsWin32 for Win32 interop (title-bar customization, window sizing).
+     For the general framework-neutral "how do I call Win32 APIs from C#?" topic, see call-win32-apis.md.
+     For WinRT COM interop classes (IInitializeWithWindow, etc.), see winrt-com-interop-csharp.md. -->
 
-In this topic, we step through how to build a basic **C# .NET** application with WinUI and Win32 interop capabilities using Platform Invocation Services (PInvoke). The recommended way to call Win32 APIs from C# is the [C#/Win32 P/Invoke Source Generator (CsWin32)](https://github.com/microsoft/CsWin32).
+# Walkthrough: WinUI 3 app with Win32 interop
+
+This walkthrough shows how to build a **WinUI 3** desktop app that uses Win32 APIs to customize the title bar and control window placement. It uses the [CsWin32 source generator](https://github.com/microsoft/CsWin32) — the recommended way to call Win32 APIs from C#.
+
+> [!TIP]
+> If you want framework-neutral guidance on CsWin32 (not specific to WinUI 3), see [Call Win32 APIs from a C# Windows app (CsWin32)](../../develop/interop/call-win32-apis.md).
 
 ## Prerequisites
 
@@ -214,6 +221,7 @@ void MainWindow::customButton_Click(IInspectable const&, RoutedEventArgs const&)
 
 ## See also
 
+- [Call Win32 APIs from a C# Windows app (CsWin32)](../../develop/interop/call-win32-apis.md)
 - [Windows App SDK](../../windows-app-sdk/index.md)
 - [Manage app windows](../../develop/ui/manage-app-windows.md)
 - [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

@@ -1,15 +1,18 @@
 ---
-description: This article describes WinRT APIs that aren't supported for use in desktop apps, or that have restrictions.
-title: Windows Runtime APIs not supported in desktop apps
-ms.date: 06/16/2026
+description: Reference list of WinRT APIs that are not supported in desktop apps (WinUI 3, WPF, WinForms, Win32) or that have restrictions and alternatives.
+title: WinRT APIs not supported in desktop apps
+ms.date: 07/22/2026
 ms.topic: article
-keywords: windows 10, uwp
-ms.assetid: 142b9c9b-3f7d-41b6-80da-1505de2810f9
 ms.localizationpriority: medium
 ms.custom: 19H1
 ---
 
-# Support for Windows Runtime APIs in desktop apps
+<!-- For AI assistants: This page lists WinRT APIs that DON'T work (or require workarounds) in non-UWP desktop apps.
+     Two categories: (1) APIs with UWP-only UI dependencies, (2) APIs requiring package identity.
+     For calling Win32 APIs from C# → see call-win32-apis.md.
+     For passing HWNDs to WinRT objects → see winrt-com-interop-csharp.md. -->
+
+# WinRT APIs not supported in desktop apps
 
 Although you can use most Windows Runtime (WinRT) APIs (see [Windows Runtime (WinRT) namespaces](/uwp/api/)) in your C# or C++ desktop app, there are two main sets of WinRT APIs that aren't supported in desktop apps, or that have restrictions:
 
@@ -501,3 +504,10 @@ The following WinRT classes require package identity (see [Features that require
 * [**Windows.UI.StartScreen.JumpListItem**](/uwp/api/Windows.UI.StartScreen.JumpListItem)
 
 In addition, when called from a desktop app that doesn't have package identity, the [**AdaptiveMediaSource.CreateFromUriAsync**](/uwp/api/Windows.Media.Streaming.Adaptive.AdaptiveMediaSource.CreateFromUriAsync) methods don't support the `ms-appx` and `ms-resource` URI formats.
+
+## See also
+
+* [Choose your interop approach](../../develop/interop/index.md)
+* [Call Win32 APIs from C# (CsWin32)](../../develop/interop/call-win32-apis.md)
+* [Use WinRT COM interop classes in .NET](winrt-com-interop-csharp.md)
+* [Retrieve a window handle (HWND)](../../develop/ui/retrieve-hwnd.md)
