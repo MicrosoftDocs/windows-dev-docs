@@ -149,4 +149,3 @@ Third-party advertising providers such as Vungle, Rise (Unity), and Pubfinity of
 * [Analytics](/windows/apps/publish/analytics)
 * [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal)
 * [Implement a trial version of your app](../monetize/implement-a-trial-version-of-your-app.md)
-* [Run app experiments with A/B testing](../monetize/run-app-experiments-with-a-b-testing.md)

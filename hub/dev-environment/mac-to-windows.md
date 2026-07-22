@@ -2,8 +2,7 @@
 title: Moving from Mac (Unix) to Windows
 description: A guide to help you transition from a Mac (Unix) to a Windows development environment, including shortcut key mapping and a brief overview of concepts that differ between Mac and Windows.
 ms.topic: how-to
-ms.subservice: dev-environment
-keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, help changing dev environments, Mac OS X to Windows, help moving from Mac to PC 
+keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, help changing dev environments, Mac OS X to Windows, help moving from Mac to PC
 ms.localizationpriority: medium
 ms.date: 06/04/2026
 ---
@@ -98,12 +97,12 @@ These tools mean you can use your familiar Unix workflow directly in Windows wit
 
 You can now install Windows Subsystem for Linux (WSL) to support running a Linux shell within Windows. This means that you can run **bash**, with whichever specific Linux distribution you choose, integrated right inside Windows. Using WSL provides the kind of environment most familiar to Mac users. For example, you use **ls** to list the files in a current directory, not **dir** as you would with the traditional Windows Cmd Shell. To learn about installing and using WSL, see the [Windows Subsystem for Linux Installation Guide](/windows/wsl/install). Linux distributions that you can install on Windows with WSL include:
 
-1. [Ubuntu 24.04 LTS](https://www.microsoft.com/store/apps/9NZ3KLHXDJP5)
-1. [Ubuntu 22.04 LTS](https://www.microsoft.com/store/apps/9PN20MSQ3V9KL)
-1. [Kali Linux](https://www.microsoft.com/store/apps/9PKR34TNCV07)
-1. [Debian GNU/Linux](https://www.microsoft.com/store/apps/9MSVKQC78PK6)
-1. [openSUSE Leap 15.6](https://www.microsoft.com/store/apps/9NZJ0Z189KMR)
-1. [SUSE Linux Enterprise Server 15 SP6](https://www.microsoft.com/store/apps/9PNLGLNJNRPN)
+1. Ubuntu 24.04 LTS
+1. Ubuntu 22.04 LTS
+1. Kali Linux
+1. Debian GNU/Linux
+1. openSUSE Leap 15.6
+1. SUSE Linux Enterprise Server 15 SP6
 
 Just to name a few. Find more in the [WSL install docs](/windows/wsl/install#change-the-default-linux-distribution-installed) and install them directly from the [Microsoft Store](https://aka.ms/wslstore).
 

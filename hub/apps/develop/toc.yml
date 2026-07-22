@@ -1612,12 +1612,15 @@ items:
       - name: Overview
         href: ../api-reference/index.md
       - name: About APIs and interop
+        href: interop/index.md
         items:
-          - name: WinRT API support in desktop apps
-            href: ../desktop/modernize/winrt-api-desktop-app-support.md
-          - name: Call interop APIs from a .NET app
+          - name: Call Win32 APIs from C# (CsWin32)
+            href: interop/call-win32-apis.md
+          - name: Use WinRT COM interop classes in .NET
             href: ../desktop/modernize/winrt-com-interop-csharp.md
-          - name: Build a C# .NET app with WinUI and Win32 interop
+          - name: WinRT APIs not supported in desktop apps
+            href: ../desktop/modernize/winrt-api-desktop-app-support.md
+          - name: "Walkthrough: WinUI 3 app with Win32 interop"
             href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
       - name: Windows SDK API reference
         items:

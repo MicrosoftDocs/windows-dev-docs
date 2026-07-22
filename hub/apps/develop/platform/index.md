@@ -49,6 +49,7 @@ Windows Runtime APIs are defined in a language-neutral way using Windows Metadat
 
 Choose the area that matches what you want to learn:
 
+- [Call Win32 APIs from C# (CsWin32)](../interop/call-win32-apis.md)
 - [Get started with C++/WinRT](../cpp-winrt/get-started.md)
 - [Create a C#/WinRT component](csharp-winrt/create-windows-runtime-component-cswinrt.md)
 - [XAML overview](xaml/xaml-overview.md)

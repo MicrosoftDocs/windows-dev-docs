@@ -30,6 +30,10 @@ Describes the way in which your app is packaged before being deployed and instal
 
 A redistributable component that provides an API to find and load the Windows App SDK framework package for the calling process. In a packaged-with-external-location or unpackaged app, you can load the Windows App SDK framework package explicitly by calling Bootstrapper APIs such as [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize). See [Reference the Windows App SDK framework package at run time](../windows-app-sdk/use-windows-app-sdk-run-time.md).
 
+#### CsWin32
+
+A .NET source generator that produces type-safe P/Invoke signatures for Win32 APIs at build time. You list the APIs you need in a `NativeMethods.txt` file and CsWin32 generates the correct interop code automatically. It's the recommended replacement for hand-written `[DllImport]` declarations. See [Call Win32 APIs from a C# Windows app (CsWin32)](../develop/interop/call-win32-apis.md).
+
 #### C++/WinRT
 
 C++/WinRT is a standard C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-based library, and designed to provide first-class access to modern Windows APIs. See [C++/WinRT](/windows/uwp/cpp-and-winrt-apis/).
@@ -101,6 +105,10 @@ MSIX is a Windows app package format that combines the best features of MSI, .ap
 #### Native apps
 
 Traditionally, "native" refers to applications built without using the .NET runtime. In this case, "native" is synonymous with "unmanaged", and can be used to describe apps that manage their own memory and security concerns. Alternatively, some developers use "native" to indicate that an application has been built to run specifically on Windows, calling Windows APIs directly.
+
+#### P/Invoke (Platform Invocation Services)
+
+The .NET mechanism for calling unmanaged (native) functions from managed C# code. Modern Windows apps should use [CsWin32](../develop/interop/call-win32-apis.md) to generate P/Invoke signatures automatically rather than writing `[DllImport]` declarations by hand.
 
 #### .NET MAUI
 

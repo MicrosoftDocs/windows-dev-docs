@@ -216,6 +216,10 @@ APIs introduced between build 22621 and 26100 will be visible in your code but w
 
 Check the API's reference page on Microsoft Learn. The **Requirements** section lists the minimum OS build (as an API contract version or Windows version).
 
+### "Are these SDKs distributed with my app?"
+
+No — but parts of one of them can be. The **Windows SDK** is a development-time tool only; its headers and libraries are used by the compiler and nothing from it ships in your app package. The **Windows App SDK** is different: by default, its runtime binaries are included in your app package (framework-dependent or self-contained depending on your deployment model). In framework-dependent deployment, a shared Windows App SDK runtime is installed once on the device and your app references it; in self-contained deployment, the necessary binaries are bundled directly into your MSIX or output folder. Either way, the platform APIs (Win32, WinRT, COM) are always provided by the OS itself — you never ship those. For details on deployment options, see [Windows App SDK deployment overview](../windows-app-sdk/deployment-architecture.md).
+
 ## Summary of rules
 
 | Rule | Description |

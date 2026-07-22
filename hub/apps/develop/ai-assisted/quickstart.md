@@ -1,8 +1,8 @@
 ---
 title: "Quickstart: Build and publish a Windows app with AI"
-description: Build and publish a WinUI 3 app in under 30 minutes using free tools: VS Code, the WinUI agent plugin, dotnet new templates, and the winapp CLI.
+description: "Build and publish a WinUI 3 app in under 30 minutes using free tools: VS Code, the WinUI agent plugin, dotnet new templates, and the winapp CLI."
 ms.topic: quickstart
-ms.date: 07/05/2026
+ms.date: 07/22/2026
 ms.author: jken
 author: GrantMeStrength
 ---

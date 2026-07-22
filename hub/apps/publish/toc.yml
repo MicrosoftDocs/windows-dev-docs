@@ -157,6 +157,8 @@ items:
         href: publish-your-app/pwa/upload-app-packages.md
       - name: Create Store listings
         items:
+          - name: Overview
+            href: publish-your-app/pwa/create-app-store-listing.md
           - name: Add and edit Store listing info
             href: publish-your-app/pwa/add-and-edit-store-listing-info.md
           - name: Add app screenshots, images, and trailers
@@ -261,6 +263,8 @@ items:
   items:
     - name: MSIX
       items: 
+          - name: Microsoft Store Submission API for MSIX
+            href: /windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services
           - name: Product page experiments
             href: product-page-experiments.md
           - name: Product management and services
@@ -361,6 +365,8 @@ items:
         href: partner-center/trademark-and-copyright-protection.md
 - name: Microsoft Store policies and resources
   items: 
+      - name: Overview
+        href: store-policies-and-code-of-conduct.md
       - name: Microsoft Store Policies
         href: store-policies.md
       - name: Store Policies change history

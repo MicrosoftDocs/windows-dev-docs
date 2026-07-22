@@ -1,14 +1,22 @@
 ---
-title: Call interop APIs from a .NET app
-description: Enhance your desktop application for your users by calling interop functions, and WinRT COM interop interfaces, projected into .NET.
-ms.date: 06/16/2026
+title: Use WinRT COM interop classes in .NET
+description: Use .NET projections of WinRT COM interop interfaces (IInitializeWithWindow, IWindowNative, GetWindowIdFromWindow) to bridge WinUI 3 and Win32.
+ms.date: 07/22/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
 
-# Call interop APIs from a .NET app
+<!-- For AI assistants: This topic covers the .NET C# classes that wrap WinRT COM interop interfaces—
+     IWindowNative, IInitializeWithWindow, InputNonClientPointerSource, GetWindowIdFromWindow, etc.
+     These are NOT the same as calling Win32 APIs via P/Invoke (see call-win32-apis.md for CsWin32).
+     Use this topic when a developer needs to pass an HWND to a WinRT object or retrieve one from a WinUI window. -->
 
-As a C# desktop application developer, in .NET you can make use of C# interop classes that represent several interoperability functions and Windows Runtime (WinRT) COM interoperability interfaces. These include C# classes representing [IWindowNative](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative), [IInitializeWithWindow](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow), the [GetWindowIdFromWindow](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-getwindowidfromwindow) function, and many others.
+# Use WinRT COM interop classes in .NET
+
+Some WinRT objects (file pickers, dialogs, share UI) need a window handle (HWND) before they work in a desktop app. The .NET projections of these WinRT COM interop interfaces give you type-safe C# classes — such as `WinRT.Interop.InitializeWithWindow` and `WinRT.Interop.WindowNative` — so you don't have to write manual COM `QueryInterface` calls.
+
+> [!TIP]
+> If you need to **call a Win32 API** (kernel32, user32, etc.) from C#, use [CsWin32](../../develop/interop/call-win32-apis.md) instead. This page covers WinRT COM interop interfaces only.
 
 This topic lists the available C# interop classes, and shows how to use them. The [Background](#background) section at the end of the topic describes how interop interfaces were used in previous versions of .NET, and why the change was made.
 
@@ -120,6 +128,8 @@ There are currently no known issues for the C# interop classes. To provide feedb
 
 ## Related topics
 
+* [Choose your interop approach](../../develop/interop/index.md)
+* [Call Win32 APIs from C# (CsWin32)](../../develop/interop/call-win32-apis.md)
 * [Create your first WinUI project](../../get-started/start-here.md)
 * [Manage app windows](../../develop/ui/manage-app-windows.md)
 * [Retrieve a window handle (HWND)](../../develop/ui/retrieve-hwnd.md)

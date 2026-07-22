@@ -130,7 +130,6 @@ If we release a new version of the SDK that introduces new APIs or features in t
 ## Related topics
 
 * [Microsoft Store Services SDK API reference](/uwp/api/overview/engagement)
-* [Run experiments with A/B testing](run-app-experiments-with-a-b-testing.md)
 * [Launch Feedback Hub from your app](launch-feedback-hub-from-your-app.md)
 * [Configure your app to receive Partner Center push notifications](configure-your-app-to-receive-dev-center-notifications.md)
 * [Log custom events for Partner Center](log-custom-events-for-dev-center.md)

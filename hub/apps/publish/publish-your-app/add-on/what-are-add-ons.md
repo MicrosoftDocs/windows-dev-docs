@@ -1,8 +1,8 @@
 ---
 title: What are add-ons
-description: What are add-ons
+description: Learn what add-ons are, including consumable and durable in-app products that customers can purchase to enhance your app experience.
 ms.topic: article
-ms.date: 07/02/2024
+ms.date: 07/22/2026
 ---
 
 # What are add-ons?
@@ -10,6 +10,9 @@ ms.date: 07/02/2024
 Add-ons (also sometimes referred to as in-app products) are supplementary items for your app that can be purchased by customers. An add-on can be a fun new feature, a new game level, or anything else you think will keep users engaged. Not only are add-ons a great way to make money, but they help to drive customer interaction and engagement.
 
 Add-ons are published through Partner Center and require you to have an active developer account. You'll also need to enable the add-ons in your app's code.
+
+> [!NOTE]
+> To learn more about how to create and configure add-ons, see [In-app purchases and trials](/windows/uwp/monetize/in-app-purchases-and-trials).
 
 ## Product type
 
@@ -41,3 +44,12 @@ After a subscription add-on is initially acquired by a customer, they will conti
 Subscription add-ons are only supported for customers running Windows 10, version 1607 or later. The parent app must be compiled using Windows 10 SDK version 14393 or later and it must use the in-app purchase API in the **Windows.Services.Store** namespace instead of the **Windows.ApplicationModel.Store** namespace. For more info, see [Enable subscription add-ons for your app](/windows/uwp/monetize/enable-subscription-add-ons-for-your-app).
 
 You must submit the parent product before you can publish subscription add-ons to the Store, although you can create the submission in Partner Center and begin working on it at any time.
+
+Follow these steps to publish your app add-on to the Microsoft Store:
+
+| Topic                                                                   | Description                                                                                                                                  |
+| ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Create an app submission for your add-on](./create-app-submission.md)  | Add-on submissions contain all of the information needed to distribute your add-on in the Microsoft Store.                                   |
+| [Set your add-on's price and availability](./price-and-availability.md) | Specify how, when, and where your add-on will be available to customers, your add-on's pricing model, and whether you'll offer a free trial. |
+| [Specify your add-on's properties](./enter-app-properties.md)           | Add-on properties describe important details about your app including requirements, capabilities, and your contact information.              |
+| [Create your add-on's store listing](./create-app-store-listing.md)     | Create your add-on's page in the Microsoft Store.                                                                                            |

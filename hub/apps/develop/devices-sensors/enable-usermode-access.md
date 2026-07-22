@@ -4,6 +4,11 @@ description: This tutorial describes how to enable user mode access to GPIO, I2C
 ms.date: 11/15/2023
 ms.topic: how-to
 ms.localizationpriority: medium
+no-loc:
+  - SlaveMode
+  - SlaveAddress
+  - "Slave Address"
+  - "Slave Address Tests"
 ---
 
 # Enable user mode access to GPIO, I2C, and SPI
@@ -41,7 +46,7 @@ Next we declare each of the GPIO and SPB resources that should be exposed to use
 Raspberry Pi has two exposed SPI buses. SPI0 has two hardware chip select lines and SPI1 has one hardware chip select line. One SPISerialBus() resource declaration is required for each chip select line for each bus. The following two SPISerialBus resource declarations are for the two chip select lines on SPI0. The DeviceSelection field contains a unique value which the driver interprets as a hardware chip select line identifier. The exact value that you put in the DeviceSelection field depends on how your driver interprets this field of the ACPI connection descriptor.
 
 > [!NOTE]
-> This article contains references to the term slave&mdash;a term that Microsoft doesn't condone, and has stopped using in new products and documentation. When the term is removed from the software, we’ll remove it from this article.
+> This article contains references to legacy terminology in hardware interface specifications that Microsoft no longer uses in new products and documentation. When the term is removed from the software, we'll remove it from this article.
 
 ```cpp
 // Index 0
@@ -53,7 +58,7 @@ SPISerialBus(              // SCKL - GPIO 11 - Pin 23
     PolarityLow,           // Device selection polarity
     FourWireMode,          // wiremode
     0,                     // databit len: placeholder
-    ControllerInitiated,   // slave mode
+    ControllerInitiated,   // target mode
     0,                     // connection speed: placeholder
     ClockPolarityLow,      // clock polarity: placeholder
     ClockPhaseFirst,       // clock phase: placeholder
@@ -71,7 +76,7 @@ SPISerialBus(              // SCKL - GPIO 11 - Pin 23
     PolarityLow,           // Device selection polarity
     FourWireMode,          // wiremode
     0,                     // databit len: placeholder
-    ControllerInitiated,   // slave mode
+    ControllerInitiated,   // target mode
     0,                     // connection speed: placeholder
     ClockPolarityLow,      // clock polarity: placeholder
     ClockPhaseFirst,       // clock phase: placeholder
@@ -130,7 +135,7 @@ SPISerialBus(              // SCKL - GPIO 21 - Pin 40
     PolarityLow,           // Device selection polarity
     FourWireMode,          // wiremode
     0,                     // databit len: placeholder
-    ControllerInitiated,   // slave mode
+    ControllerInitiated,   // target mode
     0,                     // connection speed: placeholder
     ClockPolarityLow,      // clock polarity: placeholder
     ClockPhaseFirst,       // clock phase: placeholder
@@ -633,7 +638,7 @@ At device initialization time, the `SpbCx` and `SerCx` frameworks parse all `Msf
 
 `SpbCx` reverts pin muxing configuration in its *IRP_MJ_CLOSE* handler, just after invoking the controller driver’s [EvtSpbTargetDisconnect()](/windows-hardware/drivers/ddi/content/spbcx/nc-spbcx-evt_spb_target_disconnect) callback. The result is that pins are muxed to the SPB function whenever a peripheral driver opens a handle to the SPB controller driver, and are muxed away when the peripheral driver closes their handle.
 
-`SerCx` behaves similarly. `SerCx` acquires all `MsftFunctionConfig()` resources in its *IRP_MJ_CREATE* handler just before invoking the controller driver’s [EvtSerCx2FileOpen()](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileopen) callback, and releases all resources in its IRP_MJ_CLOSE handler, just after invoking the controller driver’s [EvtSerCx2FileClose](/windows-hardware/drivers/ddi/content/sercx/nc-sercx-evt_sercx2_fileclose) callback.
+`SerCx` behaves similarly. `SerCx` acquires all `MsftFunctionConfig()` resources in its *IRP_MJ_CREATE* handler just before invoking the controller driver’s [EvtSerCx2FileOpen()](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_fileopen) callback, and releases all resources in its IRP_MJ_CLOSE handler, just after invoking the controller driver’s [EvtSerCx2FileClose](/windows-hardware/drivers/ddi/sercx/nc-sercx-evt_sercx2_fileclose) callback.
 
 The implication of dynamic pin muxing for `SerCx` and `SpbCx` controller drivers is that they must be able to tolerate pins being muxed away from SPB/UART function at certain times. Controller drivers need to assume that pins will not be muxed until `EvtSpbTargetConnect()` or `EvtSerCx2FileOpen()` is called. Pins are not necessary muxed to SPB/UART function during the following callbacks. The following is not a complete list, but represents the most common PNP routines implemented by controller drivers.
 
@@ -878,7 +883,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
                     PolarityLow,           // Device selection polarity
                     FourWireMode,          // wiremode
                     0,                     // databit len: placeholder
-                    ControllerInitiated,   // slave mode
+                    ControllerInitiated,   // target mode
                     0,                     // connection speed: placeholder
                     ClockPolarityLow,      // clock polarity: placeholder
                     ClockPhaseFirst,       // clock phase: placeholder
@@ -896,7 +901,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
                     PolarityLow,           // Device selection polarity
                     FourWireMode,          // wiremode
                     0,                     // databit len: placeholder
-                    ControllerInitiated,   // slave mode
+                    ControllerInitiated,   // target mode
                     0,                     // connection speed: placeholder
                     ClockPolarityLow,      // clock polarity: placeholder
                     ClockPhaseFirst,       // clock phase: placeholder
@@ -914,7 +919,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
                     PolarityLow,           // Device selection polarity
                     FourWireMode,          // wiremode
                     0,                     // databit len: placeholder
-                    ControllerInitiated,   // slave mode
+                    ControllerInitiated,   // target mode
                     0,                     // connection speed: placeholder
                     ClockPolarityLow,      // clock polarity: placeholder
                     ClockPhaseFirst,       // clock phase: placeholder
@@ -1033,7 +1038,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
                     PolarityLow,           // Device selection polarity
                     FourWireMode,          // wiremode
                     8,                     // databit len
-                    ControllerInitiated,   // slave mode
+                    ControllerInitiated,   // target mode
                     8000000,               // Connection speed
                     ClockPolarityLow,      // Clock polarity
                     ClockPhaseSecond,      // clock phase

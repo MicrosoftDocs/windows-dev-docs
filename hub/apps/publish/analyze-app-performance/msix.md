@@ -13,6 +13,9 @@ ms.localizationpriority: medium
 
 Use Partner Center analytics to understand how your apps and games published through the Microsoft Store are performing. Partner Center helps you understand how customers discover, acquire, use, and experience your app or game. These reports provide actionable insights across the entire customer journey, from acquisition and installation through engagement, app health, and customer feedback.
 
+> [!NOTE]
+> To use the Microsoft Store analytics API to access your **MSIX** app analytics data programmatically, see [Access analytics data using Store services](/windows/uwp/monetize/access-analytics-data-using-windows-store-services).
+
 Use these reports to:
 
 * Measure app and add-on acquisition performance.
