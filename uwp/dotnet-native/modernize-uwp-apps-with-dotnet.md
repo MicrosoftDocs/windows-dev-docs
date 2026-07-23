@@ -53,7 +53,7 @@ To develop UWP apps with modern .NET, you need:
 ### Installation Steps
 
 1. Open the Visual Studio Installer
-2. Under **Workloads** > **Desktop & Mobile**, select the **Windows application development** workload
+2. Under **Workloads** > **Desktop & Mobile**, select the **WinUI application development** workload
 3. Under **Optional** (in the right pane), select:
    - **Universal Windows Platform tools** - Contains all tooling for UWP apps
    - **Windows 11 SDK (10.0.26100.0)** - Required to build UWP XAML apps
