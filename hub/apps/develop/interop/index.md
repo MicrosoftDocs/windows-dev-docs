@@ -46,14 +46,14 @@ In all of these cases, you write normal C# code but call into Windows through an
 | I need to… | Recommended approach | Topic |
 |---|---|---|
 | **Call a Win32 API** (user32, kernel32, shell32, etc.) from C# | Use the **CsWin32** source generator — type-safe, no hand-written signatures | [Call Win32 APIs from C# (CsWin32)](call-win32-apis.md) |
-| **Initialize a WinRT object with a window handle** (pickers, dialogs, share UI) | Use the .NET WinRT COM interop classes (`InitializeWithWindow`, `WindowNative`, etc.) | [Use WinRT COM interop classes in .NET](../../desktop/modernize/winrt-com-interop-csharp.md) |
+| **Initialize a WinRT object with a window handle** (pickers, dialogs, share UI) | Use the .NET WinRT COM interop classes (`InitializeWithWindow`, `WindowNative`, etc.) | [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md) |
 | **Check whether a WinRT API works** in a desktop (non-UWP) app | Consult the restrictions and alternatives list | [WinRT APIs not supported in desktop apps](../../desktop/modernize/winrt-api-desktop-app-support.md) |
 | **See a complete WinUI 3 example** that customizes a window using Win32 calls | Follow the end-to-end walkthrough | [Walkthrough: WinUI 3 app with Win32 interop](../../winui/winui3/desktop-winui3-app-with-basic-interop.md) |
 
 ## Quick flowchart
 
 1. **Is the API in a `Windows.*` WinRT namespace?**
-   - Yes → Check [WinRT APIs not supported in desktop apps](../../desktop/modernize/winrt-api-desktop-app-support.md) for restrictions. If the API requires a window handle, see [Use WinRT COM interop classes in .NET](../../desktop/modernize/winrt-com-interop-csharp.md).
+   - Yes → Check [WinRT APIs not supported in desktop apps](../../desktop/modernize/winrt-api-desktop-app-support.md) for restrictions. If the API requires a window handle, see [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md).
    - No → Continue to step 2.
 
 2. **Is it a Win32/native API (defined in a Windows SDK header)?**
@@ -63,7 +63,7 @@ In all of these cases, you write normal C# code but call into Windows through an
 ## Related topics
 
 - [Call Win32 APIs from C# (CsWin32)](call-win32-apis.md)
-- [Use WinRT COM interop classes in .NET](../../desktop/modernize/winrt-com-interop-csharp.md)
+- [Call interop APIs from a .NET app](../../desktop/modernize/winrt-com-interop-csharp.md)
 - [WinRT APIs not supported in desktop apps](../../desktop/modernize/winrt-api-desktop-app-support.md)
 - [Walkthrough: WinUI 3 app with Win32 interop](../../winui/winui3/desktop-winui3-app-with-basic-interop.md)
 - [Retrieve a window handle (HWND)](../ui/retrieve-hwnd.md)

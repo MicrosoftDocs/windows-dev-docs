@@ -108,6 +108,8 @@ items:
       items:
       - name: Windows developers and their tools
         href: whats-new/personae.md
+      - name: Coming to Windows
+        href: whats-new/coming-to-windows.md
       - name: Best practices
         href: get-started/best-practices.md
       - name: Glossary

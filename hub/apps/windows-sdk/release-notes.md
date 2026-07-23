@@ -2,7 +2,7 @@
 title: What's new in Windows SDK
 description: Provides information about release notes for the Windows SDK.
 ms.topic: release-notes
-ms.date: 06/22/2026
+ms.date: 07/17/2026
 keywords: windows win32, windows app development, Windows SDK, Windows Platform SDK, windows 11
 ms.localizationpriority: medium
 ---
@@ -15,6 +15,123 @@ You can update the SDK by manually installing the new build, updating in Visual 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
 ## 28000 versions
+
+## Build 10.0.28000.2526
+
+Released: **July, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.Devices.Printers**, **Windows.Graphics.Printing.PrintSupport**, **Windows.Graphics.Printing.PrintTicket**, **Windows.Graphics.Printing.Workflow**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - A number of IPP printing, print support, print ticket, and print workflow interfaces graduated from experimental to stable
+>
+> **Windows.System.Power**:
+> <br/>
+> New:
+>
+> - `EnergySaverStatus2`: Enumeration describing the energy saver state (`Unknown`, `Off`, `Standard`, `HighSavings`)
+> - `PowerManager.EnergySaverStatus2`: Gets the current energy saver status
+> - `PowerManager.IsEnergySaverStatus2Supported`: Indicates whether `EnergySaverStatus2` is supported on the device
+> - `PowerManager.EnergySaverStatus2Changed`: Fires when the energy saver status changes
+
+</details>
+
+<details>
+<summary>WinRT Experimental API additions</summary>
+
+> **Windows.System.RemoteDesktop.Provider**:
+> <br/>
+> New (experimental):
+>
+> - `RemoteDesktopRegistrar.ConnectionCenterRequested`: Event raised when the connection center is requested
+>
+> **Windows.UI.Input**:
+> <br/>
+> New (experimental):
+>
+> - `GamepadNavigationConfiguration`: Runtime class that configures gamepad-based navigation
+> - `GamepadNavigationConfiguration.NavigationEnabled`: Gets whether gamepad navigation is enabled
+> - `GamepadNavigationConfiguration.TrySetNavigationEnabled`: Attempts to enable or disable gamepad navigation
+> - `GamepadNavigationConfiguration.TryGetForCurrentProcess`: Gets the configuration for the current process
+> - `GamepadNavigationConfiguration.IsSupported`: Indicates whether gamepad navigation configuration is supported
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Cryptography (bcrypt.h / ncrypt.h)**
+> <br/>
+> New post-quantum cryptography (PQC) support:
+>
+> - `BCRYPT_COMPOSITE_MLDSA_ALGORITHM` / `BCRYPT_COMPOSITE_MLKEM_ALGORITHM`: Composite ML-DSA and ML-KEM algorithm identifiers, with corresponding algorithm handles, key blob types, magics, and parameter-set names
+> - `BCRYPT_PARAMETER_SET_NAMES` / `BCRYPT_PARAMETER_SET_KEY_BLOB`: Structures for enumerating and importing parameter-set keys
+> - `NCRYPT_COMPOSITE_MLDSA_ALGORITHM` / `NCRYPT_COMPOSITE_MLKEM_ALGORITHM` and algorithm groups: CNG key storage support for composite ML-DSA and ML-KEM
+> - `NCRYPT_PAD_PQDSA_FLAG`, `NCRYPT_MLDSA_EXTERNAL_MU_FLAG`: Padding and signing flags for PQC signatures
+>
+> **DirectX Kernel (d3dukmdt.h / d3dkmthk.h)**
+> <br/>
+> New:
+>
+> - `DXGK_FEATURE_*_VERSION` defines and `DXGK_QUERYFEATURESUPPORT2_VERSION`: DXGK feature version identifiers
+> - `D3DDDI_SEGMENTPREFERENCE2`: Segment-preference structure with large-page preference support
+>
+> **Status Codes (ntstatus.h)**
+> <br/>
+> New:
+>
+> - `STATUS_FVE_VOLUME_HANDLE_OPEN`: The BitLocker volume handle is open
+>
+> **RPC (rpcndr.h)**
+> <br/>
+> New:
+>
+> - `USER_MARSHALUNMARSHAL_DONT_CLEANUP_UNMARSHALLED_OBJECT`: Marshaling flag that skips cleanup of an unmarshalled object
+>
+> **Process Creation (WinBase.h)**
+> <br/>
+> New:
+>
+> - `PROC_THREAD_ATTRIBUTE_CONTAINMENT_CONFIGURATION`: Process/thread attribute for containment configuration
+>
+> **Windowing and Input (WinUser.h)**
+> <br/>
+> New:
+>
+> - `WM_STOPINERTIA`, `WM_ENDINERTIA`: Window messages for inertia handling
+> - `GetPointerTouchpadInfo`, `GetPointerTouchpadInfoHistory`, `GetPointerFrameTouchpadInfo`, `GetPointerFrameTouchpadInfoHistory`: Retrieve precision-touchpad pointer information
+> - `CreateSyntheticPointerDevice2`: Creates a synthetic pointer device from `SYNTHETIC_DEVICE_CREATION_PARAMS`
+> - `SYNTHETIC_DEVICE_CREATION_OPTIONS`, `SYNTHETIC_DEVICE_CREATION_PARAMS`: Options and parameters for synthetic pointer device creation
+> - `TOUCHPAD_ACTION` and `InjectTouchpadAction`: Enumeration and function for injecting synthetic touchpad actions
+> - `ReportWindowContentInertia`: Reports the start and end of window content inertia
+> - `RegisterTouchpadCapableWindow`, `RegisterTouchpadCapableThread`, `SetMaxTouchpadSensitivity`: Opt in to and configure precision-touchpad input
+>
+> **Security (winnt.h)**
+> <br/>
+> New:
+>
+> - `SECURITY_CONTAINMENT_CONFIGURATION`: Structure describing containment configuration
+>
+> **ReFS Attestation (wbcl.h / winioctl.h)**
+> <br/>
+> New:
+>
+> - `SIPAEVENT_REFS_ATTESTATION_*` event types, headers, and structures: ReFS volume attestation SIPA event definitions
+> - `FSCTL_REFS_VOLUME_ATTESTATION_BIND_TO_TPM`, `FSCTL_REFS_VOLUME_ATTESTATION_QUERY_STATUS`, `FSCTL_REFS_VOLUME_ATTESTATION_RESET`: File system control codes for ReFS volume attestation
+>
+> **WRL Async (wrl/async.h)**
+> <br/>
+> Updated:
+>
+> - Async completion handling reworked for thread safety
+
+</details>
+
+---
 
 ## Build 10.0.28000.2270
 
@@ -591,6 +708,270 @@ This is a major version bump to the **28000** SDK series.
 ---
 
 ## 26100 versions
+
+## Build 10.0.26100.8876
+
+Released: **July, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.ApplicationModel.DataTransfer**:
+> <br/>
+> New:
+>
+> - `DataPackageOperation.NewTarget`: Hint indicating the drag is over a new logical target (for example, individual files and folders on the desktop)
+> - `DataPackageOperation.BackgroundTarget`: Hint indicating the drag is over a logical target that represents the background (for example, the desktop itself)
+>
+> **Windows.Devices.Printers**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `IIppPrintDevice5`: IPP print device interface
+> - `IIppPrintDeviceInstallationResult`: Result of an IPP print device installation
+> - `IReplaceDevicePropertiesResult`: Result of a replace-device-properties operation
+>
+> **Windows.Graphics.Printing.PrintSupport**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `IPrintSupportAppInfo`: Provides information about the print support app
+> - `IPrintSupportEnterpriseManagementUIEventArgs`: Event arguments for print support enterprise management UI
+> - `IPrintSupportPrintTicketValidationRequestedEventArgs`: Event arguments for print ticket validation requests
+>
+> **Windows.Graphics.Printing.Workflow**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `IPrintWorkflowJobBackgroundSession3`: Print workflow background session interface
+> - `IPrintWorkflowPdlConverter3`: Print workflow PDL converter interface
+> - `IPrintWorkflowPdlModificationRequestedEventArgs`: Event arguments for PDL modification requests
+> - `IPrintWorkflowPrinterJobStatusChangedEventArgs`: Event arguments for printer job status changes
+> - `IPrintWorkflowXpsObjectModelProvider`: Provides access to the XPS object model
+> - `IPrintWorkflowObjectModelProvider`: Provides access to the print workflow object model
+>
+> **Windows.System.Power**:
+> <br/>
+> New:
+>
+> - `EnergySaverStatus2`: Enumeration describing the energy saver state (`Unknown`, `Off`, `Standard`, `HighSavings`)
+> - `PowerManager.EnergySaverStatus2`: Gets the current energy saver status
+> - `PowerManager.IsEnergySaverStatus2Supported`: Indicates whether `EnergySaverStatus2` is supported on the device
+> - `PowerManager.EnergySaverStatus2Changed`: Fires when the energy saver status changes
+>
+> **Windows.System.Profile**:
+> <br/>
+> New:
+>
+> - `RetailInfo.IsDemoModeEnabledEx`: Indicates whether retail demo mode is enabled
+>
+> **Windows.UI.Input**:
+> <br/>
+> Updated:
+>
+> - `TouchpadGlobalAction`: Renamed `ThreeFingerPressDown`/`FourFingerPressDown`/`FiveFingerPressDown` to `ThreeFingerPress`/`FourFingerPress`/`FiveFingerPress`, and `ThreeFingerPressUp`/`FourFingerPressUp`/`FiveFingerPressUp` to `ThreeFingerRelease`/`FourFingerRelease`/`FiveFingerRelease`
+
+</details>
+
+<details>
+<summary>WinRT Experimental API additions</summary>
+
+> **Windows.System.RemoteDesktop.Provider**:
+> <br/>
+> New (experimental):
+>
+> - `RemoteDesktopRegistrar.ConnectionCenterRequested`: Event raised when the connection center is requested
+>
+> **Windows.UI.Input**:
+> <br/>
+> New (experimental):
+>
+> - `GamepadNavigationConfiguration`: Runtime class that configures gamepad-based navigation
+> - `GamepadNavigationConfiguration.NavigationEnabled`: Gets whether gamepad navigation is enabled
+> - `GamepadNavigationConfiguration.TrySetNavigationEnabled`: Attempts to enable or disable gamepad navigation
+> - `GamepadNavigationConfiguration.TryGetForCurrentProcess`: Gets the configuration for the current process
+> - `GamepadNavigationConfiguration.IsSupported`: Indicates whether gamepad navigation configuration is supported
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **App Model (appmodel.h)**
+> <br/>
+> New:
+>
+> - `PackageOrigin2`: Enumeration describing the origin of a staged package (adds `LineOfBusiness` and `SignedSBOM` values)
+> - `GetStagedPackageOrigin2`: Retrieves the `PackageOrigin2` of a staged package
+> - `AppModelPackageFeature`: Enumeration of queryable package features (`SignedSBOM`)
+> - `IsPackageFeatureSupported`: Queries whether a package feature is currently available or enabled
+>
+> **Cryptography (bcrypt.h / ncrypt.h)**
+> <br/>
+> New post-quantum cryptography (PQC) support:
+>
+> - `BCRYPT_COMPOSITE_MLDSA_ALGORITHM` / `BCRYPT_COMPOSITE_MLKEM_ALGORITHM`: Composite ML-DSA and ML-KEM algorithm identifiers, with corresponding algorithm handles, key blob types, magics, and parameter-set names
+> - `BCRYPT_PARAMETER_SET_NAMES` / `BCRYPT_PARAMETER_SET_KEY_BLOB`: Structures for enumerating and importing parameter-set keys
+> - `NCRYPT_COMPOSITE_MLDSA_ALGORITHM` / `NCRYPT_COMPOSITE_MLKEM_ALGORITHM` and algorithm groups: CNG key storage support for composite ML-DSA and ML-KEM
+> - `NCRYPT_PAD_PQDSA_FLAG`, `NCRYPT_MLDSA_EXTERNAL_MU_FLAG`: Padding and signing flags for PQC signatures
+> - New TPM platform crypto provider (PCP) properties
+>
+> **Bug Codes (bugcodes.h)**
+> <br/>
+> New:
+>
+> - `ASSERTBUGCODE_I3CHOST_DRIVER`: Assertion bug code for the I3C host driver
+>
+> **Direct3D 11 (d3d11.h)**
+> <br/>
+> New:
+>
+> - `D3D11_DECODER_PROFILE_APV_VLD_422_10`, `..._422_12`, `..._444_10`, `..._444_12`, `..._4444_10`, `..._4444_12`, `..._400_10`: Advanced Professional Video (APV) decoder profile GUIDs (RFC 9924)
+>
+> **DirectX Kernel (d3dkmthk.h / d3dukmdt.h)**
+> <br/>
+> New:
+>
+> - `D3DKMT_QUERYFEATUREINTERFACE` and `D3DKMTQueryFeatureInterface`: Query a kernel-mode feature interface
+> - `DXGK_FEATURE_*_VERSION` defines and `DXGK_QUERYFEATURESUPPORT2_VERSION`: DXGK feature version identifiers
+> - `D3DDDI_SEGMENTPREFERENCE2`: Segment-preference structure with large-page preference support
+>
+> **Device Class GUIDs (devguid.h)**
+> <br/>
+> New:
+>
+> - Additional device setup class GUIDs
+>
+> **DirectX Video Acceleration (dxva.h)**
+> <br/>
+> New:
+>
+> - `DXVA_ModeAPV_VLD_422_10`, `..._422_12`, `..._444_10`, `..._444_12`, `..._4444_10`, `..._4444_12`, `..._400_10`: Advanced Professional Video (APV) DXVA profile GUIDs (RFC 9924)
+> - `DXVA_PicEntry_APV` and related APV DXVA structures: Picture and slice data structures for APV decode
+>
+> **EAP Types (eaptypes.h)**
+> <br/>
+> New:
+>
+> - `EAP_FLAG_DISABLE_SESSION_RESUMPTION`: Flag to disable TLS session resumption
+>
+> **Media Foundation (mfidl.h)**
+> <br/>
+> New:
+>
+> - `IMFDXGIScheduler`, `IMFDXGISchedulerClient`, `IMFDXGISchedulerRegistration`: Interfaces for DXGI-based media scheduling
+> - `MF_DXGI_SCHEDULING_PRIORITY`: Enumeration of DXGI scheduling priorities
+>
+> **Media Engine (mfmediaengine.h)**
+> <br/>
+> New:
+>
+> - `IMFMediaEngineVideoRendererEffect`: Interface that allows an app to set a custom video renderer effect
+>
+> **Storage (ntddstor.h / winioctl.h)**
+> <br/>
+> New:
+>
+> - Structures supporting storage paging-device dump collection
+>
+> **Status Codes (ntstatus.h)**
+> <br/>
+> New:
+>
+> - `STATUS_DEVICE_NACKED`: The device rejected the request
+> - `STATUS_SMB_ALTERNATIVE_PORT_CONFLICT`: SMB alternative port conflict
+>
+> **Power (poclass.h)**
+> <br/>
+> New:
+>
+> - `BATTERY_TEST_EXEMPT`: Battery flag indicating the battery is exempt from testing
+>
+> **Process Creation (WinBase.h)**
+> <br/>
+> New:
+>
+> - `PROC_THREAD_ATTRIBUTE_CONTAINMENT_CONFIGURATION`: Process/thread attribute for containment configuration
+>
+> **Windowing and Input (WinUser.h)**
+> <br/>
+> New:
+>
+> - `WM_STOPINERTIA`, `WM_ENDINERTIA`: Window messages for inertia handling
+> - `GetPointerTouchpadInfo`, `GetPointerTouchpadInfoHistory`, `GetPointerFrameTouchpadInfo`, `GetPointerFrameTouchpadInfoHistory`: Retrieve precision-touchpad pointer information
+> - `CreateSyntheticPointerDevice2`: Creates a synthetic pointer device from `SYNTHETIC_DEVICE_CREATION_PARAMS`
+> - `SYNTHETIC_DEVICE_CREATION_OPTIONS`, `SYNTHETIC_DEVICE_CREATION_PARAMS`: Options and parameters for synthetic pointer device creation
+> - `TOUCHPAD_ACTION` and `InjectTouchpadAction`: Enumeration and function for injecting synthetic touchpad actions
+> - `ReportWindowContentInertia`: Reports the start and end of window content inertia
+> - `RegisterTouchpadCapableWindow`, `RegisterTouchpadCapableThread`, `SetMaxTouchpadSensitivity`: Opt in to and configure precision-touchpad input
+>
+> **Security (winnt.h)**
+> <br/>
+> New:
+>
+> - `SECURITY_SHADOWADMINACCOUNT_RID`, `SECURITY_AGENTIC_PLATFORM_BASE_RID`: Well-known security identifier values
+> - `SECURITY_CONTAINMENT_CONFIGURATION`: Structure describing containment configuration
+> - Heap memory usage structures
+>
+> **Error Codes (winerror.h / wuerror.h / deliveryoptimizationerrors.h / slerror.h)**
+> <br/>
+> New:
+>
+> - UTC, per-processor, device-NACKED, and SMB error codes in `winerror.h`
+> - New Windows Update (`WU_E_*`) and Delivery Optimization (`DO_E_*`) error codes
+> - `SL_ACS` licensing error code
+>
+> **Terminal Services (wtsdefs.h / wtsprotocol.h)**
+> <br/>
+> New:
+>
+> - WRDS credential scenario GUIDs
+> - `IWRdsProtocolConnection3_Experimental`: Experimental protocol connection interface
+>
+> **OLE (oleidl.h)**
+> <br/>
+> New:
+>
+> - `DROPEFFECT_NEWTARGET`, `DROPEFFECT_BACKGROUNDTARGET`: Drop-effect hints matching the new `DataPackageOperation` values
+
+</details>
+
+<details>
+<summary>COM API updates</summary>
+
+> **Media Foundation (Mfidl.h)**
+> <br/>
+> New:
+>
+> - `IMFDXGIScheduler`, `IMFDXGISchedulerClient`, `IMFDXGISchedulerRegistration` and `MF_DXGI_SCHEDULING_PRIORITY`: DXGI media scheduling interfaces and enumeration
+>
+> **Media Engine (mfmediaengine.h)**
+> <br/>
+> New:
+>
+> - `IMFMediaEngineVideoRendererEffect`: Interface for setting a custom video renderer effect
+>
+> **Audio (mmdeviceapi.h)**
+> <br/>
+> New:
+>
+> - `PKEY_AudioEndpoint_StableId`: Property key for a stable audio endpoint identifier
+>
+> **Direct3D 11 (d3d11.h)**
+> <br/>
+> New:
+>
+> - APV decoder profile GUIDs (RFC 9924)
+>
+> **OLE (oleidl.h)**
+> <br/>
+> New:
+>
+> - `DROPEFFECT_NEWTARGET`, `DROPEFFECT_BACKGROUNDTARGET`: Drop-effect hints
+
+</details>
+
+---
 
 ## Build 10.0.26100.8249
 
