@@ -1,14 +1,13 @@
 ---
 title: winapp CLI framework guides
 description: Step-by-step guides for using the winapp CLI with .NET, C++, Electron, Rust, Tauri, Flutter, and other frameworks.
-ms.date: 05/05/2026
+ms.date: 07/23/2026
 ms.topic: overview
 ---
 
 # Framework guides
 
 These guides walk you through using the winapp CLI with your app framework — from project setup to debugging with package identity to packaging as MSIX.
-
 | Framework | Guide |
 |-----------|-------|
 | .NET / WPF / WinForms | [Get started with .NET](dotnet.md) |
@@ -18,10 +17,9 @@ These guides walk you through using the winapp CLI with your app framework — f
 | Tauri | [Get started with Tauri](tauri.md) |
 | Flutter | [Get started with Flutter](flutter.md) |
 
-## Additional guides
-
-- [Packaging an EXE/CLI](packaging-cli.md) — Package an existing executable as MSIX
-- [Shell Completion](shell-completion.md) — Enable tab completion for commands, options, and values
+Additional guides:
+- [Packaging an EXE/CLI](packaging-cli.md): step-by-step guide for packaging an existing EXE/CLI as MSIX
+- [Shell Completion](shell-completion.md): enable tab completion for commands, options, and values in PowerShell, bash, zsh, and fish
 
 ## Electron deep-dive guides
 

@@ -1,7 +1,7 @@
 ---
 title: Windows App Development CLI (winapp CLI)
-description: The Windows App Development CLI (winapp CLI) is a command-line interface for managing Windows SDKs, packaging, generating app identity, manifests, certificates, and using build tools with any app framework.
-ms.date: 05/05/2026
+description: Command-line interface for managing Windows SDKs, packaging, app identity, manifests, certificates, and build tools for any app framework.
+ms.date: 07/23/2026
 ms.topic: overview
 ---
 
@@ -21,7 +21,7 @@ Whether you're building with .NET/Win32, CMake, Electron, or Rust, this CLI give
 
 ## Why package identity?
 
-Many powerful Windows APIs require your app to have package identity. With identity, your app gains access to features like notifications, OS integration, and on-device AI. For a full list of what package identity unlocks and help choosing the right packaging model, see [Packaging overview](/windows/apps/package-and-deploy/packaging/).
+Many Windows APIs require your app to have package identity. With identity, your app gains access to features like notifications, OS integration, and on-device AI. For a full list of what package identity unlocks and help choosing the right packaging model, see [Packaging overview](/windows/apps/package-and-deploy/packaging/).
 
 ## Installation
 
@@ -104,7 +104,8 @@ winapp CLI is open source. You can find the source code, file issues, and contri
 - [CLI reference](usage.md)
 - [Debugging with package identity](debugging.md)
 - [UI automation](ui-automation.md)
-- [NPM programmatic API](npm-usage.md)
+- [NPM programmatic API](https://github.com/microsoft/WinAppCli/blob/main/docs/npm-usage.md)
 - [Framework guides](guides/dotnet.md)
+- [Get started with Electron](guides/electron-index.md)
 - [Windows App SDK documentation](/windows/apps/windows-app-sdk/)
 - [MSIX packaging documentation](/windows/msix/)

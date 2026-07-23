@@ -1,7 +1,7 @@
 ---
 title: Packaging Your Electron App for Distribution
-description: Packaging Your Electron App for Distribution
-ms.date: 05/05/2026
+description: Package your Electron app as a signed MSIX installer with the winapp CLI, covering manifest setup, certificate generation, and installation.
+ms.date: 07/23/2026
 ms.topic: how-to
 ---
 
@@ -25,7 +25,7 @@ module.exports = {
   packagerConfig: {
     asar: true,
     ignore: [
-      /^\/\.winapp($|\/)/,     // SDK packages and headers
+      /^\/\.winapp\/(?!bindings($|\/))/, // SDK files except generated JS bindings
       /^\/winapp\.yaml$/,       // SDK config
       /\.pfx$/,                 // Certificate files
       /\.pdb$/,                 // Debug symbols
@@ -37,6 +37,10 @@ module.exports = {
   // ... rest of your config
 };
 ```
+
+The generated `.winapp/bindings` directory must remain in the packaged app
+because `#winapp/bindings` resolves to it through the application's
+`package.json#imports` map.
 
 > [!IMPORTANT]
 > Verify that your `Package.appxmanifest` matches your packaged app structure:
