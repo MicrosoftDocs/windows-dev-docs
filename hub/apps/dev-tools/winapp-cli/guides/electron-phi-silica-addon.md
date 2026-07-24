@@ -1,7 +1,7 @@
 ---
 title: Creating a Phi Silica Addon
-description: Creating a Phi Silica Addon
-ms.date: 05/05/2026
+description: Build a native Node addon for your Electron app that runs the on-device Phi Silica language model through the Windows App SDK from JavaScript.
+ms.date: 07/23/2026
 ms.topic: how-to
 ---
 
@@ -146,7 +146,7 @@ Add this function somewhere in your file (after the require statements):
 ```javascript
 const callPhiSilica = async () => {
   console.log('Summarizing with Phi Silica: ')
-  const result = await csAddon.Addon.summarizeText("The Windows App Development CLI is a powerful tool that bridges cross-platform development with Windows-native capabilities.");
+  const result = await csAddon.Addon.summarizeText("The Windows App Development CLI lets Electron apps call Windows-native APIs from JavaScript. Package identity enables features such as notifications and background tasks.");
   console.log('Summary:', result);
 };
 ```

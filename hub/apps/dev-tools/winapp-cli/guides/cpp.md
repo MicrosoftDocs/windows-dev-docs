@@ -1,7 +1,7 @@
 ---
 title: Using winapp CLI with C++ and CMake
-description: Using winapp CLI with C++ and CMake
-ms.date: 05/05/2026
+description: Set up a C++ CMake project with the winapp CLI to restore Windows App SDK headers, generate a certificate, and package the app as MSIX.
+ms.date: 07/23/2026
 ms.topic: how-to
 ---
 

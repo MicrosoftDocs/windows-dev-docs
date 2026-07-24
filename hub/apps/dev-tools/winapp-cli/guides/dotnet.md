@@ -1,7 +1,7 @@
 ---
 title: Using winapp CLI with .NET
-description: Using winapp CLI with .NET
-ms.date: 05/05/2026
+description: Add Windows App SDK support to a .NET WPF or WinForms project with the winapp CLI, then build, add identity, and package the app as MSIX.
+ms.date: 07/23/2026
 ms.topic: how-to
 ---
 

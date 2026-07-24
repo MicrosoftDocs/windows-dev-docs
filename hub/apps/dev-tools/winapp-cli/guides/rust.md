@@ -1,7 +1,7 @@
 ---
 title: Using winapp CLI with Rust
-description: Using winapp CLI with Rust
-ms.date: 05/05/2026
+description: Use the winapp CLI with a Rust Windows app to restore Windows App SDK headers, add package identity, and package the desktop app as MSIX.
+ms.date: 07/23/2026
 ms.topic: how-to
 ---
 

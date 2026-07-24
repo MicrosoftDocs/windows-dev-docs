@@ -1,7 +1,7 @@
 ---
 title: Using winapp CLI with Flutter
-description: Using winapp CLI with Flutter
-ms.date: 05/05/2026
+description: Use the winapp CLI with a Flutter Windows app to restore Windows App SDK headers, add package identity, and package the desktop app as MSIX.
+ms.date: 07/23/2026
 ms.topic: how-to
 ---
 

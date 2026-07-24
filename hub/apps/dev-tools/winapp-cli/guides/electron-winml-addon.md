@@ -1,7 +1,7 @@
 ---
 title: Creating a WinML Addon
-description: Creating a WinML Addon
-ms.date: 05/05/2026
+description: Build a native Node addon for your Electron app that runs machine learning inference with Windows ML through the Windows App SDK from JavaScript.
+ms.date: 07/23/2026
 ms.topic: how-to
 ---
 
@@ -410,7 +410,6 @@ To fully integrate your ONNX model, you'll need to:
 - **[Sample Electron App](https://github.com/microsoft/WinAppCli/tree/main/samples/electron)** - Complete working example
 - **[AI Dev Gallery](https://aka.ms/aidevgallery)** - Sample gallery of all AI APIs 
 - **[Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/WindowsML)** - Collection of Windows App SDK samples
-- **[Windows Machine Learning Samples](https://github.com/microsoft/Windows-Machine-Learning)** - End-to-end WinML samples for image classification, object detection, and more
 - **[node-api-dotnet](https://github.com/microsoft/node-api-dotnet)** - C# ↔ JavaScript interop library
 
 ### Troubleshooting
@@ -453,6 +452,6 @@ npm install
 ### Get Help
 
 - **Found a bug?** [File an issue](https://github.com/microsoft/WinAppCli/issues)
-- **WinML questions?** Check the [WinML documentation](/windows/ai/new-windows-ml/overview)
+- **WinML questions?** Check the [WinML documentation](/windows/ai/windows-ml/)
 
 Happy machine learning! 🤖
