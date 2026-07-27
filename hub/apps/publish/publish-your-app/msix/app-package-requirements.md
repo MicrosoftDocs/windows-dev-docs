@@ -1,9 +1,10 @@
 ---
 description: Prepare your MSIX app's packages for submission to the Microsoft Store by following these guidelines. Be aware that the store enforces specific rules related to version numbers, which may vary across different OS versions. Additionally, you can refer to a table of supported languages and their corresponding language codes for app submission.
 title: App package requirements for MSIX app
-ms.date: 10/30/2022
+ms.date: 07/27/2026
 ms.topic: article
 ms.localizationpriority: medium
+no-loc: [English]
 ---
 
 # App package requirements for MSIX app
