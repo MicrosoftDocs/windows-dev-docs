@@ -99,8 +99,8 @@ items:
         href: dev-tools/samples.md
       - name: Visual Studio
         href: dev-tools/visual-studio.md
-      - name: winappCLI
-        href: dev-tools/winapp-cli/index.md
+      - name: winapp CLI
+        href: dev-tools/winapp-cli/toc.yml
       - name: Developer environment
         href: /windows/dev-environment/
     - name: Help and guidance
@@ -172,8 +172,8 @@ items:
         href: develop/ai-assisted/index.md
       - name: Visual Studio
         href: dev-tools/visual-studio.md
-      - name: winappCLI
-        href: dev-tools/winapp-cli/index.md
+      - name: winapp CLI
+        href: dev-tools/winapp-cli/toc.yml
       - name: Code samples
         href: dev-tools/samples.md
     - name: Core features

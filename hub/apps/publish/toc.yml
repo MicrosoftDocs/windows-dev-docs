@@ -365,8 +365,6 @@ items:
         href: partner-center/trademark-and-copyright-protection.md
 - name: Microsoft Store policies and resources
   items: 
-      - name: Overview
-        href: store-policies-and-code-of-conduct.md
       - name: Microsoft Store Policies
         href: store-policies.md
       - name: Store Policies change history

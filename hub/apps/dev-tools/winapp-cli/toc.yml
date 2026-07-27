@@ -1,0 +1,46 @@
+- name: winapp CLI overview
+  href: index.md
+- name: Commands and usage
+  href: usage.md
+- name: Debugging with package identity
+  href: debugging.md
+- name: UI Automation
+  href: ui-automation.md
+- name: Framework guides
+  href: guides/index.md
+  items:
+  - name: .NET / WPF / WinForms
+    href: guides/dotnet.md
+  - name: C++ (CMake)
+    href: guides/cpp.md
+  - name: Electron
+    href: guides/electron-index.md
+    items:
+    - name: Set up the environment
+      href: guides/electron-setup.md
+    - name: Package for distribution
+      href: guides/electron-packaging.md
+    - name: File picker (JS bindings)
+      href: guides/electron-js-file-picker.md
+    - name: Notifications (JS bindings)
+      href: guides/electron-js-notification.md
+    - name: Phi Silica (JS bindings)
+      href: guides/electron-js-phi-silica.md
+    - name: WinML (JS bindings)
+      href: guides/electron-js-winml.md
+    - name: Phi Silica addon
+      href: guides/electron-phi-silica-addon.md
+    - name: WinML addon
+      href: guides/electron-winml-addon.md
+    - name: C++ notification addon
+      href: guides/electron-cpp-notification-addon.md
+  - name: Rust
+    href: guides/rust.md
+  - name: Tauri
+    href: guides/tauri.md
+  - name: Flutter
+    href: guides/flutter.md
+  - name: Package an EXE or CLI
+    href: guides/packaging-cli.md
+  - name: Shell completion
+    href: guides/shell-completion.md
