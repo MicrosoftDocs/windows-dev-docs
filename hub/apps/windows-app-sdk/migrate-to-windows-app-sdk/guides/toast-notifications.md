@@ -2,7 +2,7 @@
 title: App notifications from UWP to WinUI migration
 description: This topic contains migration guidance in the app notifications feature area.
 ms.topic: article
-ms.date: 05/28/2026
+ms.date: 07/27/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, push, notifications, toast, toast notifications, app notifications, uwp
 ms.localizationpriority: medium
 ---
@@ -420,8 +420,69 @@ new ToastContentBuilder()
 
 ---
 
+### Scheduling app notifications
+
+#### [Windows App SDK](#tab/appsdk) 
+
+To schedule a notification for a future time, use [**AppNotificationBuilder**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder) to define the notification content, extract the XML payload, then call [**AddToSchedule**](/uwp/api/windows.ui.notifications.toastnotifier.addtoschedule) with a [**ScheduledToastNotification**](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification). The `Microsoft.Windows.AppNotifications.Builder` and `Windows.UI.Notifications` namespaces can be used together in the same app.
+
+```csharp
+using Microsoft.Windows.AppNotifications;
+using Microsoft.Windows.AppNotifications.Builder;
+using Windows.UI.Notifications;
+using Windows.Data.Xml.Dom;
+
+...
+
+var payload = new AppNotificationBuilder()
+    .AddText("Send a message.")
+    .AddTextBox("textBox")
+    .AddButton(new AppNotificationButton("Send")
+        .AddArgument("action", "sendMessage"))
+    .BuildNotification()
+    .Payload;
+
+var doc = new XmlDocument();
+doc.LoadXml(payload);
+
+var scheduledNotification = new ScheduledToastNotification(doc, DateTimeOffset.Now.AddSeconds(10));
+scheduledNotification.ExpirationTime = DateTimeOffset.Now.AddDays(1);
+scheduledNotification.Tag = "myTag";
+scheduledNotification.Group = "myGroup";
+
+ToastNotificationManager.CreateToastNotifier().AddToSchedule(scheduledNotification);
+```
+
+For details and cancellation examples, see [Schedule an app notification](/windows/apps/develop/notifications/app-notifications/app-notifications-scheduled).
+
+#### [Windows Community Toolkit](#tab/toolkit) 
+
+You can continue to use the **ToastContentBuilder** class provided by the Windows Community Toolkit to schedule app notifications in a WinUI app using the `.Schedule()` method, which is the equivalent of the UWP `.Schedule()` method.
+
+```csharp
+using Microsoft.Toolkit.Uwp.Notifications;
+
+...
+
+new ToastContentBuilder()
+    .AddText("Send a message.")
+    .AddInputTextBox("textBox")
+    .AddButton(new ToastButton()
+        .SetContent("Send")
+        .AddArgument("action", "sendMessage"))
+    .Schedule(DateTimeOffset.Now.AddSeconds(10), t =>
+    {
+        t.ExpirationTime = DateTimeOffset.Now.AddDays(1);
+        t.Tag = "myTag";
+        t.Group = "myGroup";
+    });
+```
+
+---
+
 ## Related topics
 
 * [Windows App SDK and supported Windows releases](../../support.md)
 * [Send a local toast notification from C# apps](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart)
 * [Send a local toast notification from Win32 C++ WRL apps](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart)
+* [Schedule an app notification](/windows/apps/develop/notifications/app-notifications/app-notifications-scheduled)
