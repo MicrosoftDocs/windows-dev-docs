@@ -2,14 +2,17 @@
 description: Learn how you can use the x:Null markup extension in XAML markup to specify a null value for a property.
 title: xNull markup extension
 ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
-ms.date: 02/08/2017
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # {x:Null} markup extension
 
 In XAML markup, specifies a **null** value for a property.
+
+> [!NOTE]
+> C# and C++/WinRT are supported for both WinUI 3 / Windows App SDK and UWP apps. C++/CX applies to UWP only, and isn't supported for WinUI 3.
 
 ## XAML attribute usage
 
@@ -19,7 +22,7 @@ In XAML markup, specifies a **null** value for a property.
 
 ## Remarks
 
-**null** is the null reference keyword for C# and C++. The Microsoft Visual Basic keyword for a null reference is **Nothing**.
+**null** is the null reference keyword for C# and C++.
 
 The initial default value can vary between dependency properties, and it is not necessarily **null**. Further, many dependency properties will not accept **null** as a value (whether through markup or code) due to their internal implementation. In such cases, setting a XAML attribute value with **{x:Null}** can result in a parser exception.
 

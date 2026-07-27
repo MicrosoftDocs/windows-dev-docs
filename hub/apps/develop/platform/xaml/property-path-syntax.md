@@ -2,9 +2,9 @@
 description: You can use the PropertyPath class and the string syntax to instantiate a PropertyPath value either in XAML or in code.
 title: Property-path syntax
 ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
-ms.date: 02/08/2017
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # Property-path syntax

@@ -2,9 +2,9 @@
 title: xPhase attribute
 description: Use xPhase with the xBind markup extension to render ListView and GridView items incrementally and improve the panning experience.
 ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
-ms.date: 02/08/2017
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # x:Phase attribute

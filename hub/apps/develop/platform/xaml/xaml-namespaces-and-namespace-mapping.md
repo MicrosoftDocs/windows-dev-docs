@@ -2,9 +2,9 @@
 description: This topic explains the XML/XAML namespace (xmlns) mappings as found in the root element of most XAML files. It also describes how to produce similar mappings for custom types and assemblies.
 title: XAML namespaces and namespace mapping
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
-ms.date: 02/08/2017
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # XAML namespaces and namespace mapping
@@ -32,7 +32,7 @@ A XAML file almost always declares a default XAML namespace in its root element.
 
 Within the root element of most XAML files, there are two **xmlns** declarations. The first declaration maps a XAML namespace as the default: `xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"`
 
-This is the same XAML namespace identifier used in several predecessor Microsoft technologies that also use XAML as a UI definition markup format. The use of the same identifier is deliberate, and is helpful when you migrate previously defined UI to a Windows Runtime app using C++, C#, or Visual Basic.
+This is the same XAML namespace identifier used in several predecessor Microsoft technologies that also use XAML as a UI definition markup format. The use of the same identifier is deliberate, and is helpful when you migrate previously defined UI to a Windows Runtime app using C++ or C#.
 
 The second declaration maps a separate XAML namespace for the XAML-defined language elements, mapping it (typically) to the "x:" prefix: `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`
 
@@ -45,6 +45,9 @@ The XAML language specifies certain language elements, and each of these should 
 ## Code namespaces that map to the default XAML namespace
 
 The following is a list of code namespaces that are currently mapped to the default XAML namespace.
+
+> [!NOTE]
+> This list of code namespaces reflects UWP apps, which use the `Windows.UI.*` and `Windows.UI.Xaml.*` namespaces. WinUI 3 / Windows App SDK apps use the corresponding `Microsoft.UI.*` and `Microsoft.UI.Xaml.*` namespaces, which map to the default XAML namespace in those apps.
 
 * Windows.UI
 * Windows.UI.Xaml
@@ -101,7 +104,7 @@ Do not use. "vsm:" is a prefix that is sometimes seen in older XAML templates im
 
 ## Mapping custom types to XAML namespaces and prefixes
 
-You can map a XAML namespace so that you can use XAML to access your own custom types. In other words, you are mapping a code namespace as it exists in a code representation that defines the custom type, and assigning it a XAML namespace along with a prefix for usage. Custom types for XAML can be defined either in a Microsoft .NET language (C# or Microsoft Visual Basic) or in C++. The mapping is made by defining an **xmlns** prefix. For example, `xmlns:myTypes` defines a new XAML namespace that is accessed by prefixing all usages with the token `myTypes:`.
+You can map a XAML namespace so that you can use XAML to access your own custom types. In other words, you are mapping a code namespace as it exists in a code representation that defines the custom type, and assigning it a XAML namespace along with a prefix for usage. Custom types for XAML can be defined either in C# or in C++. The mapping is made by defining an **xmlns** prefix. For example, `xmlns:myTypes` defines a new XAML namespace that is accessed by prefixing all usages with the token `myTypes:`.
 
 An **xmlns** definition includes a value as well as the prefix naming. The value is a string that goes inside quotation marks, following an equal sign. A common XML convention is to associate the XML namespace with a Uniform Resource Identifier (URI), so that there is a convention for uniqueness and identification. You also see this convention for the default XAML namespace and the XAML language XAML namespace, as well as for some lesser-used XAML namespaces that are used by Windows Runtime XAML. But for a XAML namespace that maps custom types, instead of specifying a URI, you begin the prefix definition with the token "using:". Following the "using:" token, you then name the code namespace.
 
@@ -111,7 +114,7 @@ Partial classes of the same page scope do not need to be mapped. For example, yo
 
 ### CLR language rules
 
-If you are writing your backing code in a .NET language (C# or Microsoft Visual Basic), you might be using conventions that use a dot (".") as part of namespace names to create a conceptual hierarchy of code namespaces. If your namespace definition contains a dot, the dot should be part of the value you specify after the "using:" token.
+If you are writing your backing code in C#, you might be using conventions that use a dot (".") as part of namespace names to create a conceptual hierarchy of code namespaces. If your namespace definition contains a dot, the dot should be part of the value you specify after the "using:" token.
 
 If your code-behind file or code definition file is a C++ file, there are certain conventions that still follow the common language runtime (CLR) language form, so that there is no difference in the XAML syntax. If you declare nested namespaces in C++, the separator between the successive nested namespace strings should be "." rather than "::" when you specify the value that follows the "using:" token.
 
@@ -119,7 +122,7 @@ Don't use nested types (such as nesting an enumeration within a class) when you 
 
 ## Custom types and assemblies
 
-The name of the assembly that defines the backing types for a XAML namespace is not specified in the mapping. The logic for which assemblies are available is controlled at the app-definition level and is part of basic app deployment and security principles. Declare any assembly that you want included as a code-definition source for XAML as a dependent assembly in project settings. For more info, see [Creating Windows Runtime components in C# and Visual Basic](/previous-versions/windows/apps/hh441572(v=vs.140)).
+The name of the assembly that defines the backing types for a XAML namespace is not specified in the mapping. The logic for which assemblies are available is controlled at the app-definition level and is part of basic app deployment and security principles. Declare any assembly that you want included as a code-definition source for XAML as a dependent assembly in project settings. For more info, see [Creating Windows Runtime components in C#](/previous-versions/windows/apps/hh441572(v=vs.140)).
 
 If you are referencing custom types from the primary app's application definition or page definitions, those types are available without further dependent assembly configuration, but you still must map the code namespace that contains those types. A common convention is to map the prefix "local" for the default code namespace of any given XAML page. This convention is often included in starting project templates for XAML projects.
 
@@ -131,6 +134,6 @@ If you are referencing attached properties, the owner-type portion of the attach
 
 * [XAML overview](xaml-overview.md)
 * [XAML syntax guide](xaml-syntax-guide.md)
-* [Creating Windows Runtime components in C# and Visual Basic](/previous-versions/windows/apps/hh441572(v=vs.140))
+* [Creating Windows Runtime components in C#](/previous-versions/windows/apps/hh441572(v=vs.140))
 * [C#, VB, and C++ project templates for Windows Runtime apps](/previous-versions/windows/apps/hh768232(v=win.10))
 * [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](/previous-versions/windows/apps/br229571(v=win.10))

@@ -2,9 +2,9 @@
 description: Learn about the move and draw commands (a mini-language) that you can use to specify path geometries as a XAML attribute value.
 title: Move and draw commands syntax
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
-ms.date: 02/08/2017
+ms.date: 07/27/2026
 ms.topic: how-to
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # Move and draw commands syntax

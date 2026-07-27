@@ -2,9 +2,9 @@
 description: Provides a unique identifier for markup elements. For WinUI XAML, this unique identifier is used by XAML localization processes and tools, such as using resources from a .resw resource file.
 title: xUid directive
 ms.assetid: 9FD6B62E-D345-44C6-B739-17ED1A187D69
-ms.date: 09/09/2025
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, winui
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # x:Uid directive

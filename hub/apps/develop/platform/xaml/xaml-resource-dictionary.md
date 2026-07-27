@@ -7,9 +7,9 @@ title: ResourceDictionary and XAML resource references
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
-ms.date: 07/08/2026
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 dev_langs:
   - csharp
@@ -21,6 +21,9 @@ dev_langs:
 You can define the UI or resources for your app using XAML. Resources are typically definitions of some object that you expect to use more than once. To refer to a XAML resource later, you specify a key for a resource that acts like its name. You can reference a resource throughout an app or from any XAML page within it. You can define your resources using a [ResourceDictionary](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary) element from the Windows Runtime XAML. Then, you can reference your resources by using a [StaticResource markup extension](staticresource-markup-extension.md) or [ThemeResource markup extension](themeresource-markup-extension.md).
 
 The XAML elements you might want to declare most often as XAML resources include [Style](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Style), [ControlTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ControlTemplate), animation components, and [Brush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Brush) subclasses. Here, we explain how to define a [ResourceDictionary](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ResourceDictionary) and keyed resources, and how XAML resources relate to other resources that you define as part of your app or app package. We also explain resource dictionary advanced features such as [MergedDictionaries](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary.mergeddictionaries) and [ThemeDictionaries](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary.themedictionaries).
+
+> [!NOTE]
+> C# and C++/WinRT are supported for both WinUI 3 / Windows App SDK and UWP apps. C++/CX applies to UWP only, and isn't supported for WinUI 3.
 
 ## Prerequisites
 
@@ -501,7 +504,7 @@ Merged resource dictionaries are included into the index scope of the primary re
 
 You are permitted to add items to an existing [ResourceDictionary](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ResourceDictionary) by calling **Add** or [Insert](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary.insert) (C++/CX). You could add the items to either immediate resources or app resources. Either of these API calls requires a key, which satisfies the requirement that each item in a **ResourceDictionary** must have a key. However, items that you add to a **ResourceDictionary** at run time are not relevant to XAML resource references. The necessary lookup for XAML resource references happens when that XAML is first parsed as the app is loaded (or a theme change is detected). Resources added to collections at run time weren't available then, and altering the **ResourceDictionary** doesn't invalidate an already retrieved resource from it even if you change the value of that resource.
 
-You also can remove items from a [ResourceDictionary](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ResourceDictionary) at run time, make copies of some or all items, or other operations. The members listing for **ResourceDictionary** indicates which APIs are available. Note that because **ResourceDictionary** has a projected API to support its underlying collection interfaces, your API options differ depending on whether you are using C\# or Visual Basic versus C++/CX.
+You also can remove items from a [ResourceDictionary](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ResourceDictionary) at run time, make copies of some or all items, or other operations. The members listing for **ResourceDictionary** indicates which APIs are available. Note that because **ResourceDictionary** has a projected API to support its underlying collection interfaces, your API options differ depending on whether you are using C\# versus C++/CX.
 
 ## ResourceDictionary and localization
 

@@ -2,14 +2,13 @@
 description: Explains how to implement a XAML attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.
 title: Custom attached properties
 ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
-ms.date: 07/18/2017
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 no-loc: [Property]
 dev_langs:
   - csharp
-  - vb
   - cppwinrt
   - cpp
 ---
@@ -17,6 +16,9 @@ dev_langs:
 # Custom attached properties
 
 An _attached property_ is a XAML concept. Attached properties are typically defined as a specialized form of dependency property. This topic explains how to implement an attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.
+
+> [!NOTE]
+> C# and C++/WinRT are supported for both WinUI 3 / Windows App SDK and UWP apps. C++/CX applies to UWP only, and isn't supported for WinUI 3.
 
 ## Prerequisites
 
@@ -46,19 +48,11 @@ The signature for the **Get**_PropertyName_ accessor must be this.
 
 `public static` _valueType_ **Get**_PropertyName_ `(DependencyObject target)`
 
-For Microsoft Visual Basic, it is this.
-
-`Public Shared Function Get`_PropertyName_`(ByVal target As DependencyObject) As `_valueType_`)`
-
 The _target_ object can be of a more specific type in your implementation, but must derive from [**DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.DependencyObject). The _ValueType_ return value can also be of a more specific type in your implementation. The basic **Object** type is acceptable, but often you'll want your attached property to enforce type safety. The use of typing in the getter and setter signatures is a recommended type-safety technique.
 
 The signature for the **Set**_PropertyName_ accessor must be this.
 
 `public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
-
-For Visual Basic, it is this.
-
-`Public Shared Sub Set`_PropertyName_` (ByVal target As DependencyObject, ByVal value As `_valueType_`)`
 
 The _target_ object can be of a more specific type in your implementation, but must derive from [**DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.DependencyObject). The _value_ object and its _valueType_ can be of a more specific type in your implementation. Remember that the value for this method is the input that comes from the XAML processor when it encounters your attached property in markup. There must be type conversion or existing markup extension support for the type you use, so that the appropriate type can be created from an attribute value (which is ultimately just a string). The basic **Object** type is acceptable, but often you'll want further type safety. To accomplish that, put type enforcement in the accessors.
 
@@ -90,26 +84,6 @@ public class GameService : DependencyObject
         return (Boolean)element.GetValue(IsMovableProperty);
     }
 }
-```
-
-```vb
-Public Class GameService
-    Inherits DependencyObject
-
-    Public Shared ReadOnly IsMovableProperty As DependencyProperty = 
-        DependencyProperty.RegisterAttached("IsMovable",  
-        GetType(Boolean), 
-        GetType(GameService), 
-        New PropertyMetadata(False))
-
-    Public Shared Sub SetIsMovable(ByRef element As UIElement, value As Boolean)
-        element.SetValue(IsMovableProperty, value)
-    End Sub
-
-    Public Shared Function GetIsMovable(ByRef element As UIElement) As Boolean
-        GetIsMovable = CBool(element.GetValue(IsMovableProperty))
-    End Function
-End Class
 ```
 
 ```cppwinrt

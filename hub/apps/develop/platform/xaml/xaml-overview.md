@@ -1,10 +1,10 @@
 ---
-description: Learn what XAML is and how to use it to build WinUI app UIs — namespaces, markup extensions, events, resources, and more.
+description: Learn what XAML is and how to use it to build WinUI 3 and UWP app UIs, covering namespaces, markup extensions, events, and resources.
 title: XAML overview
 ms.assetid: 48041B37-F1A8-44A4-BB8E-1D4DE30E7823
-ms.date: 07/03/2026
+ms.date: 07/27/2026
 ms.topic: concept-article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 dev_langs:
   - csharp
@@ -13,6 +13,9 @@ dev_langs:
 # XAML overview
 
 XAML (Extensible Application Markup Language) is the declarative markup language used to define UI in WinUI apps. You describe your UI structure and properties in `.xaml` files, and handle logic and events in a paired code-behind file.
+
+> [!NOTE]
+> C# and C++/WinRT are supported for both WinUI 3 / Windows App SDK and UWP apps. C++/CX applies to UWP only, and isn't supported for WinUI 3.
 
 ## What is XAML?
 
@@ -160,4 +163,4 @@ You can't set breakpoints in `.xaml` files, but Visual Studio provides other hel
 - **Design time**: Squiggles and error markers appear inline as you type.
 - **Runtime**: Parse failures throw a `XamlParseException` (or a similar structured exception in C++/CX) with XAML file line-number context.
 
-For runtime error handling, see [Exception handling for WinUI apps in C# or Visual Basic](/previous-versions/windows/apps/dn532194(v=win.10)). To start a debugging session, see [Start a debug session](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml).
+For runtime error handling, see [Exception handling for WinUI apps in C#](/previous-versions/windows/apps/dn532194(v=win.10)). To start a debugging session, see [Start a debug session](/visualstudio/debugger/start-a-debugging-session-for-a-store-app-in-visual-studio-vb-csharp-cpp-and-xaml).

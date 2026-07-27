@@ -2,9 +2,9 @@
 description: Provides a value for any XAML attribute by evaluating a reference to a resource that comes from a custom resource-lookup implementation. Resource lookup is performed by a CustomXamlResourceLoader class implementation.
 title: CustomResource markup extension
 ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
-ms.date: 09/08/2025
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # {CustomResource} markup extension

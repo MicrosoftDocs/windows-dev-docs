@@ -1,9 +1,9 @@
 ---
 description: Learn to use the x:DefaultBindMode attribute in XAML markup to specify a default mode for x:Bind other than OneTime.
 title: xDefaultBindMode attribute
-ms.date: 02/08/2018
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # x:DefaultBindMode attribute
