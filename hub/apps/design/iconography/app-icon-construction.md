@@ -2,7 +2,7 @@
 title: Construct your Windows app's icon
 description: How to turn your Windows app's app icon design into image files for your app. 
 design-contact: judysa
-ms.date: 6/2/2022
+ms.date: 07/21/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -33,6 +33,28 @@ When Windows displays your app's icon, it will look for an exact size match firs
 
 > [!NOTE]
 > Apps should have, at the bare minimum: 16x16, 24x24, 32x32, 48x48, and 256x256. This covers the most common icon sizes, and by providing a 256px icon, ensures Windows should only ever scale your icon down, never up.
+
+## How icon sizes relate to the MSIX manifest
+
+If you've looked at your app's MSIX (or AppX) manifest, you may have noticed entries such as **Square44x44Logo** and **Square150x150Logo**. These are *base sizes*, not the only sizes your app needs. Windows uses display scale factors to determine the actual pixel dimensions it requests at runtime. The manifest points to a base image filename (for example, `Square44x44Logo.png`), and you provide pre-scaled variants using qualifiers (for example, `Square44x44Logo.scale-200.png`). Windows then picks the best match for the user's display settings.
+
+The following table shows how each manifest entry maps to actual pixel sizes at each scale factor:
+
+| Manifest entry | Base size | 100% | 125% | 150% | 200% | 250% | 300% | 400% |
+|---|---|---|---|---|---|---|---|---|
+| Square44x44Logo | 44 px | 44 px | 55 px | 66 px | 88 px | 110 px | 132 px | 176 px |
+| Square150x150Logo | 150 px | 150 px | 188 px | 225 px | 300 px | 375 px | 450 px | 600 px |
+| Wide310x150Logo | 310×150 px | 310×150 px | 388×188 px | 465×225 px | 620×300 px | 775×375 px | 930×450 px | 1240×600 px |
+| Square310x310Logo | 310 px | 310 px | 388 px | 465 px | 620 px | 775 px | 930 px | 1240 px |
+| Square71x71Logo | 71 px | 71 px | 89 px | 107 px | 142 px | 178 px | 213 px | 284 px |
+| StoreLogo | 50 px | 50 px | 63 px | 75 px | 100 px | 125 px | 150 px | 200 px |
+
+The app-list icon also supports **target-size** variants (listed in the [App icon](#app-icon) section below), which Windows uses for taskbar icons, context menus, and other UI elements where the icon is displayed without tile padding. Target-size assets are specified in exact pixel dimensions (16, 24, 32, 48, 256, and others) rather than scale factors.
+
+> [!TIP]
+> You don't need to create every possible size. At minimum, provide assets at 100%, 200%, and 400% scale for the `Square44x44Logo` and `Square150x150Logo` entries, plus the target-size variants listed in the [App icon](#app-icon) section. Windows chooses the closest available asset for intermediate scale factors (125%, 150%, 250%, and 300%).
+
+For the full manifest schema, see [VisualElements](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-visualelements).
 
 ## Transparent backgrounds
 
