@@ -1,10 +1,10 @@
 ---
-description: This topic explains the dependency property system that is available when you write a WinUI app using C++, C#, or Visual Basic along with XAML definitions for UI.
+description: This topic explains the dependency property system available when you write a WinUI app using C++ or C# with XAML definitions for UI.
 title: Dependency properties overview
 ms.assetid: AD649E66-F71C-4DAA-9994-617C886FDA7E
-ms.date: 02/08/2017
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # Dependency properties overview

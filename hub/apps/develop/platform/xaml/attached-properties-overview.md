@@ -2,13 +2,12 @@
 description: Explains the concept of an attached property in XAML, and provides some examples.
 title: Attached properties overview
 ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
-ms.date: 09/08/2025
+ms.date: 07/27/2026
 ms.topic: concept-article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 dev_langs:
   - csharp
-  - vb
   - cpp
 ---
 # Attached properties overview
@@ -77,15 +76,6 @@ The next example shows how you can set an attached property in code via the XAML
     myC.Children.Add(myCheckBox);
     myCheckBox.SetValue(Canvas.TopProperty,75);
     //Canvas.SetTop(myCheckBox, 75);
-```
-
-```vb
-    Dim myC As Canvas = New Canvas()
-    Dim myCheckBox As CheckBox= New CheckBox()
-    myCheckBox.Content = "Hello"
-    myC.Children.Add(myCheckBox)
-    myCheckBox.SetValue(Canvas.TopProperty,75)
-    ' Canvas.SetTop(myCheckBox, 75)
 ```
 
 ```cppwinrt

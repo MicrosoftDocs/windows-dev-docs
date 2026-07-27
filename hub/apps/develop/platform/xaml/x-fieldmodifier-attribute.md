@@ -2,14 +2,17 @@
 description: Modifies XAML compilation behavior, such that fields for named object references are defined with public access rather than the private default behavior.
 title: xFieldModifier attribute
 ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
-ms.date: 02/08/2017
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # x:FieldModifier attribute
 
 Modifies XAML compilation behavior, such that fields for named object references are defined with **public** access rather than the **private** default behavior.
+
+> [!NOTE]
+> C# and C++/WinRT are supported for both WinUI 3 / Windows App SDK and UWP apps. C++/CX applies to UWP only, and isn't supported for WinUI 3.
 
 ## XAML attribute usage
 
@@ -23,7 +26,7 @@ Modifies XAML compilation behavior, such that fields for named object references
 
 ## Remarks
 
-The value for the **x:FieldModifier** attribute will vary by programming language. Valid values are **private**, **public**, **protected**, **internal** or **friend**. For C#, Microsoft Visual Basic or Visual C++ component extensions (C++/CX), you can give the string value "public" or "Public"; the parser doesn't enforce case on this attribute value.
+The value for the **x:FieldModifier** attribute will vary by programming language. Valid values are **private**, **public**, **protected**, **internal** or **friend**. For C# or Visual C++ component extensions (C++/CX), you can give the string value "public" or "Public"; the parser doesn't enforce case on this attribute value.
 
 **Private** access is the default.
 

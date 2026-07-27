@@ -2,14 +2,17 @@
 description: A XAML namescope stores relationships between the XAML-defined names of objects and their instance equivalents. This concept is similar to the wider meaning of the term namescope in other programming languages and technologies.
 title: XAML namescopes
 ms.assetid: EB060CBD-A589-475E-B83D-B24068B54C21
-ms.date: 02/08/2017
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # XAML namescopes
 
 A *XAML namescope* stores relationships between the XAML-defined names of objects and their instance equivalents. This concept is similar to the wider meaning of the term *namescope* in other programming languages and technologies.
+
+> [!NOTE]
+> C# and C++/WinRT are supported for both WinUI 3 / Windows App SDK and UWP apps. C++/CX applies to UWP only, and isn't supported for WinUI 3.
 
 ## How XAML namescopes are defined
 

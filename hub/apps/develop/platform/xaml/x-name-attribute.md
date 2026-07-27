@@ -2,14 +2,17 @@
 description: Uniquely identifies object elements for access to the instantiated object from code-behind or general code.
 title: xName attribute
 ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
-ms.date: 02/08/2017
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # x:Name attribute
 
 Uniquely identifies object elements for access to the instantiated object from code-behind or general code. Once applied to a backing programming model, **x:Name** can be considered equivalent to the variable holding an object reference, as returned by a constructor.
+
+> [!NOTE]
+> C# and C++/WinRT are supported for both WinUI 3 / Windows App SDK and UWP apps. C++/CX applies to UWP only, and isn't supported for WinUI 3.
 
 ## XAML attribute usage
 

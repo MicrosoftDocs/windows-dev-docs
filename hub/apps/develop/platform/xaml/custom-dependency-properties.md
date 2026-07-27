@@ -1,20 +1,22 @@
 ---
-description: Explains how to define and implement custom dependency properties for a WinUI app using C++, C#, or Visual Basic.
+description: Explains how to define and implement custom dependency properties for a WinUI 3 or UWP app using C++ or C# with XAML definitions for UI.
 title: Custom dependency properties
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
-ms.date: 09/08/2025
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, winui
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 dev_langs:
   - csharp
-  - vb
   - cppwinrt
   - cppcx
 ---
 # Custom dependency properties
 
-Here we explain how to define and implement your own dependency properties for a WinUI app using C++, C#, or Visual Basic. We list reasons why app developers and component authors might want to create custom dependency properties. We describe the implementation steps for a custom dependency property, as well as some best practices that can improve performance, usability, or versatility of the dependency property.
+Here we explain how to define and implement your own dependency properties for a WinUI app using C++ or C#. We list reasons why app developers and component authors might want to create custom dependency properties. We describe the implementation steps for a custom dependency property, as well as some best practices that can improve performance, usability, or versatility of the dependency property.
+
+> [!NOTE]
+> C# and C++/WinRT are supported for both WinUI 3 / Windows App SDK and UWP apps. C++/CX applies to UWP only, and isn't supported for WinUI 3.
 
 ## Prerequisites
 
@@ -66,7 +68,7 @@ Defining a dependency property can be thought of as a set of concepts. These con
 
 For your property to be a dependency property, you must register the property into a property store maintained by the Windows Runtime property system.  To register the property, you call the [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register) method.
 
-For Microsoft .NET languages (C# and Microsoft Visual Basic) you call [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register) within the body of your class (inside the class, but outside any member definitions). The identifier is provided by the [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register) method call, as the return value. The [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register) call is typically made as a static constructor or as part of the initialization of a **public static readonly** property of type [**DependencyProperty**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.DependencyProperty) as part of your class. This property exposes the identifier for your dependency property. Here are examples of the [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register) call.
+For C#, you call [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register) within the body of your class (inside the class, but outside any member definitions). The identifier is provided by the [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register) method call, as the return value. The [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register) call is typically made as a static constructor or as part of the initialization of a **public static readonly** property of type [**DependencyProperty**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.DependencyProperty) as part of your class. This property exposes the identifier for your dependency property. Here are examples of the [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register) call.
 
 > [!NOTE]
 > Registering the dependency property as part of the identifier property definition is the typical implementation, but you can also register a dependency property in the class static constructor. This approach may make sense if you need more than one line of code to initialize the dependency property.
@@ -80,14 +82,6 @@ public static readonly DependencyProperty LabelProperty = DependencyProperty.Reg
   typeof(ImageWithLabelControl),
   new PropertyMetadata(null)
 );
-```
-
-```vb
-Public Shared ReadOnly LabelProperty As DependencyProperty =
-    DependencyProperty.Register("Label",
-      GetType(String),
-      GetType(ImageWithLabelControl),
-      New PropertyMetadata(Nothing))
 ```
 
 ```cppwinrt
@@ -196,17 +190,6 @@ public String Label
 }
 ```
 
-```vb
-Public Property Label() As String
-    Get
-        Return DirectCast(GetValue(LabelProperty), String)
-    End Get
-    Set(ByVal value As String)
-        SetValue(LabelProperty, value)
-    End Set
-End Property
-```
-
 ```cppwinrt
 // ImageWithLabelControl.h
 ...
@@ -262,15 +245,6 @@ public static readonly DependencyProperty LabelProperty = DependencyProperty.Reg
   typeof(ImageWithLabelControl),
   new PropertyMetadata(null,new PropertyChangedCallback(OnLabelChanged))
 );
-```
-
-```vb
-Public Shared ReadOnly LabelProperty As DependencyProperty =
-    DependencyProperty.Register("Label",
-      GetType(String),
-      GetType(ImageWithLabelControl),
-      New PropertyMetadata(
-        Nothing, new PropertyChangedCallback(AddressOf OnLabelChanged)))
 ```
 
 ```cppwinrt
@@ -345,18 +319,6 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
 }
 ```
 
-```vb
-    Private Shared Sub OnLabelChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
-        Dim iwlc As ImageWithLabelControl = CType(d, ImageWithLabelControl) ' null checks omitted
-        Dim s As String = CType(e.NewValue,String) ' null checks omitted
-        If s Is String.Empty Then
-            iwlc.HasLabelValue = False
-        Else
-            iwlc.HasLabelValue = True
-        End If
-    End Sub
-```
-
 ```cppwinrt
 void ImageWithLabelControl::OnLabelChanged(Microsoft::UI::Xaml::DependencyObject const& d, Microsoft::UI::Xaml::DependencyPropertyChangedEventArgs const& e)
 {
@@ -388,15 +350,6 @@ private static void OnVisibilityValueChanged(DependencyObject d, DependencyPrope
         //value really changed, invoke your changed logic here
     } // else this was invoked because of boxing, do nothing
 }
-```
-
-```vb
-Private Shared Sub OnVisibilityValueChanged(d As DependencyObject, e As DependencyPropertyChangedEventArgs)
-    If CType(e.NewValue,Visibility) != CType(e.OldValue,Visibility) Then
-        '  value really changed, invoke your changed logic here
-    End If
-    '  else this was invoked because of boxing, do nothing
-End Sub
 ```
 
 ```cppwinrt

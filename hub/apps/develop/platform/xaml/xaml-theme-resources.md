@@ -7,9 +7,9 @@ title: XAML theme resources
 ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
 label: XAML theme resources
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # XAML theme resources

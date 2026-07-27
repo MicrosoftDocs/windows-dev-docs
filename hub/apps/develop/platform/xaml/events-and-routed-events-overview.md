@@ -1,10 +1,10 @@
 ---
-description: We describe the programming concept of events in a WinUI app, when using XAML for your UI definition.
+description: We describe the programming concept of events and routed events in WinUI 3 and UWP apps, when using XAML for your UI definition.
 title: Events and routed events overview
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
-ms.date: 07/12/2018
+ms.date: 07/27/2026
 ms.topic: concept-article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # Events and routed events overview
@@ -14,6 +14,9 @@ ms.localizationpriority: medium
 - [**RoutedEventArgs**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.RoutedEventArgs)
 
 We describe the programming concept of events in a WinUI app, when using XAML for your UI definition. You can assign handlers for events as part of the declarations for UI elements in XAML, or you can add the handlers in code. Windows Runtime supports *routed events*: certain input events and data events can be handled by objects beyond the object that fired the event. Routed events are useful when you define control templates, or use pages or layout containers.
+
+> [!NOTE]
+> C# and C++/WinRT are supported for both WinUI 3 / Windows App SDK and UWP apps. C++/CX applies to UWP only, and isn't supported for WinUI 3.
 
 ## Events as a programming concept
 
@@ -49,13 +52,6 @@ private void ShowUpdatesButton_Click (object sender, RoutedEventArgs e)
     Button b = sender as Button;
     //more logic to do here...
 }
-```
-
-```vb
-Private Sub ShowUpdatesButton_Click(ByVal sender As Object, ByVal e As RoutedEventArgs)
-    Dim b As Button = CType(sender, Button)
-    '  more logic to do here...
-End Sub
 ```
 
 ```cppwinrt
@@ -134,19 +130,6 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-There are two possibilities for Visual Basic syntax. One is to parallel the C# syntax and attach handlers directly to instances. This requires the **AddHandler** keyword and also the **AddressOf** operator that dereferences the handler method name.
-
-The other option for Visual Basic syntax is to use the **Handles** keyword on event handlers. This technique is appropriate for cases where handlers are expected to exist on objects at load time and persist throughout the object lifetime. Using **Handles** on an object that is defined in XAML requires that you provide a **Name** / **x:Name**. This name becomes the instance qualifier that is needed for the *Instance.Event* part of the **Handles** syntax. In this case you don't need an object lifetime-based event handler to initiate attaching the other event handlers; the **Handles** connections are created when you compile your XAML page.
-
-```vb
-Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As PointerRoutedEventArgs) Handles textBlock1.PointerEntered
-' ...
-End Sub
-```
-
-> [!NOTE]
-> Visual Studio and its XAML design surface generally promote the instance-handling technique instead of the **Handles** keyword. This is because establishing the event handler wiring in XAML is part of typical designer-developer workflow, and the **Handles** keyword technique is incompatible with wiring the event handlers in XAML.
-
 In C++/CX, you also use the **+=** syntax, but there are differences from the basic C# form:
 
 - No delegate inference exists, so you must use **ref new** for the delegate instance.
@@ -180,10 +163,6 @@ For example, you can remove an event handler named **textBlock1\_PointerEntered*
 
 ```csharp
 textBlock1.PointerEntered -= textBlock1_PointerEntered;
-```
-
-```vb
-RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 ```
 
 You can also remove handlers for cases where the event was added through a XAML attribute, which means that the handler was added in generated code. This is easier to do if you provided a **Name** value for the element where the handler was attached, because that provides an object reference for code later; however, you could also walk the object tree in order to find the necessary object reference in cases where the object has no **Name**.
@@ -294,7 +273,7 @@ A small number of UI elements support *commanding*. Commanding uses input-relate
 
 For purposes of defining custom events, how you add the event and what that means for your class design is highly dependent on which programming language you are using.
 
-- For C# and Visual Basic, you are defining a CLR event. You can use the standard .NET event pattern, so long as you aren't using custom accessors (**add**/**remove**). Additional tips:
+- For C#, you are defining a CLR event. You can use the standard .NET event pattern, so long as you aren't using custom accessors (**add**/**remove**). Additional tips:
     - For the event handler it's a good idea to use [**System.EventHandler\<TEventArgs>**](/dotnet/api/system.eventhandler-1) because it has built-in translation to the Windows Runtime generic event delegate [**EventHandler\<T>**](/uwp/api/windows.foundation.eventhandler-1).
     - Don't base your event data class on [**System.EventArgs**](/dotnet/api/system.eventargs) because it doesn't translate to the Windows Runtime. Use an existing event data class or no base class at all.
     - If you are using custom accessors, see [Custom events and event accessors in Windows Runtime components](/previous-versions/windows/apps/hh972883(v=vs.140)).

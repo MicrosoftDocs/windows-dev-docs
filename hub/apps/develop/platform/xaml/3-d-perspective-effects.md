@@ -2,9 +2,9 @@
 ms.assetid: 90F07341-01F4-4205-8161-92DD2EB49860
 title: 3-D perspective effects for XAML UI
 description: You can apply 3-D effects to content in your Windows Runtime apps using perspective transforms. For example, you can create the illusion that an object is rotated toward or away from you, as shown here.
-ms.date: 02/08/2017
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # 3-D perspective effects for XAML UI

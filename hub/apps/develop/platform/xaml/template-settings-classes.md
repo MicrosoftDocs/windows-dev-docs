@@ -2,9 +2,9 @@
 description: Learn how to use the TemplateSettings classes to provide a set of properties that define a new control template.
 title: Template settings classes
 ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
-ms.date: 02/08/2017
+ms.date: 07/27/2026
 ms.topic: article
-keywords: windows 10, uwp
+keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
 ---
 # Template settings classes
