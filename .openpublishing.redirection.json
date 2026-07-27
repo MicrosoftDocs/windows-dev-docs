@@ -1,6 +1,11 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/publish/store-policies-and-code-of-conduct.md",
+      "redirect_url": "/windows/apps/publish/store-policies",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/publish/create-customer-segments.md",
       "redirect_url": "/windows/apps/publish/create-customer-groups",
       "redirect_document_id": false
