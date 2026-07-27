@@ -84,7 +84,7 @@ void OnNavigationFailed(IInspectable const&, Microsoft::UI::Xaml::Navigation::Na
 void App::OnLaunched(LaunchActivatedEventArgs const& e)
 {
     window = make<MainWindow>();
-    Frame rootFrame = Frame();
+    Frame rootFrame{};
     rootFrame.NavigationFailed({ this, &App::OnNavigationFailed });
     rootFrame.Navigate(xaml_typename<BasicNavigation::MainPage>(), box_value(e.Arguments()));
     window.Content(rootFrame);
