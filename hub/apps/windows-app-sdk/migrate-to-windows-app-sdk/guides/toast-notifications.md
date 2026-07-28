@@ -457,7 +457,7 @@ For details and cancellation examples, see [Schedule an app notification](/windo
 
 #### [Windows Community Toolkit](#tab/toolkit) 
 
-You can continue to use the **ToastContentBuilder** class provided by the Windows Community Toolkit to schedule app notifications in a WinUI app using the `.Schedule()` method, which is the equivalent of the UWP `.Schedule()` method.
+You can continue to use the **ToastContentBuilder** class provided by the Windows Community Toolkit to schedule app notifications in a WinUI 3 app using the `.Schedule()` method, which is the equivalent of the UWP `.Schedule()` method.
 
 ```csharp
 using Microsoft.Toolkit.Uwp.Notifications;
