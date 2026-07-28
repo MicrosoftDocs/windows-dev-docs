@@ -424,7 +424,7 @@ new ToastContentBuilder()
 
 #### [Windows App SDK](#tab/appsdk) 
 
-To schedule a notification for a future time, use [**AppNotificationBuilder**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder) to define the notification content, extract the XML payload, then call [**AddToSchedule**](/uwp/api/windows.ui.notifications.toastnotifier.addtoschedule) with a [**ScheduledToastNotification**](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification). The `Microsoft.Windows.AppNotifications.Builder` and `Windows.UI.Notifications` namespaces can be used together in the same app.
+To schedule a notification for a future time, use [**AppNotificationBuilder**](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.builder.appnotificationbuilder) to define the notification content and extract its XML payload. Then schedule it using the `Windows.UI.Notifications` APIs by creating a [**ScheduledToastNotification**](/uwp/api/Windows.UI.Notifications.ScheduledToastNotification) and calling [**AddToSchedule**](/uwp/api/windows.ui.notifications.toastnotifier.addtoschedule) on a toast notifier. The `Microsoft.Windows.AppNotifications.Builder` and `Windows.UI.Notifications` namespaces can be used together in the same app.
 
 ```csharp
 using Microsoft.Windows.AppNotifications;
