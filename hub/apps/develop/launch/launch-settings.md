@@ -306,7 +306,7 @@ The following sections describe different categories of ms-settings URIs used to
 |Settings page| URI |
 |-------------|-----|
 | About | ms-settings:about |
-| Advanced display settings | ms-settings:display-advanced (only available on devices that support advanced display options) |
+| Advanced display settings | ms-settings:display-advanced<br/><br/>**Note:** On Windows 11, this URI opens the **System > Display** settings page; the Advanced display view is a sub-section of Display and doesn't have a dedicated URI. |
 | Battery Saver | ms-settings:batterysaver (only available on devices that have a battery, such as a tablet) |
 | Battery Saver settings | ms-settings:batterysaver-settings (only available on devices that have a battery, such as a tablet) |
 | Battery use | ms-settings:batterysaver-usagedetails (only available on devices that have a battery, such as a tablet) |
