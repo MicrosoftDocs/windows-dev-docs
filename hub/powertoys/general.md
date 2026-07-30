@@ -92,4 +92,14 @@ Will activate experimentation with new features on Windows Insider builds, if av
 
 Here you can enable or disable the collection of diagnostic data, which helps the PowerToys team to improve the app. You can also generate a bug report package to send to the PowerToys team and view your diagnostic data.
 
+## Application compatibility
+
+Some applications may cause issues with PowerToys. In some cases, we can't work around these incompatibilities.
+
+### Applications that impact PowerToys on system startup/restart
+
+| Application | Issue | Description |
+| :--- | :--- | :--- |
+| TaskbarX | [#9959](https://github.com/microsoft/PowerToys/issues/9959) | Causes PowerToys not to work until manually closed and restarted. Also causes the system tray icon not to appear. |
+
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

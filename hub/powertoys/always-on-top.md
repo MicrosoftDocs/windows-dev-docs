@@ -39,4 +39,14 @@ Always On Top has the following settings:
 | **Play a sound when pinning a window** | When selected, this option plays a sound when you activate or deactivate Always On Top. |
 | **Excluded apps** | Prevents you from pinning an application using Always On Top. Add an application's name to stop it from being pinned. The list will also exclude partial matches. For example, `Notepad` will prevent both Notepad.exe and Notepad++.exe from being pinned. To only prevent a specific application, add `Notepad.exe` to the excluded list. |
 
+## Application compatibility
+
+The topmost window should be placed above all non-topmost windows and should stay above them, even when the window is deactivated. However, Always On Top can't guarantee that the window will be above other topmost windows.
+
+| Application | Issue | Why / Possible workaround |
+| :--- | :--- | :--- |
+| Citrix | [#15680](https://github.com/microsoft/PowerToys/issues/15680) | Citrix windows may be topmost, so a pinned window might appear behind them. |
+| RDP | [#16631](https://github.com/microsoft/PowerToys/issues/16631) | Remote Desktop windows may be topmost, so a pinned window might appear behind them. |
+| VMware | [#18834](https://github.com/microsoft/PowerToys/issues/18834) | VMware windows may be topmost, so a pinned window might appear behind them. |
+
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
