@@ -1,7 +1,7 @@
 ---
 title: Microsoft Store Policies version 7.19
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 09/10/2025
+ms.date: 07/30/2026
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -631,20 +631,20 @@ Products that contain dynamic content created by generative AI models in respons
 
 All products should adhere to the Microsoft Store Policies listed above. If your product failed in the review process, please review the policies to understand the reason for failure. To ask a question about the review or certification status of a product, you can send an email to [reportapp@microsoft.com](mailto:reportapp@microsoft.com).
 
-### Microsoft Store complaint and appeal statistics
+### Microsoft Store complaint and appeal statistics (FY2027)
 
-Numbers reported from 7/1/2024 - 7/1/2025:
+Numbers reported from 7/1/2025 - 6/30/2026:
 
 | Statistic          | Count    |
 |--------------------|----------|
-| App and/or Account Enforcement Action Appeals | 1,326 |
-| Complaints about Technological Issues  | 51 |
+| App and/or Account Enforcement Action Appeals | 1,118 |
+| Complaints about Technological Issues  | 76 |
 | Regulatory Compliance Complaints | 0 |
-| Questions about certification, policy, submission, and technical help | 4,040 |
-| Miscellaneous | 3,670 |
-| Total Issues | 10,126 |
-| Overturned decisions | 702 |
-| Average Processing Time | 2.85 |
+| Questions about certification, policy, submission, and technical help | 4,347 |
+| Miscellaneous | 6,723 |
+| Total Issues | 12,626 |
+| Overturned decisions | 623 |
+| Average Processing Time | 2.37 |
 
 ### See also
 
