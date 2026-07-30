@@ -631,7 +631,7 @@ Products that contain dynamic content created by generative AI models in respons
 
 All products should adhere to the Microsoft Store Policies listed above. If your product failed in the review process, please review the policies to understand the reason for failure. To ask a question about the review or certification status of a product, you can send an email to [reportapp@microsoft.com](mailto:reportapp@microsoft.com).
 
-### Microsoft Store complaint and appeal statistics (FY2027)
+### Microsoft Store complaint and appeal statistics
 
 Numbers reported from 7/1/2025 - 6/30/2026:
 
