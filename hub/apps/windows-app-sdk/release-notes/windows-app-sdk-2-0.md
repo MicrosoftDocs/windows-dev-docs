@@ -1014,6 +1014,125 @@ Released: **February 13, 2026** <br><br>
 
 :::zone pivot="experimental"
 
+## Version 2.3 Experimental A (2.3.2-ExperimentalA)
+
+Released: **July 30, 2026**
+
+This experimental release builds on [Windows App SDK 2.3.1 stable](#version-231); see the [2.3.1 stable notes](#version-231) for the changes in that release. The sections below describe the experimental-only additions.
+<br><br>
+
+<details><summary>Window.Width and Window.Height</summary>
+
+>
+> New experimental **Window.Width** and **Window.Height** properties give apps a DPI-aware way to get and set a window's size in logical (client) pixels directly from code or markup, without reaching through **Window.AppWindow** and performing manual logical-to-physical DPI conversion. Companion **Window.MinWidth**, **Window.MinHeight**, **Window.MaxWidth**, and **Window.MaxHeight** properties constrain the window's size. We welcome your feedback.
+>
+
+</details>
+
+<details><summary>Speech Recognition Updates</summary>
+
+>
+> The experimental **SpeechAudioProvider** (used to push 16 kHz, 16-bit, single-channel PCM audio into speech recognition) now implements **IClosable**, so apps can deterministically release the provider with **Close**/**Dispose** when they finish streaming audio.
+>
+
+</details>
+
+<details><summary>App Content Index Updates</summary>
+
+>
+> The experimental App Content Index APIs add new indexing capabilities and significant reliability and performance improvements in this release:
+>
+> - **Faster batch indexing.** A new **AppContentIndexer.BatchAddOrUpdate** API enables multiple items to be indexed together. The indexing pipeline has also been redesigned to support parallel stage execution and more efficient batch processing.
+> - **Improved multilingual tokenization.** App Content Index now uses an ICU-based word breaker, improving tokenization correctness across languages while removing a dependency on WinRT WordsSegmenter.
+> - **Improved indexing and query performance.** Index updates now avoid unnecessary lexical rewrites, batch cleanup work more efficiently, and cache index capabilities across queries, substantially reducing overhead in common query and indexing paths.
+> - **More stable lexical ranking.** BM25 scoring now maintains document-length statistics independently, preserving consistent ranking as content is incrementally updated or removed.
+> - **Automatic corruption recovery.** App Content Index detects database corruption and incompatible schema changes when opening an index and automatically recovers by initiating a reindex rather than leaving the index unusable. **GetOrCreateIndexStatus.RecoveredFromCorruption** indicates when recovery occurred.
+> - **Static ranking boosts.** New APIs let apps apply ranking boosts to individual content items or regions, allowing results to be biased using application-provided signals. Use static boosts when your app has knowledge about the relative importance of content that is not captured by the content itself, for example, to help surface a document that is especially important or commonly sought by your users.
+> - **Image content indexing.** Apps can now index bitmap or image-stream content directly, with options controlling OCR extraction and semantic indexing of extracted text. Use image indexing when meaningful searchable information is contained in an image rather than already available as text, such as screenshots, scanned documents, or other visual content.
+> - **Semantic indexing control for text.** A new **ContentRegionTextOptions.AllowSemanticIndexing** property lets apps opt individual text regions out of semantic indexing. This is useful for text that should remain searchable lexically but is unlikely to benefit from semantic matching, giving apps more control over which content participates in semantic retrieval.
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the **[2.2 Experimental 9](#version-22-experimental-9-222-experimental9)** release:
+>
+> ```
+> Microsoft.UI.Composition
+>
+>     CompositionEngine
+>     CompositionEngineType
+> ```
+> ```
+> Microsoft.UI.Xaml
+>
+>     Window
+>         Height
+>         MaxHeight
+>         MaxWidth
+>         MinHeight
+>         MinWidth
+>         Width
+> ```
+> ```
+> Microsoft.UI.Xaml.Settings
+>
+>     XamlChangeId
+>     XamlOptionalChanges
+> ```
+> ```
+> Microsoft.Windows.AI.Speech
+>
+>     SpeechAudioProvider
+>         Dispose
+> ```
+> ```
+> Microsoft.Windows.AI.Text
+>
+>     GenerateStructuredJsonResponseResult
+>     GenerateStructuredJsonResponseStatus
+>     LanguageModel
+>         GenerateStructuredJsonResponseAsync
+> ```
+> ```
+> Microsoft.Windows.Search.AppContentIndex
+>
+>     AppContentIndexer
+>         BatchAddOrUpdate
+>         GetContentStaticBoost
+>         GetRegionStaticBoost
+>         ResetAllStaticBoosts
+>         SetContentStaticBoost
+>         SetRegionStaticBoost
+>
+>     AppIndexContentRegion
+>         CreateFromBitmap
+>         CreateFromImageStream
+>         StaticBoost
+>
+>     AppManagedIndexableAppContent
+>         CreateFromBitmap
+>         CreateFromImageStream
+>
+>     BatchAddOrUpdateItemResult
+>     BatchAddOrUpdateResult
+>     ContentRegionImageOptions
+>     ContentRegionTextOptions
+>         AllowSemanticIndexing
+>
+>     GetOrCreateIndexStatus
+>         RecoveredFromCorruption
+>
+>     ImageOcrIndexingOptions
+>     IndexableAppContent
+>         StaticBoost
+> ```
+>
+
+</details>
+
 ## Version 2.2 Experimental 9 (2.2.2-Experimental9)
 
 Released: **June 9, 2026**
