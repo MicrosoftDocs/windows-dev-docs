@@ -209,4 +209,59 @@ FancyZonesCLI.exe s {uuid} --monitor 2
 FancyZonesCLI.exe shk 3 {uuid}
 ```
 
+## Application compatibility
+
+### Applications that can't be zoned exactly
+
+In multi-monitor configurations, when the monitors have different DPI scaling factors and a zone touches a screen edge, the snapped window may be resized so that its border is a few pixels away from the edge of the screen. This happens when the snapped application isn't DPI aware.
+
+### Applications that can't be zoned
+
+| Application | Issue | Why / Possible workaround |
+| :--- | :--- | :--- |
+| Application Guard | [#616](https://github.com/microsoft/PowerToys/issues/616) | None (`EVENT_SYSTEM_MOVESIZESTART` is not raised) |
+| Citrix | [#690](https://github.com/microsoft/PowerToys/issues/690) | None |
+| Citrix Workspace | [#7135](https://github.com/microsoft/PowerToys/issues/7135) | A comment in the issue has a [possible workaround](https://github.com/microsoft/PowerToys/issues/7135#issuecomment-704553358) |
+| Civilization 4 | [#1004](https://github.com/microsoft/PowerToys/issues/1004) | None |
+| GoToWebinar | [#3734](https://github.com/microsoft/PowerToys/issues/3734) | None |
+| Hyper-V Connection | [#4336](https://github.com/microsoft/PowerToys/issues/4336) | None |
+| iLO Remote Console | [#8067](https://github.com/microsoft/PowerToys/issues/8067) | A comment in the issue has a [possible workaround](https://github.com/microsoft/PowerToys/issues/8067#issuecomment-728150030) |
+| LDPlayer | [#8082](https://github.com/microsoft/PowerToys/issues/8082) | Use secondary mouse button to activate zones instead of `Shift` |
+| [Parsec](https://parsec.app/) | [#9138](https://github.com/microsoft/PowerToys/issues/9138) | None |
+| Mir4 App | [#16864](https://github.com/microsoft/PowerToys/issues/16864) | None |
+| Origin game launcher | [#1466](https://github.com/microsoft/PowerToys/issues/1466#issuecomment-605591336) | None |
+| RemoteApp | [#441](https://github.com/microsoft/PowerToys/issues/441) | None, the app steals all the keyboard/mouse events |
+| Runelite | [#1466](https://github.com/microsoft/PowerToys/issues/1466#issuecomment-635951523) | Partial workaround: Disable its "custom chrome window" in the Runelite settings |
+| TeamViewer | [#6945](https://github.com/microsoft/PowerToys/issues/6945) | TeamViewer may install display drivers that prevent FancyZones from setting the layout on each monitor independently |
+| TWS InteractiveBrokers | [#6771](https://github.com/microsoft/PowerToys/issues/6771) | None |
+| UPlay game launcher | [#1466](https://github.com/microsoft/PowerToys/issues/1466#issuecomment-605591336) | None |
+| VMware Workstation Player | [#666](https://github.com/microsoft/PowerToys/issues/666) | None (`EVENT_SYSTEM_MOVESIZESTART` is not raised) |
+| Windows Virtual Desktop | [#10018](https://github.com/microsoft/PowerToys/issues/10018) | None |
+| [WindowsFX](https://www.stardock.com/products/windowfx/) | [#8321](https://github.com/microsoft/PowerToys/issues/8321) | [Detailed explanation](https://github.com/microsoft/PowerToys/issues/8321#issuecomment-742453379) |
+
+### Applications that cause FancyZones Editor to fail to open
+
+- RivaTunerStatisticsServer (MSI Afterburner). [#707](https://github.com/microsoft/PowerToys/issues/707)
+
+### Applications that cause FancyZones snapping to crash apps
+
+- [active-win](https://github.com/sindresorhus/active-win), [#12341](https://github.com/microsoft/PowerToys/issues/12341)
+
+### Applications that need FancyZones to run elevated
+
+Since FancyZones runs in the same process as PowerToys, these applications require PowerToys to run as administrator in order to be zoned:
+
+- HWiNFO64
+- TeamSpeak 3
+
+### Screen capture software
+
+Workaround: add the incompatible application to the FancyZones excluded apps list.
+
+| Application | Issue | Why / Possible workaround |
+| :--- | :--- | :--- |
+| ShareX | [#7291](https://github.com/microsoft/PowerToys/issues/7291) | Add ShareX to the FancyZones excluded apps |
+| Screenpresso | [#4478](https://github.com/microsoft/PowerToys/issues/4478) | None |
+| Greenshot | [#4373](https://github.com/microsoft/PowerToys/issues/4373) | Recent versions appear to no longer have this compatibility issue |
+
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

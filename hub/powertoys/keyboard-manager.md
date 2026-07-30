@@ -256,4 +256,11 @@ If you have tried to remap a key or shortcut and are having trouble, it could be
 
 See the list of all [open keyboard manager issues](https://github.com/microsoft/PowerToys/issues?q=is%3Aopen+is%3Aissue+label%3A%22Product-Keyboard+Shortcut+Manager%22).
 
+## Application compatibility
+
+| Application | Issue | Why / Possible workaround |
+| :--- | :--- | :--- |
+| Avid Pro Tools (2020) | [#7396](https://github.com/microsoft/PowerToys/issues/7396) | They use a lower level hook, possibly driver based |
+| Microsoft Mouse and Keyboard Center | [#7328](https://github.com/microsoft/PowerToys/issues/7328) | See [comment](https://github.com/microsoft/PowerToys/issues/7328#issuecomment-730046147) |
+
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
