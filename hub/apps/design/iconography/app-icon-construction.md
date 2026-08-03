@@ -1,6 +1,6 @@
 ---
-title: Construct your Windows app's icon
-description: How to turn your Windows app's app icon design into image files for your app. 
+title: Construct your Windows App's Icon
+description: After you design your Windows app's icon, you need to create the icon files. Windows supports multiple themes, display resolutions, and scale factors.
 design-contact: judysa
 ms.date: 07/21/2026
 ms.topic: article
