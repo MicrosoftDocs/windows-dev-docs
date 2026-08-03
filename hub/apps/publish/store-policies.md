@@ -644,7 +644,7 @@ Numbers reported from 7/1/2025 - 6/30/2026:
 | Miscellaneous | 6,723 |
 | Total Issues | 12,626 |
 | Overturned decisions | 623 |
-| Average Processing Time | 2.37 |
+| Average Processing Time | 2.37 days |
 
 ### See also
 
