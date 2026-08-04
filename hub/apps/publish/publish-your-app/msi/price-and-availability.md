@@ -1,7 +1,7 @@
 ---
 description: The Pricing and availability page of the app submission process lets you determine how much your MSI/EXE app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
 title: Set app pricing and availability for MSI/EXE app
-ms.date: 10/30/2022
+ms.date: 08/03/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -17,14 +17,6 @@ The **Pricing and availability** page of the [app submission process](./create-a
 The Microsoft Store reaches customers in over 240 countries and regions around the world. By default, we’ll offer your app in all possible markets. If you prefer, you can choose the specific markets in which you'd like to offer your app.
 
 For more info, see [Define market selection](./market-selection.md).
-
-### Discoverability
-
-The selections in the Discoverability section indicate how customers can discover and acquire your app.
-
-### Audience 
-
-The Visibility section of the Pricing and availability page allows you to set restrictions on how your app can be discovered and acquired. This gives you the option to specify whether people can find your app in the Store or see its Store listing at all.
 
 ## Pricing
 
