@@ -98,7 +98,15 @@ Mouse jump allows moving the mouse pointer long distances on a single screen or 
 
 Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer. This feature is particularly useful for users with visual impairments or those who need enhanced cursor visibility for precision tasks.
 
-The gliding cursor option is an accessibility feature that lets you control the mouse with a single button by using guided horizontal and vertical lines. Use the <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>.</kbd> keyboard key combination to activate the gliding cursor, then move the mouse to control its position. Cancel the gliding cursor with the <kbd>Esc</kbd> key or by clicking the mouse.
+Gliding cursor is an accessibility feature that lets you position and click the mouse pointer using only a keyboard shortcut. Each press of <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>.</kbd>, or your custom shortcut, advances the sequence:
+
+1. Start moving the pointer horizontally.
+1. Slow the horizontal movement for more precise positioning.
+1. Set the horizontal position and start moving vertically.
+1. Slow the vertical movement for more precise positioning.
+1. Set the final position and click.
+
+Press <kbd>Esc</kbd> at any time to cancel.
 
 :::image type="content" source="images/mouse-utilities/gliding-cursor.png" lightbox="images/mouse-utilities/gliding-cursor.gif" alt-text="An animated gif of the PowerToys gliding cursor feature of its Mouse Utilities.":::
 
@@ -116,8 +124,8 @@ The gliding cursor option is an accessibility feature that lets you control the 
 | Automatically hide crosshairs when the mouse pointer is hidden | |
 | Fix crosshairs length | |
 | Crosshairs fixed length (px) | |
-| Gliding cursor | This activation shortcut is the customizable keyboard command to turn the gliding cursor on or off. |
-| Gliding cursor: Travel speed | Provides a slider to adjust the speed at which the gliding cursor moves across the screen. |
-| Gliding cursor: Delay speed | Provides a slider to adjust the delay before the gliding cursor starts moving. |
+| Gliding cursor | The customizable keyboard shortcut used to start and advance the gliding cursor sequence. |
+| Gliding cursor: Initial line speed | Adjusts the speed when horizontal or vertical movement begins. |
+| Gliding cursor: Reduced line speed | Adjusts the speed after slowing movement with a second shortcut press. |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
