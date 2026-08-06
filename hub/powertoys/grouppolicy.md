@@ -1,7 +1,7 @@
 ---
 title: Configure PowerToys with Group Policy Settings
 description: Learn how to configure and manage PowerToys utilities using Group Policy settings, administrative templates, and registry configurations for enterprise environments.
-ms.date: 08/20/2025
+ms.date: 08/06/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Group Policy, Win]
 # customer intent: As a Windows power user, I want to learn how to configure PowerToys using Group Policy settings.
@@ -197,6 +197,8 @@ This policy configures whether PowerToys experimentation is allowed. With experi
 
 ### Installer and Updates
 
+These policies control installation and update behavior. For details about stable and prerelease updates, see [PowerToys update channels](./update-channel.md).
+
 #### Disable per-user installation
 
 Supported on PowerToys 0.68.0 or later.
@@ -256,6 +258,37 @@ This policy configures whether the automatic download and installation of availa
 ##### Intune information
 
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisableAutomaticUpdateDownload`
+- Example value: `<enabled/>`
+
+#### Disable preview build updates
+
+Supported on PowerToys 0.100.0 or later.
+
+This policy configures whether users can opt in to Insider preview build updates.
+
+- If enabled, PowerToys ignores the user's saved update channel preference, prevents the user from changing it, and offers only stable updates. The saved preference isn't overwritten.
+- If disabled or not configured, the user can choose whether to receive preview build updates.
+
+For more information about the effect of this policy when switching channels, see [PowerToys update channels](./update-channel.md#group-policy-behavior).
+
+##### Group Policy (ADMX) information
+
+- GP unique name: DisablePreviewUpdates
+- GP name: Disable preview build updates
+- GP path: Administrative Templates/Microsoft PowerToys/Installer and Updates
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: PreviewUpdatesDisabled
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~InstallerUpdates/DisablePreviewUpdates`
 - Example value: `<enabled/>`
 
 #### Suspend Action Center notification for new updates
