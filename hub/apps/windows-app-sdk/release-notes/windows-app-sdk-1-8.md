@@ -2,7 +2,7 @@
 title: Windows App SDK 1.8 release notes
 description: Provides information about what's new in Windows App SDK 1.8.
 ms.topic: release-notes
-ms.date: 09/22/2025
+ms.date: 08/10/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -13,6 +13,32 @@ zone_pivot_groups: wasdk-release-channels
 [!INCLUDE [wasdk-releasenotes](../../../includes/wasdk-release-notes.md)]
 
 :::zone pivot="stable"
+
+
+## Version 1.8.11 (1.8.260804001)
+
+Released: **August 11, 2026** <br><br>
+
+<details><summary>Bug fixes</summary>
+
+>
+> - Fixed an issue where the Storage Pickers (`FileOpenPicker`, `FileSavePicker`, and
+>   `FolderPicker`) left the calling WinUI app window without keyboard focus after their file
+>   dialog closed. The app now restores its previous focus after the dialog closes. For more
+>   info, see GitHub issue [#6505](https://github.com/microsoft/WindowsAppSDK/issues/6505).
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): StoragePickers_RestoreFocusAfterDialogCloses)
+> - Fixed a regression where `MrmGetFilePathFromName` returned `ERROR_FILE_NOT_FOUND` when the
+>   default `resources.pri` file didn't exist, instead of returning the documented fallback
+>   path. For more info, see GitHub issue
+>   [#5940](https://github.com/microsoft/WindowsAppSDK/issues/5940).
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ResourceManager_RestoreDefaultFallbackPath)
+> - Fixed an issue where `MICROSOFT_WINDOWSAPPRUNTIME_BASE_DIRECTORY` could be inherited by child
+>   processes, disrupting MRT Core and catalog lookups. For more info, see GitHub issue
+>   [#5987](https://github.com/microsoft/WindowsAppSDK/issues/5987).
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WindowsAppRuntime_BaseDirectoryIsolation)
+>
+
+</details>
 
 
 ## Version 1.8.10 (1.8.260710003)

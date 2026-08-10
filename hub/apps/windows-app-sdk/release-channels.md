@@ -2,7 +2,7 @@
 title: Windows App SDK release channels
 description: Learn about the Experimental, Preview, and Stable release channels used to ship the latest version of the Windows App SDK.
 ms.topic: article
-ms.date: 05/21/2026
+ms.date: 08/10/2026
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
 ms.localizationpriority: medium
 ---
@@ -50,7 +50,7 @@ The Windows App SDK has a lifecycle. A lifecycle begins when a version or servic
 | Windows App SDK version | Original release date | Latest patch version | Patch release date | Support level  | End of servicing |
 | ----------------------- | --------------------- | -------------------- | ------------------ | -------------- | ---------------- |
 | 2.0                     | 04/29/2026            | 2.3.1                | 07/16/2026         | Current        | 04/29/2027       |
-| 1.8                     | 09/09/2025            | 1.8.260710003        | 07/14/2026         | Maintenance    | 09/09/2026       |
+| 1.8                     | 09/09/2025            | 1.8.260804001        | 08/11/2026         | Maintenance    | 09/09/2026       |
 | 1.7                     | 03/18/2025            | 1.7.260224002        | 03/10/2026         | Out of Support | 03/18/2026       |
 | 1.6                     | 09/04/2024            | 1.6.250602001        | 06/10/2025         | Out of Support | 09/04/2025       |
 | 1.5                     | 02/29/2024            | 1.5.250108004        | 01/15/2025         | Out of Support | 02/28/2025       |
