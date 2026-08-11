@@ -61,9 +61,6 @@ Released: **August 11, 2026** <br><br>
 >   `DISABLE_XAML_GENERATED_MAIN` is defined. For more info, see GitHub issue
 >   [#11245](https://github.com/microsoft/microsoft-ui-xaml/issues/11245).
 >   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, build-time tooling change)
-> - Updated the Semantic Index projection dependency to version `1.3.152465538`, incorporating
->   reliability fixes for indexing and query scenarios.
->   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, dependency version bump)
 >
 
 </details>
