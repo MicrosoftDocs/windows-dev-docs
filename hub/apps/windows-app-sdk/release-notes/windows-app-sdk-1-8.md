@@ -23,7 +23,7 @@ Released: **August 11, 2026** <br><br>
 
 >
 > - Fixed an issue where the Storage Pickers (`FileOpenPicker`, `FileSavePicker`, and
->   `FolderPicker`) left the calling WinUI app window without keyboard focus after their file
+>   `FolderPicker`) left the calling WinUI app window without keyboard focus after the file
 >   dialog closed. The app now restores its previous focus after the dialog closes. For more
 >   info, see GitHub issue [#6505](https://github.com/microsoft/WindowsAppSDK/issues/6505).
 >   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): StoragePickers_RestoreFocusAfterDialogCloses)
