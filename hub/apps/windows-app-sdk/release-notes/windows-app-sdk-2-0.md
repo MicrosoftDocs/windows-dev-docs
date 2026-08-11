@@ -18,19 +18,6 @@ zone_pivot_groups: wasdk-release-channels
 
 Released: **August 11, 2026** <br><br>
 
-<details><summary>App Content Search</summary>
-
->
-> App Content Search is now available in the stable channel as a
-> [Limited Access Feature](/uwp/api/windows.applicationmodel.limitedaccessfeatures) through the
-> separate `Microsoft.WindowsAppSDK.Search` package. The
-> `Microsoft.Windows.Search.AppContentIndex` APIs let packaged apps index their own text and image
-> content and run lexical and semantic searches.
-> ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): AppContentSearchNewAPI_LafCheck)
->
-
-</details>
-
 <details><summary>Expanded input support</summary>
 
 >
@@ -91,57 +78,6 @@ Released: **August 11, 2026** <br><br>
 >     LanguageModelResponseStatus
 >         LanguageMismatch
 >         UnsupportedLanguage
-> ```
-> ```
-> Microsoft.Windows.Search.AppContentIndex
->
->     AppContentIndexContract
->     AppContentIndexer
->     AppContentIndexListener
->     AppIndexContentRegion
->     AppIndexImageQuery
->     AppIndexImageQuerySession
->     AppIndexQueryMatch
->     AppIndexTextQuery
->     AppIndexTextQuerySession
->     AppIndexTextStreamEncoding
->     AppManagedImageQueryMatch
->     AppManagedIndexableAppContent
->     AppManagedOcrTextQueryMatch
->     AppManagedTextQueryMatch
->     ContentItemErrorDetail
->     ContentItemReader
->     ContentItemReindexingStatus
->     ContentItemStatus
->     ContentItemStatusResult
->     ContentRegionTextOptions
->     DeleteIndexResult
->     DeleteIndexStatus
->     DeleteIndexWhileInUseBehavior
->     GetOrCreateIndexOptions
->     GetOrCreateIndexResult
->     GetOrCreateIndexStatus
->     ImageQueryMatch
->     ImageQueryOptions
->     ImageQuerySessionResult
->     IndexableAppContent
->     IndexCapabilities
->     IndexCapabilitiesOfCurrentSystem
->     IndexCapability
->     IndexCapabilityInitializationStatus
->     IndexCapabilityLanguageStatus
->     IndexCapabilityOfCurrentSystemStatus
->     IndexCapabilityRequirement
->     IndexCapabilityState
->     IndexStatistics
->     QueryContentItemsFilterFlags
->     QueryMatchContentKind
->     QueryMatchScope
->     RegionContentKind
->     TextLexicalMatchType
->     TextQueryMatch
->     TextQueryOptions
->     TextQuerySessionResult
 > ```
 >
 
