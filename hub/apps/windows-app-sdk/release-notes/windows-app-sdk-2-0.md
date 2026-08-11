@@ -41,7 +41,7 @@ Released: **August 11, 2026** <br><br>
 >   info, see GitHub issue [#6505](https://github.com/microsoft/WindowsAppSDK/issues/6505).
 >   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): StoragePickers_RestoreFocusAfterDialogCloses)
 > - Fixed a regression where `MrmGetFilePathFromName` returned `ERROR_FILE_NOT_FOUND` when the
->   default `resources.pri` file didn't exist, instead of returning the documented fallback
+>   PRI file didn't exist, instead of returning the documented fallback
 >   path. For more info, see GitHub issue
 >   [#5940](https://github.com/microsoft/WindowsAppSDK/issues/5940).
 >   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ResourceManager_RestoreDefaultFallbackPath)
