@@ -2,7 +2,7 @@
 title: Windows App SDK 2.0 release notes
 description: Provides information about what's new in Windows App SDK 2.0.
 ms.topic: release-notes
-ms.date: 08/10/2026
+ms.date: 08/13/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -16,7 +16,7 @@ zone_pivot_groups: wasdk-release-channels
 
 ## Version 2.4.0
 
-Released: **August 11, 2026** <br><br>
+Released: **August 13, 2026** <br><br>
 
 <details><summary>Expanded input support</summary>
 
