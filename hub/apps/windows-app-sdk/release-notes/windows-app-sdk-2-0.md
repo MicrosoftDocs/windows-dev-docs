@@ -2,7 +2,7 @@
 title: Windows App SDK 2.0 release notes
 description: Provides information about what's new in Windows App SDK 2.0.
 ms.topic: release-notes
-ms.date: 07/16/2026
+ms.date: 08/13/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -13,6 +13,72 @@ zone_pivot_groups: wasdk-release-channels
 [!INCLUDE [wasdk-releasenotes](../../../includes/wasdk-release-notes.md)]
 
 :::zone pivot="stable"
+
+## Version 2.4.0
+
+Released: **August 13, 2026** <br><br>
+
+<details><summary>Expanded input support</summary>
+
+>
+> WinUI 3 apps now support operating system touchpad and mouse haptics through
+> `Windows.Devices.Haptics`, along with touchpad single-finger panning, when supported by the
+> operating system and hardware.
+> ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputPointerSource_OSHaptics)
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> - Fixed a crash that could occur when a touch or pen contact left a scrollable area with precise
+>   timing.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputPointerSource_DepartingScrollInputCrashFix)
+> - Fixed an issue where the Storage Pickers (`FileOpenPicker`, `FileSavePicker`, and
+>   `FolderPicker`) left the calling WinUI app window without keyboard focus after the file
+>   dialog closed. The app now restores its previous focus after the dialog closes. For more
+>   info, see GitHub issue [#6505](https://github.com/microsoft/WindowsAppSDK/issues/6505).
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): StoragePickers_RestoreFocusAfterDialogCloses)
+> - Fixed a regression where `MrmGetFilePathFromName` returned `ERROR_FILE_NOT_FOUND` when the
+>   PRI file didn't exist, instead of returning the documented fallback
+>   path. For more info, see GitHub issue
+>   [#5940](https://github.com/microsoft/WindowsAppSDK/issues/5940).
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ResourceManager_RestoreDefaultFallbackPath)
+> - Fixed an issue where `MICROSOFT_WINDOWSAPPRUNTIME_BASE_DIRECTORY` could be inherited by child
+>   processes, disrupting MRT Core and catalog lookups. For more info, see GitHub issue
+>   [#5987](https://github.com/microsoft/WindowsAppSDK/issues/5987).
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WindowsAppRuntime_BaseDirectoryIsolation)
+> - Fixed an issue where `LanguageModel` returned a generic `Error` status for unsupported
+>   languages or mismatched input and output languages. These conditions now return
+>   `LanguageModelResponseStatus.UnsupportedLanguage` and
+>   `LanguageModelResponseStatus.LanguageMismatch`, respectively.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): LanguageModel_LanguageDetectionStatus)
+> - Fixed a crash when apps using the System Composition Engine called
+>   `VisualInteractionSource.TryRedirectForManipulation`.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, operating system composition bridge fix)
+> - Fixed the access modifier on the generated C# entry point helper when
+>   `DISABLE_XAML_GENERATED_MAIN` is defined. For more info, see GitHub issue
+>   [#11245](https://github.com/microsoft/microsoft-ui-xaml/issues/11245).
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, build-time tooling change)
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the 2.3.1 release:
+> ```
+> Microsoft.Windows.AI.Text
+>
+>     LanguageModelResponseStatus
+>         LanguageMismatch
+>         UnsupportedLanguage
+> ```
+>
+
+</details>
 
 ## Version 2.3.1
 
