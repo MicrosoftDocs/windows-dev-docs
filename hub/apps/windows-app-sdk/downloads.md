@@ -2,7 +2,7 @@
 title: Latest Windows App SDK downloads
 description: This page provides links to the latest downloads of the Windows App SDK for all three release channels (stable, preview, and experimental).
 ms.topic: article
-ms.date: 05/21/2026
+ms.date: 08/13/2026
 keywords: windows, winrt, win32, windows app development, Windows App SDK
 ms.localizationpriority: medium
 ---
@@ -17,6 +17,7 @@ This page provides links to the *latest* downloads of the [Windows App SDK](inde
 
 | Version | Runtime downloads |
 |--|--|
+| **2.4.0**  <br/> 08/13/2026  <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=stable#version-240) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F2.4.0) | [Installer (x64)](https://aka.ms/windowsappsdk/2.4/2.4.0/windowsappruntimeinstall-x64.exe)  <br/> [Installer (x86)](https://aka.ms/windowsappsdk/2.4/2.4.0/windowsappruntimeinstall-x86.exe)  <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/2.4/2.4.0/windowsappruntimeinstall-arm64.exe)  <br/> [Redistributable (ZIP)](https://aka.ms/windowsappsdk/2.4/2.4.0/Microsoft.WindowsAppRuntime.Redist.2.4.zip) |
 | **2.3.1**  <br/> 07/16/2026  <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=stable#version-231) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F2.3.1) | [Installer (x64)](https://aka.ms/windowsappsdk/2.3/2.3.1/windowsappruntimeinstall-x64.exe)  <br/> [Installer (x86)](https://aka.ms/windowsappsdk/2.3/2.3.1/windowsappruntimeinstall-x86.exe)  <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/2.3/2.3.1/windowsappruntimeinstall-arm64.exe)  <br/> [Redistributable (ZIP)](https://aka.ms/windowsappsdk/2.3/2.3.1/Microsoft.WindowsAppRuntime.Redist.2.3.zip) |
 | **2.2.0**  <br/> 06/09/2026  <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=stable#version-220) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F2.2.0) | [Installer (x64)](https://aka.ms/windowsappsdk/2.2/2.2.0/windowsappruntimeinstall-x64.exe)  <br/> [Installer (x86)](https://aka.ms/windowsappsdk/2.2/2.2.0/windowsappruntimeinstall-x86.exe)  <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/2.2/2.2.0/windowsappruntimeinstall-arm64.exe)  <br/> [Redistributable (ZIP)](https://aka.ms/windowsappsdk/2.2/2.2.0/Microsoft.WindowsAppRuntime.Redist.2.2.zip) |
 | **2.1.3**  <br/> 05/21/2026  <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=stable#version-213) <br/> [Source](https://github.com/microsoft/microsoft-ui-xaml/releases/tag/winui3%2Frelease%2F2.1.3) | [Installer (x64)](https://aka.ms/windowsappsdk/2.1/2.1.3/windowsappruntimeinstall-x64.exe)  <br/> [Installer (x86)](https://aka.ms/windowsappsdk/2.1/2.1.3/windowsappruntimeinstall-x86.exe)  <br/> [Installer (arm64)](https://aka.ms/windowsappsdk/2.1/2.1.3/windowsappruntimeinstall-arm64.exe)  <br/> [Redistributable (ZIP)](https://aka.ms/windowsappsdk/2.1/2.1.3/Microsoft.WindowsAppRuntime.Redist.2.1.zip) |
