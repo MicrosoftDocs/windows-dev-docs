@@ -26,12 +26,6 @@ The default option is **Can be displayed in the parent product’s Microsoft Sto
 
 For more info, see [Visibility options](./visibility-options.md).
 
-## Schedule
-
-By default (unless you have selected one of the **Hidden in the Microsoft Store** options in the **Visibility** section), your add-on will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
-
-For more info, see [Configure precise release scheduling](./configure-release-schedule.md#configure-precise-release-scheduling-for-add-ons).
-
 ## Pricing
 
 You must select a base price for your add-on (unless you have selected the **Stop acquisition** option in the **Visibility** section). For **Subscription** product type, the base price default selection is **Free**, for other product types there is no a default base price but it can be selected from the retail price dropdown after selecting the currency.
@@ -43,6 +37,12 @@ You can also schedule price changes to indicate the date and time at which the a
 > For subscription add-ons, you can't raise the price after you publish the add-on, either by selecting a higher base price in a later submission or by scheduling a price change that increases the price. You can select a lower price using either of these methods, but once the price is lowered you won't be able to raise it higher than that new price. Because of this, it's especially important to be sure you select the appropriate price tier for subscription add-ons.
 
 For more info, see [Set and schedule app pricing](./schedule-pricing-changes.md).
+
+## Schedule
+
+By default (unless you have selected one of the **Hidden in the Microsoft Store** options in the **Visibility** section), your add-on will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
+
+For more info, see [Configure precise release scheduling](./configure-release-schedule.md#configure-precise-release-scheduling-for-add-ons).
 
 ## Sale pricing
 

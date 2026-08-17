@@ -173,8 +173,6 @@ items:
         href: publish-your-app/pwa/app-submission-control.md
   - name: Add-ons
     items:
-          - name: What are add-ons
-            href: publish-your-app/add-on/what-are-add-ons.md
           - name: Create add-ons
             href: publish-your-app/add-on/create-app-submission.md
           - name: Set pricing and availability
@@ -191,6 +189,8 @@ items:
                     href: publish-your-app/add-on/configure-release-schedule.md
           - name: Enter add-on properties
             href: publish-your-app/add-on/enter-app-properties.md
+          - name: Age ratings
+            href: publish-your-app/add-on/age-ratings.md
           - name: Create store listings
             href: publish-your-app/add-on/create-app-store-listing.md
           - name: Manage submission options

@@ -36,7 +36,7 @@ The Visibility section of the Pricing and availability page allows you to set re
 
 By default (unless you have selected one of the **Make this app available but not discoverable in the Store** options in the Visibility section), your app will be available to customers as soon as it passes certification and complete the publishing process. To choose other dates, select **Show options** to expand this section.
 
-For more info, see [Configure precise release scheduling](./schedule-pricing-changes.md#configure-precise-release-scheduling).
+For more info, see [Configure precise release scheduling](./configure-release-schedule.md).
 
 ### Make this product available and discoverable in the Store
 
