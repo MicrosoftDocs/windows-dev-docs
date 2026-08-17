@@ -2,7 +2,7 @@
 title: Windows apps--packaging, deployment, and process
 description: This topic discusses your options around app packaging, deploy/distribute/install, and your app's run-time process.
 ms.topic: article
-ms.date: 06/01/2026
+ms.date: 08/14/2026
 keywords: intro, introduction, all-up, all, up, Windows, Windows apps, packaging, deployment, process, run-time
 ms.localizationpriority: medium
 ---
@@ -19,19 +19,9 @@ You can make those decisions for both new and existing apps. But if you're still
 
 ## Packaging options: packaged, packaged with external location, or unpackaged
 
-The decision about which packaging option to use for your app is first determined by a concept known as *package identity*, which we'll describe in this section. If you don't need that, then the decision comes down to the desired installer experience for yourself and for your users. Let's drill into the details of those things.
+The decision about which packaging option to use for your app is first determined by a concept known as *package identity*. Many Windows extensibility features (background tasks, push-notification scenarios that use background delivery or COM activation, custom context menu extensions, and share targets) can be used by an app only if that app has package identity at runtime, because the operating system (OS) needs to be able to identify the caller of the corresponding API. Only packaged apps (including apps *packaged with external location*) have package identity.
 
-Many Windows extensibility features (background tasks, notifications, custom context menu extensions, and share targets) can be used by an app only if that app has package identity at runtime. That's because the operating system (OS) needs to be able to identify the caller of the corresponding API. See [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps).
-
-* If you need to use any of those features, then your app needs package identity. And therefore it *needs* to be a packaged app (packaged apps are the only kind that have package identity). A packaged app is packaged by using MSIX technology (see [What is MSIX?](/windows/msix/overview)).
-  * For a new app, the packaging process is straightforward (and at the end of this section there's info about how to do it).
-  * For some existing apps, you can follow the same packaging process as for a new app. But because some existing apps aren't yet ready for all of their content to be present inside an MSIX package, there's an option for your app to be *packaged with external location*. That enables your app to have package identity; thereby being able to use those features that require it. For more info, see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
-* Even if you *don't* need to use any of those features, then creating a packaged app is still a good idea. It gives your users the easiest way to install, uninstall, and update your app. For more info, see [Deployment/distribution/installation](#deploymentdistributioninstallation) in this topic.
-* But creating an unpackaged app is an option.
-
-The takeaway is that packaged apps are the only kind that have package identity (and they have the best install experience). An unpackaged app doesn't have package identity; so it can't use the APIs/features mentioned above.
-
-For more details about packaged versus unpackaged, see [Deployment overview](/windows/apps/package-and-deploy/); in particular, the **Advantages and disadvantages of packaging your app** section in that topic. That topic also mentions the *packaged with external location* option.
+For a full explanation of the packaged, packaged with external location, and unpackaged models, and how to choose between them, see the [Packaging overview](../package-and-deploy/packaging/index.md). For the features that depend on package identity, see [Features that require package identity](../desktop/modernize/modernize-packaged-apps.md).
 
 For info about how to configure your app as packaged or unpackaged:
 
@@ -43,19 +33,11 @@ Also see the [Windows Package Manager and the WinGet client](#windows-package-ma
 
 ## Deployment/distribution/installation
 
-* A packaged app is packaged by using MSIX technology.
-  * A packaged app is *installed* by using MSIX, also. But if you choose to *package with external location*, then you can think of that as a "bring-your-own-installer" model. So there *will* be some installer work for you to do with that option. For more info, see [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
-* An unpackaged app doesn't involve MSIX at all.
+A packaged app is both packaged and installed by using MSIX. If you choose to *package with external location*, that's a "bring-your-own-installer" model, so you still do the installer work yourself (see [Grant package identity by packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps.md)). An unpackaged app doesn't involve MSIX at all.
 
-So, why does it matter whether or not your app is packaged?
+Packaging matters because MSIX gives your users a clean install, uninstall, and update experience, supports incremental and automatic updates, is optimized by the Microsoft Store, works with [MSIX app attach](/azure/virtual-desktop/what-is-app-attach) for Azure Virtual Desktop, and benefits from strong anti-tampering when signed.
 
-* Well, MSIX gives your users an easy way to install, uninstall, and update your app. Uninstall is clean: when your app is uninstalled, the system is restored to the same state it was in before installation; no artifacts are left behind.
-* This kind of app also supports incremental and automatic updates.
-* The Microsoft Store optimizes for apps of this kind (although they can be used in or out of the Store).
-* It's an easy path for use via MSIX app attach (for Azure Virtual Desktop virtual machines). For more info, see [What is MSIX app attach?](/azure/virtual-desktop/what-is-app-attach).
-* A signed package benefits from strong anti-tampering. This benefit is even greater than for an unpackaged app installed under **Program Files**.
-
-Also see the [Windows Package Manager and the WinGet client](#windows-package-manager-and-the-winget-client) section in this topic.
+For deployment and distribution guidance, see the [Package and deploy overview](../package-and-deploy/index.md) and [Choose a distribution path](../package-and-deploy/choose-distribution-path.md). See also the [Windows Package Manager and the WinGet client](#windows-package-manager-and-the-winget-client) section in this topic.
 
 ## AppContainer or Medium IL
 
@@ -109,12 +91,7 @@ For all of the options for the kinds of apps you can develop, see [Windows app d
 
 ## Windows App SDK: framework-dependent or self-contained
 
-If you're developing or maintaining an app that makes use of the [Windows App SDK](/windows/apps/windows-app-sdk/), then you have a further decision to make. Because there are the following two ways in which you can deploy the Windows App SDK that your app depends on:
-
-* Framework-dependent (the default). Your app needs the Windows App SDK runtime and/or Framework package to be present on the target machine.
-* Self-contained. Your app carries with it its Windows App SDK dependencies.
-
-For more info, see [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview).
+If your app uses the [Windows App SDK](../windows-app-sdk/index.md), then you also choose how to deploy the SDK runtime that your app depends on: framework-dependent (the default, where the Windows App SDK runtime and/or Framework package must be present on the target machine) or self-contained (your app carries its Windows App SDK dependencies with it). For more info, see the [Windows App SDK deployment overview](../package-and-deploy/deploy-overview.md).
 
 ## Windows Package Manager and the WinGet client
 
