@@ -11,6 +11,8 @@
   items:
   - name: .NET / WPF / WinForms
     href: guides/dotnet.md
+  - name: .NET MAUI
+    href: guides/maui.md
   - name: C++ (CMake)
     href: guides/cpp.md
   - name: Electron
@@ -42,5 +44,7 @@
     href: guides/flutter.md
   - name: Package an EXE or CLI
     href: guides/packaging-cli.md
+  - name: Sparse packaging
+    href: guides/sparse.md
   - name: Shell completion
     href: guides/shell-completion.md

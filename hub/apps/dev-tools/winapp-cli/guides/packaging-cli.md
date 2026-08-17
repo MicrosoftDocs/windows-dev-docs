@@ -1,7 +1,7 @@
 ---
 title: Packaging a CLI Executable as MSIX
 description: Package a standalone command-line executable as an MSIX installer with the winapp CLI, including manifest generation, signing, and install.
-ms.date: 07/23/2026
+ms.date: 08/14/2026
 ms.topic: how-to
 ---
 

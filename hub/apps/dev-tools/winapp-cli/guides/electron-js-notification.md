@@ -1,7 +1,7 @@
 ---
 title: Show a Notification from JavaScript (JS bindings)
 description: Show native Windows toast notifications directly from your Electron app JavaScript using winapp JS bindings, with no native addon required.
-ms.date: 07/23/2026
+ms.date: 08/14/2026
 ms.topic: how-to
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Run WinML from JavaScript (JS bindings)
 description: Run machine learning inference with Windows ML from Electron JavaScript using winapp JS bindings, with no native addon or node-gyp build step.
-ms.date: 07/23/2026
+ms.date: 08/14/2026
 ms.topic: how-to
 ---
 
@@ -279,7 +279,7 @@ npm start
 You should see the available execution providers and model output in the console.
 
 > [!TIP]
-> For a complete image-classification pipeline with image decoding via JS bindings (`StorageFile`, `BitmapDecoder`, `BitmapTransform`), see the [Electron Gallery WinML sample](https://github.com/microsoft/electron-on-windows-gallery).
+> For more end-to-end samples of calling Windows APIs from Electron, see the [Electron on Windows gallery](https://github.com/microsoft/electron-on-windows-gallery).
 
 ## Next Steps
 

@@ -1,7 +1,7 @@
 ---
 title: Call Windows APIs from JavaScript (JS bindings)
 description: Open a native Windows file picker and inspect images from Electron JavaScript using winapp JS bindings, with no native addon or node-gyp build.
-ms.date: 07/23/2026
+ms.date: 08/14/2026
 ms.topic: how-to
 ---
 
