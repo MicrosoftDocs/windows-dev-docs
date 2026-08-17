@@ -1,18 +1,20 @@
 ---
-title: Features for Windows app development
-description: Overview of the Windows app development features available to developers, including accessibility, AI, files, notifications, and more.
-ms.topic: overview
-ms.date: 06/16/2026
+title: Platform features overview
+description: Explore Windows platform features for app development, including accessibility, AI, files, input, notifications, security, and UI.
+ms.topic: article
+ms.date: 08/14/2026
 ms.localizationpriority: medium
 ---
 
-# Features for Windows app development
+# Windows app platform features for developers
 
-Windows provides a rich set of platform features to help you build great apps. This section covers the APIs and capabilities available to Windows developers, from accessibility and AI to files, notifications, and the user interface.
+Windows provides APIs and capabilities for building desktop apps. Use these platform features to add native functionality—such as accessibility, on-device AI, notifications, and rich user interfaces—so your app integrates with Windows hardware and OS capabilities.
 
-Some features are available in the [Windows App SDK](../windows-app-sdk/index.md). Others come from the Windows OS itself, via APIs in the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk) or .NET.
+Windows platform features come from the Windows App SDK, the Windows SDK, and .NET. Browse the feature areas in this section to find the capabilities that fit your app, then follow the links to detailed guidance for each area.
 
-## Feature areas
+## Windows platform feature areas
+
+The following table lists the Windows platform feature areas, each with a description and a link to detailed guidance:
 
 | Feature area | Description |
 |---|---|
@@ -24,11 +26,11 @@ Some features are available in the [Windows App SDK](../windows-app-sdk/index.md
 | [Communication](communication/index.md) | Add messaging, contacts, and calendar integration to your app. |
 | [Data and files](data-and-files.md) | Read and write files, manage folders, access removable storage, and query file properties. |
 | [Devices and sensors](devices-and-sensors.md) | Access hardware devices, sensors, and peripherals. |
-| [Graphics](graphics.md) | Create 2D and 3D visuals using DirectX, Direct2D, and other graphics APIs. |
+| [Graphics](graphics.md) | Create 2D and 3D visuals by using DirectX, Direct2D, and other graphics APIs. |
 | [Input and interactions](input/index.md) | Handle touch, pen, keyboard, mouse, speech, and other input modalities. |
 | [Notifications](notifications/index.md) | Send toast and tile notifications to keep users informed. |
 | [OS integration](windows-integration/index.md) | Connect your app to Windows shell features, settings, and system capabilities. |
 | [Performance](performance/index.md) | Analyze and optimize the performance and responsiveness of your app. |
 | [Security and identity](security/index.md) | Authenticate users, protect data, and manage app permissions. |
-| [Testing](testing/index.md) | Test and debug your Windows app using platform tools and best practices. |
+| [Testing](testing/index.md) | Test and debug your Windows app by using platform tools and best practices. |
 | [User interface](user-interface.md) | Build rich user interfaces with WinUI, XAML, and other UI frameworks. |

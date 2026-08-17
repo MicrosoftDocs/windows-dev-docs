@@ -91,7 +91,8 @@ items:
               href: ../tutorials/winui-notes-pt2/3-navigation-parameters.md
           - name: Create a photo viewer with WinUI
             href: ../get-started/simple-photo-viewer-winui3.md
-  - name: Core features
+  - name: Platform
+    expanded: true
     items:
       - name: Overview
         href: features-overview.md
@@ -698,65 +699,65 @@ items:
         items:
           - name: Overview
             href: input/index.md
+          - name: Haptics
+            href: input/haptics.md
+          - name: Identify input devices
+            href: input/identify-input-devices.md
           - name: Input primer
             href: input/input-primer.md
-          - name: Pointer input
-            href: input/handle-pointer-input.md
-          - name: Touch
-            items:
-              - name: Touch design guidelines
-                href: input/touch-interactions.md
-              - name: Touch developer guidelines
-                href: input/touch-developer-guide.md
-              - name: Panning
-                href: input/guidelines-for-panning.md
-              - name: Rotation
-                href: input/guidelines-for-rotation.md
-              - name: Targeting
-                href: input/guidelines-for-targeting.md
-          - name: Mouse
-            href: input/mouse-interactions.md
           - name: Keyboard
             href: input/keyboard-interactions.md
             items:
               - name: Access keys
                 href: input/access-keys.md
+              - name: Focus navigation with keyboard, gamepad, remote control, and accessibility tools
+                href: input/focus-navigation.md
               - name: Keyboard Accelerators
                 href: input/keyboard-accelerators.md
               - name: Keyboard events
                 href: input/keyboard-events.md
-              - name: Focus navigation with keyboard, gamepad, remote control, and accessibility tools
-                href: input/focus-navigation.md
               - name: Programmatic focus navigation
                 href: input/focus-navigation-programmatic.md
               - name: Respond to the presence of the touch keyboard
                 href: input/respond-to-the-presence-of-the-touch-keyboard.md
               - name: Use input scope to change the touch keyboard
                 href: input/use-input-scope-to-change-the-touch-keyboard.md
+          - name: Mouse
+            href: input/mouse-interactions.md
+          - name: Multiple inputs
+            href: input/multiple-input-design-guidelines.md
+          - name: Optical zoom and resizing
+            href: input/guidelines-for-optical-zoom.md
+          - name: Pointer input
+            href: input/handle-pointer-input.md
           - name: Text input
             items:
               - name: Custom text input
                 href: input/custom-text-input.md
-              - name: Text scaling
-                href: input/text-scaling.md
-              - name: Selecting text and images
-                href: input/guidelines-for-textselection.md
-              - name: Input Method Editors
-                href: input/input-method-editors.md
               - name: Input Method Editor requirements
                 href: input/input-method-editor-requirements.md
+              - name: Input Method Editors
+                href: input/input-method-editors.md
+              - name: Selecting text and images
+                href: input/guidelines-for-textselection.md
+              - name: Text scaling
+                href: input/text-scaling.md
+          - name: Touch
+            items:
+              - name: Panning
+                href: input/guidelines-for-panning.md
+              - name: Rotation
+                href: input/guidelines-for-rotation.md
+              - name: Targeting
+                href: input/guidelines-for-targeting.md
+              - name: Touch design guidelines
+                href: input/touch-interactions.md
+              - name: Touch developer guidelines
+                href: input/touch-developer-guide.md
           - name: Touchpad
             href: input/touchpad-interactions.md
-          - name: Multiple inputs
-            href: input/multiple-input-design-guidelines.md
-          - name: Identify input devices
-            href: input/identify-input-devices.md
-          - name: Optical zoom and resizing
-            href: input/guidelines-for-optical-zoom.md
           - name: Visual feedback
             href: input/guidelines-for-visualfeedback.md
-          - name: Haptics
-            href: input/haptics.md
       - name: Notifications
         href: notifications/index.md
         items:
@@ -1323,204 +1324,134 @@ items:
             href: ui/xaml-runtime-design-tools.md
           - name: Choose the right visual tree viewer
             href: ui/visual-tree.md
-  - name: Use features with other UI frameworks
-    items:
-      - name: Overview
-        href: ../desktop/modernize/index.md
-      - name: Call Windows Runtime APIs
-        href: ../desktop/modernize/winrt-apis-desktop-apps.md
-      - name: Use the Windows App SDK
-        href: ../windows-app-sdk/use-windows-app-sdk-in-existing-project.md
-      - name: Win32
+      - name: WinRT
         items:
-          - name: Modern user interface
+          - name: Overview
+            href: platform/index.md
+          - name: C++/WinRT
             items:
-              - name: Dark and light app modes
-                href: ../desktop/modernize/ui/apply-windows-themes.md
-              - name: Mica background material
-                href: ../desktop/modernize/ui/apply-mica-win32.md
-              - name: Snap layouts
-                href: ../desktop/modernize/ui/apply-snap-layout-menu.md
-              - name: Rounded window corners
-                href: ../desktop/modernize/ui/apply-rounded-corners.md
-      - name: .NET (WPF/WinForms)
-        items:
-          - name: App notifications
-            href: notifications/app-notifications/app-notifications-dotnet.md
-          - name: Manage resources with MRT Core
-            href: ../desktop/modernize/dotnet/use-mrtcore.md
-          - name: Handle URI activation
-            href: launch/handle-uri-activation-dotnet.md
-          - name: Package a .NET app with MSIX
-            href: ../desktop/modernize/dotnet/package-app.md
-          - name: Run code in the background
-            href: ../desktop/modernize/dotnet/background-tasks.md
-          - name: Migrate WPF patterns to WinUI 3
-            href: ../windows-app-sdk/migrate-to-windows-app-sdk/wpf-patterns-winui3.md
-      - name: Migrate from UWP to Windows App SDK
-        items:
-          - name: Overview
-            href: ../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md
-          - name: Overall migration strategy
-            href: ../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md
-          - name: Mapping UWP features to Windows App SDK
-            href: ../windows-app-sdk/migrate-to-windows-app-sdk/feature-mapping-table.md
-          - name: What's supported
-            href: ../windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported.md
-          - name: Mapping UWP APIs to Windows App SDK
-            href: ../windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table.md
-          - name: Feature area guides
+              - name: Get started
+                items:
+                  - name: Overview
+                    href: cpp-winrt/index.md
+                  - name: What's new in C++/WinRT
+                    href: cpp-winrt/news.md
+                  - name: Introduction to C++/WinRT
+                    href: cpp-winrt/intro-to-using-cpp-with-winrt.md
+                  - name: Get started
+                    href: cpp-winrt/get-started.md
+              - name: Concurrency and asynchrony
+                items:
+                  - name: Concurrency and asynchronous operations
+                    href: cpp-winrt/concurrency.md
+                  - name: Advanced concurrency and asynchrony
+                    href: cpp-winrt/concurrency-2.md
+                  - name: A completion source sample
+                    href: cpp-winrt/concurrency-3.md
+                  - name: "Asynchrony, and interop between C++/WinRT and C++/CX"
+                    href: cpp-winrt/interop-winrt-cx-async.md
+              - name: Collections and XAML controls
+                items:
+                  - name: Collections
+                    href: cpp-winrt/collections.md
+                  - name: XAML items controls; bind to a collection
+                    href: cpp-winrt/binding-collection.md
+                  - name: XAML controls; bind to a C++/WinRT property
+                    href: cpp-winrt/binding-property.md
+                  - name: XAML custom (templated) controls with C++/WinRT
+                    href: cpp-winrt/xaml-cust-ctrl.md
+              - name: Data types, strings, and error handling
+                items:
+                  - name: Boxing and unboxing values
+                    href: cpp-winrt/boxing.md
+                  - name: Standard C++ data types
+                    href: cpp-winrt/std-cpp-data-types.md
+                  - name: String handling in C++/WinRT
+                    href: cpp-winrt/strings.md
+                  - name: Error handling with C++/WinRT
+                    href: cpp-winrt/error-handling.md
+              - name: Events, APIs, and COM components
+                items:
+                  - name: Handle events by using delegates
+                    href: cpp-winrt/handle-events.md
+                  - name: Author events
+                    href: cpp-winrt/author-events.md
+                  - name: Author APIs with C++/WinRT
+                    href: cpp-winrt/author-apis.md
+                  - name: Consume APIs with C++/WinRT
+                    href: cpp-winrt/consume-apis.md
+                  - name: Author COM components
+                    href: cpp-winrt/author-coclasses.md
+                  - name: Consume COM components
+                    href: cpp-winrt/consume-com.md
+              - name: Implementation types, references, and interop
+                items:
+                  - name: Calling and overriding your base type with C++/WinRT
+                    href: cpp-winrt/base-type.md
+                  - name: Extension points for implementation types
+                    href: cpp-winrt/details-about-destructors.md
+                  - name: Strong and weak references
+                    href: cpp-winrt/weak-references.md
+                  - name: Agile objects
+                    href: cpp-winrt/agile-objects.md
+                  - name: Passing parameters into the ABI boundary
+                    href: cpp-winrt/pass-parms-to-abi.md
+                  - name: Interop between C++/WinRT and the ABI
+                    href: cpp-winrt/interop-winrt-abi.md
+                  - name: Interop between C++/WinRT and C++/CX
+                    href: cpp-winrt/interop-winrt-cx.md
+              - name: Move to C++/WinRT from other languages
+                items:
+                  - name: Move to C++/WinRT from C++/CX
+                    href: cpp-winrt/move-to-winrt-from-cx.md
+                  - name: Move to C++/WinRT from WRL
+                    href: cpp-winrt/move-to-winrt-from-wrl.md
+                  - name: Move to C++/WinRT from C#
+                    href: cpp-winrt/move-to-winrt-from-csharp.md
+                  - name: "Porting the Clipboard sample to C++/WinRT from C#"
+                    href: cpp-winrt/clipboard-to-winrt-from-csharp.md
+              - name: Reference and diagnostics
+                items:
+                  - name: Value categories and references
+                    href: cpp-winrt/cpp-value-categories.md
+                  - name: Naming conventions
+                    href: cpp-winrt/naming.md
+                  - name: Native debug visualization (natvis)
+                    href: cpp-winrt/natvis.md
+                  - name: Macros
+                    href: cpp-winrt/macros.md
+                  - name: Diagnosing direct allocations
+                    href: cpp-winrt/diag-direct-alloc.md
+                  - name: Use a C# component from C++/WinRT
+                    href: cpp-winrt/use-csharp-component-from-cpp-winrt.md
+              - name: Samples and troubleshooting
+                items:
+                  - name: Photo Editor sample application
+                    href: cpp-winrt/photo-editor-sample.md
+                  - name: A simple WinUI 3 example
+                    href: cpp-winrt/simple-winui-example.md
+                  - name: Troubleshooting C++/WinRT issues
+                    href: cpp-winrt/troubleshooting.md
+          - name: C#/WinRT
             items:
-              - name: Overview of feature area guides
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/feature-area-guides-ovw.md
-              - name: User interface migration (including WinUI)
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md
-              - name: Keyboard API and events parity between UWP and WinUI
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/keyboard-events.md
-              - name: Windowing functionality migration
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/windowing.md
-              - name: Application lifecycle functionality migration
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle.md
-              - name: Toast notifications
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/toast-notifications.md
-              - name: Push notifications
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/notifications.md
-              - name: DirectWrite to DWriteCore migration
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/dwritecore.md
-              - name: MRT to MRTCore migration
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/mrtcore.md
-              - name: Background task migration strategy
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/background-task-migration-strategy.md
-              - name: Threading functionality migration
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/guides/threading.md
-              - name: Case study 1—PhotoLab (C#)
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/case-study-1.md
-              - name: Case study 2—Photo Editor (C++/WinRT)
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/case-study-2.md
-              - name: Additional migration guidance
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/misc-info.md
-              - name: Modernize or port a Windows app with GitHub Copilot
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md
-              - name: Migrate UWP to Windows App SDK with the .NET Upgrade Assistant
-                href: ../windows-app-sdk/migrate-to-windows-app-sdk/upgrade-assistant.md
-      - name: Use MSIX framework packages
-        items:
-          - name: Overview
-            href: ../desktop/modernize/framework-packages/index.md
-          - name: MSIX framework packages and dynamic dependencies
-            href: ../desktop/modernize/framework-packages/framework-packages-overview.md
-          - name: Reference MSIX packages at run time
-            href: ../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md
-  - name: Platform
-    items:
-      - name: Overview
-        href: platform/index.md
-      - name: C++/WinRT
-        items:
-          - name: Overview
-            href: cpp-winrt/index.md
-          - name: What's new in C++/WinRT
-            href: cpp-winrt/news.md
-          - name: Introduction to C++/WinRT
-            href: cpp-winrt/intro-to-using-cpp-with-winrt.md
-          - name: Get started
-            href: cpp-winrt/get-started.md
-          - name: Concurrency and asynchronous operations
-            href: cpp-winrt/concurrency.md
-          - name: Advanced concurrency and asynchrony
-            href: cpp-winrt/concurrency-2.md
-          - name: A completion source sample
-            href: cpp-winrt/concurrency-3.md
-          - name: "Asynchrony, and interop between C++/WinRT and C++/CX"
-            href: cpp-winrt/interop-winrt-cx-async.md
-          - name: Collections
-            href: cpp-winrt/collections.md
-          - name: XAML items controls; bind to a collection
-            href: cpp-winrt/binding-collection.md
-          - name: XAML controls; bind to a C++/WinRT property
-            href: cpp-winrt/binding-property.md
-          - name: XAML custom (templated) controls with C++/WinRT
-            href: cpp-winrt/xaml-cust-ctrl.md
-          - name: Boxing and unboxing values
-            href: cpp-winrt/boxing.md
-          - name: Standard C++ data types
-            href: cpp-winrt/std-cpp-data-types.md
-          - name: String handling in C++/WinRT
-            href: cpp-winrt/strings.md
-          - name: Error handling with C++/WinRT
-            href: cpp-winrt/error-handling.md
-          - name: Handle events by using delegates
-            href: cpp-winrt/handle-events.md
-          - name: Author events
-            href: cpp-winrt/author-events.md
-          - name: Author APIs with C++/WinRT
-            href: cpp-winrt/author-apis.md
-          - name: Consume APIs with C++/WinRT
-            href: cpp-winrt/consume-apis.md
-          - name: Author COM components
-            href: cpp-winrt/author-coclasses.md
-          - name: Consume COM components
-            href: cpp-winrt/consume-com.md
-          - name: Calling and overriding your base type with C++/WinRT
-            href: cpp-winrt/base-type.md
-          - name: Extension points for implementation types
-            href: cpp-winrt/details-about-destructors.md
-          - name: Strong and weak references
-            href: cpp-winrt/weak-references.md
-          - name: Agile objects
-            href: cpp-winrt/agile-objects.md
-          - name: Passing parameters into the ABI boundary
-            href: cpp-winrt/pass-parms-to-abi.md
-          - name: Interop between C++/WinRT and the ABI
-            href: cpp-winrt/interop-winrt-abi.md
-          - name: Interop between C++/WinRT and C++/CX
-            href: cpp-winrt/interop-winrt-cx.md
-          - name: Move to C++/WinRT from C++/CX
-            href: cpp-winrt/move-to-winrt-from-cx.md
-          - name: Move to C++/WinRT from WRL
-            href: cpp-winrt/move-to-winrt-from-wrl.md
-          - name: Move to C++/WinRT from C#
-            href: cpp-winrt/move-to-winrt-from-csharp.md
-          - name: "Porting the Clipboard sample to C++/WinRT from C#"
-            href: cpp-winrt/clipboard-to-winrt-from-csharp.md
-          - name: Value categories and references
-            href: cpp-winrt/cpp-value-categories.md
-          - name: Naming conventions
-            href: cpp-winrt/naming.md
-          - name: Native debug visualization (natvis)
-            href: cpp-winrt/natvis.md
-          - name: Macros
-            href: cpp-winrt/macros.md
-          - name: Diagnosing direct allocations
-            href: cpp-winrt/diag-direct-alloc.md
-          - name: Use a C# component from C++/WinRT
-            href: cpp-winrt/use-csharp-component-from-cpp-winrt.md
-          - name: Photo Editor sample application
-            href: cpp-winrt/photo-editor-sample.md
-          - name: A simple WinUI 3 example
-            href: cpp-winrt/simple-winui-example.md
-          - name: Troubleshooting C++/WinRT issues
-            href: cpp-winrt/troubleshooting.md
-      - name: C#/WinRT
-        items:
-          - name: Overview
-            href: platform/csharp-winrt/index.md
-          - name: .NET mappings of WinRT types in C#/WinRT
-            href: platform/csharp-winrt/net-mappings-of-winrt-types.md
-          - name: Agile objects
-            href: platform/csharp-winrt/agile-objects.md
-          - name: "Tutorial: Generate a C# projection from a C++/WinRT component"
-            href: platform/csharp-winrt/net-projection-from-cppwinrt-component.md
-          - name: Windows Runtime components with C#/WinRT
-            items:
-              - name: Author Windows Runtime components with C#/WinRT
-                href: platform/csharp-winrt/authoring.md
-              - name: "Tutorial: Create a C#/WinRT component, and consume it from C++/WinRT"
-                href: platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
-              - name: "Tutorial: Create a C# component with WinUI controls, and consume it from a C++ Windows App SDK app"
-                href: platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
-              - name: Diagnose component errors
-                href: platform/csharp-winrt/authoring-diagnostics.md
+              - name: Overview
+                href: platform/csharp-winrt/index.md
+              - name: .NET mappings of WinRT types in C#/WinRT
+                href: platform/csharp-winrt/net-mappings-of-winrt-types.md
+              - name: Agile objects
+                href: platform/csharp-winrt/agile-objects.md
+              - name: "Tutorial: Generate a C# projection from a C++/WinRT component"
+                href: platform/csharp-winrt/net-projection-from-cppwinrt-component.md
+              - name: Windows Runtime components with C#/WinRT
+                items:
+                  - name: Author Windows Runtime components with C#/WinRT
+                    href: platform/csharp-winrt/authoring.md
+                  - name: "Tutorial: Create a C#/WinRT component, and consume it from C++/WinRT"
+                    href: platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
+                  - name: "Tutorial: Create a C# component with WinUI controls, and consume it from a C++ Windows App SDK app"
+                    href: platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
+                  - name: Diagnose component errors
+                    href: platform/csharp-winrt/authoring-diagnostics.md
       - name: XAML
         items:
           - name: Overview

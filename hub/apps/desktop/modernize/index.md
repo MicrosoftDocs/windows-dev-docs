@@ -1,33 +1,35 @@
 ---
-description: Learn how to modernize your existing WPF, Windows Forms, or Win32 desktop app with Windows App SDK features, MSIX packaging, and modern Windows APIs — without a full rewrite.
-title: Modernize your desktop apps for Windows
-ms.topic: overview
-ms.date: 07/09/2026
+description: Learn how to modernize your existing WPF, Windows Forms, or Win32 desktop app with the Windows App SDK, MSIX packaging, and modern Windows APIs—no rewrite needed.
+title: Modernize existing desktop apps
+ms.topic: concept-article
+ms.date: 08/14/2026
 ms.localizationpriority: medium
 ---
 
-# Use modern Windows features in desktop apps
+# Modern Windows features for desktop apps
 
 You don't need to rewrite your WPF, Windows Forms, or Win32 app to take advantage of modern Windows features. The Windows App SDK and the broader Windows platform offer modular capabilities you can adopt incrementally, at your own pace.
+
+This article introduces three independent modernization approaches—calling Windows Runtime (WinRT) APIs, adding the Windows App SDK, and adopting MSIX packaging—so you can decide which features to add and where to start based on your app's framework.
+
+## UI framework migration to WinUI 3
+
+If your goal is to fully modernize your app's UI layer, we recommend migrating to [WinUI 3](../../winui/winui3/index.md) — the native UI framework for Windows desktop apps. See [Create your first WinUI 3 app](../../get-started/start-here.md) to get started.
+
+If you want to add Windows features to your existing app framework (WPF, Windows Forms, or C++ Win32) without changing your UI layer, use one of the [modernization approaches](#modernization-approaches) described in this article.
 
 > [!NOTE]
 > This article covers adding modern Windows features to your existing desktop app. If you want to modernize your .NET toolchain or C++ compiler, see [GitHub Copilot modernization for .NET](/dotnet/core/porting/github-copilot-app-modernization/) or the [Microsoft C++ porting and upgrading guide](/cpp/porting/visual-cpp-porting-and-upgrading-guide).
 
-## Migrate your UI framework?
-
-If your goal is to fully modernize your app's UI layer, the recommended path is to migrate to [WinUI 3](../../winui/winui3/index.md) — the native UI framework for Windows desktop apps. See [Create your first WinUI 3 app](../../get-started/start-here.md) to get started.
-
-If you want to add Windows features to your existing app framework (WPF, WinForms, or C++ Win32) without changing your UI layer, continue reading.
-
-## Choose your approach
+## Modernization approaches
 
 The three modernization approaches are independent. You can use one, two, or all three in the same app.
 
 | Approach | What it gives you | Requires packaging? |
 |---|---|---|
-| **[WinRT APIs](winrt-apis-desktop-apps.md)** | Direct access to Windows platform APIs (notifications, Bluetooth, share contract, sensors, and more) from any .NET or C++ desktop app | No, for most APIs |
-| **[Windows App SDK](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)** | A NuGet package that brings modern Windows development features (windowing, text rendering, resources, and more) to existing apps | No, for most features |
-| **[MSIX packaging](../../package-and-deploy/packaging/index.md)** | A modern installer with clean uninstall, automatic updates, and package identity; can be added without changing app source code | N/A — packaging *is* the approach |
+| [WinRT APIs](winrt-apis-desktop-apps.md) | Direct access to Windows platform APIs (notifications, Bluetooth, share contract, sensors, and more) from any .NET or C++ desktop app | No, for most APIs |
+| [Windows App SDK](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) | A NuGet package that brings modern Windows development features (windowing, text rendering, resources, and more) to existing apps | No, for most features |
+| [MSIX packaging](../../package-and-deploy/packaging/index.md) | A modern installer with clean uninstall, automatic updates, and package identity; requires no source code changes | N/A — packaging *is* the approach |
 
 > [!TIP]
 > Start with **WinRT APIs** if you want to call a specific Windows platform API. Add the **Windows App SDK** when you need its features (DWriteCore, MRT Core, windowing). Add **MSIX packaging** when you need package identity or want to modernize your installer.
@@ -58,16 +60,18 @@ MSIX packaging replaces your existing installer and gives your app package ident
 
 ## Framework-specific starting points
 
+The following table lists the recommended starting point for each desktop app framework.
+
 | Your framework | Recommended starting point |
 |---|---|
 | **WPF** | [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) |
-| **WinForms** | [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) |
+| **Windows Forms** | [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) |
 | **C++ Win32** | [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) |
 | **C++/WinRT** | [WinRT APIs for desktop apps](winrt-apis-desktop-apps.md) |
 
-## Feature catalog
+## Feature catalog for desktop app modernization
 
-The following table lists common modernization features and whether they require the Windows App SDK or package identity.
+The following tables list common modernization features and whether each one requires the Windows App SDK or package identity.
 
 ### AI
 
@@ -117,26 +121,18 @@ The following table lists common modernization features and whether they require
 |---|---|---|
 | [MRT Core resource management](../../windows-app-sdk/mrtcore/mrtcore-overview.md) | Yes | No |
 
-For the full list of features available in desktop apps, see [Features for Windows app development](../../develop/index.md).
+For the full list of platform features available in desktop apps, see [Windows app platform overview](../../develop/features-overview.md).
 
 ## AI-assisted modernization
 
 The [GitHub Copilot modernization agent](/dotnet/core/porting/github-copilot-app-modernization/) can analyze your desktop solution and generate pull requests that add modern Windows features or upgrade your app to a newer .NET version. For details, see [AI-assisted modernization](../../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md).
 
-## See also
+## Related content
 
+- [Call Windows Runtime APIs in desktop apps](winrt-apis-desktop-apps.md)
+- [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
+- [Packaging overview](../../package-and-deploy/packaging/index.md)
 - [Choose your migration path](../../windows-app-sdk/migrate-to-windows-app-sdk/migration-decision-guide.md)
 - [Migration terminology](../../windows-app-sdk/migrate-to-windows-app-sdk/migration-terminology.md)
 - [Call interop APIs from a .NET app](winrt-com-interop-csharp.md)
 - [Build a C# .NET app with WinUI and Win32 interop](../../winui/winui3/desktop-winui3-app-with-basic-interop.md)
-
-## Next steps
-
-> [!div class="nextstepaction"]
-> [Call Windows Runtime APIs in desktop apps](winrt-apis-desktop-apps.md)
-
-> [!div class="nextstepaction"]
-> [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
-
-> [!div class="nextstepaction"]
-> [Packaging overview](../../package-and-deploy/packaging/index.md)
