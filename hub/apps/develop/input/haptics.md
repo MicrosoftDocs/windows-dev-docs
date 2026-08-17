@@ -1,7 +1,7 @@
 ---
 description: Implement haptic feedback in Windows apps using InputHapticsManager, with C# examples for waveforms, sliders, and alignment.
 title: Implement haptic feedback in Windows apps
-ms.date: 07/08/2026
+ms.date: 08/11/2026
 ms.topic: how-to
 author: GrantMeStrength
 ms.author: jken
@@ -15,17 +15,13 @@ This article explains how to add haptic feedback to your Windows app using the [
 
 For design guidance on when and why to use haptics, see [Haptics design guidelines](../../design/signature-experiences/haptics.md).
 
-## Supported devices
-
-Haptics are supported on input devices such as mice, touchpads, and pens. Availability varies by model and manufacturer. Always check for support at runtime before calling haptics APIs (see [Check for support](#check-for-support) below).
-
 ## Requirements
 
 | Requirement | Details |
 |---|---|
 | **Namespace** | `Windows.Devices.Haptics` |
-| **Minimum OS** | Windows 11, SDK [10.0.28000.1721](/windows/apps/whats-new/release-notes) (March 2026) |
-| **Align / Collide / Step / Grow waveforms** | SDK [10.0.28000.1839](/windows/apps/whats-new/release-notes) (April 2026) |
+| **Minimum OS** | Windows 11, SDK [10.0.28000.1721](../../windows-sdk/release-notes.md#build-100280001721) (March 2026) |
+| **Align / Collide / Step / Grow waveforms** | SDK [10.0.28000.1839](../../windows-sdk/release-notes.md#build-100280001839) (April 2026) |
 | **API contract** | `UniversalApiContract` version 19.0 |
 
 To target earlier OS versions, use `ApiInformation.IsTypePresent` to guard all calls (see code below).
@@ -233,6 +229,21 @@ void OnObjectLeftAlignmentZone()
 | **Feel** | Can feel more immediate | Slightly delayed, but more consistent |
 | **Tuning effort** | Higher—requires careful calibration | Lower—a single delay value is usually sufficient |
 | **Recommended for** | Apps requiring highly responsive feedback | Most apps; good default starting point |
+
+## Supported devices
+
+Haptics are supported on input devices such as mice, touchpads, and pens. Availability varies by model and manufacturer. Always [check for support](#check-for-support) at runtime before calling haptics APIs.
+
+The following devices are listed in the [Supported Device Database](https://microsoft.design/wp-content/uploads/2026/06/Supported-Device-Database.pdf) (PDF).
+
+| Device type | Device |
+|---|---|
+| Touchpad | Surface Laptop 8 |
+| Touchpad | Surface Laptop 8 for Business |
+| Mouse | Logitech MX Master 4 |
+| Pen | ASUS Pen 3.0 |
+| Pen | Surface Slim Pen 2 |
+| Pen | MSI Pen 2 |
 
 ## Related articles
 
