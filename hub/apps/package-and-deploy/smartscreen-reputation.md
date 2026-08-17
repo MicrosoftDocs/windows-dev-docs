@@ -45,7 +45,7 @@ Apps published through the Microsoft Store are re-signed by Microsoft and carry 
 
 [Artifact Signing](/azure/trusted-signing/) (formerly Trusted Signing) is Microsoft's recommended code signing service for non-Store distribution:
 
-- **Cost:** Approximately $10/month
+- **Cost** — Starts at $9.99/month. See [Artifact Signing pricing](https://azure.microsoft.com/pricing/details/artifact-signing/).
 - **No hardware token required** — integrates directly with CI/CD pipelines (GitHub Actions, Azure DevOps)
 - **Identity validation required** — Microsoft validates your identity before issuing certificates
 - **SmartScreen behavior** — reputation accumulates over time based on download volume and behavior
