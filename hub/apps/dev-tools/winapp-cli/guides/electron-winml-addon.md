@@ -1,7 +1,7 @@
 ---
 title: Creating a WinML Addon
 description: Build a native Node addon for your Electron app that runs machine learning inference with Windows ML through the Windows App SDK from JavaScript.
-ms.date: 07/23/2026
+ms.date: 08/14/2026
 ms.topic: how-to
 ---
 

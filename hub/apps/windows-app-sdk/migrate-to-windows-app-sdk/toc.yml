@@ -1,0 +1,67 @@
+items:
+- name: Build Windows apps
+  href: ../../desktop/index.yml
+- name: Migrate and modernize overview
+  href: overall-migration-strategy.md
+- name: Choose your migration path
+  href: migration-decision-guide.md
+- name: Migration terminology
+  href: migration-terminology.md
+- name: Migrate from UWP to Windows App SDK
+  items:
+  - name: Overview
+    href: migrate-to-windows-app-sdk-ovw.md
+  - name: What's supported
+    href: what-is-supported.md
+  - name: Map UWP features to Windows App SDK
+    href: feature-mapping-table.md
+  - name: Map UWP APIs to Windows App SDK
+    href: api-mapping-table.md
+  - name: Feature area guides
+    items:
+    - name: Overview
+      href: guides/feature-area-guides-ovw.md
+    - name: User interface migration
+      href: guides/winui3.md
+    - name: Keyboard APIs and events
+      href: guides/keyboard-events.md
+    - name: Windowing
+      href: guides/windowing.md
+    - name: Application lifecycle
+      href: guides/applifecycle.md
+    - name: App notifications
+      href: guides/toast-notifications.md
+    - name: Push notifications
+      href: guides/notifications.md
+    - name: DirectWrite to DWriteCore
+      href: guides/dwritecore.md
+    - name: MRT to MRT Core
+      href: guides/mrtcore.md
+    - name: Background tasks
+      href: guides/background-task-migration-strategy.md
+    - name: Threading
+      href: guides/threading.md
+  - name: .NET Upgrade Assistant
+    href: upgrade-assistant.md
+  - name: "Case study: PhotoLab (C#)"
+    href: case-study-1.md
+  - name: "Case study: Photo Editor (C++/WinRT)"
+    href: case-study-2.md
+  - name: Additional migration guidance
+    href: misc-info.md
+- name: AI-assisted migration
+  href: ai-modernize.md
+- name: Modernize your desktop app
+  href: ../../desktop/modernize/index.md
+- name: Migrate WPF app patterns to WinUI 3
+  href: wpf-patterns-winui3.md
+- name: Cross-platform migration
+  items:
+  - name: Overview
+    href: ../../develop/ai-assisted/migrate/cross-framework.md
+  - name: Migrate from iOS
+    href: ../../develop/ai-assisted/migrate/ios-to-winui.md
+  - name: Migrate from UWP
+    href: ../../develop/ai-assisted/migrate/uwp-to-winui.md
+  - name: Migrate from WPF
+    href: ../../develop/ai-assisted/migrate/wpf-to-winui.md

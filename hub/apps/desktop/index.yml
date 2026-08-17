@@ -7,8 +7,7 @@ metadata:
   title: Build desktop apps for Windows
   description: Get started building Windows desktop apps with the Windows App SDK and WinUI 3. Covers design, development, packaging, deployment, and publishing.
   ms.topic: landing-page
-  ms.collection: collection
-  ms.date: 07/09/2026
+  ms.date: 08/14/2026
   keywords: windows app sdk, winui 3, desktop development, windows desktop app, msix packaging, win32 modernization, fluent design, c# desktop app, windows 11 development
 
 # linkListType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
@@ -58,18 +57,16 @@ landingContent:
         links:
           - text: Develop overview
             url: ../develop/index.md
-          - text: Features
-            url: ../develop/features-overview.md
-          - text: Use features with other UI frameworks
-            url: ../desktop/modernize/index.md
           - text: Platform
+            url: ../develop/features-overview.md
+          - text: Windows Runtime (WinRT)
             url: ../develop/platform/index.md
           - text: API reference
             url: ../api-reference/index.md
           - text: Tutorials
             url: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
           - text: Windows AI
-            url: https://learn.microsoft.com/windows/ai/
+            url: /windows/ai/
 
   - title: Package and deploy
     linkLists:

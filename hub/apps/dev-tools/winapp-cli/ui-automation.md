@@ -1,11 +1,11 @@
 ---
-title: UI Automation
+title: winapp CLI UI Automation
 description: Inspect and interact with running Windows application UIs from the command line using winapp CLI UI automation commands.
-ms.date: 07/23/2026
+ms.date: 08/14/2026
 ms.topic: reference
 ---
 
-# UI Automation
+# Inspect and automate Windows app UIs with the winapp CLI
 
 Inspect and interact with running Windows applications from the command line.
 Used by AI agents and developers for UI testing, debugging, and automation.
@@ -17,7 +17,14 @@ Uses Windows UI Automation (UIA). Works with any Windows app — WPF, WinForms, 
 Most commands drive the app through UIA patterns (no input injection). The exceptions inject real input: `ui click`/`ui hover`/`ui drag` use mouse simulation, `ui touch`/`ui pen` synthesize touch and pen/stylus input, and `ui send-keys` synthesizes keyboard input — for controls and scenarios that UIA patterns can't drive.
 
 > [!IMPORTANT]
-> **Interactive-desktop requirement (input-injecting verbs).** `click`, `hover`, `drag`, `touch`, `pen`, `scroll --wheel`, and `send-keys --via send-input` synthesize OS-level input, so they need an **unlocked, interactive desktop** with the target window in the foreground. On a **locked workstation or secure desktop** (LogonUI/UAC) they can't inject and fail fast with **`no_interactive_desktop`** (distinct from the elevation/`foreground_not_target` cases). `touch`/`pen` additionally refuse when no window resolves (**`no_target`**); a coordinate outside the target window is a **non-fatal warning** (a `warnings[]` entry under `--json`, or a warning line in text mode) and injection still proceeds — consistent with the mouse verbs. Everything else — `inspect`, `search`, `get-property`, `get-value`, `wait-for`, `set-value`, `invoke`, `scroll --direction/--to`, `screenshot` — drives the app through UIA patterns and is **headless/locked-session friendly**. Prefer the UIA-pattern verbs in CI; reserve the injection verbs for scenarios that genuinely need real input. Before injecting, the gesture verbs also **re-resolve the target element** and refuse with **`target_moved`** if it's still animating/relocating, rather than landing input on empty space.
+> **Interactive-desktop requirement (input-injecting verbs).** The input-injecting verbs — `click`, `hover`, `drag`, `touch`, `pen`, `scroll --wheel`, and `send-keys --via send-input` — synthesize OS-level input, so they need an **unlocked, interactive desktop** with the target window in the foreground. The following conditions determine what happens:
+>
+> - **Locked workstation or secure desktop** (LogonUI/UAC): the verbs can't inject and fail fast with **`no_interactive_desktop`** (distinct from the elevation/`foreground_not_target` cases).
+> - **No window resolves** (`touch`/`pen` only): the verb refuses with **`no_target`**.
+> - **Coordinate outside the target window**: a **non-fatal warning** (a `warnings[]` entry under `--json`, or a warning line in text mode), and injection still proceeds — consistent with the mouse verbs.
+> - **Target still animating or relocating**: before injecting, the gesture verbs **re-resolve the target element** and refuse with **`target_moved`** rather than landing input on empty space.
+>
+> Everything else — `inspect`, `search`, `get-property`, `get-value`, `wait-for`, `set-value`, `invoke`, `scroll --direction/--to`, and `screenshot` — drives the app through UIA patterns and is **headless/locked-session friendly**. Prefer the UIA-pattern verbs in CI; reserve the injection verbs for scenarios that genuinely need real input.
 
 ## Quick Start
 
@@ -149,16 +156,14 @@ The surfaced selector can be used directly:
 winapp ui invoke btn-save-c3d4 -a myapp    # invoke the parent Button
 ```
 
-## Commands
-
-### status
+## status (connect to an app and show connection info)
 Connect to an app and show connection info.
 ```bash
 winapp ui status -a notepad
 winapp ui status -a notepad --json
 ```
 
-### inspect
+## inspect (view the UI element tree)
 View the UI element tree. Output shows semantic slugs with 2-space indentation for hierarchy:
 ```bash
 winapp ui inspect -a notepad                    # full window tree, depth 3
@@ -197,7 +202,7 @@ Elements may show these state markers:
 - `[disabled]` — element is not enabled
 - `value="..."` — current text content for editable elements (when different from Name)
 
-### search
+## search (find elements matching a selector)
 Find elements matching a selector. Output shows semantic slugs:
 ```bash
 winapp ui search Button -a notepad              # all buttons
@@ -218,7 +223,7 @@ Slugs shown in output (e.g., `btn-minimize-d1a0`) can be used directly with othe
 winapp ui invoke btn-minimize-d1a0 -a notepad
 ```
 
-### get-property
+## get-property (read property values from an element)
 Read property values from an element. Includes pattern-specific state (ToggleState, Value, IsSelected, etc.).
 ```bash
 winapp ui get-property btn-submit-7a90 -a myapp              # all properties
@@ -227,7 +232,7 @@ winapp ui get-property txt-textbox-a4b1 -p Value -a myapp          # current tex
 winapp ui get-property cmb-combobox-d5e6 -p ExpandCollapseState -a myapp  # expanded or collapsed
 ```
 
-### screenshot
+## screenshot (capture a window or element as PNG)
 Capture a window or element as PNG. When multiple windows exist (e.g., app + open dialog), they are composited into a single PNG with each window stitched in.
 ```bash
 winapp ui screenshot -a notepad                     # saves screenshot.png in cwd
@@ -245,38 +250,47 @@ The default capture path uses **Windows.Graphics.Capture (WGC)**, reading the ac
 
 Use `--capture-screen` when you need to capture popup menus, dropdowns, flyouts, or tooltip overlays that aren't owned by the target window. `--capture-screen` reads from the screen DC and brings the window to the foreground first. Use `--focus` if you just want to foreground the window without switching capture modes (e.g., to ensure the screenshot matches what the user is currently looking at).
 
-### record
-Record the target window (or an element's region) to an H.264 MP4 video. Frames are captured via Windows Graphics Capture (with PrintWindow/screen-DC fallback) and encoded incrementally with Media Foundation, so recordings never buffer the full video in memory.
-
-**Default behavior** (`--duration-sec 0`): records until stopped. Use Ctrl+C interactively, or (for programmatic / agent callers) write a newline to stdin or close stdin to stop and finalize the MP4 gracefully. A valid, playable MP4 is **always** finalized on any graceful stop — no corruption.
+## record (record a window or element to MP4)
+Record a window or element region to an H.264 MP4. By default, recording continues until Ctrl+C or, for redirected stdin, a newline or EOF.
 
 ```bash
-# Timed: record for 10 s at 15 fps
+# Record for 10 seconds
 winapp ui record -a myapp --duration-sec 10 --fps 15 --output demo.mp4
 
-# Unbounded (default): record until Ctrl+C, downscaled to max 1280px longest edge
-winapp ui record -a myapp --max-edge 1280 --output capture.mp4
+# Add agent-readable frames
+winapp ui record -a myapp --frames --duration-sec 10 --fps 10 --output demo.mp4 --json
 
-# Programmatic stop (agent/script): pipe a newline; the recorder stops and writes a valid MP4
+# Stop an unbounded recording through stdin
 "" | winapp ui record -a myapp --json --output capture.mp4
 
-# Record a single element's region (fails with element_not_found if the selector doesn't match)
-winapp ui record itm-chart-9f8e -a myapp --output chart.mp4
-
-# Include screen overlays / popups (captures from screen DC; brings window to foreground)
+# Include screen overlays and popups
 winapp ui record -a myapp --capture-screen --duration-sec 5 --output with-popups.mp4
 ```
 
 **Options:**
-- `--duration-sec N` — Record for N seconds. Default **0** = record until stopped.
+- `--duration-sec N` — Record for N seconds. Default 0 records until stopped.
 - `--fps N` — Target frames per second (default 15).
 - `--max-edge N` — Downscale so the longest edge is at most N pixels (0 = no downscale).
 - `--capture-screen` — Capture from the screen DC (includes overlays/popups; foregrounds the window).
-- `--output <path>` — Output MP4 path. Defaults to `recording-<timestamp>-<guid>.mp4` in the current directory.
+- `--output <path>` — Output MP4 path. Defaults to `recording-<timestamp>-<guid>.mp4`.
+- `--frames` — Write timestamped JPEG evidence to `<output-name>.frames`. Supports 1-30 fps and `--max-edge` 64-4096 (default 1280). Frame data is capped at 1 GiB; the MP4 continues if the cap is reached.
 
-**Stop mechanisms:**
-- Interactive: **Ctrl+C** (any platform).
-- Programmatic / agent: write a **newline** (`""`) or close stdin (EOF). The stop is applied as soon as the encoder is ready (first frame captured); any stop signal that arrives before the first frame is latched and applied immediately at readiness — there is no grace window and no wall-clock delay.
+**Agent-readable frame artifacts:**
+
+```text
+demo.mp4
+demo.frames/
+  manifest.json
+  frames.ndjson
+  frames/
+    frame-000000-t000000000012.jpg
+```
+
+`frames.ndjson` has one line per sample with `sampleIndex`, monotonic `elapsedMs`, MP4-relative `mediaTimeMs`, `imageIndex`, `file`, and `changed`. Consecutive pixel-identical samples reuse the preceding quality-85 JPEG.
+
+`manifest.json` records the request, timing, MP4 status, image dimensions, and status (`complete`, `partial`, or `truncated`). Truncated timing covers the retained prefix, while `video` describes the complete MP4.
+
+With `--frames`, existing MP4 and frame paths are not replaced. If MP4 finalization fails, preserved frames are published under `<output-name>.frames.partial-*`. Frame artifacts contain unencrypted screen content; handle them like screenshots or video.
 
 **Capture modes** (reported in the JSON `mode` field):
 - `wgc` — Windows Graphics Capture (default; works while the window is occluded).
@@ -284,18 +298,20 @@ winapp ui record -a myapp --capture-screen --duration-sec 5 --output with-popups
 - `screen` — Screen DC via `--capture-screen` (includes overlays/popups; brings the window to the foreground).
 
 **JSON output (`--json`):**
-- **stdout** (final result): `{ "path", "frames", "width", "height", "fileSize", "codec": "h264", "mode", "fps", "durationSec" }`
-- **stderr** (liveness event, emitted when capture begins): `{ "event": "recording-started", "path", "fps", "durationSec" }`
-
-The liveness event on stderr lets programmatic callers know the capture loop is live without waiting for the final result. The final result JSON on stdout is a single clean object.
+- **stdout:** Final recording result, including cadence, stop reason, optional `frameArtifacts`, and warnings.
+- **stderr:** One JSON object per line: a `recording-started` event after the first frame, followed by an error if recording later fails. Frame paths are included only when frame output is active.
 
 **Error codes:**
-- `element_not_found` — Selector given but no matching element found; fails immediately (no partial file written).
-- `ambiguous_selector` — A plain-text selector matched multiple elements; use a slug from the suggestions shown in the error (or from `inspect` output) to target a specific element.
-- `invalid_arguments` — Invalid option value (e.g., `--duration-sec -1` or `> 86400`).
+- `element_not_found` — The selector did not match.
+- `ambiguous_selector` — The selector matched multiple elements; use a suggested slug.
+- `invalid_arguments` — An option value is invalid.
+- `output_exists` — With `--frames`, the MP4 or frame directory already exists.
+- `frame_output_failed` — Neither artifact could be preserved after frame output failed.
+- `partial_output` — Only one artifact completed; inspect `partialOutput` and `recoveryHint`.
 
-**Known limitation — windowed popups:** When you record a *specific element* (by selector) that lives inside a popup which renders in its own top-level window — e.g. a WinUI/XAML flyout, teaching tip, tooltip, or menu (`Xaml_WindowedPopupClass`) — the recorder may capture the underlying main window instead of the popup, producing blank or stale frames. Record the **whole window** (omit the selector), or use `winapp ui screenshot --capture-screen` for popup stills. Tracked in [#646](https://github.com/microsoft/winappCli/issues/646).
+**Known limitation:** Recording an element inside a windowed popup may capture the underlying window. Record the whole window or use `ui screenshot --capture-screen`. See [GitHub issue #646](https://github.com/microsoft/winappCli/issues/646).
 
+## invoke (programmatically activate an element)
 
 Programmatically activate an element (click button, toggle checkbox, expand combo box).
 ```bash
@@ -306,7 +322,7 @@ winapp ui invoke cmb-sizecombobox-b4c5 -a myapp # expand combo box
 
 Tries patterns in order: InvokePattern → TogglePattern → SelectionItemPattern → ExpandCollapsePattern.
 
-### click
+## click (click an element using mouse simulation)
 Click an element at its screen coordinates using mouse simulation. Use this for controls that don't support `InvokePattern` (e.g., column headers, list items).
 ```bash
 winapp ui click btn-column1-a3f2 -a myapp              # single click by slug
@@ -317,7 +333,7 @@ winapp ui click btn-column1-a3f2 -a myapp --right       # right-click
 
 > Like the other input-injecting verbs, `click` brings the target to the foreground and **fails fast** (`no_interactive_desktop` on a locked/secure desktop, `foreground_not_target` if focus couldn't be transferred) rather than clicking the wrong window. It also **re-resolves the element just before the button-down**: after positioning the cursor it does one final position check, so a continuously moving/animating target fails with **`target_moved`** instead of reporting success after the click landed on empty space — a reported success means the target was still in place when the button went down.
 
-### drag
+## drag (press, move, and release the mouse)
 Press the mouse button at one point, move to another, then release with `drag <from> <to>`, where each endpoint is either an **element selector** (drags from/to the element's center) or **screen coordinates `x,y`** exactly as reported by `winapp ui inspect`. Mix and match freely (selector→selector, selector→coords, coords→coords).
 
 Uses `SendInput` with intermediate moves so the app sees a realistic stream of `WM_MOUSEMOVE` messages. Use it for reorder/resize handles, sliders, canvas drawing, and drag-and-drop.
@@ -341,7 +357,7 @@ winapp ui drag itm-card-9f8e pane-left-2c1a -a myapp --dwell-ms 350      # settl
 
 > Like `send-keys --via send-input`, `drag` injects OS-wide at screen coordinates after bringing the target to the foreground. If focus can't be brought to the target (e.g. focus-stealing prevention from a background process), the command **fails (`foreground_not_target`)** rather than dragging on the wrong window — focus or click the window first. On a locked/secure desktop it fails with **`no_interactive_desktop`**. Each element endpoint is **re-resolved immediately before the drag**; if it's still moving/resizing (an animating target), the command fails with **`target_moved`** instead of dragging to a stale point. (Bare `x,y` endpoints can't be re-verified, so they're used as-is.)
 
-### touch
+## touch (inject synthetic touch gestures)
 Inject synthetic **touch** gestures using the Windows pointer-injection API. The contact anchor is either an **element selector** (uses the element's center) or an explicit **screen coordinate `x,y`** via `--at` (same space `winapp ui inspect` reports). Use it for tap/press interactions and multi-touch gestures that mouse simulation can't express.
 ```bash
 winapp ui touch btn-ok-1a2b -a myapp                                   # tap at the element center
@@ -368,7 +384,7 @@ winapp ui touch img-map-9f8e -a myapp --gesture stretch --distance 200  # stretc
 >
 > **Remote Desktop / VM sessions.** In a Remote Desktop (RDP) or some VM sessions the OS may accept synthetic touch (exit 0) without it actually reaching the target app. When a remote session is detected, `touch` appends a **delivery-uncertainty warning** — a `warnings[]` entry in `--json`, or a warning line in text mode. A ✅/exit 0 then means the injection *call* succeeded, **not** that the app received the input; confirm the effect with `ui screenshot`/`ui inspect` when it matters.
 
-### pen
+## pen (inject synthetic pen/stylus input)
 Inject synthetic **pen/stylus** input — taps and ink strokes — using the Windows synthetic-pointer API (`CreateSyntheticPointerDevice(PT_PEN)`; Windows 10 1809+). Target an element center, an explicit `--at` point, or a full `--path` ink stroke.
 ```bash
 winapp ui pen canvas-1a2b -a myapp                                     # pen tap at the element center
@@ -390,7 +406,7 @@ winapp ui pen -a myapp --at 200,200 --tilt-x 30 --tilt-y -15           # tilted 
 >
 > **Remote Desktop / VM sessions.** Pen routing is **especially unreliable over Remote Desktop**: the injection call can report success (exit 0) while **no pen input reaches the app**. When a remote session is detected, `pen` appends a **delivery-uncertainty warning** (`warnings[]` in `--json`, or a warning line in text mode) so a ✅ is not mistaken for confirmed delivery. Validate pen-dependent flows on a **local, interactive desktop**.
 
-### hover
+## hover (move the mouse to trigger hover effects)
 Move the mouse to an element's center to trigger hover effects (tooltips, flyouts, visual states). Uses `SendInput` for realistic mouse movement with a small wiggle, then waits for a configurable dwell time.
 ```bash
 winapp ui hover btn-info-a1b2 -a myapp                          # hover with default 800ms dwell
@@ -401,7 +417,7 @@ winapp ui hover btn-info-a1b2 -a myapp; winapp ui screenshot -a myapp --capture-
 **Options:**
 - `--dwell-time <ms>` — Time in milliseconds to wait after hovering for effects to appear (default: 800, range: 0–10000)
 
-### send-keys
+## send-keys (send synthetic keyboard input)
 Send synthetic keyboard input — the keyboard counterpart to `click`. UIA has no keyboard-injection pattern, so this drops to the Win32 layer. Use it for keyboard navigation (arrows, Tab, Enter, Esc), shortcuts (`ctrl+c`, `alt+f4`), and typing into controls that need per-keystroke events rather than `set-value`'s atomic write.
 ```bash
 winapp ui send-keys "down down enter" -a myapp                 # arrow navigation then commit
@@ -442,7 +458,7 @@ winapp ui send-keys "win+shift+v" -a myapp --via send-input --allow-system-keys 
 
 **JSON output (`--json`):** the result's `hwnd` is the **effective** window the keys were delivered to — for `--via post-message` this is the resolved **focused child control** when the command retargets to it (not necessarily the top-level `-w`/`-a`/`-e` window), so automation can confirm exactly where input landed. When that effective target looks like a windowless XAML host, the delivery caveat above is also surfaced as a `warnings[]` entry (the same advisory shown on the console), so a ✅ exit 0 isn't mistaken for confirmed delivery.
 
-### set-value
+## set-value (set a value programmatically)
 Set a value on an editable element **programmatically** (no keystrokes, no app foreground). Uses a fallback chain:
 1. **ValuePattern** — TextBox, ComboBox, PasswordBox, and most editable controls.
 2. **RangeValuePattern** — numeric controls (Slider, ProgressBar) when the value parses as a number.
@@ -457,7 +473,7 @@ If none of the three patterns can set the value, `set-value` fails with a clear 
 > **Not every rich editor supports programmatic set.** The LegacyIAccessible fallback only works on controls whose accessibility implements `IAccessible::put_accValue` — native Win32 rich-edit controls and Chromium/Electron/WebView2 compose surfaces typically do. **WinUI 3 `RichEditBox` and WPF `RichTextBox` don't support programmatic value-setting** — by design they expose their contents to UI Automation as read-only (Text pattern, no settable Value pattern), so `set-value` can't write to them. Use `send-keys` (which needs an unlocked, foregrounded desktop) for those.
 
 
-### get-value
+## get-value (read the current value from an element)
 Read the current value from an element. Uses a smart fallback chain: TextPattern (RichEditBox, Document) → ValuePattern (TextBox, Slider) → SelectionPattern (ComboBox, RadioButton, TabView) → Name (labels).
 ```bash
 winapp ui get-value doc-texteditor-53ad -a notepad          # read full document text
@@ -467,19 +483,19 @@ winapp ui get-value sld-volume-b2c3 -a myapp                # read Slider value
 winapp ui get-value lbl-title-a1b2 -a myapp --json          # JSON: { "elementId": "...", "text": "..." }
 ```
 
-### focus
+## focus (move keyboard focus to an element)
 Move keyboard focus to an element.
 ```bash
 winapp ui focus txt-textbox-a4b1 -a notepad
 ```
 
-### scroll-into-view
+## scroll-into-view (scroll an element into view)
 Scroll an element into the visible area.
 ```bash
 winapp ui scroll-into-view itm-targetitem-c3d4 -a myapp
 ```
 
-### wait-for
+## wait-for (wait for an element state or value)
 Wait for an element to appear, disappear, or have a value reach a target.
 ```bash
 winapp ui wait-for Button -a myapp --timeout 5000                       # wait for any button
@@ -490,7 +506,7 @@ winapp ui wait-for btn-submit-a1b2 --gone -a myapp --timeout 2000      # wait fo
 winapp ui wait-for lbl-status -a myapp --value "Done" --contains       # substring match instead of exact equality
 ```
 
-### scroll
+## scroll (scroll a container element)
 Scroll a container element. Find scrollable containers with `search scroll` — look for `[scroll:v]` (vertical) or `[scroll:h]` (horizontal) markers.
 ```bash
 # Find which elements are scrollable and in which direction
@@ -519,13 +535,13 @@ winapp ui scroll img-map-a1b2 --wheel -1 -a myapp
 
 > `--direction`, `--to`, and `--wheel` are mutually exclusive — pass exactly one. Because `--wheel` injects OS-wide input at screen coordinates, it brings the target to the foreground first and **fails (`foreground_not_target`)** if focus couldn't be transferred, rather than scrolling the wrong window.
 
-### get-focused
+## get-focused (show the focused element)
 Show the element that currently has keyboard focus.
 ```bash
 winapp ui get-focused -a myapp
 ```
 
-### list-windows
+## list-windows (list an app's visible windows)
 List all visible windows for an app, including popups and dialogs.
 By default, untitled windows with zero size (invisible system windows) are excluded.
 ```bash
