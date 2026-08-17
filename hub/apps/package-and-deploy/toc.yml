@@ -3,58 +3,52 @@ items:
       href: ../desktop/index.yml
     - name: Package and deploy overview
       href: ../package-and-deploy/index.md
-    - name: Choose a distribution path
-      href: ../package-and-deploy/choose-distribution-path.md
-    - name: SmartScreen reputation for developers
-      href: ../package-and-deploy/smartscreen-reputation.md
-    - name: Current status of distribution features
-      href: ../package-and-deploy/distribution-feature-status.md
-    - name: Publish your first Windows app
-      href: ../package-and-deploy/publish-first-app.md
-    - name: Code signing options
-      href: ../package-and-deploy/code-signing-options.md
-    - name: MSIX on Windows 10 and Windows 11
-      href: ../package-and-deploy/msix-windows10-windows11.md
     - name: Packaging
       items:
         - name: Overview
           href: ../package-and-deploy/packaging/index.md
+        - name: Windows app packaging, deployment, and process
+          href: ../get-started/intro-pack-dep-proc.md
         - name: Package identity
           items:
             - name: Overview
               href: ../desktop/modernize/package-identity-overview.md
             - name: Features that require package identity
               href: ../desktop/modernize/modernize-packaged-apps.md
+        - name: Package your app
+          items:
+            - name: Package your app using single-project MSIX
+              href: ../windows-app-sdk/single-project-msix.md
+            - name: Package your app from source code overview
+              href: /windows/msix/desktop/source-code-overview
+            - name: Grant package identity by packaging with external location
+              items:
+                - name: Overview
+                  href: ../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md
+                - name: Grant package identity by packaging with external location in Visual Studio
+                  href: ../desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio.md
+                - name: Grant package identity by packaging with external location manually
+                  href: ../desktop/modernize/grant-identity-to-nonpackaged-apps.md
+            - name: Unpackage a WinUI app tutorial
+              href: unpackage-winui-app.md
+        - name: Add Windows features to a packaged app
+          items:
             - name: Integrate with package extensions
               href: ../desktop/modernize/desktop-to-uwp-extensions.md
             - name: Integrate a packaged desktop app with File Explorer
               href: ../desktop/modernize/integrate-packaged-app-with-file-explorer.md
             - name: Get activation info for packaged apps
               href: ../desktop/modernize/get-activation-info-for-packaged-apps.md
-            - name: Use the Windows App SDK in an existing project
-              href: /windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project
-            - name: Package your app from source code overview
-              href: /windows/msix/desktop/source-code-overview
-        - name: Package your app using single-project MSIX
-          href: ../windows-app-sdk/single-project-msix.md
-        - name: Grant package identity by packaging with external location
-          items:
-            - name: Overview
-              href: ../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md
-            - name: Grant package identity by packaging with external location in Visual Studio
-              href: ../desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio.md
-            - name: Grant package identity by packaging with external location manually
-              href: ../desktop/modernize/grant-identity-to-nonpackaged-apps.md
-        - name: "Windows apps: packaging, deployment, and process"
-          href: ../get-started/intro-pack-dep-proc.md    
-        - name: "Tutorial: Unpackage a WinUI app"
-          href: unpackage-winui-app.md
-    - name: Windows App SDK deployment
+        - name: MSIX on Windows 10 and Windows 11
+          href: msix-windows10-windows11.md
+    - name: Deploy the Windows App SDK runtime
       items:
         - name: Overview
           href: ../package-and-deploy/deploy-overview.md
         - name: Project properties
           href: ../package-and-deploy/project-properties.md
+        - name: Use the Windows App SDK in an existing project
+          href: ../windows-app-sdk/use-windows-app-sdk-in-existing-project.md
         - name: Deployment guide for framework-dependent apps
           items:
             - name: Deployment architecture and overview
@@ -69,11 +63,35 @@ items:
                   href: ../windows-app-sdk/use-windows-app-sdk-run-time.md
                 - name: "Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK"
                   href: ../windows-app-sdk/tutorial-unpackaged-deployment.md
+            - name: Use MSIX framework packages (dynamic dependencies)
+              items:
+                - name: Overview
+                  href: ../desktop/modernize/framework-packages/index.md
+                - name: MSIX framework packages and dynamic dependencies
+                  href: ../desktop/modernize/framework-packages/framework-packages-overview.md
+                - name: Reference MSIX packages at run time
+                  href: ../desktop/modernize/framework-packages/use-the-dynamic-dependency-api.md
             - name: Check for installed versions of the Windows App SDK runtime
               href: ../windows-app-sdk/check-windows-app-sdk-versions.md
             - name: Remove outdated Windows App SDK runtime versions
               href: ../windows-app-sdk/remove-windows-app-sdk-versions.md
         - name: Deployment guide for self-contained apps
           href: ../package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md
+    - name: Distribute your app
+      items:
+        - name: Publish your first Windows app
+          href: publish-first-app.md
+        - name: Choose a distribution path
+          href: choose-distribution-path.md
+        - name: Current status of distribution features
+          href: distribution-feature-status.md
+    - name: Sign your app
+      items:
+        - name: Code signing options
+          href: code-signing-options.md
+        - name: SmartScreen reputation for developers
+          href: smartscreen-reputation.md
+    - name: Automate and maintain
+      items:
         - name: "Tutorial: Set up CI for WinUI"
-          href: ../package-and-deploy/ci-for-winui3.md
+          href: ci-for-winui3.md

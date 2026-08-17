@@ -2,7 +2,7 @@
 title: Packaging overview
 description: Understand the differences between packaged and unpackaged apps and how packaging affects installation, updates, and access to Windows features.
 ms.topic: concept-article
-ms.date: 07/25/2026
+ms.date: 08/14/2026
 ms.localizationpriority: medium
 ---
 
@@ -19,25 +19,14 @@ Packaged apps benefit from a clean installation model, automatic updates, and ac
 
 ## Features that require package identity
 
-These Windows features only work in apps that have package identity — either through full MSIX packaging or [packaging with external location (Sparse packaging)](#packaging-with-external-location-sparse-packaging).
+Many Windows features only work in apps that have package identity, either through full MSIX packaging or [packaging with external location (Sparse packaging)](#packaging-with-external-location-sparse-packaging). Examples include background tasks, push notifications, share targets, custom context menu extensions, manifest-based file type and protocol associations, and the Windows AI APIs.
 
-| Feature | Description |
-|---|---|
-| **Background tasks** | Run code when your app isn't in the foreground — for example, to sync data, process downloads, or respond to system events. |
-| **Windows AI APIs** (Phi Silica, OCR, etc.) | Access on-device AI capabilities such as local language models, text recognition, and image analysis. |
-| **Push notifications** (WNS) | Receive real-time notifications from your cloud service through the Windows Notification Service. |
-| **Share target** | Let users share content from other apps directly into yours via the system Share sheet. |
-| **Custom context menu extensions** | Add your app's actions to the right-click menu in File Explorer and other shell surfaces. |
-| **File type and protocol associations** | Register your app as the handler for specific file types or URI protocols (e.g., `yourapp://`). |
-| **Startup tasks** | Launch your app automatically when the user signs in to Windows. |
-| **App services** | Expose background services that other apps can call into, enabling inter-app communication. |
+For the complete list, see [Features that require package identity](../../desktop/modernize/modernize-packaged-apps.md).
 
 > [!TIP]
 > If you're unpackaged and hitting `E_ILLEGAL_METHOD_CALL` or `APPMODEL_ERROR_NO_PACKAGE` errors when calling Windows APIs, that's the package identity requirement. See [packaging with external location (Sparse packaging)](#packaging-with-external-location-sparse-packaging) as the lowest-friction fix.
 >
-> To detect at runtime whether your process has package identity, use `GetCurrentPackageFullName` — see [Is This a Packaged Process?](https://devblogs.microsoft.com/insidemsix/is-this-a-packaged-process/) on the Inside MSIX blog for canonical C++ and C# samples.
-
-For more information, see [Features that require package identity](../../desktop/modernize/modernize-packaged-apps.md).
+> To detect at runtime whether your process has package identity, use `GetCurrentPackageFullName`. See [Is This a Packaged Process?](https://devblogs.microsoft.com/insidemsix/is-this-a-packaged-process/) on the Inside MSIX blog for canonical C++ and C# samples.
 
 ## Packaging models at a glance
 
@@ -90,16 +79,13 @@ Before you commit to unpackaged, check the [features table above](#features-that
 | **Internal tool or developer utility** | Unpackaged | Simplest to build and deploy. The Windows App SDK works via NuGet, but some features won't be available. |
 
 > [!TIP]
-> **Not sure about code signing costs?** Publishing an **MSIX package** through the Microsoft Store means you don't need to separately obtain or manage a certificate for end-user trust — Microsoft re-signs the package. Publishing a **Win32 MSI/EXE installer** through the Store requires a certificate chaining to a CA in the [Microsoft Trusted Root Program](/security/trusted-root/participants-list); self-signed is not accepted. For other distribution paths, your signing approach depends on deployment context — enterprise environments can trust a self-signed certificate through device management, while broader non-Store distribution typically requires a CA-trusted code signing solution. [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/) is Microsoft's recommended option (see [pricing](https://azure.microsoft.com/pricing/details/trusted-signing/)), with no hardware token required.
+> Code signing requirements and costs vary by distribution path. For a full breakdown of your options, see [Code signing options for Windows app developers](../code-signing-options.md).
 
 ## Framework-dependent vs self-contained deployment
 
-Separately from packaging model, apps using the Windows App SDK choose how to carry their runtime dependencies:
+Separately from the packaging model, apps that use the Windows App SDK choose how to carry their runtime dependencies: **framework-dependent** (the Windows App SDK runtime is installed on the user's machine) or **self-contained** (all Windows App SDK binaries ship with your app). This choice is independent of packaging.
 
-- **Framework-dependent**: The Windows App SDK runtime must be installed on the user's machine. Smaller app footprint; relies on the runtime being present or auto-installed.
-- **Self-contained**: All Windows App SDK binaries ship with your app. Larger footprint; no external runtime requirement. Good for locked-down enterprise environments.
-
-→ [Deploy self-contained apps](../self-contained-deploy/deploy-self-contained-apps.md)
+For a full comparison and deployment guidance, see the [Windows App SDK deployment overview](../deploy-overview.md).
 
 ## Get started with MSIX
 

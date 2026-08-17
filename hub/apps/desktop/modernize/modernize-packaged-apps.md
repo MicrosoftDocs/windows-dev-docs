@@ -1,7 +1,7 @@
 ---
 description: Learn how to add modern experiences for Windows users in a desktop app that you have packaged in a Windows app package.
 title: Modernize packaged desktop apps
-ms.date: 07/07/2026
+ms.date: 08/14/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -12,12 +12,20 @@ ms.custom: RS5
 
 Some [modern Windows experiences](./index.md) require your app to have [package identity](/uwp/schemas/appxpackage/uapmanifestschema/element-identity) at runtime (in other words, your app needs to be *packaged*). Those experiences include certain Windows features, certain Windows Runtime APIs, package extensions, and UWP components.
 
-Universal Windows Platform (UWP) apps receive package identity by default because they can be distributed only via MSIX packages. Other types of Windows apps, including WPF apps, can also be deployed via MSIX packages to obtain package identity. But apps *packaged with external location* also has package identity. For more info about these terms, see [Advantages and disadvantages of packaging your app](/windows/apps/package-and-deploy/).
+Universal Windows Platform (UWP) apps receive package identity by default because they're distributed in Windows app packages (`.msix` or legacy `.appx`). Other types of Windows apps, including WPF apps, can also be deployed via MSIX packages to obtain package identity. Apps *packaged with external location* also have package identity on Windows 10, version 2004 (build 19041), or later. For more info about these terms, see [Packaging overview](../../package-and-deploy/packaging/index.md).
 
 Only packaged apps (including apps packaged with external location) have package identity at runtime. If your app has package identity, then you can use the following features in your app.
 
-> [!NOTE]
-> For a complete list of features that require package identity — including Windows AI APIs, share targets, context menu extensions, and app services — see [Features that require package identity](/windows/apps/package-and-deploy/packaging/#features-that-require-package-identity).
+| Feature | Description |
+|---|---|
+| **Background tasks** | Run code when your app isn't in the foreground, for example to sync data, process downloads, or respond to system events. |
+| **Windows AI APIs** (Phi Silica, OCR, and so on) | Access on-device AI capabilities such as local language models, text recognition, and image analysis. Package identity is only one requirement; hardware, Windows version, Windows App SDK version, capability, and regional requirements vary by API. For details, see the [Windows AI APIs overview](/windows/ai/apis/). |
+| **Push notifications** (WNS) | Receive real-time notifications from your cloud service through Windows Push Notification Services. Package identity is required for background delivery and COM activation. |
+| **Share target** | Let users share content from other apps directly into yours via the system Share sheet. |
+| **Custom context menu extensions** | Add your app's actions to the right-click menu in File Explorer and other shell surfaces. |
+| **Manifest-based file type and protocol associations** | Register your app as the handler for specific file types or URI protocols (for example, `yourapp://`). |
+| **Startup tasks** | Launch your app automatically when the user signs in to Windows. |
+| **App services** | Expose background services that other apps can call into, enabling inter-app communication. |
 
 ## Notifications
 
