@@ -2,7 +2,7 @@
 title: Windowing overview for WinUI and Windows App SDK
 description: Overview of windowing APIs in the Windows App SDK
 ms.topic: article
-ms.date: 05/16/2025
+ms.date: 08/17/2026
 keywords: windowing, window, AppWindow, Windows App SDK
 ms.localizationpriority: medium
 no-loc: [window handle, Effective pixels, effective pixels, Windows, Window, AppWindow]
@@ -66,6 +66,8 @@ If you use WinUI XAML as your app's UI framework, both the [Window](/windows/win
 > If you're not using WinUI 1.3 or later, use interop APIs to get the AppWindow in order to use the AppWindow APIs. For more about the interop APIs, see [Manage app windows - UI framework and HWND interop](manage-app-windows.md#ui-framework-and-hwnd-interop) and the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
 
 ### Lifetime management
+
+The [Window.Activate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.activate) method attempts to activate the application window. If the calling app is in the foreground, the window is brought to the foreground (top of Z-order) and receives input focus. If the app is in the background, this method does not force the window into the foreground.
 
 | XAML Window | AppWindow |
 |--|--|
