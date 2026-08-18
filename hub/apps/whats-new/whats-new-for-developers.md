@@ -2,7 +2,7 @@
 title: "What's new: SDK, WinUI, tools"
 description: Explore new Windows platform capabilities, SDK and API updates, design guidance, development tools, and productivity improvements.
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 08/14/2026
+ms.date: 08/18/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -43,6 +43,13 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 - **Intelligent Terminal**: An experimental, open-source fork of Windows Terminal with native agent integration, automatic error detection, and a built-in agent pane for pair-programming in the shell — [Announcing Intelligent Terminal version 0.1](https://devblogs.microsoft.com/commandline/announcing-intelligent-terminal-version-0-1/).
 - **WSL Containers**: A built-in way to create, run, and interact with Linux containers on Windows by using a new CLI and API, coming soon to public preview — [WSL on GitHub](https://github.com/microsoft/wsl).
 - **Windows Development Skills**: Structured knowledge that enables AI agents to build native Windows apps end-to-end by using WinUI 3 skills and WinApp CLI — [Get started with Windows Development Skills](https://aka.ms/winui-skills).
+
+---
+
+## Highlights – August 2026
+
+- **Windows App SDK 2.4.0**: The August 13 stable release adds touchpad and mouse haptics for WinUI 3 apps (via `Windows.Devices.Haptics`), touchpad single-finger panning on supported hardware, and more precise `LanguageModel` response statuses — `UnsupportedLanguage` and `LanguageMismatch` — so apps can distinguish language errors from generic failures. Also includes targeted reliability fixes for input, Storage Pickers (keyboard focus now restores after a dialog closes), MRT Core, app runtime isolation, and composition — [Release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.4.0)
+- **Windows App Development CLI v0.6.0**: Adds `winapp new` to scaffold a WinUI 3 app from official templates with a single command (blank, NavigationView, TabView, MVVM, class library, and unit-test starters), `winapp find-ui` to search and fetch copy-pasteable XAML and C# samples from WinUI 3 Gallery and Windows Community Toolkit without leaving the terminal, run-from-`.csproj` with no manual build step, cloud-based artifact signing via Azure, and sparse-package workflow support — [WinApp CLI v0.6.0 announcement](https://devblogs.microsoft.com/ifdef-windows/windows-app-development-cli-v0-6-create-new-winui-applications-sign-packages-with-azure-and-more/) | Install: `winget install Microsoft.WinAppCLI`
 
 ---
 
