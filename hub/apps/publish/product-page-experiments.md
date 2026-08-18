@@ -1,7 +1,9 @@
 ---
-description: Learn how to create product page experiments for your app in the Store.
+description: Learn how to run A/B tests on your Microsoft Store product page by creating experiments that compare logos and screenshots across languages.
 title: Product page experiments
-ms.date: 08/12/2026
+author: GrantMeStrength
+ms.author: jken
+ms.date: 08/18/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -13,9 +15,9 @@ Icons and screenshots occupy up to 50% of the surface area on a Microsoft Store 
 
 To conduct a product page experiment, start by signing in to Partner Center and selecting your app. This new overview page in Partner Center consolidates all app actions and information in one place. The console also contextually prioritizes information cards based on your app's status.
 
-From this view you can start your product page experiment to test app logo and screenshots across all languages.
+From this view, you can start your product page experiment to test app logo and screenshots across all languages.
 
-:::image type="content" source="images/product-page-experiments-1.png" lightbox="images/product-page-experiments-1.png" alt-text="A screenshot showing how to create product page experiment for your app from the application overview page.":::
+:::image type="content" source="images/product-page-experiments-1.png" lightbox="images/product-page-experiments-1.png" alt-text="A screenshot showing how to create a product page experiment for your app from the application overview page.":::
 
 **Step 1:** Click on **Create experiment** button in the Product page experiments tab under **Additional features**.
 
@@ -26,7 +28,7 @@ From this view you can start your product page experiment to test app logo and s
 3.	**Logo:** The logo must be in PNG format and should be less than 50MB in size. The main logo must have dimensions of 300 x 300 pixels. For casual games, a poster image is supported: it must be either 720 x 1080 pixels or 1440 x 2160 pixels.
 4.	**Screenshots:** Screenshots must be in PNG format and should be less than 50MB in size. A maximum of 10 screenshots or images are supported; 4 are recommended. Images must be in PNG format, and 1366 x 768 pixels or larger (4K images of 3840 x 2160 are supported). Images can be either landscape or portrait.
 
-:::image type="content" source="images/product-page-experiments-2.png" lightbox="images/product-page-experiments-2.png" alt-text="A screenshot showing how to configure product page experiment for your app.":::
+:::image type="content" source="images/product-page-experiments-2.png" lightbox="images/product-page-experiments-2.png" alt-text="A screenshot showing how to configure a product page experiment for your app.":::
 
 > [!NOTE] 
 > You can delete your experiment in draft from your app overview page in Partner Center. 
@@ -46,7 +48,7 @@ When your experiment is live, we recommend not changing logos or screenshots in 
 
 **Step 5:** To learn how your experiment is performing, you can go to Partner Center insights.
 
-:::image type="content" source="images/product-page-experiments-4.png" lightbox="images/product-page-experiments-4.png" alt-text="A screenshot how to check analytics of a live product page experiment.":::
+:::image type="content" source="images/product-page-experiments-4.png" lightbox="images/product-page-experiments-4.png" alt-text="A screenshot showing how to check analytics of a live product page experiment.":::
 
 **Step 6:** Monitor the experiment results on the **Product page experiments** dashboard. Compare the **Original conversion rate** and **Variant conversion rate** to determine which product page performs better. If the variant achieves a higher conversion rate, you can apply the winning logo or screenshots to your product page so all customers see the best-performing assets. 
 
