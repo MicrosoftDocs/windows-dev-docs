@@ -29,7 +29,7 @@ Set the desired value of [IsDisabledOnDataReceived](/uwp/api/windows.devices.poi
 The following example shows how to initiate scanning using a software trigger, which will stop scanning once it scans one barcode:
 
 ```csharp
-private void SoftwareTrigger(BarcodeScanner barcodeScanner, ClaimedBarcodeScanner claimedBarcodeScanner) 
+private async Task SoftwareTrigger(BarcodeScanner barcodeScanner, ClaimedBarcodeScanner claimedBarcodeScanner)
 {
     if (barcodeScanner.Capabilities.IsSoftwareTriggerSupported)
     {

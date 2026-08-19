@@ -22,7 +22,7 @@ Once you have a [BarcodeScanner](/uwp/api/windows.devices.pointofservice.barcode
 The following example gets a list of the supported symbologies of the barcode scanner, and displays them in a text block:
 
 ```csharp
-private void DisplaySupportedSymbologies(BarcodeScanner barcodeScanner, TextBlock textBlock) 
+private async Task DisplaySupportedSymbologies(BarcodeScanner barcodeScanner, TextBlock textBlock)
 {
     var supportedSymbologies = await barcodeScanner.GetSupportedSymbologiesAsync();
 

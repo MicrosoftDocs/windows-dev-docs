@@ -140,7 +140,7 @@ The characteristic is the fundamental unit of GATT based communication. It conta
 Read the characteristic properties to determine what operations are supported:
 
 ```csharp
-GattCharacteristicProperties properties = characteristic.CharacteristicProperties
+GattCharacteristicProperties properties = characteristic.CharacteristicProperties;
 
 if(properties.HasFlag(GattCharacteristicProperties.Read))
 {
@@ -219,7 +219,7 @@ void Characteristic_ValueChanged(GattCharacteristic sender,
                                     GattValueChangedEventArgs args)
 {
     // An Indicate or Notify reported that the value has changed.
-    var reader = DataReader.FromBuffer(args.CharacteristicValue)
+    var reader = DataReader.FromBuffer(args.CharacteristicValue);
     // Parse the data however required.
 }
 ```
