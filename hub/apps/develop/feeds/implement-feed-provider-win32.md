@@ -2,7 +2,7 @@
 title: Implement a feed provider in a Win32 app (C++/WinRT)
 description: This article walks you through the process of creating a feed provider, implemented in WinRT/C++, that registers a feed content URI and responds to requests from the Widgets Board. 
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 08/19/2026
 ms.localizationpriority: medium
 ---
 
@@ -13,20 +13,20 @@ ms.localizationpriority: medium
 
 This article walks you through creating a simple feed provider that registers a feed content URI and implements the **IFeedProvider** interface. The methods of this interface are invoked by the Widgets Board to request custom query string parameters, typically to support authentication scenarios. Feed providers can support a single feed or multiple feeds.
 
-To implement a feed provider using C++/WinRT, see [Implement a feed provider in a C# Windows app (C++/WinRT)](implement-feed-provider-cs.md).
+To implement a feed provider using C#, see [Implement a feed provider in a C# Windows app](implement-feed-provider-cs.md).
 
 ## Prerequisites
 
-- Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
+- Your device must run Windows 11, version 23H2 (build 22631.2787) or later, with developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
 - Visual Studio 2026 or later with the **WinUI application development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
 ## Create a new C++/WinRT win32 console app
 
-In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C++" and the platform filter to Windows, then select the Windows Console Application (C++/WinRT) project template. Name the new project "ExampleFeedProvider". For this walkthrough, make sure that **Place solution and project in the same directory** is unchecked. When prompted, set the target Windows version for the app to 10.022631.2787 or later.
+In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C++" and the platform filter to Windows, then select the Windows Console Application (C++/WinRT) project template. Name the new project "ExampleFeedProvider". For this walkthrough, make sure that **Place solution and project in the same directory** is unchecked. When prompted, select an installed Windows SDK target version that is supported by your development environment.
 
 ## Add references to the Windows App SDK and Windows Implementation Library NuGet packages
 
-This sample uses the latest stable Windows App SDK NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select the latest stable version in the **Version** drop-down and then click **Install**.
+This walkthrough requires Microsoft.WindowsAppSDK version 2.3.1 or later. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select version 2.3.1, the minimum version used by this walkthrough, or a later stable version in the **Version** drop-down, and then click **Install**.
 
 This sample also uses the Windows Implementation Library NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.Windows.ImplementationLibrary". Select the latest version in the **Version** drop-down and then click **Install**.
 
@@ -325,27 +325,15 @@ You need to add a reference to the Windows App SDK nuget package to the MSIX pac
 ```xml
 <!--ExampleFeedProviderPackage.wapproj-->
 <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.231116003-experimentalpr">
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.3.1">
         <IncludeAssets>build</IncludeAssets>
     </PackageReference>  
 </ItemGroup>
 ```
 
 > [!NOTE]
-> Make sure the **Version** specified in the **PackageReference** element matches the latest stable version you referenced in the previous step.
+> The snippet uses the minimum supported version, 2.3.1. If you selected a later stable version in the previous step, update the **Version** value to match it.
 
-If the correct version of the Windows App SDK is already installed on the computer and you don't want to bundle the SDK runtime in your package, you can specify the package dependency in the Package.appxmanifest file for the ExampleFeedProviderPackage project.
-
-```xml
-<!--Package.appxmanifest-->
-...
-<Dependencies>
-...
-    <PackageDependency Name="Microsoft.WindowsAppRuntime.1.5.233430000-experimental1" MinVersion="2000.638.7.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
-...
-</Dependencies>
-...
-```
 
 
 ### Update the package manifest
@@ -433,7 +421,7 @@ In **Solution Explorer**, right-click your **ExampleFeedProviderPackage** and se
 
 ## Testing your feed provider
 
-Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**.  Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. The console app should launch on deploy and you will see the feeds get enabled in the console output. Open the Widgets Board and you should see the new feeds in the tabs along the top of the feeds section.
+Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**.  Once this is done, right-click your **ExampleFeedProviderPackage** and select **Deploy**. The console app should launch on deploy and you will see the feeds get enabled in the console output. Open the Widgets Board and you should see the new feeds in the tabs along the top of the feeds section.
 
 ## Debugging your feed provider
 
@@ -455,7 +443,7 @@ In order to automatically attach the debugger to the process when it's initially
 ## Convert your console app to a Windows app
 
 To convert the console app created in this walkthrough to a Windows app:
-1. Right-click on the ExampleWidgetProvider project in **Solution Explorer** and select **Properties**. Navigate to **Linker -> System** and change **SubSystem** from "Console" to "Windows". This can also be done by adding &lt;SubSystem&gt;Windows&lt;/SubSystem&gt; to the &lt;Link&gt;..&lt;/Link&gt; section of the .vcxproj.
+1. Right-click on the ExampleFeedProvider project in **Solution Explorer** and select **Properties**. Navigate to **Linker -> System** and change **SubSystem** from "Console" to "Windows". This can also be done by adding &lt;SubSystem&gt;Windows&lt;/SubSystem&gt; to the &lt;Link&gt;..&lt;/Link&gt; section of the .vcxproj.
 1. In main.cpp, change `int main()` to `int WINAPI wWinMain(_In_ HINSTANCE /*hInstance*/, _In_opt_ HINSTANCE /*hPrevInstance*/, _In_ PWSTR pCmdLine, _In_ int /*nCmdShow*/)`.
 
 :::image type="content" source="images/convert-to-windows-app-cs.png" alt-text="A screenshot showing the C++ feed provider project properties with the output type set to Windows Application":::

@@ -2,7 +2,7 @@
 title: Materials overview
 description: Learn when to use Mica, Desktop Acrylic, SystemBackdropElement, and AcrylicBrush to add visual depth to WinUI 3 app windows and UI elements.
 ms.topic: concept-article
-ms.date: 07/07/2026
+ms.date: 08/19/2026
 keywords: windows, windows app development, Windows App SDK, Mica, Acrylic, SystemBackdropElement, materials
 ms.localizationpriority: medium
 ---
@@ -64,9 +64,9 @@ Acrylic can also be applied to transient surfaces — set `SystemBackdrop` on `F
 
 ## SystemBackdropElement
 
-`SystemBackdropElement` applies a Mica or Desktop Acrylic material from the OS compositor to a specific XAML element — not the whole window. Use it when a sidebar, panel, or card needs its own Mica or Acrylic background independently of the rest of the window.
+[`SystemBackdropElement`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.systembackdropelement) applies a Mica or Desktop Acrylic material from the OS compositor to a specific XAML element — not the whole window. Use it when a sidebar, panel, or card needs its own Mica or Acrylic background independently of the rest of the window.
 
-- **Minimum SDK**: Windows App SDK 1.6.3
+- **Minimum SDK**: Windows App SDK 2.0
 - For details and code samples, see [Apply a system backdrop to any XAML element](system-backdrops.md#apply-a-system-backdrop-to-any-xaml-element).
 
 ## In-app Acrylic (AcrylicBrush)

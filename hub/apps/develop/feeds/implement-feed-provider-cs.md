@@ -2,7 +2,7 @@
 title: Implement a feed provider in a C# Windows App
 description: This article walks you through the process of creating a feed provider, implemented in C#, that registers a feed content URI and responds to requests from the Widgets Board. 
 ms.topic: how-to
-ms.date: 11/02/2023
+ms.date: 08/19/2026
 ms.localizationpriority: medium
 ---
 
@@ -17,20 +17,20 @@ To implement a feed provider using C++/WinRT, see [Implement a feed provider in 
 
 ## Prerequisites
 
-- Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
+- Your device must run Windows 11, version 23H2 (build 22631.2787) or later, with developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
 - Visual Studio 2026 or later with the **WinUI application development** workload.
 
 ## Create a new C# console app
 
-In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to Windows, then select the Console App project template. Name the new project "ExampleFeedProvider". For this walkthrough, make sure that **Place solution and project in the same directory** is unchecked. When prompted, set the target .NET version to 6.0. 
+In Visual Studio, create a new project. In the **Create a new project** dialog, set the language filter to "C#" and the platform filter to Windows, then select the Console App project template. Name the new project "ExampleFeedProvider". For this walkthrough, make sure that **Place solution and project in the same directory** is unchecked. When prompted, set the target .NET version to 10.0.
 
-When the project loads, in **Solution Explorer** right-click the project name and select **Properties**. On the **General** page, scroll down to **Target OS** and select "Windows". Under **Target OS Version**, select version 10.022631.2787 or later.
+When the project loads, in **Solution Explorer** right-click the project name and select **Properties**. On the **General** page, scroll down to **Target OS** and select "Windows". Under **Target OS Version**, select an installed Windows SDK version that is supported by your development environment.
 
 Note that this walkthrough uses a console app that displays the console window when the feed is activated to enable easy debugging. When you are ready to publish your feed provider app, you can convert the console application to a Windows application by following the steps in [Convert your console app to a Windows app](#convert-your-console-app-to-a-windows-app).
 
 ## Add references to the Windows App SDK NuGet package
 
-This sample uses the latest stable Windows App SDK NuGet package. In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select the latest stable version in the **Version** drop-down and then click **Install**.
+This walkthrough requires Microsoft.WindowsAppSDK version 2.3.1 or later. In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select version 2.3.1, the minimum version used by this walkthrough, or a later stable version in the **Version** drop-down, and then click **Install**.
 
 ## Add a FeedProvider class to handle feed operations
 
@@ -313,29 +313,17 @@ Next, right-click the ExampleFeedProviderPackage project and select **Add->Proje
 You need to add a reference to the Windows App SDK nuget package to the MSIX packaging project. In **Solution Explorer**, double-click the ExampleFeedProviderPackage project to open the ExampleFeedProviderPackage.wapproj file. Add the following xml inside the **Project** element.
 
 ```xml
-<!--ExampleWidgetProviderPackage.wapproj-->
+<!--ExampleFeedProviderPackage.wapproj-->
 <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.231116003-experimentalpr">
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.3.1">
         <IncludeAssets>build</IncludeAssets>
     </PackageReference>  
 </ItemGroup>
 ```
 
 > [!NOTE]
-> Make sure the **Version** specified in the **PackageReference** element matches the latest stable version you referenced in the previous step.
+> The snippet uses the minimum supported version, 2.3.1. If you selected a later stable version in the previous step, update the **Version** value to match it.
 
-If the correct version of the Windows App SDK is already installed on the computer and you don't want to bundle the SDK runtime in your package, you can specify the package dependency in the Package.appxmanifest file for the ExampleFeedProviderPackage project.
-
-```xml
-<!--Package.appxmanifest-->
-...
-<Dependencies>
-...
-    <PackageDependency Name="Microsoft.WindowsAppRuntime.1.5.233430000-experimental1" MinVersion="2000.638.7.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
-...
-</Dependencies>
-...
-```
 
 
 
@@ -420,7 +408,7 @@ For detailed descriptions and format information for all of these elements, see 
 
 ## Testing your feed provider
 
-Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**.  Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. The console app should launch on deploy and you will see the feeds get enabled in the console output. Open the Widgets Board and you should see the new feeds in the tabs along the top of the feeds section.
+Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**.  Once this is done, right-click your **ExampleFeedProviderPackage** and select **Deploy**. The console app should launch on deploy and you will see the feeds get enabled in the console output. Open the Widgets Board and you should see the new feeds in the tabs along the top of the feeds section.
 
 ## Debugging your feed provider
 

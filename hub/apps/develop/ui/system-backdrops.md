@@ -2,7 +2,7 @@
 title: System backdrops (Mica/Acrylic)
 description: Learn how to apply Mica or Desktop Acrylic system backdrops to your WinUI app windows.
 ms.topic: how-to
-ms.date: 07/16/2026
+ms.date: 08/19/2026
 keywords: windows, windows app development, Windows App SDK, Mica, Acrylic, backdrop
 ms.localizationpriority: medium
 dev_langs: 
@@ -118,6 +118,9 @@ Flyout flyout = new Flyout()
 ```
 
 ## Apply a system backdrop to any XAML element
+
+> [!IMPORTANT]
+> `SystemBackdropElement` requires Windows App SDK 2.0 or later.
 
 > [!div class="checklist"]
 >

@@ -2,7 +2,7 @@
 title: Implement a widget provider in a win32 app (C++/WinRT)
 description: Learn how to create a Windows widget provider in C++/WinRT, with step-by-step implementation of content, data updates, and user actions.
 ms.topic: how-to
-ms.date: 07/05/2026
+ms.date: 08/19/2026
 ms.localizationpriority: medium
 author: GrantMeStrength
 ms.author: jken
@@ -29,7 +29,7 @@ In Visual Studio, create a new project. In the **Create a new project** dialog, 
 
 ## Add references to the Windows App SDK and Windows Implementation Library NuGet packages
 
-This sample uses the latest stable Windows App SDK NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select the latest stable version in the **Version** drop-down and then click **Install**.
+This walkthrough requires Microsoft.WindowsAppSDK version 2.3.1 or later. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select version 2.3.1, the minimum version used by this walkthrough, or a later stable version in the **Version** drop-down, and then click **Install**.
 
 This sample also uses the Windows Implementation Library NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.Windows.ImplementationLibrary". Select the latest version in the **Version** drop-down and then click **Install**.
 
@@ -622,27 +622,15 @@ You need to add a reference to the Windows App SDK nuget package to the MSIX pac
 ```xml
 <!--ExampleWidgetProviderPackage.wapproj-->
 <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.2.221116.1">
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.3.1">
         <IncludeAssets>build</IncludeAssets>
     </PackageReference>  
 </ItemGroup>
 ```
 
 > [!NOTE]
-> Make sure the **Version** specified in the **PackageReference** element matches the latest stable version you referenced in the previous step.
+> The snippet uses the minimum supported version, 2.3.1. If you selected a later stable version in the previous step, update the **Version** value to match it.
 
-If the correct version of the Windows App SDK is already installed on the computer and you don't want to bundle the SDK runtime in your package, you can specify the package dependency in the Package.appxmanifest file for the ExampleWidgetProviderPackage project.
-
-```xml
-<!--Package.appxmanifest-->
-...
-<Dependencies>
-...
-    <PackageDependency Name="Microsoft.WindowsAppRuntime.1.2-preview2" MinVersion="2000.638.7.0" Publisher="CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US" />
-...
-</Dependencies>
-...
-```
 
 
 ### Update the package manifest
@@ -834,7 +822,7 @@ The following steps summarize the process for widget customization.
 In typical Widget customization scenarios, the user will choose what data is displayed on the widget or adjust visual presentation of the widget. For simplicity, the example in this section will add customization behavior that allows the user to reset the counter of the counting widget implemented in the previous steps.
 
 > [!NOTE] 
-> Widget customization is only supported in Windows App SDK 1.4 and later. Make sure you update the references in your project to the latest version of the Nuget package.
+> Widget customization requires Windows App SDK 1.4 or later. This walkthrough uses Microsoft.WindowsAppSDK version 2.3.1.
 
 ### Update the package manifest to declare customization support
 
