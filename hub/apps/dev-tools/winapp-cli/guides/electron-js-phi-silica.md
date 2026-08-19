@@ -1,7 +1,7 @@
 ---
 title: Call Phi Silica from JavaScript (JS bindings)
 description: Call the on-device Phi Silica language model from Electron JavaScript using winapp JS bindings, with no native addon or node-gyp build step.
-ms.date: 08/14/2026
+ms.date: 08/19/2026
 ms.topic: how-to
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Packaging Your Electron App for Distribution
 description: Package your Electron app as a signed MSIX installer with the winapp CLI, covering manifest setup, certificate generation, and installation.
-ms.date: 08/14/2026
+ms.date: 08/19/2026
 ms.topic: how-to
 ---
 

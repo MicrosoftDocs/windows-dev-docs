@@ -1,48 +1,29 @@
 ---
-title: Sparse Packaging for App Identity
+title: "Sparse packaging: grant identity to an unpackaged app"
 description: Grant package identity to an unpackaged desktop app using an identity-only (sparse) MSIX and external-location registration with the winapp CLI.
-ms.date: 08/14/2026
+ms.date: 08/19/2026
 ms.topic: how-to
-ai-usage: ai-assisted
-
-#customer intent: As a desktop app developer, I want to grant package identity to my unpackaged app with a sparse package so that I can use identity-gated Windows APIs without switching to MSIX distribution.
 ---
 
-# Grant package identity with sparse packaging
+# Sparse packaging: grant identity to an unpackaged app
 
-A standard desktop executable — built with `dotnet build`, MSBuild, CMake, or another toolchain — has no package identity. Without identity, your app can't use many modern Windows APIs, such as toast notifications, background tasks, share targets, startup tasks, and the app data APIs.
+> For a working end-to-end example (WPF app + Inno Setup installer), see the [sparse-app](https://github.com/microsoft/WinAppCli/tree/main/samples/sparse-app) sample.
 
-Sparse packaging grants identity to your app without moving its binaries into an MSIX. You ship a tiny identity-only `.msix` that contains just a manifest and register it alongside your normally installed app by using an external location. Your `.exe` stays exactly where your installer puts it.
+A standard desktop executable — built with `dotnet build`, MSBuild, CMake, or any other toolchain — has no [package identity](/windows/apps/desktop/modernize/package-identity-overview). Without identity, it cannot use many modern Windows APIs (toast notifications, background tasks, share targets, startup tasks, the app data APIs, and more).
 
-In this article, you create the identity-only package, embed the identity reference into your app, register the package for local testing, and integrate registration into your installer.
+**Sparse packaging** grants identity to an app *without* moving its binaries into an MSIX. You ship a tiny **identity-only** `.msix` (just a manifest) and register it alongside your normally-installed app using an *external location*. Your `.exe` stays exactly where your installer puts it. This is the production counterpart to [`winapp create-debug-identity`](../usage.md#create-debug-identity), which is for developer-time debugging only.
 
-## Prerequisites
-
-- Windows 10, version 2004 (build 19041) or later. Sparse packages rely on `uap10:AllowExternalContent`, which requires build 19041 or later.
-- A terminal, such as Windows PowerShell or Windows Terminal, to run the commands in this article.
-- The winapp CLI. Install or update it from your terminal with winget:
-
-  ```powershell
-  winget install Microsoft.winappcli --source winget
-  ```
-
-- A code-signing certificate that's trusted on the target machine. For local testing, generate a development certificate with [`winapp cert generate`](../usage.md#cert) and trust it. Sign production packages with a certificate whose subject matches the manifest `Publisher`.
-
-## How sparse packaging works
-
-Sparse packaging is the production counterpart to [`winapp create-debug-identity`](../usage.md#create-debug-identity), which is for developer-time debugging only. It grants [package identity](../../../desktop/modernize/package-identity-overview.md) to an app that you distribute with your own installer, so the app can call identity-gated Windows APIs.
-
-The CLI steps in this article map to the first three steps of the [Grant identity to non-packaged apps](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md) workflow:
+This guide covers the three CLI steps that map to the first three steps of the official [Grant identity to non-packaged apps](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) workflow:
 
 | Step | Command | Result |
 |------|---------|--------|
 | 1. Create the identity manifest | `winapp init --exe <exe> --sparse` | `sparse/appxmanifest.xml` + `sparse/Assets/` |
-| 2. Build and sign the identity package | `winapp pack <appxmanifest.xml> --cert <pfx>` | `<PackageName>.identity.msix` |
+| 2. Build & sign the identity package | `winapp pack <appxmanifest.xml> --cert <pfx>` | `<PackageName>.identity.msix` |
 | 3. Embed identity into the app | `winapp embed-identity <exe>` | `<msix>` element in the exe's fusion manifest |
 
-Step 4 of that workflow — register and unregister the package — is your installer's responsibility; step 5 is optional work. This article shows how to register for local testing and how to integrate registration into your installer.
+Steps 4–5 of the docs (register / unregister the package) are your **installer's** responsibility — see [Installer integration](#installer-integration).
 
-Use sparse packaging when:
+## When to use sparse packaging
 
 - You already have a mature installer (Inno Setup, WiX, NSIS, MSI) and don't want to switch to MSIX for distribution, but you need identity-gated Windows APIs.
 - Your app must install to a path or with a layout that MSIX doesn't allow.
@@ -50,38 +31,46 @@ Use sparse packaging when:
 
 If you're starting fresh and can distribute as MSIX, a full packaged app (`winapp init` + `winapp pack <folder>`) is simpler.
 
-For a complete, working end-to-end example (a WPF app with an Inno Setup installer), see the [sparse-app](https://github.com/microsoft/WinAppCli/tree/main/samples/sparse-app) sample.
+## Prerequisites
 
-The examples that follow assume a built executable at `./bin/Release/net8.0-windows/MyApp.exe`.
+1. **Windows 10, version 2004 (build 19041) or later.** Sparse packages rely on `uap10:AllowExternalContent`, which requires 19041+.
+2. **winapp CLI** — install via winget (or update if already installed):
+   ```powershell
+   winget install Microsoft.WinApp --source winget
+   ```
+3. **A code-signing certificate** trusted on the target machine. For local testing, generate a development certificate with [`winapp cert generate`](../usage.md#cert) and trust it. Production packages must be signed with a certificate whose subject matches the manifest `Publisher`.
 
-## Create the sparse identity manifest
+## Walkthrough
 
-Generate the sparse manifest from your built executable:
+The examples below assume a built executable at `./bin/Release/net8.0-windows/MyApp.exe`.
+
+### Step 1 — Create the sparse identity manifest
 
 ```powershell
 winapp init --exe ./bin/Release/net8.0-windows/MyApp.exe --sparse
 ```
 
-This command infers the package name, publisher, version, and description from the exe's file version info and prompts you to accept or override them. Add `--use-defaults` (or `--no-prompt`) to skip the prompts in CI, and `--name` or `--publisher` to override specific values:
+This infers the package name, publisher, version, and description from the exe (via its file version info) and prompts you to accept or override them. Add `--use-defaults` (or `--no-prompt`) to skip the prompts in CI, and `--name` / `--publisher` to override specific values:
 
 ```powershell
 winapp init --exe ./bin/Release/net8.0-windows/MyApp.exe --sparse --use-defaults `
   --name "Contoso.MyApp" --publisher "CN=Contoso"
 ```
 
-By default, the command writes the following to a dedicated `sparse/` folder in the current directory (override with `--output-dir`):
+It writes the following to a dedicated `sparse/` folder in the current directory by default (override with `--output-dir`):
 
 - `appxmanifest.xml` — a sparse manifest with `<uap10:AllowExternalContent>true</uap10:AllowExternalContent>` (an element under `<Properties>`), `ProcessorArchitecture="neutral"`, a `win32App` application, and the exe name filled into `Executable`.
-- `Assets/` — placeholder visual assets, extracted from the exe's icon when possible.
+- `Assets/` — placeholder visual assets (extracted from the exe's icon when possible).
 
-The manifest and `Assets/` are build-time inputs consumed by `winapp pack` and `winapp embed-identity`. Nothing reads them from beside the exe at runtime, so a dedicated, source-controlled `sparse/` folder keeps them out of a build-output directory (like `bin/`) that a clean or rebuild would wipe. `winapp pack` and `winapp embed-identity` look in `sparse/` automatically, so you rarely need to name the path.
+> **Why a `sparse/` folder and not next to the exe?** The manifest and `Assets/` are **build-time inputs** consumed by `winapp pack` and `winapp embed-identity` — nothing reads them from beside the exe at runtime (runtime identity comes from the `<msix>` element embedded in the exe plus the registered package's external location, and the manifest references the exe by *name*, so its location is independent of where the exe lives). Writing them into a dedicated, source-controlled folder keeps them out of a build-output directory (like `bin/`) that a clean/rebuild would wipe, and keeps the folder free of binaries so the next steps stay clean. `winapp pack` and `winapp embed-identity` look in `sparse/` automatically, so you rarely need to name the path.
 
-> [!NOTE]
-> The sparse init flow deliberately skips all SDK and package installation. Identity-only packages have no SDK dependencies.
+> **Note:** The sparse init flow deliberately **skips all SDK/package installation** — identity-only packages have no SDK dependencies.
 
-If an `appxmanifest.xml` already exists in the target directory, init stops rather than overwriting it (and its `Assets/`). Re-run with `--force` to regenerate it. Make sure the `Publisher` in the generated manifest matches the certificate you sign with — edit `appxmanifest.xml` if needed, or pass `--publisher` when you generate it.
+If an `appxmanifest.xml` already exists in the target directory, init stops rather than overwriting it (and its `Assets/`). Re-run with `--force` to regenerate it.
 
-## Build and sign the identity package
+Make sure the `Publisher` in the generated manifest matches the certificate you'll sign with. Edit `appxmanifest.xml` if needed, or pass `--publisher` when generating.
+
+### Step 2 — Build and sign the identity package
 
 Point `winapp pack` at the sparse manifest (a file, not a folder):
 
@@ -89,89 +78,84 @@ Point `winapp pack` at the sparse manifest (a file, not a folder):
 winapp pack ./sparse/appxmanifest.xml --cert ./devcert.pfx
 ```
 
-Because the manifest declares `AllowExternalContent`, `winapp pack` builds an identity-only `.msix` that contains just the manifest — no binaries, no assets. Sibling files next to the manifest are ignored, so the package never includes your assets or binaries. The output defaults to `<PackageName>.identity.msix` in the current directory; use `--output` to change it. Signing happens only when you pass `--cert` (or `--generate-cert`).
+Because the manifest declares `AllowExternalContent`, `winapp pack` builds an **identity-only** `.msix` containing just the manifest — no binaries, no assets. The output defaults to `<PackageName>.identity.msix` in the current directory; use `--output` to change it. Signing happens only when you pass `--cert` (or `--generate-cert`).
 
-## Embed identity into your app
+### Step 3 — Embed identity into your app
 
-Embed the `<msix>` element so Windows connects the running exe to the identity package. You can modify the built binary in place or maintain a checked-in side-by-side manifest.
-
-To modify the built binary directly:
+Embed the `<msix>` element so Windows connects the running exe to the identity package:
 
 ```powershell
-# EXE mode — modify the built binary in place
+# EXE mode — modify the built binary in place (uses mt.exe)
 winapp embed-identity ./bin/Release/net8.0-windows/MyApp.exe
 ```
 
-To maintain the side-by-side manifest as a checked-in file and rebuild:
+Or maintain the side-by-side manifest as a checked-in file and rebuild:
 
 ```powershell
 # XML mode — update an external SxS manifest, then rebuild your app
 winapp embed-identity ./app.manifest
 ```
 
-In XML mode, the `<msix>` element is inserted into (or replaced in) the target manifest. Reference that manifest from your project (for .NET, set `<ApplicationManifest>app.manifest</ApplicationManifest>`) and rebuild so the element is embedded in the exe.
+In XML mode the `<msix>` element is inserted into (or replaced in) the target manifest. Reference that manifest from your project (for .NET, set `<ApplicationManifest>app.manifest</ApplicationManifest>`) and rebuild so the element is embedded in the exe.
 
-Both modes read identity from a sparse `appxmanifest.xml`. When you omit `--manifest`, winapp looks in a `sparse/` folder beside the target first, then in the current directory. Pass `--manifest` to point elsewhere.
+Both modes read identity from a sparse `appxmanifest.xml`. When you omit `--manifest`, winapp looks in a `sparse/` folder (where `winapp init --exe --sparse` writes it by default) beside the target first, then in the current directory, then falls back to beside the target and the current directory; pass `--manifest` to point elsewhere.
 
-> [!NOTE]
-> EXE mode rewrites the binary, which invalidates any existing Authenticode signature. Re-sign the exe (for example, `winapp sign ./MyApp.exe --cert ./devcert.pfx --cert-password <certificate-password>`) before you distribute it.
+> **Note:** EXE mode rewrites the binary with `mt.exe`, which invalidates any existing Authenticode signature. Re-sign the exe (e.g. `winapp sign ./MyApp.exe <cert.pfx>`) before distributing it.
 
-## Register the identity package for local testing
+### Step 4 — Register (for local testing)
 
-Registration is part of step 4 of the workflow. In production, your installer performs this step; for local testing, run it yourself.
-
-Before you register, make sure the certificate you signed the package with is trusted on this machine — Windows rejects an identity package signed by an untrusted certificate. For local development, open PowerShell or Windows Terminal as an administrator, navigate to the working directory, and install the generated PFX certificate into the local machine's Trusted People store:
-
-```powershell
-winapp cert install .\devcert.pfx
-```
-
-> [!WARNING]
-> Trust a certificate only for local development on your own machine. Don't ship or trust a self-signed development certificate on user machines. Sign production packages with a certificate from a trusted certificate authority whose subject matches the manifest `Publisher`.
-
-The manifest's logos are resolved from the external location at runtime, not from the identity-only `.msix`. Copy the generated assets next to your exe (the external location) before you register — otherwise Windows registers a layout that's missing every logo the manifest references:
+The manifest's logos are resolved from the **external location** at runtime, not from the
+identity-only `.msix`. Step 1 wrote them under `./sparse/Assets`, so copy them next to your exe
+(the external location) before registering — otherwise Windows registers a layout missing every
+logo the manifest references:
 
 ```powershell
 # Copy the generated assets into the external location (beside your exe)
 Copy-Item ./sparse/Assets -Destination .\bin\Release\net8.0-windows\Assets -Recurse -Force
 ```
 
-Register the identity package against that folder (the external location):
+Then register the identity package against that folder (the *external location*):
 
 ```powershell
 Add-AppxPackage -Path .\MyApp.identity.msix `
   -ExternalLocation (Resolve-Path .\bin\Release\net8.0-windows)
 ```
 
-Launch the app and confirm identity is present. For example, `Windows.ApplicationModel.Package.Current.Id.FamilyName` returns your package family name instead of throwing.
+Launch the app and confirm identity is present — for example, `Windows.ApplicationModel.Package.Current.Id.FamilyName` should return your package family name instead of throwing.
 
-## Unregister the package
-
-Unregistration is also part of step 4 of the workflow. Remove the registration when you finish local testing or when your installer uninstalls the app.
-
-Find the package with `Get-AppxPackage`, then pipe it to `Remove-AppxPackage`:
+To clean up:
 
 ```powershell
-Get-AppxPackage -Name MyApp | Remove-AppxPackage
+Remove-AppxPackage <full-package-name>
 ```
 
-Replace `MyApp` with your package name. If you're unsure of the exact name, list matches first with `Get-AppxPackage -Name *MyApp*`.
+## Asset handling
 
-## Integrate registration into your installer
+The sparse `.msix` is **identity-only**. The visual assets referenced by the manifest (`Assets\StoreLogo.png`, tiles, etc.) are resolved from the **external content location** at runtime — i.e., from your app's install directory — **not** from inside the `.msix`.
 
-Registration and unregistration are the installer's job, and the pattern is the same across installer tools:
+This means you must **deploy the `Assets/` folder alongside your application** (same layout the manifest expects, relative to the external location).
 
-- **Install:** copy your app binaries, the `Assets/` folder, and the `.msix` to the install directory, then run `Add-AppxPackage -Path "<install-dir>\MyApp.identity.msix" -ExternalLocation "<install-dir>"`.
+Step 2 packs the manifest **file** directly (`winapp pack ./sparse/appxmanifest.xml`), which builds the identity-only `.msix` from just that manifest — sibling files are ignored, so it never includes your assets or binaries. (If you instead point `winapp pack` at a *folder* whose manifest declares `AllowExternalContent`, it warns about any assets or binaries it finds, since for a sparse package those belong at the external location, not inside the `.msix`.)
+
+## Installer integration
+
+Registration and unregistration are the installer's job. The pattern is the same across installer tools:
+
+- **Install:** copy your app binaries, the `Assets/` folder, and the `.msix` to the install directory, then run
+  `Add-AppxPackage -Path "<install-dir>\MyApp.identity.msix" -ExternalLocation "<install-dir>"`.
 - **Uninstall:** run `Remove-AppxPackage <full-package-name>` before deleting files.
 
-Because assets are resolved from the external location, always deploy the `Assets/` folder alongside your app in the layout the manifest expects.
-
-> [!WARNING]
-> The install directory is resolved at install time and might contain characters (such as a single quote) that break out of a PowerShell string literal. Always escape or validate the path before you interpolate it into a `-Command` string. Prefer passing paths as arguments to a `-File` script over inline `-Command` interpolation. The WiX and NSIS snippets below assume a trusted install path, while the Inno Setup example demonstrates safe escaping.
+> **Security:** the install directory is resolved at install time and may contain characters
+> (e.g. a single quote) that break out of a PowerShell string literal. Always escape or validate
+> the path before interpolating it into a `-Command` string — the WiX and NSIS snippets below
+> assume a trusted install path, while the Inno Setup example demonstrates safe escaping. Prefer
+> passing paths as arguments to a `-File` script over inline `-Command` interpolation.
 
 ### Inno Setup
 
-Build the PowerShell arguments in a `[Code]` function so the runtime install path is escaped for the single-quoted PowerShell literal (an install directory that contains a `'` must not be able to inject script):
+Build the PowerShell arguments in a `[Code]` function so the runtime install path is escaped
+for the single-quoted PowerShell literal (an install directory containing a `'` must not be able
+to inject script):
 
 ```pascal
 [Files]
@@ -205,11 +189,9 @@ begin
 end;
 ```
 
-For a complete, working `setup.iss`, see the [sparse-app](https://github.com/microsoft/WinAppCli/tree/main/samples/sparse-app) sample.
+See the [sparse-app](https://github.com/microsoft/WinAppCli/tree/main/samples/sparse-app) sample for a complete, working `setup.iss`.
 
-### Registration script for WiX and NSIS
-
-The WiX and NSIS examples invoke a small `register-sparse.ps1` through `-File` so the install path is passed as a parameter (PowerShell binds it as data) instead of being interpolated into a `-Command` string. This avoids script injection through a crafted install directory (for example, a folder name that contains a quote or `$(...)`):
+The WiX and NSIS examples below invoke a small `register-sparse.ps1` via `-File` so the install path is passed as a **parameter** (PowerShell binds it as data) instead of being interpolated into a `-Command` string. This avoids script injection through a crafted install directory (e.g. a folder name containing a quote or `$(...)`):
 
 ```powershell
 # register-sparse.ps1 — ship this alongside your installer
@@ -245,9 +227,9 @@ try {
 
 ### WiX (v3)
 
-Register per user (`Impersonate="yes"`), because `Add-AppxPackage` registers the package for the account that runs it. A deferred action with `Impersonate="no"` runs as `LocalSystem`, which doesn't grant identity to the installing user (and is commonly rejected). For a per-machine MSI, run the registration impersonated so it applies to the invoking user.
+Register **per user** (`Impersonate="yes"`), because `Add-AppxPackage` registers the package for the account that runs it. A deferred action with `Impersonate="no"` runs as `LocalSystem`, which does **not** grant identity to the installing user (and is commonly rejected). For a per-machine MSI, run the registration impersonated so it applies to the invoking user.
 
-A deferred custom action can't read `INSTALLFOLDER` directly (deferred actions run in a context without access to properties), and simply declaring the action doesn't run it. Marshal the paths in through `CustomActionData` — an immediate type-51 action whose `Property` name equals the deferred action's `Id` — and schedule both after `InstallFiles`:
+A deferred custom action can't read `INSTALLFOLDER` directly (deferred actions run in a context without access to properties), and simply *declaring* the action doesn't run it. So marshal the paths in through `CustomActionData` — an immediate type-51 action whose `Property` name equals the deferred action's `Id` — and schedule **both** after `InstallFiles`:
 
 ```xml
 <!-- Immediate: stash the command line (with the resolved paths) into the deferred action's
@@ -270,8 +252,7 @@ A deferred custom action can't read `INSTALLFOLDER` directly (deferred actions r
 
 `CAQuietExec` ships in the WiX util extension (`WixUtilExtension`); reference it so the `WixCA` binary is available.
 
-> [!NOTE]
-> A single impersonated action registers identity only for the user who runs the installer. To provision every user of a per-machine install, register on first launch (per-user) instead, or use a provisioning mechanism such as `Add-AppxProvisionedPackage`.
+> A single impersonated action registers identity only for the user running the installer. To provision every user of a per-machine install, register on first launch (per-user) instead, or use a provisioning mechanism such as `Add-AppxProvisionedPackage`.
 
 ### NSIS
 
@@ -286,31 +267,26 @@ Section
 SectionEnd
 ```
 
-## Troubleshoot common issues
+## Troubleshooting
 
-### Package.Current throws or reports no identity at runtime
+**`Package.Current` throws / "no package identity" at runtime**
+- The identity package isn't registered, or the exe's fusion manifest is missing the `<msix>` element. Re-run [`winapp embed-identity`](../usage.md#embed-identity) (and rebuild if using XML mode), then re-register with `Add-AppxPackage -ExternalLocation`.
+- The `<msix packageName>` / `publisher` / `applicationId` in the exe must **exactly** match the registered package's identity.
 
-- The identity package isn't registered, or the exe's fusion manifest is missing the `<msix>` element. Re-run [`winapp embed-identity`](../usage.md#embed-identity) (and rebuild if you're using XML mode), then re-register with `Add-AppxPackage -ExternalLocation`.
-- The `<msix packageName>`, `publisher`, and `applicationId` in the exe must exactly match the registered package's identity.
-
-### Assets or logos don't appear
-
+**Assets/logos don't appear**
 - Ensure the `Assets/` folder is deployed at the external location with the same relative paths the manifest expects. Assets are resolved from the external location, not the `.msix`.
 
-### Add-AppxPackage fails with a signing or trust error
+**`Add-AppxPackage` fails with a signing / trust error**
+- The `.msix` must be signed by a certificate that is trusted on the machine and whose subject matches the manifest `Publisher`. For local testing, generate and trust a dev certificate with [`winapp cert generate`](../usage.md#cert), and make sure the manifest `Publisher` matches it.
 
-- The `.msix` must be signed by a certificate that's trusted on the machine and whose subject matches the manifest `Publisher`. For local testing, generate and trust a development certificate with [`winapp cert generate`](../usage.md#cert), and make sure the manifest `Publisher` matches it.
-
-### MakeAppx reports that a win32App must not declare EntryPoint
-
+**MakeAppx: "Application with RuntimeBehavior value 'win32App' must not declare EntryPoint"**
 - A sparse `win32App` application must not declare `EntryPoint`. Manifests generated by `winapp init --sparse` are already correct; remove any `EntryPoint` attribute if you hand-edited the manifest.
 
-### "Input is a file but not a sparse manifest"
+**"Input is a file but not a sparse manifest"**
+- `winapp pack <file>` only accepts a manifest that declares `<uap10:AllowExternalContent>true</uap10:AllowExternalContent>`. Generate one with `winapp init --exe <exe> --sparse`, or pass an input *folder* to build a full MSIX.
 
-- `winapp pack <file>` accepts only a manifest that declares `<uap10:AllowExternalContent>true</uap10:AllowExternalContent>`. Generate one with `winapp init --exe <exe> --sparse`, or pass an input folder to build a full MSIX.
+## See also
 
-## Related content
-
-- [CLI usage: `init`](../usage.md#init), [`pack`](../usage.md#pack), and [`embed-identity`](../usage.md#embed-identity)
-- [Grant identity to non-packaged apps](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md)
+- [CLI usage: `init`](../usage.md#init), [`pack`](../usage.md#pack), [`embed-identity`](../usage.md#embed-identity)
+- [Grant identity to non-packaged apps (Microsoft Learn)](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)
 - [Debugging with package identity](../debugging.md)

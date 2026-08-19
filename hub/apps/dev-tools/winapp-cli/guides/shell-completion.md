@@ -1,7 +1,7 @@
 ---
 title: Shell Completion
 description: Enable tab completion for winapp CLI commands and options in PowerShell, Bash, and Zsh so you can discover and type commands faster.
-ms.date: 08/14/2026
+ms.date: 08/19/2026
 ms.topic: how-to
 ---
 

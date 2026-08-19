@@ -1,7 +1,7 @@
 ---
 title: Creating a C++ Native Addon with Notifications
 description: Build a native C++ Node addon for your Electron app that sends Windows toast notifications through the Windows App SDK from JavaScript.
-ms.date: 08/14/2026
+ms.date: 08/19/2026
 ms.topic: how-to
 ---
 

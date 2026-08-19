@@ -1,7 +1,7 @@
 ---
 title: "Getting Started: Adding Windows APIs to Your Electron App"
 description: Add Windows-native capabilities to an Electron app with the winapp CLI, from calling modern Windows APIs to testing identity and packaging.
-ms.date: 08/14/2026
+ms.date: 08/19/2026
 ms.topic: how-to
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: Setting Up the Development Environment
 description: Set up your development environment for adding Windows APIs to an Electron app with the winapp CLI, including SDK install and project init.
-ms.date: 08/14/2026
+ms.date: 08/19/2026
 ms.topic: how-to
 ---
 

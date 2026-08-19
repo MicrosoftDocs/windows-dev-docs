@@ -1,8 +1,8 @@
 ---
 title: Windows App Development CLI (winapp CLI)
 description: Command-line interface for managing Windows SDKs, packaging, app identity, manifests, certificates, and build tools for any app framework.
-ms.date: 08/14/2026
-ms.topic: concept-article
+ms.date: 08/19/2026
+ms.topic: overview
 ---
 
 # Windows App Development CLI (winapp CLI)

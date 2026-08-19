@@ -1,7 +1,7 @@
 ---
 title: Debugging with Package Identity
 description: Register temporary package identity for an unpackaged app so you can debug identity-dependent Windows features directly from your build output.
-ms.date: 08/14/2026
+ms.date: 08/19/2026
 ms.topic: how-to
 ---
 
