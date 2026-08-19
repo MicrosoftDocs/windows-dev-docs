@@ -63,7 +63,7 @@ This diagram shows the relationship between the classes and APIs that you use to
 If you use WinUI XAML as your app's UI framework, both the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) and the [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) APIs are available to you. Starting in Windows App SDK 1.4, you can use the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property to get an AppWindow object from an existing XAML window. With this AppWindow object you have access to the additional window management APIs.
 
 > [!IMPORTANT]
-> If you're not using WinUI 1.3 or later, use interop APIs to get the AppWindow in order to use the AppWindow APIs. For more about the interop APIs, see [Manage app windows - UI framework and HWND interop](manage-app-windows.md#ui-framework-and-hwnd-interop) and the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
+> If you're not using Windows App SDK 1.4 or later, use interop APIs to get the AppWindow in order to use the AppWindow APIs. For more about the interop APIs, see [Manage app windows - UI framework and HWND interop](manage-app-windows.md#ui-framework-and-hwnd-interop) and the [Windowing gallery sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Windowing).
 
 ### Lifetime management
 
