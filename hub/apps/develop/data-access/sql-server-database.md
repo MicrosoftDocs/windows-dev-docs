@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Use a SQL Server database in a Windows app"
-description: Learn how to connect a Windows App SDK app directly to a SQL Server database, and store and retrieve data by using System.Data.SqlClient.
-ms.date: 10/15/2024
+description: Learn how to connect a Windows App SDK app directly to a SQL Server database, and store and retrieve data by using Microsoft.Data.SqlClient.
+ms.date: 08/06/2026
 ms.topic: how-to
 keywords: windows 10, windows 11, Windows App SDK, SQL Server, database
 ms.localizationpriority: medium
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Tutorial: Use a SQL Server database in a Windows app
 
-Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) namespace.
+Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [Microsoft.Data.SqlClient](/dotnet/api/microsoft.data.sqlclient) namespace.
 
 ## Getting started
 
@@ -28,7 +28,7 @@ The snippets that appear in this guide are based on this [sample app](https://gi
 To connect your app directly to a SQL Server database, your app can target any minimum version of Windows supported by Windows App SDK.  You can find that information in the properties page of your project.
 
 1. Open the **Package.appxmanifest** file of your Windows App SDK project in the manifest designer.
-1. Install the SQL client package for current .NET project templates. In the **Package Manager Console**, run `Install-Package System.Data.SqlClient`.
+1. Install the SQL client package for current .NET project templates. In the **Package Manager Console**, run `Install-Package Microsoft.Data.SqlClient`.
 1. In the **Capabilities** tab, select the **Enterprise Authentication** checkbox if you are using Windows Authentication for authenticating your SQL Server.
 
 ![Enterprise Authentication Capability](images/enterprise-authentication.png)
@@ -51,7 +51,7 @@ In this section, we'll do these things:
 :five: Populate the UI with Products.
 
 > [!NOTE]
-> This section illustrates one way to organize your data access code. It's meant only to provide an example of how you can use  [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) to store and retrieve data from a SQL Server database. You can organize your code in any way that makes the most sense to your application's design.
+> This section illustrates one way to organize your data access code. It's meant only to provide an example of how you can use  [Microsoft.Data.SqlClient](/dotnet/api/microsoft.data.sqlclient) to store and retrieve data from a SQL Server database. You can organize your code in any way that makes the most sense to your application's design.
 
 ### Add a connection string
 
@@ -64,7 +64,7 @@ sealed partial class App : Application
 {
     // Connection string for using Windows Authentication.
     private string connectionString =
-        @"Data Source=.\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI";
+        @"Data Source=.\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=SSPI;Encrypt=True;TrustServerCertificate=True";
 
     public string ConnectionString { get => connectionString; set => connectionString = value; }
 
@@ -74,6 +74,8 @@ sealed partial class App : Application
 
 > [!IMPORTANT]
 > In production applications, connection information should be stored securely in app configuration (see [**Adding Azure App Configuration by using Visual Studio Connected Services**](/visualstudio/azure/vs-azure-tools-connected-services-app-configuration)). Connection strings and other secrets should never be hard-coded.
+>
+> The example connection string trusts the local SQL Server Express certificate for development. In production, install a verifiable server certificate and set `TrustServerCertificate=False`.
 
 ### Create a class to hold product data
 
@@ -105,7 +107,7 @@ public class Product : INotifyPropertyChanged
 In the **MainWindow.xaml.cs** file of the Windows App SDK project, create a method that gets products from the Northwind sample database, and then returns them as an [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1) collection of `Product` instances.
 
 ```csharp
-using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 
 public ObservableCollection<Product> GetProducts(string connectionString)
 {
@@ -220,7 +222,7 @@ Start the project and see products from the Northwind sample database appear in 
 
 ![Northwind products](images/products-northwind.png)
 
-Explore the [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) namespace to see what other things you can do with data in your SQL Server database.
+Explore the [Microsoft.Data.SqlClient](/dotnet/api/microsoft.data.sqlclient) namespace to see what other things you can do with data in your SQL Server database.
 
 > [!TIP]
 > Try asking [Microsoft Copilot](https://copilot.microsoft.com/) for help with your SQL queries. Copilot can help you write SQL queries, and suggest ways to improve your code.
