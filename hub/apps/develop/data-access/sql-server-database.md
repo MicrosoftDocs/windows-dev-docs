@@ -227,7 +227,7 @@ Explore the [System.Data.SqlClient](/dotnet/api/system.data.sqlclient) namespace
 
 ## Trouble connecting to your database?
 
-In most cases, some aspect of the SQL Server configuration needs to be changed. If you're able to connect to your database from another type of desktop application such as a Windows Forms or WPF application, ensure that you've enabled TCP/IP for SQL Server. You can do that in the **Computer Management** console. (See [Windows Tools/Administrative Tools](/windows/client-management/administrative-tools-in-windows-10#tools) for more information.)
+In most cases, some aspect of the SQL Server configuration needs to be changed. If you're able to connect to your database from another type of desktop application such as a Windows Forms or WPF application, ensure that you've enabled TCP/IP for SQL Server. You can do that in the **Computer Management** console. (See [Windows Tools/Administrative Tools](/windows/client-management/client-tools/administrative-tools-in-windows#windows-tools-folder) for more information.)
 
 ![Computer Management](images/computer-management.png)
 

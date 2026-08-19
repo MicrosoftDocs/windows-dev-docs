@@ -198,7 +198,7 @@ To use a custom window icon, call one of the [AppWindow.SetIcon](/windows/window
 
 - `SetIcon(String)`
 
-  The [SetIcon(String)](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon#Microsoft_UI_Windowing_AppWindow_SetIcon_System_String_) method currently works only with .ico files. The string you pass to this method is the fully qualified path to the .ico file.
+  The [SetIcon(String)](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon) method currently works only with .ico files. The string you pass to this method is the fully qualified path to the .ico file.
 
   ```csharp
   m_AppWindow.SetIcon("iconPath/iconName.ico");
@@ -206,7 +206,7 @@ To use a custom window icon, call one of the [AppWindow.SetIcon](/windows/window
 
 - `SetIcon(IconId)`
 
-  If you already have a handle to an icon (`HICON`) from one of the [Icon functions](/windows/win32/menurc/icon-functions) like [CreateIcon](/windows/win32/api/winuser/nf-winuser-createicon), you can use the [GetIconIdFromIcon](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon) interop API to get an [IconId](/windows/windows-app-sdk/api/winrt/microsoft.ui.iconid). You can then pass the `IconId` to the [SetIcon(IconId)](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon#Microsoft_UI_Windowing_AppWindow_SetIcon_Microsoft_UI_IconId_) method to set your window icon.  
+  If you already have a handle to an icon (`HICON`) from one of the [Icon functions](/windows/win32/menurc/icon-functions) like [CreateIcon](/windows/win32/api/winuser/nf-winuser-createicon), you can use the [GetIconIdFromIcon](/windows/windows-app-sdk/api/win32/microsoft.ui.interop/nf-microsoft-ui-interop-geticonidfromicon) interop API to get an [IconId](/windows/windows-app-sdk/api/winrt/microsoft.ui.iconid). You can then pass the `IconId` to the [SetIcon(IconId)](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.seticon) method to set your window icon.  
 
   ```csharp
   m_AppWindow.SetIcon(iconId));

@@ -126,7 +126,7 @@ This example assumes a **DataTemplateSelector** has been defined that decides be
 </ItemsRepeater>
 ```
 
-When defining a **DataTemplateSelector** to use with **ItemsRepeater** you only need to implement an override for the [**SelectTemplateCore(Object)**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector.selecttemplatecore#Windows_UI_Xaml_Controls_DataTemplateSelector_SelectTemplateCore_System_Object_) method. For more info and examples, see [**DataTemplateSelector**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector).
+When defining a **DataTemplateSelector** to use with **ItemsRepeater** you only need to implement an override for the [**SelectTemplateCore(Object)**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector.selecttemplatecore) method. For more info and examples, see [**DataTemplateSelector**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.datatemplateselector).
 
 > [!NOTE]
 > An alternative to **DataTemplate**s to manage how elements are created in more advanced scenarios is to implement your own [**IElementFactory**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ielementfactory) to use as the **ItemTemplate**.  It will be responsible for generating content when requested.

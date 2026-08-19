@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name. WinUI apps can register to be a default handler for a URI scheme name. If the user chooses your app as the default handler for a URI scheme name, your app will be activated every time that type of URI is launched.
 
 > [!NOTE]
-> **App model matters.** This page covers protocol registration via the **package manifest** for packaged apps (WinUI 3, MSIX-packaged WPF/Win32). If your app is **unpackaged** (a plain WPF or Win32 app), register your protocol using [ActivationRegistrationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager) and handle activation with `AppInstance.GetCurrent().GetActivatedEventArgs()`. For a complete WPF walkthrough (including single-instance redirection), see [Handle URI protocol activation in a WPF app](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk#handle-uri-protocol-activation-in-your-wpf-app).
+> **App model matters.** This page covers protocol registration via the **package manifest** for packaged apps (WinUI 3, MSIX-packaged WPF/Win32). If your app is **unpackaged** (a plain WPF or Win32 app), register your protocol using [ActivationRegistrationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager) and handle activation with `AppInstance.GetCurrent().GetActivatedEventArgs()`. For a complete WPF walkthrough (including single-instance redirection), see [Handle URI protocol activation in a WPF app](/windows/apps/develop/launch/handle-uri-activation-dotnet#handle-the-activation).
 
 We recommend that you only register for a URI scheme name if you expect to handle all URI launches for that type of URI scheme. If you do choose to register for a URI scheme name, you must provide the end user with the functionality that is expected when your app is activated for that URI scheme. For example, an app that registers for the mailto: URI scheme name should open to a new e-mail message so that the user can compose a new e-mail. For more info on URI associations, see [Files, folders, and libraries](../files/index.md).
 
@@ -165,7 +165,7 @@ If you decide that you want your apps to use a single XAML [**Frame**](/windows/
 
 ## Related content
 
-- [Handle URI protocol activation in a WPF app](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/wpf-plus-winappsdk#handle-uri-protocol-activation-in-your-wpf-app)
+- [Handle URI protocol activation in a WPF app](/windows/apps/develop/launch/handle-uri-activation-dotnet#handle-the-activation)
 - [Rich activation with the app lifecycle API](/windows/apps/windows-app-sdk/applifecycle/applifecycle-rich-activation)
 - [Association UWP launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
 - [Default Programs](/windows/desktop/shell/default-programs)

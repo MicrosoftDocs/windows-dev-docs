@@ -30,7 +30,7 @@ Enumerate a snapshot of Point of Service devices that are present on the system 
 
 A device selector enables you to limit the devices you are searching through when enumerating devices.  This lets you get only relevant results and reduce the time it takes to enumerate the desired devices.
 
-You can use the **GetDeviceSelector** method for the type of device that you're looking for and get the device selector for that type. For example, using [PosPrinter.GetDeviceSelector](/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector#Windows_Devices_PointOfService_PosPrinter_GetDeviceSelector) will provide you with a selector to enumerate all [PosPrinters](/uwp/api/windows.devices.pointofservice.posprinter) attached to the system, including USB, network and Bluetooth POS printers.
+You can use the **GetDeviceSelector** method for the type of device that you're looking for and get the device selector for that type. For example, using [PosPrinter.GetDeviceSelector](/uwp/api/windows.devices.pointofservice.posprinter.getdeviceselector) will provide you with a selector to enumerate all [PosPrinters](/uwp/api/windows.devices.pointofservice.posprinter) attached to the system, including USB, network and Bluetooth POS printers.
 
 ```csharp
 using Windows.Devices.PointOfService;
@@ -81,7 +81,7 @@ private async Task<BarcodeScanner> GetBarcodeScanner()
 
 The simplest way to get a Point of Service device is to use **GetDefaultAsync** to get the first available device within a Point of Service device class. 
 
-The sample below illustrates the use of [GetDefaultAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync#Windows_Devices_PointOfService_BarcodeScanner_GetDefaultAsync) for [BarcodeScanner](/uwp/api/windows.devices.pointofservice.barcodescanner). The coding pattern is similar for all Point of Service device classes.
+The sample below illustrates the use of [GetDefaultAsync](/uwp/api/windows.devices.pointofservice.barcodescanner.getdefaultasync) for [BarcodeScanner](/uwp/api/windows.devices.pointofservice.barcodescanner). The coding pattern is similar for all Point of Service device classes.
 
 ```csharp
 using Windows.Devices.PointOfService;

@@ -231,9 +231,9 @@ public static List<string> GetData()
 }
 ```
 
-The [Read](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read#Microsoft_Data_Sqlite_SqliteDataReader_Read) method advances through the rows of returned data. It returns `true` if there are rows left, otherwise it returns `false`.
+The [Read](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.read) method advances through the rows of returned data. It returns `true` if there are rows left, otherwise it returns `false`.
 
-The [GetString](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring#Microsoft_Data_Sqlite_SqliteDataReader_GetString_System_Int32_) method returns the value of the specified column as a string. It accepts an integer value that represents the zero-based column ordinal of the data that you want. You can use similar methods such as [GetDateTime](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime#Microsoft_Data_Sqlite_SqliteDataReader_GetDateTime_System_Int32_) and [GetBoolean](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean#Microsoft_Data_Sqlite_SqliteDataReader_GetBoolean_System_Int32_). Choose a method based on what type of data the column contains.
+The [GetString](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getstring) method returns the value of the specified column as a string. It accepts an integer value that represents the zero-based column ordinal of the data that you want. You can use similar methods such as [GetDateTime](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getdatetime) and [GetBoolean](/dotnet/api/microsoft.data.sqlite.sqlitedatareader.getboolean). Choose a method based on what type of data the column contains.
 
 The ordinal parameter isn't as important in this example because we are selecting all of the entries in a single column. However, if multiple columns are part of your query, use the ordinal value to obtain the column you want to pull data from.
 

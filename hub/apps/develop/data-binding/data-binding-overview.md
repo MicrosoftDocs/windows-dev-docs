@@ -131,11 +131,11 @@ Then bind a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.cont
 </Window>
 ```
 
-You haven't yet provided a data template for the `Recording` class, so the best the UI framework can do is to call [ToString](/dotnet/api/system.object.tostring#System_Object_ToString) for each item in the [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview). The default implementation of `ToString` returns the type name.
+You haven't yet provided a data template for the `Recording` class, so the best the UI framework can do is to call [ToString](/dotnet/api/system.object.tostring) for each item in the [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview). The default implementation of `ToString` returns the type name.
 
 ![Binding a list view 1](images/xaml-databinding1.png)
 
-To fix this issue, you can either override [ToString](/dotnet/api/system.object.tostring#System_Object_ToString) to return the value of `OneLineSummary`, or you can provide a data template. The data template option is a more common and flexible solution. You specify a data template by using the [ContentTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.contenttemplate) property of a content control or the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of an items control. Here are two ways you could design a data template for `Recording` together with an illustration of the result.
+To fix this issue, you can either override [ToString](/dotnet/api/system.object.tostring) to return the value of `OneLineSummary`, or you can provide a data template. The data template option is a more common and flexible solution. You specify a data template by using the [ContentTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.contenttemplate) property of a content control or the [ItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate) property of an items control. Here are two ways you could design a data template for `Recording` together with an illustration of the result.
 
 ``` xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}"

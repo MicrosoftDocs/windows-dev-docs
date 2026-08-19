@@ -416,7 +416,7 @@ At this point, all configuration is complete and the WNS server can send push no
 
 ### Step 1: Request an access token
 
-To send a push notification, the WNS server first needs to request an access token. Send an HTTP POST request with your Azure TenantId, Azure AppId, and secret. For information on retrieving the Azure TenantId and Azure AppId, see [Get tenant and app ID values for signing in](/azure/active-directory/develop/howto-create-service-principal-portal#get-tenant-and-app-id-values-for-signing-in).
+To send a push notification, the WNS server first needs to request an access token. Send an HTTP POST request with your Azure TenantId, Azure AppId, and secret. For information on retrieving the Azure TenantId and Azure AppId, see [Get tenant and app ID values for signing in](/entra/identity-platform/howto-create-service-principal-portal#sign-in-to-the-application).
 
 HTTP Sample Request:
 

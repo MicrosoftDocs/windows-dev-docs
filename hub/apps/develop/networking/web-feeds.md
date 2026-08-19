@@ -57,7 +57,7 @@ To ensure your Windows app is network ready, you must set any network capabiliti
 
 Now we will review some code that demonstrates how to retrieve a feed, and then display each individual item that the feed contains. Before we can configure and send the request, we'll define a few variables we'll be using during the operation, and initialize an instance of [**SyndicationClient**](/uwp/api/Windows.Web.Syndication.SyndicationClient), which defines the methods and properties we'll use to retrieve and display the feed.
 
-The [**Uri**](/uwp/api/windows.foundation.uri.-ctor#Windows_Foundation_Uri__ctor_System_String_) constructor throws an exception if the *uriString* passed to the constructor is not a valid URI. So we validate the *uriString* using a try/catch block.
+The [**Uri**](/uwp/api/windows.foundation.uri.-ctor) constructor throws an exception if the *uriString* passed to the constructor is not a valid URI. So we validate the *uriString* using a try/catch block.
 
 > [!div class="tabbedCodeSnippets"]
 ```csharp

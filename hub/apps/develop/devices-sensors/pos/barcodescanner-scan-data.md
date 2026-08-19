@@ -21,7 +21,7 @@ Once you have a **ClaimedBarcodeScanner**, use it to subscribe to the **DataRece
 claimedBarcodeScanner.DataReceived += ClaimedBarcodeScanner_DataReceived;
 ```
 
-The event handler will be passed the **ClaimedBarcodeScanner** and a **BarcodeScannerDataReceivedEventArgs** object. You can access the barcode data through this object's [Report](/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report#Windows_Devices_PointOfService_BarcodeScannerDataReceivedEventArgs_Report) property, which is of type [BarcodeScannerReport](/uwp/api/windows.devices.pointofservice.barcodescannerreport).
+The event handler will be passed the **ClaimedBarcodeScanner** and a **BarcodeScannerDataReceivedEventArgs** object. You can access the barcode data through this object's [Report](/uwp/api/windows.devices.pointofservice.barcodescannerdatareceivedeventargs.report) property, which is of type [BarcodeScannerReport](/uwp/api/windows.devices.pointofservice.barcodescannerreport).
 
 ```csharp
 private async void ClaimedBarcodeScanner_DataReceived(ClaimedBarcodeScanner sender, BarcodeScannerDataReceivedEventArgs args)
@@ -38,7 +38,7 @@ Once you have the **BarcodeScannerReport**, you can access and parse the barcode
 - [ScanDataLabel](/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatalabel): The decoded barcode label, which does not include the header, checksum, and other miscellaneous information.
 - [ScanDataType](/uwp/api/windows.devices.pointofservice.barcodescannerreport.scandatatype): The decoded barcode label type. Possible values are defined in the [BarcodeSymbologies](/uwp/api/windows.devices.pointofservice.barcodesymbologies) class.
 
-If you want to access either **ScanDataLabel** or **ScanDataType**, you must first set [IsDecodeDataEnabled](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled#Windows_Devices_PointOfService_ClaimedBarcodeScanner_IsDecodeDataEnabled) to **true**.
+If you want to access either **ScanDataLabel** or **ScanDataType**, you must first set [IsDecodeDataEnabled](/uwp/api/windows.devices.pointofservice.claimedbarcodescanner.isdecodedataenabled) to **true**.
 
 ```csharp
 claimedBarcodeScanner.IsDecodeDataEnabled = true;

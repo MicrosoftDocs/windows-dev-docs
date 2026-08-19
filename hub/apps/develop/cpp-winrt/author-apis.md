@@ -477,7 +477,7 @@ namespace winrt::MyProject::implementation
 
 ## Deriving from a type that has a non-default constructor
 
-[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor#Microsoft_UI_Xaml_Automation_Peers_ToggleButtonAutomationPeer__ctor_Microsoft_UI_Xaml_Controls_Primitives_ToggleButton_) is an example of a non-default constructor. There's no default constructor so, to construct a **ToggleButtonAutomationPeer**, you need to pass an *owner*. Consequently, if you derive from **ToggleButtonAutomationPeer**, then you need to provide a constructor that takes an *owner* and passes it to the base. Let's see what that looks like in practice.
+[**ToggleButtonAutomationPeer::ToggleButtonAutomationPeer(ToggleButton)**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.togglebuttonautomationpeer.-ctor) is an example of a non-default constructor. There's no default constructor so, to construct a **ToggleButtonAutomationPeer**, you need to pass an *owner*. Consequently, if you derive from **ToggleButtonAutomationPeer**, then you need to provide a constructor that takes an *owner* and passes it to the base. Let's see what that looks like in practice.
 
 ```idl
 // MySpecializedToggleButton.idl

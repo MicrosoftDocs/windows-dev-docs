@@ -32,7 +32,7 @@ Because media import operations can take a long time, they are performed asynchr
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/photo-import-winui/cs/PhotoImportWinUI/MainWindow.xaml.cs" id="SnippetDeclareCts":::
 
-Implement a handler for the cancel button. The examples shown later in this article will initialize the **CancellationTokenSource** when an operation begins and set it to null when the operation completes. In the cancel button handler, check to see if the token is null, and if not, call [**Cancel**](/dotnet/api/system.threading.cancellationtokensource.cancel#System_Threading_CancellationTokenSource_Cancel) to cancel the operation.
+Implement a handler for the cancel button. The examples shown later in this article will initialize the **CancellationTokenSource** when an operation begins and set it to null when the operation completes. In the cancel button handler, check to see if the token is null, and if not, call [**Cancel**](/dotnet/api/system.threading.cancellationtokensource.cancel) to cancel the operation.
 
 :::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/photo-import-winui/cs/PhotoImportWinUI/MainWindow.xaml.cs" id="SnippetOnCancel":::
 

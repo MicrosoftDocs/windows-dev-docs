@@ -481,10 +481,10 @@ The networking APIs that enable apps to interact with secure web services each p
 |  | [**BackgroundDownloader.ProxyCredential**](/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.proxycredential) |
 |  | [**BackgroundUploader.ServerCredential**](/uwp/api/windows.networking.backgroundtransfer.backgrounduploader.servercredential) |
 |  | [**BackgroundUploader.ProxyCredential**](/uwp/api/windows.networking.backgroundtransfer.backgrounduploader.proxycredential) |
-| **Syndication** | [**SyndicationClient(PasswordCredential)**](/uwp/api/windows.web.syndication.syndicationclient.-ctor#Windows_Web_Syndication_SyndicationClient__ctor_Windows_Security_Credentials_PasswordCredential_) |
+| **Syndication** | [**SyndicationClient(PasswordCredential)**](/uwp/api/windows.web.syndication.syndicationclient.-ctor) |
 |  | [**SyndicationClient.ServerCredential**](/uwp/api/windows.web.syndication.syndicationclient.servercredential) |
 |  | [**SyndicationClient.ProxyCredential**](/uwp/api/windows.web.syndication.syndicationclient.proxycredential) |
-| **AtomPub** | [**AtomPubClient(PasswordCredential)**](/uwp/api/windows.web.atompub.atompubclient.-ctor#Windows_Web_AtomPub_AtomPubClient__ctor_Windows_Security_Credentials_PasswordCredential_) |
+| **AtomPub** | [**AtomPubClient(PasswordCredential)**](/uwp/api/windows.web.atompub.atompubclient.-ctor) |
 |  | [**AtomPubClient.ServerCredential**](/uwp/api/windows.web.atompub.atompubclient.servercredential) |
 |  | [**AtomPubClient.ProxyCredential**](/uwp/api/windows.web.atompub.atompubclient.proxycredential) |
 

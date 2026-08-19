@@ -251,4 +251,4 @@ await MyWebView2.EnsureCoreWebView2Async(env);
 - [WebView2Samples on GitHub](https://github.com/MicrosoftEdge/WebView2Samples) — official samples for WebView2 across frameworks
 - [WebView2 API reference (Microsoft.Web.WebView2.Core)](/microsoft-edge/webview2/reference/winrt/microsoft_web_webview2_core/)
 - [Communicate between web content and host app](/microsoft-edge/webview2/concepts/overview-features-apis#web-messaging)
-- [WebView2 environment options](/microsoft-edge/webview2/concepts/overview-features-apis#webview2-environment-options)
+- [WebView2 environment options](/microsoft-edge/webview2/concepts/overview-features-apis#environment-options)

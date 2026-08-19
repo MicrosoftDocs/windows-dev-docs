@@ -213,7 +213,7 @@ Here's what the data items look like when they're displayed with this data templ
 ![List view items with a data template](images/listview-data-template-0.png)
 
 > [!IMPORTANT]
-> ListViewItems by default have their content aligned left, i.e. their [HorizontalContentAlignmentProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.horizontalcontentalignment#Windows_UI_Xaml_Controls_Control_HorizontalContentAlignment) is set to Left. If you have multiple elements within a ListViewItem that are horizontally adjacent, such as horizontally stacked elements or elements placed in the same Grid row, they will all be left-aligned and only separated by their defined margin. 
+> ListViewItems by default have their content aligned left, i.e. their [HorizontalContentAlignmentProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.horizontalcontentalignment) is set to Left. If you have multiple elements within a ListViewItem that are horizontally adjacent, such as horizontally stacked elements or elements placed in the same Grid row, they will all be left-aligned and only separated by their defined margin. 
 <br/><br/> In order to have elements spread to fill the entire body of a ListItem, you will need to set the HorizontalContentAlignmentProperty to [Stretch](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.horizontalalignment) by using a [Setter](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.setter) inside of your ListView:
 
 ```xaml
