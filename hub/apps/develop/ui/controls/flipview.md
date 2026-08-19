@@ -222,7 +222,7 @@ For larger collections (10 or more items), we highly recommend using a contextua
 
 :::image type="content" source="images/controls-context-indicator.jpg" alt-text="A film strip of thumbnails underneath a FlipView photo album.":::
 
-For a full example showing how to add a context indicator to a FlipView, see the [WinUI Gallery FlipView sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ControlPages/FlipViewPage.xaml).
+For a full example showing how to add a context indicator to a FlipView, see the [WinUI Gallery FlipView sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/FlipView/FlipViewPage.xaml).
 
 ## Related articles
 

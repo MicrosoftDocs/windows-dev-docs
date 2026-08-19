@@ -227,7 +227,7 @@ To set up Appium for a WinUI 3 desktop app:
 
 ### Microsoft Playwright (web UI in WebView2)
 
-If your app uses [WebView2](/microsoft-edge/webview2/) for web content, you can use [Microsoft Playwright](/playwright/) to test the web portions. Playwright supports automated browser testing and can connect to WebView2 instances for end-to-end scenario validation.
+If your app uses [WebView2](/microsoft-edge/webview2/) for web content, you can use [Microsoft Playwright](https://playwright.dev/docs/webview2) to test the web portions. Playwright supports automated browser testing and can connect to WebView2 instances for end-to-end scenario validation.
 
 ## Code quality and static analysis
 
@@ -316,7 +316,7 @@ OpenTelemetry is the recommended approach for new projects that need multi-backe
 
 ### Windows Error Reporting (WER)
 
-For native crash collection, Windows Error Reporting automatically captures crash dumps when your app terminates unexpectedly. Packaged apps (MSIX) get crash data surfaced through [Partner Center quality reports](/windows/apps/publish/analytics/health-report). For organizational (LOB) apps, you can configure [WER local dump collection](/windows/win32/wer/collecting-user-mode-dumps) to save minidumps for local analysis.
+For native crash collection, Windows Error Reporting automatically captures crash dumps when your app terminates unexpectedly. Packaged apps (MSIX) get crash data surfaced through [Partner Center quality reports](/windows/apps/publish/analyze-app-performance/health-report). For organizational (LOB) apps, you can configure [WER local dump collection](/windows/win32/wer/collecting-user-mode-dumps) to save minidumps for local analysis.
 
 ## Additional resources
 

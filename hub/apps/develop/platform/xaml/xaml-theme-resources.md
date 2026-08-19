@@ -55,7 +55,7 @@ For additional information about how to apply color in your Windows app, please 
 
 ### Light and Dark theme colors
 
-The XAML framework provides a set of named [Color](/uwp/api/Windows.UI.Color) resources with values that are tailored for the "Light" and "Dark" themes. For WinUI, the theme resources are defined in the [Common theme resources Xaml file](https://github.com/microsoft/microsoft-ui-xaml/blob/main/src/controls/dev/CommonStyles/Common_themeresources_any.xaml). The color names are very descriptive of their intended usage, and there's a corresponding SolidColorBrush resource for every Color resource.
+The XAML framework provides a set of named [Color](/uwp/api/Windows.UI.Color) resources with values that are tailored for the "Light" and "Dark" themes. For WinUI, the theme resources are defined in the [Common theme resources Xaml file](https://github.com/microsoft/microsoft-ui-xaml/blob/main/controls/dev/CommonStyles/Common_themeresources_any.xaml). The color names are very descriptive of their intended usage, and there's a corresponding SolidColorBrush resource for every Color resource.
 
 > [!TIP]
 > [!div class="nextstepaction"]
@@ -134,7 +134,7 @@ For guidance on how to use the Windows type ramp in your app, see [Typography in
 
 For details of the XAML styles, see WinUI on GitHub:
 
-- [Caption TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L19)
+- [Caption TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/main/controls/dev/CommonStyles/TextBlock_themeresources.xaml)
 - [Body TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/0d75f2098511d8827aa4c035698a5c4cdbc04831/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L23)
 - [Body Strong TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/0d75f2098511d8827aa4c035698a5c4cdbc04831/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L26)
 - [Body Large TextBlockStyle](https://github.com/microsoft/microsoft-ui-xaml/blob/0d75f2098511d8827aa4c035698a5c4cdbc04831/src/controls/dev/CommonStyles/TextBlock_themeresources.xaml#L27)

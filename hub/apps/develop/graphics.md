@@ -77,6 +77,6 @@ For game-specific graphics programming, Direct3D 12 is the recommended API. It p
 - [DWriteCore (Windows App SDK)](../windows-app-sdk/dwritecore.md) — The Windows App SDK implementation of DirectWrite
 - [Screen capture](media-authoring-processing/screen-capture.md) — Capture frames from a display or application window using Windows.Graphics.Capture
 - [DirectX tool kit for Direct3D 12](https://github.com/microsoft/DirectXTK12) — Helper library for Direct3D 12 game development
-- [PIX on Windows](/windows/desktop/direct3dtools/pix) — Performance tuning and debugging tool for DirectX 12
+- [PIX on Windows](/windows/win32/direct3dtools/pix/articles/general/pix-overview) — Performance tuning and debugging tool for DirectX 12
 - [XInput (game controller input)](/windows/desktop/xinput/getting-started-with-xinput) — API for Xbox controller input in Windows games
 - [ONNX Runtime](/windows/ai/new-windows-ml/run-onnx-models) — Run machine-learning models on-device for game AI and real-time inference

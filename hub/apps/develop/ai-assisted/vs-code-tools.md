@@ -153,4 +153,4 @@ var file = await picker.PickSingleFileAsync();
 - [Quickstart: Build and publish a Windows app with AI](quickstart.md)
 - [WinUI agent plugin](winui-agent-plugin.md)
 - [Model Context Protocol specification](https://modelcontextprotocol.io)
-- [GitHub Copilot MCP documentation](https://docs.github.com/copilot/customizing-copilot/extending-copilot-with-mcp)
+- [GitHub Copilot MCP documentation](https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp-in-your-ide/extend-copilot-chat-with-mcp)

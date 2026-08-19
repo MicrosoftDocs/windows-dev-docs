@@ -195,7 +195,7 @@ The window should have an owner when IsModal=true.
 To set the owner window in a WinUI app requires Win32 interop. For more information and example code, see the AppWindow page in the WinUI 3 Gallery sample app.
 
 - [Launch the WinUI 3 Gallery app](winui3gallery://item/AppWindow)
-- [Open ModalWindow.xaml.cs on GitHub](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/SamplePages/ModalWindow.xaml.cs)
+- [Open ModalWindow.xaml.cs on GitHub](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/SampleSupport/SamplePages/ModalWindow.xaml.cs)
 
 ### Apply a presenter
 

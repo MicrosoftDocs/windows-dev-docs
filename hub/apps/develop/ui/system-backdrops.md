@@ -302,7 +302,7 @@ This example shows how to set up the Mica backdrop material using a controller i
 > [!TIP]
 > Also, see these example projects on GitHub:
 >
-> **C#**: [SampleSystemBackdropsWindow in the WinUI Gallery](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/SamplePages/SampleSystemBackdropsWindow.xaml.cs).
+> **C#**: [SampleSystemBackdropsWindow in the WinUI Gallery](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/SampleSupport/SamplePages/SampleSystemBackdropsWindow.xaml.cs).
 >
 > **C++/WinRT**: [Windows App SDK Mica sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Mica/cpp-win32).
 

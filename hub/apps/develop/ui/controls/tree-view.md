@@ -1325,4 +1325,4 @@ namespace TreeViewTest
 - [TreeViewItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeviewitem)
 - [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview)
 - [ListView and GridView](listview-and-gridview.md)
-- [WinUI 3 Gallery - TreeView sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ControlPages/TreeViewPage.xaml)
+- [WinUI 3 Gallery - TreeView sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/TreeView/TreeViewPage.xaml)

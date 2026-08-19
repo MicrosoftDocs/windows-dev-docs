@@ -137,19 +137,19 @@ Use the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.contr
 
 This list shows available interfaces and when to consider using each one.
 
-- [IEnumerable](/dotnet/api/system.collections.generic.ienumerable-1)(.NET) / [IIterable](/windows/windows-app-sdk/api/winrt/windows.foundation.collections.iiterable-1)
+- [IEnumerable](/dotnet/api/system.collections.generic.ienumerable-1)(.NET) / [IIterable](/uwp/api/windows.foundation.collections.iiterable-1)
 
   - Can be used for small, static data sets.
 
     At a minimum, the data source must implement the IEnumerable / IIterable interface. If this is all that's supported then the control will iterate through everything once to create a copy that it can use to access items via an index value.
 
-- [IReadonlyList](/dotnet/api/system.collections.generic.ireadonlylist-1)(.NET) / [IVectorView](/windows/windows-app-sdk/api/winrt/windows.foundation.collections.ivectorview-1)
+- [IReadOnlyList](/dotnet/api/system.collections.generic.ireadonlylist-1)(.NET) / [IVectorView](/uwp/api/windows.foundation.collections.ivectorview-1)
 
   - Can be used for static, read-only data sets.
 
     Enables the control to access items by index and avoids the redundant internal copy.
 
-- [IList](/dotnet/api/system.collections.generic.ilist-1)(.NET) / [IVector](/windows/windows-app-sdk/api/winrt/windows.foundation.collections.ivector-1)
+- [IList](/dotnet/api/system.collections.generic.ilist-1)(.NET) / [IVector](/uwp/api/windows.foundation.collections.ivector-1)
 
   - Can be used for static data sets.
 
@@ -164,7 +164,7 @@ This list shows available interfaces and when to consider using each one.
 
     Enables the control to observe and react to changes in the data source and reflect those changes in the UI.
 
-- [IObservableVector](/windows/windows-app-sdk/api/winrt/windows.foundation.collections.iobservablevector-1)
+- [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector-1)
 
   - Supports change notification
 

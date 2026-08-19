@@ -307,7 +307,7 @@ This XAML sets the [CanTearOutTabs](/windows/windows-app-sdk/api/winrt/microsoft
 Tab tear-out requires that you create and manage new windows in your app.
 
 > [!TIP]
-> The WinUI 3 Gallery app includes a `WindowHelper` class that makes it easier to manage windows in your app. You can copy it from GitHub in the WinUI 3 Gallery repo: [WindowHelper.cs](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Helper/WindowHelper.cs). We recommend this helper class to implement tab tear-out. See the [TabViewWindowingSamplePage](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/TabViewPages/TabViewWindowingSamplePage.xaml.cs) on GitHub to see how it's used.
+> The WinUI 3 Gallery app includes a `WindowHelper` class that makes it easier to manage windows in your app. You can copy it from GitHub in the WinUI 3 Gallery repo: [WindowHelper.cs](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Helpers/WindowHelper.cs). We recommend this helper class to implement tab tear-out. See the [TabViewWindowingSamplePage](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/SampleSupport/SamplePages/TabViewWindowingSamplePage.xaml.cs) on GitHub to see how it's used.
 >
 > In this article, helper methods are copied from `WindowHelper.cs`, but are modified and shown inline for readability.
 
