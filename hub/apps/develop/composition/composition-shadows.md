@@ -1,7 +1,7 @@
 ---
 title: Composition shadows in WinUI
 description: The shadow APIs let you add dynamic customizable shadows to WinUI and Windows App SDK UI content.
-ms.date: 03/16/2026
+ms.date: 08/21/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -108,7 +108,7 @@ If you want to add a shadow to more complex framework elements, there are a coup
 
 1. Use the [AttachedCardShadow](/dotnet/communitytoolkit/windows/media/attachedcardshadow) available in the [CommunityToolkit.WinUI.Media](https://www.nuget.org/packages/CommunityToolkit.WinUI.Media) package.
 1. Create a Visual to use as the shadow host and tie it to the XAML hand-off Visual.
-1. Use the Composition Sample Gallery’s [SamplesCommon](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SamplesCommon/SamplesCommon) custom CompositionShadow control. See the example here for usage.
+1. Use the SceneGraph sample gallery's [`CompositionShadow` custom control](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/SceneGraph/SamplesCommon/SamplesCommon/CompositionShadow.xaml.cs). See the [ShadowInterop sample markup](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/SceneGraph/SampleGalleryApp/Samples/ShadowInterop/ShadowInterop.xaml) for usage.
 
 ## Performance
 
@@ -125,4 +125,4 @@ Animating Blur Radius | High
 ## Additional Resources
 
 - [Composition DropShadow API](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.dropshadow)
-- [WindowsCompositionSamples GitHub Repo](https://github.com/microsoft/WindowsCompositionSamples)
+- [Windows App SDK SceneGraph samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SceneGraph)

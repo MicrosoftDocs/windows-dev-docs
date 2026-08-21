@@ -1,7 +1,7 @@
 ---
 title: Composition tailoring for WinUI apps
 description: Use the WinUI composition APIs in the Windows App SDK to tailor your UI, optimize for performance, and accommodate user settings and device characteristics.
-ms.date: 03/16/2026
+ms.date: 08/21/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -105,7 +105,7 @@ The API can be added to existing code in a few easy steps.
     }
     ```
 
-Full example code can be found on the [Windows UI GitHub repo](https://github.com/microsoft/WindowsCompositionSamples/tree/master/SampleGallery/Samples/SDK%2015063/CompCapabilities).
+For the complete example, see the [CompCapabilities sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SceneGraph/SampleGalleryApp/Samples/CompCapabilities).
 
 ## Fast vs. slow effects
 

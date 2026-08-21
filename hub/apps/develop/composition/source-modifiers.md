@@ -1,7 +1,7 @@
 ---
 title: Pull-to-refresh with source modifiers
 description: Learn how to use an InteractionTracker's SourceModifier feature in WinUI and Windows App SDK apps to create a custom pull-to-refresh control.
-ms.date: 03/16/2026
+ms.date: 08/21/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -41,7 +41,7 @@ For the end user experience, we want to create the effect of "resistance" as the
 
 ![List with pull-to-refresh](images/animation/city-list.gif)
 
-The working code for this experience can be found in the [Window UI Dev Labs repo on GitHub](https://github.com/microsoft/WindowsCompositionSamples). Here is the step-by-step walk through of building that experience.
+The [PullToRefresh sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SceneGraph/SampleGalleryApp/Samples/PullToRefresh) contains the working code for this experience. The following walkthrough explains how to build it.
 In your XAML markup code, you have the following:
 
 ```xaml

@@ -1,7 +1,7 @@
 ---
 title: XAML lighting in WinUI
 description: Learn how CompositionLight and XamlLight objects work in WinUI and Windows App SDK apps to simulate dynamic lighting and reflectivity.
-ms.date: 03/16/2026
+ms.date: 08/21/2026
 ms.topic: article
 ms.localizationpriority: medium
 dev_langs:
@@ -296,4 +296,4 @@ The results of this XAML look like this.
 
 ## Additional Resources
 
-* Advanced UI and Composition samples in the [WindowsCompositionSamples GitHub](https://github.com/microsoft/WindowsCompositionSamples).
+* [Windows App SDK SceneGraph samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SceneGraph)

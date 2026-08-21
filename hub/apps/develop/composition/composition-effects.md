@@ -1,7 +1,7 @@
 ---
 title: Composition effects in WinUI
 description: The composition effect APIs let you customize how WinUI and Windows App SDK UI is rendered.
-ms.date: 03/16/2026
+ms.date: 08/21/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -206,7 +206,7 @@ surfaceBrush.Surface = imageSurface;
 
 ## More Information
 
-- [Microsoft – Composition GitHub](https://github.com/microsoft/WindowsCompositionSamples)
+- [Windows App SDK SceneGraph samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SceneGraph)
 - [**Microsoft.UI.Composition**](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition)
 - [Composition Overview](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
 - [Visual Tree Basics](composition-visual-tree.md)
