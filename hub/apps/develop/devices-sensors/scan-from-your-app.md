@@ -1,7 +1,7 @@
 ---
 title: Scan from your app
 description: Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
-ms.date: 05/27/2026
+ms.date: 08/21/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -262,7 +262,3 @@ static async public void SetImageSourceFromStream(IRandomAccessStream stream, Im
 ## Scanning to the pictures library
 
 Users can scan to any folder dynamically using the [FolderPicker](/uwp/api/Windows.Storage.Pickers.FolderPicker) class, but you must declare the *Pictures Library* capability in the manifest to allow users to scan to that folder. For more info on app capabilities, see [App capability declarations](/windows/uwp/packaging/app-capability-declarations).
- 
- ## Related topics
-
-- [Scanning sample (UWP)](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/Scan%20Runtime%20API%20Sample/%5BC%23%5D-Scan%20Runtime%20API%20Sample/C%23)
