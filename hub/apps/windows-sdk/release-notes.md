@@ -2,7 +2,7 @@
 title: What's new in Windows SDK
 description: Provides information about release notes for the Windows SDK.
 ms.topic: release-notes
-ms.date: 07/17/2026
+ms.date: 08/20/2026
 keywords: windows win32, windows app development, Windows SDK, Windows Platform SDK, windows 11
 ms.localizationpriority: medium
 ---
@@ -15,6 +15,104 @@ You can update the SDK by manually installing the new build, updating in Visual 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
 ## 28000 versions
+
+## Build 10.0.28000.2705
+
+Released: **August, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.Management.Update**:
+> <br/>
+> Updated:
+>
+> - `WindowsSoftwareUpdateIdentity`, `WindowsSoftwareUpdateIdentityType`, `WindowsSoftwareUpdateCategory`: New identity and category types for describing a software update
+> - `WindowsUpdateManagerScanMode` and `WindowsUpdateManager.PerformScan`: Scanning now takes a scan mode instead of a scan options object (`WindowsUpdateManagerScanOptions` was removed)
+> - `WindowsSoftwareUpdate.IsSeeker`, `WindowsSoftwareUpdate.UpdateCategory`, `WindowsSoftwareUpdate.UpdateIdentity`, `WindowsSoftwareUpdate.Properties`, `WindowsSoftwareUpdate.GetPropertyValue`: Additional update metadata and property access
+>
+> **Windows.System.Profile**:
+> <br/>
+> New:
+>
+> - `RetailInfo.IsDemoModeEnabledEx`: Indicates whether retail demo mode is enabled
+>
+> **Windows.UI.Notifications**:
+> <br/>
+> New:
+>
+> - `ToastNotification.IsExpandableContentSupported`: Indicates whether expandable toast content is supported
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Cryptography (wincrypt.h)**
+> <br/>
+> New:
+>
+> - Endorsement-key enrollment v2 OIDs: `szOID_ENROLL_V2_CONTAINER_NAME`, `szOID_ENROLL_V2_EK_ALGORITHM`, `szOID_ENROLL_V2_EK_PARAMETER`, `szOID_ENROLL_V2_AIK_INFO`, `szOID_ENROLL_V2_ATTESTATION_STATEMENT`, `szOID_CERTSRV_V2_ATTESTATION_VERIFIED`
+>
+> **Media Foundation codecs (codecapi.h)**
+> <br/>
+> New:
+>
+> - `CODECAPI_AVEncAV1EncoderOperatingMode` and `eAV1EncoderOperatingMode`: Configure the AV1 encoder operating mode
+>
+> **Direct3D 12 (d3d12.h)**
+> <br/>
+> New:
+>
+> - `ID3D12DeviceStatistics` with `GetStateObjectStatistics`, plus `D3D12_STATE_OBJECT_STATISTICS` and `D3D12_CREATE_STATE_OBJECT_STATISTICS`: Query statistics for a state object
+>
+> **Remote Desktop Protocol (wtsprotocol.h / wtsdefs.h)**
+> <br/>
+> New:
+>
+> - `IWRdsProtocolConnection3_Experimental` with `GetSerializedUserCredentialInteractively`: Retrieve a serialized user credential interactively
+> - `WRDS_CREDENTIAL_SCENARIO_INTERACTIVE_UNLOCK`, `WRDS_CREDENTIAL_SCENARIO_INTERACTIVE_LOGON`: Credential scenario identifiers
+>
+> **Storage (ntddstor.h / winioctl.h)**
+> <br/>
+> New:
+>
+> - `GUID_STORPORT_PAGING_DEVICE_DUMP`, `STOR_PAGING_DEVICE_DUMP_ENTRY`, `STOR_PAGING_DEVICE_DUMP_DATA`: Paging device dump definitions for storage crash dumps
+>
+> **Shell Properties (propkey.h)**
+> <br/>
+> New:
+>
+> - `PKEY_Devices_WiFiAware_IsSupported`: Indicates whether Wi-Fi Aware is supported
+>
+> **Status and Error Codes (ntstatus.h / winerror.h)**
+> <br/>
+> New:
+>
+> - `STATUS_FIPS_FAILURE` and `NTE_FIPS_FAILURE`: A cryptographic operation failed FIPS validation
+> - `STATUS_DEVICE_NACKED` and `ERROR_DEVICE_NACKED`: The device returned a negative acknowledgement
+> - `UTC_E_WINRE_COMPLIANCE_CAPTURE_FAILED`, `UTC_E_WINRE_ETM_ENABLED`, and `PPF_E_*` diagnostics error codes
+
+</details>
+
+<details>
+<summary>COM API updates</summary>
+
+> **Direct3D 12 (d3d12.idl)**
+> <br/>
+> New:
+>
+> - `ID3D12DeviceStatistics` with `GetStateObjectStatistics`: Query statistics for a state object
+>
+> **Remote Desktop Protocol (wtsprotocol.idl)**
+> <br/>
+> New:
+>
+> - `IWRdsProtocolConnection3_Experimental` with `GetSerializedUserCredentialInteractively`: Retrieve a serialized user credential interactively
+
+</details>
+
+---
 
 ## Build 10.0.28000.2526
 
@@ -708,6 +806,131 @@ This is a major version bump to the **28000** SDK series.
 ---
 
 ## 26100 versions
+
+## Build 10.0.26100.9169
+
+Released: **August, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.Management.Update**:
+> <br/>
+> Updated:
+>
+> - `WindowsSoftwareUpdateIdentity`, `WindowsSoftwareUpdateIdentityType`, `WindowsSoftwareUpdateCategory`: New identity and category types for describing a software update
+> - `WindowsUpdateManagerScanMode` and `WindowsUpdateManager.PerformScan`: Scanning now takes a scan mode instead of a scan options object
+> - `WindowsSoftwareUpdate.IsSeeker`, `WindowsSoftwareUpdate.UpdateCategory`, `WindowsSoftwareUpdate.UpdateIdentity`, `WindowsSoftwareUpdate.Properties`, `WindowsSoftwareUpdate.GetPropertyValue`: Additional update metadata and property access
+>
+> **Windows.System**:
+> <br/>
+> New:
+>
+> - `User.GetUserAgeRangeAsync`: Gets the age range associated with the user
+> - `User.GetAgeVerificationStatusAsync`: Gets the age verification status of the user
+> - `UserAgeRange`: Enumeration describing the user's age range
+> - `UserAgeVerificationStatus`: Enumeration describing the user's age verification status
+>
+> **Windows.UI.Notifications**:
+> <br/>
+> New:
+>
+> - `ToastNotification.IsExpandableContentSupported`: Indicates whether expandable toast content is supported
+>
+> **Windows.Devices.WiFiDirect.Services**:
+> <br/>
+> Deprecated:
+>
+> - The Wi-Fi Direct Services APIs are now deprecated and might not work on all platforms
+
+</details>
+
+<details>
+<summary>WinRT Experimental API additions</summary>
+
+> **Windows.UI.Input**:
+> <br/>
+> New (experimental):
+>
+> - `GamepadKeyRoutingConfiguration`: Runtime class that configures gamepad key routing
+> - `GamepadKeyRoutingConfiguration.IsSupported`: Indicates whether gamepad key routing configuration is supported
+> - `GamepadKeyRoutingConfiguration.IsKeyRoutingEnabled`: Gets whether gamepad key routing is enabled
+> - `GamepadKeyRoutingConfiguration.TrySetKeyRoutingEnabled`: Attempts to enable or disable gamepad key routing
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Cryptography (wincrypt.h)**
+> <br/>
+> New post-quantum cryptography (PQC) and CMS support:
+>
+> - Composite ML-DSA and ML-KEM OIDs (for example `szOID_MLDSA44_ECDSA_P256_SHA256`, `szOID_MLKEM768_ECDH_P256_SHA3_256`) pairing ML-DSA/ML-KEM with classical ECDSA/ECDH
+> - NIST AES-CCM and AES-GCM OIDs (`szOID_NIST_AES128_CCM` through `szOID_NIST_AES256_GCM`)
+> - `szOID_RSA_HKDF_WITH_SHA256`: HKDF key-derivation OID
+> - Authenticated enveloped data: `CMSG_AUTH_ENVELOPED`, `CMSG_AUTH_ENVELOPED_ENCODE_INFO`, and `szOID_RSA_authEnvelopedData`
+> - KEM recipient info: `CMSG_KEM_RECIPIENT`, `CMSG_KEM_RECIPIENT_ENCODE_INFO`, and `szOID_ORI_KEM`
+> - Endorsement-key enrollment v2 OIDs (`szOID_ENROLL_V2_EK_ALGORITHM`, `szOID_ENROLL_V2_ATTESTATION_STATEMENT`, and related)
+> - `szOID_PREHASH`: Prehash OID
+>
+> **WebAuthn (webauthn.h)**
+> <br/>
+> New:
+>
+> - `WEBAUTHN_COSE_ALGORITHM_ML_DSA_44`, `WEBAUTHN_COSE_ALGORITHM_ML_DSA_65`, `WEBAUTHN_COSE_ALGORITHM_ML_DSA_87`: ML-DSA COSE algorithm identifiers
+>
+> **Media Foundation codecs (codecapi.h)**
+> <br/>
+> New:
+>
+> - `CODECAPI_AVEncAV1EncoderOperatingMode` and `eAV1EncoderOperatingMode`: Configure the AV1 encoder operating mode
+>
+> **Direct3D 12 (d3d12.h)**
+> <br/>
+> New:
+>
+> - `ID3D12DeviceStatistics` with `GetStateObjectStatistics`, plus `D3D12_STATE_OBJECT_STATISTICS` and `D3D12_CREATE_STATE_OBJECT_STATISTICS`: Query statistics for a state object
+>
+> **Process Creation (WinBase.h)**
+> <br/>
+> New:
+>
+> - `PROC_THREAD_ATTRIBUTE_DESKTOP_APP_IDENTITY_POLICY`, `PROCESS_CREATION_DESKTOP_APP_IDENTITY_ENABLE`, `PROCESS_CREATION_DESKTOP_APP_IDENTITY_DISABLE`: Control desktop app identity for a new process
+>
+> **Shell Properties (propkey.h)**
+> <br/>
+> New:
+>
+> - `PKEY_Devices_WiFiAware_IsSupported`: Indicates whether Wi-Fi Aware is supported
+> - `PKEY_ItemFolderPathDisplayNarrowNamespaceRelative`: Namespace-relative folder path for display
+>
+> **Status and Error Codes (ntstatus.h / winerror.h)**
+> <br/>
+> New:
+>
+> - `STATUS_FIPS_FAILURE` and `NTE_FIPS_FAILURE`: A cryptographic operation failed FIPS validation
+>
+> **Networking (ws2def.h)**
+> <br/>
+> New:
+>
+> - `AI_EXTRA_UNTRUSTED_QUERY`: Reserved addrinfo hint flag
+
+</details>
+
+<details>
+<summary>COM API updates</summary>
+
+> **Direct3D 12 (d3d12.idl)**
+> <br/>
+> New:
+>
+> - `ID3D12DeviceStatistics` with `GetStateObjectStatistics`: Query statistics for a state object
+
+</details>
+
+---
 
 ## Build 10.0.26100.8876
 
