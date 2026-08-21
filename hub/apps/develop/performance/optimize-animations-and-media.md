@@ -1,7 +1,9 @@
 ---
 title: Optimize animations, media, and images for WinUI apps
-description: Learn how to optimize animations, media, and images in WinUI apps built with the Windows App SDK.
-ms.date: 03/16/2026
+description: Learn how to optimize animations and media in WinUI apps, including image decoding, caching, memory use, and resource management.
+author: GrantMeStrength
+ms.author: jken
+ms.date: 08/11/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -217,11 +219,39 @@ myImage.Source = bitmapImage;
 
 ### Caching optimizations
 
-Caching optimizations are in effect for images that use [**UriSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage.urisource) to load content from an app package or from the web. The URI is used to uniquely identify the underlying content, and internally the XAML framework will not download or decode the content multiple times. Instead, it will use the cached software or hardware resources to display the content multiple times.
+Caching optimizations are available for images that use [**UriSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage.urisource) to load content from an app package or the web. WinUI can reuse internal image data and rendering resources for the same resolved URI across different [**BitmapImage**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage) instances and [**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) controls. WinUI caches these internal resources, not the public objects themselves.
 
-The exception to this optimization is if the image is displayed multiple times at different resolutions (which can be specified explicitly or through automatic right-sized decoding). Each cache entry also stores the resolution of the image, and if XAML cannot find an image with a source URI that matches the required resolution then it will decode a new version at that size. It will not, however, download the encoded image data again.
+When compatible resources are still available, a cache hit can avoid retrieving or decoding the image again. If the same URI requires different physical decode dimensions, WinUI might create another decoded version for those dimensions while reusing other available data. Reuse isn't guaranteed, so returning to a URI after navigation can require another retrieval or decode.
 
-Consequently, you should embrace using [**UriSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage.urisource) when loading images from an app package, and avoid using a file stream and [**SetSourceAsync**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapsource.setsourceasync) when it's not required.
+Use **UriSource** when an image has a URI and you want WinUI to identify repeated loads as the same resource. Images initialized from separate streams with [**SetSourceAsync**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapsource.setsourceasync) don't have a shared URI identity, so WinUI decodes each stream independently.
+
+For a remote URI, **BitmapImage** doesn't determine whether retrieval uses a memory or disk cache, sends a conditional request, or downloads content from the origin server. The URI handler, network stack, server response, and cache policy determine that behavior.
+
+WinUI doesn't expose a time-to-live, maximum size, eviction order, or clear operation for the image cache. Cache lifetime isn't guaranteed to match the app lifetime or a specific control's lifetime. When you remove an **Image** from the visual tree and release references to its **BitmapImage**, associated resources become eligible for release, but WinUI doesn't guarantee exactly when memory is returned (for example, hardware surfaces can be released shortly after removal while cached image data might persist longer). Retaining **BitmapImage** instances can retain associated image resources.
+
+Different decode dimensions can require separate decoded resources and increase memory use. To reduce memory use, [scale images to the appropriate size](#scale-images-to-the-appropriate-size) and use [virtualized panels](#images-in-virtualized-panels-listview-for-instance) for image collections.
+
+#### Refresh an image at the same URI
+
+If content at a URI can change, set [**CreateOptions**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage.createoptions) to [**BitmapCreateOptions.IgnoreImageCache**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapcreateoptions) before you set **UriSource**. This setting bypasses existing WinUI image-cache entries for that load and causes WinUI to decode the retrieved content again.
+
+```csharp
+using Microsoft.UI.Xaml.Controls;
+using Microsoft.UI.Xaml.Media.Imaging;
+
+private static void RefreshImage(Image image, Uri uri)
+{
+    var bitmapImage = new BitmapImage
+    {
+        CreateOptions = BitmapCreateOptions.IgnoreImageCache
+    };
+
+    image.Source = bitmapImage;
+    bitmapImage.UriSource = uri;
+}
+```
+
+**IgnoreImageCache** controls WinUI's image cache, not every cache involved in retrieving a remote resource. Don't rely on this option to guarantee that every load contacts the origin server or transfers the full response. Use it only when content changes while its URI remains the same because bypassing reuse adds retrieval and decode work.
 
 ### Images in virtualized panels (ListView, for instance)
 

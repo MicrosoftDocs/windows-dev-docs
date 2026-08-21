@@ -1,10 +1,12 @@
 ---
 description: Learn how to integrate images into your app, including how to use the APIs of the two main XAML classes, Image and ImageBrush.
 title: Images and image brushes
+author: GrantMeStrength
+ms.author: jken
 ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
 label: Images and image brushes
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 08/17/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -137,6 +139,8 @@ For more info about how to design for scaling, see [UX guidelines for layout and
 It's typical to specify Image and ImageBrush elements using XAML rather than code. This is because these elements are often the output of design tools as part of a XAML UI definition.
 
 If you define an Image or ImageBrush using code, use the default constructors, then set the relevant source property ([Image.Source](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image.source) or [ImageBrush.ImageSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagebrush.imagesource)). The source properties require a [BitmapImage](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Media.Imaging.BitmapImage) (not a URI) when you set them using code. If your source is a stream, use the [SetSourceAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapsource.setsourceasync) method to initialize the value. If your source is a URI, which includes content in your app that uses the **ms-appx** or **ms-resource** schemes, use the [BitmapImage](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage) constructor that takes a URI. You might also consider handling the [ImageOpened](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.bitmapimage.imageopened) event if there are any timing issues with retrieving or decoding the image source, where you might need alternate content to display until the image source is available. For example code, see the [WinUI 3 Gallery sample](https://github.com/Microsoft/WinUI-Gallery).
+
+For details about URI-backed image reuse, memory implications, and refreshing content at a stable URI, see [Image caching optimizations](../../performance/optimize-animations-and-media.md#caching-optimizations).
 
 > [!NOTE]
 > If you establish images using code, you can use automatic handling for accessing unqualified resources with current scale and culture qualifiers, or you can use [ResourceManager](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceManager) and [ResourceMap](/uwp/api/Windows.ApplicationModel.Resources.Core.ResourceMap) with qualifiers for culture and scale to obtain the resources directly. For more info see [Resource management system](/windows/uwp/app-resources/resource-management-system).
