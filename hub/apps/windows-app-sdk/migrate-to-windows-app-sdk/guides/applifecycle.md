@@ -2,7 +2,7 @@
 title: Application lifecycle functionality migration
 description: This topic contains migration guidance in the application lifecycle area.
 ms.topic: article
-ms.date: 07/05/2026
+ms.date: 08/21/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, application lifecycle, applifecycle, application, lifecycle
 ms.localizationpriority: medium
 dev_langs:
@@ -56,7 +56,7 @@ Go to **Properties** > (select **All Configurations** and **All Platforms**) > *
 
 Because we've just prevented the project from auto-generating a **Main** function, the project won't build at the moment. So the second and last step is to implement our own version of that function in a source code file.
 
-Add a new project item of type **Class** to the project, and name it *Program.cs*. Inside `Program.cs`, replace the code `class Program {}` with your own implementation. For an example of the code to use, see `Program.cs` in the [AppLifecycle sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/Instancing/cs/cs-winui-packaged/CsWinUiDesktopInstancing/CsWinUiDesktopInstancing/Program.cs).
+Add a new project item of type **Class** to the project, and name it *Program.cs*. Inside `Program.cs`, replace the code `class Program {}` with your own implementation. For an example of the code to use, see `Program.cs` in the [AppLifecycle sample](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/AppLifecycle/Instancing/cs2/cs-winui-packaged/CsWinUiDesktopInstancing/CsWinUiDesktopInstancing/Program.cs).
 
 #### Instructions for C++/WinRT
 
