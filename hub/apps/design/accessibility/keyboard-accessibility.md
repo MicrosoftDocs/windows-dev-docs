@@ -4,7 +4,7 @@ ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: Keyboard accessibility
 label: Keyboard accessibility
 template: detail.hbs
-ms.date: 03/17/2026
+ms.date: 08/21/2026
 ms.topic: article
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -307,4 +307,4 @@ For example, even without a physical Tab key, Narrator supports gestures that ma
 - [Accessibility overview](accessibility-overview.md)
 - [Keyboard interactions](../../develop/input/keyboard-interactions.md)
 - [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard) (legacy sample)
-- [XAML accessibility sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/Accessibility/AccessibilityKeyboardPage.xaml)
+- [XAML accessibility sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/AccessibilityKeyboard/AccessibilityKeyboardPage.xaml)

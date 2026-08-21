@@ -4,7 +4,7 @@ ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: Expose basic accessibility information
 label: Expose basic accessibility information
 template: detail.hbs
-ms.date: 03/17/2026
+ms.date: 08/21/2026
 ms.topic: how-to
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -117,7 +117,7 @@ The most reliable way to validate screen reader support is to test your app dire
 
 ## Accessible names from dynamic data
 
-Many Windows controls render content through *data binding*, which means accessible names are often determined from runtime data rather than static XAML. When list or item templates are populated dynamically, verify that each generated item exposes a meaningful accessible name after binding completes. Depending on the control and template composition, you may need to set or update accessibility properties programmatically so the automation tree reflects the final rendered state. For an end-to-end example, see the [WinUI Gallery accessibility sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/Accessibility/AccessibilityScreenReaderPage.xaml).
+Many Windows controls render content through *data binding*, which means accessible names are often determined from runtime data rather than static XAML. When list or item templates are populated dynamically, verify that each generated item exposes a meaningful accessible name after binding completes. Depending on the control and template composition, you may need to set or update accessibility properties programmatically so the automation tree reflects the final rendered state. For an end-to-end example, see the [WinUI Gallery accessibility sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderPage.xaml).
 
 ## Accessible names and localization
 
@@ -129,5 +129,5 @@ Attached properties in [**AutomationProperties**](/windows/windows-app-sdk/api/w
 
 * [Accessibility overview](accessibility-overview.md)
 * [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name)
-* [WinUI Gallery accessibility sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/Accessibility/AccessibilityScreenReaderPage.xaml)
+* [WinUI Gallery accessibility sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/AccessibilityScreenReader/AccessibilityScreenReaderPage.xaml)
 * [Accessibility testing](accessibility-testing.md)

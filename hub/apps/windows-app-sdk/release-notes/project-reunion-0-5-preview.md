@@ -2,7 +2,7 @@
 title: WinUI 3 - Project Reunion 0.5 Preview (March 2021)
 description: Release notes for WinUI 3 - Project Reunion 0.5 Preview (March 2021) release.
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
-ms.date: 03/19/2021
+ms.date: 08/21/2026
 ms.topic: release-notes
 ---
 
@@ -217,18 +217,14 @@ For more information on affected APIs as well as workarounds and replacements fo
 
   The `System` namespace versions still exist, but cannot be used with WinUI 3. This means that `ObservableCollection` doesn't work as-is in WinUI 3 C# UWP apps. For a workaround, see the [CollectionsInterop sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/CollectionsInterop.cs) in the [XAML Controls Gallery sample](https://github.com/microsoft/WinUI-Gallery).
 
-## XAML Controls Gallery (WinUI 3 Preview branch)
+## XAML Controls Gallery snapshot for WinUI 3 Preview
 
-See the [WinUI 3 Preview branch of the XAML Controls Gallery](https://github.com/microsoft/Xaml-Controls-Gallery/tree/winui3preview) for a sample app that includes all controls and features that are a part of the WinUI 3 - Project Reunion 0.5 Preview.
+The `winui3preview` branch is no longer available, and the XAML Controls Gallery repository has been renamed to [microsoft/WinUI-Gallery](https://github.com/microsoft/WinUI-Gallery). The sample app as it existed for WinUI 3 - Project Reunion 0.5 Preview is preserved in a [historical commit](https://github.com/microsoft/WinUI-Gallery/tree/136c81578c6f30750efb268a4a8e2da871f182ef). This snapshot doesn't reflect the current WinUI 3 Gallery.
 
-To download the sample, clone the **winui3preview** branch using the following command:
+To download the historical snapshot, clone the repository and check out the preserved commit:
 
-```
-git clone --single-branch --branch winui3preview https://github.com/microsoft/Xaml-Controls-Gallery.git
-```
-
-After cloning, ensure that you switch to the **winui3preview** branch in your local Git environment: 
-
-```
-git checkout winui3preview
+```console
+git clone https://github.com/microsoft/WinUI-Gallery.git
+cd WinUI-Gallery
+git checkout 136c81578c6f30750efb268a4a8e2da871f182ef
 ```

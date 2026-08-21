@@ -4,7 +4,7 @@ title: Contrast themes
 label: Contrast design guidelines
 keywords: 
 template: detail.hbs
-ms.date: 03/17/2026
+ms.date: 08/21/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -248,5 +248,5 @@ The following code snippet (from an App.xaml file) shows an example [**ThemeDict
 
 - [Accessibility overview](accessibility-overview.md)
 - [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) (archived legacy sample — no WinUI 3 equivalent available)
-- [XAML high contrast sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/ControlPages/Accessibility/AccessibilityColorContrastPage.xaml)
+- [XAML high contrast sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/AccessibilityColorContrast/AccessibilityColorContrastPage.xaml)
 - [**ThemeSettings.HighContrast**](/windows/windows-app-sdk/api/winrt/microsoft.ui.system.themesettings.highcontrast)

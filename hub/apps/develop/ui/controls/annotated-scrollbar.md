@@ -3,7 +3,7 @@ description: Use an annotated scrollbar control to add labels that help a user n
 title: Annotated Scrollbar
 label: Annotated Scrollbar
 template: detail.hbs
-ms.date: 10/01/2023
+ms.date: 08/21/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -126,7 +126,7 @@ You add labels by populating the [Labels](/windows/windows-app-sdk/api/winrt/mic
 
 Labels (if specified) are always visible on the scrollbar, unless they collide with other labels or extend past the bounds of the rail. (See [Label behavior](#label-behavior) for more info.)
 
-The calculation of the label offset value depends on the details of your app and its data. For one example of how the offset can be calculated, see the [WinUI 3 Gallery example on GitHub](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/ControlPages/AnnotatedScrollBarPage.xaml.cs).
+The calculation of the label offset value depends on the details of your app and its data. For one example of how the offset can be calculated, see the [WinUI 3 Gallery example on GitHub](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/Samples/AnnotatedScrollBar/AnnotatedScrollBarPage.xaml.cs).
 
 #### Detail labels
 

@@ -2,7 +2,7 @@
 title: Windows App SDK 1.1 release notes
 description: Provides information about what's new in Windows App SDK 1.1.
 ms.topic: release-notes
-ms.date: 09/22/2025
+ms.date: 08/21/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -288,7 +288,7 @@ zone_pivot_groups: wasdk-release-channels
 >
 > Mica and Background Acrylic are now available for WinUI applications.
 >
-> For more information about these materials, check out [Materials in Windows 11](../../design/signature-experiences/materials.md). Check out our sample code for applying Mica in C++ applications at [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../develop/ui/system-backdrops.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/ControlPagesSampleCode/SystemBackdrops) as part of the WinUI Controls Gallery.
+> For more information about these materials, check out [Materials in Windows 11](../../design/signature-experiences/materials.md). Check out our sample code for applying Mica in C++ applications at [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../develop/ui/system-backdrops.md) and in C# applications [on GitHub](https://github.com/microsoft/WinUI-Gallery/tree/winappsdk/1.1/WinUIGallery/ControlPagesSampleCode/SystemBackdrops) as part of the WinUI Controls Gallery.
 >
 
 </details>
