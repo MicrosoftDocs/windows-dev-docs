@@ -2,7 +2,7 @@
 title: WinUI 3 Project Reunion 0.5
 description: Overview of WinUI 3 Project Reunion 0.5.
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
-ms.date: 03/19/2021
+ms.date: 08/21/2026
 ms.topic: release-notes
 ---
 
@@ -24,7 +24,7 @@ This new version of WinUI 3 is available as part of Project Reunion 0.5. To inst
 Now that WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see Deploy apps that use the Windows App SDK. The Windows App SDK VSIX includes [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md) that you'll use to build your WinUI app. 
 
 > [!NOTE]
-> To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 version of the [XAML Controls Gallery](#winui-3-controls-gallery) from GitHub.
+> To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 version of the XAML Controls Gallery from GitHub.
 
 Once you've set up your development environment, see [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md) to familiarize yourself with the available Visual Studio Project and Item templates.
 
@@ -179,18 +179,14 @@ For more information on affected APIs as well as workarounds and replacements fo
 
 - When using Visual Studio 2019 16.10 Preview 2, Live Visual Tree may cause a crash. To avoid this, update to the latest [Visual Studio 2019 16.10 Preview](https://visualstudio.microsoft.com/vs/preview/).
 
-## WinUI 3 Controls Gallery
+## WinUI 3 Gallery snapshot
 
-Check out the WinUI 3 Controls Gallery (previously called _XAML Controls Gallery - WinUI 3 version_) for a sample app that includes all controls and features that are a part of WinUI 3 - Project Reunion 0.5.
+The `winui3` branch is no longer available, and the XAML Controls Gallery repository has been renamed to [microsoft/WinUI-Gallery](https://github.com/microsoft/WinUI-Gallery). The sample app as updated for Project Reunion 0.5.5 is preserved in a [historical commit](https://github.com/microsoft/WinUI-Gallery/tree/e8d1cb2534f9f13d22dbe63171597a162ca01e00). This snapshot doesn't reflect the current WinUI 3 Gallery.
 
-You can download the sample by cloning the GitHub repo. To do this, clone the **winui3** branch using the following command:
+To download the historical snapshot, clone the repository and check out the preserved commit:
 
-```dos
-git clone --single-branch --branch winui3 https://github.com/microsoft/Xaml-Controls-Gallery.git
-```
-
-After cloning, ensure that you switch to the **winui3** branch in your local Git environment: 
-
-```dos
-git checkout winui3
+```console
+git clone https://github.com/microsoft/WinUI-Gallery.git
+cd WinUI-Gallery
+git checkout e8d1cb2534f9f13d22dbe63171597a162ca01e00
 ```

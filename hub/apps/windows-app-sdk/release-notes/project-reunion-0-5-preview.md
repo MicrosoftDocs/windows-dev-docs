@@ -29,7 +29,7 @@ To install, follow the directions found in [Install tools for preview and experi
 In contrast to past preview versions of WinUI 3, you'll download a Project Reunion VSIX package instead of a WinUI VSIX package. The Project Reunion VSIX includes [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md) that you'll use to build your WinUI app. Once you've completed your installation, the experience of developing a WinUI app should not change.
 
 > [!NOTE]
-> You can also clone and build the WinUI 3 Preview version of the [XAML Controls Gallery](#xaml-controls-gallery-winui-3-preview-branch).
+> You can also clone and build the WinUI 3 Preview version of the XAML Controls Gallery.
 
 > [!NOTE]
 > To use WinUI 3 tooling such as Live Visual Tree, Hot Reload, and Live Property Explorer, you must enable WinUI 3 tooling with Visual Studio Preview Features as described in the [instructions here](https://github.com/microsoft/microsoft-ui-xaml/issues/4140).
@@ -215,7 +215,7 @@ For more information on affected APIs as well as workarounds and replacements fo
     - `INotifyCollectionChanged`
     - `ICommand`
 
-  The `System` namespace versions still exist, but cannot be used with WinUI 3. This means that `ObservableCollection` doesn't work as-is in WinUI 3 C# UWP apps. For a workaround, see the [CollectionsInterop sample](https://github.com/microsoft/WinUI-Gallery/blob/main/WinUIGallery/CollectionsInterop.cs) in the [XAML Controls Gallery sample](https://github.com/microsoft/WinUI-Gallery).
+  The `System` namespace versions still exist, but cannot be used with WinUI 3. This means that `ObservableCollection` doesn't work as-is in WinUI 3 C# UWP apps. For a workaround, see the [CollectionsInterop sample](https://github.com/microsoft/WinUI-Gallery/blob/136c81578c6f30750efb268a4a8e2da871f182ef/XamlControlsGallery/CollectionsInterop.cs) in the [preserved XAML Controls Gallery snapshot](https://github.com/microsoft/WinUI-Gallery/tree/136c81578c6f30750efb268a4a8e2da871f182ef).
 
 ## XAML Controls Gallery snapshot for WinUI 3 Preview
 

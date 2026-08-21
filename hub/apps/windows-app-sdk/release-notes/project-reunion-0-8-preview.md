@@ -2,7 +2,7 @@
 title: WinUI 3 Project Reunion 0.8 Preview (April 2021)
 description: Overview of WinUI 3 Project Reunion 0.8 Preview.
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
-ms.date: 05/25/2021
+ms.date: 08/21/2026
 ms.topic: release-notes
 ---
 
@@ -31,7 +31,7 @@ This version of WinUI 3 is available as part of the Project Reunion 0.8 Preview.
 Since WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use the Windows App SDK](../../package-and-deploy/index.md). The Windows App SDK VSIX includes [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md) that you'll use to build your WinUI app. 
 
 > [!NOTE]
-> To see WinUI 3 controls and features in action, you can clone and build the [WinUI 3 Controls Gallery](#winui-3-controls-gallery) from GitHub, or download it from the [Microsoft Store](https://www.microsoft.com/en-us/p/winui-3-controls-gallery/9p3jfpwwdzrc).
+> To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Gallery from GitHub, or download it from the [Microsoft Store](https://www.microsoft.com/en-us/p/winui-3-controls-gallery/9p3jfpwwdzrc).
 
 Once you've set up your development environment, see [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md) to familiarize yourself with the available Visual Studio project and item templates. 
 
@@ -81,7 +81,7 @@ If you created an app with an earlier preview or stable version of WinUI 3, you 
 
 - Hide windowed popups when the top-level window (or island) moves
 
-- StandardUICommand page in WinUI 3 Controls Gallery not showing everything 
+- StandardUICommand page in WinUI 3 Gallery not showing everything
 
 - Mouse right-click in TextBox crashes the application
   - Thanks to @Herdubreid for filing this [issue on GitHub](https://github.com/microsoft/microsoft-ui-xaml/issues/4804)!
@@ -237,25 +237,17 @@ For more information on affected APIs as well as workarounds and replacements fo
 
 - Window caption buttons may be misplaced when SetTitleBar is not set or null
 
-## WinUI 3 Controls Gallery
+## WinUI 3 Gallery snapshot
 
-Check out the WinUI 3 Controls Gallery (previously called _XAML Controls Gallery - WinUI 3 version_) for a sample app that includes all controls and features that are a part of WinUI 3 - Project Reunion 0.8 Preview.
+The `winui3` and `winui3preview` branches are no longer available, and the XAML Controls Gallery repository has been renamed to [microsoft/WinUI-Gallery](https://github.com/microsoft/WinUI-Gallery). The sample app as updated for Project Reunion 0.8 Preview is preserved in a [historical commit](https://github.com/microsoft/WinUI-Gallery/tree/77d9e0a68bb67edb2b79fd1535fb18cf438b4265). This snapshot uses Project Reunion 0.8.0-preview and doesn't reflect the current WinUI 3 Gallery.
 
-The WinUI 3 Controls Gallery app is available through the [Microsoft Store](https://www.microsoft.com/en-us/p/winui-3-controls-gallery/9p3jfpwwdzrc).
+To download the historical snapshot, clone the repository and check out the preserved commit:
 
-You can also download the sample by cloning the GitHub repo. To do this, clone the **winui3** branch using the following command:
-
-> [!NOTE]
-> There's also a **winui3preview** branch in this GitHub repo that provides a version of the WinUI 3 Controls Gallery that's using WinUI - Project Reunion 0.8 Preview.
-
-```
-git clone --single-branch --branch winui3 https://github.com/microsoft/Xaml-Controls-Gallery.git
-```
-
-After cloning, ensure that you switch to the **winui3** branch in your local Git environment: 
-
-```
-git checkout winui3
+```console
+git clone https://github.com/microsoft/WinUI-Gallery.git
+cd WinUI-Gallery
+git fetch origin refs/pull/698/head
+git checkout 77d9e0a68bb67edb2b79fd1535fb18cf438b4265
 ```
 
 ## See also
