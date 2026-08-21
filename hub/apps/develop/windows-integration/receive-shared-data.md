@@ -2,7 +2,7 @@
 title: Receive shared data in your Windows app
 description: Learn how to implement the Share contract target side in a WinUI 3 or Windows App SDK app to receive and process content shared from other apps.
 ms.topic: how-to
-ms.date: 06/20/2026
+ms.date: 08/21/2026
 ms.localizationpriority: medium
 keywords: windows share, share target, share contract, shareoperation, winui 3, windows app sdk, receive data
 author: GrantMeStrength
@@ -167,7 +167,7 @@ private async Task ReportCompletedWithQuickLink(
 - [Share content from your Windows app](./share-content.md)
 - [Integrate packaged apps with Windows Share](./integrate-sharesheet-overview.md)
 - [Integrate unpackaged apps with Windows Share](./integrate-sharesheet-receive.md#2-handle-the-share-activation)
-- [Share Contract Implementation for Windows App SDK](https://github.com/kmahone/WindowsAppSDK-Samples/tree/user/kmahone/shareapp/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp)
+- [Share Contract Implementation for Windows App SDK](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/ShareTarget/WinUI-CS-ShareTargetSampleApp)
 - [ShareOperation](/uwp/api/windows.applicationmodel.datatransfer.sharetarget.shareoperation)
 - [DataPackageView](/uwp/api/windows.applicationmodel.datatransfer.datapackageview)
 - [QuickLink](/uwp/api/windows.applicationmodel.datatransfer.sharetarget.quicklink)
