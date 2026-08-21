@@ -2,7 +2,7 @@
 ms.assetid: 2a50c798-6244-4fda-9091-a10a9e87fae2
 title: Windows data binding in depth
 description: Learn how to use data binding in WinUI applications to simplify UI development and improve app maintainability.
-ms.date: 07/15/2026
+ms.date: 08/21/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui
 ms.localizationpriority: medium
@@ -108,12 +108,41 @@ public class HostViewModel : INotifyPropertyChanged
 
 Now the `NextButtonText` property is observable. When you author a one-way or a two-way binding to that property (we'll show how later), the resulting binding object subscribes to the `PropertyChanged` event. When that event is raised, the binding object's handler receives an argument containing the name of the property that changed. That's how the binding object knows which property's value to read again.
 
-So that you don't have to implement the pattern shown earlier multiple times, if you're using C#, you can derive from the `BindableBase` base class that you'll find in the [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) sample (in the "Common" folder). Here's an example of how that looks.
+To reuse this pattern across C# binding sources, define a `BindableBase` class in your project. Its `SetProperty` method compares the old and new values, updates the field only when the value changes, and then raises `PropertyChanged`. The following example defines the base class and uses it with `HostViewModel`.
 
 ``` csharp
+using System.Collections.Generic;
+using System.ComponentModel;
+
+public abstract class BindableBase : INotifyPropertyChanged
+{
+    public event PropertyChangedEventHandler? PropertyChanged;
+
+    protected bool SetProperty<T>(
+        ref T storage,
+        T value,
+        [System.Runtime.CompilerServices.CallerMemberName] string? propertyName = null)
+    {
+        if (EqualityComparer<T>.Default.Equals(storage, value))
+        {
+            return false;
+        }
+
+        storage = value;
+        OnPropertyChanged(propertyName);
+        return true;
+    }
+
+    protected void OnPropertyChanged(
+        [System.Runtime.CompilerServices.CallerMemberName] string? propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
+
 public class HostViewModel : BindableBase
 {
-    private string nextButtonText;
+    private string nextButtonText = string.Empty;
 
     public HostViewModel()
     {
@@ -647,7 +676,37 @@ You can bind a ListView's **DoubleTapped** event to a method in the **MainWindow
 
 You can't use overloaded methods to handle an event with this technique. Also, if the method that handles the event has parameters, then all of them must be assignable from the types of all of the event's parameters, respectively. In this case, `ListViewDoubleTapped` isn't overloaded and it has no parameters (but it would still be valid even if it took two `object` parameters).
 
-The event binding technique is similar to implementing and consuming commands. A command is a property that returns an object that implements the [**ICommand**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) interface. Both [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) and [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) work with commands. So that you don't have to implement the command pattern multiple times, you can use the `DelegateCommand` helper class that you find in the [QuizGame](https://github.com/microsoft/Windows-appsample-networkhelper) sample (in the "Common" folder).
+The event binding technique is similar to implementing and consuming commands. In a WinUI 3 .NET app, a command is a property that returns an object that implements the [**System.Windows.Input.ICommand**](/dotnet/api/system.windows.input.icommand) interface. Both [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) and [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) work with commands. You can use the following reusable `DelegateCommand` implementation to connect view-model actions to command bindings.
+
+``` csharp
+using System;
+
+public sealed class DelegateCommand : System.Windows.Input.ICommand
+{
+    private readonly Action<object?> execute;
+    private readonly Func<object?, bool>? canExecute;
+
+    public DelegateCommand(
+        Action<object?> execute,
+        Func<object?, bool>? canExecute = null)
+    {
+        this.execute = execute ?? throw new ArgumentNullException(nameof(execute));
+        this.canExecute = canExecute;
+    }
+
+    public event EventHandler? CanExecuteChanged;
+
+    public bool CanExecute(object? parameter) =>
+        canExecute?.Invoke(parameter) ?? true;
+
+    public void Execute(object? parameter) => execute(parameter);
+
+    public void RaiseCanExecuteChanged() =>
+        CanExecuteChanged?.Invoke(this, EventArgs.Empty);
+}
+```
+
+Call `RaiseCanExecuteChanged` when state used by the can-execute delegate changes so that a bound control reevaluates whether the command can run.
 
 ## Binding to a collection of folders or files
 
