@@ -2,7 +2,7 @@
 title: Enable apps for websites using app URI handlers
 description: Drive user engagement with your app by supporting the Apps for Websites feature.
 keywords: Deep Linking Windows, uwp, winui, windows 11, windows 10
-ms.date: 07/09/2026
+ms.date: 08/21/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 # customer-intent: As a Windows developer, I want to learn how to use the Apps for Websites feature to drive user engagement with my app.
@@ -216,8 +216,6 @@ These tips will help you get the most out of the AppUriHandlers feature:
 - This feature works whenever your app is a UWP app launched with  [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) or a Windows desktop app launched with  [ShellExecuteEx](/windows/desktop/api/shellapi/nf-shellapi-shellexecuteexa). If the URL corresponds to a registered App URI handler, the app will be launched instead of the browser.
 
 ## Related content
-
-[Web-to-App example project](https://github.com/project-rome/AppUriHandlers/tree/master/NarwhalFacts)
 
 [windows.protocol registration](/uwp/schemas/appxpackage/appxmanifestschema/element-protocol)
 
