@@ -2,7 +2,7 @@
 description: Publish line-of-business (LOB) apps to enterprises via the Microsoft Store without making the apps available to the general public.
 title: Distribute LOB apps to enterprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
-ms.date: 07/15/2026
+ms.date: 08/21/2026
 ms.topic: article
 keywords: windows 11, windows 10, lob, line-of-business, enterprise apps, enterprise, intune, configuration manager
 ms.localizationpriority: medium
@@ -37,7 +37,7 @@ Another option for distributing LOB apps directly to users in your organization 
 The first step in publishing LOB apps exclusively to an enterprise is to establish the association between your account and the enterprise’s private store.
 
 > [!IMPORTANT]
-> This association process must be initiated by the enterprise, and must use the email address associated with the Microsoft account that was used to create the developer account. For more info, see [Working with line-of-business apps](/microsoft-store/working-with-line-of-business-apps).
+> This association process must be initiated by the enterprise, and must use the email address associated with the Microsoft account that was used to create the developer account.
 
 When an enterprise chooses to invite you to publish apps for their exclusive use, you’ll get an email that includes a link to confirm the association. You can also confirm these associations by going to the **Enterprise associations** section of your **Account settings** (as long as you are signed in with the Microsoft account that was used to open the developer account).
 
