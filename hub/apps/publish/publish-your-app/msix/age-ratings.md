@@ -1,7 +1,7 @@
 ---
 description: The Age ratings page of the app submission process lets you provide information about your MSIX app so it can receive the appropriate age ratings from the International Age Ratings Coalition (IARC).
 title: Age ratings for MSIX app
-ms.date: 12/5/2024
+ms.date: 08/21/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -35,7 +35,7 @@ In some cases, the rating for your app may cause it to be classified as inapprop
 
 ## Previous Microsoft Store age ratings
 
-Previously, developers specified the age rating for their app rather than completing the questionnaire. Below, find the previous Microsoft Store age ratings breakdown
+Previously, developers specified the age rating for their app rather than completing the questionnaire. Below, find the previous Microsoft Store age ratings breakdown.
 
 <details>
 <summary>View previous Microsoft Store age ratings</summary>
