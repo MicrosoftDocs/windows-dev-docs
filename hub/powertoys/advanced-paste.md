@@ -42,7 +42,7 @@ From the Settings menu, configure the following options:
 | Paste as Markdown directly shortcut | The customizable keyboard command to paste as Markdown without opening the **Advanced Paste** window. |
 | Paste as JSON directly shortcut | The customizable keyboard command to paste as JSON without opening the **Advanced Paste** window. |
 | Additional actions \| Image to Text | Turn on/off the Image to text paste action and configure the customizable keyboard command. |
-| Additional actions \| Paste as file | Turn on/off the set of Paste as File actions which include Paste as .txt file, Paste as .png file, Paste as .html file. Optionally configure the customizable keyboard command for each of these actions. |
+| Additional actions \| Paste as file | Turn on/off the set of Paste as File actions which include Paste as .txt file, Paste as .png file, Paste as .jpg file, Paste as .html file. Optionally configure the customizable keyboard command for each of these actions. |
 | Additional actions \| Transcode audio / video | Turn on/off both the Transcode audio and video paste actions. The transcode settings are all enabled by default. |
 | Additional actions \| Transcode to .mp3 | Turn on/off the Transcode to .mp3 paste action and configure the customizable keyboard command to transcode audio or video on the clipboard without opening the **Advanced Paste** window. |
 | Additional actions \| Transcode to .mp4 (H.264/AAC) | Turn on/off the Transcode to .mp4 (H.264/AAC) paste action and configure the customizable keyboard command to transcode video on the clipboard without opening the **Advanced Paste** window. |
@@ -81,13 +81,13 @@ The following model providers are supported:
 
 Advanced Paste includes several text-based paste options. You find these options in the **Advanced Paste** window. Open the window by using the activation shortcut. You can also use customizable keyboard commands to directly invoke a paste action with quick keys.
 
-:::image type="content" source="images/advanced-paste/advanced-paste.png" alt-text="Advanced Paste screenshot":::
+:::image type="content" source="images/advanced-paste/advanced-paste." alt-text="Advanced Paste screenshot":::
 
 ### Paste as Plain Text
 
 **Paste as Plain Text** enables you to paste text stored in your clipboard, excluding any text-formatting, by using a quick key shortcut. The feature replaces any formatting included with the clipboard text with an unformatted version of the text.
 
-:::image type="content" source="images/advanced-paste/paste-as-plain-text.png" alt-text="Paste as Plain Text screenshot":::
+:::image type="content" source="images/advanced-paste/paste-as-plain-text." alt-text="Paste as Plain Text screenshot":::
 
 > [!NOTE]
 > Paste as Plain Text is a feature that runs locally and doesn't use AI.
@@ -229,12 +229,12 @@ Advanced Paste includes several image-based paste options. You can find these op
 > [!NOTE]
 > Paste as Image to text is a feature that runs locally by using local OCR.
 
-### Paste as .png file
+### Paste as .png or .jpg file
 
-**Paste as .png file** enables you to quickly paste an image format, like a bitmap, to a .png file. You can optionally create a quick key shortcut to invoke this paste action.
+**Paste as .png file** and **Paste as .jpg file** enable you to quickly paste an image format, like a bitmap, to a .png or .jpg file. There is a quality setting slider available for .jpg files. You can optionally create a quick key shortcut to invoke these paste actions.
 
 > [!NOTE]
-> Paste as .png file is a feature that runs locally and doesn't use AI.
+> Paste as .png/.jpg file is a feature that runs locally and doesn't use AI.
 
 ## Transcode to audio or video
 
