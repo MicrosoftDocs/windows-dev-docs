@@ -87,7 +87,7 @@ Advanced Paste includes several text-based paste options. You find these options
 
 **Paste as Plain Text** enables you to paste text stored in your clipboard, excluding any text-formatting, by using a quick key shortcut. The feature replaces any formatting included with the clipboard text with an unformatted version of the text.
 
-:::image type="content" source="images/advanced-paste/paste-as-plain-text." alt-text="Paste as Plain Text screenshot":::
+:::image type="content" source="images/advanced-paste/paste-as-plain-text.png" alt-text="Paste as Plain Text screenshot":::
 
 > [!NOTE]
 > Paste as Plain Text is a feature that runs locally and doesn't use AI.
