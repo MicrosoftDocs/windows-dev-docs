@@ -81,7 +81,7 @@ The following model providers are supported:
 
 Advanced Paste includes several text-based paste options. You find these options in the **Advanced Paste** window. Open the window by using the activation shortcut. You can also use customizable keyboard commands to directly invoke a paste action with quick keys.
 
-:::image type="content" source="images/advanced-paste/advanced-paste." alt-text="Advanced Paste screenshot":::
+:::image type="content" source="images/advanced-paste/advanced-paste.png" alt-text="Advanced Paste screenshot":::
 
 ### Paste as Plain Text
 
