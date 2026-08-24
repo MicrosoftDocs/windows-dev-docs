@@ -1,8 +1,8 @@
 ---
 title: Current status of Windows app distribution features
-description: Up-to-date status of Windows app distribution features, including ms-appinstaller protocol status, .appinstaller schema versions, and platform support differences between Windows 10 and Windows 11.
+description: Current status of Windows app distribution features, including the ms-appinstaller protocol and .appinstaller schema versions.
 ms.topic: concept-article
-ms.date: 04/17/2026
+ms.date: 08/24/2026
 ms.localizationpriority: medium
 ---
 
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 This page documents the current status of Windows app distribution features that have changed, are known to have limitations, or behave differently than their documentation may suggest. It is updated as the platform evolves.
 
-**Last reviewed:** April 2026
+**Last reviewed:** August 2026
 
 ---
 
@@ -69,11 +69,11 @@ The `.appinstaller` XML file supports multiple schema versions, each with differ
 
 **Status: Behavior changed in 2024**
 
-Prior to 2024, Extended Validation (EV) code signing certificates granted immediate SmartScreen reputation — a newly-signed binary would show no download warning. Microsoft updated the Trusted Root Program requirements in 2024, removing EV-specific OIDs. SmartScreen reputation is now exclusively **hash-based and accumulates over time**, regardless of certificate type (OV or EV).
+Prior to 2024, Extended Validation (EV) code signing certificates granted immediate SmartScreen reputation — a newly-signed binary would show no download warning. Microsoft updated the Trusted Root Program requirements in 2024, removing EV-specific OIDs. SmartScreen reputation now **accumulates over time** rather than being granted instantly by certificate type. It builds from two signals: the file's hash and the signing certificate's publisher reputation. A consistent signing identity can carry publisher reputation across releases, but no certificate type (OV or EV) grants an immediate bypass.
 
 **Impact:** Developers who purchased EV certificates specifically to bypass SmartScreen warnings for new releases will find that EV certificates no longer provide this benefit.
 
-**Current behavior:** All non-Store, non-Microsoft-signed binaries show a SmartScreen prompt on first download until sufficient download history is accumulated for that file hash.
+**Current behavior:** All non-Store, non-Microsoft-signed binaries can show a SmartScreen prompt on first download until sufficient reputation is established. Reputation builds from both the file hash and, for signed files, the publisher's certificate, so signing releases with the same identity lets certificate reputation carry forward. Unsigned files must rebuild reputation for every new hash.
 
 See [SmartScreen reputation for Windows app developers](smartscreen-reputation.md) for full details on expected behavior and recommendations.
 

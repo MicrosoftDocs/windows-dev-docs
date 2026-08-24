@@ -1,8 +1,8 @@
 ---
 title: Code signing options for Windows app developers
-description: Compare code signing options for distributing Windows apps outside the Microsoft Store — including Azure Artifact Signing, OV/EV certificates, and when no signing is needed.
+description: Compare code signing options for Windows apps distributed outside the Microsoft Store, including Azure Artifact Signing.
 ms.topic: concept-article
-ms.date: 04/20/2026
+ms.date: 08/24/2026
 ms.localizationpriority: medium
 ---
 
@@ -42,7 +42,7 @@ Create a free developer account at [storedeveloper.microsoft.com](https://stored
 - **Cost:** Approximately $9.99/month — significantly less than a traditional OV or EV certificate
 - **Identity validation:** Microsoft validates your organization or individual identity before issuing certificates; plan for a few business days for verification
 - **No hardware token required:** Signing integrates directly with CI/CD pipelines (GitHub Actions, Azure DevOps, and others) — you don't need a physical USB token
-- **SmartScreen behavior:** The same reputation-building model as OV certificates — new files will show a SmartScreen warning until they accumulate sufficient download history. Azure Artifact Signing does **not** provide instant SmartScreen trust.
+- **SmartScreen behavior:** New files can show a SmartScreen warning until they accumulate sufficient reputation. Azure Artifact Signing does **not** provide instant SmartScreen trust, but signing consecutive releases with a consistent publisher/signing identity lets publisher reputation build over time, so later releases can inherit trust. See [SmartScreen reputation](smartscreen-reputation.md).
 
 > [!IMPORTANT]
 > **Geographic limitation:** Azure Artifact Signing is available to organizations in the USA, Canada, the European Union, and the United Kingdom. Individual developers are currently limited to the USA and Canada. If you are an individual developer outside those regions, see [OV certificates](#ov-certificates--traditional-ca-option) below.
@@ -63,7 +63,7 @@ Organization Validated (OV) certificates from a Certificate Authority (CA) such 
 - **Cost:** Typically $150–300/year depending on the CA and certificate tier
 - **Identity validation:** The CA validates your organization's legal identity before issuing the certificate; allow several business days
 - **HSM requirement:** As of June 2023, the CA/Browser Forum requires private keys for OV certificates to be stored on a hardware security module (HSM) or hardware token. Most CAs provide a compatible USB token or cloud HSM option.
-- **SmartScreen behavior:** Equivalent to Azure Artifact Signing — reputation accumulates per file hash over time. Expect SmartScreen prompts for new files.
+- **SmartScreen behavior:** Expect SmartScreen prompts for new files until reputation is established. As with any trusted certificate, signing releases with a consistent identity lets publisher reputation accumulate across versions, rather than starting from zero each time.
 
 OV certificates are a proven option and are functionally equivalent to Azure Artifact Signing for SmartScreen purposes. If you are in the US or Canada (or an organization in the EU or UK), Azure Artifact Signing is typically more cost-effective and integrates more smoothly with automated build pipelines.
 
