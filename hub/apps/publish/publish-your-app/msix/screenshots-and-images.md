@@ -208,7 +208,7 @@ Here are some tips to keep in mind when designing this image:
 - Don't include images of insensitive gestures, nudity, gambling, currency, drugs, tobacco, or alcohol.
 - Don't use weapons pointing at the viewer or excessive violence and gore.
 
-While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured. See [How can I make my app easier to promote in the Microsoft Store](../../faq/leverage-developer-tools.md) in the FAQ section for more information.
+While providing this image allows us to consider your app for featured promotional opportunities, it does not guarantee that your app will be featured.
 
 #### Xbox images
 
@@ -227,3 +227,24 @@ There are 3 different sizes that you can upload:
 
 The **2:1 (2400 x 1200)** image is only used if your app supports the Holographic device family. If it does, we recommend providing this image.
 
+## Frequently asked questions
+
+1. **How many screenshots should developers include in their Store listing?**
+
+    While only **one screenshot per device family** is required, Microsoft recommends including **5–8 high-quality screenshots** for each supported device type (PC, tablet, Xbox, etc.). 
+    
+    These screenshots should:
+    
+    - Showcase the app’s **key features and UI**
+    - Highlight different user scenarios or workflows
+    - Be localized when possible to match the listing language
+    
+    Good visuals can significantly impact the user’s first impression and increase conversions.
+
+2. **What are the requirements and recommendations for Store logos?**
+
+    A **Store logo** is mandatory for submission and is used throughout the Store’s interface (search results, listing, recommendations).
+    
+    Additionally:
+    
+    - Upload **logos at multiple resolutions** for different displays if possible

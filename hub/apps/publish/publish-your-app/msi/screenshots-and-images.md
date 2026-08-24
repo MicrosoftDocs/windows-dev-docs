@@ -26,3 +26,25 @@ _Required: 1_<br>_Recommended: 4+_<br>_Maximum: 10_
 _Required: 1:1 box art_<br>_Recommended: 2:3 poster art_
 
 You can upload Store logos to create a more customized display in the Store.
+
+## Frequently asked questions
+
+1. **How many screenshots should developers include in their Store listing?**
+
+    While only **one screenshot per device family** is required, Microsoft recommends including **5–8 high-quality screenshots** for each supported device type (PC, tablet, Xbox, etc.). 
+    
+    These screenshots should:
+    
+    - Showcase the app’s **key features and UI**
+    - Highlight different user scenarios or workflows
+    - Be localized when possible to match the listing language
+    
+    Good visuals can significantly impact the user’s first impression and increase conversions.
+
+2. **What are the requirements and recommendations for Store logos?**
+
+    A **Store logo** is mandatory for submission and is used throughout the Store’s interface (search results, listing, recommendations).
+    
+    Additionally:
+    
+    - Upload **logos at multiple resolutions** for different displays if possible

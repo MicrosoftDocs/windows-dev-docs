@@ -97,3 +97,5 @@ Use the new site breadcrumb to navigate to the Apps and games workspace from wit
 1. Select the Earnings workspace from the Home page or from the left-navigation menu.
 
     ![Partner Center earnings page](../images/partner-center-earnings.png)
+
+Microsoft will validate the data you provide. Until confirmed, your payout status may show as “Action required.” Developer payouts are typically issued monthly, assuming the minimum threshold is met. Be sure to update this profile if your bank or tax info changes to avoid interruptions.

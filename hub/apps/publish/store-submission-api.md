@@ -2500,3 +2500,15 @@ If you have questions about the Microsoft Store submission API or need assistanc
 
 - Ask your questions on [our forums](https://social.msdn.microsoft.com/Forums/windowsapps/home?forum=wpsubmit).
 - Visit our [support page](https://developer.microsoft.com/windows/support) and request one of the assisted support options for Partner Center. If you are prompted to choose a problem type and category, choose App submission and certification and Submitting an app, respectively.
+
+## Frequently asked questions
+
+1. **What can I do through the Microsoft Store submission API?**
+
+    The Microsoft Store submission API enables developers to automate app management tasks, including:
+    
+    - Creating and submitting new app updates.
+    - Uploading and managing app packages.
+    - Updating metadata and Store listings.
+    
+    You can integrate this API into your continuous integration or build workflows, automating routine tasks to streamline your publishing process.

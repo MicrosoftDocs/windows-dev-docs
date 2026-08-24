@@ -31,3 +31,19 @@ Keep tabs on your customer engagement activities by using these features and rep
 
 - [Reviews report](reviews-report.md)
 - [Get analytics data using our REST API](/windows/uwp/monetize/access-analytics-data-using-windows-store-services)
+
+## Frequently asked questions
+
+1. **What tools does Microsoft offer to engage customers?**
+
+    Microsoft provides several tools to engage customers via Partner Center, including:
+    
+    - **Create customer groups** that include a subset of your app's customers for promotion, testing, and other purposes
+    - **Targeted offers** for personalized promotions
+    - **Respond to reviews** mechanisms for customer relationship management
+    
+    These tools allow developers to enhance user engagement, retention, and satisfaction.
+
+2. **Can I respond to customer reviews?**
+
+    Yes. Developers can respond directly to customer reviews through Partner Center. Public responses appear alongside reviews on the Store page. Engaging professionally and constructively with reviews can greatly improve customer relations and foster a positive community around your app.

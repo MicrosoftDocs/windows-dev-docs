@@ -28,20 +28,36 @@ Follow the following steps to reserve your app's name:
 > [!NOTE]
 > You might find that you cannot reserve a name, even though you do not see any apps listed by that name in the Microsoft Store. This is usually because another developer has reserved the name for their app but has not submitted it yet. If you are unable to reserve a name for which you hold the trademark or other legal right, or if you see another app in the Microsoft Store using that name, [contact Microsoft](https://www.microsoft.com/info/cpyrtInfrg.html).
 
-> [!TIP]
-> For guidance on selecting an effective app name, see [How do I choose a great app name for the Microsoft Store](../../faq/submit-your-app.md) in the FAQ section.
+## Frequently asked questions
 
-> Windows uses variable width fonts, so the number of visible characters in your title depends on which characters you use. For example, using Segoe UI, about 30 `i` characters will fit in the same space as 10 `w` characters. If you have multiple apps, be sure to test the visibility of each app's title, even if they are the same number of characters. Also be sure to test all localizations of your app's name. Keep in mind that East-Asian characters tend to be wider than Latin characters, so fewer characters will be displayed.
+1. **How do I reserve an app name, and why is it important?**
 
-**Be original**. Make sure your app name is distinctive enough that it won't be easily confused with an existing app.
+    Every app in the Microsoft Store must have a unique name. Reserving an app name ensures that the name you want to use for your app is locked down for you, so no one else can claim it while you finish developing your app. You can reserve a name even before your app is ready – up to three months in advance of publishing.
+    
+    To reserve a name:
+    - Go to your Apps & games section in Partner Center and select “New product.”
+    - Choose the type of app (EXE or MSI).
+    - Enter the app title and click **Check availability**.
+    - If available, click **Reserve product name** to hold the name for 3 months.
+    
+    Reserving the name helps protect your chosen Store name while you finish developing your app.
 
-**Do not use names trademarked by others**. Make sure that you have the right to use the name that you reserve. If someone else has trademarked the name, they can report an infringement and you will not be able to keep using that name. If that happens after your app has been published, it will be removed from the Store until you've changed all instances of the name in your app, its content, and its store listing before you can submit your app for certification again.
+2. **How do I choose a great app name for the Microsoft Store?**
 
-**Avoid trailing differentiators**. Information that distinguishes different versions of your app should not be put at the end of your title. This information can be truncated by the UI, and users can miss it even if it is displayed.
-
-If this is unavoidable, use different logos and app images to make it easier to differentiate one app from another.
-
-**Do not include emojis in your name**. You will not be able to reserve a name that includes emojis or other unsupported characters.
+    Choosing a compelling name is crucial to attracting customers and making your app easily discoverable. Here are some best practices:
+    
+    - **Keep it short**. Although your app's name can have up to 256 characters, display space is limited, and longer names may be truncated depending on the user's screen and settings. Shorter names are more memorable and easier to display clearly.
+      
+    > [!TIP]
+    > Windows uses variable width fonts, so the number of visible characters in your title depends on which characters you use. For example, using Segoe UI, about 30 `i` characters will fit in the same space as 10 `w` characters. If you have multiple apps, be sure to test the visibility of each app's title, even if they are the same number of characters. Also be sure to test all localizations of your app's name. Keep in mind that East-Asian characters tend to be wider than Latin characters, so fewer characters will be displayed.
+    
+    - **Be original**. Choose a distinctive name that clearly differentiates your app from others. An original name reduces confusion and enhances your brand identity.
+    
+    - **Do not use trademarked names**. Ensure you have the rights to use the app name. Using a trademarked name could lead to your app being removed from the Store, forcing you to rename and re-submit your app.
+    
+    - **Avoid trailing differentiators**. Don't include differentiating information (such as version numbers or dates) at the end of your app's title. Such details may be cut off in some views, causing confusion. If necessary, differentiate your apps using distinct logos or images.
+    
+    - **Avoid emojis and special characters**. The Microsoft Store does not allow emojis or other unsupported special characters in app names.
 
 ## Next steps for MSI/EXE app development
 

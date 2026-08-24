@@ -119,3 +119,19 @@ Note that all of the same package validation rules will apply, even when using p
 To delete a package flight that you no longer want to support, click its name from the App overview page. On the flight overview page, click **Modify**, then click the **Delete** link to delete the package flight. (If you have an unpublished submission of the package flight in progress, you’ll need to delete that submission first.) It may take up to 30 minutes for this to be completed.
 
 When you delete a package flight, any customers who have the packages you distributed in that package flight will get an app update if there is a package with a higher version number (or as soon as such a package becomes available). If they uninstall the app and then install it again later, this will be treated as a new acquisition, and they'll get the highest version currently available.
+
+## Frequently asked questions
+
+1. **What is package flighting?**
+
+    **Package flighting** allows developers to distribute app updates to a specific group of users before releasing the update to everyone. It’s ideal for beta testing or validating updates with early adopters. Flighted packages are delivered to a predefined user group, while all other users continue receiving the current publicly available version. This helps ensure stability and quality before a broad rollout.
+    
+    So a **package flight** lets you distribute app updates to a limited group of testers without affecting your broader audience. To create a package flight:
+    
+    - Go to your app’s **Overview** in Partner Center.
+    - In the **Package flights** section, click **New package flight**.
+    - Name your flight and create or choose an existing tester group by adding their Microsoft account emails.
+    - Add or upload app packages specific to the flight.
+    - Submit the flight for certification.
+    
+    Once certified, only your selected testers receive the update, while other users continue with the publicly available version.

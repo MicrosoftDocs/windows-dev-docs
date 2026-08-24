@@ -53,3 +53,19 @@ When your experiment is live, we recommend not changing logos or screenshots in 
 **Step 6:** Monitor the experiment results on the **Product page experiments** dashboard. Compare the **Original conversion rate** and **Variant conversion rate** to determine which product page performs better. If the variant achieves a higher conversion rate, you can apply the winning logo or screenshots to your product page so all customers see the best-performing assets. 
 
 :::image type="content" source="images/product-page-experiments-5.png" lightbox="images/product-page-experiments-5.png" alt-text="A screenshot showing analytics of a live product page experiment.":::
+
+## Frequently asked questions
+
+1. **What are product page experiments?**
+
+    **Product page experiments** are A/B tests that allow developers to test variations of their app’s Store listing elements, like icons and screenshots, to determine which perform best. The Microsoft Store splits incoming user traffic between the original page and the new variant. Metrics like impressions, views, installs, and conversion rates are then measured to identify the most effective visuals, helping you optimize your Store listing to boost app engagement and downloads.
+
+2. **How do I set up product page experiments?**
+
+    To set up a product page experiment:
+    
+    1. **Start the experiment:** Sign in to Partner Center, go to your app’s Overview, and create a new product page experiment.
+    2. **Choose elements to test:** Provide alternative app logos or screenshots for your experiment.
+    3. **Submit for approval:** Once approved, the experiment runs (typically up to 90 days), dividing traffic evenly between your original and variant pages.
+    4. **Analyze results:** Use Partner Center analytics to compare impressions, page views, install counts, and conversion rates.
+    5. **Apply successful changes:** Adopt the most successful visual assets from the experiment to permanently improve your app’s Store listing.

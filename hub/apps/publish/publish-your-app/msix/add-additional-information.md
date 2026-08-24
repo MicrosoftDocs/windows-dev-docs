@@ -40,3 +40,41 @@ Enter text here if you want to include a **Developed by** field in your app's St
 
 This field has a 255 character limit.
 
+## Frequently asked questions
+
+1. **How should developers choose and use search terms for their app?**
+
+    You may define **up to 7 search terms**, each up to **40 characters**. These are used by the Microsoft Store’s internal search engine to improve discoverability.
+    
+    Tips for effective search terms:
+    
+    - Focus on words users would actually search for
+    - Reflect the app’s **core features or use cases**
+    - Avoid brand names (unless they’re your own) and generic terms like “free” or “best”
+    - Don’t use misleading or unrelated keywords — this may violate Store policy
+    
+    Search terms are not shown to users but play a crucial role in helping your app surface in search results.
+    
+    Enter text here if you want to include a Developed by field in your app's Store listing.
+    
+    This value will not be displayed in the **Published by** field; that field always displays the publisher's display name.
+
+2. **What is AI-Generated keywords?**
+
+    Developers visit Microsoft Partner Center to bring their apps and games to Microsoft Store. The app listing data like app name, app description, screenshots, search keywords etc. are provided by the developer in the Store listing page as part of the Store submission process. Keywords provided by the developer are used by the search algorithm in the Microsoft Store search for providing search results. AI-Generated keywords is a feature powered by Azure OpenAI which recommends keywords to the developer, based on their app name and app description.
+
+3. **What can AI-Generated keywords do?**
+
+    AI-Generated keywords recommend keywords to the developer based on their app name and app description.
+
+4. **What is AI-Generated keywords’ intended use?**
+
+    AI-Generated keywords feature is intended to help developers increase the reach of their apps or games on Microsoft Store by recommending keywords.
+
+5. **How was AI-Generated keywords feature evaluated?**
+
+    AI-Generated keywords underwent substantial testing prior to being released, including red teaming, which is a practice of rigorously testing the product to identify failure modes and scenarios that might cause AI-Generated keywords to do or say things outside of its intended uses or that don't support the [Microsoft AI Principles](https://www.microsoft.com/en-us/ai/responsible-ai).
+
+6. **What are the safeguards in place for AI-Generated keywords?**
+
+    Keywords recommended by AI-Generated keywords are based completely on the developer’s app name and the app description provided by them. The system might generate stale responses if the app name and/or the app description provided by the developer are not using meaningful words or sentences. The AI-Generated keywords will not be added automatically to the developer’s app listing. The developer has full control over selection of AI-Generated keywords.

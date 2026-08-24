@@ -39,5 +39,25 @@ The reports in this section work together to provide a comprehensive view of you
 | [Ratings & Reviews report](/windows/apps/publish/analyze-msi-exe/ratings-reviews-performance)       | See the rating and reviews your customers have left for your app and provide responses to let customers know you’re listening to their feedback. |
 | [Insights report](/windows/apps/publish/actionable-analytics-insights)       | See meaningful insights about your app like significant changes (increases or decreases) that we detected over the last 30 days in your acquisitions and health data. |
 
->[!TIP]
-> For common questions, please refer to [Frequently Asked Questions](../faq/monitor-your-app-performance.md) section.
+## Frequently asked questions
+
+1. **How can I track my app’s performance and user engagement in Partner Center?**
+  
+     Partner Center provides a powerful analytics dashboard that shows how your app is performing after publication. Key reports include:
+  
+    **Analytics UI for MSIX and MSI apps:** Offers built-in visual reports for:
+    - Overview (summary)
+    - Acquisition (downloads)
+    - Usage (engagement data)
+    - Health (crashes and errors)
+    - Ratings & Reviews
+  
+    **Analytics API for MSIX apps:** Programmatic access to your analytics data, useful for integration with your internal tools or dashboards. Allows automated reporting and data retrieval.
+  
+    **Download Hub (exportable reports) for MSIX apps:** Enables you to download detailed reports (as TSV or CSV files) from each analytics section for deeper offline analysis.
+  
+    Reports can be viewed directly in Partner Center or downloaded as TSV files for offline review. These insights help you understand your app’s adoption, identify trends, and spot potential areas for improvement.
+
+2. **What functionality is offered in the Download hub for MSIX apps?**
+
+    The Download hub allows you to export analytics data directly from Partner Center for offline analysis. On each analytics page, you can download detailed data (like installs, usage, crashes, or reviews) as TSV or CSV files. Additionally, you can use APIs for automated, scheduled data retrieval.

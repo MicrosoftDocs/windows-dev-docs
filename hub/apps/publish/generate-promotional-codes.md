@@ -109,3 +109,16 @@ You can also [download](#download-and-distribute-promotional-codes) an order fro
 ## Distribute promotional codes for transitioning users from desktop to packaged app
 
 When you convert your current Win32 application into an MSIX package for Store distribution, you have the option to distribute promotional codes via email to your current users. This enables them to seamlessly migrate to your packaged app while retaining access to the features obtained through their initial purchase.
+
+## Frequently asked questions
+
+1. **How can I use promo codes to promote my app and what types are available?**
+
+   Promo codes enable you to offer free access to your app or add-ons to selected customers, influencers, reviewers, or beta testers. Generated in Partner Center, promo codes come with unique redeemable URLs. Distributing these codes helps drive awareness, generate user reviews, incentivize engagement, and reward loyal customers.
+    
+    Microsoft Store offers two types of promo codes:
+    
+    - **Single-use codes:** One-time codes redeemable by a single user each.
+    - **Multi-use codes:** A single code redeemable by multiple users, up to a set limit.
+    
+    These codes help developers tailor promotional campaigns to specific marketing goals or audiences.

@@ -87,3 +87,15 @@ If one of your users needs to change their password they can do so themselves if
 
 > [!IMPORTANT]
 > Checking the **Delete from organization** option means that the user will no longer have access to your Partner Center account and will also be deleted from your organization's tenant.
+
+## Frequently asked questions
+
+1. **Can I add other team members or co-developers to help manage my apps in Partner Center?**
+
+    Yes, but only for **Company accounts** (linked to Entra ID). To add users:
+    
+    1. Go to **Account settings > Users** in Partner Center.
+    2. Add existing Entra ID users or invite others by email.
+    3. Assign them specific roles or custom permissions based on their responsibilities.
+    
+    For example, grant permission to submit apps without making someone a full admin. **Individual accounts** do not support multiple users. Always follow the **principle of least privilege** when assigning roles.

@@ -79,7 +79,7 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 - Provide any necessary info required to use your app, such as the username and password for a test account if your app requires users to log in to a service, or any steps required to access hidden or locked features.
 - Configure your app's installer to provide your app’s information such as ProductName, Publisher Name, Default Language, Version info (as applicable) in places where customers expect to find such information such as ‘Add/Remove Programs’ in Windows. This information is part of your app’s installer package. See [setting installer properties](/windows/win32/msi/property-reference#product-information-properties) for more details on how to set properties for your Windows installer
 - Include a privacy policy URL if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) and the [Microsoft Store Policies](../../store-policies.md#105-personal-information).
-- Make sure that your app's description clearly represents what it does. For help, see our guidance on [writing a great app description](../../faq/submit-your-app.md)
+- Make sure that your app's description clearly represents what it does.
 - Do not declare your app as accessible unless you have specifically engineered and tested it for accessibility scenarios.
 - Review the [Microsoft Store Policies](../../store-policies.md) to ensure your app meets all the requirements listed there.
 
@@ -98,6 +98,49 @@ Your app will be published after it is certified. When this phase has begun, you
 
 We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all the [Microsoft Store Policies](../../store-policies.md). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Microsoft Store.
 
+## Frequently asked questions
 
->[!TIP]
-> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/get-your-app-certified.md) section.
+1. **What is the app certification process, and how long does it take?**
+
+    After you submit your app to the Store, it enters the certification stage. Microsoft performs a series of checks on your app before it can be published. This typically takes up to three business days, though it can be quicker.
+    
+    The process includes:
+    - **Security testing:** Your app is scanned for malware and checked for security vulnerabilities.
+    - **Technical compliance testing:** Ensures your app doesn’t crash or use prohibited APIs. The Store installs and runs your app to verify it behaves as expected.
+    - **Content compliance check:** Microsoft reviews your app’s content and Store listing to ensure they comply with Store policies, including age rating and appropriate descriptions.
+    
+    Once approved, your app typically becomes visible in the Store within about 15 minutes. You'll receive a notification, and your app’s status in the dashboard will show as “In the Microsoft Store.”
+
+2. **What should I do if my app fails certification or is removed from the Store?**
+
+    If your app fails certification, Microsoft will provide a **certification report** explaining why it failed—whether due to a technical issue or policy violation.
+    
+    To address the failure:
+    
+    1. Review the Microsoft Store Policies to understand the issue.
+    2. Fix the problem (e.g., remove prohibited content, correct metadata).
+    3. Submit an updated version for certification.
+    
+    If your app was removed from the Store after being published, it may be due to a severe issue (e.g., security vulnerabilities or policy violations). In such cases:
+    
+    - Check Partner Center and your email for communication from Microsoft.
+    - Address the stated issue.
+    - Submit a corrected update for review.
+    
+    For clarification or help, contact Microsoft at `reportapp@microsoft.com` with your app ID or respond to the certification report email directly.
+
+3. **How can I improve my app’s chances of passing certification on the first try?**
+
+    Here are Microsoft’s best practices to help your app pass certification smoothly:
+    
+    - **Submit only when ready:** Ensure your app is complete and free of placeholders or broken features.
+    - **Use Windows App Certification Kit (WACK):** Run this tool locally to pre-test for issues Microsoft will check.
+    - **Test across environments:** Validate your app on different devices, OS versions, and conditions (including offline).
+    - **Handle offline scenarios:** Don’t let your app crash without internet—display proper error messages.
+    - **Provide test info:** Share credentials or instructions in the “Notes for certification” if your app has locked features or requires sign-in.
+    - **Include a privacy policy:** If your app accesses personal data or services, include a privacy policy URL and display it in the app.
+    - **Write clear Store listings:** Make sure descriptions truthfully represent the app to avoid rejections for being misleading.
+    - **Answer age rating questionnaire carefully:** Be truthful to avoid generating incorrect ratings.
+    - **Accessibility claims:** Only mark your app as accessible if it genuinely meets accessibility standards.
+    
+    Finally, **always check the latest Microsoft Store Policies** to ensure compliance with technical and content guidelines.

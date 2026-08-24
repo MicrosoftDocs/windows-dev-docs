@@ -181,3 +181,15 @@ Listening and responding to your customers is only the beginning. Acting on thei
 
 - If you notice many reviews that suggest a new or changed feature, or complain about a problem, consider releasing a new version that addresses the specific feedback. (Be sure to update your app's description to indicate that the issue has been fixed.)
 - If the average rating is high, but your number of downloads is low, you might want to look for ways to expose your app to more people, since it's been well-received by those who have tried it out.
+
+## Frequently asked questions
+
+1. **Where can I see customer reviews of my app and respond to user feedback?**
+
+    You can access the **Reviews** report in Partner Center’s analytics section. This report consolidates customer feedback from the Microsoft Store and displays:
+    
+    - Star ratings and written reviews.
+    - The ability to filter reviews by region and date.
+    - A reply feature that allows you to respond directly to reviews from within Partner Center.
+    
+    Responding to user feedback shows that you value customer input and are actively supporting your app. Keep responses professional and avoid including any personal or sensitive information.

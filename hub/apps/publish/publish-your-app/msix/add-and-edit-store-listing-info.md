@@ -57,8 +57,6 @@ If you haven't uploaded packages for the language you're working on, and you've 
 
 The description field is where you can tell customers what your app does. This field is required, and will accept up to 10,000 characters of plain text.
 
-For some tips on making your description stand out, see [Write a great app description](../../../publish/faq/submit-your-app.md).
-
 ### What's new in this version
 
 If this is the first time you're submitting your app, leave this field blank. For an update to an existing app, this is where you can let customers know what's changed in the latest release. This field has a 1500 character limit. (Previously, this field was called **Release notes**).
@@ -129,3 +127,24 @@ You can enter up to 11 items for both **Minimum hardware** and **Recommended har
 
 > [!NOTE]
 > Your additional system requirements will appear bulleted in your Store listing, so don't add your own bullets.
+
+## Frequently asked questions
+
+1. **What are the recommended best practices for writing the app description and listing features?**
+
+    A well-written Store listing can help customers quickly understand your app's value and encourage downloads.
+    
+    When writing your app description:
+    * Start with a clear and compelling value proposition in the first few sentences. Explain what makes your app unique and why customers should choose it.
+    * Use clear, concise, and engaging language that is easy to understand.
+    * Highlight the key benefits and functionality of your app.
+    * Use short paragraphs and bullet points to improve readability and make the content easier to scan.
+    * Include a feature list to quickly communicate what your app does.
+    * Avoid unnecessary technical jargon unless your audience expects it.
+    * Use keywords naturally to improve discoverability in Store search results.
+    * Clearly explain any free trials, subscriptions, in-app purchases, or add-ons that affect functionality.
+    * Use proper spelling, grammar, punctuation, and standard capitalization.
+    * Do not include HTML, code snippets, or URLs in the description field. Instead, provide support, privacy policy, and website links in their designated submission fields.
+    * Localize descriptions for all supported languages to provide a better experience for global customers.
+    
+    You can also review listings for similar apps in the Microsoft Store to understand how they communicate value and differentiate their offerings.

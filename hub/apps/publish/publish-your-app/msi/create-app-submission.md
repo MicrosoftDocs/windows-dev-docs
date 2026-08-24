@@ -130,5 +130,38 @@ Once you have completed all the sections, you can submit your app for certificat
 > [!NOTE]
 > You must have an active [developer account](https://developer.microsoft.com/store/register) in [Partner Center](https://partner.microsoft.com/dashboard) in order to submit apps to the Microsoft Store. All the users added to your developer account in Partner Center can submit EXE or MSI apps to the Microsoft Store. They can also modify all the existing EXE or MSI apps in Partner Center. The roles and permissions set for account users do not currently apply to EXE or MSI apps.
 
-> [!TIP]
-> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/submit-your-app.md) section.
+## Frequently asked questions
+
+1. **What does the app submission process involve in Partner Center?**
+
+    After reserving a name, start a new submission. The process involves:
+    
+    - **Pricing and Availability**: Choose free/paid, markets, trials.
+    - **Properties**: Set category and capabilities.
+    - **Age Ratings**: Complete content questionnaire for regional ratings.
+    - **Packages**: Provide the package URL and metadata for your EXE or MSI installer.
+    - **Store Listings**: Add descriptions, features, images, logos.
+    - **Submission Options**: (Optional) Add notes for certification or schedule publish date.
+    
+    Fill out all required fields, then click **Submit for certification**. Partner Center will validate inputs and flag any missing items before submission. Your app status will show as "in Certification" while being reviewed.
+
+2. **What metadata fields are required when submitting an app to the Store?**
+
+    Required metadata typically includes:
+    
+    - App name
+    - App description
+    - Category
+    - At least one screenshot
+    - A Store logo
+    - A privacy policy URL (especially if your app collects personal data)
+    
+    Optional but recommended fields include:
+    
+    - Feature list
+    - Promotional images and trailers
+    - Additional languages and localized metadata
+    - Search terms for discoverability
+    - Website or support contact information
+    
+    Providing rich, complete metadata helps Microsoft validate your app more efficiently and improves the user’s understanding of what your app offers.

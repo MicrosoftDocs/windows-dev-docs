@@ -57,8 +57,6 @@ If you haven't uploaded packages for the language you're working on, and you've 
 
 The description field is where you can tell customers what your app does. This field is required, and will accept up to 10,000 characters of plain text.
 
-For some tips on making your description stand out, see [How can I write an effective app description for the Microsoft Store](../../faq/submit-your-app.md) in the FAQ section.
-
 ### What's new in this version
 
 If this is the first time you're submitting your app, leave this field blank. For an update to an existing app, this is where you can let customers know what's changed in the latest release. This field has a 1500 character limit. (Previously, this field was called **Release notes**).
@@ -115,36 +113,23 @@ For games, the short description may also appear in the Information section of t
 
 For best results, keep your short description under 270 characters. The field has a 1000 character limit, but in some views, only the first 270 characters will be shown (with a link available to view the rest of the short description).
 
-## Additional information
+## Frequently asked questions
 
-The items described below help customers discover and understand your product.
+1. **What are the recommended best practices for writing the app description and listing features?**
 
-:::image type="content" source="../msix/images/msix-additional-info.png" lightbox="../msix/images/msix-additional-info.png" alt-text="A screenshot showing additional information requirements for listing of a MSIX/PWA app.":::
-
-## Keywords
-
-Keywords (formerly called Search terms) are single words or short phrases that are not displayed to customers, but can help your make your app discoverable in the Store when customers search using those keywords. You can include up to 7 keywords with a maximum of 40 characters each, and can use no more than 21 separate words across all keywords.
-
-When adding keywords, think about the words that customers might use when searching for apps like yours, especially if they're not part of your app's name. Be sure not to use any keywords that are not actually relevant to your app.
-
-You can also use AI-Generated keywords for your app. You just need to enter the app description and AI will recommend you keywords for your app. You will see the recommended keywords in the keyword field dropdown. You can click on any recommended keyword to add it to your app submission.
-
-## Copyright and trademark info
-
-If you'd like to provide additional copyright and/or trademark info, enter it here. This field has a 200 character limit.
-
-## Additional license terms
-
-Leave this field blank if you want your app to be licensed to customers under the terms of the **Standard Application License Terms** (which are linked to from the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)).
-
-If your license terms are different from the **Standard Application License Terms**, enter them here.
-
-If you enter a single URL into this field, it will be displayed to customers as a link that they can click to read your additional license terms. This is useful if your additional license terms are very long, or if you want to include clickable links or formatting in your additional license terms.
-
-You can also enter up to 10,000 characters of text in this field. If you do that, customers will see these additional license terms displayed as plain text.
-
-## Developed by
-
-Enter text here if you want to include a **Developed by** field in your app's Store listing. (The **Published by** field will list the publisher display name associated with your account, whether or not you provide a value for the **Developed by** field.)
-
-This field has a 255 character limit.
+    A well-written Store listing can help customers quickly understand your app's value and encourage downloads.
+    
+    When writing your app description:
+    * Start with a clear and compelling value proposition in the first few sentences. Explain what makes your app unique and why customers should choose it.
+    * Use clear, concise, and engaging language that is easy to understand.
+    * Highlight the key benefits and functionality of your app.
+    * Use short paragraphs and bullet points to improve readability and make the content easier to scan.
+    * Include a feature list to quickly communicate what your app does.
+    * Avoid unnecessary technical jargon unless your audience expects it.
+    * Use keywords naturally to improve discoverability in Store search results.
+    * Clearly explain any free trials, subscriptions, in-app purchases, or add-ons that affect functionality.
+    * Use proper spelling, grammar, punctuation, and standard capitalization.
+    * Do not include HTML, code snippets, or URLs in the description field. Instead, provide support, privacy policy, and website links in their designated submission fields.
+    * Localize descriptions for all supported languages to provide a better experience for global customers.
+    
+    You can also review listings for similar apps in the Microsoft Store to understand how they communicate value and differentiate their offerings.

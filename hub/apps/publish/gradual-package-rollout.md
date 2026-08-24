@@ -43,3 +43,15 @@ If you have confidence in the update and would like to make it available to all 
 > Changing the rollout percentage to 100% does not ensure that all of your customers will get the packages from the latest submissions, because some customers may be on OS versions that don’t support rollout. You must finalize the rollout in order to stop distributing the older packages and update all existing customers to the newer ones.
 
 If you find that there are problems with the update and you don’t want to distribute it any further, you can click **Halt package rollout** to stop distributing packages from the latest submission. Once you halt a package rollout, those packages will no longer be distributed to any customers; only the packages from the previous submission will be used for any new or updating customers. However, any customers who already had the newer packages will keep those packages; they won’t be rolled back to the previous version. To provide an update to these customers, you’ll need to create a new submission with the packages you’d like them to get. Note that if you use a gradual rollout in your next submission, customers who had the package you halted will be offered the new update in the same order they were offered the halted package. The new rollout will be between your last finalized submission and your newest submission; once you halt a package rollout, those packages will no longer be distributed to any customers.
+
+## Frequently asked questions
+
+1. **Can I gradually roll out an app update to a percentage of my users?**
+
+    Yes. Partner Center supports **gradual rollout** for updates only for MSIX apps:
+    
+    - During the submission process, enable **Roll out update gradually** and set an initial percentage (e.g., 5%).
+    - After publishing, increase the rollout percentage or halt it from the Overview page.
+    - Halting stops further updates but doesn’t revert the app for users who already received it.
+    
+    This helps catch issues early and ensures a more stable update for all users.

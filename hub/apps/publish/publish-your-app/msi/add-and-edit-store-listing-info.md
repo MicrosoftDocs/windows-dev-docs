@@ -53,7 +53,7 @@ If you need to rename the app after it's already been published, you can select 
 
 _Required_<br>_Character limit: 10,000 characters_
 
-The description field tells customers what your app does. See [Writing a great app description](../../../publish/faq/submit-your-app.md) for more information.
+The description field tells customers what your app does.
 
 ### What's new in this version
 
@@ -108,3 +108,24 @@ This field is especially important if your app requires hardware that might not 
 
 > [!NOTE]
 > The store automatically displays each feature in a bulleted list. Do not add bullets manually.
+
+## Frequently asked questions
+
+1. **What are the recommended best practices for writing the app description and listing features?**
+
+    A well-written Store listing can help customers quickly understand your app's value and encourage downloads.
+    
+    When writing your app description:
+    * Start with a clear and compelling value proposition in the first few sentences. Explain what makes your app unique and why customers should choose it.
+    * Use clear, concise, and engaging language that is easy to understand.
+    * Highlight the key benefits and functionality of your app.
+    * Use short paragraphs and bullet points to improve readability and make the content easier to scan.
+    * Include a feature list to quickly communicate what your app does.
+    * Avoid unnecessary technical jargon unless your audience expects it.
+    * Use keywords naturally to improve discoverability in Store search results.
+    * Clearly explain any free trials, subscriptions, in-app purchases, or add-ons that affect functionality.
+    * Use proper spelling, grammar, punctuation, and standard capitalization.
+    * Do not include HTML, code snippets, or URLs in the description field. Instead, provide support, privacy policy, and website links in their designated submission fields.
+    * Localize descriptions for all supported languages to provide a better experience for global customers.
+    
+    You can also review listings for similar apps in the Microsoft Store to understand how they communicate value and differentiate their offerings.

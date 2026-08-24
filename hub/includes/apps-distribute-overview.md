@@ -51,20 +51,8 @@ ms.date: 07/12/2024
        Check store policies, certification needs, and best practices for apps and games.](../apps/publish/store-policies.md)
     :::column-end:::
     :::column:::
-        [![FAQ icon](../apps/publish/images/tile-faqs.png)<br>
-        **FAQs**<br>
-        Quick answers on accounts, submissions, certification, analytics, and ongoing management.](../apps/publish/faq/get-started-with-the-microsoft-store.md)
-    :::column-end:::
-:::row-end:::
-
-:::row:::
-    :::column:::
        [![Whats new icon](../apps/publish/images/tile-new.png)<br>
        **What’s new**<br>
        See the latest Store features, tooling updates, and documentation changes for developers.](../apps/publish/whats-new-company-developer.md)
-    :::column-end:::
-    :::column:::
-    :::column-end:::
-    :::column:::
     :::column-end:::
 :::row-end:::

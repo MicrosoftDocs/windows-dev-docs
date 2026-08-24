@@ -55,8 +55,6 @@ items:
             href: publish-your-app/msix/upload-app-packages.md
       - name: Create Store listings
         items:
-          - name: Create Store listings
-            href: publish-your-app/msix/add-and-edit-store-listing-info.md
           - name: Add and edit Store listing info
             href: publish-your-app/msix/add-and-edit-store-listing-info.md
           - name: Add app screenshots, images, and trailers
@@ -157,8 +155,6 @@ items:
         href: publish-your-app/pwa/upload-app-packages.md
       - name: Create Store listings
         items:
-          - name: Overview
-            href: publish-your-app/pwa/create-app-store-listing.md
           - name: Add and edit Store listing info
             href: publish-your-app/pwa/add-and-edit-store-listing-info.md
           - name: Add app screenshots, images, and trailers
@@ -387,24 +383,6 @@ items:
             href: store-policies.md#microsoft-store-complaint-and-appeal-statistics
           - name: Raise a support ticket
             href: contact-us.md
-- name: FAQs
-  items:
-    - name: Get Started with the Microsoft Store
-      href: faq/get-started-with-the-microsoft-store.md
-    - name: Submit your app
-      href: faq/submit-your-app.md
-    - name: Get your app certified
-      href: faq/get-your-app-certified.md
-    - name: Monitor your app performance
-      href: faq/monitor-your-app-performance.md
-    - name: Leverage developer tools
-      href: faq/leverage-developer-tools.md
-    - name: Manage and update your app
-      href: faq/manage-and-update-your-app.md
-    - name: Manage your account
-      href: faq/manage-your-account.md
-    - name: Responsible AI FAQ 
-      href: publish-your-app/faqs/responsible-ai-faq-ai-generated-keywords.md
 - name: What's new
   items:
       - name: Publishing GDK games to Store

@@ -63,3 +63,22 @@ These are the Microsoft Store Developer CLI available commands:
 | [flights](./commands.md#flights-command)         | Flights related commands, such as 'list', 'get', 'delete', 'create', 'submission'.                                                 |
 
 For more info, see: [Commands](commands.md).
+
+## Frequently asked questions
+
+1. **What is the Microsoft Store Developer CLI and how can it help me?**
+
+    The **Microsoft Store Developer CLI** is a cross-platform command-line tool that allows developers to automate many Partner Center tasks, such as:
+    
+    - Listing and retrieving app information
+    - Uploading new packages
+    - Updating Store metadata
+    - Submitting and publishing app updates
+    
+    This tool is particularly useful for **CI/CD pipelines**, where new builds can be automatically submitted and published. Authentication is done using Entra ID credentials linked to your Partner Center account.
+    
+    It offers a flexible alternative to the web UI and supports scripting workflows across Windows, macOS, and Linux. To use it, developers must first configure API access with appropriate permissions. With this tool, teams can significantly streamline and scale their release operations.
+
+2. **Can I automate Store submissions with the CLI?**
+
+    Yes, the CLI supports automation of app submissions. Integrated into build pipelines, it enables automated packaging, submission, and publishing of new app releases without manual intervention. This significantly reduces time and error rates, ideal for teams managing frequent updates or numerous applications.

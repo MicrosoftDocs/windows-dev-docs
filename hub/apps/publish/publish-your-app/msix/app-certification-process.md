@@ -45,8 +45,18 @@ The publishing process takes a few minutes and on average, customers will be abl
 
 After successfully going through the steps above, the submission's status will change from **Publishing** to **In the Store**. Your submission will then be available in the Microsoft Store for customers to download (unless you have chosen another [Discoverability](./visibility-options.md#discoverability) option).
 
->[!TIP]
-> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/get-your-app-certified.md) section.
-
 > [!NOTE]
 > We also conduct spot checks of apps after they've been published so we can identify potential problems and ensure that your app complies with all of the [Microsoft Store Policies](../../store-policies.md). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.
+
+## Frequently asked questions
+
+1. **What is the app certification process, and how long does it take?**
+
+    After you submit your app to the Store, it enters the certification stage. Microsoft performs a series of checks on your app before it can be published. This typically takes up to three business days, though it can be quicker.
+    
+    The process includes:
+    - **Security testing:** Your app is scanned for malware and checked for security vulnerabilities.
+    - **Technical compliance testing:** Ensures your app doesn’t crash or use prohibited APIs. The Store installs and runs your app to verify it behaves as expected.
+    - **Content compliance check:** Microsoft reviews your app’s content and Store listing to ensure they comply with Store policies, including age rating and appropriate descriptions.
+    
+    Once approved, your app typically becomes visible in the Store within about 15 minutes. You'll receive a notification, and your app’s status in the dashboard will show as “In the Microsoft Store.”

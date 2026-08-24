@@ -16,8 +16,27 @@ Go to the required sections like [Pricing and availability](./price-and-availabi
 
 :::image type="content" source="images/msix-submit-app-update.png" lightbox="images/msix-submit-app-update.png" alt-text="A screenshot showing the overview of Properties section showing support info.":::
 
->[!TIP]
-> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/manage-and-update-your-app.md) section.
-
 > [!NOTE]
 > To understand how the Store distributes an update, visit [Download and install package updates from the Store](/windows/uwp/packaging/self-install-package-updates#mandatory-package-updates).
+
+## Frequently asked questions
+
+1. **How do I release an update or new version of my app on the Microsoft Store?**
+
+    To release an update, create a new submission in Partner Center for your app:
+    
+    1. Go to your app's Overview page and select **Update** (or **Create a new submission**).
+    2. Upload new app packages (e.g., MSIX, APPX), or modify listing info like pricing or descriptions.
+    3. Submit the update for certification.
+    
+    Once approved, the new version replaces the previous one in the Store. Existing users will receive the update via the Store automatically.
+
+2. **How can I change my app’s Store listing details or price after it’s published?**
+
+    To change listing details:
+    
+    1. Create a new submission via the **Update** button in Partner Center.
+    2. Modify description, screenshots, category, pricing, etc.
+    3. No need to upload a new package if you're only editing metadata.
+    
+    These changes still go through certification before being published to ensure Store policy compliance.

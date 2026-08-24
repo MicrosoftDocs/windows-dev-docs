@@ -88,3 +88,27 @@ For more info, see [Put apps and add ons on sale](put-apps-and-add-ons-on-sale.m
 [Acquisitions report](acquisitions-report.md)
 
 [Get analytics data using our REST API](/windows/uwp/monetize/access-analytics-data-using-windows-store-services)
+
+## Frequently asked questions
+
+1. **How can I make my app easier to promote in the Microsoft Store?**
+
+    To increase your app’s visibility and chances of being featured in the Microsoft Store, follow these guidelines:
+    
+    - **Include great screenshots and images:**  
+      High-quality visuals greatly enhance your app’s appeal. Provide attractive and representative screenshots, particularly focusing on the first image. Include sets of screenshots tailored for each device type your app supports. Provide all required images in the **Store logos** and **Additional art assets** sections of your Store listing. Key recommended formats are:
+      - **2:3 Poster art:** 720 x 1080 or 1440 x 2160 pixels
+      - **16:9 Super hero art:** 1920 x 1080 or 3840 x 2160 pixels  
+      This helps the Store feature your app prominently in different layouts.
+    
+    - **Build one unified version of your app:**  
+      Instead of separate free and paid versions, create a single app listing with either a free trial or in-app purchases to unlock additional functionality. This unified approach appeals to all potential customers and simplifies promotion and maintenance.
+    
+    - **List your app in all relevant markets and languages:**  
+      Maximizing your app’s reach by submitting it to every suitable market and providing localized Store listings will broaden your audience. Ensure your app adheres to local guidelines and customs for each market.
+    
+    - **Enable content filters for 16+ and 18+ apps:**  
+      Apps featuring content appropriate only for users aged 16+ or 18+ must implement content filtering to be eligible for Store promotion. These filters should be enabled by default, password-protected, and accessible directly within the app (not through an external site). This ensures your app remains compliant with Store guidelines, making it promotable to a wider audience.
+    
+    Following these best practices increases your app’s attractiveness not just for Microsoft Store promotions but also for external reviewers, influencers, and social media channels.
+

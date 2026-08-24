@@ -26,3 +26,36 @@ Submit an HTTPS-enabled download URL (direct link) to the product’s installer 
 ## Package version numbering
 
 You can manage the package version numbering through your installer. Package version numbering for Win32 is not supported through the Store.
+
+## Frequently asked questions
+
+1. **Do I need to package my app as an MSIX, or can I submit a traditional EXE/MSI installer?**
+
+    The Microsoft Store supports multiple packaging formats. MSIX is the recommended format, but traditional EXE/MSI installers are also accepted.
+    
+    **Supported MSIX and related package formats**:
+    - .msix
+    - .msixbundle
+    - .msixupload
+    - .appx
+    - .appxbundle
+    - .appxupload
+    
+    `.xap` is a legacy package type associated with previously published apps and isn't used for new submissions.
+    
+    **MSIX benefits include**:
+    - Free Microsoft code signing and CDN hosting.
+    - Easier updates and better integration with Windows features.
+    - Support for advanced capabilities like flighting and commerce.
+    
+    Using the MSIX package format ensures a more reliable, secure, and streamlined installation and update experience for users.
+    
+    **EXE/MSI submission**:
+    - Allowed since June 2021.
+    - You must provide a package URL for the installer as part of the submission; the installer must be hosted on your own infrastructure or CDN.
+    - Requirements:
+      - Must be .exe or .msi only.
+      - Offline installer – no downloads during setup.
+      - Installer must not change after submission or bundle unrelated software.
+    
+    Both app types can be submitted in Store depending on developer's needs.

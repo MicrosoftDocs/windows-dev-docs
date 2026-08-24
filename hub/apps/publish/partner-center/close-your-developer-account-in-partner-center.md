@@ -8,7 +8,7 @@ ms.localizationpriority: medium
 
 # Close your developer account in Partner Center
 
-Developer accounts don't expire, so there's no need to renew your account in order to keep it open. If you decide to close your account completely, you can do so by contacting support.
+Developer accounts don't expire, so there's no need to renew your account in order to keep it open. If you decide to close your account completely, you can do so by [contacting support.](https://aka.ms/storedevsupport)
 
 When you close your account, it's important to understand what happens to any app that you have published in the Microsoft Store:
 

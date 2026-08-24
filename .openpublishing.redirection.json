@@ -1,6 +1,51 @@
 {
   "redirections": [
     {
+      "source_path": "hub/apps/publish/publish-your-app/faqs/responsible-ai-faq-ai-generated-keywords.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/msix/add-additional-information",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/faq/manage-your-account.md",
+      "redirect_url": "/windows/apps/publish",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/faq/manage-and-update-your-app.md",
+      "redirect_url": "/windows/apps/publish",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/faq/leverage-developer-tools.md",
+      "redirect_url": "/windows/apps/publish",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/faq/monitor-your-app-performance.md",
+      "redirect_url": "/windows/apps/publish",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/faq/get-your-app-certified.md",
+      "redirect_url": "/windows/apps/publish",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/faq/submit-your-app.md",
+      "redirect_url": "/windows/apps/publish",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/publish-your-app/pwa/create-app-store-listing.md",
+      "redirect_url": "/windows/apps/publish/publish-your-app/pwa/add-and-edit-store-listing-info",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/publish/faq/get-started-with-the-microsoft-store.md",
+      "redirect_url": "/windows/apps/publish/get-started?tabs=individual%2Cmsix-pwa-getting-started#frequently-asked-questions",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/publish/publish-your-app/add-on/what-are-add-ons.md",
       "redirect_url": "/windows/apps/publish/publish-your-app/add-on/create-app-submission",
       "redirect_document_id": false

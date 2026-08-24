@@ -12,5 +12,13 @@ You can make changes to a published add-on at any time. Add-on changes are submi
 
 To submit updates, go to the add-on's page in Partner Center and click **Update**. This will create a new submission for the add-on, using the info from your previous submission as a starting point. Make the changes you'd like, and then click **Submit to the Store**.
 
-> [!TIP]
-> To refer to common questions, please refer to [Frequently Asked Questions](../../faq/manage-and-update-your-app.md) section.
+## Frequently asked questions
+
+1. **My app has in-app products (add-ons). How do I manage or update those after publishing?**
+
+    To manage add-ons:
+    
+    - Go to the **Add-ons** section in Partner Center.
+    - Select the add-on, click **Update**, and start a new submission to change its listing, price, or content.
+    
+    Add-on updates are certified like app updates. You can also track performance using the **Add-on acquisitions** report. Always keep your in-app product listings accurate and policy-compliant.

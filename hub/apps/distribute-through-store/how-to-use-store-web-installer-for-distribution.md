@@ -54,3 +54,47 @@ To enable the Store Web Installer for your app, set the following parameters in 
 - If you use the *[ApplicationManagement/RequirePrivateStoreOnly](/microsoft-store/manage-access-to-private-store)* MDM policy, the *Only display the private store within the Microsoft Store* app group policy, or set the *RemoveWindowsStore* DWORD value in the registry to 1 to block local or domain joined devices from accessing the Store, remember that these settings are for disabling the Store application. This policy doesn't block installation or updates of apps available on the Store.
 - To better control the types of apps that domain-joined PCs can install, including apps from the Store and from the Microsoft Store Web Installer, visit [AppLocker - Windows Security](/windows/security/application-security/application-control/windows-defender-application-control/applocker/applocker-overview). Use this policy in combination with *RequirePrivateStoreOnly* and *RemoveWindowsStore*, or use it independently.
 - To specifically block installations from the Microsoft Store Web Installer, you can domain block the following URL - `get.microsoft.com` . This action blocks the installer from being downloaded and executed from either the Microsoft Store website, or from various developer websites distributing apps through this mechanism. Blocking this URL doesn't affect the Microsoft Store app on Windows or already installed apps. These apps continue to operate unless you combine this action with the above policies.
+
+## Frequently asked questions
+
+1. **What is the Microsoft Store Web Installer and how can I implement it?**
+
+    The **Microsoft Store Web Installer** is a small executable (.exe) installer that allows users to install apps directly from the web without opening the Microsoft Store app. When users click an install link on a web page, the installer checks system eligibility and seamlessly downloads and installs the app from the Store backend. This simplifies the installation process for free apps distributed via websites.
+    
+    Implement the Web Installer by embedding a Microsoft Store badge with direct installation on your website:
+    
+    - Use the [Microsoft Store badge generator](https://apps.microsoft.com/badge).
+    - Choose the "Direct" launch mode to ensure users trigger the Web Installer directly from your website.
+    
+    Users clicking your badge will then automatically download and launch your app installer without needing to open the Store app.
+
+2. **How do I link to my app in the Microsoft Store?**
+
+    You can make your app easily discoverable by providing direct links to your app's listing on the Microsoft Store. Here’s how to get and use these links:
+    
+    - **Getting the direct URL to your Store listing:**  
+      Navigate to your app's **Product Identity** page under the **Product management** section in [Partner Center](https://partner.microsoft.com/). You'll find a URL structured as:  `https://apps.microsoft.com/store/detail/<your app's Store ID>`
+    
+    Customers clicking this link are taken to the web-based Store listing, where they can download and install your app via the Microsoft Store.
+    
+    - **Using the Microsoft Store badge:**  
+    You can create a branded Microsoft Store badge that links directly to your app. To generate your custom badge:
+    1. Go to the [Microsoft Store badge creator](https://apps.microsoft.com/badge) page.
+    2. Provide your app’s 12-character Store ID (found in your Partner Center under the Product Identity section).
+    
+    The badge is a [web component](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) that automatically detects the user’s language and theme. It won’t inherit CSS styles from your page, but you can customize its size using a [CSS part selector](https://developer.mozilla.org/en-US/docs/Web/CSS/::part):
+    
+    ```css
+    /* Adjust the badge size to match other buttons on your page. */
+    ms-store-badge::part(img) {
+        max-width: 200px;
+    }
+    ```
+    
+    This badge clearly indicates your app is available on the Microsoft Store and can help increase customer trust and downloads.
+    
+    - **Direct Store App link using URI scheme:**  
+    If you want to directly open the Microsoft Store app (without launching a browser first), use the following URI scheme:
+    `ms-windows-store://pdp/?ProductId=<your app's Store ID>`
+    
+    This approach is particularly useful when you know your users are already on a Windows device, or when directing users from within a WinUI app.

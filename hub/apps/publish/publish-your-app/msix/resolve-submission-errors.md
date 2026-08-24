@@ -49,10 +49,46 @@ Review this list to help avoid issues that frequently prevent apps from getting 
 
 - Include a [privacy policy URL](./support-info.md) if your app requires one; for example, if your app accesses any kind of personal information in any way or is otherwise required by law. To help determine if your app requires a privacy policy, review the [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905) and the [Microsoft Store Policies](../../store-policies.md).
 
-- Make sure that your app's description clearly represents what your app does. For help, see [How can I write an effective app description for the Microsoft Store](../../faq/submit-your-app.md) in the FAQ section..
+- Make sure that your app's description clearly represents what your app does. 
 
 - Provide complete and accurate responses to all of the questions in the [Age ratings](./age-ratings.md) section.
 
 - Don't [declare your app as accessible](./product-declarations.md#this-product-has-been-tested-to-meet-accessibility-guidelines) unless you have specifically engineered and tested it for accessibility scenarios.
 
 - If your app uses the commerce APIs from the [**Windows.ApplicationModel.Store**](/uwp/api/Windows.ApplicationModel.Store) namespace, make sure to test the app and verify that it handles typical exceptions. Also, make sure that your app uses the [**CurrentApp**](/uwp/api/Windows.ApplicationModel.Store.CurrentApp) class and not the [**CurrentAppSimulator**](/uwp/api/Windows.ApplicationModel.Store.CurrentAppSimulator) class, which is for testing purposes only. (Note that if your app targets Windows 10, version 1607 or later, we recommend that you use members of the [Windows.Services.Store](/uwp/api/windows.services.store) namespace instead of the Windows.ApplicationModel.Store namespace.)
+
+## Frequently asked questions
+
+1. **What should I do if my app fails certification or is removed from the Store?**
+
+    If your app fails certification, Microsoft will provide a **certification report** explaining why it failed—whether due to a technical issue or policy violation.
+    
+    To address the failure:
+    
+    1. Review the Microsoft Store Policies to understand the issue.
+    2. Fix the problem (e.g., remove prohibited content, correct metadata).
+    3. Submit an updated version for certification.
+    
+    If your app was removed from the Store after being published, it may be due to a severe issue (e.g., security vulnerabilities or policy violations). In such cases:
+    
+    - Check Partner Center and your email for communication from Microsoft.
+    - Address the stated issue.
+    - Submit a corrected update for review.
+    
+    For clarification or help, contact Microsoft at `reportapp@microsoft.com` with your app ID or respond to the certification report email directly.
+
+2. **How can I improve my app’s chances of passing certification on the first try?**
+
+    Here are Microsoft’s best practices to help your app pass certification smoothly:
+    
+    - **Submit only when ready:** Ensure your app is complete and free of placeholders or broken features.
+    - **Use Windows App Certification Kit (WACK):** Run this tool locally to pre-test for issues Microsoft will check.
+    - **Test across environments:** Validate your app on different devices, OS versions, and conditions (including offline).
+    - **Handle offline scenarios:** Don’t let your app crash without internet—display proper error messages.
+    - **Provide test info:** Share credentials or instructions in the “Notes for certification” if your app has locked features or requires sign-in.
+    - **Include a privacy policy:** If your app accesses personal data or services, include a privacy policy URL and display it in the app.
+    - **Write clear Store listings:** Make sure descriptions truthfully represent the app to avoid rejections for being misleading.
+    - **Answer age rating questionnaire carefully:** Be truthful to avoid generating incorrect ratings.
+    - **Accessibility claims:** Only mark your app as accessible if it genuinely meets accessibility standards.
+    
+    Finally, **always check the latest Microsoft Store Policies** to ensure compliance with technical and content guidelines.
