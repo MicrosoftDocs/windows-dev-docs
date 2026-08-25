@@ -2,7 +2,7 @@
 title: Windows App SDK release channels
 description: Learn about the Experimental, Preview, and Stable release channels used to ship the latest version of the Windows App SDK.
 ms.topic: article
-ms.date: 08/13/2026
+ms.date: 08/25/2026
 keywords: windows win32, windows app development, project reunion, windows app sdk, release channels
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ The latest version of the Windows App SDK ships via three release channels: Expe
 |--:|--|--|--|:--:|--|
 | **✅** | **Stable** | Production-ready channel intended for apps in market. Includes only stable, supported APIs suitable for long-term use. | Major releases no more than every six months <br/> *(plus minor/patch servicing updates as needed)* | Yes | **2.4.0** <br/> Released: 08/13/2026 <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=stable#version-240) |
 | **❇️** | **Preview** | Early look at the next Stable release. May introduce breaking API changes before final stabilization. | At least one preview for each Stable release | No | **2.0 Preview2 (2.0.0-preview2)** <br/> Released: 03/31/2026 <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=preview#version-20-preview-2-200-preview2) |
-| **🔄** | **Experimental** | Early-stage features under active development. APIs may change, be removed, or never ship. Intended for exploration and feedback only. | Published as needed to gather feedback on prototypes and early designs | No | **2.3 Experimental A (2.3.2-experimentalA)** <br/> Released: 07/30/2026 <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-23-experimental-a-232-experimentala) |
+| **🔄** | **Experimental** | Early-stage features under active development. APIs may change, be removed, or never ship. Intended for exploration and feedback only. | Published as needed to gather feedback on prototypes and early designs | No | **2.4 Experimental (2.4.1-experimental)** <br/> Released: 08/25/2026 <br/> [Release notes](./release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-24-experimental-241-experimental) |
 
 
 For a comprehensive list of all current and previous releases of the Windows App SDK, including download locations, see [Downloads for the Windows App SDK](downloads.md).

@@ -1,8 +1,8 @@
 ---
 title: Windows App SDK 2.0 release notes
-description: Provides information about what's new in Windows App SDK 2.0.
+description: Release notes for Windows App SDK 2.0 across the Stable, Preview, and Experimental channels, with feature highlights, bug fixes, and API changes.
 ms.topic: release-notes
-ms.date: 08/13/2026
+ms.date: 08/25/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -1079,6 +1079,91 @@ Released: **February 13, 2026** <br><br>
 :::zone-end
 
 :::zone pivot="experimental"
+
+## Version 2.4 Experimental (2.4.1-Experimental)
+
+Released: **August 25, 2026**
+
+This experimental release follows [Windows App SDK 2.4.0 stable](#version-240) and generally brings over the changes from that release; see the [2.4.0 stable notes](#version-240) for those details. The sections below describe the experimental-only additions.
+<br><br>
+
+<details><summary>Inking Support</summary>
+
+>
+> This release adds inking support for WinUI 3 through **InkCanvas**, **InkToolbar**, and **InkPresenter**, including pen and touch input, clipboard support, high-contrast support, stroke input, and unprocessed input. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InkCanvas_InkingSupport)
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the **[2.3 Experimental A](#version-23-experimental-a-232-experimentala)** release:
+>
+> ```
+> Microsoft.UI.Xaml.Automation.Peers
+>
+>     InkToolbarAutomationPeer
+>     InkToolbarFlyoutItemAutomationPeer
+>     InkToolbarMenuButtonAutomationPeer
+>     InkToolbarToolButtonAutomationPeer
+> ```
+> ```
+> Microsoft.UI.Xaml.Controls
+>
+>     InkCanvas
+>         InkPresenter
+>
+>     InkHighContrastAdjustment
+>     InkInputConfiguration
+>     InkInputProcessingConfiguration
+>     InkInputProcessingMode
+>     InkInputRightDragAction
+>     InkPresenter
+>     InkStrokeContainer
+>     InkStrokeInput
+>     InkStrokesCollectedEventArgs
+>     InkStrokesErasedEventArgs
+>     InkToolbar
+>     InkToolbarBallpointPenButton
+>     InkToolbarButtonFlyoutPlacement
+>     InkToolbarCustomPen
+>     InkToolbarCustomPenButton
+>     InkToolbarCustomToggleButton
+>     InkToolbarCustomToolButton
+>     InkToolbarEraserButton
+>     InkToolbarEraserFlyoutItemClickedEventArgs
+>     InkToolbarEraserFlyoutItemKind
+>     InkToolbarEraserKind
+>     InkToolbarFlyoutItem
+>     InkToolbarFlyoutItemKind
+>     InkToolbarHighlighterButton
+>     InkToolbarInitialControls
+>     InkToolbarIsStencilButtonCheckedChangedEventArgs
+>     InkToolbarMenuButton
+>     InkToolbarMenuKind
+>     InkToolbarPenButton
+>     InkToolbarPencilButton
+>     InkToolbarPenConfigurationControl
+>     InkToolbarRulerButton
+>     InkToolbarStencilButton
+>     InkToolbarStencilKind
+>     InkToolbarToggle
+>     InkToolbarToggleButton
+>     InkToolbarTool
+>     InkToolbarToolButton
+>     InkUnprocessedInput
+> ```
+> ```
+> Microsoft.Windows.AI.Text
+>
+>     LanguageModelResponseStatus
+>         LanguageMismatch
+>         UnsupportedLanguage
+> ```
+>
+
+</details>
 
 ## Version 2.3 Experimental A (2.3.2-ExperimentalA)
 
