@@ -2,7 +2,7 @@
 title: "What's new: SDK, WinUI, tools"
 description: Explore new Windows platform capabilities, SDK and API updates, design guidance, development tools, and productivity improvements.
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 08/18/2026
+ms.date: 08/25/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -22,13 +22,14 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
         ![Windows App SDK icon](images/wasdk-hero.png)<br>
         **Windows App SDK**<br>
         Latest stable: 2.4.0<br>
+        Latest experimental: 2.4.1-experimental<br>
         [View release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.4.0)<br>
         [View downloads](../windows-app-sdk/downloads.md)
     :::column-end:::
     :::column:::
         ![Windows SDK icon](images/wsdk-hero.png)<br>
         **Windows SDK**<br>
-        Discover what's new<br>
+        Latest build: 10.0.28000.2705<br>
         [View release notes](../windows-sdk/release-notes.md)<br>
         [View downloads](../windows-sdk/downloads.md)
     :::column-end:::
@@ -48,6 +49,11 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 
 ## Highlights – August 2026
 
+- **Windows App SDK 2.4 Experimental (2.4.1-experimental)**: The August 25 experimental release adds **inking support for WinUI 3** — the new `InkCanvas`, `InkToolbar`, and `InkPresenter` APIs bring pen and touch input, stroke input, unprocessed input, and clipboard and high-contrast support to WinUI 3 apps. It rolls the 2.4.0 stable changes forward on the experimental channel — [Release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.4.1-exp) | Install: `Microsoft.WindowsAppSDK` version `2.4.1-experimental` from NuGet
+- **Windows SDK build 10.0.28000.2705**: The latest Windows SDK flight (August 2026) adds new WinRT and Win32 APIs, including `Windows.Management.Update` scan-mode and software-update identity/category types, `RetailInfo.IsDemoModeEnabledEx`, `ToastNotification.IsExpandableContentSupported`, a Direct3D 12 `ID3D12DeviceStatistics` interface, an AV1 encoder operating-mode codec API, and endorsement-key enrollment v2 cryptography OIDs — [Windows SDK release notes](../windows-sdk/release-notes.md) | [Downloads](../windows-sdk/downloads.md)
+- **Inside MSIX – What Kind of Packaged Process Is It?**: Howard Kapustein breaks down the three kinds of packaged process — Universal, Centennial/Desktop Bridge, and Win32alacarte — and how the `RuntimeBehavior` manifest attribute (`windowsApp`, `packagedClassicApp`, `win32App`) trades off compatibility against modern packaged behavior — [What Kind of Packaged Process Is It?](https://devblogs.microsoft.com/insidemsix/types-of-packaged-applications/)
+- **PowerToys 0.101**: Adds **Window Hopper** for quickly moving between windows from the same app, a redesigned update experience with **Stable and Insider channels**, **compact mode** for Command Palette, on-device Phi Silica transformations in Advanced Paste, and continued WinUI 3 modernization — [PowerToys 0.101 release](https://devblogs.microsoft.com/commandline/powertoys-0-101-is-here-window-hopper-insider-updates-and-command-palette-compact-mode/)
+- **AppxManifest IntelliSense in the WinApp VS Code extension**: The WinApp VS Code extension now provides IntelliSense — completions, tooltips, and validation — for `AppxManifest.xml`, making it easier to author package identity and capabilities without leaving the editor — [Announcing AppxManifest IntelliSense support](https://devblogs.microsoft.com/ifdef-windows/appxmanifest-intellisense-support-in-vs-code/)
 - **Windows App SDK 2.4.0**: The August 13 stable release adds touchpad and mouse haptics for WinUI 3 apps (via `Windows.Devices.Haptics`), touchpad single-finger panning on supported hardware, and more precise `LanguageModel` response statuses — `UnsupportedLanguage` and `LanguageMismatch` — so apps can distinguish language errors from generic failures. Also includes targeted reliability fixes for input, Storage Pickers (keyboard focus now restores after a dialog closes), MRT Core, app runtime isolation, and composition — [Release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.4.0)
 - **Windows App Development CLI v0.6.0**: Adds `winapp new` to scaffold a WinUI 3 app from official templates with a single command (blank, NavigationView, TabView, MVVM, class library, and unit-test starters), `winapp find-ui` to search and fetch copy-pasteable XAML and C# samples from WinUI 3 Gallery and Windows Community Toolkit without leaving the terminal, run-from-`.csproj` with no manual build step, cloud-based artifact signing via Azure, and sparse-package workflow support — [WinApp CLI v0.6.0 announcement](https://devblogs.microsoft.com/ifdef-windows/windows-app-development-cli-v0-6-create-new-winui-applications-sign-packages-with-azure-and-more/) | Install: `winget install Microsoft.WinAppCLI`
 - **Intelligent Terminal 0.2**: The biggest release yet of the experimental AI-powered terminal, adding local model support in the Agent Pane, per-tab agent selection with `/agent`, OpenCode in the built-in agent lineup, WSL agent execution, and a richer Agent Pane UI — [Intelligent Terminal 0.2 announcement](https://devblogs.microsoft.com/commandline/intelligent-terminal-0-2-is-here-with-local-model-support/) | Install: `winget install Microsoft.IntelligentTerminal`
