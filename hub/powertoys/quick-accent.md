@@ -1,7 +1,7 @@
 ---
 title: Quick Accent Utility for Windows PowerToys
 description: Learn how to use Quick Accent utility in PowerToys to type accented characters on Windows when your keyboard lacks accent support. Configure settings and activation methods.
-ms.date: 06/08/2026
+ms.date: 08/25/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Quick Accent, Win]
 # Customer intent: As a Windows power user, I want to learn how to configure and use the Quick Accent utility in PowerToys for Windows.
@@ -17,18 +17,28 @@ In order to use the Quick Accent utility, open PowerToys Settings, select the **
 
 ## How to activate
 
-Activate by holding the key for the character you want to add an accent to, then (while held down) press the activation key (Space key or Left / Right arrow keys). If you continue to hold, an overlay to choose the accented character will appear.
+Quick Accent supports four **Activation key** options. **Left/Right Arrow**, **Space**, and **Left, Right or Space** use a trigger key. **Press and hold the letter** opens the picker automatically after you hold the base letter long enough.
 
-For example: If you want "à", press and hold <kbd>A</kbd> and press <kbd>Space</kbd>.
+### Trigger-key activation
 
-With the dialog enabled, keep pressing your activation key.
+In trigger-key mode, press and hold the base letter, then press the activation key. After the **Input delay (ms)** time passes, the picker opens. Keep using the activation key, or use the arrow keys and <kbd>Space</kbd>, to move the selection. Release the keys to insert the selected character.
+
+For example, to type `à`, press and hold <kbd>A</kbd>, then press <kbd>Space</kbd>. By default, **Input delay (ms)** is `300`, and the minimum value is `100`.
+
+### Press-and-hold activation
+
+In **Press and hold the letter** mode, Quick Accent types the base letter immediately. If you keep holding the letter, the picker opens automatically after the **Hold duration (ms)** time passes. Use the arrow keys or <kbd>Space</kbd> to choose a character, then release the letter to replace the original letter with the selected character. If you don't select a character, the original letter remains.
+
+A quick tap that is shorter than the hold duration types only the original letter. Quick Accent doesn't intercept <kbd>Ctrl</kbd>, <kbd>Alt</kbd>, <kbd>AltGr</kbd>, or <kbd>Windows</kbd>-key shortcuts. By default, **Hold duration (ms)** is `500`, and the range is `100` to `3000`.
 
 ## Character sets
 
-You can limit the available characters by selecting character sets from the settings menu. Character sets are organized into two groups, matching what you see in PowerToys Settings.
+Use **Characters** in PowerToys Settings to limit the available characters. Character sets are organized into two groups, matching what you see in Settings. Recent additions include **Belarusian Latin**, **Belarusian Cyrillic**, and **Pitjantjatjara/Yankunytjatjara**. The supported sets also include newer punctuation and currency entries, such as inverted question and exclamation marks in the relevant Spanish and Catalan menus, and the Philippine peso symbol in **Currency**.
 
 **Language sets:**
 
+- Belarusian Latin
+- Belarusian Cyrillic
 - Bulgarian
 - Catalan
 - Crimean Tatar
@@ -57,6 +67,7 @@ You can limit the available characters by selecting character sets from the sett
 - Pinyin
 - Polish
 - Portuguese
+- Pitjantjatjara/Yankunytjatjara
 - Romanian
 - Serbian
 - Serbian Cyrillic
@@ -85,14 +96,15 @@ From the Settings menu, the following options can be configured:
 
 | Setting | Description |
 | :--- | :--- |
-| Activation key | Choose **Left/Right Arrow**, **Space** or **Left, Right or Space**. |
+| Activation key | Choose **Left/Right Arrow**, **Space**, **Left, Right or Space** (default), or **Press and hold the letter**. |
 | Do not activate when Game Mode is on | Prevents Quick Accent from activating when Game Mode is on, avoiding interference while gaming. |
-| Character set | Show only characters that are in the chosen sets. |
-| Toolbar location | Position of the toolbar. |
+| Characters | Show only characters that are in the selected language and special sets. |
+| Toolbar position | Choose **Top center** (default), **Bottom center**, **Left**, **Right**, **Top right corner**, **Top left corner**, **Bottom right corner**, **Bottom left corner**, or **Center**. |
 | Show the Unicode code and name of the currently selected character | Shows the Unicode code (in hexadecimal) and name of the currently selected character under the selector. |
-| Sort characters by usage frequency | |
-| Start selection from the left | Starts the selection from the leftmost character for all activation keys (including Left/Right arrow). |
-| Input delay | The delay in milliseconds before the dialog appears. |
+| Sort characters by usage frequency | Tracks the characters you use and moves the most-used characters earlier in the list. |
+| Start selection from the left | Starts the selection from the leftmost character for all activation keys, including **Left/Right Arrow**. |
+| Input delay (ms) | In trigger-key modes, controls how long you hold the key after pressing the activation key before the picker opens. The default is `300`, and the minimum value is `100`. |
+| Hold duration (ms) | In **Press and hold the letter** mode, controls how long you hold the base letter before the picker opens automatically. The default is `500`, and the range is `100` to `3000`. |
 | Excluded apps | Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

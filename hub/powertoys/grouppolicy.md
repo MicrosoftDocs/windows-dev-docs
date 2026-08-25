@@ -1,7 +1,7 @@
 ---
 title: Configure PowerToys with Group Policy Settings
 description: Learn how to configure and manage PowerToys utilities using Group Policy settings, administrative templates, and registry configurations for enterprise environments.
-ms.date: 08/11/2026
+ms.date: 08/25/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Group Policy, Win]
 # customer intent: As a Windows power user, I want to learn how to configure PowerToys using Group Policy settings.
@@ -416,8 +416,41 @@ If you disable this policy, the user won't be able to enable Enable paste with A
 - OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~AdvancedPaste/AllowPowerToysAdvancedPasteOnlineAIModels`
 - Example value: `<disabled/>`
 
-### Mouse Without Borders
+### File Explorer Preview
 
+#### Show images from local and network sources in Markdown previews
+
+Supported on PowerToys 0.101.0 or later.
+
+This policy controls whether the File Explorer Markdown preview displays images from local and network (UNC) sources.
+
+- If enabled, images from the Markdown document's folder and network share are shown, and users can't turn off **Show local images**.
+- If disabled, all images are blocked, and users can't turn on **Show local images**.
+- If not configured, users can control **Show local images** in PowerToys Settings.
+
+Online images that use HTTP or HTTPS are always blocked, regardless of this policy.
+
+##### Group Policy (ADMX) information
+
+- GP unique name: MarkdownAllowLocalImages
+- GP name: Markdown preview: Show images from local and network sources
+- GP path: Administrative Templates/Microsoft PowerToys/File Explorer Preview
+- GP scope: Computer and user
+- ADMX file name: _PowerToys.admx_
+
+##### Registry information
+
+- Path: Software\Policies\PowerToys
+- Name: MarkdownAllowLocalImages
+- Type: DWORD
+- Example value: `0x00000001`
+
+##### Intune information
+
+- OMA-URI: `./Device/Vendor/MSFT/Policy/Config/PowerToys~Policy~PowerToys~FileExplorerPreview/MarkdownAllowLocalImages`
+- Example value: `<enabled/>`
+
+### Mouse Without Borders
 #### Clipboard sharing enabled
 
 Supported on PowerToys 0.83.0 or later.

@@ -1,7 +1,7 @@
 ---
 title: ZoomIt Screen Zoom and Annotation Tool by Sysinternals
 description: ZoomIt by Sysinternals is a powerful screen zoom, annotation, and recording tool for technical presentations. Download with PowerToys or standalone. Perfect for demos and screen capture.
-ms.date: 06/08/2026
+ms.date: 08/25/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Win]
 #Customer intent: As a Windows power user, I want to learn about the ZoomIt utility by Sysinternals, which is now available with PowerToys.
@@ -69,25 +69,48 @@ In addition to enabling or disabling ZoomIt in the PowerToys Settings, you can c
 | Record Toggle Hotkey | Set the hotkey to toggle full-screen or zoom recording on and off. The default hotkey is <kbd>Ctrl</kbd>+<kbd>5</kbd>. |
 | Record screen region hotkey | Set the hotkey to record a user-selected portion of the screen. The default hotkey is <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>5</kbd>. |
 | Lock region selection to 16:9 aspect ratio | When recording a screen region, constrain the selection to a 16:9 aspect ratio. Useful when you're producing video for a 16:9 player. |
-| Record window hotkey | Set the hotkey to record a specific window. |
-| Format | Select the recording output format. Options: **GIF** or **MP4**. |
-| Scaling | Set the scaling factor for the recorded image (0.1 to 1.0). The default scaling factor is 1.0, and larger numbers are more zoomed in. |
-| Capture system audio | Enable or disable capturing system audio during recording. |
+| Record window hotkey | Set the hotkey to record a specific window. The default hotkey is <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>5</kbd>. |
+| Format | Select the recording output format. Options: **GIF** or **MP4**. The default format is **MP4**. |
+| Scaling | Set the scaling factor for the recorded image (0.1 to 1.0). The default is **1.0** for MP4 recordings and **0.5** for GIF recordings. |
+| Capture system audio | Enable or disable capturing system audio during recording. System audio capture is enabled by default. |
 | Capture audio input | Enable or disable capturing audio input during recording. Audio input is not captured by default. |
+| Noise cancellation | Apply microphone noise cancellation when audio input capture is enabled. This setting is on by default. |
+| Mono | Mix microphone input to mono when audio input capture is enabled. This setting is off by default. |
 | Microphone | Select the microphone to use for audio input during recording. The default microphone is "Default", the current system default audio input device. |
-| Show webcam overlay | Composite a live webcam feed onto the recording. While recording, press <kbd>Ctrl</kbd>+<kbd>C</kbd> to toggle the overlay on and off. |
+| Show webcam overlay | Composite a live webcam feed onto the recording. While recording, press <kbd>Ctrl</kbd>+<kbd>C</kbd> to toggle the overlay on and off. This setting is off by default. |
 | Camera | Select the camera used for the webcam overlay. The default is the current system default camera. |
 | Position | Choose the corner of the recording the webcam overlay appears in: **Top left**, **Top right**, **Bottom left**, or **Bottom right**. |
 | Size | Choose the webcam overlay size: **Small**, **Medium**, **Large**, **X-Large**, or **Full screen**. |
 | Shape | Choose the webcam overlay shape: **Rectangle**, **Rounded rectangle**, **Rounded square**, or **Circle**. |
+| Background | Choose the webcam background mode: **None**, **Blur**, or **Image**. The default is **None**. |
+| Background image file | Choose the image file to use when **Background** is set to **Image**. |
+| Brightness | Set webcam brightness from `0` (dark) to `100` (bright). The default is `50`. |
 
-| Snip settings | Description |
-|---------------|-------------|
-| Snip Toggle Hotkey | Set the hotkey to toggle screen snipping on and off. The default hotkey is <kbd>Ctrl</kbd>+<kbd>6</kbd>. |
+| DemoMirror settings | Description |
+|--------------------|-------------|
+| Mirror activation | Set the hotkey to start or stop DemoMirror. The default hotkey is <kbd>Ctrl</kbd>+<kbd>9</kbd>. |
+| Mirror screen region hotkey | Mirror a user-selected portion of the screen. The default hotkey is <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd>. |
+| Mirror window hotkey | Mirror the window under your pointer. The default hotkey is <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>9</kbd>. |
+| Track window region | Keep a mirrored window aligned to its screen region as it moves or resizes so ZoomIt zoom and draw stay in place. This setting is on by default. |
+
+| Snip and panorama settings | Description |
+|---------------------------|-------------|
+| Snip activation | Set the hotkey to toggle screen snipping on and off. The default hotkey is <kbd>Ctrl</kbd>+<kbd>6</kbd>. |
+| Save snip to file | Save a snip directly to a file. The default hotkey is <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>6</kbd>. |
+| Copy to clipboard when saving | Also copy the snip to the clipboard whenever you save it to a file. This setting is off by default. |
+| Text recognition and extraction | Copy text from the selected region to the clipboard. The default hotkey is <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>6</kbd>. |
+| Scrolling screenshot | Capture a scrolling screenshot (panorama) from a selected region. The default hotkey is <kbd>Ctrl</kbd>+<kbd>8</kbd>. |
+| Save scrolling screenshot to file | Save a scrolling screenshot directly to a file. The default hotkey is <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>8</kbd>. |
+
+## DemoMirror, screenshots, and panoramas
+
+ZoomIt 0.101 adds **DemoMirror**, which mirrors the full screen, a selected region, or the window under your pointer to a second monitor, including the mouse pointer. While the mirrored view is active, you can still use ZoomIt zoom and draw to annotate the mirrored content.
+
+When you save a standard screenshot to a file, ZoomIt offers **Zoomed PNG**, **Actual size PNG**, **Zoomed WebP**, **Actual size WebP**, **Zoomed JPG**, and **Actual size JPG**. When you save a scrolling screenshot to a file, the save dialog offers **PNG**, **WebP**, or **JPEG**.
 
 ## Recording and trim editor
 
-After ZoomIt finishes a recording, the trim editor opens so you can shorten the clip before saving. You can append additional clips to the current recording from the editor and add transitions between them, which makes it easier to stitch together multi-take demos in a single output file.
+After ZoomIt finishes a recording, the trim editor opens so you can shorten the clip before saving. You can append additional clips to the current recording from the editor and choose **No Transition (Hard Cut)**, **Fade to Black (0.5s)**, or **Fade to White (0.5s)** between clips. This makes it easier to stitch together multi-take demos in a single output file.
 
 For more details on using ZoomIt, including additional hotkey information, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation. For information about the DemoType feature in ZoomIt, see [Make demo typing easy with DemoType in ZoomIt](https://techcommunity.microsoft.com/blog/sysinternals-blog/make-demo-typing-easy-with-demotype-in-zoomit-v8-0/4050566) on the Sysinternals blog.
 

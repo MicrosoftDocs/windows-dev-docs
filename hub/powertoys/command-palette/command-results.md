@@ -1,7 +1,7 @@
 ---
 title: Command results
 description: Learn what the different kinds of Command Palette command results do.
-ms.date: 3/23/2025
+ms.date: 08/25/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to learn how to develop an extension for the Command Palette.
@@ -54,6 +54,8 @@ This result displays a transient desktop-level message to the user. This is espe
 Consider the [CopyTextCommand](./microsoft-commandpalette-extensions-toolkit/copytextcommand.md) in the helpers - this command will show a toast with the text "Copied to clipboard", then dismiss the palette. 
 
 By default, [CommandResult.ShowToast(string)](./microsoft-commandpalette-extensions-toolkit/commandresult_showtoast_string.md) helper will have a **Result** of `CommandResult.Dismiss`. However, you can instead change the result to any of the other results if you want. This allows you to display a toast and keep the palette open, if you'd like. 
+
+If you need more than a text message, use [CommandResult.ShowToast(ToastArgs)](./microsoft-commandpalette-extensions-toolkit/commandresult_showtoast_toastargs.md). `ToastArgs` can include an icon and an action command. The action command appears as a button in the toast, which is useful for follow-up actions such as **Undo**. Command Palette shows these messages using the user's **On-screen indicator position** setting in [Command Palette settings](settings.md).
 
 ## Confirm command result
 

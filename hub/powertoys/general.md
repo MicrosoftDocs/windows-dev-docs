@@ -1,7 +1,7 @@
 ---
 title: Configure PowerToys General Settings for Windows
 description: Configure PowerToys general settings including updates, admin mode, themes, and startup behavior. Learn how to customize your Windows PowerToys experience with our step-by-step guide.
-ms.date: 08/11/2026
+ms.date: 08/25/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows power user, I want to learn how to configure the general settings for PowerToys.
@@ -15,7 +15,7 @@ The General settings section of Microsoft PowerToys allows you to configure esse
 
 ## Version & updates
 
-Here you can check for new updates, and if one is available, you can download and install it.
+Here you can check for new updates, and if one is available, you can download and install it. The update status surface shows progress while PowerToys checks for, downloads, and installs an update. It also indicates when an update is ready to install or when an error needs your attention.
 
 | Setting | Description |
 | :--- | :--- |
@@ -92,7 +92,9 @@ Will activate experimentation with new features on Windows Insider builds, if av
 
 ## Diagnostics & feedback
 
-Here you can enable or disable the collection of diagnostic data, which helps the PowerToys team to improve the app. You can also generate a bug report package to send to the PowerToys team and view your diagnostic data.
+Here you can enable or disable the collection of diagnostic data, which helps the PowerToys team to improve the app. You can also generate a bug report package and view your diagnostic data.
+
+When you generate a bug report, PowerToys shows the collection progress and result. After the package is ready, you can open the generated ZIP file or create a prefilled GitHub issue to send the report to the PowerToys team.
 
 ## Application compatibility
 

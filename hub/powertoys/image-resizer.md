@@ -1,7 +1,7 @@
 ---
 title: Image Resizer utility for Windows - PowerToys
 description: Resize images in bulk with PowerToys Image Resizer utility. Learn how to quickly resize multiple images using this Windows shell extension with drag-and-drop support.
-ms.date: 06/08/2026
+ms.date: 08/25/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
@@ -10,7 +10,7 @@ no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
 
 # Image Resizer utility
 
-Image Resizer is a Windows shell extension for bulk image-resizing that helps you quickly resize multiple images at once. After installing PowerToys, you can right-click on one or more selected image files in File Explorer and select **Resize with ImageResizer** from the menu to streamline your image processing workflow.
+Image Resizer is a Windows shell extension for bulk image-resizing that helps you quickly resize multiple images at once. After installing PowerToys, you can right-click on one or more selected image files in File Explorer and select **Resize with Image Resizer** from the menu to streamline your image processing workflow.
 
 :::image type="content" source="images/image-resizer/resize-images.gif" alt-text="An animated GIF demo of PowerToys Image Resizer utility showing bulk image resizing process in Windows File Explorer.":::
 
@@ -30,6 +30,8 @@ On the **Image Resizer** page, configure the following settings.
 ### Sizes
 
 Add new preset sizes. Each size can be configured as Fill, Fit, or Stretch. The dimension to be used for resizing can be centimeters, inches, percent, or pixels.
+
+Select **Add new size** to create a preset, or select an existing preset to edit it. PowerToys opens a dialog for the preset details. Select **Save** when you add a preset, **Update** when you edit one, or **Cancel** to discard your changes.
 
 #### Fill versus Fit versus Stretch
 
@@ -97,6 +99,7 @@ The Image Resizer CLI lets you resize one or more images from the command line.
 | `--keep-date-modified` |  | Preserve source last-write time |
 | `--file-name` |  | Output filename format |
 
+If you use `Percent` with **Fill** or **Fit**, specify a width value. Height-only percentage resizing is only supported with **Stretch**. Also, `--size` must refer to an existing preset index; if the index is out of range, the CLI returns an error and doesn't modify the input files.
 
 **Usage example**
 ```powershell

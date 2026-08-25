@@ -1,7 +1,7 @@
 ---
 title: Advanced Paste Tool for Clipboard Management in PowerToys
 description: Learn how to use PowerToys Advanced Paste to transform clipboard content into any format - plain text, JSON, Markdown, or files. Includes opt-in AI-powered features and local OCR capabilities.
-ms.date: 11/12/2025
+ms.date: 08/25/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Paste as Plain Text, Advanced Paste, Win]
 # Customer intent: Learn how to use the Advanced Paste feature in PowerToys to paste text from your clipboard into any format needed.
@@ -9,7 +9,9 @@ no-loc: [PowerToys, Windows, Paste as Plain Text, Advanced Paste, Win]
 
 # Advanced Paste tool for clipboard management
 
-PowerToys **Advanced Paste** is a powerful clipboard management tool that transforms your clipboard content into any format you need. This tool enables you to paste content as plain text, markdown, JSON, or various file formats (.txt, .html, .png) by using either the interface or keyboard shortcuts. Advanced Paste can extract text from images by using local OCR technology and transcode audio and video files to .mp3 or .mp4 formats. All processing happens locally on your machine, with an optional AI-powered feature that requires either an API key for a cloud AI service or a local model configured in Foundry Local or Ollama.
+PowerToys **Advanced Paste** converts clipboard content into the format you need. You can paste as plain text, Markdown, JSON, or files such as `.txt`, `.html`, and `.png` by using either the Advanced Paste window or direct keyboard shortcuts. Advanced Paste can also extract text from images by using local OCR and transcode audio or video to `.mp3` or `.mp4`.
+
+Non-AI paste actions run locally on your device. **Paste with AI** is optional and can use either an online provider or a local provider such as Foundry Local, Ollama, or Phi Silica.
 
 ## Get started with Advanced Paste
 
@@ -25,27 +27,49 @@ Open the **Advanced Paste** window with the activation shortcut (default: <kbd>W
 
 ## Settings
 
-From the Settings menu, configure the following options:
+From the Settings menu, configure the following options.
+
+### Paste with AI
 
 | Setting | Description |
 | :--- | :--- |
-| Enable Paste with AI | Enables the Paste with AI feature from the Advanced Paste window. See [Paste text with AI](#paste-text-with-ai) for more information. |
-| Model providers | Lists the configured AI model providers for use with Paste with AI. You can add providers with the **Add model** button. See [Adding a model provider](#adding-a-model-provider) for a list of supported providers and more information about configuring them. An account and valid API key is required for online model providers. You can also remove any of the configured providers from this list. |
-| Clipboard history | Enable to automatically save clipboard history. |
-| Automatically close the Advanced Paste window after it loses focus | Determines whether the Advanced Paste window closes after it loses focus. |
-| Show clipboard preview | Display a preview of the current clipboard content in the Advanced Paste window. |
-| Custom format preview | Enable to preview the output of the custom format before pasting. |
-| Auto-copy selection for custom action hotkeys | When enabled, attempts to copy the current selection before running a custom action shortcut, so you can trigger custom actions directly on selected text without manually copying first. |
-| Actions (Create and manage Advanced Paste custom actions) | When using Paste with AI, save the prompts you frequently use and give them descriptive names, so you can easily select them from the Advanced Paste window without having to type them out. You can also assign each action a keyboard command, so you can execute them without opening the Advanced Paste window. |
-| Open Advanced Paste window shortcut | The customizable keyboard command to open the **Advanced Paste** window. |
-| Paste as plain text directly shortcut | The customizable keyboard command to paste as plain text without opening the **Advanced Paste** window. |
-| Paste as Markdown directly shortcut | The customizable keyboard command to paste as Markdown without opening the **Advanced Paste** window. |
-| Paste as JSON directly shortcut | The customizable keyboard command to paste as JSON without opening the **Advanced Paste** window. |
-| Additional actions \| Image to Text | Turn on/off the Image to text paste action and configure the customizable keyboard command. |
-| Additional actions \| Paste as file | Turn on/off the set of Paste as File actions which include Paste as .txt file, Paste as .png file, Paste as .html file. Optionally configure the customizable keyboard command for each of these actions. |
-| Additional actions \| Transcode audio / video | Turn on/off both the Transcode audio and video paste actions. The transcode settings are all enabled by default. |
-| Additional actions \| Transcode to .mp3 | Turn on/off the Transcode to .mp3 paste action and configure the customizable keyboard command to transcode audio or video on the clipboard without opening the **Advanced Paste** window. |
-| Additional actions \| Transcode to .mp4 (H.264/AAC) | Turn on/off the Transcode to .mp4 (H.264/AAC) paste action and configure the customizable keyboard command to transcode video on the clipboard without opening the **Advanced Paste** window. |
+| Paste with AI | Turn on AI-powered transforms in the Advanced Paste window. This setting is off by default. |
+| Model providers | Add and manage the online and local providers that Paste with AI can use. Use **Add model** to add a provider, then use the provider menu to set it as the default, edit it, or remove it. |
+| Show the AI paste input box | Show or hide the AI prompt box in the Advanced Paste window. This setting is on by default. Turn it off if you want to keep AI available only through saved actions or shortcuts. |
+
+### Activation & behavior
+
+| Setting | Description |
+| :--- | :--- |
+| Open Advanced Paste window | Set the shortcut that opens the Advanced Paste window. The default shortcut is <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>V</kbd>. |
+| Show a preview of the current clipboard content | Show the current clipboard contents at the top of the Advanced Paste window. This setting is on by default. |
+| Access Clipboard History | Show and select previously copied items from the Advanced Paste window. |
+| Automatically close the window after it loses focus | Close the Advanced Paste window when you switch away from it. This setting is off by default. |
+| Custom format preview | Preview the output of AI formats and **Image to text** before you paste. This setting is on by default. |
+| Use selected text for all hotkeys | Try to copy the current text selection before running any Advanced Paste shortcut. If nothing is selected, Advanced Paste uses the current clipboard contents. This setting is off by default. |
+
+### Actions
+
+| Setting | Description |
+| :--- | :--- |
+| Paste as plain text directly | Paste plain text without opening the Advanced Paste window. The default shortcut is <kbd>Ctrl</kbd>+<kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>V</kbd>. |
+| Paste as Markdown directly | Paste as Markdown without opening the Advanced Paste window. This shortcut is available but unset by default. |
+| Paste as JSON directly | Paste as JSON without opening the Advanced Paste window. This shortcut is available but unset by default. |
+| Image to text | Turn the **Image to text** action on or off and optionally assign a shortcut. |
+| Fix spelling and grammar | Turn the action on or off, assign a shortcut, and optionally choose a different AI model, prompt, and system prompt just for this action. You can also enable **Coaching mode** to preview an explanation of the corrections. Coaching mode supports its own shortcut, AI model, prompt, and system prompt. |
+| Paste as file | Turn the **Paste as .txt file**, **Paste as .png file**, and **Paste as .html file** actions on or off and optionally assign shortcuts. |
+| Transcode audio / video | Turn transcoding actions on or off. |
+| Transcode to .mp3 | Optionally assign a shortcut that transcodes audio or video on the clipboard to `.mp3` without opening the Advanced Paste window. |
+| Transcode to .mp4 (H.264/AAC) | Optionally assign a shortcut that transcodes video on the clipboard to `.mp4` without opening the Advanced Paste window. |
+
+### Custom actions
+
+When **Paste with AI** is enabled, the **Custom actions** section lets you save prompts that you use often. For each custom action, you can set:
+
+- A name, description, and prompt.
+- An optional AI model override. If you leave the model unset, the action uses the current default provider.
+- An optional shortcut.
+- Whether the action appears in the Advanced Paste window.
 
 > [!IMPORTANT]
 > You can set <kbd>Ctrl</kbd>+<kbd>V</kbd> as an activation shortcut. This choice isn't recommended, as overriding this shortcut might have unintended consequences.
@@ -56,14 +80,13 @@ To add a model provider for use with Paste with AI, follow these steps:
 
 1. In PowerToys Settings, go to the **Advanced Paste** section.
 1. Under **Model providers**, select **Add model**.
-1. In the **Add model provider** window, select the model provider you want from the dropdown list.
-1. Fill in the required fields for the model provider you selected.
-   - For online model providers, you usually need to provide the API key, endpoint URL, and any extra configuration options.
-     - If you select OpenAI as the model provider, you can also enable Paste with Advanced AI using Semantic Kernel.
-   - For local model providers, you usually need to provide the model path and any extra configuration options.
+1. In the **Paste with AI provider configuration** window, select the model provider you want.
+1. Fill in the required fields for that provider.
+   - Online providers can use fields such as **Model name**, **Endpoint URL**, **API key**, **Deployment name**, **API version**, and **System prompt**, depending on the provider.
+   - Local providers show the local model options that apply to that provider.
 1. Select **Save** to add the model provider.
 
-The new model provider appears in the list of configured model providers and you can use it with the Paste with AI feature.
+The new model provider appears in the **Model providers** list. You can set one provider as the default and then override that choice for individual actions such as **Fix spelling and grammar** or your saved custom actions.
 
 The following model providers are supported:
 
@@ -74,8 +97,9 @@ The following model providers are supported:
 | Mistral | Online | Offers access to Mistral AI models through an API. You need an API key and might pay for usage based on the model and how much you use it. For more information, see [Mistral pricing page](https://mistral.ai/pricing). |
 | Google | Online | Offers access to Google's AI models through an API. You need an API key and might pay for usage based on the model and how much you use it. For more information, see [Google Cloud AI pricing page](https://cloud.google.com/pricing/list). |
 | Azure AI Inference | Online | Offers access to various AI models hosted on Microsoft Azure. You need an API key and endpoint URL and might pay for usage based on the model and how much you use it. For more information, see [Azure AI pricing page](https://azure.microsoft.com/pricing/details/cognitive-services/). |
-| Foundry Local | Local | Allows you to run AI models on your own machine by using Foundry Local. You need to install and configure the Foundry Local application. For more information, see the [Foundry Local documentation](/azure/ai-foundry/foundry-local/). |
+| Foundry Local | Local | Lets you run local models through Foundry Local. After you install the Foundry Local CLI, restart PowerToys. If no models are available yet, run Foundry Local to download or add a model, start the Foundry Local service, and then refresh the model list in PowerToys. For more information, see the [Foundry Local documentation](/azure/ai-foundry/foundry-local/). |
 | Ollama | Local | Allows you to run AI models on your own machine by using Ollama. You need to install and configure the Ollama application. For more information, see the [Ollama documentation](https://docs.ollama.com/). |
+| Phi Silica | Local | Uses the on-device Phi Silica model on supported Copilot+ PCs with an NPU. PowerToys checks whether the model is ready when you add this provider. If the model isn't ready yet, select **Download model** and then check Windows Update for the AI model download progress. |
 
 ## Advanced text paste
 
@@ -166,7 +190,7 @@ If the application you're using accepts pasting files (for example, File Explore
 
 ### Paste text with AI
 
-When you paste text with AI, the text is analyzed and formatted based on the context of the text and the prompt you provide to the OpenAI call. To use this feature, you need to configure an AI provider in the PowerToys settings. For online model providers, you must also have available credits in your account.
+When you paste text with AI, Advanced Paste sends your clipboard text and prompt to the provider that you selected. To use this feature, configure at least one AI provider in PowerToys settings. For online providers, you must also have available credits in your account.
 
 > [!NOTE]
 > If you use this feature and see an error `API key quota exceeded`, you don't have credits in your selected online AI account and need to purchase them.
@@ -191,6 +215,21 @@ AI output when prompting to "Format the text as if it were written by Mark Twain
 
 > [!NOTE]
 > As with any AI tool, the quality of the output depends on the quality of the input. The more context you provide, the better the AI can understand and respond to your request. Be sure to carefully review the output before using it. For more info on AI usage in this feature, review the terms of service and privacy policy pages for your selected model provider.
+
+#### Fix spelling and grammar
+
+**Fix spelling and grammar** is a built-in AI action that you can run from the Advanced Paste window or from its own shortcut. In Settings, you can:
+
+- Turn the action on or off.
+- Assign a shortcut for the main action.
+- Choose a specific AI model for this action, or leave it on the default provider.
+- Override the action's prompt and system prompt.
+
+You can also turn on **Coaching mode**. When coaching mode is enabled, Advanced Paste shows a preview that explains what changed and why. Coaching mode has its own optional shortcut, coaching AI model, coaching prompt, and coaching system prompt.
+
+#### Custom actions
+
+Custom actions let you save prompts for recurring AI transforms such as summarizing meeting notes, translating text, or rewriting text into a specific style. Saved custom actions appear in the Advanced Paste window, and you can also run them from their own shortcuts. Each custom action can use the default provider or a different provider that you choose for that action.
 
 #### Advanced AI paste scenarios with OpenAI
 

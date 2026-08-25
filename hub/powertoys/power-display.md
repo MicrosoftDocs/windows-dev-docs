@@ -1,7 +1,7 @@
 ---
 title: PowerToys Power Display utility for Windows
 description: Learn how to use PowerToys Power Display to control external monitor brightness, contrast, volume, input source, and color temperature from a single flyout, and save settings as profiles.
-ms.date: 06/08/2026
+ms.date: 08/25/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Power Display, DDC/CI, VCP]
 # Customer intent: As a Windows power user with multiple external monitors, I want to learn about the Power Display utility in PowerToys so I can control brightness, volume, input source, and other monitor settings from one place.
@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Power Display, DDC/CI, VCP]
 
 # Power Display utility
 
-PowerToys Power Display is a display management utility that puts brightness and other monitor controls into a single flyout. It uses [DDC/CI](https://en.wikipedia.org/wiki/Display_Data_Channel#DDC/CI) to talk to your external monitors, so you can adjust brightness, contrast, volume, input source, rotation, color temperature, and power state without reaching for the buttons on the back of each display. You can also save combinations of settings as profiles and apply them with a single click.
+PowerToys Power Display is a display management utility that puts brightness and other monitor controls into a single flyout. It uses [DDC/CI](https://en.wikipedia.org/wiki/Display_Data_Channel#DDC/CI) to talk to your external monitors, so you can adjust brightness, contrast, volume, input source, rotation, color temperature, and power state without reaching for the buttons on the back of each display. You can also save combinations of settings as profiles, apply them with a single click, and control supported displays from scripts by using the included command-line interface.
 
 :::image type="content" source="images/power-display/powerdisplay.png" alt-text="Screenshot of the Power Display flyout showing per-monitor controls for brightness, contrast, and volume.":::
 
@@ -45,6 +45,20 @@ The available controls depend on what your monitor reports through DDC/CI. If a 
 
 Brightness, contrast, and volume sliders commit changes after a short debounce, which avoids spamming the monitor with DDC/CI writes as you drag. You can also adjust each slider with the mouse wheel. Power Display automatically rescales slider percentages when a monitor uses a DDC/CI range other than 0–100, so the slider always reflects the actual position.
 
+### Linked brightness across monitors
+
+If at least two connected monitors support brightness, the flyout shows a **Link brightness levels** toggle. Turn it on to replace the individual brightness sliders with a single **All displays** brightness slider and a collapsed **Individual displays** section. The **All displays** card also shows how many monitors are currently linked and, when applicable, how many are excluded.
+
+Every brightness-capable monitor starts in the linked group by default. Expand **Individual displays** to review each monitor, then use the per-monitor **Exclude from linked brightness** toggle to keep selected displays independent while the rest move together. Excluded monitors keep their own active brightness slider while linked brightness is on.
+
+If you apply a saved profile while linked brightness is on, Power Display turns linked brightness off first and then restores the per-monitor profile values.
+
+### Tray icon mouse-wheel control
+
+When **Show system tray icon** is on, you can opt in to **Tray icon mouse wheel** brightness control. Choose **Off** (default), **Primary display**, or **All displays**. If linked brightness is on, scrolling a linked display target moves the whole linked group.
+
+**Mouse wheel increment** controls each tray-scroll brightness step and also how much the brightness, contrast, and volume sliders change per mouse-wheel notch. The default increment is `5`, and the Settings page lets you choose `1`, `2`, `5`, `10`, `15`, `20`, or `25`.
+
 ### Controls that ask for confirmation
 
 The following controls are turned off by default per monitor. When you enable any of them, Power Display shows a confirmation dialog that summarizes the risk before applying the change.
@@ -58,7 +72,8 @@ The following controls are turned off by default per monitor. When you enable an
 > [!WARNING]
 > **Power state.** Power state control uses DDC/CI to put the monitor into standby or wake it back up.
 >
-> - Some monitors enter standby but don't wake back up from software. You may need to press the physical power button or reseat the cable.
+> - Selecting **On** can wake a supported monitor from **Standby**, **Suspend**, or **Off (DPM)**.
+> - Some monitors still don't wake back up from software. You may need to press the physical power button or reseat the cable, especially after harder power-off states.
 > - Other monitors don't restore the previous state correctly when toggled.
 
 > [!WARNING]
@@ -104,6 +119,24 @@ Configure this integration from the Light Switch Settings page, under **Apply mo
 
 Power Display lets you define custom display names for color temperature presets and input sources by mapping monitor [VCP codes](https://en.wikipedia.org/wiki/Monitor_Control_Command_Set) (for example, `0x14` for color temperature, `0x60` for input source) to a friendlier label. You can scope a mapping to a specific monitor or apply it to all monitors. The **VCP capabilities** card on each monitor shows the DDC/CI VCP codes and supported values reported by that display, which is useful when authoring mappings or debugging.
 
+## Command-line interface
+
+Power Display includes `PowerToys.PowerDisplay.Cli.exe`. The CLI talks to the running Power Display app, so keep PowerToys running while you use it.
+
+| Command | What it does |
+| :--- | :--- |
+| `PowerToys.PowerDisplay.Cli.exe list` | Discover attached monitors and print each monitor's number, stable ID, name, and transport. |
+| `PowerToys.PowerDisplay.Cli.exe capabilities --monitor-number 1` | Show the discrete VCP values a monitor reports. Add `--setting color-temperature`, `--setting input-source`, or `--setting power-state` to limit the output. |
+| `PowerToys.PowerDisplay.Cli.exe get --monitor-number 1` | Read the current value of one monitor. Add `--setting brightness`, `contrast`, `volume`, `color-temperature`, `input-source`, `power-state`, or `orientation` to limit the output. |
+| `PowerToys.PowerDisplay.Cli.exe set --monitor-number 1,2 --brightness 70` | Set exactly one value per command. Supported options are `--brightness`, `--contrast`, `--volume`, `--color-temperature 0xNN`, `--input-source 0xNN`, `--power-state 0xNN`, and `--orientation 0`, `90`, `180`, or `270`. |
+| `PowerToys.PowerDisplay.Cli.exe up --monitor-number 1 --brightness` | Raise brightness, contrast, or volume. `down` lowers the same settings. Add `--step` to override the amount. If you omit `--step`, Power Display uses the current **Mouse wheel increment** value. |
+| `PowerToys.PowerDisplay.Cli.exe profiles` | List saved Power Display profiles with their numeric IDs. |
+| `PowerToys.PowerDisplay.Cli.exe apply-profile 3` | Apply a saved profile by numeric ID. |
+
+Use `--monitor-number` or `-n` for 1-based monitor numbers. `set`, `up`, and `down` accept comma-separated numbers such as `1,2,3`. Use `--monitor-id` or `-i` to target a stable monitor ID instead. If you pass both, `--monitor-id` wins.
+
+For discrete settings such as input source, color temperature, and power state, use the hexadecimal values reported by `capabilities`. To blank or sleep a display with `--power-state`, add `--confirm-power-off`. Add `--quiet` to suppress CLI warning output.
+
 ## Keyboard shortcuts in the flyout
 
 The flyout supports keyboard navigation, and pressing <kbd>Esc</kbd> closes it.
@@ -117,9 +150,11 @@ Power Display has the following settings:
 | **Enable Power Display** | Turn the utility on or off. You're asked to confirm the first time you enable it. |
 | **Activation shortcut** | The customizable keyboard shortcut to open the Power Display flyout. |
 | **Monitor refresh delay** | Number of seconds to wait after display changes before refreshing monitors. Increase this if monitors are not detected after hot-plug. |
+| **Tray icon mouse wheel** | Choose which displays are adjusted when you scroll over the Power Display tray icon: **Off**, **Primary display**, or **All displays**. The default is **Off**. |
+| **Mouse wheel increment** | How much brightness changes from tray scrolling, and how much the brightness, contrast, and volume sliders change per mouse-wheel notch. The default is `5`. |
 | **Max compatibility mode** | Use a broader monitor discovery method that can pick up monitors skipped by the standard path. Triggers an immediate rescan when toggled on. |
 | **Restore monitor brightness and color temperature when Power Display launches** | Reapplies your saved settings when Power Display starts. |
-| **Show system tray icon** | Show a Power Display icon in the Windows system tray. |
+| **Show system tray icon** | Show a Power Display icon in the Windows system tray. Turn this on if you want to use tray-icon mouse-wheel brightness control. |
 | **Show profile switcher button** | Show the profile switcher button in the Power Display flyout. |
 | **Show identify monitors button** | Show a button that briefly displays a number on each monitor to help you tell them apart. |
 | **Profiles** | Save and apply named combinations of brightness, contrast, volume, and color temperature across selected monitors. |

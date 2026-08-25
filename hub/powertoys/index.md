@@ -1,7 +1,7 @@
 ---
 title: Microsoft PowerToys - Windows Utilities for Power Users
 description: Microsoft PowerToys includes 25+ free Windows utilities including FancyZones, PowerToys Run, Color Picker, PowerRename, and more. Boost productivity for power users on Windows 10/11.
-ms.date: 04/26/2026
+ms.date: 08/25/2026
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always On Top]
@@ -204,10 +204,18 @@ The currently available utilities include:
         Copy text from anywhere on your screen using OCR.
     :::column-end:::
     :::column:::
+       [![Window Hopper preview showing windows from the focused app](images/window-hopper/window-hopper.png)](window-hopper.md)<br>
+        **[Window Hopper](window-hopper.md)**<br>
+        Cycle between windows that belong to the currently focused app.
+    :::column-end:::
+    :::column:::
        [![Workspaces icon](images/workspaces/workspaces_editor.png)](workspaces.md)<br>
         **[Workspaces](workspaces.md)**<br>
         Launch a set of applications to custom positions with a single click.
     :::column-end:::
+:::row-end:::
+
+:::row:::
     :::column:::
        [![ZoomIt icon](images/zoomit/zoomit.png)](zoomit.md)<br>
         **[ZoomIt](zoomit.md)**<br>

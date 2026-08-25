@@ -1,7 +1,7 @@
 ---
 title: Making your extension discoverable in Command Palette
 description: Learn how to list your Command Palette extension in the Extension Gallery so users can discover it from within Command Palette settings.
-ms.date: 06/04/2026
+ms.date: 08/25/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to list my extension in the Command Palette Extension Gallery.
@@ -24,6 +24,17 @@ The Extension Gallery is powered by the [microsoft/CmdPal-Extensions](https://gi
 Once listed, your extension's detail page is displayed directly in Command Palette, giving users a rich preview before they install.
 
 :::image type="content" source="../images/command-palette/details.png" alt-text="A screenshot of an extension detail page in Command Palette showing the extension description, screenshots, and install button.":::
+
+## Link directly to the Gallery
+
+Command Palette supports `x-cmdpal` links that open the Gallery in Settings:
+
+```text
+x-cmdpal://extensions/gallery
+x-cmdpal://extensions/gallery/{extension-id}
+```
+
+Use `x-cmdpal://extensions/gallery` to open the Gallery landing page, or `x-cmdpal://extensions/gallery/{extension-id}` to open a specific extension detail page. Use the stable gallery `id` for `{extension-id}`. If the ID isn't in the current feed, Command Palette opens the Gallery page instead.
 
 ## Related content
 

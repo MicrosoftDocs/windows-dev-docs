@@ -1,7 +1,7 @@
 ---
 title: FancyZones Window Manager for Windows - PowerToys
 description: FancyZones is a powerful window manager utility in PowerToys that helps you arrange and snap windows into custom layouts for improved productivity. Learn how to create zones and manage windows efficiently.
-ms.date: 08/20/2025
+ms.date: 08/25/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
@@ -51,6 +51,10 @@ Turn on the **Override Windows Snap** toggle and select **Move windows based on:
 ### Window switching
 
 When two or more windows are snapped in the same zone, cycle between the snapped windows in that zone by using the shortcut <kbd>Win</kbd>+<kbd>PgUp/PgDn</kbd>.
+
+### Rotate windows across monitors
+
+Turn on **Rotate windows across monitors** in FancyZones settings to enable monitor rotation mode. Then hold the **Rotation mode shortcut** (default: <kbd>Alt</kbd>+<kbd>X</kbd>) and press <kbd>Left</kbd> or <kbd>Right</kbd> to rotate open windows one monitor over in that direction. FancyZones shows a preview while you hold the shortcut so you can confirm the direction before the move completes.
 
 ### Shortcut keys
 
@@ -168,6 +172,8 @@ In the demo below, we start with a default template applied to the screen and tw
 | Switch between windows in the current zone | Allows cycling activation between windows in the same zone. |
 | Next window | To change the default hotkey, click on the control and then enter the desired key combination. |
 | Previous window | To change the default hotkey, click on the control and then enter the desired key combination. |
+| Rotate windows across monitors | Turns on rotation mode so you can move open windows across all monitors with a shortcut. |
+| Rotation mode shortcut | Choose the shortcut to hold before pressing <kbd>Left</kbd> or <kbd>Right</kbd> to rotate windows across monitors. Default: <kbd>Alt</kbd>+<kbd>X</kbd>. |
 | Override Windows Snap hotkeys (Win + arrow) to move between zones | When this option is checked and FancyZones is running, it overrides the Windows Snap keys: <kbd>⊞ Win</kbd>+<kbd>Left</kbd>, <kbd>⊞ Win</kbd>+<kbd>Right</kbd>, <kbd>⊞ Win</kbd>+<kbd>Up</kbd> and <kbd>⊞ Win</kbd>+<kbd>Down</kbd>. |
 | Move windows based on | **Zone index** allows to use <kbd>⊞ Win</kbd>+<kbd>Left</kbd> and <kbd>⊞ Win</kbd>+<kbd>Right</kbd> to snap a window based on its index. <kbd>⊞ Win</kbd>+<kbd>Up</kbd>, <kbd>⊞ Win</kbd>+<kbd>Down</kbd> are not overridden. <br/>**Relative position** overwrites all <kbd>⊞ Win</kbd>+[arrow keys] and chooses zone to snap relative to the zone layout |
 | Move windows between zones across all monitors | Cleared: snapping with <kbd>⊞ Win</kbd>+[arrow keys] cycles the window through the zones on the current monitor.<br/>Selected: it cycles the window through all the zones on all monitors. |

@@ -1,7 +1,7 @@
 ---
 title: PowerToys File Explorer Add-ons Utility for Windows
 description: PowerToys File Explorer add-ons enable preview pane and thumbnail renderers for SVG, PDF, Markdown, and source code files in Windows. Download and configure these utilities to enhance your file browsing experience.
-ms.date: 08/20/2025
+ms.date: 08/25/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Monaco]
@@ -36,6 +36,14 @@ Expand the **Scalable Vector Graphics** section to change the following settings
 | Setting | Description |
 | :-- | :-- |
 | Checkered shade | Set the background shade for SVG previews. This helps visualize transparent areas in SVG images. |
+
+### Settings for Markdown files previewer
+
+Expand the **Markdown** section to change the following setting.
+
+| Setting | Description |
+| :-- | :-- |
+| Show local images | When enabled, the Markdown preview can display local images referenced by the Markdown file. For local files, PowerToys only loads images from the Markdown document's folder tree. For Markdown files opened from a UNC path, PowerToys also allows images from elsewhere on the same share. Remote and online images remain blocked. This setting is off by default. |
 
 ### Settings for Source code files previewer
 

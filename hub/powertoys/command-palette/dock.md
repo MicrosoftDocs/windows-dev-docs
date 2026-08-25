@@ -1,7 +1,7 @@
 ---
 title: PowerToys Command Palette Dock
 description: Learn how to use the Command Palette Dock, a persistent toolbar that provides quick access to your most-used commands and extensions from any screen edge.
-ms.date: 06/08/2026
+ms.date: 08/25/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: Learn about the Command Palette Dock feature and how to configure it.
@@ -9,14 +9,14 @@ no-loc: [PowerToys, Windows, Insider]
 
 # Command Palette Dock
 
-The Command Palette Dock is a persistent toolbar that stays visible at the edge of your screen, providing instant access to your most-used commands and extensions without needing to open the full Command Palette window.
+The Command Palette Dock is a toolbar that sits on the edge of your screen so you can open your most-used commands and extensions without opening the full Command Palette window.
 
 > [!NOTE]
 > The Dock feature is part of the Command Palette and requires Command Palette to be enabled and running in the background.
 
 ## Enable the Dock
 
-To enable the Dock, open Command Palette settings and toggle the **Enable Dock** option. When enabled, the Dock appears as a toolbar anchored to the edge of your screen.
+To enable the Dock, open Command Palette settings and toggle the **Enable Dock** option. When enabled, the Dock appears as a toolbar anchored to the edge of your screen. You can leave it pinned or turn on auto-hide.
 
 ## Dock layout
 
@@ -26,7 +26,7 @@ The Dock is divided into three regions that organize your pinned commands:
 | :--- | :--- | :--- |
 | **Start** | Left side (or top, for vertical docks) | Primary commands and launchers. By default, includes the Home command and WinGet launcher. |
 | **Center** | Middle | Additional commands you add. Initially empty. |
-| **End** | Right side (or bottom, for vertical docks) | Utility widgets. By default, includes Performance Monitor and Date/Time widgets. |
+| **End** | Right side (or bottom, for vertical docks) | Utility widgets. By default, includes Performance Monitor, Network Speed, and Date/Time bands. |
 
 The Dock displays horizontally when anchored to the top or bottom of the screen, and vertically when anchored to the left or right.
 
@@ -80,6 +80,7 @@ The following settings are available for the Dock in Command Palette settings.
 | Setting | Description |
 | :--- | :--- |
 | Position | Choose which screen edge to anchor the Dock to: **Left**, **Top** (default), **Right**, or **Bottom**. |
+| Size | For **Top** and **Bottom** dock positions, choose **Default** or **Compact**. Compact mode hides subtitles on dock items. |
 | Theme mode | Select which theme to display: **Use system settings** (default), **Light**, or **Dark**. |
 | Material | Select the visual material: **Transparent** or **Acrylic** (default). |
 | Background colorization | Customize the Dock background. Options include **None**, **Accent color** (uses the Windows system accent color), **Custom color** (pick a color tint and intensity), or **Image** (set a background image with brightness, blur, and fit controls). |
@@ -104,13 +105,26 @@ When **Custom color** or **Image** is selected, you can also configure:
 
 The **Bands** section lists all available dock bands provided by installed extensions. Each band has a toggle switch to pin or unpin it from the Dock.
 
+Built-in bands include:
+
+- **Time & Date**: a clock band and a **Notification center** band. The Time & Date extension also adds a **Show seconds on the dock clock** setting.
+- **Performance Monitor**: CPU usage, Memory usage, Network usage, Network speed, Disk usage, GPU usage, and Battery. The Battery band only appears on devices that have a battery. Network metrics combine traffic from all physical adapters by default. Open a network item's actions to browse adapters and set a default adapter. In the extension settings, you can choose bits, decimal bytes, or binary bytes per second for network and disk speeds.
+
+## Behavior settings
+
+The following behavior settings are available for the Dock.
+
+| Setting | Description |
+| :--- | :--- |
+| Always on top | Keep the Dock above other windows, except while an app is full screen. |
+| Auto-hide dock | Collapse the Dock until you hover over its screen edge. If the taskbar or another app is already using auto-hide on that edge, the Dock falls back to pinned mode instead. |
+
 ## Dock behavior
 
-The Dock uses the Windows AppBar API to reserve screen space, so other windows don't overlap it. The Dock:
+The Dock uses the Windows AppBar API to reserve screen space while it is pinned so other windows do not overlap it. The Dock also:
 
-- Stays visible at all times while enabled (auto-hide is not currently supported).
 - Automatically restores its position if Windows Explorer restarts.
-- Cannot be resized or dragged. Its position is controlled by the **Position** setting.
+- Can't be resized or dragged. Its position is controlled by the **Position** setting.
 
 ## Related content
 

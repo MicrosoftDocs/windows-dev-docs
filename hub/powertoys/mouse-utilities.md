@@ -1,7 +1,7 @@
 ---
 title: Mouse Utilities in PowerToys for Windows
 description: Mouse utilities in PowerToys enhance cursor functionality with Find my mouse, Mouse Highlighter, Mouse jump, and Crosshairs features for Windows users.
-ms.date: 08/20/2025
+ms.date: 08/25/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, Mouse, jump]
@@ -60,7 +60,7 @@ From the settings page, you can configure the following options:
 
 ## Mouse Highlighter
 
-Display visual indicators when the left or right mouse buttons are clicked. By default, you can turn mouse highlighting on and off with the <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd> shortcut.
+Display visual indicators when you click the primary or secondary mouse button. By default, you can turn Mouse Highlighter on and off with the <kbd>Win</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd> shortcut.
 
 ### Settings
 
@@ -72,13 +72,18 @@ From the settings page, you can configure the following options:
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to turn mouse highlighting on or off. |
 | Automatically activate on utility startup | When enabled, Mouse Highlighter activates automatically when the utility starts. |
-| Primary button highlight color | The highlighter color for the primary mouse button. |
-| Secondary button highlight color | The highlighter color for the secondary mouse button. |
-| Always highlight color | The highlighter color for the mouse pointer. |
-| Highlight mode | Determines how the cursor is highlighted. **Spotlight** dims the screen to spotlight the cursor. **Circle highlight** highlights the cursor with a circle, while keeping the rest of the screen unaffected. |
-| Radius | The radius of the highlighter, measured in pixels. |
-| Fade delay | How long it takes before a highlight starts to disappear, measured in milliseconds. |
-| Fade duration | Duration of the disappear animation, measured in milliseconds. |
+| Highlight mode | Choose **Spotlight**, **Circle highlight**, or **Ripple**. In a new settings profile, **Ripple** is the default mode. |
+| Primary button highlight color | Sets the primary click color. The default is `#A6BFFF00` (green). |
+| Secondary button highlight color | Sets the secondary click color. The default is `#A600BFFF` (blue). |
+| Always highlight color | Sets the persistent pointer highlight used by **Spotlight** and **Circle highlight**. |
+| Radius (px) | In **Spotlight** and **Circle highlight**, sets the highlight radius. The minimum value is `5`. |
+| Fade delay (ms) | In **Spotlight** and **Circle highlight**, sets how long the highlight waits before it starts to fade. The minimum value is `0`. |
+| Fade duration (ms) | In **Spotlight** and **Circle highlight**, sets how long the fade animation lasts. The minimum value is `0`. |
+| Size (px) | In **Ripple**, sets the pulse size. The default is `60`, and the range is `10` to `300`. |
+| Intensity | In **Ripple**, sets the pulse intensity. The default is `0.7`, and the range is `0.15` to `1.35`. |
+| Duration (ms) | In **Ripple**, sets how long the ripple animation lasts. The default is `480`, and the range is `60` to `2000`. |
+| Follow cursor while held | In **Ripple**, keeps the held ripple attached to the pointer while you drag. This option is on by default. |
+| Show crosshairs on right-click release | In **Ripple**, shows a release pulse when you release the secondary mouse button. This option is on by default. |
 
 ## Mouse jump
 
@@ -86,11 +91,13 @@ From the settings page, you can configure the following options:
 
 Mouse jump allows moving the mouse pointer long distances on a single screen or across multiple screens.
 
+When you open Mouse Jump, you can click the preview to move the pointer to a specific point. In the current WinUI 3 interface, keyboard commands select a monitor instead of a point within the monitor. Press <kbd>1</kbd> through <kbd>9</kbd> or the matching numpad keys to move to a numbered monitor, <kbd>Left</kbd> or <kbd>Right</kbd> to cycle through monitors, <kbd>Home</kbd> or <kbd>End</kbd> to move to the first or last monitor, or <kbd>P</kbd> to move to the primary monitor. Keyboard monitor selection moves the pointer to the center of the selected monitor.
+
 | Setting | Description |
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to activate the mouse jump. |
-| Thumbnail Size | Constrains the thumbnail image to a maximum size. The default size is 1600x1200 pixels. |
-| Appearance | Expand this section to adjust the popup appearance by customizing the colors, borders, spacing, and more. |
+| Thumbnail size | Constrains the preview thumbnail to a maximum size. The default is `1600x1200` pixels. **Maximum width (px)** has a minimum value of `160`, and **Maximum height (px)** has a minimum value of `120`. |
+| Appearance | Expand this section to adjust the preview. **Preview style** offers **Compact**, **Bezelled**, and **Custom** options. You can also use **Copy to Custom preview style** and then adjust the colors, borders, bezel depth, and screen margins. |
 
 ## Mouse pointer crosshairs
 

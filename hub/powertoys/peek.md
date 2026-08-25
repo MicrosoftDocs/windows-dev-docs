@@ -1,7 +1,7 @@
 ---
 title: PowerToys Peek Utility - Preview Files Without Opening Apps
 description: Preview files instantly with PowerToys Peek utility for Windows. View images, documents, videos, and code without opening multiple apps. Download PowerToys today.
-ms.date: 06/08/2026
+ms.date: 08/25/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Peek, Win]
 # customer intent: As a Windows power user, I want to learn how to configure and use the Peek utility in PowerToys.
@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Peek, Win]
 
 # Peek utility
 
-PowerToys Peek utility is a system-wide tool for Windows that lets you preview file content without opening multiple applications or interrupting your workflow. This utility offers a seamless and quick file preview experience for various file types, including images, Office documents, videos, web pages, Markdown files, text files, and developer files. Peek also displays summary information about folders, helping you work more efficiently.
+PowerToys Peek utility is a system-wide tool for Windows that lets you preview file content without opening multiple applications or interrupting your workflow. This utility offers a seamless and quick file preview experience for various file types, including images, Office documents, videos, web pages, Markdown files, text files, and developer files. For developer workflows, Peek's source code preview includes project and plugin manifest files such as Unreal Engine `.uproject` and `.uplugin` files. Peek also displays summary information about folders, helping you work more efficiently.
 
 :::image type="content" source="images/peek/peek.png" alt-text="Screenshot of PowerToys Peek utility displaying a file preview window with navigation options and file information overlay.":::
 
@@ -64,6 +64,8 @@ From the settings page, the following options can be configured:
 | :--- | :--- |
 | Activation shortcut | The customizable keyboard command to open Peek for the selected file(s). New starting in PowerToys 0.95 - <kbd>Space</kbd> is now the default keyboard command. |
 | Always run without elevation, even when PowerToys is elevated | Tries to run Peek without elevated permissions, to fix access to network shares. |
+| Peek window is always on top | Keeps the Peek window above other windows while it is open. Default: Off. |
+| Show Peek icon on the taskbar | Shows the Peek window on the taskbar and in window switchers while it is open. Default: On. |
 | Automatically close the Peek window after it loses focus |  |
 | Show file preview tooltip | When enabled, hovering the preview shows a tooltip with filename, type, date modified, and size. Turn this off to disable the on-hover tooltip. |
 | Confirm before deleting files | When enabled, Peek shows a confirmation dialog before deleting files. |
