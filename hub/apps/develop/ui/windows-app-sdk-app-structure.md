@@ -4,7 +4,7 @@ description: Combine Mica backdrop, custom title bar, NavigationView, and InfoBa
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 07/15/2026
+ms.date: 08/26/2026
 ---
 
 # Structure a modern WinUI 3 desktop app
@@ -50,22 +50,9 @@ For more options and C++ examples, see [Apply Mica or Acrylic materials in deskt
 
 ## Set up a custom title bar
 
-Extend your app content into the title bar area for a seamless look. Set this up in your `MainWindow` constructor or `Loaded` handler:
+Use the [TitleBar](/windows/apps/develop/ui/controls/title-bar) control to render the app icon, title, and an optional subtitle in the title bar area. The control reserves space for the system caption buttons and the minimum drag region for you, so you don't have to calculate caption-button padding manually.
 
-```csharp
-public MainWindow()
-{
-    InitializeComponent();
-
-    // Extend content into the title bar area
-    ExtendsContentIntoTitleBar = true;
-
-    // Tell the system which element is the draggable title bar region
-    SetTitleBar(AppTitleBar);
-}
-```
-
-In XAML, define the title bar element:
+Define the title bar in XAML:
 
 ```xaml
 <Grid>
@@ -74,27 +61,39 @@ In XAML, define the title bar element:
         <RowDefinition Height="*" />    <!-- Content row -->
     </Grid.RowDefinitions>
 
-    <!-- Custom title bar: right padding reserves space for caption buttons -->
-    <Grid x:Name="AppTitleBar" Height="48"
-          Padding="16,0,188,0">
-        <StackPanel Orientation="Horizontal" Spacing="12">
-            <Image Source="/Assets/AppIcon.png" Width="16" Height="16"
-                   VerticalAlignment="Center" />
-            <TextBlock Text="My App" Style="{StaticResource CaptionTextBlockStyle}"
-                       VerticalAlignment="Center" />
-        </StackPanel>
-    </Grid>
+    <TitleBar x:Name="AppTitleBar"
+              Title="My App"
+              Subtitle="Sample code">
+        <TitleBar.IconSource>
+            <ImageIconSource ImageSource="/Assets/AppIcon.png" />
+        </TitleBar.IconSource>
+    </TitleBar>
 
     <!-- Main content below the title bar -->
     <NavigationView Grid.Row="1" ... />
 </Grid>
 ```
 
+Then, in your `MainWindow` constructor, hide the default system title bar and register the `TitleBar` control as the draggable region:
+
+```csharp
+public MainWindow()
+{
+    InitializeComponent();
+
+    // Hide the default system title bar.
+    ExtendsContentIntoTitleBar = true;
+
+    // Use the TitleBar control as the draggable title bar region.
+    SetTitleBar(AppTitleBar);
+}
+```
+
 > [!IMPORTANT]
 > Keep app identity in the title bar only. Don't repeat the app name or icon in the page content, because this creates visual clutter and wastes vertical space.
 
 > [!NOTE]
-> When you extend content into the title bar, you must account for the system caption button area (minimize, maximize, close). The hard-coded right padding of `188` in the example above is a reasonable default for 100% scale. For a precise, DPI-aware approach, read `AppWindow.TitleBar.RightInset` and `AppWindow.TitleBar.LeftInset` at runtime and update the padding when the layout changes. For details, see [Title bar customization](../title-bar.md).
+> The `TitleBar` control is available starting in [Windows App SDK 1.7](/windows/apps/windows-app-sdk/release-notes/windows-app-sdk-1-7). If the control isn't available in your project, update to Windows App SDK 1.7 or later. The control also provides built-in back and pane-toggle buttons that you can use with `NavigationView`, and it can host other content. For the full list of properties, see [Title bar](/windows/apps/develop/ui/controls/title-bar).
 
 For the full title bar API reference, see [Title bar customization](../title-bar.md).
 
@@ -105,12 +104,12 @@ Use [NavigationView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.contro
 ```xaml
 <NavigationView x:Name="NavView"
                 PaneDisplayMode="Left"
+                IsSettingsVisible="True"
                 IsBackButtonVisible="Collapsed"
                 SelectionChanged="NavView_SelectionChanged">
     <NavigationView.MenuItems>
         <NavigationViewItem Icon="Home" Content="Home" Tag="home" />
         <NavigationViewItem Icon="Library" Content="Library" Tag="library" />
-        <NavigationViewItem Icon="Setting" Content="Settings" Tag="settings" />
     </NavigationView.MenuItems>
 
     <!-- Page content appears here -->
@@ -118,17 +117,22 @@ Use [NavigationView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.contro
 </NavigationView>
 ```
 
+`NavigationView` shows a built-in **Settings** item when `IsSettingsVisible` is `True` (the default), so you don't need to add your own `NavigationViewItem` for settings. Handle it with the `IsSettingsSelected` flag on the `SelectionChanged` event args:
+
 ```csharp
 private void NavView_SelectionChanged(NavigationView sender,
     NavigationViewSelectionChangedEventArgs args)
 {
-    if (args.SelectedItemContainer?.Tag is string tag)
+    if (args.IsSettingsSelected)
+    {
+        ContentFrame.Navigate(typeof(SettingsPage));
+    }
+    else if (args.SelectedItemContainer?.Tag is string tag)
     {
         Type pageType = tag switch
         {
             "home" => typeof(HomePage),
             "library" => typeof(LibraryPage),
-            "settings" => typeof(SettingsPage),
             _ => typeof(HomePage)
         };
         ContentFrame.Navigate(pageType);
@@ -175,7 +179,7 @@ If individual content cards need a background, use the layered `CardBackgroundFi
 
 ## MainWindow.xaml example
 
-Here's a starter `MainWindow.xaml` that brings the elements together. For production use, add caption button inset handling as described in [Title bar customization](../title-bar.md).
+Here's a starter `MainWindow.xaml` that brings the elements together. The `TitleBar` control reserves space for the system caption buttons automatically, so no manual inset handling is required.
 
 ```xaml
 <Window
@@ -194,25 +198,24 @@ Here's a starter `MainWindow.xaml` that brings the elements together. For produc
         </Grid.RowDefinitions>
 
         <!-- Title bar -->
-        <Grid x:Name="AppTitleBar" Height="48">
-            <StackPanel Orientation="Horizontal" Spacing="12" Margin="16,0">
-                <Image Source="/Assets/AppIcon.png" Width="16" Height="16"
-                       VerticalAlignment="Center" />
-                <TextBlock Text="My App" Style="{StaticResource CaptionTextBlockStyle}"
-                           VerticalAlignment="Center" />
-            </StackPanel>
-        </Grid>
+        <TitleBar x:Name="AppTitleBar"
+                  Title="My App"
+                  Subtitle="Sample code">
+            <TitleBar.IconSource>
+                <ImageIconSource ImageSource="/Assets/AppIcon.png" />
+            </TitleBar.IconSource>
+        </TitleBar>
 
         <!-- Navigation shell -->
         <NavigationView x:Name="NavView"
                         Grid.Row="1"
                         PaneDisplayMode="Left"
+                        IsSettingsVisible="True"
                         IsBackButtonVisible="Collapsed"
                         SelectionChanged="NavView_SelectionChanged">
             <NavigationView.MenuItems>
                 <NavigationViewItem Icon="Home" Content="Home" Tag="home" />
                 <NavigationViewItem Icon="Library" Content="Library" Tag="library" />
-                <NavigationViewItem Icon="Setting" Content="Settings" Tag="settings" />
             </NavigationView.MenuItems>
 
             <Grid>
