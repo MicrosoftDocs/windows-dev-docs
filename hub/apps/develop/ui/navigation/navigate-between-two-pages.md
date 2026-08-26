@@ -5,7 +5,7 @@ ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
-ms.date: 04/03/2025
+ms.date: 08/26/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 dev_langs:
@@ -115,6 +115,9 @@ To add a new item to your app:
 1. In the **Add New Item** dialog box, select the **WinUI** node in the left pane, then choose **Blank Page** in the middle pane.
 1. In the **Name** box, enter `MainPage` and press the **Add** button.
 1. Repeat steps 1-4 to add the second page, but in the **Name** box, enter `Page2`.
+
+> [!TIP]
+> Use the **Blank Page** item template to add pages. This template sets the XAML file's **Build Action** to **Page**, which generates the page's partial class and its `InitializeComponent` method so that the XAML file connects to its code-behind. If you add a page a different way and the compiler reports that `InitializeComponent` isn't defined, select the XAML file in **Solution Explorer** and confirm that its **Build Action** property is set to **Page**.
 
 Now, these files should be listed as part of your `BasicNavigation` project.
 
