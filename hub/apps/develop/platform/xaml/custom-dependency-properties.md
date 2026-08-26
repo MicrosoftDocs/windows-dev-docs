@@ -2,7 +2,7 @@
 description: Explains how to define and implement custom dependency properties for a WinUI 3 or UWP app using C++ or C# with XAML definitions for UI.
 title: Custom dependency properties
 ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
-ms.date: 07/27/2026
+ms.date: 08/21/2026
 ms.topic: article
 keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
@@ -455,11 +455,11 @@ There is a general principle that class constructors should not call virtual met
 
 ### Registering the dependency properties for C++/CX apps
 
-The implementation for registering a property in C++/CX is trickier than C#, both because of the separation into header and implementation file and also because initialization at the root scope of the implementation file is a bad practice. (Visual C++ component extensions (C++/CX) puts static initializer code from the root scope directly into **DllMain**, whereas C# compilers assign the static initializers to classes and thus avoid **DllMain** load lock issues.). The best practice here is to declare a helper function that does all your dependency property registration for a class, one function per class. Then for each custom class your app consumes, you'll have to reference the helper registration function that's exposed by each custom class you want to use. Call each helper registration function once as part of the [**Application constructor**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.-ctor) (`App::App()`), prior to `InitializeComponent`. That constructor only runs when the app is really referenced for the first time, it won't run again if a suspended app resumes, for example. Also, as seen in the previous C++ registration example, the **nullptr** check around each [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register) call is important: it's insurance that no caller of the function can register the property twice. A second registration call would probably crash your app without such a check because the property name would be a duplicate. You can see this implementation pattern in the [XAML user and custom controls sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample) if you look at the code for the C++/CX version of the sample.
+The implementation for registering a property in C++/CX is trickier than C#, both because of the separation into header and implementation file and also because initialization at the root scope of the implementation file is a bad practice. (Visual C++ component extensions (C++/CX) puts static initializer code from the root scope directly into **DllMain**, whereas C# compilers assign the static initializers to classes and thus avoid **DllMain** load lock issues.). The best practice here is to declare a helper function that does all your dependency property registration for a class, one function per class. Then for each custom class your app consumes, you'll have to reference the helper registration function that's exposed by each custom class you want to use. Call each helper registration function once as part of the [**Application constructor**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.-ctor) (`App::App()`), prior to `InitializeComponent`. That constructor only runs when the app is really referenced for the first time, it won't run again if a suspended app resumes, for example. Also, as seen in the previous C++ registration example, the **nullptr** check around each [**Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register) call is important: it's insurance that no caller of the function can register the property twice. A second registration call would probably crash your app without such a check because the property name would be a duplicate.
 
 ## Related topics
 
 - [**DependencyObject**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.DependencyObject)
 - [**DependencyProperty.Register**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty.register)
 - [Dependency properties overview](dependency-properties-overview.md)
-- [XAML user and custom controls sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20user%20and%20custom%20controls%20sample)
+- [WinUI Gallery custom user controls sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/CustomUserControls)

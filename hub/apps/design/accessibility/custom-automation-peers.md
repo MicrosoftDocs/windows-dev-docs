@@ -4,7 +4,7 @@ ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
 title: Custom automation peers
 label: Custom automation peers
 template: detail.hbs
-ms.date: 03/17/2026
+ms.date: 08/21/2026
 ms.topic: article
 keywords: windows 11, winui, winapp sdk
 ms.localizationpriority: medium
@@ -284,7 +284,7 @@ For a list of UI Automation provider patterns supported by WinUI, see [**Microso
 
 A peer can report that it supports more than one pattern. If so, the override should include return path logic for each supported [**PatternInterface**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Automation.Peers.PatternInterface) value and return the peer in each matching case. It is expected that the caller will request only one interface at a time, and it is up to the caller to cast to the expected interface.
 
-Here's an example of a [**GetPatternCore**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.automationpeer.getpatterncore) override for a custom peer. It reports the support for two patterns, [**IRangeValueProvider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Automation.Provider.IRangeValueProvider) and [**IToggleProvider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Automation.Provider.IToggleProvider). The control here is a media display control that can display as full-screen (the toggle mode) and that has a progress bar within which users can select a position (the range control). This code came from the [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) (archived legacy sample).
+Here's an example of a [**GetPatternCore**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.automationpeer.getpatterncore) override for a custom peer. It reports the support for two patterns, [**IRangeValueProvider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Automation.Provider.IRangeValueProvider) and [**IToggleProvider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Automation.Provider.IToggleProvider). The control here is a media display control that can display as full-screen (the toggle mode) and that has a progress bar within which users can select a position (the range control). This example is adapted from a legacy XAML accessibility sample. For a maintained WinUI 3 accessibility example, see the [WinUI Gallery screen reader accessibility sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/AccessibilityScreenReader).
 
 ```csharp
 protected override object GetPatternCore(PatternInterface patternInterface)
@@ -460,7 +460,7 @@ More generally, be conservative with exceptions. Many clients cannot convert pro
 
 ## Related topics  
 * [Accessibility overview](accessibility-overview.md)
-* [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample)
+* [WinUI Gallery screen reader accessibility sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/AccessibilityScreenReader)
 * [**FrameworkElementAutomationPeer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.frameworkelementautomationpeer)
 * [**AutomationPeer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.automationpeer)
 * [**OnCreateAutomationPeer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.oncreateautomationpeer)

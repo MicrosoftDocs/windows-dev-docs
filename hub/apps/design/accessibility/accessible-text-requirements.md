@@ -4,7 +4,7 @@ ms.assetid: BA689C76-FE68-4B5B-9E8D-1E7697F737E6
 title: Accessible text requirements
 label: Accessible text requirements
 template: detail.hbs
-ms.date: 03/23/2026
+ms.date: 08/21/2026
 ms.topic: article
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -187,6 +187,6 @@ These types have an **IsTextScaleFactorEnabled** property:
 - [Text scaling](../../develop/input/text-scaling.md)
 - [Accessibility overview](accessibility-overview.md)
 - [Basic accessibility information](basic-accessibility-information.md)
-- [XAML text display sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20display%20sample%20(Windows%208)) (archived legacy sample)
-- [XAML text editing sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208)) (archived legacy sample)
-- [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) (archived legacy sample)
+- [WinUI Gallery TextBlock sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/TextBlock)
+- [WinUI Gallery TextBox sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/TextBox)
+- [WinUI Gallery screen reader accessibility sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/AccessibilityScreenReader)

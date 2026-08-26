@@ -5,7 +5,7 @@ ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
 label: Custom text input
 template: detail.hbs
 keywords: keyboard, text, core text, custom text, Text Services Framework, input, user interactions
-ms.date: 05/30/2025
+ms.date: 08/21/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -162,7 +162,3 @@ There will be times the [**Range**](/uwp/api/windows.ui.text.core.coretexttextre
 ### Samples
 
 - [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomEditControl)
-
-### Archive samples
-
-- [XAML text editing sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BVB%5D-Windows%208%20app%20samples/VB/Windows%208%20app%20samples/XAML%20text%20editing%20sample%20(Windows%208))

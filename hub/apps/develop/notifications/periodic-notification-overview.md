@@ -3,7 +3,7 @@ description: Periodic notifications, which are also called polled notifications,
 title: Periodic notification overview
 ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 08/24/2026
 ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -19,7 +19,8 @@ Periodic notifications, which are also called polled notifications, update tiles
 
 Periodic notifications enable your app to get live tile updates with minimal cloud service and client investment. Periodic notifications are a good delivery method for distributing the same content to a wide audience.
 
-**Note**   You can learn more by downloading the [Push and periodic notifications sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) for Windows 8.1 and re-using its source code in your Windows 10 app.
+> [!NOTE]
+> The [Windows App SDK push notifications sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push) demonstrates current channel registration and push activation behavior. It doesn't implement the legacy periodic tile or badge polling described on this page.
 
  
 
@@ -97,7 +98,6 @@ You must provide a unique URI for each notification that you'd like Windows to d
 ## Related topics
 
 
-* [Guidelines for periodic notifications]()
 * [How to set up periodic notifications for badges](/previous-versions/windows/apps/hh761476(v=win.10))
 * [How to set up periodic notifications for tiles](/previous-versions/windows/apps/hh761476(v=win.10))
  

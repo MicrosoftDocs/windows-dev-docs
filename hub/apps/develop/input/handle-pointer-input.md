@@ -5,7 +5,7 @@ ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
 keywords: pen, mouse, touchpad, touch, pointer, input, user interaction
-ms.date: 07/15/2026
+ms.date: 08/24/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -41,7 +41,7 @@ Windows apps can listen for the following pointer events:
 > Constrain pointer input to a specific UI element by calling  [**CapturePointer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.capturepointer) on that element within a pointer event handler. When a pointer is captured by an element, only that object receives pointer input events, even when the pointer moves outside the bounding area of the object. The [**IsInContact**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpoint.isincontact) (mouse button pressed, touch or stylus in contact) must be true for **CapturePointer** to be successful.
 
 | Event | Description |
-|---|---|
+| --- | --- |
 | [**PointerCanceled**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointercanceled) | Occurs when a pointer is canceled by the platform. This can occur in the following circumstances:<br>&#8226; Touch pointers are canceled when a pen is detected within range of the input surface.<br>&#8226; An active contact is not detected for more than 100 ms.<br>&#8226; Monitor/display is changed (resolution, settings, multi-mon configuration).<br>&#8226; The desktop is locked or the user has logged off.<br>&#8226; The number of simultaneous contacts exceeded the number supported by the device. |
 | [**PointerCaptureLost**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointercapturelost) | Occurs when another UI element captures the pointer, the pointer was released, or another pointer was programmatically captured.<br>**Note:** There is no corresponding pointer capture event. |
 | [**PointerEntered**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerentered) | Occurs when a pointer enters the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.<br>&#8226; Touch requires a finger contact to fire this event, either from a direct touch down on the element or from moving into the bounding area of the element.<br>&#8226; Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.<br>&#8226; Like touch, pen fires this event with a direct pen down on the element or from moving into the bounding area of the element. However, pen also has a hover state ([IsInRange](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpointproperties.isinrange)) that, when true, fires this event. |
@@ -49,7 +49,7 @@ Windows apps can listen for the following pointer events:
 | [**PointerMoved**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointermoved) | Occurs when a pointer changes coordinates, button state, pressure, tilt, or contact geometry (for example, width and height) within the bounding area of an element. This can happen in slightly different ways for touch, touchpad, mouse, and pen input.<br>&#8226; Touch requires a finger contact and fires this event only when in contact within the bounding area of the element.<br>&#8226; Mouse and touchpad both have an on-screen cursor that is always visible and fires this event even if no mouse or touchpad button is pressed.<br>&#8226; Like touch, pen fires this event when in contact within the bounding area of the element. However, pen also has a hover state ([IsInRange](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.pointerpointproperties.isinrange)) that, when true and within the bounding area of the element, fires this event. |
 | [**PointerPressed**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerpressed) | Occurs when the pointer indicates a press action (such as a touch down, mouse button down, pen down, or touchpad button down) within the bounding area of an element.<br>[CapturePointer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.capturepointer) must be called from the handler for this event. |
 | [**PointerReleased**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerreleased) | Occurs when the pointer indicates a release action (such as a touch up, mouse button up, pen up, or touchpad button up) within the bounding area of an element or, if the pointer is captured, outside the bounding area. |
-| [**PointerWheelChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerwheelchanged) | Occurs when the mouse wheel is rotated.<br>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [PointerMoved](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointermoved) event. | 
+| [**PointerWheelChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointerwheelchanged) | Occurs when the mouse wheel is rotated.<br>Mouse input is associated with a single pointer assigned when mouse input is first detected. Clicking a mouse button (left, wheel, or right) creates a secondary association between the pointer and that button through the [PointerMoved](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.pointermoved) event. |
 
 ## Pointer event example
 
@@ -890,12 +890,11 @@ Finally, we define our basic pointer event handlers in the MainPage.xaml.cs code
 - [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
 - [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
 - [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+- [Windows App SDK GestureRecognizer sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui)
+- [Win32 touch hit-testing sample](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/TouchHitTesting)
 
 ### Archive samples
 
 - [Input: XAML user input events sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20XAML%20user%20input%20events%20sample)
 - [Input: Device capabilities sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Input%20Device%20capabilities%20sample%20(Windows%208))
-- [Input: Manipulations and gestures sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Gestures%20and%20manipulations%20with%20GestureRecognizer)
-- [Input: Touch hit testing sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20desktop%20samples/%5BC%2B%2B%5D-Windows%208%20desktop%20samples/C%2B%2B/Windows%208%20desktop%20samples/Input%20Touch%20hit%20testing%20sample)
-- [XAML scrolling, panning, and zooming sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Universal%20Windows%20app%20samples/111487-Universal%20Windows%20app%20samples/XAML%20scrolling%2C%20panning%2C%20and%20zooming%20sample)
 - [Input: Simplified ink sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Input%20Simplified%20ink%20sample)

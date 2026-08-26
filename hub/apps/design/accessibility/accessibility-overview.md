@@ -4,7 +4,7 @@ ms.assetid: AA053196-F331-4CBE-B032-4E9CBEAC699C
 title: Accessibility overview
 label: Accessibility overview
 template: detail.hbs
-ms.date: 07/22/2026
+ms.date: 08/21/2026
 ms.topic: concept-article
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -142,7 +142,7 @@ For more info about accessibility declarations and publishing your app, see [Acc
 ## Related topics
 
 - [Microsoft.UI.Xaml.Automation](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation)
-- [XAML accessibility sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/master/Official%20Windows%20Platform%20Sample/XAML%20accessibility%20sample) (archived legacy sample)
+- [WinUI Gallery screen reader accessibility sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/AccessibilityScreenReader)
 - [Accessibility overview](accessibility-overview.md)
 - [Get started with Narrator](https://support.microsoft.com/help/22798/windows-10-complete-guide-to-narrator)
 - [Accessibility Insights](https://accessibilityinsights.io/) — find and fix accessibility issues in Windows apps

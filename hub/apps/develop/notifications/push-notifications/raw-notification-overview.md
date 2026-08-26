@@ -3,7 +3,7 @@ description: Learn about raw notifications, which are short, general purpose pus
 title: Raw notification overview
 ms.assetid: A867C75D-D16E-4AB5-8B44-614EEB9179C7
 template: detail.hbs
-ms.date: 05/19/2017
+ms.date: 08/24/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -107,11 +107,10 @@ For each app, only one background task can run at a time. If a background task i
 ## Other resources
 
 
-You can learn more by downloading the [Raw notifications sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Raw%20notifications%20sample%20(Windows%208)) for Windows 8.1, and the [Push and periodic notifications sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) for Windows 8.1, and re-using their source code in your Windows 10 app.
+This UWP article describes the legacy `PushNotificationTrigger` background-task behavior. For current Windows App SDK channel registration and foreground or background raw push activation through `PushNotificationManager`, see the [Windows App SDK push notifications sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push). The current sample doesn't use the UWP `PushNotificationTrigger` background-task registration model.
 
 ## Related topics
 
-* [Guidelines for raw notifications]()
 * [Quickstart: Creating and registering a raw notification background task](/previous-versions/windows/apps/jj676800(v=win.10))
 * [Quickstart: Intercepting push notifications for running apps](/previous-versions/windows/apps/jj709908(v=win.10))
 * [**RawNotification**](/uwp/api/Windows.Networking.PushNotifications.RawNotification)

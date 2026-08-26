@@ -3,7 +3,7 @@ description: The Windows Push Notification Services (WNS) enables third-party de
 title: Windows Push Notification Services (WNS) overview
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.date: 04/09/2026
+ms.date: 08/21/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -41,7 +41,7 @@ After the app has successfully created a channel URI, it sends it to its cloud s
 
 ### Important notes
 
--   We do not guarantee that the notification channel URI for an app will always remain the same. We advise that the app requests a new channel every time it runs and updates its service when the URI changes. The developer should never modify the channel URI and should consider it as a black-box string. At this time, channel URIs expire after 30 days. If your Windows 10 app will periodically renew its channel in the background then you can download the [Push and periodic notifications sample](https://github.com/microsoftarchive/msdn-code-gallery-microsoft/tree/411c271e537727d737a53fa2cbe99eaecac00cc0/Official%20Windows%20Platform%20Sample/Windows%208%20app%20samples/%5BC%23%5D-Windows%208%20app%20samples/C%23/Windows%208%20app%20samples/Push%20and%20periodic%20notifications%20client-side%20sample%20(Windows%208)) for Windows 8.1 and re-use its source code and/or the pattern it demonstrates.
+-   We do not guarantee that the notification channel URI for an app will always remain the same. We advise that the app requests a new channel every time it runs and updates its service when the URI changes. The developer should never modify the channel URI and should consider it as a black-box string. At this time, channel URIs expire after 30 days. For current Windows App SDK channel registration and foreground or background push activation, see the [Windows App SDK push notifications sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Notifications/Push).
 -   The interface between the cloud service and the client app is implemented by you, the developer. We recommend that the app go through an authentication process with its own service and transmit data over a secure protocol such as HTTPS.
 -   It is important that the cloud service always ensures that the channel URI uses the domain "notify.windows.com". The service should never push notifications to a channel on any other domain. If the callback for your app is ever compromised, a malicious attacker could submit a channel URI to spoof WNS. Without inspecting the domain, your cloud service could potentially disclose information to this attacker unknowingly. The subdomain of the channel URI is subject to change and should not be considered when validating the channel URI.
 -   If your cloud service attempts to deliver a notification to an expired channel, WNS will return [response code 410](push-request-response-headers.md). In response to that code, your service should no longer attempt to send notifications to that URI.
