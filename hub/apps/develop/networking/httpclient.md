@@ -1,7 +1,7 @@
 ---
 description: Use HttpClient and the rest of the Windows.Web.Http namespace API to send and receive information using the HTTP 2.0 and HTTP 1.1 protocols.
 title: HttpClient
-ms.date: 06/25/2026
+ms.date: 08/25/2026
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
@@ -310,6 +310,124 @@ int main()
     }
 }
 ```
+
+## Handle errors
+
+A call made with [**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) can fail in two distinct ways, and you handle each one differently.
+
+- **The server responds with an error status code.** The request completes, but the server returns a 4xx or 5xx status code (for example, 404 Not Found or 503 Service Unavailable). This *doesn't* throw an exception. The `GetAsync` or `PostAsync` call returns normally with an [**HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage) whose [**IsSuccessStatusCode**](/uwp/api/windows.web.http.httpresponsemessage.issuccessstatuscode) property is `false`.
+- **The request fails before a response is received.** The client can't complete the exchange at all (for example, there's no network connection, the host name doesn't resolve, the connection times out, or TLS negotiation fails). This throws an exception.
+
+Because a returned error status code doesn't throw, checking only for exceptions isn't enough. Inspect the response *and* catch exceptions.
+
+### Check the response status code
+
+Read [**HttpResponseMessage.IsSuccessStatusCode**](/uwp/api/windows.web.http.httpresponsemessage.issuccessstatuscode) to test whether the server returned a success (2xx) code. To branch on the specific code, read [**HttpResponseMessage.StatusCode**](/uwp/api/windows.web.http.httpresponsemessage.statuscode) (an [**HttpStatusCode**](/uwp/api/windows.web.http.httpstatuscode) value) and [**ReasonPhrase**](/uwp/api/windows.web.http.httpresponsemessage.reasonphrase).
+
+Calling [**EnsureSuccessStatusCode**](/uwp/api/windows.web.http.httpresponsemessage.ensuresuccessstatuscode), as the earlier examples do, is a shortcut that throws an exception when the status code isn't a success code, so you can handle both failure modes in a single `catch` block. Call it only when you want a non-success code to be treated as an error. If you want to read the response body of a 4xx or 5xx reply, check `IsSuccessStatusCode` instead.
+
+```csharp
+Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
+Uri requestUri = new Uri("https://www.contoso.com");
+
+Windows.Web.Http.HttpResponseMessage response = await httpClient.GetAsync(requestUri);
+
+if (response.IsSuccessStatusCode)
+{
+    string body = await response.Content.ReadAsStringAsync();
+    // Process the successful response.
+}
+else
+{
+    // The server responded, but with an error status code.
+    System.Diagnostics.Debug.WriteLine($"Request failed: {(int)response.StatusCode} {response.StatusCode} ({response.ReasonPhrase})");
+}
+```
+
+### Classify a network exception
+
+When a request throws before a response is received (for example, the name can't be resolved, or the connection fails or times out), the exception's `HResult` identifies the underlying network error. Pass it to [**Windows.Web.WebError.GetStatus**](/uwp/api/windows.web.weberror.getstatus) to get a [**WebErrorStatus**](/uwp/api/windows.web.weberrorstatus) value that describes the cause (for example, `HostNameNotResolved`, `CannotConnect`, `Timeout`, or `ConnectionReset`). Use it to decide whether to notify the user, fall back, or retry.
+
+`WebError.GetStatus` doesn't apply to HTTP error responses (4xx or 5xx status codes), because the server did respond. Check [**HttpResponseMessage.IsSuccessStatusCode**](/uwp/api/windows.web.http.httpresponsemessage.issuccessstatuscode) or [**HttpResponseMessage.StatusCode**](/uwp/api/windows.web.http.httpresponsemessage.statuscode) to handle those instead of calling `EnsureSuccessStatusCode`.
+
+```csharp
+Windows.Web.Http.HttpClient httpClient = new Windows.Web.Http.HttpClient();
+Uri requestUri = new Uri("https://www.contoso.com");
+
+try
+{
+    Windows.Web.Http.HttpResponseMessage response = await httpClient.GetAsync(requestUri);
+    if (!response.IsSuccessStatusCode)
+    {
+        // Handle the non-success HTTP status code (for example, 404 Not Found or 503 Service Unavailable).
+        System.Diagnostics.Debug.WriteLine($"HTTP error: {(int)response.StatusCode} {response.StatusCode}");
+        return;
+    }
+    string body = await response.Content.ReadAsStringAsync();
+    // Process the successful response.
+}
+catch (Exception ex)
+{
+    Windows.Web.WebErrorStatus status = Windows.Web.WebError.GetStatus(ex.HResult);
+
+    switch (status)
+    {
+        case Windows.Web.WebErrorStatus.HostNameNotResolved:
+        case Windows.Web.WebErrorStatus.CannotConnect:
+        case Windows.Web.WebErrorStatus.Timeout:
+        case Windows.Web.WebErrorStatus.ConnectionReset:
+            // A transient connectivity problem. Retrying with backoff may succeed.
+            System.Diagnostics.Debug.WriteLine($"Network error: {status}.");
+            break;
+        case Windows.Web.WebErrorStatus.Unknown:
+            // GetStatus couldn't map the HRESULT to a WebErrorStatus value.
+            System.Diagnostics.Debug.WriteLine($"Unmapped error. HRESULT: 0x{ex.HResult:X8} {ex.Message}");
+            break;
+        default:
+            System.Diagnostics.Debug.WriteLine($"Web error: {status}");
+            break;
+    }
+}
+```
+
+The same pattern applies in C++/WinRT, using [**winrt::hresult_error::code**](/uwp/cpp-ref-for-winrt/error-handling/hresult-error#hresult_errorcode-function) as the input to `GetStatus`.
+
+```cppwinrt
+// #include <winrt/Windows.Web.h>
+try
+{
+    auto response{ httpClient.GetAsync(requestUri).get() };
+    if (!response.IsSuccessStatusCode())
+    {
+        // Handle the non-success HTTP status code (for example, 404 Not Found or 503 Service Unavailable).
+    }
+    else
+    {
+        auto body{ response.Content().ReadAsStringAsync().get() };
+        // Process the successful response.
+    }
+}
+catch (winrt::hresult_error const& ex)
+{
+    Windows::Web::WebErrorStatus status{ Windows::Web::WebError::GetStatus(ex.code()) };
+
+    if (status == Windows::Web::WebErrorStatus::HostNameNotResolved ||
+        status == Windows::Web::WebErrorStatus::CannotConnect ||
+        status == Windows::Web::WebErrorStatus::Timeout ||
+        status == Windows::Web::WebErrorStatus::ConnectionReset)
+    {
+        // A transient connectivity problem. Retrying with backoff may succeed.
+    }
+    else
+    {
+        // Inspect status, or fall back to ex.code() and ex.message().
+    }
+}
+```
+
+### Retry transient failures
+
+[**HttpClient**](/uwp/api/Windows.Web.Http.HttpClient) doesn't retry failed requests for you. For transient failures (the connectivity errors shown above, or server codes such as 429 Too Many Requests, 503 Service Unavailable, and 504 Gateway Timeout), retry the request yourself using exponential backoff, and honor the `Retry-After` response header when the server sends one. Cap the number of attempts, and don't retry non-transient errors such as 400 Bad Request or 404 Not Found.
 
 ## Exceptions in Windows.Web.Http
 
