@@ -2,7 +2,7 @@
 title: Windows Search web search providers
 description: Learn how to integrate into the Windows Search experience. 
 ms.topic: article
-ms.date: 09/07/2023
+ms.date: 08/24/2026
 ms.localizationpriority: medium
 ---
 
@@ -163,7 +163,7 @@ The query string parameters passed to the suggestion endpoint are the following.
 
 ### OPTIONS request and Cross-Origin Resource Sharing (CORS)
 
-Search providers must support the OPTIONS request method and respond to this request with HTTP OK. If the search provider endpoint is using CORS, the Windows search client will send out a HTTP OPTIONS request before each GET request.
+The Windows Search client sends an HTTP OPTIONS (CORS preflight) request before each GET request. Search providers must support the OPTIONS request method and respond with HTTP 200 OK.
 
 ## Implement a gleam icon endpoint
 
@@ -239,5 +239,4 @@ If an empty payload is received, that will clear the active gleam icon and no gl
 
 
 ## Related articles
-
 
