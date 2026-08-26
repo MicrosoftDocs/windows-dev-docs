@@ -56,7 +56,7 @@ These are the Microsoft Store Developer CLI available commands:
 | [reconfigure](./commands.md#reconfigure-command) | Re-configure the Microsoft Store Developer CLI.                                                                                    |
 | [settings](./commands.md#settings-command)       | Change settings of the Microsoft Store Developer CLI.                                                                              |
 | [apps](./commands.md#apps-command)               | Application related commands, such as listing the applications in your account and retrieving the application's details.           |
-| [submission](./commands.md#submission-command)   | Submission related commands, such as 'status', 'get', 'getListingAssets', 'updateMetadata', 'update', 'poll', 'publish', 'delete'. |
+| [submission](./commands.md#submission-command)   | Submission related commands, such as 'status', 'get', 'getListingAssets', 'updateMetadata', 'update', 'poll', 'publish', 'delete', 'rollout'. |
 | [init](./commands.md#init-command)               | Helps you setup your application to publish to the Microsoft Store.                                                                |
 | [package](./commands.md#package-command)         | Helps you package your Microsoft Store Application as an MSIX.                                                                     |
 | [publish](./commands.md#publish-command)         | Publishes your application to the Microsoft Store.                                                                                 |

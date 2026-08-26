@@ -213,6 +213,7 @@ msstore apps get <productId>
 | [poll](#submission---poll---usage)                         | Polls the status of a submission.                           |
 | [publish](#submission---publish---usage)                   | Publishes a specific submission.                            |
 | [delete](#submission---delete---usage)                     | Deletes a specific submission.                              |
+| [rollout](#submission---rollout-command)                   | Execute gradual package rollout related operations.         |
 
 #### Submission - Status - Usage
 
@@ -276,6 +277,11 @@ msstore submission getListingAssets <productId>
 ```console
 msstore submission updateMetadata <productId> <metadata>
 ```
+
+> [!NOTE]
+> For MSIX/packaged apps, `submission updateMetadata` and [`submission update`](#submission---update---usage) are equivalent - both send the complete submission JSON returned by `submission get`, so either command can update listings and packages together.
+>
+> The two differ only for unpackaged (MSI/EXE) apps, where the product ID is a GUID: `updateMetadata` updates the Store listing metadata, while `update` updates the packages.
 
 #### Arguments
 
@@ -386,6 +392,158 @@ msstore submission delete <productId>
 | --no-confirm          | Do not prompt for confirmation. [default: False] |
 | -v, --verbose         | Print verbose output.                            |
 | -?, -h, --help        | Show help and usage information.                 |
+
+## Submission - Rollout Command
+
+Use these sub-commands to manage a [gradual package rollout](../gradual-package-rollout.md) for a non-flighted submission. To manage a rollout that targets a package flight, use [`msstore flights submission rollout`](#flights---submission---rollout-command) instead.
+
+These commands are only supported for MSIX/packaged apps. If the submission ID is omitted, the CLI uses the app's pending submission, falling back to the last published one.
+| Sub-Command                                              | Description                                        |
+| -------------------------------------------------------- | -------------------------------------------------- |
+| [get](#submission---rollout-get-command-usage)           | Retrieves the rollout status of a submission.      |
+| [update](#submission---rollout-update-command-usage)     | Updates the rollout percentage of a submission.    |
+| [halt](#submission---rollout-halt-command-usage)         | Halts the rollout of a submission.                 |
+| [finalize](#submission---rollout-finalize-command-usage) | Finalizes the rollout of a submission.             |
+
+> [!NOTE]
+> A rollout has to be enabled on the submission before these commands can act on it. Enable it either at publish time with [`msstore publish --packageRolloutPercentage`](#publish-command), or by setting `packageDeliveryOptions.packageRollout` in the JSON passed to [`submission update`](#submission---update---usage).
+
+### Submission - Rollout Get Command Usage
+
+```console
+msstore submission rollout get <productId>
+```
+
+#### Submission - Rollout Get Command Arguments
+
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
+
+#### Submission - Rollout Get Command Options
+
+| Option             | Description                      |
+| ------------------ | -------------------------------- |
+| -s, --submissionId | The submission ID.               |
+| -v, --verbose      | Print verbose output.            |
+| -?, -h, --help     | Show help and usage information. |
+
+#### Submission - Rollout Get Command Help
+
+```console
+msstore submission rollout get --help
+```
+
+### Submission - Rollout Update Command Usage
+
+```console
+msstore submission rollout update <productId> <percentage>
+```
+
+#### Submission - Rollout Update Command Arguments
+
+| Argument     | Description                                                               |
+| ------------ | ------------------------------------------------------------------------- |
+| `productId`  | The Store product ID.                                                     |
+| `percentage` | The percentage of users that will receive the submission rollout (0-100). |
+
+#### Submission - Rollout Update Command Options
+
+| Option             | Description                      |
+| ------------------ | -------------------------------- |
+| -s, --submissionId | The submission ID.               |
+| -v, --verbose      | Print verbose output.            |
+| -?, -h, --help     | Show help and usage information. |
+
+#### Submission - Rollout Update Command Help
+
+```console
+msstore submission rollout update --help
+```
+
+### Submission - Rollout Halt Command Usage
+
+```console
+msstore submission rollout halt <productId>
+```
+
+#### Submission - Rollout Halt Command Arguments
+
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
+
+#### Submission - Rollout Halt Command Options
+
+| Option             | Description                      |
+| ------------------ | -------------------------------- |
+| -s, --submissionId | The submission ID.               |
+| -v, --verbose      | Print verbose output.            |
+| -?, -h, --help     | Show help and usage information. |
+
+#### Submission - Rollout Halt Command Help
+
+```console
+msstore submission rollout halt --help
+```
+
+### Submission - Rollout Finalize Command Usage
+
+```console
+msstore submission rollout finalize <productId>
+```
+
+#### Submission - Rollout Finalize Command Arguments
+
+| Argument    | Description           |
+| ----------- | --------------------- |
+| `productId` | The Store product ID. |
+
+#### Submission - Rollout Finalize Command Options
+
+| Option             | Description                      |
+| ------------------ | -------------------------------- |
+| -s, --submissionId | The submission ID.               |
+| -v, --verbose      | Print verbose output.            |
+| -?, -h, --help     | Show help and usage information. |
+
+#### Submission - Rollout Finalize Command Help
+
+```console
+msstore submission rollout finalize --help
+```
+
+### Example: publish an update and roll it out gradually
+
+The following PowerShell example uploads a package, updates the release notes, starts the rollout at 5%, then increases and finalizes it.
+
+```powershell
+$productId = '<productId>'
+
+# 1. Upload the package but leave the submission in draft.
+#    'publish' recreates the draft, so it has to run before any metadata edits.
+msstore publish 'C:\path\to\app' --noCommit
+
+# 2. Update the metadata and enable the rollout in a single call.
+$submission = msstore submission get $productId | ConvertFrom-Json
+$submission.Listings.'en-us'.BaseListing.ReleaseNotes = 'Bug fixes and improvements'
+$submission.PackageDeliveryOptions.PackageRollout.IsPackageRollout = $true
+$submission.PackageDeliveryOptions.PackageRollout.PackageRolloutPercentage = 5
+msstore submission update $productId ($submission | ConvertTo-Json -Depth 100 -Compress)
+
+# 3. Commit the submission and wait for it to publish.
+msstore submission publish $productId
+msstore submission poll $productId
+
+# 4. Increase the rollout over time, without uploading the package again.
+msstore submission rollout update $productId 20
+
+# 5. Roll out to all customers (or use 'halt' to stop the rollout).
+msstore submission rollout finalize $productId
+```
+
+> [!IMPORTANT]
+> If the app already has a published submission, `msstore publish` deletes the pending draft and creates a new one from the last published submission, discarding any metadata changes already staged in that draft. Run `publish` *before* updating metadata, not after.
 
 ## Flights Commands
 
