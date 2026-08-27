@@ -965,6 +965,8 @@ items:
         items:
           - name: Overview
             href: security/index.md
+          - name: Age signals
+            href: security/age-signals/index.md
           - name: Credential locker
             href: security/credential-locker.md
           - name: Cryptography
