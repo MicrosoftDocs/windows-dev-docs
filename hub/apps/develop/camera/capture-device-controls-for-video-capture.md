@@ -1,7 +1,7 @@
 ---
 description: Learn how to use manual device controls to enable enhanced video capture scenarios including HDR video and exposure priority in a WinUI app.
 title: Manual camera controls for video capture
-ms.date: 10/24/2024
+ms.date: 08/23/2026
 ms.topic: article
 keywords: windows 10, winui 3
 ms.localizationpriority: medium
@@ -24,7 +24,26 @@ The HDR video control supports three modes: on, off, and automatic, which means 
 
 Enable or disable HDR video processing by setting the [**HdrVideoControl.Mode**](/uwp/api/windows.media.devices.hdrvideocontrol.mode) to the desired mode. This control requires that the stream is at a stopped state before the mode is set, see [KSPROPERTY_CAMERACONTROL_EXTENDED_VIDEOHDR](/windows-hardware/drivers/stream/ksproperty-cameracontrol-extended-videohdr).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetSetHdrVideoMode":::
+```csharp
+private void SetHdrVideoMode(HdrVideoMode mode)
+{
+    if (!m_mediaCapture.VideoDeviceController.HdrVideoControl.Supported)
+    {
+        tbStatus.Text = "HDR Video not available";
+        return;
+    }
+
+    var hdrVideoModes = m_mediaCapture.VideoDeviceController.HdrVideoControl.SupportedModes;
+
+    if (!hdrVideoModes.Contains(mode))
+    {
+        tbStatus.Text = "HDR Video setting not supported";
+        return;
+    }
+
+    m_mediaCapture.VideoDeviceController.HdrVideoControl.Mode = mode;
+}
+```
 
 ## Exposure priority
 
@@ -34,7 +53,14 @@ Determine if the exposure priority control is supported on the current device by
 
 Enable or disable the exposure priority control by setting the [**ExposurePriorityVideoControl.Enabled**](/uwp/api/windows.media.devices.exposurepriorityvideocontrol.enabled) to the desired mode.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetEnableExposurePriority":::
+```csharp
+if (!m_mediaCapture.VideoDeviceController.ExposurePriorityVideoControl.Supported)
+{
+    tbStatus.Text = "Exposure priority not available";
+    return;
+}
+m_mediaCapture.VideoDeviceController.ExposurePriorityVideoControl.Enabled = true;
+```
 
 ## Temporal denoising
 
@@ -44,15 +70,67 @@ The [**VideoTemporalDenoisingControl**](/uwp/api/windows.media.devices.videotemp
 
 The following example uses a simple UI to provide radio buttons allowing the user to switch between denoising modes.
 
-:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetDenoiseXAML":::
+```xml
+<StackPanel Orientation="Vertical" HorizontalAlignment="Right" >
+    <StackPanel x:Name="spDenoise" Visibility="Collapsed">
+        <TextBlock>Temporal Denoising</TextBlock>
+        <RadioButton x:Name="rbDenoiseOff" Checked="rbDenoise_Checked"
+            GroupName="Denoise Group" Content="Off"/>
+        <RadioButton x:Name="rbDenoiseOn" Checked="rbDenoise_Checked"
+            GroupName="Denoise Group" Content="On" Visibility="Collapsed"/>
+        <RadioButton x:Name="rbDenoiseAuto" Checked="rbDenoise_Checked"
+            GroupName="Denoise Group" Content="Auto" Visibility="Collapsed"/>
+    </StackPanel>
+</StackPanel>
+```
 
 In the following method, the [**VideoTemporalDenoisingControl.Supported**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.supported) property is checked to see if temporal denoising is supported at all on the current device. If so, then we check to make sure that **Off** and **Auto** or **On** is supported, in which case we make our radio buttons visible. Next, the **Auto** and **On** buttons are made visible if those methods are supported.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetUpdateDenoiseCapabilities":::
+```csharp
+private void bUpdateDenoiseCapabilities_Click(object sender, RoutedEventArgs e)
+{
+    if (m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Supported)
+    {
+         IReadOnlyList<VideoTemporalDenoisingMode> modes = m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.SupportedModes;
+        if(modes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.Off) &&
+           (modes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.On) ||
+           modes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.Auto)))
+        {
+            spDenoise.Visibility = Visibility.Visible;
+
+            if (modes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.On))
+            {
+                rbDenoiseOn.Visibility = Visibility.Visible;
+            }
+            if (modes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.Auto))
+            {
+                rbDenoiseAuto.Visibility = Visibility.Visible;
+            }
+        }
+    }
+}
+```
 
 In the **Checked** event handler for the radio buttons, the name of the button is checked and the corresponding mode is set by setting the [**VideoTemporalDenoisingControl.Mode**](/uwp/api/windows.media.devices.videotemporaldenoisingcontrol.mode) property.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetDenoiseButtonChecked":::
+```csharp
+private void rbDenoise_Checked(object sender, RoutedEventArgs e)
+{
+    var button = sender as RadioButton;
+    if(button.Name == "denoiseOffButton")
+    {
+        m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = Windows.Media.Devices.VideoTemporalDenoisingMode.Off;
+    }
+    else if (button.Name == "denoiseOnButton")
+    {
+        m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = Windows.Media.Devices.VideoTemporalDenoisingMode.On;
+    }
+    else if (button.Name == "denoiseAutoButton")
+    {
+        m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = Windows.Media.Devices.VideoTemporalDenoisingMode.Auto;
+    }
+}
+```
 
 ### Disabling temporal denoising while processing frames
 
@@ -60,17 +138,65 @@ Video that has been processed using temporal denoising can be more pleasing to t
 
 The following example determines which denoising modes are supported and stores this information in some class variables.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetDenoiseFrameReaderVars":::
+```csharp
+private bool _isVideoTemporalDenoisingOffSupported = false;
+private bool _isProcessing = false;
+private Windows.Media.Devices.VideoTemporalDenoisingMode? _videoDenoisingEnabledMode = null;
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetDenoiseCapabilitiesForFrameProcessing":::
+```csharp
+private void ConfigureDenoiseForFrameProcessing()
+{
+    if (m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Supported)
+    {
+        // Query support for the VideoTemporalDenoising control Off mode
+        _isVideoTemporalDenoisingOffSupported = m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.SupportedModes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.Off);
+
+        // Query support for a mode that would enable VideoTemporalDenoising (On or Auto) and toggle it if supported
+        if (m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.SupportedModes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.On))
+        {
+            _videoDenoisingEnabledMode = Windows.Media.Devices.VideoTemporalDenoisingMode.On;
+            m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = (Windows.Media.Devices.VideoTemporalDenoisingMode)_videoDenoisingEnabledMode;
+        }
+        else if (m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.SupportedModes.Contains(Windows.Media.Devices.VideoTemporalDenoisingMode.Auto))
+        {
+            _videoDenoisingEnabledMode = Windows.Media.Devices.VideoTemporalDenoisingMode.Auto;
+            m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = (Windows.Media.Devices.VideoTemporalDenoisingMode)_videoDenoisingEnabledMode;
+        }
+    }
+
+}
+```
 
 When the app enables frame processing, it sets the denoising mode to **Off** if that mode is supported so that the frame processing can use raw frames that have not been denoised.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetEnableFrameProcessing":::
+```csharp
+public void EnableFrameProcessing()
+{
+    // Toggle Off VideoTemporalDenoising
+    if (_isVideoTemporalDenoisingOffSupported)
+    {
+        m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = Windows.Media.Devices.VideoTemporalDenoisingMode.Off;
+    }
+
+    _isProcessing = true;
+}
+```
 
 When the app disables frame processing, it sets the denoising mode to **On** or **Auto**, depending on which mode is supported.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.ManualControls.xaml.cs" id="SnippetDisableFrameProcessing":::
+```csharp
+public void DisableFrameProcessing()
+{
+    _isProcessing = false;
+
+    // If a VideoTemporalDenoising mode to enable VideoTemporalDenoising is supported, toggle it
+    if (_videoDenoisingEnabledMode != null)
+    {
+        m_mediaCapture.VideoDeviceController.VideoTemporalDenoisingControl.Mode = (Windows.Media.Devices.VideoTemporalDenoisingMode)_videoDenoisingEnabledMode;
+    }
+}
+```
 
 For more information on obtaining video frames for image processing, see [Process media frames with MediaFrameReader](process-media-frames-with-mediaframereader.md).
 

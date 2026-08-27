@@ -1,7 +1,7 @@
 ---
 description: Learn how to use a MediaFrameReader with MediaCapture to get media frames from one or more available sources, including color, depth, and infrared cameras, audio devices, or even custom frame sources such as those that produce skeletal tracking frames.
 title: Process media frames with MediaFrameReader
-ms.date: 01/08/2025
+ms.date: 08/23/2026
 ms.topic: article
 keywords: windows 10, windows 11, winui3, camera
 ms.localizationpriority: medium
@@ -27,7 +27,9 @@ If you are interested in simply capturing video or photos, such as a typical pho
 
 Many apps that process media frames need to get frames from multiple sources at once, such as a device's color and depth cameras. The [**MediaFrameSourceGroup**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) object represents a set of media frame sources that can be used simultaneously. Call the static method [**MediaFrameSourceGroup.FindAllAsync**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) to get a list of all of the groups of frame sources supported by the current device.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetFindAllAsync":::
+```csharp
+var frameSourceGroups = await MediaFrameSourceGroup.FindAllAsync();
+```
 
 You can also create a [**DeviceWatcher**](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) using [**DeviceInformation.CreateWatcher**](/uwp/api/windows.devices.enumeration.deviceinformation.createwatcher) and the value returned from [**MediaFrameSourceGroup.GetDeviceSelector**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.getdeviceselector) to receive notifications when the available frame source groups on the device changes, such as when an external camera is plugged in. For more information see [**Enumerate devices**](/windows/apps/develop/devices-sensors/enumerate-devices).
 
@@ -35,7 +37,30 @@ A [**MediaFrameSourceGroup**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSo
 
 The following example shows the simplest way to select a frame source group. This code simply loops over all of the available groups and then loops over each item in the [**SourceInfos**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.sourceinfos) collection. Each **MediaFrameSourceInfo** is checked to see if it supports the features we are seeking. In this case, the [**MediaStreamType**](/uwp/api/windows.media.capture.frames.mediaframesourceinfo.mediastreamtype) property is checked for the value [**VideoPreview**](/uwp/api/Windows.Media.Capture.MediaStreamType), meaning the device provides a video preview stream, and the [**SourceKind**](/uwp/api/windows.media.capture.frames.mediaframesourceinfo.sourcekind) property is checked for the value [**Color**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceKind), indicating that the source provides color frames.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetSimpleSelect":::
+```csharp
+var frameSourceGroups = await MediaFrameSourceGroup.FindAllAsync();
+
+MediaFrameSourceGroup selectedGroup = null;
+MediaFrameSourceInfo colorSourceInfo = null;
+
+foreach (var sourceGroup in frameSourceGroups)
+{
+    foreach (var sourceInfo in sourceGroup.SourceInfos)
+    {
+        if (sourceInfo.MediaStreamType == MediaStreamType.VideoPreview
+            && sourceInfo.SourceKind == MediaFrameSourceKind.Color)
+        {
+            colorSourceInfo = sourceInfo;
+            break;
+        }
+    }
+    if (colorSourceInfo != null)
+    {
+        selectedGroup = sourceGroup;
+        break;
+    }
+}
+```
 
 This method of identifying the desired frame source group and frame sources works for simple cases, but if you want to select frame sources based on more complex criteria, it can quickly become cumbersome. Another method is to use Linq syntax and anonymous objects to make the selection. The following example uses the **Select** extension method to transform the **MediaFrameSourceGroup** objects in the *frameSourceGroups* list into an anonymous object with two fields: *sourceGroup*, representing the group itself, and *colorSourceInfo*, which represents the color frame source in the group. The *colorSourceInfo* field is set to the result of **FirstOrDefault**, which selects the first object for which the provided predicate resolves to true. In this case, the predicate is true if the stream type is **VideoPreview**, the source kind is **Color**, and if the camera is on the front panel of the device.
 
@@ -43,11 +68,61 @@ From the list of anonymous objects returned from the query described above, the 
 
 Now you can use the fields of the selected object to get references to the selected **MediaFrameSourceGroup** and the **MediaFrameSourceInfo** object representing the color camera. These will be used later to initialize the **MediaCapture** object and create a **MediaFrameReader** for the selected source. Finally, you should test to see if the source group is null, meaning the current device doesn't have your requested capture sources.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetSelectColor":::
+```csharp
+var selectedGroupObjects = frameSourceGroups.Select(group =>
+   new
+   {
+       sourceGroup = group,
+       colorSourceInfo = group.SourceInfos.FirstOrDefault((sourceInfo) =>
+       {
+           // On Xbox/Kinect, omit the MediaStreamType and EnclosureLocation tests
+           return sourceInfo.MediaStreamType == MediaStreamType.VideoPreview
+           && sourceInfo.SourceKind == MediaFrameSourceKind.Color
+           && sourceInfo.DeviceInformation?.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front;
+       })
+
+   }).Where(t => t.colorSourceInfo != null)
+   .FirstOrDefault();
+
+MediaFrameSourceGroup selectedGroup = selectedGroupObjects?.sourceGroup;
+MediaFrameSourceInfo colorSourceInfo = selectedGroupObjects?.colorSourceInfo;
+
+if (selectedGroup == null)
+{
+    return;
+}
+```
 
 The following example uses a similar technique as described above to select a source group that contains color, depth, and infrared cameras.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetColorInfraredDepth":::
+```csharp
+var allGroups = await MediaFrameSourceGroup.FindAllAsync();
+var eligibleGroups = allGroups.Select(g => new
+{
+    Group = g,
+
+    // For each source kind, find the source which offers that kind of media frame,
+    // or null if there is no such source.
+    SourceInfos = new MediaFrameSourceInfo[]
+    {
+        g.SourceInfos.FirstOrDefault(info => info.SourceKind == MediaFrameSourceKind.Color),
+        g.SourceInfos.FirstOrDefault(info => info.SourceKind == MediaFrameSourceKind.Depth),
+        g.SourceInfos.FirstOrDefault(info => info.SourceKind == MediaFrameSourceKind.Infrared),
+    }
+}).Where(g => g.SourceInfos.Any(info => info != null)).ToList();
+
+if (eligibleGroups.Count == 0)
+{
+    System.Diagnostics.Debug.WriteLine("No source group with color, depth or infrared found.");
+    return;
+}
+
+var selectedGroupIndex = 0; // Select the first eligible group
+MediaFrameSourceGroup selectedGroup = eligibleGroups[selectedGroupIndex].Group;
+MediaFrameSourceInfo colorSourceInfo = eligibleGroups[selectedGroupIndex].SourceInfos[0];
+MediaFrameSourceInfo infraredSourceInfo = eligibleGroups[selectedGroupIndex].SourceInfos[1];
+MediaFrameSourceInfo depthSourceInfo = eligibleGroups[selectedGroupIndex].SourceInfos[2];
+```
 
 > [!NOTE]
 > Starting with Windows 10, version 1803, you can use the [**MediaCaptureVideoProfile**](/uwp/api/Windows.Media.Capture.MediaCaptureVideoProfile) class to select a media frame source with a set of desired capabilities. For more information, see the section **Use video profiles to select a frame source** later in this article.
@@ -64,7 +139,26 @@ The next step is to initialize the **MediaCapture** object to use the frame sour
 
 Call [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync) to initialize the **MediaCapture** with your desired settings. Be sure to call this within a *try* block in case initialization fails.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetInitMediaCaptureFrameReader":::
+```csharp
+m_mediaCapture = new MediaCapture();
+
+var settings = new MediaCaptureInitializationSettings()
+{
+    SourceGroup = selectedGroup,
+    SharingMode = MediaCaptureSharingMode.ExclusiveControl,
+    MemoryPreference = MediaCaptureMemoryPreference.Cpu,
+    StreamingCaptureMode = StreamingCaptureMode.Video
+};
+try
+{
+    await m_mediaCapture.InitializeAsync(settings);
+}
+catch (Exception ex)
+{
+    System.Diagnostics.Debug.WriteLine("MediaCapture initialization failed: " + ex.Message);
+    return;
+}
+```
 
 ## Set the preferred format for the frame source
 
@@ -72,13 +166,31 @@ To set the preferred format for a frame source, you need to get a [**MediaFrameS
 
 The  [**MediaFrameSource.SupportedFormats**](/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) property contains a list of [**MediaFrameFormat**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameFormat) objects describing the supported formats for the frame source. In this example, a format is selected that has a width of 1080 pixels and can supply frames in 32-bit RGB format. The **FirstOrDefault** extension method selects the first entry in the list. If the selected format is null, then the requested format is not supported by the frame source. If the format is supported, you can request that the source use this format by calling [**SetFormatAsync**](/uwp/api/windows.media.capture.frames.mediaframesource.setformatasync).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetGetPreferredFormat":::
+```csharp
+var colorFrameSource = m_mediaCapture.FrameSources[colorSourceInfo.Id];
+var preferredFormat = colorFrameSource.SupportedFormats.Where(format =>
+{
+    return format.VideoFormat.Width >= 1080
+    && format.Subtype == MediaEncodingSubtypes.Argb32;
+
+}).FirstOrDefault();
+
+if (preferredFormat == null)
+{
+    // Our desired format is not supported
+    return;
+}
+
+await colorFrameSource.SetFormatAsync(preferredFormat);
+```
 
 ## Create a frame reader for the frame source
 
 To receive frames for a media frame source, use a [**MediaFrameReader**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetDeclareMediaFrameReader":::
+```csharp
+MediaFrameReader m_mediaFrameReader;
+```
 
 Instantiate the frame reader by calling [**CreateFrameReaderAsync**](/uwp/api/windows.media.capture.mediacapture.createframereaderasync) on your initialized **MediaCapture** object. The first argument to this method is the frame source from which you want to receive frames. You can create a separate frame reader for each frame source you want to use. The second argument tells the system the output format in which you want frames to arrive. This can save you from having to do your own conversions to frames as they arrive. Note that if you specify a format that is not supported by the frame source, an exception will be thrown, so be sure that this value is in the [**SupportedFormats**](/uwp/api/windows.media.capture.frames.mediaframesource.supportedformats) collection.  
 
@@ -86,7 +198,11 @@ After creating the frame reader, register a handler for the [**FrameArrived**](/
 
 Tell the system to start reading frames from the source by calling [**StartAsync**](/uwp/api/windows.media.capture.frames.mediaframereader.startasync).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetCreateFrameReader":::
+```csharp
+m_mediaFrameReader = await m_mediaCapture.CreateFrameReaderAsync(colorFrameSource, MediaEncodingSubtypes.Argb32);
+m_mediaFrameReader.FrameArrived += ColorFrameReader_FrameArrived;
+await m_mediaFrameReader.StartAsync();
+```
 
 ## Handle the frame arrived event
 
@@ -94,15 +210,22 @@ The [**MediaFrameReader.FrameArrived**](/uwp/api/windows.media.capture.frames.me
 
 The first step in displaying frames in XAML is to create an Image control. 
 
-:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetImageElementXAML":::
+```xml
+<Image x:Name="iFrameReaderImageControl" MaxWidth="300" MaxHeight="200"/>
+```
 
 In your code behind page, declare a class member variable of type **SoftwareBitmap** which will be used as a back buffer that all incoming images will be copied to. Note that the image data itself isn't copied, just the object references. Also, declare a boolean to track whether our UI operation is currently running.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetDeclareBackBuffer":::
+```csharp
+private SoftwareBitmap backBuffer;
+private bool taskRunning = false;
+```
 
 Because the frames will arrive as **SoftwareBitmap** objects, you need to create a [**SoftwareBitmapSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.softwarebitmapsource) object which allows you to use a **SoftwareBitmap** as the source for a XAML **Control**. You should set the image source somewhere in your code before you start the frame reader.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetImageElementSource":::
+```csharp
+iFrameReaderImageControl.Source = new SoftwareBitmapSource();
+```
 
 Now it's time to implement the **FrameArrived** event handler. When the handler is called, the *sender* parameter contains a reference to the **MediaFrameReader** object which raised the event. Call [**TryAcquireLatestFrame**](/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe) on this object to attempt to get the latest frame. As the name implies, **TryAcquireLatestFrame** may not succeed in returning a frame. So, when you access the VideoMediaFrame and then SoftwareBitmap properties, be sure to test for null. In this example the null conditional operator ? is used to access the **SoftwareBitmap** and then the retrieved object is checked for null.
 
@@ -120,13 +243,66 @@ Finally, the *_taskRunning* variable is set back to false so that the task can b
 > If you access the [**SoftwareBitmap**](/uwp/api/windows.media.capture.frames.videomediaframe.softwarebitmap) or [**Direct3DSurface**](/uwp/api/windows.media.capture.frames.videomediaframe.direct3dsurface) objects provided by the [**VideoMediaFrame**](/uwp/api/windows.media.capture.frames.mediaframereference.videomediaframe) property of a [**MediaFrameReference**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReference), the system creates a strong reference to these objects, which means that they will not be disposed when you call [**Dispose**](/uwp/api/windows.media.capture.frames.mediaframereference.close) on the containing **MediaFrameReference**. You must explicitly call the **Dispose** method of the **SoftwareBitmap** or **Direct3DSurface** directly for the objects to be immediately disposed. Otherwise, the garbage collector will eventually free the memory for these objects, but you can't know when this will occur, and if the number of allocated bitmaps or surfaces exceeds the maximum amount allowed by the system, the flow of new frames will stop. You can copy retrieved frames, using the [**SoftwareBitmap.Copy**](/uwp/api/windows.graphics.imaging.softwarebitmap.copy) method for example, and then release the original frames to overcome this limitation. Also, if you create the **MediaFrameReader** using the overload [CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, System.String outputSubtype, Windows.Graphics.Imaging.BitmapSize outputSize)](/uwp/api/windows.media.capture.mediacapture.createframereaderasync) or [CreateFrameReaderAsync(Windows.Media.Capture.Frames.MediaFrameSource inputSource, System.String outputSubtype)](/uwp/api/windows.media.capture.mediacapture.createframereaderasync), the frames returned are copies of the original frame data and so they do not cause frame acquisition to halt when they are retained. 
 
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetFrameArrived":::
+```csharp
+private void ColorFrameReader_FrameArrived(MediaFrameReader sender, MediaFrameArrivedEventArgs args)
+{
+    var mediaFrameReference = sender.TryAcquireLatestFrame();
+    var videoMediaFrame = mediaFrameReference?.VideoMediaFrame;
+    var softwareBitmap = videoMediaFrame?.SoftwareBitmap;
+
+    if (softwareBitmap != null)
+    {
+        if (softwareBitmap.BitmapPixelFormat != Windows.Graphics.Imaging.BitmapPixelFormat.Bgra8 ||
+            softwareBitmap.BitmapAlphaMode != Windows.Graphics.Imaging.BitmapAlphaMode.Premultiplied)
+        {
+            softwareBitmap = SoftwareBitmap.Convert(softwareBitmap, BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied);
+        }
+
+        // Swap the processed frame to _backBuffer and dispose of the unused image.
+        softwareBitmap = Interlocked.Exchange(ref backBuffer, softwareBitmap);
+        softwareBitmap?.Dispose();
+
+        // Changes to XAML ImageElement must happen on UI thread through Dispatcher
+        var task = iFrameReaderImageControl.DispatcherQueue.TryEnqueue(
+            async () =>
+            {
+                // Don't let two copies of this task run at the same time.
+                if (taskRunning)
+                {
+                    return;
+                }
+                taskRunning = true;
+
+                // Keep draining frames from the backbuffer until the backbuffer is empty.
+                SoftwareBitmap latestBitmap;
+                while ((latestBitmap = Interlocked.Exchange(ref backBuffer, null)) != null)
+                {
+                    var imageSource = (SoftwareBitmapSource)iFrameReaderImageControl.Source;
+                    await imageSource.SetBitmapAsync(latestBitmap);
+                    latestBitmap.Dispose();
+                }
+
+                taskRunning = false;
+            });
+    }
+
+    if (mediaFrameReference != null)
+    {
+        mediaFrameReference.Dispose();
+    }
+}
+```
 
 ## Cleanup resources
 
 When you are done reading frames, be sure to stop the media frame reader by calling [**StopAsync**](/uwp/api/windows.media.capture.frames.mediaframereader.stopasync), unregistering the **FrameArrived** handler, and disposing of the **MediaCapture** object.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetCleanupFrameReader":::
+```csharp
+await m_mediaFrameReader.StopAsync();
+m_mediaFrameReader.FrameArrived -= ColorFrameReader_FrameArrived;
+m_mediaCapture.Dispose();
+m_mediaCapture = null;
+```
 
 For more information about cleaning up media capture objects when your application is suspended, see [**Show the camera preview in a WinUI app**](camera-quickstart-winui3.md).
 
@@ -143,9 +319,470 @@ The **FrameRenderer** helper class implements the following methods.
 > [!NOTE] 
 > In order to do pixel manipulation on **SoftwareBitmap** images, you must access a native memory buffer. To do this, you must use the IMemoryBufferByteAccess COM interface included in the code listing below and you must update your project properties to allow compilation of unsafe code. For more information, see [Create, edit, and save bitmap images](../media-authoring-processing/imaging.md).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/FrameRenderer.cs" id="SnippetIMemoryBufferByteAccess":::
+```csharp
+[GeneratedComInterface]
+[Guid("5B0D3235-4DBA-4D44-865E-8F1D0E4FD04D")]
+[InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+unsafe partial interface IMemoryBufferByteAccess
+{
+    void GetBuffer(out byte* buffer, out uint capacity);
+}
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI//FrameRenderer.cs" id="SnippetFrameRenderer":::
+```csharp
+class FrameRenderer
+{
+    private Image m_imageElement;
+    private SoftwareBitmap m_backBuffer;
+    private bool _taskRunning = false;
+
+    public FrameRenderer(Image imageElement)
+    {
+        m_imageElement = imageElement;
+        m_imageElement.Source = new SoftwareBitmapSource();
+    }
+
+    // Processes a MediaFrameReference and displays it in a XAML image control
+    public void ProcessFrame(MediaFrameReference frame)
+    {
+        var softwareBitmap = FrameRenderer.ConvertToDisplayableImage(frame?.VideoMediaFrame);
+        if (softwareBitmap != null)
+        {
+            // Swap the processed frame to m_backBuffer and trigger UI thread to render it
+            softwareBitmap = Interlocked.Exchange(ref m_backBuffer, softwareBitmap);
+
+            // UI thread always reset m_backBuffer before using it.  Unused bitmap should be disposed.
+            softwareBitmap?.Dispose();
+
+            // Changes to xaml ImageElement must happen in UI thread through Dispatcher
+            var task = m_imageElement.DispatcherQueue.TryEnqueue(
+                async () =>
+                {
+                    // Don't let two copies of this task run at the same time.
+                    if (_taskRunning)
+                    {
+                        return;
+                    }
+                    _taskRunning = true;
+
+                    // Keep draining frames from the backbuffer until the backbuffer is empty.
+                    SoftwareBitmap latestBitmap;
+                    while ((latestBitmap = Interlocked.Exchange(ref m_backBuffer, null)) != null)
+                    {
+                        var imageSource = (SoftwareBitmapSource)m_imageElement.Source;
+                        await imageSource.SetBitmapAsync(latestBitmap);
+                        latestBitmap.Dispose();
+                    }
+
+                    _taskRunning = false;
+                });
+        }
+    }
+
+
+
+    // Function delegate that transforms a scanline from an input image to an output image.
+    private unsafe delegate void TransformScanline(int pixelWidth, byte* inputRowBytes, byte* outputRowBytes);
+    /// <summary>
+    /// Determines the subtype to request from the MediaFrameReader that will result in
+    /// a frame that can be rendered by ConvertToDisplayableImage.
+    /// </summary>
+    /// <returns>Subtype string to request, or null if subtype is not renderable.</returns>
+
+    public static string GetSubtypeForFrameReader(MediaFrameSourceKind kind, MediaFrameFormat format)
+    {
+        // Note that media encoding subtypes may differ in case.
+        // https://docs.microsoft.com/en-us/uwp/api/Windows.Media.MediaProperties.MediaEncodingSubtypes
+
+        string subtype = format.Subtype;
+        switch (kind)
+        {
+            // For color sources, we accept anything and request that it be converted to Bgra8.
+            case MediaFrameSourceKind.Color:
+                return Windows.Media.MediaProperties.MediaEncodingSubtypes.Bgra8;
+
+            // The only depth format we can render is D16.
+            case MediaFrameSourceKind.Depth:
+                return String.Equals(subtype, Windows.Media.MediaProperties.MediaEncodingSubtypes.D16, StringComparison.OrdinalIgnoreCase) ? subtype : null;
+
+            // The only infrared formats we can render are L8 and L16.
+            case MediaFrameSourceKind.Infrared:
+                return (String.Equals(subtype, Windows.Media.MediaProperties.MediaEncodingSubtypes.L8, StringComparison.OrdinalIgnoreCase) ||
+                    String.Equals(subtype, Windows.Media.MediaProperties.MediaEncodingSubtypes.L16, StringComparison.OrdinalIgnoreCase)) ? subtype : null;
+
+            // No other source kinds are supported by this class.
+            default:
+                return null;
+        }
+    }
+
+    /// <summary>
+    /// Converts a frame to a SoftwareBitmap of a valid format to display in an Image control.
+    /// </summary>
+    /// <param name="inputFrame">Frame to convert.</param>
+
+    public static unsafe SoftwareBitmap ConvertToDisplayableImage(VideoMediaFrame inputFrame)
+    {
+        SoftwareBitmap result = null;
+        using (var inputBitmap = inputFrame?.SoftwareBitmap)
+        {
+            if (inputBitmap != null)
+            {
+                switch (inputFrame.FrameReference.SourceKind)
+                {
+                    case MediaFrameSourceKind.Color:
+                        // XAML requires Bgra8 with premultiplied alpha.
+                        // We requested Bgra8 from the MediaFrameReader, so all that's
+                        // left is fixing the alpha channel if necessary.
+                        if (inputBitmap.BitmapPixelFormat != BitmapPixelFormat.Bgra8)
+                        {
+                            System.Diagnostics.Debug.WriteLine("Color frame in unexpected format.");
+                        }
+                        else if (inputBitmap.BitmapAlphaMode == BitmapAlphaMode.Premultiplied)
+                        {
+                            // Already in the correct format.
+                            result = SoftwareBitmap.Copy(inputBitmap);
+                        }
+                        else
+                        {
+                            // Convert to premultiplied alpha.
+                            result = SoftwareBitmap.Convert(inputBitmap, BitmapPixelFormat.Bgra8, BitmapAlphaMode.Premultiplied);
+                        }
+                        break;
+
+                    case MediaFrameSourceKind.Depth:
+                        // We requested D16 from the MediaFrameReader, so the frame should
+                        // be in Gray16 format.
+                        if (inputBitmap.BitmapPixelFormat == BitmapPixelFormat.Gray16)
+                        {
+                            // Use a special pseudo color to render 16 bits depth frame.
+                            var depthScale = (float)inputFrame.DepthMediaFrame.DepthFormat.DepthScaleInMeters;
+                            var minReliableDepth = inputFrame.DepthMediaFrame.MinReliableDepth;
+                            var maxReliableDepth = inputFrame.DepthMediaFrame.MaxReliableDepth;
+                            result = TransformBitmap(inputBitmap, (w, i, o) => PseudoColorHelper.PseudoColorForDepth(w, i, o, depthScale, minReliableDepth, maxReliableDepth));
+                        }
+                        else
+                        {
+                            System.Diagnostics.Debug.WriteLine("Depth frame in unexpected format.");
+                        }
+                        break;
+
+                    case MediaFrameSourceKind.Infrared:
+                        // We requested L8 or L16 from the MediaFrameReader, so the frame should
+                        // be in Gray8 or Gray16 format.
+                        switch (inputBitmap.BitmapPixelFormat)
+                        {
+                            case BitmapPixelFormat.Gray16:
+                                // Use pseudo color to render 16 bits frames.
+                                result = TransformBitmap(inputBitmap, PseudoColorHelper.PseudoColorFor16BitInfrared);
+                                break;
+
+                            case BitmapPixelFormat.Gray8:
+                                // Use pseudo color to render 8 bits frames.
+                                result = TransformBitmap(inputBitmap, PseudoColorHelper.PseudoColorFor8BitInfrared);
+                                break;
+                            default:
+                                System.Diagnostics.Debug.WriteLine("Infrared frame in unexpected format.");
+                                break;
+                        }
+                        break;
+                }
+            }
+        }
+
+        return result;
+    }
+
+
+
+    /// <summary>
+    /// Transform image into Bgra8 image using given transform method.
+    /// </summary>
+    /// <param name="softwareBitmap">Input image to transform.</param>
+    /// <param name="transformScanline">Method to map pixels in a scanline.</param>
+
+    private static unsafe SoftwareBitmap TransformBitmap(SoftwareBitmap softwareBitmap, TransformScanline transformScanline)
+    {
+        // XAML Image control only supports premultiplied Bgra8 format.
+        var outputBitmap = new SoftwareBitmap(BitmapPixelFormat.Bgra8,
+            softwareBitmap.PixelWidth, softwareBitmap.PixelHeight, BitmapAlphaMode.Premultiplied);
+
+        using (var input = softwareBitmap.LockBuffer(BitmapBufferAccessMode.Read))
+        using (var output = outputBitmap.LockBuffer(BitmapBufferAccessMode.Write))
+        {
+            // Get stride values to calculate buffer position for a given pixel x and y position.
+            int inputStride = input.GetPlaneDescription(0).Stride;
+            int outputStride = output.GetPlaneDescription(0).Stride;
+            int pixelWidth = softwareBitmap.PixelWidth;
+            int pixelHeight = softwareBitmap.PixelHeight;
+
+            using (var outputReference = output.CreateReference())
+            using (var inputReference = input.CreateReference())
+            {
+                // Get input and output byte access buffers.
+                byte* inputBytes;
+                uint inputCapacity;
+                ((IMemoryBufferByteAccess)inputReference).GetBuffer(out inputBytes, out inputCapacity);
+                byte* outputBytes;
+                uint outputCapacity;
+                ((IMemoryBufferByteAccess)outputReference).GetBuffer(out outputBytes, out outputCapacity);
+
+                // Iterate over all pixels and store converted value.
+                for (int y = 0; y < pixelHeight; y++)
+                {
+                    byte* inputRowBytes = inputBytes + y * inputStride;
+                    byte* outputRowBytes = outputBytes + y * outputStride;
+
+                    transformScanline(pixelWidth, inputRowBytes, outputRowBytes);
+                }
+            }
+        }
+
+        return outputBitmap;
+    }
+
+
+
+    /// <summary>
+    /// A helper class to manage look-up-table for pseudo-colors.
+    /// </summary>
+
+    private static class PseudoColorHelper
+    {
+
+        private const int TableSize = 1024;   // Look up table size
+        private static readonly uint[] PseudoColorTable;
+        private static readonly uint[] InfraredRampTable;
+
+        // Color palette mapping value from 0 to 1 to blue to red colors.
+        private static readonly Color[] ColorRamp =
+        {
+            Color.FromArgb(a:0xFF, r:0x7F, g:0x00, b:0x00),
+            Color.FromArgb(a:0xFF, r:0xFF, g:0x00, b:0x00),
+            Color.FromArgb(a:0xFF, r:0xFF, g:0x7F, b:0x00),
+            Color.FromArgb(a:0xFF, r:0xFF, g:0xFF, b:0x00),
+            Color.FromArgb(a:0xFF, r:0x7F, g:0xFF, b:0x7F),
+            Color.FromArgb(a:0xFF, r:0x00, g:0xFF, b:0xFF),
+            Color.FromArgb(a:0xFF, r:0x00, g:0x7F, b:0xFF),
+            Color.FromArgb(a:0xFF, r:0x00, g:0x00, b:0xFF),
+            Color.FromArgb(a:0xFF, r:0x00, g:0x00, b:0x7F),
+        };
+
+        static PseudoColorHelper()
+        {
+            PseudoColorTable = InitializePseudoColorLut();
+            InfraredRampTable = InitializeInfraredRampLut();
+        }
+
+        /// <summary>
+        /// Maps an input infrared value between [0, 1] to corrected value between [0, 1].
+        /// </summary>
+        /// <param name="value">Input value between [0, 1].</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]  // Tell the compiler to inline this method to improve performance
+
+        private static uint InfraredColor(float value)
+        {
+            int index = (int)(value * TableSize);
+            index = index < 0 ? 0 : index > TableSize - 1 ? TableSize - 1 : index;
+            return InfraredRampTable[index];
+        }
+
+        /// <summary>
+        /// Initializes the pseudo-color look up table for infrared pixels
+        /// </summary>
+
+        private static uint[] InitializeInfraredRampLut()
+        {
+            uint[] lut = new uint[TableSize];
+            for (int i = 0; i < TableSize; i++)
+            {
+                var value = (float)i / TableSize;
+                // Adjust to increase color change between lower values in infrared images
+
+                var alpha = (float)Math.Pow(1 - value, 12);
+                lut[i] = ColorRampInterpolation(alpha);
+            }
+
+            return lut;
+        }
+
+
+
+        /// <summary>
+        /// Initializes pseudo-color look up table for depth pixels
+        /// </summary>
+        private static uint[] InitializePseudoColorLut()
+        {
+            uint[] lut = new uint[TableSize];
+            for (int i = 0; i < TableSize; i++)
+            {
+                lut[i] = ColorRampInterpolation((float)i / TableSize);
+            }
+
+            return lut;
+        }
+
+
+
+        /// <summary>
+        /// Maps a float value to a pseudo-color pixel
+        /// </summary>
+        private static uint ColorRampInterpolation(float value)
+        {
+            // Map value to surrounding indexes on the color ramp
+            int rampSteps = ColorRamp.Length - 1;
+            float scaled = value * rampSteps;
+            int integer = (int)scaled;
+            int index =
+                integer < 0 ? 0 :
+                integer >= rampSteps - 1 ? rampSteps - 1 :
+                integer;
+
+            Color prev = ColorRamp[index];
+            Color next = ColorRamp[index + 1];
+
+            // Set color based on ratio of closeness between the surrounding colors
+            uint alpha = (uint)((scaled - integer) * 255);
+            uint beta = 255 - alpha;
+            return
+                ((prev.A * beta + next.A * alpha) / 255) << 24 | // Alpha
+                ((prev.R * beta + next.R * alpha) / 255) << 16 | // Red
+                ((prev.G * beta + next.G * alpha) / 255) << 8 |  // Green
+                ((prev.B * beta + next.B * alpha) / 255);        // Blue
+        }
+
+
+        /// <summary>
+        /// Maps a value in [0, 1] to a pseudo RGBA color.
+        /// </summary>
+        /// <param name="value">Input value between [0, 1].</param>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+
+        private static uint PseudoColor(float value)
+        {
+            int index = (int)(value * TableSize);
+            index = index < 0 ? 0 : index > TableSize - 1 ? TableSize - 1 : index;
+            return PseudoColorTable[index];
+        }
+
+
+        /// <summary>
+        /// Maps each pixel in a scanline from a 16 bit depth value to a pseudo-color pixel.
+        /// </summary>
+        /// <param name="pixelWidth">Width of the input scanline, in pixels.</param>
+        /// <param name="inputRowBytes">Pointer to the start of the input scanline.</param>
+        /// <param name="outputRowBytes">Pointer to the start of the output scanline.</param>
+        /// <param name="depthScale">Physical distance that corresponds to one unit in the input scanline.</param>
+        /// <param name="minReliableDepth">Shortest distance at which the sensor can provide reliable measurements.</param>
+        /// <param name="maxReliableDepth">Furthest distance at which the sensor can provide reliable measurements.</param>
+
+        public static unsafe void PseudoColorForDepth(int pixelWidth, byte* inputRowBytes, byte* outputRowBytes, float depthScale, float minReliableDepth, float maxReliableDepth)
+        {
+            // Visualize space in front of your desktop.
+            float minInMeters = minReliableDepth * depthScale;
+            float maxInMeters = maxReliableDepth * depthScale;
+            float one_min = 1.0f / minInMeters;
+            float range = 1.0f / maxInMeters - one_min;
+
+            ushort* inputRow = (ushort*)inputRowBytes;
+            uint* outputRow = (uint*)outputRowBytes;
+
+            for (int x = 0; x < pixelWidth; x++)
+            {
+                var depth = inputRow[x] * depthScale;
+
+                if (depth == 0)
+                {
+                    // Map invalid depth values to transparent pixels.
+                    // This happens when depth information cannot be calculated, e.g. when objects are too close.
+                    outputRow[x] = 0;
+                }
+                else
+                {
+                    var alpha = (1.0f / depth - one_min) / range;
+                    outputRow[x] = PseudoColor(alpha * alpha);
+                }
+            }
+        }
+
+
+
+        /// <summary>
+        /// Maps each pixel in a scanline from a 8 bit infrared value to a pseudo-color pixel.
+        /// </summary>
+        /// /// <param name="pixelWidth">Width of the input scanline, in pixels.</param>
+        /// <param name="inputRowBytes">Pointer to the start of the input scanline.</param>
+        /// <param name="outputRowBytes">Pointer to the start of the output scanline.</param>
+
+        public static unsafe void PseudoColorFor8BitInfrared(
+            int pixelWidth, byte* inputRowBytes, byte* outputRowBytes)
+        {
+            byte* inputRow = inputRowBytes;
+            uint* outputRow = (uint*)outputRowBytes;
+
+            for (int x = 0; x < pixelWidth; x++)
+            {
+                outputRow[x] = InfraredColor(inputRow[x] / (float)Byte.MaxValue);
+            }
+        }
+
+        /// <summary>
+        /// Maps each pixel in a scanline from a 16 bit infrared value to a pseudo-color pixel.
+        /// </summary>
+        /// <param name="pixelWidth">Width of the input scanline.</param>
+        /// <param name="inputRowBytes">Pointer to the start of the input scanline.</param>
+        /// <param name="outputRowBytes">Pointer to the start of the output scanline.</param>
+
+        public static unsafe void PseudoColorFor16BitInfrared(int pixelWidth, byte* inputRowBytes, byte* outputRowBytes)
+        {
+            ushort* inputRow = (ushort*)inputRowBytes;
+            uint* outputRow = (uint*)outputRowBytes;
+
+            for (int x = 0; x < pixelWidth; x++)
+            {
+                outputRow[x] = InfraredColor(inputRow[x] / (float)UInt16.MaxValue);
+            }
+        }
+    }
+
+
+    // Displays the provided softwareBitmap in a XAML image control.
+    public void PresentSoftwareBitmap(SoftwareBitmap softwareBitmap)
+    {
+        if (softwareBitmap != null)
+        {
+            // Swap the processed frame to m_backBuffer and trigger UI thread to render it
+            softwareBitmap = Interlocked.Exchange(ref m_backBuffer, softwareBitmap);
+
+            // UI thread always reset m_backBuffer before using it.  Unused bitmap should be disposed.
+            softwareBitmap?.Dispose();
+
+            // Changes to the XAML Image element must happen on the UI thread through DispatcherQueue.
+            m_imageElement.DispatcherQueue.TryEnqueue(
+                async () =>
+                {
+                    // Don't let two copies of this task run at the same time.
+                    if (_taskRunning)
+                    {
+                        return;
+                    }
+                    _taskRunning = true;
+
+                    // Keep draining frames from the backbuffer until the backbuffer is empty.
+                    SoftwareBitmap latestBitmap;
+                    while ((latestBitmap = Interlocked.Exchange(ref m_backBuffer, null)) != null)
+                    {
+                        var imageSource = (SoftwareBitmapSource)m_imageElement.Source;
+                        await imageSource.SetBitmapAsync(latestBitmap);
+                        latestBitmap.Dispose();
+                    }
+
+                    _taskRunning = false;
+                });
+        }
+    }
+}
+```
 
 ## Use MultiSourceMediaFrameReader to get time-correlated frames from multiple sources
 
@@ -153,25 +790,107 @@ Starting with Windows 10, version 1607, you can use [**MultiSourceMediaFrameRead
 
 The steps for using [**MultiSourceMediaFrameReader**](/uwp/api/windows.media.capture.frames.multisourcemediaframereader) are similar to the steps for using [**MediaFrameReader**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReader) described previously in this article. This example will use a color source and a depth source. Declare some string variables to store the media frame source IDs that will be used to select frames from each source. Next, declare a [**ManualResetEventSlim**](/dotnet/api/system.threading.manualreseteventslim), a [**CancellationTokenSource**](/dotnet/api/system.threading.cancellationtokensource), and an [**EventHandler**](/dotnet/api/system.eventhandler) that will be used to implement timeout logic for the example. 
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetMultiFrameDeclarations":::
+```csharp
+private MultiSourceMediaFrameReader m_multiFrameReader = null;
+private string m_colorSourceId = null;
+private string m_depthSourceId = null;
+
+
+private readonly ManualResetEventSlim m_frameReceived = new ManualResetEventSlim(false);
+private readonly CancellationTokenSource m_tokenSource = new CancellationTokenSource();
+public event EventHandler CorrelationFailed;
+```
 
 Using the techniques described previously in this article, query for a [**MediaFrameSourceGroup**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceGroup) that includes the color and depth sources required for this example scenario. After selecting the desired frame source group, get the [**MediaFrameSourceInfo**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSourceInfo) for each frame source.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetSelectColorAndDepth":::
+```csharp
+var allGroups = await MediaFrameSourceGroup.FindAllAsync();
+var eligibleGroups = allGroups.Select(g => new
+{
+    Group = g,
+
+    // For each source kind, find the source which offers that kind of media frame,
+    // or null if there is no such source.
+    SourceInfos = new MediaFrameSourceInfo[]
+    {
+        g.SourceInfos.FirstOrDefault(info => info.SourceKind == MediaFrameSourceKind.Color),
+        g.SourceInfos.FirstOrDefault(info => info.SourceKind == MediaFrameSourceKind.Depth)
+    }
+}).Where(g => g.SourceInfos.Any(info => info != null)).ToList();
+
+if (eligibleGroups.Count == 0)
+{
+    System.Diagnostics.Debug.WriteLine("No source group with color, depth or infrared found.");
+    return;
+}
+
+var selectedGroupIndex = 0; // Select the first eligible group
+MediaFrameSourceGroup selectedGroup = eligibleGroups[selectedGroupIndex].Group;
+MediaFrameSourceInfo colorSourceInfo = eligibleGroups[selectedGroupIndex].SourceInfos[0];
+MediaFrameSourceInfo depthSourceInfo = eligibleGroups[selectedGroupIndex].SourceInfos[1];
+```
 
 Create and initialize a **MediaCapture** object, passing the selected frame source group in the initialization settings.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetMultiFrameInitMediaCapture":::
+```csharp
+m_mediaCapture = new MediaCapture();
+
+var settings = new MediaCaptureInitializationSettings()
+{
+    SourceGroup = selectedGroup,
+    SharingMode = MediaCaptureSharingMode.ExclusiveControl,
+    MemoryPreference = MediaCaptureMemoryPreference.Cpu,
+    StreamingCaptureMode = StreamingCaptureMode.Video
+};
+
+await m_mediaCapture.InitializeAsync(settings);
+```
 
 After initializing the **MediaCapture** object, retrieve [**MediaFrameSource**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameSource) objects for the color and depth cameras. Store the ID for each source so that you can select the arriving frame for the corresponding source.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetGetColorAndDepthSource":::
+```csharp
+MediaFrameSource colorSource =
+    m_mediaCapture.FrameSources.Values.FirstOrDefault(
+        s => s.Info.SourceKind == MediaFrameSourceKind.Color);
+
+MediaFrameSource depthSource =
+    m_mediaCapture.FrameSources.Values.FirstOrDefault(
+        s => s.Info.SourceKind == MediaFrameSourceKind.Depth);
+
+if (colorSource == null || depthSource == null)
+{
+    System.Diagnostics.Debug.WriteLine("MediaCapture doesn't have the Color and Depth streams");
+    return;
+}
+
+m_colorSourceId = colorSource.Info.Id;
+m_depthSourceId = depthSource.Info.Id;
+```
 
 Create and initialize the **MultiSourceMediaFrameReader** by calling [**CreateMultiSourceFrameReaderAsync**](/uwp/api/windows.media.capture.mediacapture.createmultisourceframereaderasync) and passing an array of frame sources that the reader will use. Register an event handler for the [**FrameArrived**](/uwp/api/windows.media.capture.frames.multisourcemediaframereader.FrameArrived) event. This example creates an instance the **FrameRenderer** helper class, described previously in this article, to render frames to an **Image** control. Start the frame reader by calling [**StartAsync**](/uwp/api/windows.media.capture.frames.multisourcemediaframereader.StartAsync).
 
 Register an event handler for the **CorellationFailed** event declared earlier in the example. We will signal this event if one of the media frame sources being used stops producing frames. Finally, call [**Task.Run**](/dotnet/api/system.threading.tasks.task.run) to call the timeout helper method, **NotifyAboutCorrelationFailure**, on a separate thread. The implementation of this method is shown later in this article.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetInitMultiFrameReader":::
+```csharp
+m_multiFrameReader = await m_mediaCapture.CreateMultiSourceFrameReaderAsync(
+    new[] { colorSource, depthSource });
+
+m_multiFrameReader.FrameArrived += MultiFrameReader_FrameArrived;
+
+m_frameRenderer = new FrameRenderer(iFrameReaderImageControl);
+
+MultiSourceMediaFrameReaderStartStatus startStatus =
+    await m_multiFrameReader.StartAsync();
+
+if (startStatus != MultiSourceMediaFrameReaderStartStatus.Success)
+{
+    throw new InvalidOperationException(
+        "Unable to start reader: " + startStatus);
+}
+
+this.CorrelationFailed += MainWindow_CorrelationFailed;
+Task.Run(() => NotifyAboutCorrelationFailure(m_tokenSource.Token));
+```
 
 The **FrameArrived** event is raised whenever a new frame is available from all of the media frame sources that are managed by the **MultiSourceMediaFrameReader**. This means that the event will be raised on the cadence of the slowest media source. If one source produces multiple frames in the time that a slower source produces one frame, the extra frames from the fast source will be dropped. 
 
@@ -181,19 +900,55 @@ Call the [**Set**](/dotnet/api/system.threading.manualreseteventslim.set) method
 
 Finally, perform any processing on the time-correlated media frames. This example simply displays the frame from the depth source.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetMultiFrameArrived":::
+```csharp
+private void MultiFrameReader_FrameArrived(MultiSourceMediaFrameReader sender, MultiSourceMediaFrameArrivedEventArgs args)
+{
+    using (MultiSourceMediaFrameReference muxedFrame =
+        sender.TryAcquireLatestFrame())
+    using (MediaFrameReference colorFrame =
+        muxedFrame.TryGetFrameReferenceBySourceId(m_colorSourceId))
+    using (MediaFrameReference depthFrame =
+        muxedFrame.TryGetFrameReferenceBySourceId(m_depthSourceId))
+    {
+        // Notify the listener thread that the frame has been received.
+        m_frameReceived.Set();
+        m_frameRenderer.ProcessFrame(depthFrame);
+    }
+}
+```
 
 The **NotifyCorrelationFailure** helper method was run on a separate thread after the frame reader was started. In this method, check to see if the frame received event has been signaled. Remember, in the **FrameArrived** handler, we set this event whenever a set of correlated frames arrive. If the event hasn't been signaled for some app-defined period of time - 5 seconds is a reasonable value - and the task wasn't cancelled using the **CancellationToken**, then it's likely that one of the media frame sources has stopped reading frames. In this case you typically want to shut down the frame reader, so raise the app-defined **CorrelationFailed** event. In the handler for this event you can stop the frame reader and clean up it's associated resources as shown previously in this article.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetNotifyCorrelationFailure":::
+```csharp
+private void NotifyAboutCorrelationFailure(CancellationToken token)
+{
+    // If in 5 seconds the token is not cancelled and frame event is not signaled,
+    // correlation is most likely failed.
+    if (WaitHandle.WaitAny(new[] { token.WaitHandle, m_frameReceived.WaitHandle }, 5000)
+            == WaitHandle.WaitTimeout)
+    {
+        CorrelationFailed?.Invoke(this, EventArgs.Empty);
+    }
+}
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetCorrelationFailure":::
+```csharp
+private async void MainWindow_CorrelationFailed(object sender, EventArgs e)
+{
+    await m_multiFrameReader.StopAsync();
+    m_multiFrameReader.FrameArrived -= MultiFrameReader_FrameArrived;
+    m_mediaCapture.Dispose();
+    m_mediaCapture = null;
+}
+```
 
 ## Use buffered frame acquisition mode to preserve the sequence of acquired frames
 
 Starting with Windows 10, version 1709, you can set the **[AcquisitionMode](/uwp/api/windows.media.capture.frames.mediaframereader.AcquisitionMode)** property of a **MediaFrameReader** or **MultiSourceMediaFrameReader** to **Buffered** to preserve the sequence of frames passed into your app from the frame source.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetSetBufferedFrameAcquisitionMode":::
+```csharp
+m_mediaFrameReader.AcquisitionMode = MediaFrameReaderAcquisitionMode.Buffered;
+```
 
 In the default acquisition mode, **Realtime**, if multiple frames are acquired from the source while your app is still handling the **FrameArrived** event for a previous frame, the system will send your app the most recently acquired frame and drop additional frames waiting in the buffer. This provides your app with the most recent available frame at all times. This is typically the most useful mode for realtime computer vision applications. 
 
@@ -207,21 +962,81 @@ The following code examples show you a simple implementation that displays the f
 
 First, add two **MediaPlayerElement** controls to your XAML page.
 
-:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetMediaPlayerElement1XAML":::
+```xml
+<MediaPlayerElement x:Name="mediaPlayerElement1" Width="320" Height="240"/>
+```
 
-:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetMediaPlayerElement2XAML":::
+```xml
+<MediaPlayerElement x:Name="mediaPlayerElement2" Width="320" Height="240"/>
+```
 
 Next, using the techniques shown in previous sections in this article, select a **MediaFrameSourceGroup** that contains **MediaFrameSourceInfo** objects for color cameras on the front panel and back panel. Note that the **MediaPlayer** does not automatically convert frames from non-color formats, such as a depth or infrared data, into color data. Using other sensor types may produce unexpected results. 
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetMediaSourceSelectGroup":::
+```csharp
+var allGroups = await MediaFrameSourceGroup.FindAllAsync();
+var eligibleGroups = allGroups.Select(g => new
+{
+    Group = g,
+
+    // For each source kind, find the source which offers that kind of media frame,
+    // or null if there is no such source.
+    SourceInfos = new MediaFrameSourceInfo[]
+    {
+        g.SourceInfos.FirstOrDefault(info => info.DeviceInformation?.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Front
+            && info.SourceKind == MediaFrameSourceKind.Color),
+        g.SourceInfos.FirstOrDefault(info => info.DeviceInformation?.EnclosureLocation.Panel == Windows.Devices.Enumeration.Panel.Back
+            && info.SourceKind == MediaFrameSourceKind.Color)
+    }
+}).Where(g => g.SourceInfos.Any(info => info != null)).ToList();
+
+if (eligibleGroups.Count == 0)
+{
+    System.Diagnostics.Debug.WriteLine("No source group with front and back-facing camera found.");
+    return;
+}
+
+var selectedGroupIndex = 0; // Select the first eligible group
+MediaFrameSourceGroup selectedGroup = eligibleGroups[selectedGroupIndex].Group;
+MediaFrameSourceInfo frontSourceInfo = selectedGroup.SourceInfos[0];
+MediaFrameSourceInfo backSourceInfo = selectedGroup.SourceInfos[1];
+```
 
 Initialize the **MediaCapture** object to use the selected **MediaFrameSourceGroup**.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetMediaSourceInitMediaCapture":::
+```csharp
+m_mediaCapture = new MediaCapture();
+
+var settings = new MediaCaptureInitializationSettings()
+{
+    SourceGroup = selectedGroup,
+    SharingMode = MediaCaptureSharingMode.ExclusiveControl,
+    MemoryPreference = MediaCaptureMemoryPreference.Cpu,
+    StreamingCaptureMode = StreamingCaptureMode.Video
+};
+try
+{
+    await m_mediaCapture.InitializeAsync(settings);
+}
+catch (Exception ex)
+{
+    System.Diagnostics.Debug.WriteLine("MediaCapture initialization failed: " + ex.Message);
+    return;
+}
+```
 
 Finally, call **[MediaSource.CreateFromMediaFrameSource](/uwp/api/windows.media.core.mediasource.createfrommediaframesource)** to create a **MediaSource** for each frame source by using the **[Id](/uwp/api/windows.media.capture.frames.mediaframesourceinfo.Id)** property of the associated **MediaFrameSourceInfo** object to select one of the frame sources in the **MediaCapture** object's **[FrameSources](/uwp/api/windows.media.capture.mediacapture.FrameSources)** collection. Initialize a new **MediaPlayer** object and assign it to a **MediaPlayerElement** by calling **[SetMediaPlayer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.setmediaplayer)**. Then set the **[Source](/uwp/api/windows.media.playback.mediaplayer.Source)** property to the newly created **MediaSource** object.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetMediaSourceMediaPlayer":::
+```csharp
+var frameMediaSource1 = MediaSource.CreateFromMediaFrameSource(m_mediaCapture.FrameSources[frontSourceInfo.Id]);
+mediaPlayerElement1.SetMediaPlayer(new Windows.Media.Playback.MediaPlayer());
+mediaPlayerElement1.MediaPlayer.Source = frameMediaSource1;
+mediaPlayerElement1.AutoPlay = true;
+
+var frameMediaSource2 = MediaSource.CreateFromMediaFrameSource(m_mediaCapture.FrameSources[backSourceInfo.Id]);
+mediaPlayerElement2.SetMediaPlayer(new Windows.Media.Playback.MediaPlayer());
+mediaPlayerElement2.MediaPlayer.Source = frameMediaSource2;
+mediaPlayerElement2.AutoPlay = true;
+```
 
 ## Use video profiles to select a frame source
 
@@ -229,7 +1044,26 @@ A camera profile, represented by a [**MediaCaptureVideoProfile**](/uwp/api/Windo
 
 First, call [**MediaFrameSourceGroup.FindAllAsync**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) to get a list of all media frame source groups available on the current device. Loop through each source group and call [**MediaCapture.FindKnownVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) to get a list of all of the video profiles for the current source group that support the specified profile, in this case HDR with WCG photo. If a profile that meets the criteria is found, create a new **MediaCaptureInitializationSettings** object and set the **VideoProfile** to the select profile and the **VideoDeviceId** to the **Id** property of the current media frame source group.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.FrameReader.xaml.cs" id="SnippetGetSettingsWithProfile":::
+```csharp
+IReadOnlyList<MediaFrameSourceGroup> sourceGroups = await MediaFrameSourceGroup.FindAllAsync();
+MediaCaptureInitializationSettings settings = null;
+
+foreach (MediaFrameSourceGroup sourceGroup in sourceGroups)
+{
+    // Find a device that support AdvancedColorPhoto
+    IReadOnlyList<MediaCaptureVideoProfile> profileList = MediaCapture.FindKnownVideoProfiles(
+                                  sourceGroup.Id,
+                                  KnownVideoProfile.HdrWithWcgPhoto);
+
+    if (profileList.Count > 0)
+    {
+        settings = new MediaCaptureInitializationSettings();
+        settings.VideoProfile = profileList[0];
+        settings.VideoDeviceId = sourceGroup.Id;
+        break;
+    }
+}
+```
 
 For more information on using camera profiles, see [Camera profiles](camera-profiles.md).
 

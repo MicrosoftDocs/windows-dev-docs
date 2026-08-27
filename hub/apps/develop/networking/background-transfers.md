@@ -1,7 +1,7 @@
 ---
 description: Use the background transfer API to copy files reliably over the network.
 title: Background transfers
-ms.date: 06/25/2026
+ms.date: 08/23/2026
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
@@ -62,7 +62,26 @@ The creation of an upload begins with [**BackgroundUploader**](/uwp/api/Windows.
 
 Before we can begin with the creation of an [**UploadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation), we first need to identify the URI of the location to upload to, and the file that will be uploaded. In the following example, the *uriString* value is populated using a string from UI input, and the *file* value using the [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) object returned by a [**PickSingleFileAsync**](/uwp/api/windows.storage.pickers.fileopenpicker.picksinglefileasync) operation.
 
-:::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/upload_quickstart/js/main.js" id="Snippetupload_quickstart_B":::
+```javascript
+function uploadFile() {
+    var filePicker = new Windows.Storage.Pickers.FileOpenPicker();
+    filePicker.fileTypeFilter.replaceAll(["*"]);
+
+    filePicker.pickSingleFileAsync().then(function (file) {
+        if (!file) {
+            printLog("No file selected");
+            return;
+        }
+
+        var upload = new UploadOp();
+        var uriString = document.getElementById("serverAddressField").value;
+        upload.start(uriString, file);
+
+        // Store the upload operation in the uploadOps array.
+        uploadOperations.push(upload);
+    });
+}
+```
 
 **Create and initialize the upload operation**
 
@@ -72,7 +91,41 @@ Next, the properties of the provided [**StorageFile**](/uwp/api/Windows.Storage.
 
 Finally, [**BackgroundUploader**](/uwp/api/Windows.Networking.BackgroundTransfer.BackgroundUploader) creates the [**UploadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation) (*upload*).
 
-:::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/upload_quickstart/js/main.js" id="Snippetupload_quickstart_A":::
+```javascript
+function UploadOp() {
+    var upload = null;
+    var promise = null;
+
+    this.start = function (uriString, file) {
+        try {
+
+            var uri = new Windows.Foundation.Uri(uriString);
+            var uploader = new Windows.Networking.BackgroundTransfer.BackgroundUploader();
+
+            // Set a header, so the server can save the file (this is specific to the sample server).
+            uploader.setRequestHeader("Filename", file.name);
+
+            // Create a new upload operation.
+            upload = uploader.createUpload(uri, file);
+
+            // Start the upload and persist the promise to be able to cancel the upload.
+            promise = upload.startAsync().then(complete, error, progress);
+        } catch (err) {
+            displayError(err);
+        }
+    };
+    // On application activation, reassign callbacks for a upload
+    // operation persisted from previous application state.
+    this.load = function (loadedUpload) {
+        try {
+            upload = loadedUpload;
+            promise = upload.attachAsync().then(complete, error, progress);
+        } catch (err) {
+            displayError(err);
+        }
+    };
+}
+```
 
 Note the asynchronous method calls defined using JavaScript promises. Looking at a line from the last example:
 
@@ -152,11 +205,22 @@ On completion or cancellation of an [**UploadOperation**](/uwp/api/Windows.Netwo
 
 1.  Before defining the function that enumerates persisted operations, we need to create an array that will contain the [**UploadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation) objects that it will return:
 
-    :::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/upload_quickstart/js/main.js" id="Snippetupload_quickstart_C":::
+    ```javascript
+    var uploadOperations = [];
+    ```
 
 1.  Next we define the function that enumerates persisted operations and stores them in our array. Note that the **load** method called to re-assign callbacks to the [**UploadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.UploadOperation), should it persist through app termination, is in the UploadOp class we define later in this section.
 
-    :::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/upload_quickstart/js/main.js" id="Snippetupload_quickstart_D":::
+    ```javascript
+    Windows.Networking.BackgroundTransfer.BackgroundUploader.getCurrentUploadsAsync()
+        .then(function (uploads) {
+            for (var i = 0; i < uploads.size; i++) {
+                var upload = new UploadOp();
+                upload.load(uploads[i]);
+                uploadOperations.push(upload);
+            }
+        });
+    ```
 
 ## Downloading files
 When using Background Transfer, each download exists as a [**DownloadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) that exposes a number of control methods used to pause, resume, restart, and cancel the operation. App events (for example, suspension or termination) and connectivity changes are handled automatically by the system per **DownloadOperation**; downloads will continue during app suspension periods or pause and persist beyond app termination. For mobile network scenarios, setting the [**CostPolicy**](/uwp/api/windows.networking.backgroundtransfer.backgrounddownloader.costpolicy) property will indicate whether or not your app will begin or continue downloads while a metered network is being used for Internet connectivity.
@@ -168,7 +232,42 @@ The following examples will walk you through the creation and initialization of 
 ### Configure and start a Background Transfer file download
 The following example demonstrates how strings representing a URI and a file name can be used to create a [**Uri**](/uwp/api/Windows.Foundation.Uri) object and the [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) that will contain the requested file. In this example, the new file is automatically placed in a pre-defined location. Alternatively, [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) can be used allow users to indicate where to save the file on the device. Note that the **load** method called to re-assign callbacks to the [**DownloadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation), should it persist through app termination, is in the DownloadOp class defined later in this section.
 
-:::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/download_quickstart/js/main.js" id="Snippetdownload_quickstart_A":::
+```javascript
+function DownloadOp() {
+    var download = null;
+    var promise = null;
+    var imageStream = null;
+
+    this.start = function (uriString, fileName) {
+        try {
+            // Asynchronously create the file in the pictures folder.
+            Windows.Storage.KnownFolders.picturesLibrary.createFileAsync(fileName, Windows.Storage.CreationCollisionOption.generateUniqueName).done(function (newFile) {
+                var uri = Windows.Foundation.Uri(uriString);
+                var downloader = new Windows.Networking.BackgroundTransfer.BackgroundDownloader();
+
+                // Create a new download operation.
+                download = downloader.createDownload(uri, newFile);
+
+                // Start the download and persist the promise to be able to cancel the download.
+                promise = download.startAsync().then(complete, error, progress);
+            }, error);
+        } catch (err) {
+            displayException(err);
+        }
+    };
+    // On application activation, reassign callbacks for a download
+    // operation persisted from previous application state.
+    this.load = function (loadedDownload) {
+        try {
+            download = loadedDownload;
+            printLog("Found download: " + download.guid + " from previous application run.<br\>");
+            promise = download.attachAsync().then(complete, error, progress);
+        } catch (err) {
+            displayException(err);
+        }
+    };
+}
+```
 
 Note the asynchronous method calls defined using JavaScript promises. Looking at line 17 from the previous code example:
 
@@ -181,18 +280,49 @@ The async method call is followed by a then statement which indicates methods, d
 ### Adding additional operation control methods
 The level of control can be increased by implementing additional [**DownloadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) methods. For example, adding the following code to the example above will introduce the ability to cancel the download.
 
-:::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/download_quickstart/js/main.js" id="Snippetdownload_quickstart_B":::
+```javascript
+// Cancel download.
+this.cancel = function () {
+    try {
+        if (promise) {
+            promise.cancel();
+            promise = null;
+            printLog("Canceling download: " + download.guid + "<br\>");
+            if (imageStream) {
+                imageStream.close();
+            }
+        }
+        else {
+            printLog("Download " + download.guid + " already canceled.<br\>");
+        }
+    } catch (err) {
+        displayException(err);
+    }
+};
+```
 
 ### Enumerating persisted operations at start-up
 On completion or cancellation of a [**DownloadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation), any associated system resources are released. However, if your app is terminated before either of these events occur, downloads will pause and persist in the background. The following examples demonstrate how to re-introduce persisted downloads into a new app session.
 
 1.  Before defining the function that enumerates persisted operations, we need to create an array that will contain the [**DownloadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) objects that it will return:
 
-    :::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/download_quickstart/js/main.js" id="Snippetdownload_quickstart_D":::
+    ```javascript
+    var downloadOps = [];
+    ```
 
 1.  Next we define the function that enumerates persisted operations and stores them in our array. Note that the **load** method called to re-assign callbacks for a persisted [**DownloadOperation**](/uwp/api/Windows.Networking.BackgroundTransfer.DownloadOperation) is in the DownloadOp example we define later in this section.
 
-    :::code language="javascript" source="~/../snippets-windows/windows-uwp/networking/backgroundtransfer/download_quickstart/js/main.js" id="Snippetdownload_quickstart_E":::
+    ```javascript
+    // Enumerate outstanding downloads.
+    Windows.Networking.BackgroundTransfer.BackgroundDownloader.getCurrentDownloadsAsync().done(function (downloads) {
+
+        for (var i = 0; i < downloads.size; i++) {
+            var download = new DownloadOp();
+            download.load(downloads[i]);
+            downloadOps.push(download);
+        }
+    });
+    ```
 
 1.  You can now use the populated list to restart pending operations.
 

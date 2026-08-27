@@ -1,7 +1,7 @@
 ---
 description: This article shows you how to enumerate MIDI (Musical Instrument Digital Interface) devices and send and receive MIDI messages from a WinUI app.
 title: MIDI
-ms.date: 05/07/2026
+ms.date: 08/23/2026
 ms.topic: article
 keywords: windows, winui, midi, musical instrument digital interface
 ms.localizationpriority: medium
@@ -23,11 +23,18 @@ Add some member variables to the class:
 -   A [**ListBox**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listbox) control that will be populated with the names of the available devices.
 -   A [**DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue) that is required to update the UI from a thread other than the UI thread.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MidiDeviceWatcher.cs" id="SnippetWatcherVariables":::
+```csharp
+DeviceWatcher deviceWatcher;
+string deviceSelectorString;
+ListBox deviceListBox;
+DispatcherQueue dispatcherQueue;
+```
 
 Add a [**DeviceInformationCollection**](/uwp/api/Windows.Devices.Enumeration.DeviceInformationCollection) property that is used to access the current list of devices from outside the helper class.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MidiDeviceWatcher.cs" id="SnippetDeclareDeviceInformationCollection":::
+```csharp
+public DeviceInformationCollection? DeviceInformationCollection { get; set; }
+```
 
 In the class constructor, the caller passes in the MIDI device selector string, the **ListBox** for listing the devices, and the **DispatcherQueue** needed to update the UI.
 
@@ -35,7 +42,21 @@ Call [**DeviceInformation.CreateWatcher**](/uwp/api/windows.devices.enumeration.
 
 Register handlers for the watcher's event handlers.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MidiDeviceWatcher.cs" id="SnippetWatcherConstructor":::
+```csharp
+public MidiDeviceWatcher(string midiDeviceSelectorString, ListBox midiDeviceListBox, DispatcherQueue dispatcher)
+{
+    deviceListBox = midiDeviceListBox;
+    dispatcherQueue = dispatcher;
+
+    deviceSelectorString = midiDeviceSelectorString;
+
+    deviceWatcher = DeviceInformation.CreateWatcher(deviceSelectorString);
+    deviceWatcher.Added += DeviceWatcher_Added;
+    deviceWatcher.Removed += DeviceWatcher_Removed;
+    deviceWatcher.Updated += DeviceWatcher_Updated;
+    deviceWatcher.EnumerationCompleted += DeviceWatcher_EnumerationCompleted;
+}
+```
 
 The **DeviceWatcher** has the following events:
 
@@ -46,35 +67,118 @@ The **DeviceWatcher** has the following events:
 
 In the event handler for each of these events, a helper method, **UpdateDevices**, is called to update the **ListBox** with the current list of devices. Because **UpdateDevices** updates UI elements and these event handlers are not called on the UI thread, each call must be wrapped in a call to [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MidiDeviceWatcher.cs" id="SnippetWatcherEventHandlers":::
+```csharp
+private void DeviceWatcher_Removed(DeviceWatcher sender, DeviceInformationUpdate args)
+{
+    dispatcherQueue.TryEnqueue(() =>
+    {
+        UpdateDevices();
+    });
+}
+
+private void DeviceWatcher_Added(DeviceWatcher sender, DeviceInformation args)
+{
+    dispatcherQueue.TryEnqueue(() =>
+    {
+        UpdateDevices();
+    });
+}
+
+private void DeviceWatcher_EnumerationCompleted(DeviceWatcher sender, object args)
+{
+    dispatcherQueue.TryEnqueue(() =>
+    {
+        UpdateDevices();
+    });
+}
+
+private void DeviceWatcher_Updated(DeviceWatcher sender, DeviceInformationUpdate args)
+{
+    dispatcherQueue.TryEnqueue(() =>
+    {
+        UpdateDevices();
+    });
+}
+```
 
 The **UpdateDevices** helper method calls [**DeviceInformation.FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) and updates the **ListBox** with the names of the returned devices as described previously in this article.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MidiDeviceWatcher.cs" id="SnippetWatcherUpdateDevices":::
+```csharp
+private async void UpdateDevices()
+{
+    // Get a list of all MIDI devices
+    this.DeviceInformationCollection = await DeviceInformation.FindAllAsync(deviceSelectorString);
+
+    deviceListBox.Items.Clear();
+
+    if (!this.DeviceInformationCollection.Any())
+    {
+        deviceListBox.Items.Add("No MIDI devices found!");
+    }
+
+    foreach (var deviceInformation in this.DeviceInformationCollection)
+    {
+        deviceListBox.Items.Add(deviceInformation.Name);
+    }
+}
+```
 
 Add methods to start the watcher, using the **DeviceWatcher** object's [**Start**](/uwp/api/windows.devices.enumeration.devicewatcher.start) method, and to stop the watcher, using the [**Stop**](/uwp/api/windows.devices.enumeration.devicewatcher.stop) method.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MidiDeviceWatcher.cs" id="SnippetWatcherStopStart":::
+```csharp
+public void StartWatcher()
+{
+    deviceWatcher.Start();
+}
+public void StopWatcher()
+{
+    deviceWatcher.Stop();
+}
+```
 
 Provide a destructor to unregister the watcher event handlers and set the device watcher to null.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MidiDeviceWatcher.cs" id="SnippetWatcherDestructor":::
+```csharp
+~MidiDeviceWatcher()
+{
+    deviceWatcher.Added -= DeviceWatcher_Added;
+    deviceWatcher.Removed -= DeviceWatcher_Removed;
+    deviceWatcher.Updated -= DeviceWatcher_Updated;
+    deviceWatcher.EnumerationCompleted -= DeviceWatcher_EnumerationCompleted;
+}
+```
 
 ## Create MIDI ports to send and receive messages
 
 In the code behind for your window, declare member variables to hold two instances of the **MidiDeviceWatcher** helper class, one for input devices and one for output devices.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MainWindow.xaml.cs" id="SnippetDeclareDeviceWatchers":::
+```csharp
+MidiDeviceWatcher? inputDeviceWatcher;
+MidiDeviceWatcher? outputDeviceWatcher;
+```
 
 Also declare member variables for the MIDI input and output port objects.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MainWindow.xaml.cs" id="SnippetDeclareMidiPorts":::
+```csharp
+MidiInPort? midiInPort;
+IMidiOutPort? midiOutPort;
+```
 
 Create a new instance of the watcher helper classes, passing in the device selector string, the **ListBox** to be populated, and the **DispatcherQueue** object. Then, call the method to start each object's **DeviceWatcher**.
 
 Shortly after each **DeviceWatcher** is started, it will finish enumerating the current devices connected to the system and raise its [**EnumerationCompleted**](/uwp/api/windows.devices.enumeration.devicewatcher.enumerationcompleted) event, which will cause each **ListBox** to be updated with the current MIDI devices.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MainWindow.xaml.cs" id="SnippetStartWatchers":::
+```csharp
+inputDeviceWatcher =
+    new MidiDeviceWatcher(MidiInPort.GetDeviceSelector(), midiInPortListBox, DispatcherQueue);
+
+inputDeviceWatcher.StartWatcher();
+
+outputDeviceWatcher =
+    new MidiDeviceWatcher(MidiOutPort.GetDeviceSelector(), midiOutPortListBox, DispatcherQueue);
+
+outputDeviceWatcher.StartWatcher();
+```
 
 When the user selects an item in the MIDI input **ListBox**, the [**SelectionChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged) event is raised. In the handler for this event, access the **DeviceInformationCollection** property of the helper class to get the current list of devices. If there are entries in the list, select the **DeviceInformation** object with the index corresponding to the **ListBox** control's [**SelectedIndex**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectedindex).
 
@@ -82,23 +186,114 @@ Create the [**MidiInPort**](/uwp/api/Windows.Devices.Midi.MidiInPort) object rep
 
 Register a handler for the [**MessageReceived**](/uwp/api/windows.devices.midi.midiinport.messagereceived) event, which is raised whenever a MIDI message is received through the specified device.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MainWindow.xaml.cs" id="SnippetInPortSelectionChanged":::
+```csharp
+private async void midiInPortListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    var deviceInformationCollection = inputDeviceWatcher?.DeviceInformationCollection;
+
+    if (deviceInformationCollection == null)
+    {
+        return;
+    }
+
+    DeviceInformation devInfo = deviceInformationCollection[midiInPortListBox.SelectedIndex];
+
+    if (devInfo == null)
+    {
+        return;
+    }
+
+    midiInPort = await MidiInPort.FromIdAsync(devInfo.Id);
+
+    if (midiInPort == null)
+    {
+        System.Diagnostics.Debug.WriteLine("Unable to create MidiInPort from input device");
+        return;
+    }
+    midiInPort.MessageReceived += MidiInPort_MessageReceived;
+}
+```
 
 When the **MessageReceived** handler is called, the message is contained in the [**Message**](/uwp/api/Windows.Devices.Midi.MidiMessageReceivedEventArgs) property of the **MidiMessageReceivedEventArgs**. The [**Type**](/uwp/api/windows.devices.midi.imidimessage.type) of the message object is a value from the [**MidiMessageType**](/uwp/api/Windows.Devices.Midi.MidiMessageType) enumeration indicating the type of message that was received. The data of the message depends on the type of the message. This example checks to see if the message is a note on message and, if so, outputs the midi channel, note, and velocity of the message.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MainWindow.xaml.cs" id="SnippetMessageReceived":::
+```csharp
+private void MidiInPort_MessageReceived(MidiInPort sender, MidiMessageReceivedEventArgs args)
+{
+    IMidiMessage receivedMidiMessage = args.Message;
+
+    System.Diagnostics.Debug.WriteLine(receivedMidiMessage.Timestamp.ToString());
+
+    if (receivedMidiMessage.Type == MidiMessageType.NoteOn)
+    {
+        System.Diagnostics.Debug.WriteLine(((MidiNoteOnMessage)receivedMidiMessage).Channel);
+        System.Diagnostics.Debug.WriteLine(((MidiNoteOnMessage)receivedMidiMessage).Note);
+        System.Diagnostics.Debug.WriteLine(((MidiNoteOnMessage)receivedMidiMessage).Velocity);
+    }
+}
+```
 
 The [**SelectionChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged) handler for the output device **ListBox** works the same as the handler for input devices, except no event handler is registered.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MainWindow.xaml.cs" id="SnippetOutPortSelectionChanged":::
+```csharp
+private async void midiOutPortListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    var deviceInformationCollection = outputDeviceWatcher?.DeviceInformationCollection;
+
+    if (deviceInformationCollection == null)
+    {
+        return;
+    }
+
+    DeviceInformation devInfo = deviceInformationCollection[midiOutPortListBox.SelectedIndex];
+
+    if (devInfo == null)
+    {
+        return;
+    }
+
+    midiOutPort = await MidiOutPort.FromIdAsync(devInfo.Id);
+
+    if (midiOutPort == null)
+    {
+        System.Diagnostics.Debug.WriteLine("Unable to create MidiOutPort from output device");
+        return;
+    }
+}
+```
 
 Once the output device is created, you can send a message by creating a new [**IMidiMessage**](/uwp/api/Windows.Devices.Midi.IMidiMessage) for the type of message you want to send. In this example, the message is a [**NoteOnMessage**](/uwp/api/Windows.Devices.Midi.MidiNoteOnMessage). The [**SendMessage**](/uwp/api/windows.devices.midi.imidioutport.sendmessage) method of the [**IMidiOutPort**](/uwp/api/Windows.Devices.Midi.IMidiOutPort) object is called to send the message.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MainWindow.xaml.cs" id="SnippetSendMessage":::
+```csharp
+byte channel = 0;
+byte note = 60;
+byte velocity = 127;
+IMidiMessage midiMessageToSend = new MidiNoteOnMessage(channel, note, velocity);
+
+midiOutPort.SendMessage(midiMessageToSend);
+```
 
 When your app is closing, be sure to clean up your app's resources. Unregister your event handlers and set the MIDI in port and out port objects to null. Stop the device watchers and set them to null.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/midi-winui/cs/MidiWinUI/MainWindow.xaml.cs" id="SnippetCleanUp":::
+```csharp
+inputDeviceWatcher?.StopWatcher();
+inputDeviceWatcher = null;
+
+outputDeviceWatcher?.StopWatcher();
+outputDeviceWatcher = null;
+
+if (midiInPort != null)
+{
+    midiInPort.MessageReceived -= MidiInPort_MessageReceived;
+    midiInPort.Dispose();
+    midiInPort = null;
+}
+
+if (midiOutPort != null)
+{
+    midiOutPort.Dispose();
+    midiOutPort = null;
+}
+```
 
 ## Using the built-in Windows General MIDI synth
 

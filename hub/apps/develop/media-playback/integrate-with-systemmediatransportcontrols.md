@@ -2,7 +2,7 @@
 ms.assetid: eb690f2b-3bf8-4a65-99a4-2a3a8c7760b7
 description: This article shows you how to interact with the System Media Transport Controls.
 title: Integrate with the System Media Transport Controls
-ms.date: 02/08/2017
+ms.date: 08/23/2026
 ms.topic: article
 keywords: windows 10, winui
 ms.localizationpriority: medium
@@ -30,9 +30,23 @@ For more information on working with **MediaSource**, **MediaPlaybackItem**, and
 ## Add metadata to be displayed by the SMTC
 If you want add or modify the metadata that is displayed for your media items in the SMTC, such as a video or song title, you need to update the display properties for the **MediaPlaybackItem** representing your media item. First, get a reference to the [**MediaItemDisplayProperties**](/uwp/api/Windows.Media.Playback.MediaItemDisplayProperties) object by calling [**GetDisplayProperties**](/uwp/api/windows.media.playback.mediaplaybackitem.getdisplayproperties). Next, set the type of media, music or video, for the item with the [**Type**](/uwp/api/windows.media.playback.mediaitemdisplayproperties.type) property. Then you can populate the fields of the [**MusicProperties**](/uwp/api/windows.media.playback.mediaitemdisplayproperties.musicproperties) or [**VideoProperties**](/uwp/api/windows.media.playback.mediaitemdisplayproperties.videoproperties), depending on which media type you specified. Finally, update the metadata for the media item by calling [**ApplyDisplayProperties**](/uwp/api/windows.media.playback.mediaplaybackitem.applydisplayproperties).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetSetVideoProperties":::
+```csharp
+MediaItemDisplayProperties props = mediaPlaybackItem.GetDisplayProperties();
+props.Type = Windows.Media.MediaPlaybackType.Video;
+props.VideoProperties.Title = "Video title";
+props.VideoProperties.Subtitle = "Video subtitle";
+props.VideoProperties.Genres.Add("Documentary");
+mediaPlaybackItem.ApplyDisplayProperties(props);
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetSetMusicProperties":::
+```csharp
+props = mediaPlaybackItem.GetDisplayProperties();
+props.Type = Windows.Media.MediaPlaybackType.Music;
+props.MusicProperties.Title = "Song title";
+props.MusicProperties.Artist = "Song artist";
+props.MusicProperties.Genres.Add("Polka");
+mediaPlaybackItem.ApplyDisplayProperties(props);
+```
 
 
 > [!Note]
@@ -47,25 +61,50 @@ For every command, such as the *Next* command which by default skips to the next
 
 The following example registers a handler for the **NextReceived** event and for the [**IsEnabledChanged**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.isenabledchanged) event of the **NextBehavior**.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/smtc-winui/cs/SMTC-WinUI/MainWindow.xaml.cs" id="SnippetAddNextHandler":::
+```csharp
+mediaPlayer.CommandManager.NextReceived += CommandManager_NextReceived;
+mediaPlayer.CommandManager.NextBehavior.IsEnabledChanged += NextBehavior_IsEnabledChanged;
+```
 
-The following example illustrates a scenario where the app wants to disable the *Next* command after the user has clicked through five items in the playlist, perhaps requiring some user interaction before continuing playing content. Each ## the **NextReceived** event is raised, a counter is incremented. Once the counter reaches the target number, the [**EnablingRule**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.enablingrule) for the *Next* command is set to [**Never**](/uwp/api/Windows.Media.Playback.MediaCommandEnablingRule), which disables the command. 
+The following example illustrates a scenario where the app wants to disable the *Next* command after the user has clicked through five items in the playlist, perhaps requiring some user interaction before continuing playing content. Each time the **NextReceived** event is raised, a counter is incremented. Once the counter reaches the target number, the [**EnablingRule**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.enablingrule) for the *Next* command is set to [**Never**](/uwp/api/Windows.Media.Playback.MediaCommandEnablingRule), which disables the command.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/smtc-winui/cs/SMTC-WinUI/MainWindow.xaml.cs" id="SnippetNextReceived":::
+```csharp
+int nextPressCount = 0;
+
+private void CommandManager_NextReceived(MediaPlaybackCommandManager sender, MediaPlaybackCommandManagerNextReceivedEventArgs args)
+{
+    nextPressCount++;
+    if (nextPressCount > 5)
+    {
+        sender.NextBehavior.EnablingRule = MediaCommandEnablingRule.Never;
+        // Perform app tasks while the Next button is disabled
+    }
+}
+```
 
 You can also set the command to **Always**, which means the command will always be enabled even if, for the *Next* command example, there are no more items in the playlist. Or you can set the command to **Auto**, where the system determines whether the command should be enabled based on the current content being played.
 
 For the scenario described above, at some point the app will want to reenable the *Next* command and does so by setting the **EnablingRule** to **Auto**.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/smtc-winui/cs/SMTC-WinUI/MainWindow.xaml.cs" id="SnippetEnableNextButton":::
+```csharp
+mediaPlayer.CommandManager.NextBehavior.EnablingRule = MediaCommandEnablingRule.Auto;
+nextPressCount = 0;
+```
 
-Because your app may have it's own UI for controlling playback while it is in the foreground, you can use the [**IsEnabledChanged**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.isenabledchanged) events to update your own UI to match the SMTC as commands are enabled or disabled by accessing the [**IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.isenabled) of the [**MediaPlaybackCommandManagerCommandBehavior**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior) passed into the handler.
+Because your app may have its own UI for controlling playback while it is in the foreground, you can use the [**IsEnabledChanged**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.isenabledchanged) events to update your own UI to match the SMTC as commands are enabled or disabled by accessing the [**IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagercommandbehavior.isenabled) of the [**MediaPlaybackCommandManagerCommandBehavior**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManagerCommandBehavior) passed into the handler.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/smtc-winui/cs/SMTC-WinUI/MainWindow.xaml.cs" id="SnippetIsEnabledChanged":::
+```csharp
+private void NextBehavior_IsEnabledChanged(MediaPlaybackCommandManagerCommandBehavior sender, object args)
+{
+    MyNextButton.IsEnabled = sender.IsEnabled;
+}
+```
 
 In some cases, you may want to completely override the behavior of an SMTC command. The example below illustrates a scenario where an app uses the *Next* and *Previous* commands to switch between internet radio stations instead of skipping between tracks in the current playlist. As in the previous example, a handler is registered for when a command is received, in this case it is the [**PreviousReceived**](/uwp/api/windows.media.playback.mediaplaybackcommandmanager.previousreceived) event.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/smtc-winui/cs/SMTC-WinUI/MainWindow.xaml.cs" id="SnippetAddPreviousHandler":::
+```csharp
+mediaPlayer.CommandManager.PreviousReceived += CommandManager_PreviousReceived;
+```
 
 In the **PreviousReceived** handler, first a [**Deferral**](/uwp/api/Windows.Foundation.Deferral) is obtained by calling the  [**GetDeferral**](/uwp/api/windows.media.playback.mediaplaybackcommandmanagerpreviousreceivedeventargs.getdeferral) of the [**MediaPlaybackCommandManagerPreviousReceivedEventArgs**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManagerPreviousReceivedEventArgs) passed into the handler. This tells the system to wait for until the deferral is complete before executing the command. This is extremely important if you are going to make asynchronous calls in the handler. At this point, the example calls a custom method that returns a **MediaPlaybackItem** representing the previous radio station.
 
@@ -73,7 +112,21 @@ Next, the [**Handled**](/uwp/api/windows.media.playback.mediaplaybackcommandmana
 
 Finally, [**Complete**](/uwp/api/windows.foundation.deferral.complete) is called on the deferral object to let the system know that you are done processing the command.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/smtc-winui/cs/SMTC-WinUI/MainWindow.xaml.cs" id="SnippetPreviousReceived":::
+```csharp
+private async void CommandManager_PreviousReceived(MediaPlaybackCommandManager sender, MediaPlaybackCommandManagerPreviousReceivedEventArgs args)
+{
+    var deferral = args.GetDeferral();
+    MediaPlaybackItem mediaPlaybackItem = await GetPreviousStation();
+
+    if (args.Handled != true)
+    {
+        args.Handled = true;
+        sender.MediaPlayer.Source = mediaPlaybackItem;
+        sender.MediaPlayer.Play();
+    }
+    deferral.Complete();
+}
+```
                  
 ## Manual control of the SMTC
 As mentioned previously in this article, the SMTC will automatically detect and display information for every instance of **MediaPlayer** that your app creates. If you want to use multiple instances of **MediaPlayer** but want the SMTC to provide a single entry for your app, then you must manually control the behavior of the SMTC instead of relying on automatic integration. Also, if you are using [**MediaTimelineController**](/uwp/api/Windows.Media.MediaTimelineController) to control one or more media players, you must use manual SMTC integration. Also, if your app uses an API other than **MediaPlayer**, such as the [**AudioGraph**](/uwp/api/Windows.Media.Audio.AudioGraph) class, to play media, you must implement manual SMTC integration for the user to use the SMTC to control your app. For information on how to manually control the SMTC, see [Manual control of the System Media Transport Controls](system-media-transport-controls.md).

@@ -1,7 +1,7 @@
 ---
 description: You can use the Windows.Media.Transcoding APIs to transcode video files from one format to another.
 title: Transcode media files
-ms.date: 05/06/2026
+ms.date: 08/23/2026
 ms.topic: article
 keywords: windows, winui, transcode, media, video, audio
 ms.localizationpriority: medium
@@ -17,7 +17,33 @@ You can use the [**Windows.Media.Transcoding**](/uwp/api/Windows.Media.Transcodi
 
 The way that your app determines the source and destination files for transcoding depends on your implementation. This example uses a [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) and a [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker) to allow the user to pick a source and a destination file.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/transcode-winui/cs/TranscodeWinUI/MainWindow.xaml.cs" id="SnippetTranscodeGetFile":::
+```csharp
+var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+
+// Initialize the picker with the window handle (required for WinUI desktop apps).
+var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(App.MainWindow);
+WinRT.Interop.InitializeWithWindow.Initialize(openPicker, hwnd);
+
+openPicker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.VideosLibrary;
+openPicker.FileTypeFilter.Add(".wmv");
+openPicker.FileTypeFilter.Add(".mp4");
+
+StorageFile source = await openPicker.PickSingleFileAsync();
+
+var savePicker = new Windows.Storage.Pickers.FileSavePicker();
+
+WinRT.Interop.InitializeWithWindow.Initialize(savePicker, hwnd);
+
+savePicker.SuggestedStartLocation =
+    Windows.Storage.Pickers.PickerLocationId.VideosLibrary;
+
+savePicker.DefaultFileExtension = ".mp4";
+savePicker.SuggestedFileName = "New Video";
+
+savePicker.FileTypeChoices.Add("MPEG4", new string[] { ".mp4" });
+
+StorageFile destination = await savePicker.PickSaveFileAsync();
+```
 
 ## Create a media encoding profile
 
@@ -50,7 +76,10 @@ Method  |Profile  |
 
 The following code creates a profile for MP4 video.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/transcode-winui/cs/TranscodeWinUI/MainWindow.xaml.cs" id="SnippetTranscodeMediaProfile":::
+```csharp
+MediaEncodingProfile profile =
+    MediaEncodingProfile.CreateMp4(VideoEncodingQuality.HD720p);
+```
 
 The static [**CreateMp4**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4) method creates an MP4 encoding profile. The parameter for this method gives the target resolution for the video. In this case, [**VideoEncodingQuality.hd720p**](/uwp/api/Windows.Media.MediaProperties.VideoEncodingQuality) means 1280 x 720 pixels at 30 frames per second. ("720p" stands for 720 progressive scan lines per frame.) The other methods for creating predefined profiles all follow this pattern.
 
@@ -60,10 +89,62 @@ Alternatively, you can create a profile that matches an existing media file by u
 
 To transcode the file, create a new [**MediaTranscoder**](/uwp/api/Windows.Media.Transcoding.MediaTranscoder) object and call the [**MediaTranscoder.PrepareFileTranscodeAsync**](/uwp/api/windows.media.transcoding.mediatranscoder.preparefiletranscodeasync) method. Pass in the source file, the destination file, and the encoding profile. Then call the [**TranscodeAsync**](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) method on the [**PrepareTranscodeResult**](/uwp/api/Windows.Media.Transcoding.PrepareTranscodeResult) object that was returned from the async transcode operation.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/transcode-winui/cs/TranscodeWinUI/MainWindow.xaml.cs" id="SnippetTranscodeTranscodeFile":::
+```csharp
+MediaTranscoder transcoder = new MediaTranscoder();
+
+PrepareTranscodeResult prepareOp = await
+    transcoder.PrepareFileTranscodeAsync(source, destination, profile);
+
+if (prepareOp.CanTranscode)
+{
+    var transcodeOp = prepareOp.TranscodeAsync();
+
+    transcodeOp.Progress +=
+        new AsyncActionProgressHandler<double>(TranscodeProgress);
+    transcodeOp.Completed +=
+        new AsyncActionWithProgressCompletedHandler<double>(TranscodeComplete);
+}
+else
+{
+    switch (prepareOp.FailureReason)
+    {
+        case TranscodeFailureReason.CodecNotFound:
+            System.Diagnostics.Debug.WriteLine("Codec not found.");
+            break;
+        case TranscodeFailureReason.InvalidProfile:
+            System.Diagnostics.Debug.WriteLine("Invalid profile.");
+            break;
+        default:
+            System.Diagnostics.Debug.WriteLine("Unknown failure.");
+            break;
+    }
+}
+```
 
 ## Respond to transcoding progress
 
 You can register events to respond when the progress of the asynchronous [**TranscodeAsync**](/uwp/api/windows.media.transcoding.preparetranscoderesult.transcodeasync) changes. These events are part of the async programming framework for Windows apps and are not specific to the transcoding API.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/transcode-winui/cs/TranscodeWinUI/MainWindow.xaml.cs" id="SnippetTranscodeCallbacks":::
+```csharp
+void TranscodeProgress(IAsyncActionWithProgress<double> asyncInfo, double percent)
+{
+    // Display or handle progress info.
+}
+
+void TranscodeComplete(IAsyncActionWithProgress<double> asyncInfo, AsyncStatus status)
+{
+    asyncInfo.GetResults();
+    if (asyncInfo.Status == AsyncStatus.Completed)
+    {
+        // Display or handle complete info.
+    }
+    else if (asyncInfo.Status == AsyncStatus.Canceled)
+    {
+        // Display or handle cancel info.
+    }
+    else
+    {
+        // Display or handle error info.
+    }
+}
+```

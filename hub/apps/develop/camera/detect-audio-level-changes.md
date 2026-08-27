@@ -2,9 +2,7 @@
 title: "Detect and respond to audio level changes by the system"
 description: Learn how to detect and respond to audio level changes by the system.  
 ms.topic: article
-ms.date: 08/07/2024
-ms.author: drewbat
-author: drewbatgit
+ms.date: 08/23/2026
 ms.localizationpriority: medium
 #customer intent: As a developer, I want to detect and respond to audio level changes by the system in a Windows app using WinUI.
 ---
@@ -18,17 +16,70 @@ To learn about capturing audio using the [**MediaCapture**](/uwp/api/Windows.Med
 
 The [**AudioStateMonitor**](/uwp/api/windows.media.audio.audiostatemonitor) class allows you to register to receive an event when the system modifies the volume of an audio capture or render stream. Get an instance of **AudioStateMonitor** for monitoring audio capture streams by calling [**CreateForCaptureMonitoring**](/uwp/api/windows.media.audio.audiostatemonitor.createforcapturemonitoring#Windows_Media_Audio_AudioStateMonitor_CreateForCaptureMonitoring). Get an instance for monitoring audio render streams by calling [**CreateForRenderMonitoring**](/uwp/api/windows.media.audio.audiostatemonitor.createforrendermonitoring). Register a handler for the [**SoundLevelChanged**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) event of each monitor to be notified when the audio for the corresponding stream category is changed by the system.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetAudioStateVars":::
+```csharp
+AudioStateMonitor captureAudioStateMonitor;
+AudioStateMonitor renderAudioStateMonitor;
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetRegisterAudioStateMonitor":::
+```csharp
+captureAudioStateMonitor = AudioStateMonitor.CreateForCaptureMonitoring();
+captureAudioStateMonitor.SoundLevelChanged += CaptureAudioStateMonitor_SoundLevelChanged;
+
+renderAudioStateMonitor = AudioStateMonitor.CreateForRenderMonitoring();
+renderAudioStateMonitor.SoundLevelChanged += RenderAudioStateMonitor_SoundLevelChanged;
+```
 
 In the **SoundLevelChanged** handler for the capture stream, you can check the [**SoundLevel**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevel) property of the **AudioStateMonitor** sender to determine the new sound level. Note that a capture stream should never be lowered, or "ducked", by the system. It should only ever be muted or switched back to full volume. If the audio stream is muted, you can stop a capture in progress. If the audio stream is restored to full volume, you can start capturing again.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCaptureSoundLevelChanged":::
+```csharp
+bool isCapturingAudio = false;
+bool capturingStoppedForAudioState = false;
+
+private void CaptureAudioStateMonitor_SoundLevelChanged(AudioStateMonitor sender, object args)
+{
+    switch (sender.SoundLevel)
+    {
+        case SoundLevel.Full:
+            if (capturingStoppedForAudioState)
+            {
+                MyStartAudioCapture();
+                capturingStoppedForAudioState = false;
+            }
+            break;
+        case SoundLevel.Muted:
+            if (isCapturingAudio)
+            {
+                MyStopAudioCapture();
+                capturingStoppedForAudioState = true;
+            }
+            break;
+        case SoundLevel.Low:
+            // This should never happen for capture
+            Debug.WriteLine("Unexpected audio state.");
+            break;
+    }
+}
+```
 
 The following code example illustrates an implementation of the **SoundLevelChanged** handler for audio rendering. Depending on your app scenario, and the type of content you are playing, you may want to pause audio playback when the sound level is ducked.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetRenderSoundLevelChanged":::
+```csharp
+bool contentIsPodcast;
+private void RenderAudioStateMonitor_SoundLevelChanged(AudioStateMonitor sender, object args)
+{
+    if ((sender.SoundLevel == SoundLevel.Full) ||
+        (sender.SoundLevel == SoundLevel.Low && !contentIsPodcast))
+    {
+        m_mediaPlayer.Play();
+    }
+    else if ((sender.SoundLevel == SoundLevel.Muted) ||
+         (sender.SoundLevel == SoundLevel.Low && contentIsPodcast))
+    {
+        // Pause playback if we're muted or if we're playing a podcast and are ducked
+        m_mediaPlayer.Pause();
+    }
+}
+```
 
 ## Related topics
 

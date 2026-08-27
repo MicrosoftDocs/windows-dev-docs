@@ -1,7 +1,7 @@
 ---
 description: Learn how to launch Windows Settings directly to the camera settings page.
 title: Launch the camera settings page
-ms.date: 11/26/2024
+ms.date: 08/23/2026
 ms.topic: article
 keywords: windows 10, winui 3
 dev_langs:
@@ -21,7 +21,17 @@ Starting with Windows 11, Build 22000, the URI `ms-settings:camera` launches Win
 In the following example, the [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) class is used to retrieve the symbolic link name for the first video capture device on the current machine, if one exists. Next, [LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) is called to launch Windows Settings. The `ms-settings:camera` Uri specifies that the camera settings page should be shown. The optional query string parameter `cameraId` is set to the symbolic link name for the camera, escaped with a call to [Url.EscapeDataString](/dotnet/api/system.uri.escapedatastring), to specify that the settings for the associated camera should be shown. 
 
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetLaunchCameraSettings":::
+```csharp
+private async void bLaunchCameraSettings_Click(object sender, RoutedEventArgs e)
+{
+    var captureDevices = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
+    if (captureDevices.Count() > 0)
+    {
+        var cameraSymbolicLink = captureDevices.First().Id;
+        bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:camera?cameraId=" + Uri.EscapeDataString(cameraSymbolicLink)));
+    }
+}
+```
 
 
 ## Related topics

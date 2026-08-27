@@ -1,7 +1,7 @@
 ---
 description: The APIs in the Windows.Media.Editing namespace allow you to quickly develop apps that enable users to create media compositions from audio and video source files.
 title: Media compositions and editing
-ms.date: 05/13/2026
+ms.date: 08/23/2026
 ms.topic: how-to
 dev_langs:
 - csharp
@@ -17,21 +17,56 @@ This article shows you how to use the APIs in the [**Windows.Media.Editing**](/u
 
 The [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition) class is the container for all of the media clips that make up the composition and is responsible for rendering the final composition, loading and saving compositions to disk, and providing a preview stream of the composition so that the user can view it in the UI. To use **MediaComposition** in your app, include the [**Windows.Media.Editing**](/uwp/api/Windows.Media.Editing) namespace as well as the [**Windows.Media.Core**](/uwp/api/Windows.Media.Core) namespace that provides related APIs that you will need.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetNamespace1":::
+```csharp
+using Windows.Media.Editing;
+using Windows.Media.Core;
+using Windows.Media.Playback;
+using System.Threading.Tasks;
+```
 
 The **MediaComposition** object will be accessed from multiple points in your code, so typically you will declare a member variable in which to store it.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetDeclareMediaComposition":::
+```csharp
+private MediaComposition composition = null!;
+```
 
 The constructor for **MediaComposition** takes no arguments.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetMediaCompositionConstructor":::
+```csharp
+composition = new MediaComposition();
+```
 
 ## Add media clips to a composition
 
 Media compositions typically contain one or more video clips. You can use a [**FileOpenPicker**](/uwp/api/Windows.Storage.Pickers.FileOpenPicker) to allow the user to select a video file. Once the file has been selected, create a new [**MediaClip**](/uwp/api/Windows.Media.Editing.MediaClip) object to contain the video clip by calling [**MediaClip.CreateFromFileAsync**](/uwp/api/windows.media.editing.mediaclip.createfromfileasync). Then you add the clip to the **MediaComposition** object's [**Clips**](/uwp/api/windows.media.editing.mediacomposition.clips) list.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetPickFileAndAddClip":::
+```csharp
+private async Task PickFileAndAddClip()
+{
+    if (composition == null)
+    {
+        ShowErrorMessage("Create a composition before adding clips");
+        return;
+    }
+
+    var picker = new Windows.Storage.Pickers.FileOpenPicker();
+    WinRT.Interop.InitializeWithWindow.Initialize(picker, _hwnd);
+    picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.VideosLibrary;
+    picker.FileTypeFilter.Add(".mp4");
+    Windows.Storage.StorageFile pickedFile = await picker.PickSingleFileAsync();
+    if (pickedFile == null)
+    {
+        ShowErrorMessage("File picking cancelled");
+        return;
+    }
+
+    var storageItemAccessList = Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList;
+    storageItemAccessList.Add(pickedFile);
+
+    var clip = await MediaClip.CreateFromFileAsync(pickedFile);
+    composition.Clips.Add(clip);
+}
+```
 
 - Media clips appear in the **MediaComposition** in the same order as they appear in [**Clips**](/uwp/api/windows.media.editing.mediacomposition.clips) list.
 
@@ -51,15 +86,39 @@ Media compositions typically contain one or more video clips. You can use a [**F
 
 To enable the user to view the media composition, add a [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) to the XAML file that defines your UI.
 
-:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml" id="SnippetMediaElement":::
+```xml
+<MediaPlayerElement
+    x:Name="mediaPlayerElement"
+    AutoPlay="False"
+    AreTransportControlsEnabled="True"
+    HorizontalAlignment="Stretch"
+    MinHeight="360" />
+```
 
 Declare a member variable of type [**MediaStreamSource**](/uwp/api/Windows.Media.Core.MediaStreamSource).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetDeclareMediaStreamSource":::
+```csharp
+private MediaStreamSource mediaStreamSource = null!;
+```
 
 Call the **MediaComposition** object's [**GeneratePreviewMediaStreamSource**](/uwp/api/windows.media.editing.mediacomposition.generatepreviewmediastreamsource) method to create a **MediaStreamSource** for the composition. Create a [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) object by calling the factory method [**CreateFromMediaStreamSource**](/uwp/api/windows.media.core.mediasource.createfrommediastreamsource) and assign it to the [**Source**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source) property of the **MediaPlayerElement**. Now the composition can be viewed in the UI.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetUpdateMediaElementSource":::
+```csharp
+public void UpdateMediaElementSource()
+{
+    if (composition == null)
+    {
+        ShowErrorMessage("Create or open a composition first");
+        return;
+    }
+
+    mediaStreamSource = composition.GeneratePreviewMediaStreamSource(
+        (int)mediaPlayerElement.ActualWidth,
+        (int)mediaPlayerElement.ActualHeight);
+
+    mediaPlayerElement.Source = MediaSource.CreateFromMediaStreamSource(mediaStreamSource);
+}
+```
 
 - The **MediaComposition** must contain at least one media clip before calling [**GeneratePreviewMediaStreamSource**](/uwp/api/windows.media.editing.mediacomposition.generatepreviewmediastreamsource), or the returned object will be null.
 
@@ -67,17 +126,80 @@ Call the **MediaComposition** object's [**GeneratePreviewMediaStreamSource**](/u
 
 It's recommended that you set the **MediaStreamSource** object and the **Source** property of the **MediaPlayerElement** to null when the window is closed in order to release associated resources.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetOnNavigatedFrom":::
+```csharp
+private void OnWindowClosed(object sender, WindowEventArgs args)
+{
+    mediaPlayerElement.Source = null;
+    mediaStreamSource = null!;
+}
+```
 
 ## Render the composition to a video file
 
 To render a media composition to a flat video file so that it can be shared and viewed on other devices, you will need to use APIs from the [**Windows.Media.Transcoding**](/uwp/api/Windows.Media.Transcoding) namespace.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetNamespace2":::
+```csharp
+using Windows.Media.Transcoding;
+using Microsoft.UI.Dispatching;
+```
 
 After allowing the user to select an output file with a [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker), render the composition to the selected file by calling the **MediaComposition** object's [**RenderToFileAsync**](/uwp/api/windows.media.editing.mediacomposition.rendertofileasync). The rest of the code in the following example simply follows the pattern of handling an [**AsyncOperationWithProgress**](/previous-versions/br205807(v=vs.85)).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetRenderCompositionToFile":::
+```csharp
+private async Task RenderCompositionToFile()
+{
+    if (composition == null)
+    {
+        ShowErrorMessage("Create or open a composition first");
+        return;
+    }
+
+    var picker = new Windows.Storage.Pickers.FileSavePicker();
+    WinRT.Interop.InitializeWithWindow.Initialize(picker, _hwnd);
+    picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.VideosLibrary;
+    picker.FileTypeChoices.Add("MP4 files", new List<string>() { ".mp4" });
+    picker.SuggestedFileName = "RenderedComposition.mp4";
+
+    Windows.Storage.StorageFile file = await picker.PickSaveFileAsync();
+    if (file != null)
+    {
+        var saveOperation = composition.RenderToFileAsync(file, MediaTrimmingPreference.Precise);
+
+        saveOperation.Progress = new AsyncOperationProgressHandler<TranscodeFailureReason, double>((info, progress) =>
+        {
+            _dispatcherQueue.TryEnqueue(() =>
+            {
+                ShowErrorMessage(string.Format("Saving file... Progress: {0:F0}%", progress));
+            });
+        });
+        saveOperation.Completed = new AsyncOperationWithProgressCompletedHandler<TranscodeFailureReason, double>((info, status) =>
+        {
+            _dispatcherQueue.TryEnqueue(() =>
+            {
+                try
+                {
+                    var results = info.GetResults();
+                    if (results != TranscodeFailureReason.None || status != AsyncStatus.Completed)
+                    {
+                        ShowErrorMessage("Saving was unsuccessful");
+                    }
+                    else
+                    {
+                        ShowErrorMessage("Composition saved to file");
+                    }
+                }
+                finally
+                {
+                }
+            });
+        });
+    }
+    else
+    {
+        ShowErrorMessage("User cancelled the file selection");
+    }
+}
+```
 
 - The [**MediaTrimmingPreference**](/uwp/api/Windows.Media.Editing.MediaTrimmingPreference) allows you to prioritize speed of the transcoding operation versus the precision of trimming of adjacent media clips. **Fast** causes transcoding to be faster with lower-precision trimming, **Precise** causes transcoding to be slower but with more precise trimming.
 
@@ -85,7 +207,29 @@ After allowing the user to select an output file with a [**FileSavePicker**](/uw
 
 Trim the duration of a video clip in a composition by setting the [**MediaClip**](/uwp/api/Windows.Media.Editing.MediaClip) objects [**TrimTimeFromStart**](/uwp/api/windows.media.editing.mediaclip.trimtimefromstart) property, the [**TrimTimeFromEnd**](/uwp/api/windows.media.editing.mediaclip.trimtimefromend) property, or both.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetTrimClipBeforeCurrentPosition":::
+```csharp
+private void TrimClipBeforeCurrentPosition()
+{
+    if (composition == null || mediaPlayerElement.MediaPlayer == null)
+    {
+        ShowErrorMessage("Create or open a composition first");
+        return;
+    }
+
+    var currentClip = composition.Clips.FirstOrDefault(
+        mc => mc.StartTimeInComposition <= mediaPlayerElement.MediaPlayer.PlaybackSession.Position &&
+        mc.EndTimeInComposition >= mediaPlayerElement.MediaPlayer.PlaybackSession.Position);
+
+    if (currentClip == null)
+    {
+        ShowErrorMessage("No clip exists at the current playback position");
+        return;
+    }
+
+    TimeSpan positionFromStart = mediaPlayerElement.MediaPlayer.PlaybackSession.Position - currentClip.StartTimeInComposition;
+    currentClip.TrimTimeFromStart = positionFromStart;
+}
+```
 
 - You can use any UI that you want to let the user specify the start and end trim values. The example above uses the [**Position**](/uwp/api/windows.media.playback.mediaplaybacksession.position) property of the [**MediaPlaybackSession**](/uwp/api/Windows.Media.Playback.MediaPlaybackSession) associated with the **MediaPlayerElement** to first determine which **MediaClip** is playing back at the current position in the composition by checking the [**StartTimeInComposition**](/uwp/api/windows.media.editing.mediaclip.starttimeincomposition) and [**EndTimeInComposition**](/uwp/api/windows.media.editing.mediaclip.endtimeincomposition). Then the **Position** and **StartTimeInComposition** properties are used again to calculate the amount of time to trim from the beginning of the clip. The **FirstOrDefault** method is an extension method from the **System.Linq** namespace that simplifies the code for selecting items from a list.
 - The [**OriginalDuration**](/uwp/api/windows.media.editing.mediaclip.originalduration) property of the **MediaClip** object lets you know the duration of the media clip without any clipping applied.
@@ -96,7 +240,36 @@ Trim the duration of a video clip in a composition by setting the [**MediaClip**
 
 To add a background track to a composition, load an audio file and then create a [**BackgroundAudioTrack**](/uwp/api/Windows.Media.Editing.BackgroundAudioTrack) object by calling the factory method [**BackgroundAudioTrack.CreateFromFileAsync**](/uwp/api/windows.media.editing.backgroundaudiotrack.createfromfileasync). Then, add the **BackgroundAudioTrack** to the composition's [**BackgroundAudioTracks**](/uwp/api/windows.media.editing.mediacomposition.backgroundaudiotracks) property.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetAddBackgroundAudioTrack":::
+```csharp
+private async Task AddBackgroundAudioTrack()
+{
+    if (composition == null)
+    {
+        ShowErrorMessage("Create or open a composition first");
+        return;
+    }
+
+    var picker = new Windows.Storage.Pickers.FileOpenPicker();
+    WinRT.Interop.InitializeWithWindow.Initialize(picker, _hwnd);
+    picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.MusicLibrary;
+    picker.FileTypeFilter.Add(".mp3");
+    picker.FileTypeFilter.Add(".wav");
+    picker.FileTypeFilter.Add(".flac");
+    Windows.Storage.StorageFile audioFile = await picker.PickSingleFileAsync();
+    if (audioFile == null)
+    {
+        ShowErrorMessage("File picking cancelled");
+        return;
+    }
+
+    var storageItemAccessList = Windows.Storage.AccessCache.StorageApplicationPermissions.FutureAccessList;
+    storageItemAccessList.Add(audioFile);
+
+    var backgroundTrack = await BackgroundAudioTrack.CreateFromFileAsync(audioFile);
+
+    composition.BackgroundAudioTracks.Add(backgroundTrack);
+}
+```
 
 - A **MediaComposition** supports background audio tracks in the following formats: MP3, WAV, FLAC
 
@@ -110,7 +283,35 @@ To add a background track to a composition, load an audio file and then create a
 
 Overlays allow you to stack multiple layers of video on top of each other in a composition. A composition can contain multiple overlay layers, each of which can include multiple overlays. Create a [**MediaOverlay**](/uwp/api/Windows.Media.Editing.MediaOverlay) object by passing a **MediaClip** into its constructor. Set the position and opacity of the overlay, then create a new [**MediaOverlayLayer**](/uwp/api/Windows.Media.Editing.MediaOverlayLayer) and add the **MediaOverlay** to its [**Overlays**](/windows/desktop/api/dxgi1_3/nf-dxgi1_3-idxgioutput2-supportsoverlays) list. Finally, add the **MediaOverlayLayer** to the composition's [**OverlayLayers**](/uwp/api/windows.media.editing.mediacomposition.overlaylayers) list.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetAddOverlay":::
+```csharp
+private void AddOverlay(MediaClip overlayMediaClip, double scale, double left, double top, double opacity)
+{
+    if (composition == null)
+    {
+        ShowErrorMessage("Create or open a composition first");
+        return;
+    }
+
+    Windows.Media.MediaProperties.VideoEncodingProperties encodingProperties =
+        overlayMediaClip.GetVideoEncodingProperties();
+
+    Rect overlayPosition = new Rect();
+
+    overlayPosition.Width = (double)encodingProperties.Width * scale;
+    overlayPosition.Height = (double)encodingProperties.Height * scale;
+    overlayPosition.X = left;
+    overlayPosition.Y = top;
+
+    MediaOverlay mediaOverlay = new MediaOverlay(overlayMediaClip);
+    mediaOverlay.Position = overlayPosition;
+    mediaOverlay.Opacity = opacity;
+
+    MediaOverlayLayer mediaOverlayLayer = new MediaOverlayLayer();
+    mediaOverlayLayer.Overlays.Add(mediaOverlay);
+
+    composition.OverlayLayers.Add(mediaOverlayLayer);
+}
+```
 
 - Overlays within a layer are z-ordered based on their order in their containing layer's **Overlays** list. Higher indices within the list are rendered on top of lower indices. The same is true of overlay layers within a composition. A layer with higher index in the composition's **OverlayLayers** list will be rendered on top of lower indices.
 
@@ -120,19 +321,105 @@ Overlays allow you to stack multiple layers of video on top of each other in a c
 
 Each **MediaClip** in a composition has a list of audio and video effects to which multiple effects can be added. The effects must implement [**IAudioEffectDefinition**](/uwp/api/Windows.Media.Effects.IAudioEffectDefinition) and [**IVideoEffectDefinition**](/uwp/api/Windows.Media.Effects.IVideoEffectDefinition) respectively. The following example uses the current **MediaPlayerElement** position to choose the currently viewed **MediaClip** and then creates a new instance of the [**VideoStabilizationEffectDefinition**](/uwp/api/Windows.Media.Core.VideoStabilizationEffectDefinition) and appends it to the media clip's [**VideoEffectDefinitions**](/uwp/api/windows.media.editing.mediaclip.videoeffectdefinitions) list.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetAddVideoEffect":::
+```csharp
+private void AddVideoEffect()
+{
+    if (composition == null || mediaPlayerElement.MediaPlayer == null)
+    {
+        ShowErrorMessage("Create or open a composition first");
+        return;
+    }
+
+    var currentClip = composition.Clips.FirstOrDefault(
+        mc => mc.StartTimeInComposition <= mediaPlayerElement.MediaPlayer.PlaybackSession.Position &&
+        mc.EndTimeInComposition >= mediaPlayerElement.MediaPlayer.PlaybackSession.Position);
+
+    if (currentClip == null)
+    {
+        ShowErrorMessage("No clip exists at the current playback position");
+        return;
+    }
+
+    VideoStabilizationEffectDefinition videoEffect = new VideoStabilizationEffectDefinition();
+    currentClip.VideoEffectDefinitions.Add(videoEffect);
+}
+```
 
 ## Save a composition to a file
 
 Media compositions can be serialized to a file to be modified at a later time. Pick an output file and then call the [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition) method [**SaveAsync**](/uwp/api/windows.media.editing.mediacomposition.saveasync) to save the composition.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetSaveComposition":::
+```csharp
+private async Task SaveComposition()
+{
+    if (composition == null)
+    {
+        ShowErrorMessage("Create or open a composition first");
+        return;
+    }
+
+    var picker = new Windows.Storage.Pickers.FileSavePicker();
+    WinRT.Interop.InitializeWithWindow.Initialize(picker, _hwnd);
+    picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.VideosLibrary;
+    picker.FileTypeChoices.Add("Composition files", new List<string>() { ".cmp" });
+    picker.SuggestedFileName = "SavedComposition";
+
+    Windows.Storage.StorageFile compositionFile = await picker.PickSaveFileAsync();
+    if (compositionFile == null)
+    {
+        ShowErrorMessage("User cancelled the file selection");
+    }
+    else
+    {
+        var action = composition.SaveAsync(compositionFile);
+        action.Completed = (info, status) =>
+        {
+            if (status != AsyncStatus.Completed)
+            {
+                _dispatcherQueue.TryEnqueue(() => ShowErrorMessage("Error saving composition"));
+            }
+            else
+            {
+                _dispatcherQueue.TryEnqueue(() => ShowErrorMessage("Composition saved"));
+            }
+        };
+    }
+}
+```
 
 ## Load a composition from a file
 
 Media compositions can be deserialized from a file to allow the user to view and modify the composition. Pick a composition file and then call the [**MediaComposition**](/uwp/api/Windows.Media.Editing.MediaComposition) method [**LoadAsync**](/uwp/api/windows.media.editing.mediacomposition.loadasync) to load the composition.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-editing-winui/cs/MediaEditingWinUI/MainWindow.xaml.cs" id="SnippetOpenComposition":::
+```csharp
+private async Task OpenComposition()
+{
+    var picker = new Windows.Storage.Pickers.FileOpenPicker();
+    WinRT.Interop.InitializeWithWindow.Initialize(picker, _hwnd);
+    picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.VideosLibrary;
+    picker.FileTypeFilter.Add(".cmp");
+
+    Windows.Storage.StorageFile compositionFile = await picker.PickSingleFileAsync();
+    if (compositionFile == null)
+    {
+        ShowErrorMessage("File picking cancelled");
+    }
+    else
+    {
+        composition = null!;
+        composition = await MediaComposition.LoadAsync(compositionFile);
+
+        if (composition != null)
+        {
+            UpdateMediaElementSource();
+        }
+        else
+        {
+            ShowErrorMessage("Unable to open composition");
+        }
+    }
+}
+```
 
 - If a media file in the composition is not in a location that can be accessed by your app, an error will be thrown when loading the composition.
 

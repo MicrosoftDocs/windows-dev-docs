@@ -4,7 +4,7 @@ description: Windows includes many asynchronous APIs to ensure that your app rem
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 06/20/2026
+ms.date: 08/23/2026
 keywords: windows 10, windows 11, windows app sdk, C#, Visual Basic, asynchronous
 ms.localizationpriority: medium
 ---
@@ -25,8 +25,66 @@ Suppose that you have an app that lists the titles of blog posts from a certain 
 The example here gets the lists of blog posts from a blog by calling the asynchronous method, [**SyndicationClient.RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync), and awaiting the result.
 
 > [!div class="tabbedCodeSnippets" data-resources="OutlookServices.Calendar"]
-:::code language="csharp" source="~/../snippets-windows/windows-uwp/threading-async/AsyncSnippets/cs/MainPage.xaml.cs" id="SnippetDownloadRSS":::
-:::code language="vb" source="~/../snippets-windows/windows-uwp/threading-async/AsyncSnippets/vb/MainPage.xaml.vb" id="SnippetDownloadRSS":::
+```csharp
+// Put the keyword async on the declaration of the event handler.
+private async void Button_Click_1(object sender, RoutedEventArgs e)
+{
+
+    Windows.Web.Syndication.SyndicationClient client = new SyndicationClient();
+
+    Uri feedUri
+        = new Uri("http://windowsteamblog.com/windows/b/windowsexperience/atom.aspx");
+
+    try
+    {
+        SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri);
+
+        // The rest of this method executes after await RetrieveFeedAsync completes.
+        rssOutput.Text = feed.Title.Text + Environment.NewLine;
+
+        foreach (SyndicationItem item in feed.Items)
+        {
+            rssOutput.Text += item.Title.Text + ", " +
+                             item.PublishedDate.ToString() + Environment.NewLine;
+        }
+    }
+    catch (Exception ex)
+    {
+        // Log Error.
+        rssOutput.Text =
+            "I'm sorry, but I couldn't load the page," +
+            " possibly due to network problems." +
+            "Here's the error message I received: "
+            + ex.ToString();
+    }
+}
+```
+```vb
+' Put the keyword Async on the declaration of the event handler.
+Private Async Sub Button_Click_1(sender As Object, e As RoutedEventArgs)
+    Dim client As New Windows.Web.Syndication.SyndicationClient()
+    Dim feedUri As New Uri("http://windowsteamblog.com/windows/b/windowsexperience/atom.aspx")
+
+    Try
+        Dim feed As SyndicationFeed = Await client.RetrieveFeedAsync(feedUri)
+
+        ' The rest of this method executes after the await operation completes.
+        rssOutput.Text = feed.Title.Text & vbCrLf
+
+        For Each item In feed.Items
+            rssOutput.Text += $"{item.Title.Text}, {item.PublishedDate.ToString()}{vbCrLf}"
+        Next
+
+    Catch ex As Exception
+        ' Log Error.
+        rssOutput.Text = "I'm sorry, but I couldn't load the page," &
+                         " possibly due to network problems." &
+                         "Here's the error message I received: " &
+                          ex.ToString()
+    End Try
+
+End Sub
+```
 
 There are a couple of important things about this example. First, the line, `SyndicationFeed feed = await client.RetrieveFeedAsync(feedUri)` uses the **await** operator with the call to the asynchronous method, [**RetrieveFeedAsync**](/uwp/api/windows.web.syndication.syndicationclient.retrievefeedasync). You can think of the **await** operator as telling the compiler that you are calling an asynchronous method, which causes the compiler to do some extra work so you don't have to. Next, the declaration of the event handler includes the keyword **async**. You must include this keyword in the method declaration of any method in which you use the **await** operator.
 

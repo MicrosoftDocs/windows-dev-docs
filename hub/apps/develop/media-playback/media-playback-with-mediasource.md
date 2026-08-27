@@ -1,7 +1,7 @@
 ---
 description: This article shows you how to use MediaSource in a WinUI app. This class provides a common way to reference and play back media from different sources such as local or remote files, and exposes a common model for accessing media data, regardless of the underlying media format.
 title: Media items, playlists, and tracks
-ms.date: 02/05/2026
+ms.date: 08/23/2026
 ms.topic: article
 keywords: windows 10, winui
 ms.localizationpriority: medium
@@ -30,20 +30,48 @@ After creating a **MediaSource** you can play it with a [**MediaPlayer**](/uwp/a
 
 The following example shows how to play back a user-selected media file in a **MediaPlayer** using **MediaSource**. To allow the user to pick a media file to play, use a [**FileOpenPicker**](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.fileopenpicker). Create an instance of [**StorageFile**](/uwp/api/Windows.Storage.StorageFile) from the path returned from the picker's [**PickSingleFileAsync**](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.fileopenpicker.picksinglefileasync) method and initialize a new **MediaSource** object by calling [**MediaSource.CreateFromStorageFile**](/uwp/api/windows.media.core.mediasource.createfromstoragefile). Finally, set the media source as the playback source for the **MediaPlayer** by setting the [**Source**](/uwp/api/windows.media.playback.mediaplayer.source) property.
 
-:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml" id="SnippetMediaPlayerElement":::
+```xml
+<MediaPlayerElement x:Name="mediaPlayerElement"/>
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetDeclareMediaSourceAndPlayer":::
+```csharp
+MediaSource? mediaSource;
+MediaPlayer? mediaPlayer;
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetPlayMediaSource":::
+```csharp
+//Create a new picker
+var filePicker = new Microsoft.Windows.Storage.Pickers.FileOpenPicker(this.AppWindow.Id)
+{
+    SuggestedStartLocation = PickerLocationId.VideosLibrary,
+    FileTypeFilter = { ".wmv", ".mp4", ".mkv" },
+};
+
+//Retrieve file from picker
+var result = await filePicker.PickSingleFileAsync();
+
+if (result is not null)
+{
+    var storageFile = await Windows.Storage.StorageFile.GetFileFromPathAsync(result.Path);
+    mediaSource = MediaSource.CreateFromStorageFile(storageFile);
+    mediaPlayer = new MediaPlayer();
+    mediaPlayer.Source = mediaSource;
+    mediaPlayerElement.SetMediaPlayer(mediaPlayer);
+}
+```
 
 
 By default, the **MediaPlayer** does not begin playing automatically when the media source is set. You can manually begin playback by calling [**Play**](/uwp/api/windows.media.playback.mediaplayer.play).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetPlay":::
+```csharp
+mediaPlayer.Play();
+```
 
 You can also set the [**AutoPlay**](/uwp/api/windows.media.playback.mediaplayer.autoplay) property of the **MediaPlayer** to true to tell the player to begin playing as soon as the media source is set.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetAutoPlay":::
+```csharp
+mediaPlayer.AutoPlay = true;
+```
 
 
 ## Handle multiple audio, video, and metadata tracks with MediaPlaybackItem
@@ -52,46 +80,139 @@ Using a [**MediaSource**](/uwp/api/Windows.Media.Core.MediaSource) for playback 
 
 Create a **MediaPlaybackItem** by calling the constructor and passing in an initialized **MediaSource** object. If your app supports multiple audio, video, or data tracks in a media playback item, register event handlers for the [**AudioTracksChanged**](/uwp/api/windows.media.playback.mediaplaybackitem.audiotrackschanged), [**VideoTracksChanged**](/uwp/api/windows.media.playback.mediaplaybackitem.videotrackschanged), or [**TimedMetadataTracksChanged**](/uwp/api/windows.media.playback.mediaplaybackitem.timedmetadatatrackschanged) events. Finally, set the playback source of the **MediaElement** or **MediaPlayer** to your **MediaPlaybackItem**.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetDeclareMediaPlaybackItem":::
+```csharp
+MediaPlaybackItem mediaPlaybackItem;
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetPlayMediaPlaybackItem":::
+```csharp
+mediaSource = MediaSource.CreateFromStorageFile(storageFile);
+mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
+
+mediaPlaybackItem.AudioTracksChanged += MediaPlaybackItem_AudioTracksChanged;
+mediaPlaybackItem.VideoTracksChanged += MediaPlaybackItem_VideoTracksChanged;
+mediaPlaybackItem.TimedMetadataTracksChanged += MediaPlaybackItem_TimedMetadataTracksChanged;
+
+mediaPlayer = new MediaPlayer();
+mediaPlayer.Source = mediaPlaybackItem;
+mediaPlayerElement.SetMediaPlayer(mediaPlayer);
+```
 
 > [!NOTE] 
 > A **MediaSource** can only be associated with a single **MediaPlaybackItem**. After creating a **MediaPlaybackItem** from a source, attempting to create another playback item from the same source will result in an error. Also, after creating a **MediaPlaybackItem** from a media source, you can't set the **MediaSource** object directly as the source for a **MediaPlayer** but should instead use the **MediaPlaybackItem**.
 
 The [**VideoTracksChanged**](/uwp/api/windows.media.playback.mediaplaybackitem.videotrackschanged) event is raised after a **MediaPlaybackItem** containing multiple video tracks is assigned as a playback source, and can be raised again if the list of video tracks changes for the item changes. The handler for this event gives you the opportunity to update your UI to allow the user to switch between available tracks. This example uses a [**ComboBox**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox) to display the available video tracks.
 
-:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml" id="SnippetVideoComboBox":::
+```xml
+<ComboBox x:Name="videoTracksComboBox" SelectionChanged="VideoTracksComboBox_SelectionChanged"/>
+```
 
 In the **VideoTracksChanged** handler, loop through all of the tracks in the playback item's [**VideoTracks**](/uwp/api/windows.media.playback.mediaplaybackitem.videotracks) list. For each track, a new [**ComboBoxItem**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.comboboxitem) is created. If the track does not already have a label, a label is generated from the track index. The [**Tag**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.tag) property of the combo box item is set to the track index so that it can be identified later. Finally, the item is added to the combo box. Note that these operations are performed within a [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) call because all UI changes must be made on the UI thread and this event is raised on a different thread.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetVideoTracksChanged":::
+```csharp
+private void MediaPlaybackItem_VideoTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
+{
+    DispatcherQueue.TryEnqueue(() =>
+    {
+        videoTracksComboBox.Items.Clear();
+        for (int index = 0; index < sender.VideoTracks.Count; index++)
+        {
+            var videoTrack = sender.VideoTracks[index];
+            ComboBoxItem item = new ComboBoxItem();
+            item.Content = String.IsNullOrEmpty(videoTrack.Label) ? $"Track {index}" : videoTrack.Label;
+            item.Tag = index;
+            videoTracksComboBox.Items.Add(item);
+        }
+    });
+}
+```
 
 In the [**SelectionChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged) handler for the combo box, the track index is retrieved from the selected item's **Tag** property. Setting the [**SelectedIndex**](/uwp/api/windows.media.playback.mediaplaybackvideotracklist.selectedindex) property of the media playback item's [**VideoTracks**](/uwp/api/windows.media.playback.mediaplaybackitem.videotracks) list causes the **MediaElement** or **MediaPlayer** to switch the active video track to the specified index.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetVideoTracksSelectionChanged":::
+```csharp
+private void VideoTracksComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    int trackIndex = (int)((ComboBoxItem)((ComboBox)sender).SelectedItem).Tag;
+    mediaPlaybackItem.VideoTracks.SelectedIndex = trackIndex;
+}
+```
 
 Managing media items with multiple audio tracks works exactly the same as with video tracks. Handle the [**AudioTracksChanged**](/uwp/api/windows.media.playback.mediaplaybackitem.audiotrackschanged) to update your UI with the audio tracks found in the playback item's [**AudioTracks**](/uwp/api/windows.media.playback.mediaplaybackitem.audiotracks) list. When the user selects an audio track, set the [**SelectedIndex**](/uwp/api/windows.media.playback.mediaplaybackaudiotracklist.selectedindex) property of the **AudioTracks** list to cause the **MediaElement** or **MediaPlayer** to switch the active audio track to the specified index.
 
-:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml" id="SnippetAudioComboBox":::
+```xml
+<ComboBox x:Name="audioTracksComboBox" SelectionChanged="AudioTracksComboBox_SelectionChanged"/>
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetAudioTracksChanged":::
+```csharp
+private void MediaPlaybackItem_AudioTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
+{
+    DispatcherQueue.TryEnqueue(() =>
+    {
+        audioTracksComboBox.Items.Clear();
+        for (int index = 0; index < sender.AudioTracks.Count; index++)
+        {
+            var audioTrack = sender.AudioTracks[index];
+            ComboBoxItem item = new ComboBoxItem();
+            item.Content = String.IsNullOrEmpty(audioTrack.Label) ? $"Track {index}" : audioTrack.Label;
+            item.Tag = index;
+            audioTracksComboBox.Items.Add(item);
+        }
+    });
+}
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetAudioTracksSelectionChanged":::
+```csharp
+private void AudioTracksComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    int trackIndex = (int)((ComboBoxItem)((ComboBox)sender).SelectedItem).Tag;
+    mediaPlaybackItem.AudioTracks.SelectedIndex = trackIndex;
+}
+```
 
 In addition to audio and video, a **MediaPlaybackItem** object may contain zero or more [**TimedMetadataTrack**](/uwp/api/Windows.Media.Core.TimedMetadataTrack) objects. A timed metadata track can contain subtitle or caption text, or it may contain custom data that is proprietary to your app. A timed metadata track contains a list of cues represented by objects that inherit from [**IMediaCue**](/uwp/api/Windows.Media.Core.IMediaCue), such as a [**DataCue**](/uwp/api/Windows.Media.Core.DataCue) or a [**TimedTextCue**](/uwp/api/Windows.Media.Core.TimedTextCue). Each cue has a start time and a duration that determines when the cue is activated and for how long.
 
 Similar to audio tracks and video tracks, the timed metadata tracks for a media item can be discovered by handling the [**TimedMetadataTracksChanged**](/uwp/api/windows.media.playback.mediaplaybackitem.timedmetadatatrackschanged) event of a **MediaPlaybackItem**. With timed metadata tracks, however, the user may want to enable more than one metadata track at a time. Also, depending on your app scenario, you may want to enable or disable metadata tracks automatically, without user intervention. For illustration purposes, this example adds a [**ToggleButton**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.togglebutton) for each metadata track in a media item to allow the user to enable and disable the track. The **Tag** property of each button is set to the index of the associated metadata track so that it can be identified when the button is toggled.
 
-:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml" id="SnippetMetaStackPanel":::
+```xml
+<StackPanel x:Name="metadataButtonPanel" Orientation="Horizontal"/>
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetTimedMetadataTracksChanged":::
+```csharp
+private void MediaPlaybackItem_TimedMetadataTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
+{
+    DispatcherQueue.TryEnqueue(() =>
+    {
+        for (int index = 0; index < sender.TimedMetadataTracks.Count; index++)
+        {
+            var timedMetadataTrack = sender.TimedMetadataTracks[index];
+
+            ToggleButton toggle = new ToggleButton()
+            {
+                Content = String.IsNullOrEmpty(timedMetadataTrack.Label) ? $"Track {index}" : timedMetadataTrack.Label,
+                Tag = (uint)index
+            };
+            toggle.Checked += Toggle_Checked;
+            toggle.Unchecked += Toggle_Unchecked;
+
+            metadataButtonPanel.Children.Add(toggle);
+        }
+    });
+}
+```
 
 Because more than one metadata track can be active at a time, you don't simply set the active index for the metadata track list. Instead, call [**SetPresentationMode**](/uwp/api/windows.media.playback.mediaplaybacktimedmetadatatracklist.setpresentationmode), passing in the index of the track you want to toggle, and then providing a value from the [**TimedMetadataTrackPresentationMode**](/uwp/api/Windows.Media.Playback.TimedMetadataTrackPresentationMode) enumeration. The presentation mode you choose depends on the implementation of your app. In this example, the metadata track is set to **PlatformPresented** when enabled. For text-based tracks, this means that the system will automatically display the text cues in the track. When the toggle button is toggled off, the presentation mode is set to **Disabled**, which means that no text is displayed and no cue events are raised. Cue events are discussed later in this article.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetToggleChecked":::
+```csharp
+private void Toggle_Checked(object sender, RoutedEventArgs e) =>
+    mediaPlaybackItem.TimedMetadataTracks.SetPresentationMode((uint)((ToggleButton)sender).Tag,
+        TimedMetadataTrackPresentationMode.PlatformPresented);
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetToggleUnchecked":::
+```
+
+```csharp
+private void Toggle_Unchecked(object sender, RoutedEventArgs e) =>
+    mediaPlaybackItem.TimedMetadataTracks.SetPresentationMode((uint)((ToggleButton)sender).Tag,
+        TimedMetadataTrackPresentationMode.Disabled);
+```
 
 As you are processing the metadata tracks, you can access the set of cues within the track by accessing the [**Cues**](/uwp/api/windows.media.core.timedmetadatatrack.cues) or [**ActiveCues**](/uwp/api/windows.media.core.timedmetadatatrack.activecues) properties. You can do this to update your UI to show the cue locations for a media item.
 
@@ -103,19 +224,74 @@ Once you have a reference to the inserted track, check the [**DecoderStatus**](/
 
 Finally, you can register for the track's [**OpenFailed**](/uwp/api/windows.media.core.audiotrack.openfailed) event, which will be raised if the track is supported on the device but failed to open due to an unknown error in the pipeline.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetAudioTracksChanged_CodecCheck":::
+```csharp
+private async void SnippetAudioTracksChanged_CodecCheck(MediaPlaybackItem sender, IVectorChangedEventArgs args)
+{
+    if (args.CollectionChange == CollectionChange.ItemInserted)
+    {
+        var insertedTrack = sender.AudioTracks[(int)args.Index];
+
+        var decoderStatus = insertedTrack.SupportInfo.DecoderStatus;
+        if (decoderStatus != MediaDecoderStatus.FullySupported)
+        {
+            if (decoderStatus == MediaDecoderStatus.Degraded)
+            {
+                ShowMessageToUser($"Track {insertedTrack.Name} can play but playback will be degraded. {insertedTrack.SupportInfo.DegradationReason}");
+            }
+            else
+            {
+                // status is MediaDecoderStatus.UnsupportedSubtype or MediaDecoderStatus.UnsupportedEncoderProperties
+                ShowMessageToUser($"Track {insertedTrack.Name} uses an unsupported media format.");
+            }
+
+            Windows.Media.MediaProperties.AudioEncodingProperties props = insertedTrack.GetEncodingProperties();
+            await HelpUserInstallCodec(props);
+        }
+        else
+        {
+            insertedTrack.OpenFailed += InsertedTrack_OpenFailed;
+        }
+    }
+
+}
+```
 
 In the [**OpenFailed**](/uwp/api/windows.media.core.audiotrack.openfailed) event handler, you can check to see if the **MediaSource** status is unknown, and if so, you can programmatically select a different track to play, allow the user to choose a different track, or abandon playback.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetOpenFailed":::
+```csharp
+private async void InsertedTrack_OpenFailed(AudioTrack sender, AudioTrackOpenFailedEventArgs args)
+{
+    LogError(args.ExtendedError.HResult);
+
+    if (sender.SupportInfo.MediaSourceStatus == MediaSourceStatus.Unknown)
+    {
+        await SelectAnotherTrackOrSkipPlayback(sender.PlaybackItem);
+    }
+    ;
+}
+```
 
 ## Set display properties used by the System Media Transport Controls
 
 Media played in a [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) is automatically integrated into the System Media Transport Controls (SMTC) by default. You can specify the metadata that will be displayed by the SMTC by updating the display properties for a **MediaPlaybackItem**. Get an object representing the display properties for an item by calling [**GetDisplayProperties**](/uwp/api/windows.media.playback.mediaplaybackitem.getdisplayproperties). Set whether the playback item is music or video by setting the [**Type**](/uwp/api/windows.media.playback.mediaitemdisplayproperties.type) property. Then, set the properties of the object's [**VideoProperties**](/uwp/api/windows.media.playback.mediaitemdisplayproperties.videoproperties) or [**MusicProperties**](/uwp/api/windows.media.playback.mediaitemdisplayproperties.musicproperties). Call [**ApplyDisplayProperties**](/uwp/api/windows.media.playback.mediaplaybackitem.applydisplayproperties) to update the item's properties to the values you provided. Typically, an app will retrieve the display values dynamically from a web service, but the following example illustrates this process with hardcoded values.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetSetVideoProperties":::
+```csharp
+MediaItemDisplayProperties props = mediaPlaybackItem.GetDisplayProperties();
+props.Type = Windows.Media.MediaPlaybackType.Video;
+props.VideoProperties.Title = "Video title";
+props.VideoProperties.Subtitle = "Video subtitle";
+props.VideoProperties.Genres.Add("Documentary");
+mediaPlaybackItem.ApplyDisplayProperties(props);
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetSetMusicProperties":::
+```csharp
+props = mediaPlaybackItem.GetDisplayProperties();
+props.Type = Windows.Media.MediaPlaybackType.Music;
+props.MusicProperties.Title = "Song title";
+props.MusicProperties.Artist = "Song artist";
+props.MusicProperties.Genres.Add("Polka");
+mediaPlaybackItem.ApplyDisplayProperties(props);
+```
 
 ## Add external timed text with TimedTextSource
 
@@ -125,13 +301,61 @@ Create a new **TimedTextSource** for each external timed text file by calling [*
 
 Register all of your **TimedTextSource** objects with the **MediaSource** by adding them to the [**ExternalTimedTextSources**](/uwp/api/windows.media.core.mediasource.externaltimedtextsources) collection. Note that external timed text sources are added to directly the **MediaSource** and not the **MediaPlaybackItem** created from the source. To update your UI to reflect the external text tracks, register and handle the **TimedMetadataTracksChanged** event as described previously in this article.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetTimedTextSourceMap":::
+```csharp
+Dictionary<TimedTextSource, Uri> timedTextSourceMap;
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetTimedTextSource":::
+```csharp
+// Create the TimedTextSource and add entry to URI map
+var timedTextSourceUri_En = new Uri("http://contoso.com/MyClipTimedText_en.srt");
+var timedTextSource_En = TimedTextSource.CreateFromUri(timedTextSourceUri_En);
+timedTextSourceMap[timedTextSource_En] = timedTextSourceUri_En;
+timedTextSource_En.Resolved += TimedTextSource_Resolved;
+
+var timedTextSourceUri_Pt = new Uri("http://contoso.com/MyClipTimedText_pt.srt");
+var timedTextSource_Pt = TimedTextSource.CreateFromUri(timedTextSourceUri_Pt);
+timedTextSourceMap[timedTextSource_Pt] = timedTextSourceUri_Pt;
+timedTextSource_Pt.Resolved += TimedTextSource_Resolved;
+
+// Add the TimedTextSource to the MediaSource
+mediaSource.ExternalTimedTextSources.Add(timedTextSource_En);
+mediaSource.ExternalTimedTextSources.Add(timedTextSource_Pt);
+
+mediaPlaybackItem = new MediaPlaybackItem(mediaSource);
+mediaPlaybackItem.TimedMetadataTracksChanged += MediaPlaybackItem_TimedMetadataTracksChanged;
+
+mediaPlayer = new MediaPlayer();
+mediaPlayer.Source = mediaPlaybackItem;
+mediaPlayerElement.SetMediaPlayer(mediaPlayer);
+
+```
 
 In the handler for the [**TimedTextSource.Resolved**](/uwp/api/windows.media.core.timedtextsource.resolved) event, check the **Error** property of the [**TimedTextSourceResolveResultEventArgs**](/uwp/api/Windows.Media.Core.TimedTextSourceResolveResultEventArgs) passed into the handler to determine if an error occurred while trying to load the timed text data. If the item was resolved successfully, you can use this handler to update additional properties of the resolved track. This example adds a label for each track based on the URI previously stored in the **Dictionary**.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetTimedTextSourceResolved":::
+```csharp
+private void TimedTextSource_Resolved(TimedTextSource sender, TimedTextSourceResolveResultEventArgs args)
+{
+    var timedTextSourceUri = timedTextSourceMap[sender];
+
+    if (!(args.Error is null))
+    {
+        // Show that there was an error in your UI
+        ShowMessageToUser($"There was an error resolving track: {timedTextSourceUri}");
+        return;
+    }
+
+    // Add a label for each resolved track
+    var timedTextSourceUriString = timedTextSourceUri.AbsoluteUri;
+    if (timedTextSourceUriString.Contains("_en"))
+    {
+        args.Tracks[0].Label = "English";
+    }
+    else if (timedTextSourceUriString.Contains("_pt"))
+    {
+        args.Tracks[0].Label = "Portuguese";
+    }
+}
+```
 
 For a list of the timed text formats that are supported on Windows, see [Supported codecs](../media-authoring-processing/supported-codecs.md).
 
@@ -145,17 +369,75 @@ Create a new cue object, appropriate for the type of metadata track you created,
 
 The **DataCue.Properties** property exposes a [**PropertySet**](/uwp/api/windows.foundation.collections.propertyset) that you can use to store custom properties in key/data pairs that can be retrieved in the **CueEntered** and **CueExited** events.  
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetAddDataTrack":::
+```csharp
+TimedMetadataTrack metadataTrack = new TimedMetadataTrack("ID_0", "en-us", TimedMetadataKind.Data);
+metadataTrack.Label = "Custom data track";
+metadataTrack.CueEntered += MetadataTrack_DataCueEntered;
+metadataTrack.CueExited += MetadataTrack_CueExited;
+
+// Example cue data
+string data = "Cue data";
+byte[] bytes = new byte[data.Length * sizeof(char)];
+System.Buffer.BlockCopy(data.ToCharArray(), 0, bytes, 0, bytes.Length);
+Windows.Storage.Streams.IBuffer buffer = bytes.AsBuffer();
+
+for (int i = 0; i < 10; i++)
+{
+    DataCue cue = new DataCue();
+    cue.Id = "ID_" + i;
+    cue.Data = buffer;
+    cue.Properties["AdUrl"] = "http://contoso.com/ads/123";
+    cue.StartTime = TimeSpan.FromSeconds(3 + i * 3);
+    cue.Duration = TimeSpan.FromSeconds(2);
+
+    metadataTrack.AddCue(cue);
+}
+
+mediaSource.ExternalTimedMetadataTracks.Add(metadataTrack);
+```
 
 The **CueEntered** event is raised when a cue's start time has been reached as long as the associated track has a presentation mode of **ApplicationPresented**, **Hidden**, or **PlatformPresented.** Cue events are not raised for metadata tracks while the presentation mode for the track is **Disabled**. This example simply outputs the custom data associated with the cue to the debug window.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetDataCueEntered":::
+```csharp
+private void MetadataTrack_DataCueEntered(TimedMetadataTrack sender, MediaCueEventArgs args)
+{
+    DataCue cue = (DataCue)args.Cue;
+    string data = System.Text.Encoding.Unicode.GetString(cue.Data.ToArray());
+    System.Diagnostics.Debug.WriteLine("Cue entered: " + data);
+    System.Diagnostics.Debug.WriteLine("Custom prop value: " + cue.Properties["AdUrl"]);
+}
+```
 
 This example adds a custom text track by specifying **TimedMetadataKind.Caption** when creating the track and using [**TimedTextCue**](/uwp/api/Windows.Media.Core.TimedTextCue) objects to add cues to the track.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetAddTextTrack":::
+```csharp
+TimedMetadataTrack metadataTrack = new TimedMetadataTrack("TrackID_0", "en-us", TimedMetadataKind.Caption);
+metadataTrack.Label = "Custom text track";
+metadataTrack.CueEntered += MetadataTrack_TextCueEntered;
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetTextCueEntered":::
+for (int i = 0; i < 10; i++)
+{
+    TimedTextCue cue = new TimedTextCue()
+    {
+        Id = "TextCueID_" + i,
+        StartTime = TimeSpan.FromSeconds(i * 3),
+        Duration = TimeSpan.FromSeconds(2)
+    };
+
+    cue.Lines.Add(new TimedTextLine() { Text = "This is a custom timed text cue." });
+    metadataTrack.AddCue(cue);
+}
+
+mediaSource.ExternalTimedMetadataTracks.Add(metadataTrack);
+```
+
+```csharp
+private void MetadataTrack_TextCueEntered(TimedMetadataTrack sender, MediaCueEventArgs args)
+{
+    TimedTextCue cue = (TimedTextCue)args.Cue;
+    System.Diagnostics.Debug.WriteLine("Cue entered: " + cue.Id + " " + cue.Lines[0].Text);
+}
+```
 
 ## Play a list of media items with MediaPlaybackList
 
@@ -169,59 +451,177 @@ You can specify the maximum number of **MediaPlaybackItem** objects in the **Med
 
 To enable playback of your list, set the playback source of the **MediaPlayer** to your **MediaPlaybackList**.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetDeclareMediaPlaybackList":::
+```csharp
+MediaPlaybackList mediaPlaybackList;
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetPlayMediaPlaybackList":::
+```csharp
+mediaPlaybackList = new MediaPlaybackList();
+
+var results = await filePicker.PickMultipleFilesAsync();
+
+foreach (var result in results)
+{
+    var storageFile = await Windows.Storage.StorageFile.GetFileFromPathAsync(result.Path);
+    var mediaPlaybackItem = new MediaPlaybackItem(MediaSource.CreateFromStorageFile(storageFile));
+    mediaPlaybackList.Items.Add(mediaPlaybackItem);
+}
+
+mediaPlaybackList.CurrentItemChanged += MediaPlaybackList_CurrentItemChanged;
+mediaPlaybackList.ItemOpened += MediaPlaybackList_ItemOpened;
+mediaPlaybackList.ItemFailed += MediaPlaybackList_ItemFailed;
+
+mediaPlaybackList.MaxPlayedItemsToKeepOpen = 3;
+
+mediaPlayer = new MediaPlayer();
+mediaPlayer.Source = mediaPlaybackList;
+mediaPlayerElement.SetMediaPlayer(mediaPlayer);
+```
 
 In the **CurrentItemChanged** event handler, update your UI to reflect the currently playing item, which can be retrieved using the [**NewItem**](/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.newitem) property of the [**CurrentMediaPlaybackItemChangedEventArgs**](/uwp/api/Windows.Media.Playback.CurrentMediaPlaybackItemChangedEventArgs) object passed into the event. Remember that if you update the UI from this event, you should do so within a call to [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) so that the updates are made on the UI thread.
 
 You can check the [CurrentMediaPlaybackItemChangedEventArgs.Reason](/uwp/api/windows.media.playback.currentmediaplaybackitemchangedeventargs.Reason) property to get a value that indicates the reason that the item changed, such as the app switching items programmatically, the previously playing item reaching its end, or an error occurring.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetMediaPlaybackListItemChanged":::
+```csharp
+private void MediaPlaybackList_CurrentItemChanged(MediaPlaybackList sender, CurrentMediaPlaybackItemChangedEventArgs args) =>
+    LogTelemetryData($"CurrentItemChanged reason: {args.Reason.ToString()}");
+
+```
 
 
 Call [**MovePrevious**](/uwp/api/windows.media.playback.mediaplaybacklist.moveprevious) or [**MoveNext**](/uwp/api/windows.media.playback.mediaplaybacklist.movenext) to cause the media player to play the previous or next item in your **MediaPlaybackList**.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetPrevButton":::
+```csharp
+private void PrevButton_Click(object sender, RoutedEventArgs e)
+{
+    mediaPlaybackList.MovePrevious();
+}
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetNextButton":::
+```csharp
+private void NextButton_Click(object sender, RoutedEventArgs e)
+{
+    mediaPlaybackList.MoveNext();
+}
+```
 
 Set the [**ShuffleEnabled**](/uwp/api/windows.media.playback.mediaplaybacklist.shuffleenabled) property to specify whether the media player should play the items in your list in random order.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetShuffleButton":::
+```csharp
+private void ShuffleButton_Click(object sender, RoutedEventArgs e)
+{
+    mediaPlaybackList.ShuffleEnabled = !mediaPlaybackList.ShuffleEnabled;
+
+    DispatcherQueue.TryEnqueue(() =>
+    {
+        shuffleButton.FontWeight =
+            mediaPlaybackList.ShuffleEnabled ? Microsoft.UI.Text.FontWeights.Bold : Microsoft.UI.Text.FontWeights.Light;
+    });
+}
+```
 
 Set the [**AutoRepeatEnabled**](/uwp/api/windows.media.playback.mediaplaybacklist.autorepeatenabled) property to specify whether the media player should loop playback of your list.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetRepeatButton":::
+```csharp
+private void AutoRepeatButton_Click(object sender, RoutedEventArgs e)
+{
+    mediaPlaybackList.AutoRepeatEnabled = !mediaPlaybackList.AutoRepeatEnabled;
+
+    DispatcherQueue.TryEnqueue(() =>
+    {
+        autoRepeatButton.FontWeight =
+            mediaPlaybackList.AutoRepeatEnabled ? Microsoft.UI.Text.FontWeights.Bold : Microsoft.UI.Text.FontWeights.Light;
+    });
+}
+```
 
 
 ### Handle the failure of media items in a playback list
 
 The [**ItemFailed**](/uwp/api/windows.media.playback.mediaplaybacklist.itemfailed) event is raised when an item in the list fails to open. The [**ErrorCode**](/uwp/api/windows.media.playback.mediaplaybackitemerror.errorcode) property of the [**MediaPlaybackItemError**](/uwp/api/Windows.Media.Playback.MediaPlaybackItemError) object passed into the handler enumerates the specific cause of the failure when possible, including network errors, decoding errors, or encryption errors.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetItemFailed":::
+```csharp
+private void MediaPlaybackList_ItemFailed(MediaPlaybackList sender, MediaPlaybackItemFailedEventArgs args)
+{
+    LogError(args.Error.ErrorCode);
+    LogError(args.Error.ExtendedError.HResult);
+}
+```
 
 ### Disable playback of items in a playback list
 
-You can disable playback of one or more items in a **MediaPlaybackItemList** by setting the [IsDisabledInPlaybackList](/uwp/api/Windows.Media.Playback.MediaPlaybackItem.IsDisabledInPlaybackList) property of a [MediaPlaybackItem](/uwp/api/Windows.Media.Playback.MediaPlaybackItem) to false.
+You can disable playback of one or more items in a **MediaPlaybackItemList** by setting the [IsDisabledInPlaybackList](/uwp/api/Windows.Media.Playback.MediaPlaybackItem.IsDisabledInPlaybackList) property of a [MediaPlaybackItem](/uwp/api/Windows.Media.Playback.MediaPlaybackItem) to true.
 
 A typical scenario for this feature is for apps that play streaming music. The app can listen for changes in the network connection status of the device and disable playback of items that are not fully downloaded. In the following example, a handler is registered for the [NetworkInformation.NetworkStatusChanged](/uwp/api/Windows.Networking.Connectivity.NetworkInformation.NetworkStatusChanged) event.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetRegisterNetworkStatusChanged":::
+```csharp
+Windows.Networking.Connectivity.NetworkInformation.NetworkStatusChanged += NetworkInformation_NetworkStatusChanged;
+```
 
 In the handler for **NetworkStatusChanged**, check to see if [GetInternetConnectionProfile](/uwp/api/Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile) returns null, which indicates that the network is not connected. If this is the case, loop through all of the items in the playback list, and if the [TotalDownloadProgress](/uwp/api/windows.media.playback.mediaplaybackitem.TotalDownloadProgress) for the item is less than 1, meaning that the item has not fully downloaded, disable the item. If the network connection is enabled, loop through all of the items in the playback list and enable each item.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetNetworkStatusChanged":::
+```csharp
+private void NetworkInformation_NetworkStatusChanged(object sender)
+{
+    if (Windows.Networking.Connectivity.NetworkInformation.GetInternetConnectionProfile() == null)
+    {
+        // Check download status of each item in the list. (TotalDownloadProgress < 1 means not completely downloaded)
+        foreach (var item in mediaPlaybackList.Items)
+        {
+            if (item.TotalDownloadProgress < 1)
+            {
+                item.IsDisabledInPlaybackList = true;
+            }
+        }
+    }
+    else
+    {
+        // Connected to internet, re-enable all playlist items
+        foreach (var item in mediaPlaybackList.Items)
+        {
+            item.IsDisabledInPlaybackList = false;
+        }
+    }
+}
+```
 
 ### Defer binding of media content for items in a playback list by using MediaBinder
 
 In the previous examples, a **MediaSource** is created from a file, URL, or stream, after which a **MediaPlaybackItem** is created and added to a **MediaPlaybackList**. For some scenarios, such as if the user is being charged for viewing content, you may want to defer the retrieval of the content of a **MediaSource** until the item in the playback list is ready to actually be played. To implement this scenario, create an instance of the [**MediaBinder**](/uwp/api/Windows.Media.Core.MediaBinder) class. Set the [**Token**](/uwp/api/Windows.Media.Core.MediaBinder.Token) property to an app-defined string that identifies the content for which you want to defer retrieval and then register a handler for the [**Binding**](/uwp/api/Windows.Media.Core.MediaBinder.Binding) event. Next, create a **MediaSource** from the **Binder** by calling [**MediaSource.CreateFromMediaBinder**](/uwp/api/windows.media.core.mediasource.createfrommediabinder). Then, create a **MediaPlaybackItem** from the **MediaSource** and add it to the playback list as usual.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetInitMediaBinder":::
+```csharp
+mediaPlaybackList = new MediaPlaybackList();
+
+var binder = new MediaBinder();
+binder.Token = "MyBindingToken1";
+binder.Binding += Binder_Binding;
+mediaPlaybackList.Items.Add(new MediaPlaybackItem(MediaSource.CreateFromMediaBinder(binder)));
+
+binder = new MediaBinder();
+binder.Token = "MyBindingToken2";
+binder.Binding += Binder_Binding;
+mediaPlaybackList.Items.Add(new MediaPlaybackItem(MediaSource.CreateFromMediaBinder(binder)));
+
+mediaPlayer = new MediaPlayer();
+mediaPlayer.Source = mediaPlaybackList;
+mediaPlayerElement.SetMediaPlayer(mediaPlayer);
+```
 
 When the system determines that the content associated with the **MediaBinder** needs to be retrieved, it will raise the **Binding** event. In the handler for this event, you can retrieve the **MediaBinder** instance from the [**MediaBindingEventArgs**](/uwp/api/windows.media.core.mediabindingeventargs) passed into the event. Retrieve the string you specified for the **Token** property and use it to determine what content should be retrieved. The **MediaBindingEventArgs** provides methods for setting the bound content in several different representations, including [**SetStorageFile**](/uwp/api/windows.media.core.mediabindingeventargs.setstoragefile), [**SetStream**](/uwp/api/windows.media.core.mediabindingeventargs.setstream), [**SetStreamReference**](/uwp/api/windows.media.core.mediabindingeventargs.setstreamreference), and [**SetUri**](/uwp/api/windows.media.core.mediabindingeventargs.seturi). 
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/media-source-winui/cs/MediaSourceWinUI/MainWindow.xaml.cs" id="SnippetBinderBinding":::
+```csharp
+private void Binder_Binding(MediaBinder sender, MediaBindingEventArgs args)
+{
+    // Get a deferral if you need to perform async operations
+    var deferral = args.GetDeferral();
+
+    var contentUri = new Uri("http://contoso.com/media/" + args.MediaBinder.Token);
+    args.SetUri(contentUri);
+
+    // Call complete after your async operations are complete
+    deferral.Complete();
+}
+```
 
 Note that if you are performing asynchronous operations, such as web requests, in the **Binding** event handler, you should call the [**MediaBindingEventArgs.GetDeferral**](/uwp/api/windows.media.core.mediabindingeventargs.GetDeferral) method to instruct the system to wait for your operation to complete before continuing. Call [**Deferral.Complete**](/uwp/api/windows.foundation.deferral.Complete) after your operation is complete to instruct the system to continue.
 
@@ -234,4 +634,3 @@ Starting with Windows 10, version 1703, you can supply an [**AdaptiveMediaSource
 * [Media playback](media-playback.md)
 * [Play audio and video with MediaPlayer](play-audio-and-video-with-mediaplayer.md)
 * [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md)
-

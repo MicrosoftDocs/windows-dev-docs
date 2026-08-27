@@ -2,9 +2,7 @@
 title: Basic photo, video, and audio capture with MediaCapture
 description: Learn how to capture photos and video using the MediaCapture class.  
 ms.topic: article
-ms.date: 07/23/2024
-ms.author: drewbat
-author: drewbatgit
+ms.date: 08/23/2026
 ms.localizationpriority: medium
 #customer intent: As a developer, I want to access the camera in a Windows app using WinUI.
 ---
@@ -25,7 +23,17 @@ Capture a photo to a **SoftwareBitmap** using the [**LowLagPhotoCapture**](/uwp/
 
 You can capture multiple photos by repeatedly calling **CaptureAsync**. When you are done capturing, call [**FinishAsync**](/uwp/api/windows.media.capture.lowlagphotocapture.finishasync) to shut down the **LowLagPhotoCapture** session and free up the associated resources. After calling **FinishAsync**, to begin capturing photos again you will need to call [**PrepareLowLagPhotoCaptureAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagphotocaptureasync) again to reinitialize the capture session before calling [**CaptureAsync**](/uwp/api/windows.media.capture.lowlagphotocapture.captureasync).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraLowLagPhotoCapture":::
+```csharp
+// Prepare and capture photo
+var lowLagCapture = await m_mediaCapture.PrepareLowLagPhotoCaptureAsync(ImageEncodingProperties.CreateUncompressed(MediaPixelFormat.Bgra8));
+
+var capturedPhoto = await lowLagCapture.CaptureAsync();
+var softwareBitmap = capturedPhoto.Frame.SoftwareBitmap;
+
+// Capture more photos, if desired.
+// Then call FinishAsync to clean up resources
+await lowLagCapture.FinishAsync();
+```
 
 ## Capture a photo to a memory stream
 
@@ -39,7 +47,17 @@ You can optionally create a [**BitmapPropertySet**](/uwp/api/Windows.Graphics.Im
 
 Finally, call [**FlushAsync**](/uwp/api/windows.graphics.imaging.bitmapencoder.flushasync) on the encoder object to transcode the photo from the in-memory stream to the file.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraLowLagPhotoCapture":::
+```csharp
+// Prepare and capture photo
+var lowLagCapture = await m_mediaCapture.PrepareLowLagPhotoCaptureAsync(ImageEncodingProperties.CreateUncompressed(MediaPixelFormat.Bgra8));
+
+var capturedPhoto = await lowLagCapture.CaptureAsync();
+var softwareBitmap = capturedPhoto.Frame.SoftwareBitmap;
+
+// Capture more photos, if desired.
+// Then call FinishAsync to clean up resources
+await lowLagCapture.FinishAsync();
+```
 
 
 ## Capture a video
@@ -48,32 +66,59 @@ Quickly add video capture to your app by using the [**LowLagMediaRecording**](/u
 
 First, the **LowLagMediaRecording** needs to persist while video is being captured, so declare a class variable to for the object.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraDeclareLowLagMediaRecording":::
+```csharp
+LowLagMediaRecording m_mediaRecording;
+```
 
 
 Call [**PrepareLowLagRecordToStorageFileAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync) to initialize the media recording, passing in the storage file and a [**MediaEncodingProfile**](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) object specifying the encoding for the video. The class provides static methods, like [**CreateMp4**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp4), for creating common video encoding profiles. Call [**StartAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.startasync) to begin capturing video.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraStartLowLagMediaRecording":::
+```csharp
+var myVideos = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Videos);
+StorageFile file = await myVideos.SaveFolder.CreateFileAsync("video.mp4", CreationCollisionOption.GenerateUniqueName);
+m_mediaRecording = await m_mediaCapture.PrepareLowLagRecordToStorageFileAsync(
+        MediaEncodingProfile.CreateMp4(VideoEncodingQuality.Auto), file);
+
+m_mediaCapture.RecordLimitationExceeded += m_mediaCapture_RecordLimitationExceeded;
+await m_mediaRecording.StartAsync();
+```
 
 
 To stop recording video, call [**StopAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.stopasync).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraStopLowLagMediaRecording":::
+```csharp
+await m_mediaRecording.StopAsync();
+```
 
 You can continue to call **StartAsync** and **StopAsync** to capture additional videos. When you are done capturing videos, call [**FinishAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) to dispose of the capture session and clean up associated resources. After this call, you must call **PrepareLowLagRecordToStorageFileAsync** again to reinitialize the capture session before calling **StartAsync**.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraFinalizeLowLagMediaRecording":::
+```csharp
+await m_mediaRecording.FinishAsync();
+```
 
 When capturing video, you should register a handler for the [**RecordLimitationExceeded**](/uwp/api/windows.media.capture.mediacapture.recordlimitationexceeded) event of the **MediaCapture** object, which will be raised by the operating system if you surpass the limit for a single recording, currently three hours. In the handler for the event, you should finalize your recording by calling [**StopAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.stopasync).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraRecordLimitationExceeded":::
+```csharp
+private async void m_mediaCapture_RecordLimitationExceeded(MediaCapture sender)
+{
+    await m_mediaRecording.StopAsync();
+    DispatcherQueue.TryEnqueue(() =>
+    {
+        tbStatus.Text = "Record limitation exceeded.";
+    });
+}
+```
 
 
 You can pause a video recording and then resume recording without creating a separate output file by calling [**PauseAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.pauseasync) and then calling [**ResumeAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.resumeasync).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraPauseVideoCapture":::
+```csharp
+await m_mediaRecording.PauseAsync(Windows.Media.Devices.MediaCapturePauseBehavior.ReleaseHardwareResources);
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraResumeVideoCapture":::
+```csharp
+await m_mediaRecording.ResumeAsync();
+```
 
 Calling [**PauseWithResultAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.pausewithresultasync) returns a [**MediaCapturePauseResult**](/uwp/api/Windows.Media.Capture.MediaCapturePauseResult) object. The [**LastFrame**](/uwp/api/windows.media.capture.mediacapturepauseresult.lastframe) property is a [**VideoFrame**](/uwp/api/Windows.Media.VideoFrame) object representing the last frame. To display the frame in XAML, get the **SoftwareBitmap** representation of the video frame. Currently, only images in BGRA8 format with premultiplied or empty alpha channel are supported, so call [**Convert**](/uwp/api/windows.graphics.imaging.softwarebitmap.convert) if necessary to get the correct format.  **PauseWithResultAsync** also returns the duration of the video that was recorded in the preceding segment in case you need to track how much total time has been recorded.
 
@@ -91,14 +136,23 @@ You can also create a **[MediaClip](/uwp/api/windows.media.editing.mediaclip)** 
 You can quickly add audio capture to your app by using the same technique shown above for capturing video. Call [**PrepareLowLagRecordToStorageFileAsync**](/uwp/api/windows.media.capture.mediacapture.preparelowlagrecordtostoragefileasync) to initialize the capture session, passing in the file and a [**MediaEncodingProfile**](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) which is generated in this example by the [**CreateMp3**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.createmp3) static method. To begin recording, call [**StartAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.startasync).
 
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraStartAudioCapture":::
+```csharp
+m_mediaCapture.RecordLimitationExceeded += m_mediaCapture_RecordLimitationExceeded;
+
+var myVideos = await Windows.Storage.StorageLibrary.GetLibraryAsync(Windows.Storage.KnownLibraryId.Videos);
+StorageFile file = await myVideos.SaveFolder.CreateFileAsync("audio.mp3", CreationCollisionOption.GenerateUniqueName);
+m_mediaRecording = await m_mediaCapture.PrepareLowLagRecordToStorageFileAsync(
+        MediaEncodingProfile.CreateMp3(AudioEncodingQuality.High), file);
+await m_mediaRecording.StartAsync();
+```
 
 
 Call [**StopAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.stopasync) to stop the audio recording.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraStopAudioCapture":::
+```csharp
+await m_mediaRecording.StopAsync();
+```
 
 You can call **StartAsync** and **StopAsync** multiple times to record several audio files. When you are done capturing audio, call [**FinishAsync**](/uwp/api/windows.media.capture.lowlagmediarecording.finishasync) to dispose of the capture session and clean up associated resources. After this call, you must call **PrepareLowLagRecordToStorageFileAsync** again to reinitialize the capture session before calling **StartAsync**.
 
 For information about detecting when the system changes the audio level of the audio capture stream, see [Detect and respond to audio level changes by the system](detect-audio-level-changes.md). 
-

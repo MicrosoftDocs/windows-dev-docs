@@ -1,7 +1,7 @@
 ---
 description: Learn how to apply effects to the camera preview and recording video streams and shows you how to use the video stabilization effect.
 title: Effects for video capture
-ms.date: 09/10/2024
+ms.date: 08/23/2026
 ms.topic: article
 keywords: windows 10, windows 11, winui3, camera
 ms.localizationpriority: medium
@@ -23,17 +23,41 @@ To capture or preview video from the device's camera, use the [**MediaCapture**]
 
 The following example adds an effect to both the camera preview and record streams. This example illustrates checking to see if the record and preview streams are the same.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetBasicAddEffect":::
+```csharp
+if (m_mediaCapture.MediaCaptureSettings.VideoDeviceCharacteristic == VideoDeviceCharacteristic.AllStreamsIdentical ||
+    m_mediaCapture.MediaCaptureSettings.VideoDeviceCharacteristic == VideoDeviceCharacteristic.PreviewRecordStreamsIdentical)
+{
+    // This effect will modify both the preview and the record streams, because they are the same stream.
+    myRecordEffect = await m_mediaCapture.AddVideoEffectAsync(myEffectDefinition, MediaStreamType.VideoRecord);
+}
+else
+{
+    myRecordEffect = await m_mediaCapture.AddVideoEffectAsync(myEffectDefinition, MediaStreamType.VideoRecord);
+    myPreviewEffect = await m_mediaCapture.AddVideoEffectAsync(myEffectDefinition, MediaStreamType.VideoPreview);
+}
+```
 
 Note that **AddVideoEffectAsync** returns an object that implements [**IMediaExtension**](/uwp/api/Windows.Media.IMediaExtension) that represents the added video effect. Some effects allow you to change the effect settings by passing a [**PropertySet**](/uwp/api/Windows.Foundation.Collections.PropertySet) into the [**SetProperties**](/uwp/api/windows.media.imediaextension.setproperties) method.
 
 Starting with Windows 10, version 1607, you can also use the object returned by **AddVideoEffectAsync** to remove the effect from the video pipeline by passing it into [**RemoveEffectAsync**](/uwp/api/windows.media.capture.mediacapture.removeeffectasync). **RemoveEffectAsync** automatically determines whether the effect object parameter was added to the preview or record stream, so you don't need to specify the stream type when making the call.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetRemoveOneEffect":::
+```csharp
+if (myRecordEffect != null)
+{
+    await m_mediaCapture.RemoveEffectAsync(myRecordEffect);
+}
+if (myPreviewEffect != null)
+{
+    await m_mediaCapture.RemoveEffectAsync(myPreviewEffect);
+}
+```
 
 You can also remove all effects from the preview or capture stream by calling [**ClearEffectsAsync**](/uwp/api/windows.media.capture.mediacapture.cleareffectsasync) and specifying the stream for which all effects should be removed.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetClearAllEffects":::
+```csharp
+await m_mediaCapture.ClearEffectsAsync(MediaStreamType.VideoPreview);
+await m_mediaCapture.ClearEffectsAsync(MediaStreamType.VideoRecord);
+```
 
 ## Video stabilization effect
 
@@ -45,11 +69,19 @@ On devices that support it, Optical Image Stabilization (OIS) stabilizes video b
 
 Declare a member variable to store the [**VideoStabilizationEffect**](/uwp/api/Windows.Media.Core.VideoStabilizationEffect) object. As part of the effect implementation, you will modify the encoding properties that you use to encode the captured video. Declare two variables to store a backup copy of the initial input and output encoding properties so that you can restore them later when the effect is disabled. Finally, declare a member variable of type [**MediaEncodingProfile**](/uwp/api/Windows.Media.MediaProperties.MediaEncodingProfile) because this object will be accessed from multiple locations within your code.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetDeclareVideoStabilizationEffect":::
+```csharp
+//
+private VideoStabilizationEffect m_videoStabilizationEffect;
+private VideoEncodingProperties m_inputPropertiesBackup;
+private VideoEncodingProperties m_outputPropertiesBackup;
+private MediaEncodingProfile m_encodingProfile;
+```
 
 For this scenario, you should assign the media encoding profile object to a member variable so that you can access it later.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetEncodingProfileMember":::
+```csharp
+m_encodingProfile = MediaEncodingProfile.CreateMp4(VideoEncodingQuality.Auto);
+```
 
 ### Initialize the video stabilization effect
 
@@ -57,7 +89,20 @@ After your **MediaCapture** object has been initialized, create a new instance o
 
 Register an event handler for the [**EnabledChanged**](/uwp/api/windows.media.core.videostabilizationeffect.enabledchanged) event and call the helper method **SetUpVideoStabilizationRecommendationAsync**, both of which are discussed later in this article. Finally, set the [**Enabled**](/uwp/api/windows.media.core.videostabilizationeffect.enabled) property of the effect to true to enable the effect.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetCreateVideoStabilizationEffect":::
+```csharp
+// Create the effect definition
+VideoStabilizationEffectDefinition stabilizerDefinition = new VideoStabilizationEffectDefinition();
+
+// Add the video stabilization effect to media capture
+m_videoStabilizationEffect =
+    (VideoStabilizationEffect)await m_mediaCapture.AddVideoEffectAsync(stabilizerDefinition, MediaStreamType.VideoRecord);
+
+m_videoStabilizationEffect.EnabledChanged += VideoStabilizationEffect_EnabledChanged;
+
+await SetUpVideoStabilizationRecommendationAsync();
+
+m_videoStabilizationEffect.Enabled = true;
+```
 
 ### Use recommended encoding properties
 
@@ -73,7 +118,35 @@ If the video stabilization effect must crop the output video, the recommended ou
 
 Set the [**Video**](/uwp/api/windows.media.mediaproperties.mediaencodingprofile.video) property of the **MediaEncodingProfile** object. Before setting the new properties, use the member variable to store the initial encoding properties so that you can change the settings back when you disable the effect.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetSetUpVideoStabilizationRecommendationAsync":::
+```csharp
+private async Task SetUpVideoStabilizationRecommendationAsync()
+{
+
+    // Get the recommendation from the effect based on our current input and output configuration
+    var recommendation = m_videoStabilizationEffect.GetRecommendedStreamConfiguration(m_mediaCapture.VideoDeviceController, m_encodingProfile.Video);
+
+    // Handle the recommendation for the input into the effect, which can contain a larger resolution than currently configured, so cropping is minimized
+    if (recommendation.InputProperties != null)
+    {
+        // Back up the current input properties from before VS was activated
+        m_inputPropertiesBackup = m_mediaCapture.VideoDeviceController.GetMediaStreamProperties(MediaStreamType.VideoRecord) as VideoEncodingProperties;
+
+        // Set the recommendation from the effect (a resolution higher than the current one to allow for cropping) on the input
+        await m_mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoRecord, recommendation.InputProperties);
+        await m_mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoPreview, recommendation.InputProperties);
+    }
+
+    // Handle the recommendations for the output from the effect
+    if (recommendation.OutputProperties != null)
+    {
+        // Back up the current output properties from before VS was activated
+        m_outputPropertiesBackup = m_encodingProfile.Video;
+
+        // Apply the recommended encoding profile for the output
+        m_encodingProfile.Video = recommendation.OutputProperties;
+    }
+}
+```
 
 ### Handle the video stabilization effect being disabled
 
@@ -81,13 +154,42 @@ The system may automatically disable the video stabilization effect if the pixel
 
 Typically, you would use this event to adjust your app's UI to indicate the current status of video stabilization.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetVideoStabilizationEnabledChanged":::
+```csharp
+private void VideoStabilizationEffect_EnabledChanged(VideoStabilizationEffect sender, VideoStabilizationEffectEnabledChangedEventArgs args)
+{
+    DispatcherQueue.TryEnqueue(() =>
+    {
+        // Update your UI to reflect the change in status
+        tbStatus.Text = "video stabilization status: " + sender.Enabled + ". Reason: " + args.Reason;
+    });
+}
+```
 
 ### Clean up the video stabilization effect
 
 To clean up the video stabilization effect, call [**RemoveEffectAsync**](/uwp/api/windows.media.capture.mediacapture.removeeffectasync) to remove the effect from the video pipeline. If the member variables containing the initial encoding properties are not null, use them to restore the encoding properties. Finally, remove the **EnabledChanged** event handler and set the effect to null.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetCleanUpVisualStabilizationEffect":::
+```csharp
+// Clear all effects in the pipeline
+await m_mediaCapture.RemoveEffectAsync(m_videoStabilizationEffect);
+
+// If backed up settings (stream properties and encoding profile) exist, restore them and clear the backups
+if (m_inputPropertiesBackup != null)
+{
+    await m_mediaCapture.VideoDeviceController.SetMediaStreamPropertiesAsync(MediaStreamType.VideoRecord, m_inputPropertiesBackup);
+    m_inputPropertiesBackup = null;
+}
+
+if (m_outputPropertiesBackup != null)
+{
+    m_encodingProfile.Video = m_outputPropertiesBackup;
+    m_outputPropertiesBackup = null;
+}
+
+m_videoStabilizationEffect.EnabledChanged -= VideoStabilizationEffect_EnabledChanged;
+
+m_videoStabilizationEffect = null;
+```
 
 ## Related topics
 

@@ -1,7 +1,7 @@
 ---
 description: The Windows.Graphics.Capture namespace provides APIs to acquire frames from a display or application window, to create video streams or snapshots to build collaborative and interactive experiences.
 title: Screen capture
-ms.date: 05/13/2026
+ms.date: 08/23/2026
 ms.topic: how-to
 dev_langs:
 - csharp
@@ -24,7 +24,17 @@ This article describes capturing a single image of the display or application wi
 
 Before attempting to capture, check whether the current device supports screen capture. Use the [**IsSupported**](/uwp/api/windows.graphics.capture.graphicscapturesession.issupported) method on [**GraphicsCaptureSession**](/uwp/api/windows.graphics.capture.graphicscapturesession) to determine if screen capture is available:
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/screen-capture-winui/cs/ScreenCaptureWinUI/MainWindow.xaml.cs" id="SnippetCheckSupport":::
+```csharp
+// Check if screen capture is supported
+if (!GraphicsCaptureSession.IsSupported())
+{
+    // Hide capture UI
+    CaptureControlsPanel.Visibility = Visibility.Collapsed;
+    PreviewPlaceholderText.Text = "Screen capture isn't supported on this device.";
+    UpdateStatus("Screen capture isn't supported on this device.");
+    return;
+}
+```
 
 There are several reasons why screen capture might not be supported, including if the device doesn't meet hardware requirements.
 
@@ -34,13 +44,31 @@ Use the [**GraphicsCapturePicker**](/uwp/api/windows.graphics.capture.graphicsca
 
 In a WinUI 3 app, you must initialize the picker with the window handle before calling [**PickSingleItemAsync**](/uwp/api/windows.graphics.capture.graphicscapturepicker.picksingleitemasync):
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/screen-capture-winui/cs/ScreenCaptureWinUI/MainWindow.xaml.cs" id="SnippetStartCapture":::
+```csharp
+// Launch picker and start capture
+var picker = new GraphicsCapturePicker();
+var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+WinRT.Interop.InitializeWithWindow.Initialize(picker, hwnd);
+GraphicsCaptureItem item = await picker.PickSingleItemAsync();
+if (item != null)
+{
+    StartCaptureInternal(item);
+}
+```
 
 ## Create a capture frame pool and capture session
 
 Using the **GraphicsCaptureItem**, create a [**Direct3D11CaptureFramePool**](/uwp/api/windows.graphics.capture.direct3d11captureframepool) with your D3D device, a supported pixel format (**DXGI\_FORMAT\_B8G8R8A8\_UNORM**), number of desired frames (which can be any integer), and frame size. The **Size** property of the **GraphicsCaptureItem** class can be used as the size of your frame:
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/screen-capture-winui/cs/ScreenCaptureWinUI/MainWindow.xaml.cs" id="SnippetCreateFramePool":::
+```csharp
+// Create frame pool and capture session
+_framePool = Direct3D11CaptureFramePool.Create(
+    _canvasDevice,
+    CaptureDirectXPixelFormat.B8G8R8A8UIntNormalized,
+    BufferCount,
+    item.Size);
+_session = _framePool.CreateCaptureSession(item);
+```
 
 > [!NOTE]
 > On systems with Windows HD color enabled, the content pixel format might not necessarily be **DXGI\_FORMAT\_B8G8R8A8\_UNORM**. To avoid pixel overclipping (i.e. the captured content looks washed out) when capturing HDR content, consider using **DXGI\_FORMAT\_R16G16B16A16\_FLOAT** for every component in the capturing pipeline, including the [**Direct3D11CaptureFramePool**](/uwp/api/windows.graphics.capture.direct3d11captureframepool), the target destination such as [**CanvasBitmap**](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm). Depending on the need, additional processing such as saving to HDR content format or HDR-to-SDR tone mapping might be required. This article focuses on SDR content capturing. For more information, see [Using DirectX with high dynamic range displays and advanced color](/windows/win32/direct3darticles/high-dynamic-range).
@@ -53,7 +81,10 @@ With your frame pool and capture session created, call [**StartCapture**](/uwp/a
 
 To acquire these capture frames, which are [**Direct3D11CaptureFrame**](/uwp/api/windows.graphics.capture.direct3d11captureframe) objects, use the [**Direct3D11CaptureFramePool.FrameArrived**](/uwp/api/windows.graphics.capture.direct3d11captureframepool.framearrived) event:
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/screen-capture-winui/cs/ScreenCaptureWinUI/MainWindow.xaml.cs" id="SnippetFrameArrived":::
+```csharp
+// Handle frame arrival
+_framePool.FrameArrived += OnFrameArrived;
+```
 
 It's recommended to avoid doing heavy work on the UI thread for **FrameArrived**, as this event fires every time a new frame is available. If you choose to listen to **FrameArrived** on the UI thread, be mindful of how much work you're doing every time the event fires.
 
@@ -69,7 +100,12 @@ Applications should not save references to **Direct3D11CaptureFrame** objects, n
 
 In this example, each frame is converted to a [**CanvasBitmap**](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_CanvasBitmap.htm), which is part of the [Win2D](https://microsoft.github.io/Win2D/WinUI3/html/Introduction.htm) library:
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/screen-capture-winui/cs/ScreenCaptureWinUI/MainWindow.xaml.cs" id="SnippetProcessFrame":::
+```csharp
+// Convert frame to Win2D bitmap and display
+CanvasBitmap canvasBitmap = CanvasBitmap.CreateFromDirect3D11Surface(
+    _canvasDevice,
+    frame.Surface);
+```
 
 The underlying Direct3D surface is always the size specified when creating (or recreating) the **Direct3D11CaptureFramePool**. If content is larger than the frame, the contents are clipped to the size of the frame. If the content is smaller than the frame, then the rest of the frame contains undefined data. It's recommended that applications copy out a sub-rect using the **ContentSize** property for that **Direct3D11CaptureFrame** to avoid showing undefined content.
 
@@ -77,7 +113,20 @@ The underlying Direct3D surface is always the size specified when creating (or r
 
 Once you have a **CanvasBitmap**, you can save it as an image file. The following example saves the current frame as a PNG file using a [**FileSavePicker**](/uwp/api/Windows.Storage.Pickers.FileSavePicker). In a WinUI 3 app, you must initialize the picker with the window handle:
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/screen-capture-winui/cs/ScreenCaptureWinUI/MainWindow.xaml.cs" id="SnippetSaveScreenshot":::
+```csharp
+// Save screenshot
+var savePicker = new FileSavePicker();
+savePicker.SuggestedStartLocation = PickerLocationId.PicturesLibrary;
+savePicker.SuggestedFileName = "screen-capture";
+savePicker.FileTypeChoices.Add("PNG image", new List<string> { ".png" });
+WinRT.Interop.InitializeWithWindow.Initialize(savePicker, _hwnd);
+StorageFile? file = await savePicker.PickSaveFileAsync();
+if (file is not null)
+{
+    using var fileStream = await file.OpenAsync(FileAccessMode.ReadWrite);
+    await frameToSave.SaveAsync(fileStream, CanvasBitmapFileFormat.Png, 1f);
+}
+```
 
 ## React to capture item resizing or device lost
 

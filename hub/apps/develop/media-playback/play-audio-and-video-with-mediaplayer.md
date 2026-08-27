@@ -1,7 +1,7 @@
 ---
 description: This article shows you how to play media in a WinUI app with MediaPlayer.
 title: Play audio and video with MediaPlayer
-ms.date: 01/15/2026
+ms.date: 08/23/2026
 ms.topic: how-to
 keywords: windows 10, winui
 ms.localizationpriority: medium
@@ -19,28 +19,42 @@ Basic media playback with **MediaPlayer** is very simple to implement. First, cr
 
 In the following example, a **MediaSource** is created from a file in the app's local storage, and then a **MediaPlaybackItem** is created from the source and then assigned to the player's **Source** property. Unlike **MediaElement**, **MediaPlayer** does not automatically begin playback by default. You can start playback by calling [**Play**](/uwp/api/windows.media.playback.mediaplayer.play), by setting the [**AutoPlay**](/uwp/api/windows.media.playback.mediaplayer.autoplay) property to true, or waiting for the user to initiate playback with the built-in media controls.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSimpleFilePlayback":::
+```csharp
+mediaPlayer = new MediaPlayer();
+mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
+mediaPlayer.Play();
+```
 
 When your app is done using a **MediaPlayer**, you should call the [**Close**](/uwp/api/windows.media.playback.mediaplayer.close) method (projected to **Dispose** in C#) to clean up the resources used by the player.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetCloseMediaPlayer":::
+```csharp
+mediaPlayer.Dispose();
+```
 
 ## Use MediaPlayerElement to render video in XAML
 
 You can play media in a **MediaPlayer** without displaying it in XAML, but many media playback apps will want to render the media in a XAML page. To do this, use the lightweight [**MediaPlayerElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement) control. Like **MediaElement**, **MediaPlayerElement** allows you to specify whether the built-in transport controls should be shown.
 
-:::code language="xml" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml" id="SnippetMediaPlayerElementXAML":::
+```xml
+<MediaPlayerElement x:Name="mediaPlayerElement" AreTransportControlsEnabled="False" HorizontalAlignment="Stretch" />
+```
 
 You can set the **MediaPlayer** instance that the element is bound to by calling [**SetMediaPlayer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.setmediaplayer).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSetMediaPlayer":::
+```csharp
+mediaPlayerElement.SetMediaPlayer(mediaPlayer);
+```
 
 You can also set the playback source on the **MediaPlayerElement** and the element will automatically create a new **MediaPlayer** instance that you can access using the [**MediaPlayer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.mediaplayer) property.
 
 > [!NOTE]
 > Setting MediaPlayerElement properties will set the corresponding properties on its underlying **MediaPlayer**. You have the option to use the underlying **MediaPlayer** directly instead of using MediaPlayerElement properties. Be aware that using **MediaPlayer** directly where an equivalent **MediaPlayerElement** property could otherwise be used can cause unexpected behavior. This is because the MediaPlayerElement is not aware of everything happening to its underlying **MediaPlayer**. For example, if you set the source directly on **MediaPlayer**, then **MediaPlayerElement** [Source](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.source) property will not reflect the change. For this reason, you must be consistent in using **MediaPlayerElement** properties or directly using the underlying **MediaPlayer**.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetGetPlayerFromElement":::
+```csharp
+mediaPlayerElement.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
+mediaPlayer = mediaPlayerElement.MediaPlayer;
+mediaPlayer.Play();
+```
 
 > [!NOTE]
 > If you disable the [**MediaPlaybackCommandManager**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) of the [**MediaPlayer**](/uwp/api/Windows.Media.Playback.MediaPlayer) by setting [**IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) to false, it will break the link between the **MediaPlayer** the [**TransportControls**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.transportcontrols) provided by the **MediaPlayerElement**, so the built-in transport controls will no longer automatically control the playback of the player. Instead, you must implement your own controls to control the **MediaPlayer**.
@@ -49,7 +63,32 @@ The **MediaPlayer** is detached from **MediaPlayerElement** when the **MediaPlay
 
 If the **MediaPlayer** was created by **MediaPlayerElement**, it will properly [Close](/uwp/api/windows.media.playback.mediaplayer.close) the **MediaPlayer** for you. If the **MediaPlayer** was set on **MediaPlayerElement** using **SetMediaPlayer**, you are responsible for ensuring the **MediaPlayer** is properly closed. Failing to do so may result in fatal playback errors in **MediaPlayer**. The following code snippet shows how to properly detach and close in code.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetDisposeMediaPlayer":::
+```csharp
+// Get a reference to the current media source.
+IMediaPlaybackSource source = mediaPlayerElement.Source;
+
+// Pause playback if able.
+if (mediaPlayer.PlaybackSession.CanPause)
+{
+    mediaPlayer.Pause();
+}
+
+// Disconnect the MediaPlayer from its source. This can be done by setting
+// the MediaPlayerElement Source property to null or by directly setting the
+// source to null on the underlying MediaPlayer.
+mediaPlayerElement.Source = null;
+
+// Disconnect the MediaPlayer from MediaPlayerElement.
+mediaPlayerElement.SetMediaPlayer(null);
+
+// Dispose of the MediaPlayer or Source if they're no longer needed.
+if (source is MediaSource mediaSource)
+{
+    mediaSource.Dispose();
+}
+
+mediaPlayer.Dispose();
+```
 
 ## Common MediaPlayer tasks
 
@@ -59,17 +98,38 @@ This section shows you how to use some of the features of the **MediaPlayer** cl
 
 Set the [**AudioCategory**](/uwp/api/windows.media.playback.mediaplayer.audiocategory) property of a **MediaPlayer** to one of the values of the [**MediaPlayerAudioCategory**](/uwp/api/Windows.Media.Playback.MediaPlayerAudioCategory) enumeration to let the system know what kind of media you are playing. Games should categorize their music streams as **GameMedia** so that game music mutes automatically if another application plays music in the background. Music or video applications should categorize their streams as **Media** or **Movie** so they will take priority over **GameMedia** streams.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSetAudioCategory":::
+```csharp
+mediaPlayer.AudioCategory = MediaPlayerAudioCategory.Media;
+```
 
 ### Output to a specific audio endpoint
 
 By default, the audio output from a **MediaPlayer** is routed to the default audio endpoint for the system, but you can specify a specific audio endpoint that the **MediaPlayer** should use for output. In the example below, [**MediaDevice.GetAudioRenderSelector**](/uwp/api/windows.media.devices.mediadevice.getaudiorenderselector) returns a string that uniquely identifies the audio render category of devices. Next, the [**DeviceInformation**](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) method [**FindAllAsync**](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) is called to get a list of all available devices of the selected type. You may programmatically determine which device you want to use or add the returned devices to a [**ComboBox**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.combobox) to allow the user to select a device.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSetAudioEndpointEnumerate":::
+```csharp
+string audioSelector = MediaDevice.GetAudioRenderSelector();
+var outputDevices = await DeviceInformation.FindAllAsync(audioSelector);
+foreach (var device in outputDevices)
+{
+    var deviceItem = new ComboBoxItem();
+    deviceItem.Content = device.Name;
+    deviceItem.Tag = device;
+    AudioDeviceComboBox.Items.Add(deviceItem);
+}
+```
 
 In the [**SelectionChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectionchanged) event for the devices combo box, the [**AudioDevice**](/uwp/api/windows.media.playback.mediaplayer.audiodevice) property of the **MediaPlayer** is set to the selected device, which was stored in the [**Tag**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.tag) property of the **ComboBoxItem**.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSetAudioEndpontSelectionChanged":::
+```csharp
+private void AudioDeviceComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    DeviceInformation selectedDevice = (DeviceInformation)((ComboBoxItem)AudioDeviceComboBox.SelectedItem).Tag;
+    if (selectedDevice != null)
+    {
+        mediaPlayer.AudioDevice = selectedDevice;
+    }
+}
+```
 
 ### Playback session
 
@@ -77,15 +137,32 @@ The [**MediaPlaybackSession**](/uwp/api/Windows.Media.Playback.MediaPlaybackSess
 
 The following example shows you how to implement a button click handler that skips 10 seconds forward in the content. First, the **MediaPlaybackSession** object for the player is retrieved with the [**PlaybackSession**](/uwp/api/windows.media.playback.mediaplayer.playbacksession) property. Next the [**Position**](/uwp/api/windows.media.playback.mediaplaybacksession.position) property is set to the current playback position plus 10 seconds.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSkipForwardClick":::
+```csharp
+private void SkipForwardButton_Click(object sender, RoutedEventArgs e)
+{
+    var session = mediaPlayer.PlaybackSession;
+    session.Position = session.Position + TimeSpan.FromSeconds(10);
+}
+```
 
 The next example illustrates using a toggle button to toggle between normal playback speed and 2X speed by setting the [**PlaybackRate**](/uwp/api/windows.media.playback.mediaplaybacksession.playbackrate) property of the session.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSpeedChecked":::
+```csharp
+private void SpeedToggleButton_Checked(object sender, RoutedEventArgs e)
+{
+    mediaPlayer.PlaybackSession.PlaybackRate = 2.0;
+}
+private void SpeedToggleButton_Unchecked(object sender, RoutedEventArgs e)
+{
+    mediaPlayer.PlaybackSession.PlaybackRate = 1.0;
+}
+```
 
 Starting with Windows 10, version 1803, you can set the rotation with which video is presented in the **MediaPlayer** in increments of 90 degrees.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSetRotation":::
+```csharp
+mediaPlayer.PlaybackSession.PlaybackRotation = MediaRotation.Clockwise90Degrees;
+```
 
 ### Detect expected and unexpected buffering
 
@@ -93,11 +170,30 @@ The **MediaPlaybackSession** object described in the previous section provides t
 
 Register handlers for the **BufferingStarted** and **BufferingEnded** events to receive buffering state notifications.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetRegisterBufferingHandlers":::
+```csharp
+mediaPlayer.PlaybackSession.BufferingStarted += MediaPlaybackSession_BufferingStarted;
+mediaPlayer.PlaybackSession.BufferingEnded += MediaPlaybackSession_BufferingEnded;
+```
 
 In the **BufferingStarted** event handler, cast the event args passed into the event to a **[MediaPlaybackSessionBufferingStartedEventArgs](/uwp/api/windows.media.playback.mediaplaybacksessionbufferingstartedeventargs)** object and check the **[IsPlaybackInterruption](/uwp/api/windows.media.playback.mediaplaybacksessionbufferingstartedeventargs.IsPlaybackInterruption)** property. If this value is true, the buffering that triggered the event is unexpected and interrupting playback. Otherwise, it is expected initial buffering. 
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetBufferingHandlers":::
+```csharp
+private void MediaPlaybackSession_BufferingStarted(MediaPlaybackSession sender, object args)
+{
+    MediaPlaybackSessionBufferingStartedEventArgs bufferingStartedEventArgs = args as MediaPlaybackSessionBufferingStartedEventArgs;
+    if (bufferingStartedEventArgs != null && bufferingStartedEventArgs.IsPlaybackInterruption)
+    {
+        // update the playback quality telemetry report to indicate that
+        // playback was interrupted
+    }
+
+    // update the UI to indicate that playback is buffering
+}
+private void MediaPlaybackSession_BufferingEnded(MediaPlaybackSession sender, object args)
+{
+    // update the UI to indicate that playback is no longer buffering
+}
+```
 
 
 ### Pinch and zoom video
@@ -106,11 +202,17 @@ In the **BufferingStarted** event handler, cast the event args passed into the e
 
 To implement pinch and zoom using multi-touch gestures, you must first specify which gestures you want to support. In this example, scale and translate gestures are requested. The [**ManipulationDelta**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.manipulationdelta) event is raised when one of the subscribed gestures occurs. The [**DoubleTapped**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.doubletapped) event will be used to reset the zoom to the full frame. 
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetRegisterPinchZoomEvents":::
+```csharp
+mediaPlayerElement.ManipulationMode = ManipulationModes.Scale | ManipulationModes.TranslateX | ManipulationModes.TranslateY;
+mediaPlayerElement.ManipulationDelta += MediaPlayerElement_ManipulationDelta;
+mediaPlayerElement.DoubleTapped += MediaPlayerElement_DoubleTapped;
+```
 
 Next, declare a **Rect** object that will store the current zoom source rectangle.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetDeclareSourceRect":::
+```csharp
+Rect sourceRect = new Rect(0, 0, 1, 1);
+```
 
 The **ManipulationDelta** handler adjusts either the scale or the translation of the zoom rectangle. If the delta scale value is not 1, it means that the user performed a pinch gesture. If the value is greater than 1, the source rectangle should be made smaller to zoom into the content. If the value is less than 1, then the source rectangle should be made bigger to zoom out. Before setting the new scale values, the resulting rectangle is checked to make sure it lies entirely within the (0,0,1,1) limits.
 
@@ -118,11 +220,57 @@ If the scale value is 1, then the translation gesture is handled. The rectangle 
 
 Finally, the [**NormalizedSourceRect**](/uwp/api/windows.media.playback.mediaplaybacksession.normalizedsourcerect) of the **MediaPlaybackSession** is set to the newly adjusted rectangle, specifying the area within the video frame that should be rendered.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetManipulationDelta":::
+```csharp
+private void MediaPlayerElement_ManipulationDelta(object sender, ManipulationDeltaRoutedEventArgs e)
+{
+
+    if (e.Delta.Scale != 1)
+    {
+        var halfWidth = sourceRect.Width / 2;
+        var halfHeight = sourceRect.Height / 2;
+
+        var centerX = sourceRect.X + halfWidth;
+        var centerY = sourceRect.Y + halfHeight;
+
+        var scale = e.Delta.Scale;
+        var newHalfWidth = (sourceRect.Width * e.Delta.Scale) / 2;
+        var newHalfHeight = (sourceRect.Height * e.Delta.Scale) / 2;
+
+        if (centerX - newHalfWidth > 0 && centerX + newHalfWidth <= 1.0 &&
+            centerY - newHalfHeight > 0 && centerY + newHalfHeight <= 1.0)
+        {
+            sourceRect.X = centerX - newHalfWidth;
+            sourceRect.Y = centerY - newHalfHeight;
+            sourceRect.Width *= e.Delta.Scale;
+            sourceRect.Height *= e.Delta.Scale;
+        }
+    }
+    else
+    {
+        var translateX = -1 * e.Delta.Translation.X / mediaPlayerElement.ActualWidth;
+        var translateY = -1 * e.Delta.Translation.Y / mediaPlayerElement.ActualHeight;
+
+        if (sourceRect.X + translateX >= 0 && sourceRect.X + sourceRect.Width + translateX <= 1.0 &&
+            sourceRect.Y + translateY >= 0 && sourceRect.Y + sourceRect.Height + translateY <= 1.0)
+        {
+            sourceRect.X += translateX;
+            sourceRect.Y += translateY;
+        }
+    }
+
+    mediaPlayer.PlaybackSession.NormalizedSourceRect = sourceRect;
+}
+```
 
 In the [**DoubleTapped**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.doubletapped) event handler, the source rectangle is set back to (0,0,1,1) to cause the entire video frame to be rendered.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetDoubleTapped":::
+```csharp
+private void MediaPlayerElement_DoubleTapped(object sender, DoubleTappedRoutedEventArgs e)
+{
+    sourceRect = new Rect(0, 0, 1, 1);
+    mediaPlayer.PlaybackSession.NormalizedSourceRect = sourceRect;
+}
+```
 
 **NOTE** This section describes touch input. Touchpad sends pointer events and will not send Manipulation events.
 
@@ -132,7 +280,21 @@ In some circumstances the system may degrade the playback of a media item, such 
 
 The following example shows an implementation of a handler for the **MediaPlayer.MediaOpened** event that is raised when the player opens a new media item. **GetOutputDegradationPolicyState** is called on the **MediaPlayer** passed into the handler. The value of [**VideoConstrictionReason**](/uwp/api/windows.media.playback.mediaplaybacksessionoutputdegradationpolicystate.videoconstrictionreason#Windows_Media_Playback_MediaPlaybackSessionOutputDegradationPolicyState_VideoConstrictionReason) indicates the policy reason that the video is constricted. If the value isn't **None**, this example logs the degradation reason for telemetry purposes. This example also shows setting the bitrate of the **AdaptiveMediaSource** currently being played to the lowest bandwidth to save data usage, since the video is constricted and won't be displayed at high resolution anyway. For more information on using **AdaptiveMediaSource**, see [Adaptive streaming](adaptive-streaming.md).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetPolicyDegradation":::
+```csharp
+private void MediaPlayerControl_MediaOpened(MediaPlayer sender, object args)
+{
+    MediaPlaybackSessionOutputDegradationPolicyState info = sender.PlaybackSession.GetOutputDegradationPolicyState();
+
+    if (info.VideoConstrictionReason != MediaPlaybackSessionVideoConstrictionReason.None)
+    {
+        // Switch to lowest bitrate to save bandwidth
+        adaptiveMediaSource.DesiredMaxBitrate = adaptiveMediaSource.AvailableBitrates[0];
+
+        // Log the degradation reason or show a message to the user
+        System.Diagnostics.Debug.WriteLine("Logging constriction reason: " + info.VideoConstrictionReason);
+    }
+}
+```
 		
 
 		
@@ -144,51 +306,144 @@ As discussed previously in this article, your app can have several **MediaPlayer
 
 The following example shows how to use a **MediaTimelineController** to control two instances of **MediaPlayer**. First, each instance of the **MediaPlayer** is instantiated and the **Source** is set to a media file. Next, a new **MediaTimelineController** is created. For each **MediaPlayer**, the [**MediaPlaybackCommandManager**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) associated with each player is disabled by setting the [**IsEnabled**](/uwp/api/windows.media.playback.mediaplaybackcommandmanager.isenabled) property to false. And then the [**TimelineController**](/uwp/api/windows.media.playback.mediaplayer.timelinecontroller) property is set to the timeline controller object.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetDeclareMediaTimelineController":::
+```csharp
+MediaTimelineController mediaTimelineController;
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSetTimelineController":::
+```csharp
+mediaPlayer = new MediaPlayer();
+mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
+mediaPlayerElement.SetMediaPlayer(mediaPlayer);
+
+
+mediaPlayer2 = new MediaPlayer();
+mediaPlayer2.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video_2.mkv"));
+mediaPlayerElement2.SetMediaPlayer(mediaPlayer2);
+
+mediaTimelineController = new MediaTimelineController();
+
+mediaPlayer.CommandManager.IsEnabled = false;
+mediaPlayer.TimelineController = mediaTimelineController;
+
+mediaPlayer2.CommandManager.IsEnabled = false;
+mediaPlayer2.TimelineController = mediaTimelineController;
+```
 
 **Caution** The [**MediaPlaybackCommandManager**](/uwp/api/Windows.Media.Playback.MediaPlaybackCommandManager) provides automatic integration between **MediaPlayer** and the System Media Transport Controls (SMTC), but this automatic integration can't be used with media players that are controlled with a **MediaTimelineController**. Therefore you must disable the command manager for the media player before setting the player's timeline controller. Failure to do so will result in an exception being thrown with the following message: "Attaching Media Timeline Controller is blocked because of the current state of the object." For more information on media player integration with the SMTC, see [Integrate with the System Media Transport Controls](integrate-with-systemmediatransportcontrols.md). If you are using a **MediaTimelineController** you can still control the SMTC manually. For more information, see [Manual control of the System Media Transport Controls](system-media-transport-controls.md).
 
 Once you have attached a **MediaTimelineController** to one or more media players, you can control the playback state by using the methods exposed by the controller. The following example calls [**Start**](/uwp/api/windows.media.mediatimelinecontroller.start) to begin playback of all associated media players at the beginning of the media.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetPlayButtonClick":::
+```csharp
+private void PlayButton_Click(object sender, RoutedEventArgs e)
+{
+    mediaTimelineController.Start();
+}
+```
 
 This example illustrates pausing and resuming all of the attached media players.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetPauseButtonClick":::
+```csharp
+private void PauseButton_Click(object sender, RoutedEventArgs e)
+{
+    if (mediaTimelineController.State == MediaTimelineControllerState.Running)
+    {
+        mediaTimelineController.Pause();
+        PauseButton.Content = "Resume";
+    }
+    else
+    {
+        mediaTimelineController.Resume();
+        PauseButton.Content = "Pause";
+    }
+}
+```
 
 To fast-forward all connected media players, set the playback speed to a value greater that 1.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetFastForwardButtonClick":::
+```csharp
+private void FastForwardButton_Click(object sender, RoutedEventArgs e)
+{
+    mediaTimelineController.ClockRate = 2.0;
+}
+```
 
 The next example shows how to use a **Slider** control to show the current playback position of the timeline controller relative to the duration of the content of one of the connected media players. First, a new **MediaSource** is created and a handler for the [**OpenOperationCompleted**](/uwp/api/windows.media.core.mediasource.openoperationcompleted) of the media source is registered. 
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetCreateSourceWithOpenCompleted":::
+```csharp
+var mediaSource = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
+mediaSource.OpenOperationCompleted += mediaSource_OpenOperationCompleted;
+mediaPlayer.Source = mediaSource;
+mediaPlayerElement.SetMediaPlayer(mediaPlayer);
+```
 
 The **OpenOperationCompleted** handler is used as an opportunity to discover the duration of the media source content. Once the duration is determined, the maximum value of the **Slider** control is set to the total number of seconds of the media item. The value is set inside a call to [**DispatcherQueue.TryEnqueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.tryenqueue) to make sure it is run on the UI thread.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetDeclareDuration":::
+```csharp
+TimeSpan duration;
+```
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetOpenCompleted":::
+```csharp
+private async void mediaSource_OpenOperationCompleted(MediaSource sender, MediaSourceOpenOperationCompletedEventArgs args)
+{
+    duration = sender.Duration.GetValueOrDefault();
+
+    DispatcherQueue.TryEnqueue(() =>
+    {
+        PositionSlider.Minimum = 0;
+        PositionSlider.Maximum = 1;
+        PositionSlider.StepFrequency = .01;
+    });
+}
+```
 
 Next, a handler for the timeline controller's  [**PositionChanged**](/uwp/api/windows.media.mediatimelinecontroller.positionchanged) event is registered. This is called periodically by the system, approximately 4 times per second.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetRegisterPositionChanged":::
+```csharp
+mediaTimelineController.PositionChanged += mediaTimelineController_PositionChanged;
+```
 
 In the handler for **PositionChanged**, the slider value is updated to reflect the current position of the timeline controller.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetPositionChanged":::
+```csharp
+private async void mediaTimelineController_PositionChanged(MediaTimelineController sender, object args)
+{
+    if (duration != TimeSpan.Zero)
+    {
+        DispatcherQueue.TryEnqueue(() =>
+        {
+            PositionSlider.Value = sender.Position.TotalSeconds / (float)duration.TotalSeconds;
+        });
+    }
+}
+```
 
 ### Offset the playback position from the timeline position
 
 In some cases you may want the playback position of one or more media players associated with a timeline controller to be offset from the other players. You can do this by setting the [**TimelineControllerPositionOffset**](/uwp/api/windows.media.playback.mediaplayer.timelinecontrollerpositionoffset) property of the **MediaPlayer** object you want to be offset. The following example uses the durations of the content of two media players to set the minimum and maximum values of two slider control to plus and minus the length of the item.  
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetOffsetSliders":::
+```csharp
+TimelineOffsetSlider1.Minimum = -1 * duration.TotalSeconds;
+TimelineOffsetSlider1.Maximum = duration.TotalSeconds;
+TimelineOffsetSlider1.StepFrequency = 1;
+
+TimelineOffsetSlider2.Minimum = -1 * duration2.TotalSeconds;
+TimelineOffsetSlider2.Maximum = duration2.TotalSeconds;
+TimelineOffsetSlider2.StepFrequency = 1;
+```
 
 In the [**ValueChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.rangebase.valuechanged) event for each slider, the **TimelineControllerPositionOffset** for each player is set to the corresponding value.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetTimelineOffset":::
+```csharp
+private void TimelineOffsetSlider1_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+{
+    mediaPlayer.TimelineControllerPositionOffset = TimeSpan.FromSeconds(TimelineOffsetSlider1.Value);
+}
+
+private void TimelineOffsetSlider2_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
+{
+    mediaPlayer2.TimelineControllerPositionOffset = TimeSpan.FromSeconds(TimelineOffsetSlider2.Value);
+}
+```
 
 Note that if the offset value of a player maps to a negative playback position, the clip will remain paused until the offset reaches zero and then playback will begin. Likewise, if the offset value maps to a playback position greater than the duration of the media item, the final frame will be shown, just as it does when a single media player reached the end of its content.
 
@@ -198,25 +453,84 @@ Starting with Windows 10, version 1703, **MediaPlayer** supports equirectangular
 
 To play back spherical video, use the steps for playing back video content described previously in this article. The one additional step is to register a handler for the [**MediaPlayer.MediaOpened**](/uwp/api/Windows.Media.Playback.MediaPlayer#Windows_Media_Playback_MediaPlayer_MediaOpened) event. This event gives you an opportunity to enable and control the spherical video playback parameters.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetOpenSphericalVideo":::
+```csharp
+mediaPlayer = new MediaPlayer();
+mediaPlayer.MediaOpened += mediaPlayer_MediaOpened;
+mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video_spherical.mp4"));
+mediaPlayerElement.SetMediaPlayer(mediaPlayer);
+mediaPlayer.Play();
+```
 
 In the **MediaOpened** handler, first check the frame format of the newly opened media item by checking the [**PlaybackSession.SphericalVideoProjection.FrameFormat**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.FrameFormat) property. If this value is [**SphericaVideoFrameFormat.Equirectangular**](/uwp/api/windows.media.mediaproperties.sphericalvideoframeformat), then the system can automatically project the video content. First, set the [**PlaybackSession.SphericalVideoProjection.IsEnabled**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.IsEnabled) property to **true**. You can also adjust properties such as the view orientation and field of view that the media player will use to project the video content. In this example, the field of view is set to a wide value of 120 degrees by setting the [**HorizontalFieldOfViewInDegrees**](/uwp/api/windows.media.playback.mediaplaybacksphericalvideoprojection.HorizontalFieldOfViewInDegrees) property.
 
 If the video content is spherical, but is in a format other than equirectangular, you can implement your own projection algorithm using the media player's frame server mode to receive and process individual frames.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSphericalMediaOpened":::
+```csharp
+private void mediaPlayer_MediaOpened(MediaPlayer sender, object args)
+{
+    if (sender.PlaybackSession.SphericalVideoProjection.FrameFormat == SphericalVideoFrameFormat.Equirectangular)
+    {
+        sender.PlaybackSession.SphericalVideoProjection.IsEnabled = true;
+        sender.PlaybackSession.SphericalVideoProjection.HorizontalFieldOfViewInDegrees = 120;
+
+    }
+    else if (sender.PlaybackSession.SphericalVideoProjection.FrameFormat == SphericalVideoFrameFormat.Unsupported)
+    {
+        // If the spherical format is unsupported, you can use frame server mode to implement a custom projection
+    }
+}
+```
 
 The following example code illustrates how to adjust the spherical video view orientation using the left and right arrow keys.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSphericalOnKeyDown":::
+```csharp
+private void RootGrid_KeyDown(object sender, KeyRoutedEventArgs e)
+{
+    if (mediaPlayer.PlaybackSession.SphericalVideoProjection.FrameFormat != SphericalVideoFrameFormat.Equirectangular)
+    {
+        return;
+    }
+
+    switch (e.Key)
+    {
+        case Windows.System.VirtualKey.Right:
+            mediaPlayer.PlaybackSession.SphericalVideoProjection.ViewOrientation *= Quaternion.CreateFromYawPitchRoll(.1f, 0, 0);
+            break;
+        case Windows.System.VirtualKey.Left:
+            mediaPlayer.PlaybackSession.SphericalVideoProjection.ViewOrientation *= Quaternion.CreateFromYawPitchRoll(-.1f, 0, 0);
+            break;
+    }
+}
+```
 
 If your app supports playlists of video, you may want to identify playback items that contain spherical video in your UI. Media playlists are discussed in detail in the article, [Media items, playlists, and tracks](media-playback-with-mediasource.md). The following example shows creating a new playlist, adding an item, and registering a handler for the [**MediaPlaybackItem.VideoTracksChanged**](/uwp/api/windows.media.playback.mediaplaybackitem.VideoTracksChanged) event, which occurs when the video tracks for a media item are resolved.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSphericalList":::
+```csharp
+var playbackList = new MediaPlaybackList();
+var item = new MediaPlaybackItem(MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/RIFTCOASTER HD_injected.mp4")));
+item.VideoTracksChanged += Item_VideoTracksChanged;
+playbackList.Items.Add(item);
+mediaPlayer.Source = playbackList;
+```
 
 In the **VideoTracksChanged** event handler, get the encoding properties for any added video tracks by calling [**VideoTrack.GetEncodingProperties**](/uwp/api/windows.media.core.videotrack.GetEncodingProperties). If the [**SphericalVideoFrameFormat**](/uwp/api/windows.media.mediaproperties.videoencodingproperties.SphericalVideoFrameFormat) property of the encoding properties is a value other than [**SphericaVideoFrameFormat.None**](/uwp/api/windows.media.mediaproperties.sphericalvideoframeformat), then the video track contains spherical video and you can update your UI accordingly if you choose.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSphericalTracksChanged":::
+```csharp
+private void Item_VideoTracksChanged(MediaPlaybackItem sender, IVectorChangedEventArgs args)
+{
+    if (args.CollectionChange != CollectionChange.ItemInserted)
+    {
+        return;
+    }
+    foreach (var videoTrack in sender.VideoTracks)
+    {
+        if (videoTrack.GetEncodingProperties().SphericalVideoFrameFormat != SphericalVideoFrameFormat.None)
+        {
+            // Optionally indicate in the UI that this item contains spherical video
+        }
+    }
+}
+```
 
 ## Use MediaPlayer in frame server mode
 
@@ -224,7 +538,13 @@ In frame server mode, the **MediaPlayer** does not automatically render frames t
 
 In the following example, a new **MediaPlayer** is initialized and video content is loaded. Next, a handler for [**VideoFrameAvailable**](/uwp/api/windows.media.playback.mediaplayer.VideoFrameAvailable) is registered. Frame server mode is enabled by setting the **MediaPlayer** object's [**IsVideoFrameServerEnabled**](/uwp/api/windows.media.playback.mediaplayer.IsVideoFrameServerEnabled) property to **true**. Finally, media playback is started with a call to [**Play**](/uwp/api/windows.media.playback.mediaplayer.Play).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetFrameServerInit":::
+```csharp
+mediaPlayer = new MediaPlayer();
+mediaPlayer.Source = MediaSource.CreateFromUri(new Uri("ms-appx:///Assets/example_video.mkv"));
+mediaPlayer.VideoFrameAvailable += mediaPlayer_VideoFrameAvailable;
+mediaPlayer.IsVideoFrameServerEnabled = true;
+mediaPlayer.Play();
+```
 
 The next example shows a handler for **VideoFrameAvailable** that uses the Win2D library to add a simple blur effect to each frame of a video and then displays the processed frames in a XAML [Image](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) control. For more information about Win2D, see [Overview of Win2D](/windows/apps/develop/win2d/).
 
@@ -232,7 +552,54 @@ Whenever the **VideoFrameAvailable** handler is called, the [**CopyFrameToVideoS
 
 Once all of the necessary objects have been instantiated, **CopyFrameToVideoSurface** is called, which copies the current frame from the **MediaPlayer** into the **CanvasBitmap**. Next, a Win2D **GaussianBlurEffect** is created, with the **CanvasBitmap** set as the source of the operation. Finally, **CanvasDrawingSession.DrawImage** is called to draw the source image, with the blur effect applied, into the **CanvasImageSource** that has been associated with **Image** control, causing it to be drawn in the UI.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetVideoFrameAvailable":::
+```csharp
+private async void mediaPlayer_VideoFrameAvailable(MediaPlayer sender, object args)
+{
+
+    Microsoft.Graphics.Canvas.CanvasDevice canvasDevice = Microsoft.Graphics.Canvas.CanvasDevice.GetSharedDevice();
+
+    DispatcherQueue.TryEnqueue(() =>
+    {
+        if (frameServerDest == null)
+        {
+            // FrameServerImage in this example is a XAML image control
+            frameServerDest = new SoftwareBitmap(BitmapPixelFormat.Rgba8, (int)FrameServerImage.Width, (int)FrameServerImage.Height, BitmapAlphaMode.Ignore);
+        }
+        if (canvasImageSource == null)
+        {
+            IntPtr hWnd = WinRT.Interop.WindowNative.GetWindowHandle(this);
+            var dpi = GetDpiForWindow(hWnd);
+
+            canvasImageSource = new Microsoft.Graphics.Canvas.UI.Xaml.CanvasImageSource(
+                canvasDevice,
+                (int)FrameServerImage.Width,
+                (int)FrameServerImage.Height,
+               dpi);
+            FrameServerImage.Source = canvasImageSource;
+        }
+
+        using (Microsoft.Graphics.Canvas.CanvasBitmap inputBitmap =
+            Microsoft.Graphics.Canvas.CanvasBitmap.CreateFromSoftwareBitmap(canvasDevice, frameServerDest))
+        {
+            using (Microsoft.Graphics.Canvas.CanvasDrawingSession ds = canvasImageSource.CreateDrawingSession(Windows.UI.Color.FromArgb(1, 0, 0, 0)))
+            {
+
+                mediaPlayer.CopyFrameToVideoSurface(inputBitmap);
+
+                var gaussianBlurEffect = new Microsoft.Graphics.Canvas.Effects.GaussianBlurEffect
+                {
+                    Source = inputBitmap,
+                    BlurAmount = 5f,
+                    Optimization = Microsoft.Graphics.Canvas.Effects.EffectOptimization.Speed
+                };
+
+                ds.DrawImage(gaussianBlurEffect);
+
+            }
+        }
+    });
+}
+```
 
 To try out the sample code shown above, you will need to add the Win2D NuGet package to your project with the following instructions.
 
@@ -249,21 +616,66 @@ To try out the sample code shown above, you will need to add the Win2D NuGet pac
 
 Your app can detect when the system lowers or mutes the audio level of a currently playing **MediaPlayer**. For example, the system may lower, or "duck", the audio playback level when an alarm is ringing. The system will mute your app when it goes into the background if your app has not declared the *backgroundMediaPlayback* capability in the app manifest. The [**AudioStateMonitor**](/uwp/api/windows.media.audio.audiostatemonitor) class allows you to register to receive an event when the system modifies the volume of an audio stream. Access the **AudioStateMonitor** property of a **MediaPlayer** and register a handler for the [**SoundLevelChanged**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevelchanged) event to be notified when the audio level for that **MediaPlayer** is changed by the system.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetRegisterAudioStateMonitor":::
+```csharp
+mediaPlayer.AudioStateMonitor.SoundLevelChanged += AudioStateMonitor_SoundLevelChanged;
+```
 
 When handling the **SoundLevelChanged** event, you may take different actions depending on the type of content being played. If you are currently playing music, then you may want to let the music continue to play while the volume is ducked. If you are playing a podcast, however, you likely want to pause playback while the audio is ducked so the user doesn't miss any of the content.
 
 This example declares a variable to track whether the currently playing content is a podcast, it is assumed that you set this to the appropriate value when selecting the content for the **MediaPlayer**. We also create a class variable to track when we pause playback programmatically when the audio level changes.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetAudioStateVars":::
+```csharp
+bool isPodcast;
+bool isPausedDueToAudioStateMonitor;
+```
 
 In the **SoundLevelChanged** event handler, check the [**SoundLevel**](/uwp/api/windows.media.audio.audiostatemonitor.soundlevel) property of the **AudioStateMonitor** sender to determine the new sound level. This example checks to see if the new sound level is full volume, meaning the system has stopped muting or ducking the volume, or if the sound level has been lowered but is playing non-podcast content. If either of these are true and the content was previously paused programmatically, playback is resumed. If the new sound level is muted or if the current content is a podcast and the sound level is low, playback is paused, and the variable is set to track that the pause was initiated programmatically.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetSoundLevelChanged":::
+```csharp
+private void AudioStateMonitor_SoundLevelChanged(Windows.Media.Audio.AudioStateMonitor sender, object args)
+{
+    if ((sender.SoundLevel == SoundLevel.Full) || (sender.SoundLevel == SoundLevel.Low && !isPodcast))
+    {
+        if (isPausedDueToAudioStateMonitor)
+        {
+            mediaPlayer.Play();
+            isPausedDueToAudioStateMonitor = false;
+        }
+    }
+    else if ((sender.SoundLevel == SoundLevel.Muted) ||
+         (sender.SoundLevel == SoundLevel.Low && isPodcast))
+    {
+        if (mediaPlayer.PlaybackSession.PlaybackState == MediaPlaybackState.Playing)
+        {
+            mediaPlayer.Pause();
+            isPausedDueToAudioStateMonitor = true;
+        }
+    }
+
+}
+```
 
 The user may decide that they want to pause or continue playback, even if the audio is ducked by the system. This example shows event handlers for a play and a pause button. In the pause button click handler is paused, if playback had already been paused programmatically, then we update the variable to indicate that the user has paused the content. In the play button click handler, we resume playback and clear our tracking variable.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/mediaplayer-winui/cs/MediaPlayerWinUI/MainWindow.xaml.cs" id="SnippetButtonUserClick":::
+```csharp
+private void PauseButton_User_Click(object sender, RoutedEventArgs e)
+{
+    if (isPausedDueToAudioStateMonitor)
+    {
+        isPausedDueToAudioStateMonitor = false;
+    }
+    else
+    {
+        mediaPlayer.Pause();
+    }
+}
+
+public void PlayButton_User_Click(object sender, RoutedEventArgs e)
+{
+    isPausedDueToAudioStateMonitor = false;
+    mediaPlayer.Play();
+}
+```
 
 ## Related topics
 

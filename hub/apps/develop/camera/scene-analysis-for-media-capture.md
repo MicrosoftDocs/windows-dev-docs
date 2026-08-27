@@ -1,7 +1,7 @@
 ---
 description: Learn how to use the SceneAnalysisEffect and the FaceDetectionEffect to analyze the content of the MediaCapture preview stream in a WinUI app.
 title: Effects for analyzing camera frames
-ms.date: 02/08/2017
+ms.date: 08/23/2026
 ms.topic: article
 keywords: windows 10, windows 11, winui3, camera
 ms.localizationpriority: medium
@@ -27,7 +27,9 @@ If the effect recommends using HDR, you can do this in the following ways:
 
 Video effects are implemented using two APIs, an effect definition, which provides settings that the capture device needs to initialize the effect, and an effect instance, which can be used to control the effect. Since you may want to access the effect instance from multiple places within your code, you should typically declare a member variable to hold the object.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetDeclareSceneAnalysisEffect":::
+```csharp
+private SceneAnalysisEffect m_sceneAnalysisEffect;
+```
 
 In your app, after you have initialized the **MediaCapture** object, create a new instance of [**SceneAnalysisEffectDefinition**](/uwp/api/Windows.Media.Core.SceneAnalysisEffectDefinition).
 
@@ -37,13 +39,39 @@ To receive the results of the scene analysis, you must register a handler for th
 
 Currently, the scene analysis effect only includes the high dynamic range analyzer. Enable HDR analysis by setting the effect's [**HighDynamicRangeControl.Enabled**](/uwp/api/windows.media.core.highdynamicrangecontrol.enabled) to true.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs":::
+```csharp
+// Create the definition
+var definition = new SceneAnalysisEffectDefinition();
+
+// Add the effect to the video preview stream
+m_sceneAnalysisEffect = (SceneAnalysisEffect)await m_mediaCapture.AddVideoEffectAsync(definition, MediaStreamType.VideoPreview);
+
+// Subscribe to notifications about scene information
+m_sceneAnalysisEffect.SceneAnalyzed += SceneAnalysisEffect_SceneAnalyzed;
+
+// Enable HDR analysis
+m_sceneAnalysisEffect.HighDynamicRangeAnalyzer.Enabled = true;
+```
 
 ### Implement the SceneAnalyzed event handler
 
 The results of the scene analysis are returned in the **SceneAnalyzed** event handler. The [**SceneAnalyzedEventArgs**](/uwp/api/Windows.Media.Core.SceneAnalyzedEventArgs) object passed into the handler has a [**SceneAnalysisEffectFrame**](/uwp/api/Windows.Media.Core.SceneAnalysisEffectFrame) object which has a [**HighDynamicRangeOutput**](/uwp/api/Windows.Media.Core.HighDynamicRangeOutput) object. The [**Certainty**](/uwp/api/windows.media.core.highdynamicrangeoutput.certainty) property of the high dynamic range output provides a value between 0 and 1.0 where 0 indicates that HDR processing would not help improve the capture result and 1.0 indicates that HDR processing would help. You can decide the threshold point at which you want to use HDR or show the results to the user and let the user decide.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetSceneAnalyzed":::
+```csharp
+private void SceneAnalysisEffect_SceneAnalyzed(SceneAnalysisEffect sender, SceneAnalyzedEventArgs args)
+{
+    double hdrCertainty = args.ResultFrame.HighDynamicRange.Certainty;
+
+    // Certainty value is between 0.0 and 1.0
+    if (hdrCertainty > MyCertaintyCap)
+    {
+        DispatcherQueue.TryEnqueue(() =>
+        {
+            tbStatus.Text = "Enabling HDR capture is recommended.";
+        });
+    }
+}
+```
 
 The [**HighDynamicRangeOutput**](/uwp/api/Windows.Media.Core.HighDynamicRangeOutput) object passed into the handler also has a [**FrameControllers**](/uwp/api/windows.media.core.highdynamicrangeoutput.framecontrollers) property which contains suggested frame controllers for capturing a variable photo sequence for HDR processing. For more information, see [Variable photo sequence](variable-photo-sequence.md).
 
@@ -51,7 +79,18 @@ The [**HighDynamicRangeOutput**](/uwp/api/Windows.Media.Core.HighDynamicRangeOut
 
 When your app is done capturing, before disposing of the **MediaCapture** object, you should disable the scene analysis effect by setting the effect's [**HighDynamicRangeAnalyzer.Enabled**](/uwp/api/windows.media.core.highdynamicrangecontrol.enabled) property to false and unregister your [**SceneAnalyzed**](/uwp/api/windows.media.core.sceneanalysiseffect.sceneanalyzed) event handler. Call [**MediaCapture.ClearEffectsAsync**](/uwp/api/windows.media.capture.mediacapture.cleareffectsasync), specifying the video preview stream since that was the stream to which the effect was added. Finally, set your member variable to null.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetCleanUpSceneAnalysisEffectAsync":::
+```csharp
+// Disable detection
+m_sceneAnalysisEffect.HighDynamicRangeAnalyzer.Enabled = false;
+
+m_sceneAnalysisEffect.SceneAnalyzed -= SceneAnalysisEffect_SceneAnalyzed;
+
+// Remove the effect from the preview stream
+await m_mediaCapture.ClearEffectsAsync(MediaStreamType.VideoPreview);
+
+// Clear the member variable that held the effect instance
+m_sceneAnalysisEffect = null;
+```
 
 ## Face detection effect
 
@@ -61,7 +100,9 @@ The [**FaceDetectionEffect**](/uwp/api/Windows.Media.Core.FaceDetectionEffect) i
 
 Video effects are implemented using two APIs, an effect definition, which provides settings that the capture device needs to initialize the effect, and an effect instance, which can be used to control the effect. Since you may want to access the effect instance from multiple places within your code, you should typically declare a member variable to hold the object.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetDeclareFaceDetectionEffect":::
+```csharp
+FaceDetectionEffect m_faceDetectionEffect;
+```
 
 In your app, after you have initialized the **MediaCapture** object, create a new instance of [**FaceDetectionEffectDefinition**](/uwp/api/Windows.Media.Core.FaceDetectionEffectDefinition). Set the [**DetectionMode**](/uwp/api/windows.media.core.facedetectioneffectdefinition.detectionmode) property to prioritize faster face detection or more accurate face detection. Set [**SynchronousDetectionEnabled**](/uwp/api/windows.media.core.facedetectioneffectdefinition.synchronousdetectionenabled) to specify that incoming frames are not delayed waiting for face detection to complete as this can result in a choppy preview experience.
 
@@ -69,29 +110,79 @@ Register the effect with the capture device by calling [**AddVideoEffectAsync**]
 
 Enable or disable the effect by setting the [**FaceDetectionEffect.Enabled**](/uwp/api/windows.media.core.facedetectioneffect.enabled) property. Adjust how often the effect analyzes frames by setting the [**FaceDetectionEffect.DesiredDetectionInterval**](/uwp/api/windows.media.core.facedetectioneffect.desireddetectioninterval) property. Both of these properties can be adjusted while media capture is ongoing.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetCreateFaceDetectionEffectAsync":::
+```csharp
+
+// Create the definition, which will contain some initialization settings
+var definition = new FaceDetectionEffectDefinition();
+
+// To ensure preview smoothness, do not delay incoming samples
+definition.SynchronousDetectionEnabled = false;
+
+// In this scenario, choose detection speed over accuracy
+definition.DetectionMode = FaceDetectionMode.HighPerformance;
+
+// Add the effect to the preview stream
+m_faceDetectionEffect = (FaceDetectionEffect)await m_mediaCapture.AddVideoEffectAsync(definition, MediaStreamType.VideoPreview);
+
+// Choose the shortest interval between detection events
+m_faceDetectionEffect.DesiredDetectionInterval = TimeSpan.FromMilliseconds(33);
+
+// Start detecting faces
+m_faceDetectionEffect.Enabled = true;
+
+```
 
 ### Receive notifications when faces are detected
 
 If you want to perform some action when faces are detected, such as drawing a box around detected faces in the video preview, you can register for the [**FaceDetected**](/uwp/api/windows.media.core.facedetectioneffect.facedetected) event.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetRegisterFaceDetectionHandler":::
+```csharp
+// Register for face detection events
+m_faceDetectionEffect.FaceDetected += FaceDetectionEffect_FaceDetected;
+```
 
 In the handler for the event, you can get a list of all faces detected in a frame by accessing the [**FaceDetectionEffectFrame.DetectedFaces**](/uwp/api/windows.media.core.facedetectioneffectframe.detectedfaces) property of the [**FaceDetectedEventArgs**](/uwp/api/Windows.Media.Core.FaceDetectedEventArgs). The [**FaceBox**](/uwp/api/windows.media.faceanalysis.detectedface.facebox) property is a [**BitmapBounds**](/uwp/api/Windows.Graphics.Imaging.BitmapBounds) structure that describes the rectangle containing the detected face in units relative to the preview stream dimensions. To view sample code that transforms the preview stream coordinates into screen coordinates, see the [face detection UWP sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CameraFaceDetection).
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetFaceDetected":::
+```csharp
+private void FaceDetectionEffect_FaceDetected(FaceDetectionEffect sender, FaceDetectedEventArgs args)
+{
+    foreach (Windows.Media.FaceAnalysis.DetectedFace face in args.ResultFrame.DetectedFaces)
+    {
+        BitmapBounds faceRect = face.FaceBox;
+
+        // Draw a rectangle on the preview stream for each face
+    }
+}
+```
 
 ### Clean up the face detection effect
 
 When your app is done capturing, before disposing of the **MediaCapture** object, you should disable the face detection effect with [**FaceDetectionEffect.Enabled**](/uwp/api/windows.media.core.facedetectioneffect.enabled) and unregister your [**FaceDetected**](/uwp/api/windows.media.core.facedetectioneffect.facedetected) event handler if you previously registered one. Call [**MediaCapture.ClearEffectsAsync**](/uwp/api/windows.media.capture.mediacapture.cleareffectsasync), specifying the video preview stream since that was the stream to which the effect was added. Finally, set your member variable to null.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetCleanUpFaceDetectionEffectAsync":::
+```csharp
+// Disable detection
+m_faceDetectionEffect.Enabled = false;
+
+// Unregister the event handler
+m_faceDetectionEffect.FaceDetected -= FaceDetectionEffect_FaceDetected;
+
+// Remove the effect from the preview stream
+await m_mediaCapture.ClearEffectsAsync(MediaStreamType.VideoPreview);
+
+// Clear the member variable that held the effect instance
+m_faceDetectionEffect = null;
+```
 
 ### Check for focus and exposure support for detected faces
 
 Not all devices have a capture device that can adjust its focus and exposure based on detected faces. Because face detection consumes device resources, you may only want to enable face detection on devices that can use the feature to enhance capture. To see if face-based capture optimization is available, get the [**VideoDeviceController**](/uwp/api/Windows.Media.Devices.VideoDeviceController) for your initialized [**MediaCapture**](/uwp/api/Windows.Media.Capture.MediaCapture) and then get the video device controller's [**RegionsOfInterestControl**](/uwp/api/Windows.Media.Devices.RegionsOfInterestControl). Check to see if the [**MaxRegions**](/uwp/api/windows.media.devices.regionsofinterestcontrol.maxregions) supports at least one region. Then check to see if either [**AutoExposureSupported**](/uwp/api/windows.media.devices.regionsofinterestcontrol.autoexposuresupported) or [**AutoFocusSupported**](/uwp/api/windows.media.devices.regionsofinterestcontrol.autofocussupported) are true. If these conditions are met, then the device can take advantage of face detection to enhance capture.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.VideoEffects.xaml.cs" id="SnippetAreFaceFocusAndExposureSupported":::
+```csharp
+var regionsControl = m_mediaCapture.VideoDeviceController.RegionsOfInterestControl;
+bool faceDetectionFocusAndExposureSupported =
+    regionsControl.MaxRegions > 0 &&
+    (regionsControl.AutoExposureSupported || regionsControl.AutoFocusSupported);
+```
 
 ## Related topics
 

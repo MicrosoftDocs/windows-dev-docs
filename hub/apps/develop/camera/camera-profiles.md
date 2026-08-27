@@ -1,7 +1,7 @@
 ---
 description: Learn how to use camera profiles to support specific resolutions, frame rates, simultaneous access to multiple cameras, and and HDR in a WinUI app.
 title: Discover and select camera capabilities with camera profiles
-ms.date: 08/13/2024
+ms.date: 08/23/2026
 ms.topic: article
 keywords: windows 10, windows 11, winui3, camera
 ms.localizationpriority: medium
@@ -25,11 +25,40 @@ To use camera profiles, you must first check for a camera device that supports t
 
 If a device that supports camera profiles is found on the specified panel, the [**Id**](/uwp/api/windows.devices.enumeration.deviceinformation.id) value, containing the device's ID string, is returned.
 
-:::code language="xaml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetGetVideoProfileSupportedDeviceIdAsync":::
+```csharp
+public async Task<string> GetVideoProfileSupportedDeviceIdAsync(Windows.Devices.Enumeration.Panel panel)
+{
+    string deviceId = string.Empty;
+
+    // Finds all video capture devices
+    DeviceInformationCollection devices = await DeviceInformation.FindAllAsync(DeviceClass.VideoCapture);
+
+    foreach (var device in devices)
+    {
+        // Check if the device on the requested panel supports Video Profile
+        if (MediaCapture.IsVideoProfileSupported(device.Id) && device.EnclosureLocation.Panel == panel)
+        {
+            // We've located a device that supports Video Profiles on expected panel
+            deviceId = device.Id;
+            break;
+        }
+    }
+
+    return deviceId;
+}
+```
 
 If the device ID returned from the **GetVideoProfileSupportedDeviceIdAsync** helper method is null or an empty string, there is no device on the specified panel that supports camera profiles. In this case, you should initialize your media capture device without using profiles.
 
-:::code language="xaml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetGetDeviceWithProfileSupport":::
+```csharp
+string videoDeviceId = await GetVideoProfileSupportedDeviceIdAsync(Windows.Devices.Enumeration.Panel.Back);
+
+if (string.IsNullOrEmpty(videoDeviceId))
+{
+    // No devices on the specified panel support video profiles. .
+    return;
+}
+```
 
 ## Select a profile based on supported resolution and frame rate
 
@@ -39,11 +68,33 @@ Create a new [**MediaCaptureInitializationSettings**](/uwp/api/Windows.Media.Cap
 
 This example selects a profile that contains a [**SupportedRecordMediaDescription**](/uwp/api/windows.media.capture.mediacapturevideoprofile.supportedrecordmediadescription) object where the [**Width**](/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.width), [**Height**](/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.height), and [**FrameRate**](/uwp/api/windows.media.capture.mediacapturevideoprofilemediadescription.framerate) properties match the requested values. If a match is found, [**VideoProfile**](/uwp/api/windows.media.capture.mediacaptureinitializationsettings.videoprofile) and [**RecordMediaDescription**](/uwp/api/windows.media.capture.mediacaptureinitializationsettings.recordmediadescription) of the **MediaCaptureInitializationSettings** are set to the values returned from the query. If no match is found, the default profile is used.
 
-:::code language="xaml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetFindWVGA30FPSProfile":::
+```csharp
+var mediaInitSettings = new MediaCaptureInitializationSettings { VideoDeviceId = videoDeviceId };
+
+IReadOnlyList<MediaCaptureVideoProfile> profiles = MediaCapture.FindAllVideoProfiles(videoDeviceId);
+
+var match = (from profile in profiles
+             from desc in profile.SupportedRecordMediaDescription
+             where desc.Width == 640 && desc.Height == 480 && Math.Round(desc.FrameRate) == 30
+             select new { profile, desc }).FirstOrDefault();
+
+if (match != null)
+{
+    mediaInitSettings.VideoProfile = match.profile;
+    mediaInitSettings.RecordMediaDescription = match.desc;
+}
+else
+{
+    // Could not locate a WVGA 30FPS profile, use default video recording profile
+    mediaInitSettings.VideoProfile = profiles[0];
+}
+```
 
 After you populate the **MediaCaptureInitializationSettings** with your desired camera profile, you simply call [**InitializeAsync**](/uwp/api/windows.media.capture.mediacapture.initializeasync) on your media capture object to configure it to the desired profile.
 
-:::code language="xaml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetInitCaptureWithProfile":::
+```csharp
+await m_mediaCapture.InitializeAsync(mediaInitSettings);
+```
 
 
 ## Select devices with KnownVideoProfile
@@ -52,14 +103,55 @@ You can use the [**MediaFrameSourceGroup**](/uwp/api/windows.media.capture.frame
 
 The example below shows how to use **MediaFrameSourceGroup** to find a camera profile that supports that supports the desired scenario. Call [**MediaFrameSourceGroup.FindAllAsync**](/uwp/api/windows.media.capture.frames.mediaframesourcegroup.findallasync) to get a list of all media frame source groups available on the current device. Loop through each source group and call [**MediaCapture.FindKnownVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) to get a list of all of the video profiles for the current source group that support the specified [KnownCameraProfile](/uwp/api/windows.media.capture.knownvideoprofile), in this example the value **KnownVideoProfile.HighQualityPhoto** is used. Other values include support for HDR and variable photo sequences, for example. If a profile that meets the requested criteria is found, create a new **MediaCaptureInitializationSettings** object and set the **VideoProfile** to the select profile and the **VideoDeviceId** to the **Id** property of the current media frame source group. Use this **MediaCaptureInitializationSettings** object to initialize the **MediaCapture** object.
 
-:::code language="xaml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetKnownVideoProfile":::
+```csharp
+IReadOnlyList<MediaFrameSourceGroup> sourceGroups = await MediaFrameSourceGroup.FindAllAsync();
+MediaCaptureInitializationSettings settings = null;
+
+foreach (MediaFrameSourceGroup sg in sourceGroups)
+{
+
+    IReadOnlyList<MediaCaptureVideoProfile> profileList = MediaCapture.FindKnownVideoProfiles(
+                                  sg.Id,
+                                  KnownVideoProfile.HighQualityPhoto);
+
+    if (profileList.Count > 0)
+    {
+        settings = new MediaCaptureInitializationSettings();
+        settings.VideoProfile = profileList[0];
+        settings.VideoDeviceId = sg.Id;
+        break;
+    }
+}
+```
 
 
 ## Determine if a device supports simultaneous photo and video capture
 
 Many devices support capturing photos and video simultaneously. To determine if a capture device supports this, call [**MediaCapture.FindAllVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findallvideoprofiles) to get all of the camera profiles supported by the device. Use a link query to find a profile that has at least one entry for both [**SupportedPhotoMediaDescription**](/uwp/api/windows.media.capture.mediacapturevideoprofile.supportedphotomediadescription) and [**SupportedRecordMediaDescription**](/uwp/api/windows.media.capture.mediacapturevideoprofile.supportedrecordmediadescription) which means that the profile supports simultaneous capture.
 
-:::code language="xaml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetSimultaneousPhotoAndVideo":::
+```csharp
+
+bool simultaneousPhotoAndVideoSupported = false;
+
+IReadOnlyList<MediaCaptureVideoProfile> profiles = MediaCapture.FindAllVideoProfiles(videoDeviceId);
+
+var match = (from profile in profiles
+             where profile.SupportedPhotoMediaDescription.Any() &&
+             profile.SupportedRecordMediaDescription.Any()
+             select profile).FirstOrDefault();
+
+if (match != null)
+{
+    // Simultaneous photo and video supported
+    simultaneousPhotoAndVideoSupported = true;
+}
+else
+{
+    // Simultaneous photo and video not supported
+    simultaneousPhotoAndVideoSupported = false;
+}
+
+```
 
 You can refine this query to look for profiles that support specific resolutions or other capabilities in addition to simultaneous video record. You can also use the [**MediaCapture.FindKnownVideoProfiles**](/uwp/api/windows.media.capture.mediacapture.findknownvideoprofiles) and specify the [**BalancedVideoAndPhoto**](/uwp/api/Windows.Media.Capture.KnownVideoProfile) value to retrieve profiles that support simultaneous capture, but querying all profiles will provide more complete results.
 

@@ -2,9 +2,7 @@
 title: Show the camera preview in a WinUI app
 description: Learn how to show the camera preview in a WinUI app. 
 ms.topic: article
-ms.date: 05/18/2026
-ms.author: drewbat
-author: drewbatgit
+ms.date: 08/23/2026
 ms.localizationpriority: medium
 #customer intent: As a developer, I want to access the camera in a Windows app using WinUI.
 ---
@@ -31,7 +29,21 @@ The simple UI for this example includes a **MediaPlayerElement** control for dis
 
 In your project's MainWindow.xml file, replace the default **StackPanel** control with the following XAML.
 
-:::code language="xaml" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml" id="SnippetCameraWinUIXaml":::
+```xaml
+<Grid ColumnDefinitions="4*,*" ColumnSpacing="4">
+    <MediaPlayerElement x:Name="mpePreview" Grid.Row="0" Grid.Column="0"  AreTransportControlsEnabled="False" ManipulationMode="None"/>
+    <StackPanel Orientation="Vertical"  Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Top">
+        <TextBlock Text="Status:" Margin="0,0,10,0"/>
+        <TextBlock x:Name="tbStatus" Text=""/>
+        <TextBlock Text="Preview Source:" Margin="0,0,10,0"/>
+        <ComboBox x:Name="cbDeviceList" HorizontalAlignment="Stretch" SelectionChanged="cbDeviceList_SelectionChanged"></ComboBox>
+        <Button x:Name="bStartMediaCapture" Content="Initialize MediaCapture" IsEnabled="False" Click="bStartMediaCapture_Click"/>
+        <Button x:Name="bStartPreview" Content="Start preview" IsEnabled="False" Click="bStartPreview_Click"/>
+        <Button x:Name="bStopPreview" Content="Stop preview" IsEnabled="False" Click="bStopPreview_Click"/>
+        <Button x:Name="bReset" Content="Reset" Click="bReset_Click" />
+    </StackPanel>
+</Grid>
+```
 
 
 ## Update the MainWindow class definition
@@ -43,24 +55,94 @@ The rest of the code in this article will be added to the **MainWindow** class d
 - A [MediaFrameSource](/uwp/api/windows.media.capture.frames.mediaframesource) object that represents a source of media frames, such as a video stream.
 - A boolean to track when the camera preview is running. Some camera settings can't be changed while the preview is running, so it's a good practice to track the state of the camera preview.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraWinUIClassVars":::
+```csharp
+private DeviceInformationCollection m_deviceList;
+private MediaCapture m_mediaCapture;
+private MediaFrameSource m_frameSource;
+private MediaPlayer m_mediaPlayer;
+private bool m_isPreviewing;
+```
 
 
 ## Populate the list of available cameras
 
 Next we'll create a helper method to detect the cameras that are present on the current device and populate the **ComboBox** in the UI with the camera names, allowing the user to select a camera to preview.The [DeviceInformation.FindAllAsync](/uwp/api/windows.devices.enumeration.deviceinformation.findallasync) allows you to query for many different kinds of devices. We use [MediaDevice.GetVideoCaptureSelector](/uwp/api/windows.media.devices.mediadevice.getvideocaptureselector) to retrieve the identifier that specifies that we only want to retrieve video capture devices.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraWinUIPopulateCameraList":::
+```csharp
+private async void PopulateCameraList()
+{
+    cbDeviceList.Items.Clear();
+
+    m_deviceList = await DeviceInformation.FindAllAsync(MediaDevice.GetVideoCaptureSelector());
+
+    if(m_deviceList.Count == 0)
+    {
+        tbStatus.Text = "No video capture devices found.";
+        return;
+    }
+
+    foreach (var device in m_deviceList)
+    {
+        cbDeviceList.Items.Add(device.Name);
+        bStartMediaCapture.IsEnabled = true;
+    }
+}
+```
 
 Add a call to this helper method to the **MainWindow** class constructor so that the **ComboBox** gets populated when the window loads.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraWinUIConstructor":::
+```csharp
+public MainWindow()
+{
+    this.InitializeComponent();
+
+    PopulateCameraList();
+
+}
+```
 
 ## Handle camera selection changes
 
 When the user selects a different camera from the **ComboBox**, the **SelectionChanged** handler disposes of the existing **MediaCapture** and **MediaPlayer** objects, since they are initialized for a specific camera device. The handler resets the UI state so that the user can click **Initialize MediaCapture** to set up the newly selected camera.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraWinUISelectionChanged":::
+```csharp
+private void cbDeviceList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+{
+    if (cbDeviceList.SelectedIndex < 0)
+    {
+        return;
+    }
+
+    // If previewing, stop the preview since the selected camera has changed.
+    if (m_isPreviewing)
+    {
+        m_mediaPlayer.Pause();
+        m_isPreviewing = false;
+    }
+
+    // Dispose of existing MediaCapture and MediaPlayer, since they are
+    // initialized for a specific camera device.
+    if (m_mediaPlayer != null)
+    {
+        m_mediaPlayer.Dispose();
+        m_mediaPlayer = null;
+    }
+
+    if (m_mediaCapture != null)
+    {
+        m_mediaCapture.Dispose();
+        m_mediaCapture = null;
+    }
+
+    m_frameSource = null;
+
+    bStartMediaCapture.IsEnabled = true;
+    bStartPreview.IsEnabled = false;
+    bStopPreview.IsEnabled = false;
+
+    tbStatus.Text = "Camera selection changed. Click 'Initialize MediaCapture' to continue.";
+}
+```
 
 
 ## Initialize the MediaCapture object 
@@ -79,7 +161,52 @@ Before initializing the **MediaCapture** object we call [AppCapability.CheckAcce
 
 The **InitializeAsync** call is made from inside a **try** block so that we can recover if initialization fails. Apps should handle initialization failure gracefully. In this simple example, we'll just display an error message on failure.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraWinUIInitMediaCapture":::
+```csharp
+private async void bStartMediaCapture_Click(object sender, RoutedEventArgs e)
+{
+    if (m_mediaCapture != null)
+    {
+        tbStatus.Text = "MediaCapture already initialized.";
+        return;
+    }
+
+    // Supported in Windows Build 18362 and later
+    if(AppCapability.Create("Webcam").CheckAccess() != AppCapabilityAccessStatus.Allowed)
+    {
+        tbStatus.Text = "Camera access denied. Launching settings.";
+
+        bool result = await Windows.System.Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-webcam"));
+
+        if (AppCapability.Create("Webcam").CheckAccess() != AppCapabilityAccessStatus.Allowed)
+        {
+            tbStatus.Text = "Camera access denied in privacy settings.";
+            return;
+        }
+    }
+
+    try
+    {
+        m_mediaCapture = new MediaCapture();
+        var mediaCaptureInitializationSettings = new MediaCaptureInitializationSettings()
+        {
+            VideoDeviceId = m_deviceList[cbDeviceList.SelectedIndex].Id,
+            SharingMode = MediaCaptureSharingMode.ExclusiveControl,
+            StreamingCaptureMode = StreamingCaptureMode.Video,
+            MemoryPreference = MediaCaptureMemoryPreference.Auto
+        };
+
+        await m_mediaCapture.InitializeAsync(mediaCaptureInitializationSettings);
+
+        tbStatus.Text = "MediaCapture initialized successfully.";
+
+        bStartPreview.IsEnabled = true;
+    }
+    catch (Exception ex)
+    {
+        tbStatus.Text = "Initialize media capture failed: " + ex.Message;
+    }
+}
+```
 
 ## Initialize the camera preview
 
@@ -91,21 +218,112 @@ Once we have selected a frame source, we create a new [MediaPlayer](/uwp/api/win
 
 Call [Play](/uwp/api/windows.media.playback.mediaplayer.play) on the **MediaPlayer** object to begin rendering the video stream.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraWinUIStartPreview":::
+```csharp
+private void bStartPreview_Click(object sender, RoutedEventArgs e)
+{
+
+    m_frameSource = null;
+
+    // Find preview source.
+    // The preferred preview stream from a camera is defined by MediaStreamType.VideoPreview on the RGB camera (SourceKind == color).
+    var previewSource = m_mediaCapture.FrameSources.FirstOrDefault(source => source.Value.Info.MediaStreamType == MediaStreamType.VideoPreview
+                                                                                && source.Value.Info.SourceKind == MediaFrameSourceKind.Color).Value;
+
+    if (previewSource != null)
+    {
+        m_frameSource = previewSource;
+    }
+    else
+    {
+        var recordSource = m_mediaCapture.FrameSources.FirstOrDefault(source => source.Value.Info.MediaStreamType == MediaStreamType.VideoRecord
+                                                                                   && source.Value.Info.SourceKind == MediaFrameSourceKind.Color).Value;
+        if (recordSource != null)
+        {
+            m_frameSource = recordSource;
+        }
+    }
+
+    if (m_frameSource == null)
+    {
+        tbStatus.Text = "No video preview or record stream found.";
+        return;
+    }
+
+
+
+    // Create MediaPlayer with the preview source
+    m_mediaPlayer = new MediaPlayer();
+    m_mediaPlayer.RealTimePlayback = true;
+    m_mediaPlayer.AutoPlay = false;
+    m_mediaPlayer.Source = MediaSource.CreateFromMediaFrameSource(m_frameSource);
+    m_mediaPlayer.MediaFailed += MediaPlayer_MediaFailed;
+
+    // Set the mediaPlayer on the MediaPlayerElement
+    mpePreview.SetMediaPlayer(m_mediaPlayer);
+
+    // Start preview
+    m_mediaPlayer.Play();
+
+
+    tbStatus.Text = "Start preview succeeded!";
+    m_isPreviewing = true;
+    bStartPreview.IsEnabled = false;
+    bStopPreview.IsEnabled = true;
+}
+```
 
 Implement a handler for the [MediaFailed](/uwp/api/windows.media.playback.mediaplayer.mediafailed) event so that you can handle errors rendering the preview.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraWinUIMediaFailed":::
+```csharp
+private void MediaPlayer_MediaFailed(MediaPlayer sender, MediaPlayerFailedEventArgs args)
+{
+    tbStatus.Text = "MediaPlayer error: " + args.ErrorMessage;
+}
+```
 
 ## Stop the camera preview
 
 To stop the camera preview, call [Pause](/uwp/api/windows.media.playback.mediaplayer.pause) on the **MediaPlayer** object.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraWinUIStopPreview":::
+```csharp
+private void bStopPreview_Click(object sender, RoutedEventArgs e)
+{
+    // Stop preview
+    m_mediaPlayer.Pause();
+    m_isPreviewing = false;
+    bStartPreview.IsEnabled = true;
+    bStopPreview.IsEnabled = false;
+}
+```
 
 
 ## Reset the app
 
 To make it easier to test out the sample app, add a method to reset the state of the app. Camera apps should always dispose of the camera and associated resources when the camera is no longer needed.
 
-:::code language="csharp" source="~/../snippets-windows/winappsdk/audio-video-camera/camera-winui/CS/CameraWinUI/MainWindow.xaml.cs" id="SnippetCameraWinUIReset":::
+```csharp
+private void bReset_Click(object sender, RoutedEventArgs e)
+{
+    if (m_mediaCapture != null)
+    {
+        m_mediaCapture.Dispose();
+        m_mediaCapture = null;
+    }
+
+    if(m_mediaPlayer != null)
+    {
+        m_mediaPlayer.Dispose();
+        m_mediaPlayer = null;
+    }
+
+    m_frameSource = null;
+
+
+    bStartMediaCapture.IsEnabled = false;
+    bStartPreview.IsEnabled = false;
+    bStopPreview.IsEnabled = false;
+
+    PopulateCameraList();
+
+}
+```
