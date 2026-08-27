@@ -837,25 +837,20 @@ Released: **August, 2026** <br><br>
 >
 > - `ToastNotification.IsExpandableContentSupported`: Indicates whether expandable toast content is supported
 >
-> **Windows.Devices.WiFiDirect.Services**:
-> <br/>
-> Deprecated:
->
-> - The Wi-Fi Direct Services APIs are now deprecated and might not work on all platforms
-
-</details>
-
-<details>
-<summary>WinRT Experimental API additions</summary>
-
 > **Windows.UI.Input**:
 > <br/>
-> New (experimental):
+> New:
 >
 > - `GamepadKeyRoutingConfiguration`: Runtime class that configures gamepad key routing
 > - `GamepadKeyRoutingConfiguration.IsSupported`: Indicates whether gamepad key routing configuration is supported
 > - `GamepadKeyRoutingConfiguration.IsKeyRoutingEnabled`: Gets whether gamepad key routing is enabled
 > - `GamepadKeyRoutingConfiguration.TrySetKeyRoutingEnabled`: Attempts to enable or disable gamepad key routing
+>
+> **Windows.Devices.WiFiDirect.Services**:
+> <br/>
+> Deprecated:
+>
+> - The Wi-Fi Direct Services APIs are now deprecated and might not work on all platforms
 
 </details>
 
