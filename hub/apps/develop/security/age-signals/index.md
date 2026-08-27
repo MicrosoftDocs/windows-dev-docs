@@ -4,7 +4,7 @@ description: Learn how Windows Age APIs help apps provide safe, age-appropriate 
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 08/20/2026
+ms.date: 08/27/2026
 ---
 
 # Digital safety age signals overview
@@ -25,8 +25,11 @@ An age signal does **not** directly expose the user's age or date of birth. Inst
 
 ## Digital Safety APIs
 
+> [!NOTE]
+> These APIs are documented ahead of availability. They aren't enabled at runtime yet, and are planned to be turned on in a future release later this year. Until then, calls return an unknown age range (`null`) and an unavailable verification status, so make sure your app falls back to its default behavior or age-gate.
+
 ### GetUserAgeRangeAsync
-Returns the user’s age range as a {AgeLower, AgeUpper} struct.
+Returns the user’s age range as a `UserAgeRange` object with `Lower` and `Upper` properties.
 
 | Age group | Return values |
 |-------|---------|
@@ -34,10 +37,10 @@ Returns the user’s age range as a {AgeLower, AgeUpper} struct.
 | **10-12**| {10, 12}|
 | **13-15**| {13, 15} |
 | **16-17**| {16,17} |
-| **18+**| {18, -1} |
-| **Unknown** |{-1, -1} |
+| **18+**| {18, INT32_MAX} |
+| **Unknown** | `null` |
 
-When the result is **Unknown**, apps should fall back to their default behavior or age-gate mechanism.
+When the result is `null`, apps should fall back to their default behavior or age-gate mechanism.
 
 ### GetAgeVerificationStatusAsync
 Returns the user's age verification status to indicate whether the user's age has been independently verified by the identity provider. This API is available to both 1P and 3P callers. Possible outputs include:
