@@ -2,7 +2,7 @@
 description: TabView is a flexible way to organize multiple documents in dynamic tabs
 title: Tab View
 template: detail.hbs
-ms.date: 01/15/2025
+ms.date: 07/21/2026
 ms.topic: article
 keywords: winui, xaml controls
 doc-status: Published
@@ -478,6 +478,140 @@ private TabView? GetParentTabView(TabViewItem tab)
 
 > [!TIP]
 > If you're using the [Windows Community Toolkit](/dotnet/communitytoolkit/windows/), you can use the `FindAscendant` helper method in the toolkit's [DependencyObjectExtensions](/dotnet/communitytoolkit/windows/extensions/dependencyobjectextensions) instead of `GetParentTabView`.
+
+## Use data templates with TabView
+
+Instead of defining each [TabViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem) individually in XAML, you can bind a data collection to the [TabItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabitemssource) property and use data templates to define how tabs are displayed. This approach is useful when your tabs are driven by data, for example, a set of open documents or configurable pages.
+
+> [!NOTE]
+> The [TabItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabitemssource) and [TabItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabitemtemplate) properties are available in Windows App SDK 1.0 and later.
+
+Use these properties to control the appearance of data-bound tabs:
+
+- [TabItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabitemtemplate) — Set a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) that defines the entire [TabViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem), including the header and body content.
+- [TabViewItem.HeaderTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem.headertemplate) — Set a DataTemplate that defines how the tab header is rendered. Use this when you create TabViewItem objects in your template and want to customize only the header appearance.
+
+### Define the data model
+
+First, create a class that represents each tab. In this example, each tab has a title, an icon glyph, and text content for the body.
+
+```csharp
+public class MyTabItem
+{
+    public string Title { get; set; }
+    public string IconGlyph { get; set; }
+    public string Content { get; set; }
+}
+```
+
+### Bind to TabItemsSource with a TabItemTemplate
+
+The following example binds an [ObservableCollection&lt;T&gt;](/dotnet/api/system.collections.objectmodel.observablecollection-1) to [TabItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabitemssource) and provides a [TabItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabitemtemplate) that defines each tab's header and content. The template returns a [TabViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem) so you can set both the header and content.
+
+```xaml
+<Page
+    x:Class="TabViewExample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TabViewExample">
+
+<TabView TabItemsSource="{x:Bind TabItems}"
+         AddTabButtonClick="TabView_AddTabButtonClick"
+         TabCloseRequested="TabView_TabCloseRequested"
+         CanReorderTabs="False">
+        <TabView.TabItemTemplate>
+            <DataTemplate x:DataType="local:MyTabItem">
+                <TabViewItem Header="{x:Bind Title}" IsClosable="True">
+                    <TabViewItem.IconSource>
+                        <FontIconSource Glyph="{x:Bind IconGlyph}"/>
+                    </TabViewItem.IconSource>
+                    <TabViewItem.Content>
+                        <StackPanel Padding="12">
+                            <TextBlock Text="{x:Bind Content}"
+                                       TextWrapping="WrapWholeWords"/>
+                        </StackPanel>
+                    </TabViewItem.Content>
+                </TabViewItem>
+            </DataTemplate>
+        </TabView.TabItemTemplate>
+    </TabView>
+
+</Page>
+```
+
+Initialize the collection in your page's code-behind:
+
+```csharp
+using System.Collections.ObjectModel;
+using Microsoft.UI.Xaml.Controls;
+
+public sealed partial class MainPage : Page
+{
+    public ObservableCollection<MyTabItem> TabItems { get; } = new()
+    {
+        new MyTabItem
+        {
+            Title = "Home",
+            IconGlyph = "\uE80F",
+            Content = "Welcome to the home tab."
+        },
+        new MyTabItem
+        {
+            Title = "Documents",
+            IconGlyph = "\uE8A5",
+            Content = "Your recent documents appear here."
+        },
+        new MyTabItem
+        {
+            Title = "Settings",
+            IconGlyph = "\uE713",
+            Content = "Configure your preferences."
+        }
+    };
+
+    public MainPage()
+    {
+        this.InitializeComponent();
+    }
+}
+```
+
+> [!NOTE]
+> When you use [TabItemTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabitemtemplate), the DataTemplate must return a [TabViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabviewitem) as its root element. You set the header, icon, and content on that TabViewItem.
+
+> [!TIP]
+> The bindings in this example use `{x:Bind}`, which defaults to `Mode=OneTime`. If you need the UI to update when properties on your data objects change at runtime, set `Mode=OneWay` and implement [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged) on your data model class.
+
+### Close and add tabs with data binding
+
+When you use [TabItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabitemssource) with a data collection, handle the [TabCloseRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabcloserequested) event to remove the corresponding item from your collection instead of modifying [TabItems](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.tabview.tabitems) directly.
+
+```csharp
+// In your XAML, set: TabCloseRequested="TabView_TabCloseRequested"
+
+private void TabView_TabCloseRequested(TabView sender,
+    TabViewTabCloseRequestedEventArgs args)
+{
+    // args.Item is the data object (MyTabItem) for the tab that was closed.
+    TabItems.Remove((MyTabItem)args.Item);
+}
+```
+
+To add tabs, add a new item to the bound collection. The TabView updates automatically.
+
+```csharp
+// In your XAML, set: AddTabButtonClick="TabView_AddTabButtonClick"
+
+private void TabView_AddTabButtonClick(TabView sender, object args)
+{
+    TabItems.Add(new MyTabItem
+    {
+        Title = "New Tab",
+        IconGlyph = "\uE8A5",
+        Content = "This is a new tab."
+    });
+}
+```
 
 ## Display TabView tabs in a window's title bar
 
