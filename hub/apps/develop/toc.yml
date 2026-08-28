@@ -889,6 +889,8 @@ items:
                 items:
                   - name: Overview
                     href: feeds/feed-providers.md
+                  - name: Feed provider announcements
+                    href: feeds/feed-provider-announcements.md
                   - name: Implement a feed provider in a Win32 app (C#)
                     href: feeds/implement-feed-provider-cs.md
                   - name: Implement a feed provider in a Win32 app (C++/WinRT)
