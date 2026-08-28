@@ -53,7 +53,10 @@ Do not rely on badging for every announcement. The Widgets Board may apply polic
 
 ## Before you start
 
-To use feed announcements, your app must use Windows App SDK 1.5.2 or later and must have already implemented a feed provider.
+To use feed announcements, your app must have already implemented a feed provider.
+
+- Use the latest stable Windows App SDK. Feed announcement APIs were introduced in [Windows App SDK 1.5.2](/windows/apps/windows-app-sdk/release-notes/windows-app-sdk-1-5#version-152-15240404000).
+- Package your app with MSIX. In the current release, only packaged apps can register as feed providers.
 
 You should also review:
 
@@ -196,7 +199,7 @@ The Widgets Board controls whether a requested announcement is displayed through
 - Providers should not assume a badge will always be shown.
 - Providers should not depend on badge visibility for critical application workflows.
 - Applications should continue to provide access to the associated feed provider content through normal dashboard experiences.
-- Feed providers are limited to 12 announcements and 7 badges daily.
+- The Widgets Board applies daily limits to announcements and badges.
 
 ## Related content
 
