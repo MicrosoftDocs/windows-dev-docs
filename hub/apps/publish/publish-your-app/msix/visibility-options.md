@@ -1,7 +1,7 @@
 ---
 description: Set restrictions on how your MSIX app can be discovered and acquired, including whether people can find your app in the Store or see its Store listing at all.
 title: Choose visibility options for MSIX app
-ms.date: 10/30/2022
+ms.date: 08/28/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -32,6 +32,9 @@ If you want your app’s listing to be visible only to selected people that you 
 When you choose **Private audience**, you’ll need to specify at least one group of people who should get your app. You can choose from an existing [known user group](../../create-customer-groups.md#known-user-groups), or you can select **Create a new group** to define a new group. You’ll need to enter the email addresses associated with the Microsoft account of each person you’d like to include in the group. For more info, see [Create known user groups](../../create-customer-groups.md#known-user-groups).
 
 After your submission is published, the people in the group you specify will be able to view the app’s listing and download the app, as long as they are signed in with the Microsoft account associated with the email address that you entered and are running Windows 10, version 1607 or later (including Xbox One). However, people who aren’t in your private audience won’t be able to view the app’s listing or download the app, regardless of what OS version they’re running. You can publish updated submissions to the private audience, which will be distributed to members of those audience in the same way as a regular app update (but still won’t be available to anyone who’s not in of your private audience, unless you change your audience selection).
+
+> [!NOTE]
+> The account required here is a *personal* Microsoft account, not a work or school account. Work or school accounts (Microsoft Entra ID) are a different account type, and you can't use them to view or acquire a private-audience app. This applies even when your Partner Center account is a company account that uses Microsoft Entra ID. Each tester signs in to the Microsoft Store with the personal Microsoft account that matches the email address you added to the known user group.
 
 If you plan to make the app available to a public audience at a certain date and time, you can select the box labeled **Make this product public on** when creating your submission. Enter the date and time (in UTC) when you’d like the product to become available to the public. Keep in mind the following:
 
