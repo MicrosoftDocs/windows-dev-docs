@@ -2,7 +2,7 @@
 description: A PipsPager is a control to let the user navigate through a paginated collection when the page numbers do not need to be visually known.
 title: PipsPager
 template: detail.hbs
-ms.date: 07/02/2026
+ms.date: 08/28/2026
 ms.topic: article
 ms.custom: 21H1
 ms.localizationpriority: medium
@@ -34,7 +34,7 @@ This UI is commonly used in apps such as photo viewers and app lists, where disp
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [PipsPager class](/uwp/api/microsoft.ui.xaml.controls.pipspager)
+> - **Important APIs**: [PipsPager class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.pipspager)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the PipsPager in action](winui3gallery://item/PipsPager)

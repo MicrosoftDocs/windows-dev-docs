@@ -7,7 +7,7 @@ title: ResourceDictionary and XAML resource references
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
-ms.date: 07/27/2026
+ms.date: 08/28/2026
 ms.topic: article
 keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
@@ -145,7 +145,7 @@ This example shows how to retrieve the `redButtonStyle` resource out of a page's
     MainPage::MainPage()
     {
         InitializeComponent();
-        Windows::UI::Xaml::Style style = Resources().TryLookup(winrt::box_value(L"redButtonStyle")).as<Windows::UI::Xaml::Style>();
+        Microsoft::UI::Xaml::Style style = Resources().TryLookup(winrt::box_value(L"redButtonStyle")).as<Microsoft::UI::Xaml::Style>();
     }
 ```
 
@@ -181,9 +181,9 @@ To look up app-wide resources from code, use **Application.Current.Resources** t
     MainPage::MainPage()
     {
         InitializeComponent();
-        Windows::UI::Xaml::Style style = Application::Current().Resources()
+        Microsoft::UI::Xaml::Style style = Application::Current().Resources()
                                                                .TryLookup(winrt::box_value(L"appButtonStyle"))
-                                                               .as<Windows::UI::Xaml::Style>();
+                                                               .as<Microsoft::UI::Xaml::Style>();
     }
 ```
 

@@ -5,7 +5,7 @@ ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
 keywords: keyboard, text, input, user interactions
-ms.date: 08/23/2026
+ms.date: 08/28/2026
 ms.topic: concept-article
 
 
@@ -16,7 +16,7 @@ ms.localizationpriority: medium
 
 This article describes selecting and manipulating text, images, and controls and provides user experience guidelines that should be considered when using these mechanisms in your apps.
 
-> **Important APIs**: [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input), [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)
+> **Important APIs**: [**Microsoft.UI.Xaml.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input), [**Windows.UI.Input**](/uwp/api/Windows.UI.Input)
  
 
 

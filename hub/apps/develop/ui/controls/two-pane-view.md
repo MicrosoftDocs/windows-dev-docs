@@ -2,7 +2,7 @@
 description: TwoPaneView is a layout control that helps you manage the display of apps that have 2 distinct areas of content.
 title: Two-pane view
 template: detail.hbs
-ms.date: 04/29/2025
+ms.date: 08/28/2026
 ms.topic: article
 keywords: winui, xaml controls
 ms.localizationpriority: medium
@@ -73,7 +73,7 @@ This XAML shows how to create a basic `TwoPaneView`.
 
 ![Two-pane view with panes set to default sizes](images/two-pane-view/tpv-size-default.png)
 
-The [TwoPaneView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview) doesn't have to be the root element of your page layout. In fact, you'll often use it inside a [NavigationView](/uwp/api/microsoft.ui.xaml.controls.navigationview) control that provides the overall navigation for your app. The `TwoPaneView` adapts appropriately regardless of where it is in the XAML tree.
+The [TwoPaneView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.twopaneview) doesn't have to be the root element of your page layout. In fact, you'll often use it inside a [NavigationView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationview) control that provides the overall navigation for your app. The `TwoPaneView` adapts appropriately regardless of where it is in the XAML tree.
 
 ### Add content to the panes
 

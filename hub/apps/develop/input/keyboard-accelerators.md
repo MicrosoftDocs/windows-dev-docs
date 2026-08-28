@@ -4,7 +4,7 @@ title: Keyboard accelerators
 label: Keyboard accelerators
 template: detail.hbs
 keywords: keyboard, accelerator, accelerator key, keyboard shortcuts, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.date: 07/21/2026
+ms.date: 08/28/2026
 ms.topic: article
 pm-contact: chigy
 design-contact: miguelrb
@@ -514,7 +514,7 @@ The KeyDown event is also used by some controls to implement the built-in contro
 
 #### The CharacterReceived event
 
-As the [CharacterReceived](/uwp/api/windows.ui.core.corewindow.characterreceived) event is fired after the [KeyDown](/uwp/api/windows.ui.core.corewindow.keydown) event for text controls such as TextBox, you can cancel character input in the KeyDown event handler.
+As the [CharacterReceived](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.characterreceived) event is fired after the [KeyDown](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.keydown) event for text controls such as TextBox, you can cancel character input in the KeyDown event handler.
 
 #### The PreviewKeyDown and PreviewKeyUp events
 

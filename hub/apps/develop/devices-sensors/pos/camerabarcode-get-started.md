@@ -1,7 +1,7 @@
 ---
 title: Get started with camera barcode scanner
 description: Set up a basic camera barcode scanner in a WinRT application.
-ms.date: 05/27/2026
+ms.date: 08/28/2026
 ms.topic: get-started
 
 ms.localizationpriority: medium
@@ -100,7 +100,7 @@ Camera barcode scanners using the decoder that ships with Windows are identified
 
 If there is more than one camera, and they are built into the chassis of the computer, the name might differentiate between *front* and *rear* cameras.
 
-When the [DeviceWatcher](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) starts (see [Step 4: Enumerate barcode scanners](#step-4-enumerate-barcode-scanners)), it enumerates through each connected device. In the following snippet, you add each available scanner to a [BarcodeScanner](/uwp/api/windows.devices.pointofservice.barcodescanner) collection and bind the collection to a [ListBox](/uwp/api/windows.ui.xaml.controls.listbox).
+When the [DeviceWatcher](/uwp/api/Windows.Devices.Enumeration.DeviceWatcher) starts (see [Step 4: Enumerate barcode scanners](#step-4-enumerate-barcode-scanners)), it enumerates through each connected device. In the following snippet, you add each available scanner to a [BarcodeScanner](/uwp/api/windows.devices.pointofservice.barcodescanner) collection and bind the collection to a [ListBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listbox).
 
 ```csharp
 ObservableCollection<BarcodeScanner> barcodeScanners = 
@@ -121,7 +121,7 @@ private void Watcher_Added(DeviceWatcher sender, DeviceInformation args)
 }
 ```
 
-When the [SelectedIndex](/uwp/api/windows.ui.xaml.controls.primitives.selector.selectedindex) of the [ListBox](/uwp/api/windows.ui.xaml.controls.listbox) changes (the first item is selected by default in the previous snippet), you query the device info (the `SelectScannerAsync` task is implemented in [Step 6: Claim the camera barcode scanner](#step-6-claim-the-camera-barcode-scanner)).
+When the [SelectedIndex](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selectedindex) of the [ListBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listbox) changes (the first item is selected by default in the previous snippet), you query the device info (the `SelectScannerAsync` task is implemented in [Step 6: Claim the camera barcode scanner](#step-6-claim-the-camera-barcode-scanner)).
 
 ```csharp
 private async void ScannerSelection_Changed(object sender, SelectionChangedEventArgs args)

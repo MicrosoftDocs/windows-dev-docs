@@ -1,7 +1,7 @@
 ---
 title: Using Win2D without built-in controls
 description: A guide on how to use the lower level APIs of Win2D, without any of its built-in XAML controls.
-ms.date: 07/02/2026
+ms.date: 08/28/2026
 ms.topic: concept-article
 author: GrantMeStrength
 ms.author: jken
@@ -121,7 +121,7 @@ void canvasSwapChainPanel_SizeChanged(object sender, Microsoft.UI.Xaml.SizeChang
 
 ### CanvasImageSource
 
-[`CanvasImageSource`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasImageSource.htm) extends XAML's [`SurfaceImageSource`](/uwp/api/windows.ui.xaml.media.imaging.surfaceimagesource). Apps can create an instance of `CanvasImageSource`, and reference it from a XAML type that consumes an `ImageSource`, such as an [`Image`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) or [`ImageBrush`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagebrush). For example, in XAML markup:
+[`CanvasImageSource`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasImageSource.htm) extends XAML's [`SurfaceImageSource`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.surfaceimagesource). Apps can create an instance of `CanvasImageSource`, and reference it from a XAML type that consumes an `ImageSource`, such as an [`Image`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) or [`ImageBrush`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imagebrush). For example, in XAML markup:
 
 ```XAML
 <Image x:Name="image"/>
@@ -151,7 +151,7 @@ For an example demonstrating how to use `CanvasImageSource`, see the `ImageSourc
 
 ### CanvasVirtualImageSource
 
-[`CanvasVirtualImageSource`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource.htm) wraps XAML's [`VirtualSurfaceImageSource`](/uwp/api/windows.ui.xaml.media.imaging.virtualsurfaceimagesource).
+[`CanvasVirtualImageSource`](https://microsoft.github.io/Win2D/WinUI3/html/T_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource.htm) wraps XAML's [`VirtualSurfaceImageSource`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.imaging.virtualsurfaceimagesource).
 
 The wrapped `VirtualSurfaceImageSource` can be obtained by the [`Source`](https://microsoft.github.io/Win2D/WinUI3/html/P_Microsoft_Graphics_Canvas_UI_Xaml_CanvasVirtualImageSource_Source.htm) property. Apart from this difference it can be used in much the same way as `CanvasImageSource`:
 

@@ -4,7 +4,7 @@ title: Intro to controls and events
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
-ms.date: 07/18/2025
+ms.date: 08/28/2026
 ms.topic: article
 keywords: winui, xaml controls, windows app sdk
 ms.localizationpriority: medium
@@ -116,13 +116,13 @@ struct MainPage : MainPageT<MainPage>
     {
         MainPage();
         ...
-        void Button1_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e);
+        void Button1_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e);
     };
     
 #MainPage.cpp
-void MainPage::Button1_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Windows::UI::Xaml::RoutedEventArgs const& e)
+void MainPage::Button1_Click(winrt::Windows::Foundation::IInspectable const& sender, winrt::Microsoft::UI::Xaml::RoutedEventArgs const& e)
     {
-        auto b{ sender.as<winrt::Windows::UI::Xaml::Controls::Button>() };
+        auto b{ sender.as<winrt::Microsoft::UI::Xaml::Controls::Button>() };
         b.Foreground(Media::SolidColorBrush(Windows::UI::Colors::Blue()));
     }
 ```

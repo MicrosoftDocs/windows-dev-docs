@@ -3,7 +3,7 @@ description: Learn how to use Swipe commanding as a touch accelerator for contex
 title: Swipe
 label: Swipe
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 08/28/2026
 ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
@@ -74,7 +74,7 @@ For example, you cannot have two [LeftItems](/windows/windows-app-sdk/api/winrt/
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [SwipeControl](/uwp/api/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView)
+> - **Important APIs**: [SwipeControl](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipecontrol), [SwipeItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipeitem), [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView)
 
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see SwipeControl in action](winui3gallery://item/SwipeControl)

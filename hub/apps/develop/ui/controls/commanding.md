@@ -2,7 +2,7 @@
 title: Commanding in Windows apps
 description: How to use the XamlUICommand and StandardUICommand classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
 ms.topic: overview
-ms.date: 07/09/2026
+ms.date: 08/28/2026
 ms.localizationpriority: medium
 ---
 
@@ -96,7 +96,7 @@ In this example, we show how to enhance a basic [ListView](listview-and-gridview
 
 **Xaml:**
 
-The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) of five items. The Delete [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) is bound to a [MenuBarItem](/uwp/api/microsoft.ui.xaml.controls.menubaritem), a [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), an [AppBarButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton), and [ContextFlyout menu](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout).
+The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) of five items. The Delete [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) is bound to a [MenuBarItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubaritem), a [SwipeItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipeitem), an [AppBarButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton), and [ContextFlyout menu](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout).
 
 ``` xaml
 <Page
@@ -374,7 +374,7 @@ Many platform controls use the XamlUICommand properties under the covers, just l
 
 **Xaml:**
 
-The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) of five items. The custom [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) CustomXamlUICommand is bound to a [MenuBarItem](/uwp/api/microsoft.ui.xaml.controls.menubaritem), a [SwipeItem](/uwp/api/microsoft.ui.xaml.controls.swipeitem), an [AppBarButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton), and [ContextFlyout menu](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout).
+The sample UI includes a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) of five items. The custom [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) CustomXamlUICommand is bound to a [MenuBarItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubaritem), a [SwipeItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.swipeitem), an [AppBarButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarbutton), and [ContextFlyout menu](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.contextflyout).
 
 ``` xaml
 <Page

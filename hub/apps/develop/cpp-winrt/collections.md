@@ -1,7 +1,7 @@
 ---
 description: C++/WinRT provides functions and base classes that save you a lot of time and effort when you want to implement and/or pass collections.
 title: Collections with C++/WinRT
-ms.date: 06/01/2026
+ms.date: 08/28/2026
 ms.topic: article
 keywords: windows 10, standard, c++, cpp, winrt, projection, collection, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -74,7 +74,7 @@ for (auto const& el : coll2)
 
 You can pass a temporary object containing your data to **winrt::single_threaded_vector**, as with `coll1`, above. Or you can move a **std::vector** (assuming you won't be accessing it again) into the function. In both cases, you're passing an *rvalue* into the function. That enables the compiler to be efficient and to avoid copying the data. If you want to know more about *rvalues*, see [Value categories, and references to them](./cpp-value-categories.md).
 
-If you want to bind a XAML items control to your collection, then you can. But be aware that to correctly set the [**ItemsControl.ItemsSource**](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource) property, you need to set it to a value of type **IVector** of **IInspectable** (or of an interoperability type such as [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)).
+If you want to bind a XAML items control to your collection, then you can. But be aware that to correctly set the [**ItemsControl.ItemsSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource) property, you need to set it to a value of type **IVector** of **IInspectable** (or of an interoperability type such as [**IBindableObservableVector**](/uwp/api/windows.ui.xaml.interop.ibindableobservablevector)).
 
 Here's a code example that produces a collection of a type suitable for binding, and appends an element to it. You can find the context for this code example in [XAML items controls; bind to a C++/WinRT collection](./binding-collection.md).
 
@@ -323,7 +323,7 @@ private:
 ```
 
 ## Important APIs
-* [ItemsControl.ItemsSource property](/uwp/api/windows.ui.xaml.controls.itemscontrol.itemssource)
+* [ItemsControl.ItemsSource property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemssource)
 * [IObservableVector interface](/uwp/api/windows.foundation.collections.iobservablevector_t_)
 * [IVector interface](/uwp/api/windows.foundation.collections.ivector_t_)
 * [winrt::map_base struct template](/uwp/cpp-ref-for-winrt/map-base)

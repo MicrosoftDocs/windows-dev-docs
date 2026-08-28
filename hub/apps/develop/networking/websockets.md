@@ -1,7 +1,7 @@
 ---
 description: WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages.
 title: WebSockets
-ms.date: 06/25/2026
+ms.date: 08/28/2026
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
@@ -137,7 +137,7 @@ private void WebSocket_Closed(Windows.Networking.Sockets.IWebSocket sender, Wind
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
-using namespace Windows::UI::Xaml::Navigation;
+using namespace Microsoft::UI::Xaml::Navigation;
 ...
 private:
     Windows::Networking::Sockets::MessageWebSocket m_messageWebSocket;
@@ -384,7 +384,7 @@ private void WebSocket_Closed(Windows.Networking.Sockets.IWebSocket sender, Wind
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Storage::Streams;
-using namespace Windows::UI::Xaml::Navigation;
+using namespace Microsoft::UI::Xaml::Navigation;
 ...
 private:
     Windows::Networking::Sockets::StreamWebSocket m_streamWebSocket;
@@ -666,7 +666,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 
 using namespace winrt;
 using namespace Windows::Foundation;
-using namespace Windows::UI::Xaml::Navigation;
+using namespace Microsoft::UI::Xaml::Navigation;
 ...
 private:
     Windows::Networking::Sockets::MessageWebSocket m_messageWebSocket;

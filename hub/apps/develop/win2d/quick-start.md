@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Build a simple Win2D app"
 description: Learn how to build a simple Win2D app from scratch, using the 2D graphics library for WinUI 3 and UWP to draw shapes and text.
-ms.date: 07/05/2026
+ms.date: 08/28/2026
 ms.topic: how-to
 author: GrantMeStrength
 ms.author: jken
@@ -67,7 +67,8 @@ using Microsoft.Graphics.Canvas;
 using Microsoft.Graphics.Canvas.Effects;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Windows.UI;
+using Microsoft.UI;
+using Color = Windows.UI.Color;
 ```
 
 3. Next, you should see the following blank event handler which was inserted by AutoComplete:

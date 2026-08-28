@@ -3,7 +3,7 @@ description: Command bar flyouts give users inline access to your app's most com
 title: Command bar flyout
 label: Command bar flyout
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 08/28/2026
 ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
@@ -368,7 +368,7 @@ Here's a drop down button menu in a command bar flyout.
 
 ## Command bar flyouts for text controls
 
-The [TextCommandBarFlyout](/uwp/api/microsoft.ui.xaml.controls.textcommandbarflyout) is a specialized command bar flyout that contains commands for editing text. Each text control shows the TextCommandBarFlyout automatically as a context menu (right-click), or when text is selected. The text command bar flyout adapts to the text selection to only show relevant commands.
+The [TextCommandBarFlyout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textcommandbarflyout) is a specialized command bar flyout that contains commands for editing text. Each text control shows the TextCommandBarFlyout automatically as a context menu (right-click), or when text is selected. The text command bar flyout adapts to the text selection to only show relevant commands.
 
 Here's a text command bar flyout on text selection.
 

@@ -4,7 +4,7 @@ title: Targeting
 ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
 label: Targeting
 template: detail.hbs
-ms.date: 08/23/2026
+ms.date: 08/28/2026
 ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -20,7 +20,7 @@ All WinUI controls have been designed with default touch target sizes and layout
 
 In this topic, we describe these default behaviors so you can design your app for maximum usability using both platform controls and custom controls (should your app require them).
 
-> **Important APIs**: [**Windows.UI.Core**](/uwp/api/Windows.UI.Core), [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Windows.UI.Xaml.Input**](/uwp/api/Windows.UI.Xaml.Input)
+> **Important APIs**: [**Windows.UI.Core**](/uwp/api/Windows.UI.Core), [**Windows.UI.Input**](/uwp/api/Windows.UI.Input), [**Microsoft.UI.Xaml.Input**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input)
 
 ## Target size
 

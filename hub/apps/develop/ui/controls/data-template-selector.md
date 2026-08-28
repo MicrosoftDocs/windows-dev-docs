@@ -3,7 +3,7 @@ description: Use data template selectors to customize the styles of your items b
 title: Data template selection
 label: Data template selection
 template: detail.hbs
-ms.date: 10/18/2019
+ms.date: 08/28/2026
 ms.topic: article
 keywords: winui, xaml controls
 pm-contact: anawish
@@ -119,7 +119,7 @@ The last step is to bind your `DataTemplateSelector` to the `ItemTemplateSelecto
 Once your code compiles, each collection item will run through the overridden `SelectTemplateCore` method in `MyDataTemplateSelector`, and will be rendered with the appropriate DataTemplate.
 
 > [!IMPORTANT]
-> When using `DataTemplateSelector` with an [ItemsRepeater](/uwp/api/microsoft.ui.xaml.controls.itemsrepeater?view=winui-2.2&preserve-view=true), you bind the `DataTemplateSelector` to the `ItemTemplate` property. `ItemsRepeater` doesn't have an `ItemTemplateSelector` property.
+> When using `DataTemplateSelector` with an [ItemsRepeater](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater), you bind the `DataTemplateSelector` to the `ItemTemplate` property. `ItemsRepeater` doesn't have an `ItemTemplateSelector` property.
 
 ## DataTemplateSelector performance considerations
 

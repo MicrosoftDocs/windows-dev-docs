@@ -1,7 +1,7 @@
 ---
 description: Learn how to use a MediaFrameReader with MediaCapture to get media frames from one or more available sources, including color, depth, and infrared cameras, audio devices, or even custom frame sources such as those that produce skeletal tracking frames.
 title: Process media frames with MediaFrameReader
-ms.date: 08/23/2026
+ms.date: 08/28/2026
 ms.topic: article
 keywords: windows 10, windows 11, winui3, camera
 ms.localizationpriority: medium
@@ -312,7 +312,7 @@ This section provides the full code listing for a provides a helper class that m
 
 The **FrameRenderer** helper class implements the following methods.
 
-* **FrameRenderer** constructor - The constructor initializes the helper class to use the XAML [**Image**](/uwp/api/Windows.UI.Xaml.Controls.Image) element you pass in for displaying media frames.
+* **FrameRenderer** constructor - The constructor initializes the helper class to use the XAML [**Image**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.image) element you pass in for displaying media frames.
 * **ProcessFrame** - This method displays a media frame, represented by a [**MediaFrameReference**](/uwp/api/Windows.Media.Capture.Frames.MediaFrameReference), in the **Image** element you passed into the constructor. You should typically call this method from your [**FrameArrived**](/uwp/api/windows.media.capture.frames.mediaframereader.framearrived) event handler, passing in the frame returned by [**TryAcquireLatestFrame**](/uwp/api/windows.media.capture.frames.mediaframereader.tryacquirelatestframe).
 * **ConvertToDisplayableImage** - This methods checks the format of the media frame and, if necessary, converts it to a displayable format. For color images, this means making sure that the color format is BGRA8 and that the bitmap alpha mode is premultiplied. For depth or infrared frames, each scanline is processed to convert the depth or infrared values to a psuedocolor gradient, using the **PsuedoColorHelper** class that is also included in the sample and listed below.
 
