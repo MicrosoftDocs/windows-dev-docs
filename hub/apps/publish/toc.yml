@@ -365,6 +365,29 @@ items:
         href: store-policies.md
       - name: Store Policies change history
         href: store-policies-change-history.md
+        items:
+          - name: Microsoft Store Policies 7.18
+            href: store-policy-archive/store-policy-7-18.md
+          - name: Microsoft Store Policies 7.17
+            href: store-policy-archive/store-policy-7-17.md
+          - name: Microsoft Store Policies 7.16.1
+            href: store-policy-archive/store-policy-7-16-1.md
+          - name: Microsoft Store Policies 7.16
+            href: store-policy-archive/store-policy-7-16.md
+          - name: Microsoft Store Policies 7.15
+            href: store-policy-archive/store-policy-7-15.md
+          - name: Microsoft Store Policies 7.14
+            href: store-policy-archive/store-policy-7-14.md
+          - name: Microsoft Store Policies 7.13
+            href: store-policy-archive/store-policy-7-13.md
+          - name: Microsoft Store Policies 7.12
+            href: store-policy-archive/store-policy-7-12.md
+          - name: Microsoft Store Policies 7.11
+            href: store-policy-archive/store-policy-7-11.md
+          - name: Microsoft Store Policies 7.7
+            href: store-policy-archive/store-policy-7-7.md
+          - name: Microsoft Store Policies 7.6
+            href: store-policy-archive/store-policy-7-6.md
       - name: Developer Code of Conduct
         href: store-developer-code-of-conduct.md
       - name: App developer agreement
