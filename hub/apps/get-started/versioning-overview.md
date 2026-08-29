@@ -2,7 +2,7 @@
 title: Windows versions and SDK overview
 description: Learn how Windows release versions, the Windows SDK, and the Windows App SDK relate to each other, and how to choose the right SDK versions for your project.
 ms.topic: article
-ms.date: 06/26/2026
+ms.date: 08/29/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
@@ -235,6 +235,6 @@ No — but parts of one of them can be. The **Windows SDK** is a development-tim
 
 - [Windows App SDK supported Windows releases](../windows-app-sdk/support.md)
 - [Windows App SDK release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md)
-- [Windows SDK archive](/windows/apps/windows-sdk/)
+- [Windows SDK archive](../windows-sdk/index.md)
 - [Version-adaptive apps](/windows/uwp/debug-test-perf/version-adaptive-apps)
 - [Set up your development environment](start-here.md)

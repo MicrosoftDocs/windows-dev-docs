@@ -2,7 +2,7 @@
 title: Windows apps--packaging, deployment, and process
 description: This topic discusses your options around app packaging, deploy/distribute/install, and your app's run-time process.
 ms.topic: article
-ms.date: 08/14/2026
+ms.date: 08/29/2026
 keywords: intro, introduction, all-up, all, up, Windows, Windows apps, packaging, deployment, process, run-time
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ This topic discusses your options concerning:
 * How you'll deploy/distribute your app, and how it'll be installed.
 * Your app's run-time process, including how isolated it will be and what APIs will be available to it.
 
-You can make those decisions for both new and existing apps. But if you're still in the planning stage for a new app, then before you start to think about the considerations above, first decide what development platform and user interface (UI) framework you'll use for your app. And for that decision, see [An overview of Windows development options](/windows/apps/get-started/).
+You can make those decisions for both new and existing apps. But if you're still in the planning stage for a new app, then before you start to think about the considerations above, first decide what development platform and user interface (UI) framework you'll use for your app. And for that decision, see [An overview of Windows development options](index.md).
 
 ## Packaging options: packaged, packaged with external location, or unpackaged
 
@@ -25,7 +25,7 @@ For a full explanation of the packaged, packaged with external location, and unp
 
 For info about how to configure your app as packaged or unpackaged:
 
-* **WinUI 3 apps (Windows App SDK)**. See the `AppxPackage` Visual Studio project property in [Project properties](/windows/apps/package-and-deploy/project-properties); and see [Create your first WinUI (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app).
+* **WinUI 3 apps (Windows App SDK)**. See the `AppxPackage` Visual Studio project property in [Project properties](../package-and-deploy/project-properties.md); and see [Create your first WinUI (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app).
 * **Desktop apps**. See [Set up your desktop app for MSIX packaging](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 * **Universal Windows Platform (UWP) apps**. UWP apps are already configured as packaged; and that configuration can't be changed.
 
@@ -102,4 +102,4 @@ A package manager can help your users to install/upgrade/configure your software
 
 The result is a reduction in time spent getting a user's environment ready, and better compatibility between the components installed. And you can use Windows Package Manager to distribute your packaged or unpackaged apps in formats such as `.msix`, `.msi`, and `.exe`.
 
-For more info, see [Windows Package Manager](/windows/package-manager/).
+For more info, see [Windows Package Manager](../../package-manager/index.md).

@@ -2,7 +2,7 @@
 description: Overview of Windows app development options, explaining Windows SDK vs Windows App SDK and how to choose WinUI 3, WPF, WinForms, or cross-platform frameworks.
 title: Windows developer platform overview
 ms.topic: overview
-ms.date: 08/09/2026
+ms.date: 08/29/2026
 keywords: windows, desktop development, windows sdk, windows app sdk, winui
 ms.localizationpriority: medium
 #customer intent: To understand the Windows developer platform, how the SDKs fit together, and how to choose the right app framework.
@@ -91,7 +91,7 @@ The [Universal Windows Platform (UWP)](/windows/uwp/) provides a common API surf
 
 ##### React Native for Desktop
 
-[React Native for Desktop](/windows/dev-environment/javascript/react-native-for-windows) lets you build native Windows apps using JavaScript or TypeScript. It's ideal for teams with web development experience who want to share code across platforms while still delivering a native user experience on Windows.
+[React Native for Desktop](../../dev-environment/javascript/react-native-for-windows.md) lets you build native Windows apps using JavaScript or TypeScript. It's ideal for teams with web development experience who want to share code across platforms while still delivering a native user experience on Windows.
 
 [Get started with React Native for Desktop →](https://aka.ms/ReactNativeGuideWindows)
 

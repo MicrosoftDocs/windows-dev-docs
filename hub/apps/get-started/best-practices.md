@@ -2,7 +2,7 @@
 title: Windows Application Development - Best Practices
 description: A collection of best practices related to UI/UX, security, performance, and more.
 ms.topic: best-practice
-ms.date: 07/25/2026
+ms.date: 08/29/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
@@ -369,8 +369,8 @@ An insecure application can be an entry point that allows an attacker to perform
 
 Windows is built on a foundation of security and privacy, and Windows 11 is designed to be the most secure version of Windows yet, and we're committed to helping you build secure apps that take advantage of the latest security features in Windows.
 
-- Protect your Windows apps and backend services with Windows Hello biometric sign-in - [Windows Hello overview](/windows/apps/develop/security/windows-hello).
-- Implement passkey sign-ins across online, enterprise, and government applications, and for payments - [Intro to passkeys](/windows/apps/develop/security/intro).
+- Protect your Windows apps and backend services with Windows Hello biometric sign-in - [Windows Hello overview](../develop/security/windows-hello.md).
+- Implement passkey sign-ins across online, enterprise, and government applications, and for payments - [Intro to passkeys](../develop/security/intro.md).
 - Sign your apps with a digital certificate to ensure that [Smart App Control](https://support.microsoft.com/windows/app-browser-control-in-the-windows-security-app-8f68fb65-ebb4-3cfb-4bd7-ef0f376f3dc3#bkmk_smart-app-control) can verify the integrity of your app - [Introduction to code signing](/windows/win32/seccrypto/cryptography-tools#introduction-to-code-signing) and [Microsoft Trusted Root Program requirements](/security/trusted-root/program-requirements).
 
 ### Security guidelines

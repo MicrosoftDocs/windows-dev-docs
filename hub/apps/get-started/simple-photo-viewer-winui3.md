@@ -2,7 +2,7 @@
 title: Tutorial--Create a simple photo viewer with WinUI
 description: In this topic we walk through the process of building a simple WinUI app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and C# code (which is *imperative*, or *procedural*).
 ms.topic: tutorial
-ms.date: 03/24/2026
+ms.date: 08/29/2026
 keywords: Windows, App, SDK, WinUI, WinUI, photo, viewer, Windows 11, Windows 10, XAML, C#, C++
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 In this topic we walk through the process of creating a new WinUI project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and your choice of either C# or C++ code (which are *imperative*, or *procedural*). Use the language picker above the topic title to choose C# or C++/WinRT.
 
 > [!TIP]
-> The source code in this topic is provided in both C# and C++/WinRT. If you're a C++ developer, then for more details and concepts explaining how the code that we show here works, see the [C++/WinRT](/windows/apps/develop/cpp-winrt/) documentation. Relevant topics there include [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property), [XAML items controls; bind to a C++/WinRT collection](/windows/apps/develop/cpp-winrt/binding-collection), and [Photo Editor C++/WinRT sample application](/windows/apps/develop/cpp-winrt/photo-editor-sample).
+> The source code in this topic is provided in both C# and C++/WinRT. If you're a C++ developer, then for more details and concepts explaining how the code that we show here works, see the [C++/WinRT](../develop/cpp-winrt/index.md) documentation. Relevant topics there include [XAML controls; bind to a C++/WinRT property](/windows/uwp/cpp-and-winrt-apis/binding-property), [XAML items controls; bind to a C++/WinRT collection](../develop/cpp-winrt/binding-collection.md), and [Photo Editor C++/WinRT sample application](../develop/cpp-winrt/photo-editor-sample.md).
 
 ## Step 1: Install tools for the Windows App SDK
 
@@ -912,7 +912,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
         ...
     ```
 
-    If you're unfamiliar with the `local:` syntax shown above (or with the `xmlns:local` syntax already in the opening **Window** tag), then see [XAML namespaces and namespace mapping](/windows/apps/develop/platform/xaml/xaml-namespaces-and-namespace-mapping).
+    If you're unfamiliar with the `local:` syntax shown above (or with the `xmlns:local` syntax already in the opening **Window** tag), then see [XAML namespaces and namespace mapping](../develop/platform/xaml/xaml-namespaces-and-namespace-mapping.md).
 
     Now that we've set an `x:DataType`, we can use `x:Bind` data-binding expressions in the data template to bind to properties of the data type we specified (**ImageFileInfo**, in this case).
 
@@ -928,7 +928,7 @@ In this section we'll use one-time data-bindings. A one-time binding is great fo
 
     An `x:Bind` expression links the value of a UI property with the value of a **data-object** property. Of course, that depends on first setting `x:DataType` to the type of that **data-object** so that the tooling and the runtime know what properties are available to bind to.
 
-    For more info, see [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) and [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth).
+    For more info, see [{x:Bind} markup extension](../develop/platform/xaml/x-bind-markup-extension.md) and [Data binding in depth](/windows/uwp/data-binding/data-binding-in-depth).
 
 1. In the same way, replace the values of the other **TextBlock**s and the **RatingControl**. Here's the result:
 

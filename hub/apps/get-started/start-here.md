@@ -2,7 +2,7 @@
 title: "Quick start: Create your first WinUI 3 app"
 description: Create, build, and run your first WinUI 3 app with the Windows App SDK using Visual Studio 2026 or the .NET command line.
 ms.topic: quickstart
-ms.date: 07/21/2026
+ms.date: 08/29/2026
 author: GrantMeStrength
 ms.author: jken
 keywords: windows, desktop development
@@ -18,7 +18,7 @@ Create, build, and run your first WinUI 3 app. Choose **Visual Studio** for a fu
 
 ## Set up your development environment
 
-To develop WinUI 3 apps with Visual Studio, you need [Visual Studio 2026](/visualstudio/ide/) with the required workloads and [Developer Mode](/windows/advanced-settings/developer-mode) enabled.
+To develop WinUI 3 apps with Visual Studio, you need [Visual Studio 2026](/visualstudio/ide/) with the required workloads and [Developer Mode](../../advanced-settings/developer-mode.md) enabled.
 
 **Set up with WinGet (recommended)**
 
@@ -42,7 +42,7 @@ To review the config file and learn more, see its [README](https://github.com/mi
 
 If you prefer to install tools manually:
 
-1. Enable [Developer Mode](/windows/advanced-settings/developer-mode): open Windows Settings, navigate to **[System > Advanced](ms-settings:developers)**, and toggle **Developer Mode** to **On**.
+1. Enable [Developer Mode](../../advanced-settings/developer-mode.md): open Windows Settings, navigate to **[System > Advanced](ms-settings:developers)**, and toggle **Developer Mode** to **On**.
 
 2. [Download and install Visual Studio 2026](https://visualstudio.microsoft.com/downloads/). For details, see [Install Visual Studio](/visualstudio/install/install-visual-studio).
 
@@ -80,7 +80,7 @@ If you prefer to install tools manually:
 ## Prerequisites
 
 - Windows 10 version 1809 (build 17763) or later
-- [Developer Mode](/windows/advanced-settings/developer-mode) enabled (`ms-settings:developers`)
+- [Developer Mode](../../advanced-settings/developer-mode.md) enabled (`ms-settings:developers`)
 - [.NET 10 SDK](https://dotnet.microsoft.com/download) or later (verify with `dotnet --version`)
 
 ## Create and run your first WinUI 3 app
@@ -125,7 +125,7 @@ If you run into issues building or running your first app, try these common fixe
 | **WinUI templates don't appear in Visual Studio** | Open the Visual Studio Installer, select **Modify**, and confirm the **WinUI application development** workload is checked. Restart Visual Studio after modifying the installation. See the tip in [Set up your development environment](#set-up-your-development-environment) for details. |
 | **Build fails with SDK version errors** | Open the Visual Studio Installer and select **Individual components**. Verify that the Windows SDK version your project targets is installed. In your project file, confirm that `TargetFramework` matches the installed SDK (for example, `net10.0-windows10.0.26100.0`). |
 | **NuGet restore failures** | Clear the local NuGet cache and restore again. In a terminal, run: `dotnet nuget locals all --clear` then `dotnet restore`. |
-| **"Developer Mode not enabled" error** | Open Windows Settings > **[System > Advanced](ms-settings:developers)** and toggle **Developer Mode** to **On**. See [Enable Developer Mode](/windows/advanced-settings/developer-mode) for more information. |
+| **"Developer Mode not enabled" error** | Open Windows Settings > **[System > Advanced](ms-settings:developers)** and toggle **Developer Mode** to **On**. See [Enable Developer Mode](../../advanced-settings/developer-mode.md) for more information. |
 | **Changes not recognized after first SDK install** | After installing or updating the Windows App SDK or Visual Studio workloads for the first time, restart Visual Studio so it picks up the new components. |
 
 > [!TIP]

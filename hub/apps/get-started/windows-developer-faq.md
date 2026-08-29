@@ -2,7 +2,7 @@
 title: Windows developer FAQ
 description: The official Windows developer FAQ. Get answers to common questions
 ms.topic: faq
-ms.date: 07/22/2026
+ms.date: 08/29/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -91,7 +91,7 @@ Topics covered include:
 >
 > This means **WPF/MFC/WinForms** apps can use Windows App SDK APIs that are unrelated to WinUI. Examples include App Lifecycle, Windowing, and Toast Notifications.
 >
-> See [Use the Windows App SDK in an existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project) for more info.
+> See [Use the Windows App SDK in an existing project](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md) for more info.
 
 </details>
 
@@ -179,7 +179,7 @@ Topics covered include:
 
 > Not yet. This is a known gap in the WinUI developer experience. Tools like [XAML Hot Reload](/visualstudio/xaml-tools/xaml-hot-reload) can help in many scenarios. [Work has started](https://github.com/microsoft/WindowsAppSDK/discussions/4710) on a Visual Studio UI designer for WinUI in Windows App SDK 1.7, but there is no timeline yet for its release.
 >
-> For a complete walkthrough of the runtime design tools available for WinUI 3, see [XAML runtime design tools for WinUI 3](/windows/apps/develop/ui/xaml-runtime-design-tools).
+> For a complete walkthrough of the runtime design tools available for WinUI 3, see [XAML runtime design tools for WinUI 3](../develop/ui/xaml-runtime-design-tools.md).
 
 </details>
 
@@ -403,7 +403,7 @@ Topics covered include:
 > - What languages or skills do you already have — .NET, JavaScript, something else?
 > - Do you need access to Windows-specific APIs?
 > - Which framework’s capabilities best match your app’s requirements?
-> - See [this table](/windows/apps/get-started/) for additional comparison factors.
+> - See [this table](index.md) for additional comparison factors.
 > 
 > For many business apps, teams often choose based on existing skills and what the team is most comfortable using.
 

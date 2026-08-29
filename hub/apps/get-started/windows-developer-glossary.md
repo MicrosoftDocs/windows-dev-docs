@@ -2,7 +2,7 @@
 title: Windows developer glossary
 description: A glossary of key terms and concepts for Windows application development including WinUI, WinAppSDK, and AI tools.
 ms.topic: glossary
-ms.date: 07/15/2026
+ms.date: 08/29/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -23,7 +23,7 @@ Often referred to as "app model." The application model combines deployment, iso
 
 #### Application packaging
 
-Describes the way in which your app is packaged before being deployed and installed by users. An app can be packaged, unpackaged, or packaged with external location (see the [Windows developer FAQ](/windows/apps/get-started/windows-developer-faq)).
+Describes the way in which your app is packaged before being deployed and installed by users. An app can be packaged, unpackaged, or packaged with external location (see the [Windows developer FAQ](windows-developer-faq.md)).
 
 
 #### Bootstrapper
@@ -40,7 +40,7 @@ C++/WinRT is a standard C++17 language projection for Windows Runtime (WinRT) AP
 
 #### Dev Drive
 
-A storage volume optimized for developer workloads. Dev Drive uses the Resilient File System (ReFS) and provides faster performance for common development I/O operations like builds, package installs, and source control. See [Set up a Dev Drive on Windows 11](/windows/dev-drive/).
+A storage volume optimized for developer workloads. Dev Drive uses the Resilient File System (ReFS) and provides faster performance for common development I/O operations like builds, package installs, and source control. See [Set up a Dev Drive on Windows 11](../../dev-drive/index.md).
 
 #### Dev Home
 
@@ -132,7 +132,7 @@ For definitions of apps that are packaged, unpackaged, and packaged with externa
 
 #### PowerToys
 
-A set of utilities for power users to tune and streamline their Windows experience for greater productivity. See [PowerToys documentation](/windows/powertoys/).
+A set of utilities for power users to tune and streamline their Windows experience for greater productivity. See [PowerToys documentation](../../powertoys/index.md).
 
 #### Progressive web app (PWA)
 
@@ -167,7 +167,7 @@ Text recognition, also known as optical character recognition (OCR), is supporte
 An application development platform and application model that uses Windows Runtime (WinRT) APIs to deliver packaged apps. UWP apps run in a sandboxed environment, and they inherit the security of the UWP platform. [Learn more about UWP](/windows/uwp/).
 
 >[!NOTE]
-> Build Windows apps with [Windows App SDK and WinUI](/windows/apps/get-started/). You can also use [WPF](/dotnet/desktop/wpf/getting-started).
+> Build Windows apps with [Windows App SDK and WinUI](index.md). You can also use [WPF](/dotnet/desktop/wpf/getting-started).
 
 #### Unmanaged app
 
