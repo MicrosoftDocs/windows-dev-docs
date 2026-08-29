@@ -4,7 +4,7 @@ title: Adjust layout and fonts, and support RTL
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
-ms.date: 05/11/2018
+ms.date: 08/29/2026
 ms.topic: how-to
 keywords: localizability, localization, rtl, ltr
 ms.localizationpriority: medium
@@ -23,7 +23,7 @@ Dynamic layout is the recommended technique, and you'll be able to use it in the
 <TextBlock x:Uid="TitleText">
 ```
 
-For more info about Resources Files (.resw), property identifiers, and **x:Uid**, see [Localize strings in your UI and app package manifest](/windows/apps/windows-app-sdk/mrtcore/localize-strings).
+For more info about Resources Files (.resw), property identifiers, and **x:Uid**, see [Localize strings in your UI and app package manifest](../../windows-app-sdk/mrtcore/localize-strings.md).
 
 ## Fonts
 Use the [**LanguageFont**](/uwp/api/Windows.Globalization.Fonts.LanguageFont?branch=live) font-mapping class for programmatic access to the recommended font family, size, weight, and style for a particular language. The **LanguageFont** class provides access to the correct font info for various categories of content including UI headers, notifications, body text, and user-editable document body fonts.
@@ -39,7 +39,7 @@ If your app has images that must be mirrored (that is, the same image can be fli
 <Image ... FlowDirection="RightToLeft" />
 ```
 
-If your app requires a different image to flip the image correctly, then you can use the resource management system with the `LayoutDirection` qualifier (see the LayoutDirection section of [Tailor your resources for language, scale, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast#layoutdirection)). The system chooses an image named `file.layoutdir-rtl.png` when the app runtime language (see [Understand user profile languages and app manifest languages](manage-language-and-region.md)) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
+If your app requires a different image to flip the image correctly, then you can use the resource management system with the `LayoutDirection` qualifier (see the LayoutDirection section of [Tailor your resources for language, scale, and other qualifiers](../../windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast.md#layoutdirection)). The system chooses an image named `file.layoutdir-rtl.png` when the app runtime language (see [Understand user profile languages and app manifest languages](manage-language-and-region.md)) is set to an RTL language. This approach may be necessary when some part of the image is flipped, but another part isn't.
 
 ## Handling right-to-left (RTL) languages
 When your app is localized for right-to-left (RTL) languages, use the [**FrameworkElement.FlowDirection**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.flowdirection) property, and set symmetrical padding and margins. Layout panels such as [**Grid**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.grid) scale and flip automatically with the value of **FlowDirection** that you set.
@@ -119,6 +119,6 @@ Instead of a single line of code for all languages, this depends on the translat
 
 ## Related topics
 * [Design your app for bidirectional text](design-for-bidi-text.md)
-* [Localize strings in your UI and app package manifest](/windows/apps/windows-app-sdk/mrtcore/localize-strings)
-* [Tailor your resources for language, scale, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast)
+* [Localize strings in your UI and app package manifest](../../windows-app-sdk/mrtcore/localize-strings.md)
+* [Tailor your resources for language, scale, and other qualifiers](../../windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast.md)
 * [Understand user profile languages and app manifest languages](manage-language-and-region.md)

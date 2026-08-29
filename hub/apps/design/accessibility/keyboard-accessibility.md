@@ -4,7 +4,7 @@ ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: Keyboard accessibility
 label: Keyboard accessibility
 template: detail.hbs
-ms.date: 08/21/2026
+ms.date: 08/29/2026
 ms.topic: article
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -212,7 +212,7 @@ Keyboard behavior must still be implemented in code. Use declarative [**Keyboard
 
 For brevity, the sample omits string resources such as "Ctrl+A". In production, localize shortcut text and validate mnemonic choices per locale, since key selection often depends on translated labels.
 
-For additional guidance, see [Shortcut keys](/windows/win32/uxguide/inter-keyboard) in the [Windows User Experience Interaction Guidelines](/windows/apps/design/guidelines-overview).
+For additional guidance, see [Shortcut keys](/windows/win32/uxguide/inter-keyboard) in the [Windows User Experience Interaction Guidelines](../guidelines-overview.md).
 
 ### Implementing a key event handler
 

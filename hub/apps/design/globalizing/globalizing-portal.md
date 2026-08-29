@@ -3,7 +3,7 @@ description: Learn how to design and develop your Windows app for global audienc
 title: Globalization and localization
 ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
 template: detail.hbs
-ms.date: 03/25/2026
+ms.date: 08/29/2026
 ms.topic: article
 keywords: winui, globalization, localizability, localization, internationalization, rtl, bidi
 ms.localizationpriority: medium
@@ -32,7 +32,7 @@ Design and develop your app in such a way that it functions appropriately on sys
 | Support international paper sizes. | The most common paper sizes differ between countries/regions, so if you include features that depend on paper size, such as printing, be sure to support and test common international sizes. |
 | Record the language of the keyboard or IME. | When your app asks the user for text input, record the language tag for the currently enabled keyboard layout or Input Method Editor (IME). This ensures that when the input is displayed later it's presented to the user with the appropriate formatting. Use the [**Language.CurrentInputMethodLanguageTag**](/uwp/api/windows.globalization.language.CurrentInputMethodLanguageTag) property to get the current input language. |
 | Don't use language to assume a user's region; and don't use region to assume a user's language. | Language and region are separate concepts. A user can speak a particular regional variant of a language, like en-GB for English as spoken in the UK, but the user might be in an entirely different country or region. Consider whether your app requires knowledge about the user's language (for UI text, for example), or region (for licensing, for example). For more info, see [Understand user profile languages and app manifest languages](manage-language-and-region.md). |
-| The rules for comparing language tags are non-trivial. | [BCP-47 language tags](https://tools.ietf.org/html/bcp47) are complex. There are a number of issues when comparing language tags, including issues with matching script information, legacy tags, and multiple regional variants. The Resource Management System in Windows takes care of matching for you. You can specify a set of resources in any languages, and the system chooses the appropriate one for the user and the app. See [Manage resources with MRT Core](/windows/apps/windows-app-sdk/mrtcore/mrtcore-overview) and [How the Resource Management System matches language tags](/windows/uwp/app-resources/how-rms-matches-lang-tags). |
+| The rules for comparing language tags are non-trivial. | [BCP-47 language tags](https://tools.ietf.org/html/bcp47) are complex. There are a number of issues when comparing language tags, including issues with matching script information, legacy tags, and multiple regional variants. The Resource Management System in Windows takes care of matching for you. You can specify a set of resources in any languages, and the system chooses the appropriate one for the user and the app. See [Manage resources with MRT Core](../../windows-app-sdk/mrtcore/mrtcore-overview.md) and [How the Resource Management System matches language tags](/windows/uwp/app-resources/how-rms-matches-lang-tags). |
 | Design your UI to accommodate different text lengths and font sizes for labels and text input controls. | Strings translated into different languages can vary greatly in length, so you'll need your UI controls to dynamically size to their content. Common characters in other languages include marks above or below what is typically used in English (such as Å or Ņ). Use the standard font sizes and line heights to provide adequate vertical space. Be aware that fonts for other languages may require larger minimum font sizes to remain legible. See the classes in the [Windows.Globalization.Fonts](/uwp/api/windows.globalization.fonts?branch=live) namespace. |
 | Support the mirroring of reading order. | Text alignment and reading order can be left to right (as in English, for example), or right to left (RTL) (as in Arabic or Hebrew, for example). If you are localizing your product into languages that use a different reading order than your own, then be sure that the layout of your UI elements supports mirroring. Even items such as back buttons, UI transition effects, and images might need to be mirrored. For more info, see [Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md). |
 | Display text and fonts correctly. | The ideal font, font size, and direction of text varies between different markets. For more info, see [**Adjust layout and fonts, and support RTL**](adjust-layout-and-fonts--and-support-rtl.md) and [International fonts](loc-international-fonts.md). |
@@ -65,10 +65,10 @@ Design and develop your app in such a way that it functions appropriately on sys
 
 | Article | Description |
 |---------|-------------|
-| [Manage resources with MRT Core](/windows/apps/windows-app-sdk/mrtcore/mrtcore-overview) | Use the MRT Core resource management system in the Windows App SDK. |
-| [Tailor your resources for language, scale, contrast, and others](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast) | Tailor your app resources for specific language, scale, and contrast settings. |
-| [Localize strings in your UI and app package manifest](/windows/apps/windows-app-sdk/mrtcore/localize-strings) | Localize string resources in your UI and app package manifest. Includes WinUI 3 packaged app setup. |
-| [Load images and assets tailored for scale, theme, contrast, and others](/windows/apps/windows-app-sdk/mrtcore/images-tailored-for-scale-theme-contrast) | Load image resources tailored for display scale, theme, high contrast, and other contexts. |
+| [Manage resources with MRT Core](../../windows-app-sdk/mrtcore/mrtcore-overview.md) | Use the MRT Core resource management system in the Windows App SDK. |
+| [Tailor your resources for language, scale, contrast, and others](../../windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast.md) | Tailor your app resources for specific language, scale, and contrast settings. |
+| [Localize strings in your UI and app package manifest](../../windows-app-sdk/mrtcore/localize-strings.md) | Localize string resources in your UI and app package manifest. Includes WinUI 3 packaged app setup. |
+| [Load images and assets tailored for scale, theme, contrast, and others](../../windows-app-sdk/mrtcore/images-tailored-for-scale-theme-contrast.md) | Load image resources tailored for display scale, theme, high contrast, and other contexts. |
 
 ### Additional topics
 

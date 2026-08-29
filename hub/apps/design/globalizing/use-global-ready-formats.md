@@ -3,7 +3,7 @@ description: Design your app to be global-ready by appropriately formatting date
 title: Globalize your date/time/number formats
 ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
 template: detail.hbs
-ms.date: 11/07/2017
+ms.date: 08/29/2026
 ms.topic: how-to
 keywords: globalization, localizability, localization
 ms.localizationpriority: medium
@@ -45,7 +45,7 @@ If you need to display dates or times yourself then you can use the [**DateTimeF
 
 You can test the code above on your own PC like this.
 
-- Make sure that you have resource files in your project qualified for both "en-US" and "de-DE" (see [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast)).
+- Make sure that you have resource files in your project qualified for both "en-US" and "de-DE" (see [Tailor your resources for language, scale, high contrast, and other qualifiers](../../windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast.md)).
 - Change your user profile language list in **Settings** > **Time & Language** > **Region & language** > **Languages**. Add German (Germany), make it the default, and run the code again.
 
 ## Format dates and times for the user profile language list
@@ -275,7 +275,7 @@ For scenarios where you wish to provide different functionality based solely on 
 * [NumeralSystem values](glob-numeralsystem-values.md)
 * [Calendar, date, and time controls](../../develop/ui/controls/date-and-time.md)
 * [Understand user profile languages and app manifest languages](manage-language-and-region.md)
-* [Tailor your resources for language, scale, high contrast, and other qualifiers](/windows/apps/windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast)
+* [Tailor your resources for language, scale, high contrast, and other qualifiers](../../windows-app-sdk/mrtcore/tailor-resources-lang-scale-contrast.md)
 
 ## Samples
 

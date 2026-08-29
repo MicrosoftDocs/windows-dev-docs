@@ -2,7 +2,7 @@
 description: Learn how to make your Windows app inclusive, accessible, and easy to use for people around the world.
 title: Usability for Windows apps
 ms.topic: article
-ms.date: 05/14/2026
+ms.date: 08/29/2026
 ms.localizationpriority: medium
 ---
 
@@ -27,7 +27,7 @@ Accessibility is about making your app usable by people who have limitations tha
     :::column-end:::
 :::row-end:::
 
-For implementation guidance — including keyboard navigation, screen reader support, and contrast themes — see [Develop accessible Windows apps](/windows/apps/develop/accessibility).
+For implementation guidance — including keyboard navigation, screen reader support, and contrast themes — see [Develop accessible Windows apps](../../develop/accessibility.md).
 
 ## Designing a settings page
 

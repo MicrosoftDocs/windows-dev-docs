@@ -3,7 +3,7 @@ description: You can define a attached layouts for use with containers such as t
 title: AttachedLayout
 label: AttachedLayout
 template: detail.hbs
-ms.date: 07/15/2026
+ms.date: 08/29/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ In this topic, we cover what's involved in creating an attached layout (virtuali
 
 | **Windows App SDK** |
 | - |
-| The layout classes described here are part of WinUI 3, included in the Windows App SDK. For more info, see [Windows App SDK overview](/windows/apps/windows-app-sdk/). |
+| The layout classes described here are part of WinUI 3, included in the Windows App SDK. For more info, see [Windows App SDK overview](../../windows-app-sdk/index.md). |
 
 > **Important APIs**:
 
@@ -107,7 +107,7 @@ The layout's state object can be stored with and retrieved from the container wi
 
 ### UI Virtualization
 
-UI virtualization means delaying the creation of a UI object until _when it's needed_.  It's a performance optimization.  For non-scrolling scenarios determining _when needed_ may be based on any number of things that are app-specific.  In those cases, apps should consider using the [x:Load](/windows/apps/develop/platform/xaml/x-load-attribute). It does not require any special handling in your layout.
+UI virtualization means delaying the creation of a UI object until _when it's needed_.  It's a performance optimization.  For non-scrolling scenarios determining _when needed_ may be based on any number of things that are app-specific.  In those cases, apps should consider using the [x:Load](../../develop/platform/xaml/x-load-attribute.md). It does not require any special handling in your layout.
 
 In scrolling-based scenarios such as a list, determining _when needed_ is often based on "will it be visible to a user" which depends heavily on where it was placed during the layout process and requires special considerations.  This scenario is a focus for this document.
 

@@ -2,7 +2,7 @@
 description: Learn to use acrylic, a type of brush that creates a translucent texture to add depth and help establish a visual hierarchy.
 title: Acrylic material
 template: detail.hbs
-ms.date: 07/22/2026
+ms.date: 08/29/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -89,7 +89,7 @@ It's important to ensure that any text your app presents to users meets contrast
 
 ## Apply acrylic in your app
 
-To learn how to apply background acrylic or in-app acrylic in your app, including how to create custom acrylic brushes, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](/windows/apps/develop/ui/system-backdrops).
+To learn how to apply background acrylic or in-app acrylic in your app, including how to create custom acrylic brushes, see [Apply Mica or Acrylic materials in desktop apps for Windows 11](../../develop/ui/system-backdrops.md).
 
 ## Do's and don'ts
 
@@ -120,4 +120,4 @@ We fine-tuned acrylic's key components to arrive at its unique appearance and pr
 [Fluent Design overview](../index.md)
 - [Mica material](mica.md)
 - [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery) — see Acrylic and other materials in action
-- [Apply Mica or Acrylic materials in desktop apps](/windows/apps/develop/ui/system-backdrops)
+- [Apply Mica or Acrylic materials in desktop apps](../../develop/ui/system-backdrops.md)

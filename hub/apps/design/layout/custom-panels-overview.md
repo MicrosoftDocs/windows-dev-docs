@@ -1,7 +1,7 @@
 ---
 description: You can define custom panels for XAML layout by deriving a custom class from the Panel class.
 title: XAML custom panels overview
-ms.date: 07/13/2026
+ms.date: 08/29/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -40,7 +40,7 @@ The [**Children**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls
 </local:CustomPanel>
 ```
 
-When a XAML parser reads this markup, [**Children**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.panel.children) is known to be the XAML content property for all [**Panel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Panel) derived types, so the parser will add the two [**Button**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Button) elements to the [**UIElementCollection**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.UIElementCollection) value of the **Children** property. The XAML content property facilitates a streamlined parent-child relationship in the XAML markup for a UI definition. For more info about XAML content properties, and how collection properties are populated when XAML is parsed, see the [XAML syntax guide](/windows/apps/develop/platform/xaml/xaml-syntax-guide).
+When a XAML parser reads this markup, [**Children**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.panel.children) is known to be the XAML content property for all [**Panel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Panel) derived types, so the parser will add the two [**Button**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Button) elements to the [**UIElementCollection**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.UIElementCollection) value of the **Children** property. The XAML content property facilitates a streamlined parent-child relationship in the XAML markup for a UI definition. For more info about XAML content properties, and how collection properties are populated when XAML is parsed, see the [XAML syntax guide](../../develop/platform/xaml/xaml-syntax-guide.md).
 
 The collection type that's maintaining the value of the [**Children**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.panel.children) property is the [**UIElementCollection**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.UIElementCollection) class. **UIElementCollection** is a strongly typed collection that uses [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.UIElement) as its enforced item type. **UIElement** is a base type that's inherited by hundreds of practical UI element types, so the type enforcement here is deliberately loose. But it does enforce that you couldn't have a [**Brush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Brush) as a direct child of a [**Panel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Panel), and it generally means that only elements that are expected to be visible in UI and participate in layout will be found as child elements in a **Panel**.
 

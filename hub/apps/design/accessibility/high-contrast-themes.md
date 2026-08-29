@@ -4,7 +4,7 @@ title: Contrast themes
 label: Contrast design guidelines
 keywords: 
 template: detail.hbs
-ms.date: 08/21/2026
+ms.date: 08/29/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -164,7 +164,7 @@ In the following snippet, a Grid background is hard-coded to `#E6E6E6` (light gr
 <Grid Background="#E6E6E6">
 ```
 
-Instead, use [**{ThemeResource} markup extension**](/windows/apps/develop/platform/xaml/themeresource-markup-extension) to resolve values from [**ThemeDictionaries**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary.themedictionaries) in a [**ResourceDictionary**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ResourceDictionary). This enables automatic runtime substitution based on the active user theme.
+Instead, use [**{ThemeResource} markup extension**](../../develop/platform/xaml/themeresource-markup-extension.md) to resolve values from [**ThemeDictionaries**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary.themedictionaries) in a [**ResourceDictionary**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ResourceDictionary). This enables automatic runtime substitution based on the active user theme.
 
 ```xaml
 <Grid Background="{ThemeResource BrandedPageBackgroundBrush}">

@@ -4,7 +4,7 @@ ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Designing inclusive software in Windows
 label: Designing inclusive software
 template: detail.hbs
-ms.date: 03/17/2026
+ms.date: 08/29/2026
 ms.topic: how-to
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -112,5 +112,5 @@ In summary, apply these seven steps to keep inclusive design actionable througho
 * [Inclusive design](https://www.microsoft.com/design/inclusive/)
 * [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft accessibility developer hub](https://developer.microsoft.com/windows/accessible-apps)
-* [Develop accessible Windows apps](/windows/apps/develop/accessibility)
+* [Develop accessible Windows apps](../../develop/accessibility.md)
 * [Accessibility overview](accessibility-overview.md)

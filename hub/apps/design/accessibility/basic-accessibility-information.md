@@ -4,7 +4,7 @@ ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
 title: Expose basic accessibility information
 label: Expose basic accessibility information
 template: detail.hbs
-ms.date: 08/21/2026
+ms.date: 08/29/2026
 ms.topic: how-to
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -121,7 +121,7 @@ Many Windows controls render content through *data binding*, which means accessi
 
 ## Accessible names and localization
 
-Accessible names must be localized with the same rigor as visible UI text. Store label strings in localization resources and connect them through [x:Uid directive](/windows/apps/develop/platform/xaml/x-uid-directive) mappings so spoken output matches the user's language. If you set [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) explicitly, ensure that value also comes from localized resources rather than hard-coded text.
+Accessible names must be localized with the same rigor as visible UI text. Store label strings in localization resources and connect them through [x:Uid directive](../../develop/platform/xaml/x-uid-directive.md) mappings so spoken output matches the user's language. If you set [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) explicitly, ensure that value also comes from localized resources rather than hard-coded text.
 
 Attached properties in [**AutomationProperties**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties) use a qualified resource-key syntax so localization can target the attached property on a specific element. For example, if the element is named `MediumButton`, the resource key for [**AutomationProperties.Name**](/dotnet/api/system.windows.automation.automationproperties.name) is `MediumButton.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name`.
 

@@ -1,7 +1,7 @@
 ---
 description: Learn the fundamentals of designing a Windows widget, including layout, sizing, visual style, and iconography guidance for Windows 11.
 title: Widget design fundamentals
-ms.date: 07/05/2026
+ms.date: 08/29/2026
 ms.topic: article
 author: GrantMeStrength
 ms.author: jken
@@ -61,9 +61,9 @@ Each widget has a 16px margin around it and a 48px [Attribution area](widgets-st
 
 ![Two widget examples side by side. The left image shows guide lines dividing the widget into three columns, illustrating 4 pixel gutters between the columns. The right image shows guide lines dividing the widget into three rows, illustrating 4 pixel gutters between the rows.](./images/widgets-gutters.png)
 
-For widgets that use containers, the gutter between each element is 4px, and the containers should touch the edges of the margins. Your content should also use spacing and sizing values of [Multiples of Four Px](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#multiples-of-four) to achieve a clean, pixel perfect design across different screen resolutions.
+For widgets that use containers, the gutter between each element is 4px, and the containers should touch the edges of the margins. Your content should also use spacing and sizing values of [Multiples of Four Px](../layout/screen-sizes-and-breakpoints-for-responsive-design.md#multiples-of-four) to achieve a clean, pixel perfect design across different screen resolutions.
  
-You should also consult the guidance for spacing and gutters in [Content design basics for Windows apps](/windows/apps/design/basics/content-basics) when designing your content.
+You should also consult the guidance for spacing and gutters in [Content design basics for Windows apps](../basics/content-basics.md) when designing your content.
 
 ## Typography
 
