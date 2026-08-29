@@ -1,8 +1,10 @@
 ---
 title: Distribute an unpackaged WinUI 3 app
 description: Learn how to set WindowsPackageType=None for unpackaged WinUI 3 distribution, understand the runtime deployment options, and review the key limitations before you start.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: how-to
-ms.date: 05/29/2026
+ms.date: 08/29/2026
 keywords: windows app sdk, winappsdk, winui, unpackaged, WindowsPackageType, bootstrapper, self-contained, PublishSingleFile, single-file exe
 ms.localizationpriority: medium
 content-type: how-to
@@ -23,7 +25,7 @@ Unpackaged distribution lets you ship a WinUI 3 app without MSIX — useful for 
 >
 > If these constraints are a concern, consider [packaging your app](index.md) (recommended for most apps) or [packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) to add package identity without a full MSIX conversion.
 
-For details on all packaging options, see [Package and deploy Windows apps overview](/windows/apps/package-and-deploy/).
+For details on all packaging options, see [Package and deploy Windows apps overview](index.md).
 
 If you choose to unpackage a new or existing WinUI app, follow these steps:
 
@@ -80,9 +82,9 @@ The debug Start drop-down in Visual Studio changes from **Local Machine** to **L
 
 Setting the `<WindowsPackageType>None</WindowsPackageType>` project property causes the *auto-initializer* to locate and load a version of the Windows App SDK that's most appropriate for your app.
 
-If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. For more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time), and [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](/windows/apps/windows-app-sdk/tutorial-unpackaged-deployment).
+If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. For more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../windows-app-sdk/use-windows-app-sdk-run-time.md), and [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](../windows-app-sdk/tutorial-unpackaged-deployment.md).
 
-For more info about the bootstrapper, see [Deployment architecture and overview for framework-dependent apps](/windows/apps/windows-app-sdk/deployment-architecture#bootstrapper).
+For more info about the bootstrapper, see [Deployment architecture and overview for framework-dependent apps](../windows-app-sdk/deployment-architecture.md#bootstrapper).
 
 ## Deploying the Windows App SDK runtime
 
@@ -90,7 +92,7 @@ Unpackaged WinUI 3 apps depend on the Windows App SDK runtime being installed on
 
 **Option 1: Windows App SDK runtime installer (.exe) (recommended)**
 
-Include the Windows App SDK runtime installer alongside your app. The runtime installer is a redistributable `.exe` that installs the required Windows App SDK runtime packages. Download it from the [Windows App SDK releases page](https://github.com/microsoft/WindowsAppSDK/releases) and bundle it with your own installer or setup script. For full guidance, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time).
+Include the Windows App SDK runtime installer alongside your app. The runtime installer is a redistributable `.exe` that installs the required Windows App SDK runtime packages. Download it from the [Windows App SDK releases page](https://github.com/microsoft/WindowsAppSDK/releases) and bundle it with your own installer or setup script. For full guidance, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../windows-app-sdk/use-windows-app-sdk-run-time.md).
 
 Users must run the runtime installer once. Subsequent app updates don't require reinstallation of the runtime unless the required Windows App SDK version changes.
 
@@ -107,7 +109,7 @@ Set `<WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>` in your proj
 
 The trade-off: your output folder is significantly larger (the full runtime is included), and each app update carries the full runtime payload. Use this option for simple distribution scenarios or when you can't control what's installed on the target machine.
 
-→ [Deploy unpackaged apps that use the Windows App SDK](/windows/apps/windows-app-sdk/deploy-unpackaged-apps) for the complete runtime deployment reference.
+→ [Deploy unpackaged apps that use the Windows App SDK](../windows-app-sdk/deploy-unpackaged-apps.md) for the complete runtime deployment reference.
 
 ## Single-file EXE
 

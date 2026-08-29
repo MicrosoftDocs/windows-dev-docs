@@ -1,7 +1,7 @@
 ---
 title: Download and install package updates from the Store
 description: Learn how to mark packages as mandatory in Partner Center and write code in your packaged app to download and install package updates from the Microsoft Store.
-ms.date: 06/25/2026
+ms.date: 08/29/2026
 ms.topic: how-to
 keywords: windows 10, windows 11, winui 3, windows app sdk, store, package updates, storecontext, msix
 author: GrantMeStrength
@@ -205,7 +205,7 @@ To mark a package submission as mandatory:
 For more information, see [Upload app packages](/windows/apps/publish/publish-your-app/upload-app-packages?pivots=store-installer-msix).
 
 > [!NOTE]
-> If you create a [package flight](/windows/apps/publish/package-flights), you can mark the packages as mandatory using a similar UI on the **Packages** page for the flight. In this case, the mandatory package update applies only to the customers who are part of the flight group.
+> If you create a [package flight](../publish/package-flights.md), you can mark the packages as mandatory using a similar UI on the **Packages** page for the flight. In this case, the mandatory package update applies only to the customers who are part of the flight group.
 
 ### Code example for mandatory packages
 

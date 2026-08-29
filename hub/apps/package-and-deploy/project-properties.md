@@ -1,8 +1,10 @@
 ---
 title: Project properties and auto-initializers
 description: Describes the project properties that you can set in your Visual Studio project file to customize how your app is deployed, including configuring auto-initializers.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: article
-ms.date: 05/29/2026
+ms.date: 08/29/2026
 ms.localizationpriority: medium
 ---
 
@@ -19,7 +21,7 @@ In the Windows App SDK, there are several routines whose job it is to ensure tha
 
 All of the auto-initializers are conditionally enabled by default, based on your app's packaging and deployment configuration. Here are details about them:
 
-* Bootstrapper (also known as dynamic dependencies) auto-initializer. This auto-initializer calls the bootstrapper API automatically at app startup. It's required for framework-dependent unpackaged apps, in order to ensure that the Windows App Runtime is added to the app's package graph. For info about framework-dependent (and self-contained) apps, see [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview). For info about unpackaged (and packaged) apps, see [Windows apps: packaging, deployment, and process](/windows/apps/get-started/intro-pack-dep-proc).
+* Bootstrapper (also known as dynamic dependencies) auto-initializer. This auto-initializer calls the bootstrapper API automatically at app startup. It's required for framework-dependent unpackaged apps, in order to ensure that the Windows App Runtime is added to the app's package graph. For info about framework-dependent (and self-contained) apps, see [Windows App SDK deployment overview](deploy-overview.md). For info about unpackaged (and packaged) apps, see [Windows apps: packaging, deployment, and process](../get-started/intro-pack-dep-proc.md).
   * For a packaged app, you don't need the bootstrapper/dynamic dependencies auto-initializer because the `appxmanifest.xml` file expresses the framework dependency. And for a self-contained app, you don't need the bootstrapper/dynamic dependencies auto-initializer because those apps don't use the framework.
   * You can opt out of the bootstrapper/dynamic dependencies auto-initializer in your `.csproj` or `.vcxproj` file via `<WindowsAppSdkBootstrapInitialize>false</WindowsAppSdkBootstrapInitialize>`.
 * Deployment Manager auto-initializer. This is required for framework-dependent packaged apps that make use of main/singleton functionality (for example, push notifications), because the `appxmanifest.xml` file can't express those dependencies.
@@ -57,16 +59,16 @@ In the table below are the properties that you can set in your app's project fil
 |Property name and description|Values|For more info|
 |-|-|-|
 |**AppxPackage**. Specifies whether or not a WinUI app is packaged.|*false* (for an unpackaged app), or absent (for a packaged app)|[Unpackage a WinUI app](unpackage-winui-app.md)|
-|**EnableMsixTooling**. Enables the single-project MSIX feature for a project.|*true* (to enable), or absent (to disable)|[Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)|
+|**EnableMsixTooling**. Enables the single-project MSIX feature for a project.|*true* (to enable), or absent (to disable)|[Package your app using single-project MSIX](../windows-app-sdk/single-project-msix.md)|
 |**UseCrtSDKReferenceStaticWarning**. Suppresses the build warning that fires when a C++ packaged app links the CRT statically (which is required for self-contained deployment using the hybrid CRT). Set to *false* in packaged app projects that opt into the [hybrid CRT](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/Coding-Guidelines/HybridCRT.md).|*false* (to suppress the warning in packaged self-contained apps), or absent (default, warning enabled)|[Windows App SDK deployment guide for self-contained apps](./self-contained-deploy/deploy-self-contained-apps.md)|
-|**UseWinUI**. Specifies whether you're using the WinUI user interface framework in your app.|*true*, or absent (for *false*)|[WinUI in the Windows App SDK (WinUI)](/windows/apps/winui/winui3/)|
+|**UseWinUI**. Specifies whether you're using the WinUI user interface framework in your app.|*true*, or absent (for *false*)|[WinUI in the Windows App SDK (WinUI)](../winui/winui3/index.md)|
 |**WindowsAppSDKSingleFileVerifyConfiguration**. Controls whether the SDK runs a build-time validation target when `PublishSingleFile` is set. When enabled (the default), the target emits **errors** if required properties are missing (`EnableMsixTooling`, `WindowsPackageType=None`, `IncludeAllContentForSelfExtract`) and **warnings** if self-contained settings are absent (`WindowsAppSDKSelfContained`, `SelfContained`). Set to *false* only to suppress all checks — for example, in CI pipelines where you have verified compliance manually.|*true* (the default — validation runs), *false* (suppress all checks)|Defined in `Microsoft.WindowsAppSDK.SingleFile.targets` (included automatically by the NuGet package when `PublishSingleFile` is set)|
-|**WindowsAppSdkBootstrapInitialize**. Determines whether or not the Windows App SDK leverages the bootstrapper/dynamic dependencies auto-initializer.|*true* (the default for executables), *false* (the default for non-executables)|[Opting out of (or into) auto-initializers](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time#opting-out-of-or-into-automatic-module-initialization)|
+|**WindowsAppSdkBootstrapInitialize**. Determines whether or not the Windows App SDK leverages the bootstrapper/dynamic dependencies auto-initializer.|*true* (the default for executables), *false* (the default for non-executables)|[Opting out of (or into) auto-initializers](../windows-app-sdk/use-windows-app-sdk-run-time.md)|
 |**WindowsAppSdkDeploymentManagerInitialize**. Determines whether or not the Windows App SDK leverages the Deployment Manager auto-initializer.|*true* (the default), *false*||
 |**WindowsAppSDKRuntimePatchLevel1**, **WindowsAppSDKRuntimePatchLevel2**, and **WindowsAppSDKDisabledChanges**. Determines whether or not the Windows App SDK leverages the compatibility auto-initializer, and configures any desired compatibility options for Windows App Runtime behavior of changes added in servicing updates.|Various, or absent (to disable the auto-initializer)|[RuntimeCompatibilityOptions](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions)|
-|**WindowsAppSDKSelfContained**. Determines whether or not an app is deployed *self-contained*.|*true*, or absent (for *false*)|[Windows App SDK deployment guide for self-contained apps](/windows/apps/package-and-deploy/self-contained-deploy/deploy-self-contained-apps)|
-|**WindowsAppSdkUndockedRegFreeWinRTInitialize**. Determines whether or not the Windows App SDK leverages the Registration-free activation auto-initializer.|*true* (the default for executables), *false* (the default for non-executables)|[Opting out of (or into) automatic UndockedRegFreeWinRT support](/windows/apps/package-and-deploy/self-contained-deploy/deploy-self-contained-apps#opting-out-of-or-into-automatic-undockedregfreewinrt-support)|
-|**WindowsPackageType**. Setting `<WindowsPackageType>None</WindowsPackageType>` for an unpackaged app causes the bootstrapper/dynamic dependencies auto-initializer to locate and load a version of the Windows App SDK version that's most appropriate for your app.|*None*, or absent (to disable the auto-initializer)|[Unpackage a WinUI app](unpackage-winui-app.md)<br/><br/>[Behind the scenes, and opting out of auto-initializers](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time#behind-the-scenes-and-opting-out-of-automatic-module-initialization)|
+|**WindowsAppSDKSelfContained**. Determines whether or not an app is deployed *self-contained*.|*true*, or absent (for *false*)|[Windows App SDK deployment guide for self-contained apps](self-contained-deploy/deploy-self-contained-apps.md)|
+|**WindowsAppSdkUndockedRegFreeWinRTInitialize**. Determines whether or not the Windows App SDK leverages the Registration-free activation auto-initializer.|*true* (the default for executables), *false* (the default for non-executables)|[Opting out of (or into) automatic UndockedRegFreeWinRT support](self-contained-deploy/deploy-self-contained-apps.md#opting-out-of-or-into-automatic-undockedregfreewinrt-support)|
+|**WindowsPackageType**. Setting `<WindowsPackageType>None</WindowsPackageType>` for an unpackaged app causes the bootstrapper/dynamic dependencies auto-initializer to locate and load a version of the Windows App SDK that's most appropriate for your app.|*None*, or absent (to disable the auto-initializer)|[Unpackage a WinUI app](unpackage-winui-app.md)<br/><br/>[Behind the scenes, and opting out of auto-initializers](../windows-app-sdk/use-windows-app-sdk-run-time.md)|
 
 ## Example
 
@@ -88,12 +90,12 @@ Here's an excerpt from a typical `.csproj` file for a C# WinUI 3 project, showin
 
 ## Related topics
 
-* [Deployment overview](/windows/apps/package-and-deploy/)
+* [Deployment overview](index.md)
 * [Create your first WinUI (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app)
-* [Package your app using single-project MSIX](/windows/apps/windows-app-sdk/single-project-msix)
+* [Package your app using single-project MSIX](../windows-app-sdk/single-project-msix.md)
 * [RuntimeCompatibilityOptions](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions)
-* [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time)
-* [Windows App SDK deployment guide for self-contained apps](/windows/apps/package-and-deploy/self-contained-deploy/deploy-self-contained-apps)
-* [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview)
-* [Windows apps: packaging, deployment, and process](/windows/apps/get-started/intro-pack-dep-proc)
-* [WinUI in the Windows App SDK (WinUI)](/windows/apps/winui/winui3/)
+* [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../windows-app-sdk/use-windows-app-sdk-run-time.md)
+* [Windows App SDK deployment guide for self-contained apps](self-contained-deploy/deploy-self-contained-apps.md)
+* [Windows App SDK deployment overview](deploy-overview.md)
+* [Windows apps: packaging, deployment, and process](../get-started/intro-pack-dep-proc.md)
+* [WinUI in the Windows App SDK (WinUI)](../winui/winui3/index.md)

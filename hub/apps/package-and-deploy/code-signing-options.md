@@ -1,8 +1,10 @@
 ---
 title: Code signing options for Windows app developers
 description: Compare code signing options for Windows apps distributed outside the Microsoft Store, including Azure Artifact Signing.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: concept-article
-ms.date: 08/24/2026
+ms.date: 08/29/2026
 ms.localizationpriority: medium
 ---
 
@@ -27,11 +29,11 @@ If you publish your app as an **MSIX package** through the Microsoft Store, code
 Publishing an **MSIX package** through the Microsoft Store is the recommended distribution path for most Windows apps. Microsoft re-signs your package automatically, meaning users never see a SmartScreen warning and you never need to purchase or renew a certificate.
 
 > [!NOTE]
-> If you're submitting a **Win32 MSI or EXE installer** to the Store (rather than an MSIX package), Microsoft does not re-sign your installer. The installer and its PE files must be signed with a certificate chaining to a CA in the [Microsoft Trusted Root Program](/security/trusted-root/participants-list) — self-signed certificates are not accepted. See [App package requirements for MSI/EXE](/windows/apps/publish/publish-your-app/msi/app-package-requirements).
+> If you're submitting a **Win32 MSI or EXE installer** to the Store (rather than an MSIX package), Microsoft does not re-sign your installer. The installer and its PE files must be signed with a certificate chaining to a CA in the [Microsoft Trusted Root Program](/security/trusted-root/participants-list) — self-signed certificates are not accepted. See [App package requirements for MSI/EXE](../publish/publish-your-app/msi/app-package-requirements.md).
 
 Create a free developer account at [storedeveloper.microsoft.com](https://storedeveloper.microsoft.com). After you register, use [Partner Center](https://partner.microsoft.com/dashboard) to submit your app and manage its listing.
 
-→ [Publish your app to the Microsoft Store](/windows/apps/publish/publish-your-app/msix/create-app-submission)
+→ [Publish your app to the Microsoft Store](../publish/publish-your-app/msix/create-app-submission.md)
 
 ## Azure Artifact Signing (formerly Trusted Signing) — recommended for non-Store distribution
 

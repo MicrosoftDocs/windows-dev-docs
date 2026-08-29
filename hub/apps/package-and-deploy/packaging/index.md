@@ -1,8 +1,10 @@
 ---
 title: Packaging overview
 description: Understand the differences between packaged and unpackaged apps and how packaging affects installation, updates, and access to Windows features.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: concept-article
-ms.date: 08/14/2026
+ms.date: 08/29/2026
 ms.localizationpriority: medium
 ---
 
@@ -109,7 +111,7 @@ If your app currently uses a legacy installer, you can migrate to MSIX to gain c
 | **MSIX with modifications needed** | Use the [Package Support Framework](/windows/msix/psf/package-support-framework-overview) to apply runtime fixes (file/registry redirection) without changing your app code. | No |
 
 > [!TIP]
-> For apps that have complex installers with kernel drivers, services running as SYSTEM, or machine-wide COM registrations that MSIX doesn't support, consider **MSIX with external location** (packaged with external location). This gives you package identity for Windows features while using a traditional installer for components that require elevated access. See [Grant package identity by packaging with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
+> For apps that have complex installers with kernel drivers, services running as SYSTEM, or machine-wide COM registrations that MSIX doesn't support, consider **MSIX with external location** (packaged with external location). This gives you package identity for Windows features while using a traditional installer for components that require elevated access. See [Grant package identity by packaging with external location](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md).
 
 ### Key considerations
 

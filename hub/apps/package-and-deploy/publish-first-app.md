@@ -1,8 +1,10 @@
 ---
 title: Publish your first Windows app
 description: An end-to-end guide for indie developers — from a built app to users' hands. Covers choosing a distribution path, code signing, packaging, and getting your first users.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: concept-article
-ms.date: 05/29/2026
+ms.date: 08/29/2026
 ms.localizationpriority: high
 ---
 
@@ -28,7 +30,7 @@ Most new indie apps are a good fit for the Store. If you're unsure, start there.
 
 **If you're publishing an MSIX package to the Microsoft Store:** skip this step. Microsoft re-signs your package automatically as part of the certification process.
 
-**If you're submitting a Win32 MSI/EXE installer to the Microsoft Store:** you still need to sign your installer before submission. The installer and its PE files must be signed with a certificate chaining to a CA in the [Microsoft Trusted Root Program](/security/trusted-root/participants-list). Self-signed certificates are not acceptable. See [App package requirements for MSI/EXE](/windows/apps/publish/publish-your-app/msi/app-package-requirements).
+**If you're submitting a Win32 MSI/EXE installer to the Microsoft Store:** you still need to sign your installer before submission. The installer and its PE files must be signed with a certificate chaining to a CA in the [Microsoft Trusted Root Program](/security/trusted-root/participants-list). Self-signed certificates are not acceptable. See [App package requirements for MSI/EXE](../publish/publish-your-app/msi/app-package-requirements.md).
 
 **If you're distributing directly:** you need a trusted code signing certificate. Unsigned apps and self-signed apps trigger strong SmartScreen warnings, and some enterprise environments will block them entirely.
 
@@ -84,8 +86,8 @@ The Store submission process runs through [Partner Center](https://partner.micro
 5. **Certification** — Microsoft reviews your app for policy compliance. Certification typically takes a few business days for new apps.
 6. **Publish** — Once certified, your app appears in the Store and is available to users.
 
-→ [Create your app submission](/windows/apps/publish/publish-your-app/msix/create-app-submission)  
-→ [App package requirements](/windows/apps/publish/publish-your-app/msix/app-package-requirements)
+→ [Create your app submission](../publish/publish-your-app/msix/create-app-submission.md)  
+→ [App package requirements](../publish/publish-your-app/msix/app-package-requirements.md)
 
 ## Step 4b: Distribute directly (alternative path)
 
@@ -162,6 +164,6 @@ Once your app is published, you can:
 - [Code signing options for Windows app developers](code-signing-options.md)
 - [SmartScreen reputation for developers](smartscreen-reputation.md)
 - [Current status of distribution features](distribution-feature-status.md)
-- [Create your app submission](/windows/apps/publish/publish-your-app/msix/create-app-submission)
+- [Create your app submission](../publish/publish-your-app/msix/create-app-submission.md)
 - [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/)
 - [Windows Package Manager (winget)](https://github.com/microsoft/winget-pkgs)
