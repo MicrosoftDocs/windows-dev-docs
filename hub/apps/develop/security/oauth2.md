@@ -1,7 +1,7 @@
 ---
 title: Implement OAuth 2.0 in Windows Apps
 description: Implement OAuth 2.0 auth code flow with PKCE in Windows desktop apps using Windows App SDK OAuth2Manager, with examples.
-ms.date: 07/16/2026
+ms.date: 08/30/2026
 ms.topic: concept-article
 keywords: windows, winui, winrt, dotnet, security
 #customer intent: As a Windows app developer, I want to learn how to implement OAuth 2.0 in my app so that I can securely authenticate users and access protected resources.
@@ -15,7 +15,7 @@ keywords: windows, winui, winrt, dotnet, security
 
 ## Overview
 
-The [OAuth2Manager](/windows/windows-app-sdk/api/winrt/microsoft.security.authentication.oauth.oauth2manager) in Windows App SDK enables desktop applications such as WinUI 3 to perform OAuth 2.0 authorization on Windows. The **OAuth2Manager** API doesn't provide APIs for the implicit request and resource owner password credential because of the security concerns that entails. Use the authorization code grant type with Proof Key for Code Exchange (PKCE). For more information, see the [PKCE RFC](https://tools.ietf.org/html/rfc7636).
+The [OAuth2Manager](/windows/windows-app-sdk/api/winrt/microsoft.security.authentication.oauth.oauth2manager) in Windows App SDK enables desktop applications such as WinUI 3 to perform OAuth 2.0 authorization on Windows. The **OAuth2Manager** API doesn't provide APIs for the implicit request and resource owner password credential because of the security concerns that entails. Use the authorization code grant type with Proof Key for Code Exchange (PKCE). For more information, see the [PKCE RFC](https://datatracker.ietf.org/doc/html/rfc7636).
 
 > [!NOTE]
 > **OAuth2Manager** is designed for general OAuth 2.0 flows with any identity provider (GitHub, Google, custom, etc.) and always uses the system browser for the authorization step. If you specifically want to sign in with **Microsoft accounts or Microsoft Entra ID (work/school) accounts** with **silent SSO** — using the account already signed in to Windows, with no browser prompt — use [MSAL.NET with the Web Account Manager (WAM) broker](/entra/msal/dotnet/acquiring-tokens/desktop-mobile/wam) instead. Web Account Manager also provides Windows Hello integration and conditional access support that OAuth2Manager does not.
@@ -24,7 +24,7 @@ The [OAuth2Manager](/windows/windows-app-sdk/api/winrt/microsoft.security.authen
 
 The **OAuth2Manager** API for Windows App SDK handles OAuth 2.0 authorization code flows with PKCE for desktop apps. It works across all Windows platforms supported by Windows App SDK, providing a consistent token acquisition interface without requiring third-party browser-based workarounds.
 
-The **OAuth2Manager** is different from the **WebAuthenticationBroker** in WinRT. It follows OAuth 2.0 best practices more closely - for example, by using the user's default browser. The best practices for the API come from the IETF (Internet Engineering Task Force) OAuth 2.0 Authorization Framework [RFC 6749](https://tools.ietf.org/html/rfc6749), PKCE [RFC 7636](https://tools.ietf.org/html/rfc7636), and OAuth 2.0 for Native Apps [RFC 8252](https://tools.ietf.org/html/rfc8252).
+The **OAuth2Manager** is different from the **WebAuthenticationBroker** in WinRT. It follows OAuth 2.0 best practices more closely - for example, by using the user's default browser. The best practices for the API come from the IETF (Internet Engineering Task Force) OAuth 2.0 Authorization Framework [RFC 6749](https://datatracker.ietf.org/doc/html/rfc6749), PKCE [RFC 7636](https://datatracker.ietf.org/doc/html/rfc7636), and OAuth 2.0 for Native Apps [RFC 8252](https://datatracker.ietf.org/doc/html/rfc8252).
 
 ## OAuth 2.0 code examples
 
@@ -381,4 +381,4 @@ protected override void OnActivated(IActivatedEventArgs args)
 
 - [WebAuthenticationBroker](/uwp/api/windows.security.authentication.web.webauthenticationbroker)
 - [OAuth2Manager](/windows/windows-app-sdk/api/winrt/microsoft.security.authentication.oauth.oauth2manager)
-- [PKCE RFC 7636](https://tools.ietf.org/html/rfc7636)
+- [PKCE RFC 7636](https://datatracker.ietf.org/doc/html/rfc7636)

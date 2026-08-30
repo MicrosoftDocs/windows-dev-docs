@@ -1,7 +1,7 @@
 ---
 description: WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages.
 title: WebSockets
-ms.date: 08/28/2026
+ms.date: 08/30/2026
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
@@ -11,7 +11,7 @@ keywords: windows app sdk, winui, networking, websocket, messagewebsocket, strea
 # WebSockets
 WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages.
 
-Under the [WebSocket Protocol](https://tools.ietf.org/html/rfc6455), data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time. WebSockets are ideal for use in multiplayer gaming (both real-time and turn-based), instant social network notifications, up-to-date displays of stock or weather information, and other apps requiring secure and fast data transfer.
+Under the [WebSocket Protocol](https://datatracker.ietf.org/doc/html/rfc6455), data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time. WebSockets are ideal for use in multiplayer gaming (both real-time and turn-based), instant social network notifications, up-to-date displays of stock or weather information, and other apps requiring secure and fast data transfer.
 
 To establish a WebSocket connection, a specific, HTTP-based handshake is exchanged between the client and the server. If successful, the application-layer protocol is "upgraded" from HTTP to WebSockets, using the previously established TCP connection. Once this occurs, HTTP is completely out of the picture; data can be sent or received using the WebSocket protocol by both endpoints, until the WebSocket connection is closed.
 
@@ -27,7 +27,7 @@ Windows provides support for both client and server use of WebSockets. The [**Wi
 | Similar to a [UDP or datagram socket](sockets.md#build-a-basic-udp-socket-client-and-server) (in the sense of being intended for frequent, small messages), but with TCP's reliability, packet order guarantees, and congestion control. | Similar to a [TCP or stream socket](sockets.md#build-a-basic-tcp-socket-client-and-server). |
 
 ## Secure your connection with TLS/SSL
-In most cases, you'll want to  use a secure WebSocket connection so that the data you send and receive is encrypted. This will also increase the chances that your connection will succeed, because many intermediaries such as firewalls and proxies reject unencrypted WebSocket connections. The [WebSocket protocol](https://tools.ietf.org/html/rfc6455#section-3) defines these two URI schemes.
+In most cases, you'll want to  use a secure WebSocket connection so that the data you send and receive is encrypted. This will also increase the chances that your connection will succeed, because many intermediaries such as firewalls and proxies reject unencrypted WebSocket connections. The [WebSocket protocol](https://datatracker.ietf.org/doc/html/rfc6455#section-3) defines these two URI schemes.
 
 | URI scheme | Purpose |
 | - | - |
@@ -828,7 +828,7 @@ protected:
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## Related topics
-* [WebSocket Protocol](https://tools.ietf.org/html/rfc6455)
+* [WebSocket Protocol](https://datatracker.ietf.org/doc/html/rfc6455)
 * [Sockets](sockets.md)
 * [Networking basics](networking-basics.md)
 * [Which networking technology?](which-networking-technology.md)

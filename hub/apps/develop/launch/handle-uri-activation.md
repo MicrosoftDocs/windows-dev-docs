@@ -1,7 +1,7 @@
 ---
 title: Handle URI activation with a Windows app
 description: Learn how to register a Windows app to become the default handler for a Uniform Resource Identifier (URI) scheme name.
-ms.date: 02/11/2025
+ms.date: 08/30/2026
 ms.topic: how-to
 keywords: windows 10, uwp, windows 11
 ms.localizationpriority: medium
@@ -24,7 +24,7 @@ These steps show how to register for a custom URI scheme name, `alsdk://`, and h
 The following APIs are used in this topic:
 
 - [Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs](/uwp/api/Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs)
-- [Windows.UI.Xaml.Application.OnActivated](/uwp/api/microsoft.ui.xaml.application.onactivated)
+- [Windows.UI.Xaml.Application.OnActivated](/uwp/api/windows.ui.xaml.application.onactivated)
 - [AppInstance.GetCurrent().GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)
 
 > [!NOTE]
@@ -83,7 +83,7 @@ Apps that become the default for a URI scheme name have their icons displayed in
 > [!NOTE]
 > In a WinUI app, in App.OnLaunched (or in fact at any time) you can call [AppInstance.GetCurrent().GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) to retrieve the activated event args, and check them to determine how the app was activated. See [Application lifecycle functionality migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle) for more information about lifecycle differences between UWP and WinUI apps.
 
-- [Windows.UI.Xaml.Application.OnActivated](/uwp/api/microsoft.ui.xaml.application.onactivated)
+- [Windows.UI.Xaml.Application.OnActivated](/uwp/api/windows.ui.xaml.application.onactivated)
 
 ```csharp
 public partial class App
@@ -154,7 +154,7 @@ Any app or website can invoke your URI scheme with arbitrary payloads, including
 - **Avoid treating URI parameters as executable input**. Do not pass URI query values directly to `Process.Start`, `ShellExecute`, or SQL queries without sanitization.
 
 > [!NOTE]
-> If you are creating a new URI scheme name for your app, be sure to follow the guidance in [RFC 4395](https://tools.ietf.org/html/rfc4395). This ensures that your name meets the standards for URI schemes.
+> If you are creating a new URI scheme name for your app, be sure to follow the guidance in [RFC 4395](https://datatracker.ietf.org/doc/html/rfc4395). This ensures that your name meets the standards for URI schemes.
 
 > [!NOTE]
 > When a UWP app is launched via Protocol Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.

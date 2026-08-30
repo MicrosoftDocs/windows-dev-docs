@@ -3,7 +3,7 @@ description: The Windows Push Notification Services (WNS) enables third-party de
 title: Windows Push Notification Services (WNS) overview
 ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
 template: detail.hbs
-ms.date: 08/21/2026
+ms.date: 08/30/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -55,7 +55,7 @@ After the app has successfully created a channel URI, it sends it to its cloud s
 
 To send a notification, the cloud service must be authenticated through WNS. The first step in this process occurs when you register your app with the Microsoft Store Dashboard. During the registration process, your app is given a Package security identifier (SID) and a secret key. This information is used by your cloud service to authenticate with WNS.
 
-The WNS authentication scheme is implemented using the client credentials profile from the [OAuth 2.0](https://tools.ietf.org/html/draft-ietf-oauth-v2-23) protocol. The cloud service authenticates with WNS by providing its credentials (Package SID and secret key). In return, it receives an access token. This access token allows a cloud service to send a notification. The token is required with every notification request sent to the WNS.
+The WNS authentication scheme is implemented using the client credentials profile from the [OAuth 2.0](https://datatracker.ietf.org/doc/html/draft-ietf-oauth-v2-23) protocol. The cloud service authenticates with WNS by providing its credentials (Package SID and secret key). In return, it receives an access token. This access token allows a cloud service to send a notification. The token is required with every notification request sent to the WNS.
 
 At a high level, the information chain is as follows:
 

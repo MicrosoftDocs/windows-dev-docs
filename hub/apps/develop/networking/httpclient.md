@@ -1,7 +1,7 @@
 ---
 description: Use HttpClient and the rest of the Windows.Web.Http namespace API to send and receive information using the HTTP 2.0 and HTTP 1.1 protocols.
 title: HttpClient
-ms.date: 08/25/2026
+ms.date: 08/30/2026
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
@@ -37,7 +37,7 @@ The classes in the [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) namespace a
 
 -   HTTP Request progress info available on asynchronous methods.
 
-The [**Windows.Web.Http.HttpRequestMessage**](/uwp/api/Windows.Web.Http.HttpRequestMessage) class represents an HTTP request message sent by [**Windows.Web.Http.HttpClient**](/uwp/api/Windows.Web.Http.HttpClient). The [**Windows.Web.Http.HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage) class represents an HTTP response message received from an HTTP request. HTTP messages are defined in [RFC 2616](https://tools.ietf.org/html/rfc2616) by the IETF.
+The [**Windows.Web.Http.HttpRequestMessage**](/uwp/api/Windows.Web.Http.HttpRequestMessage) class represents an HTTP request message sent by [**Windows.Web.Http.HttpClient**](/uwp/api/Windows.Web.Http.HttpClient). The [**Windows.Web.Http.HttpResponseMessage**](/uwp/api/Windows.Web.Http.HttpResponseMessage) class represents an HTTP response message received from an HTTP request. HTTP messages are defined in [RFC 2616](https://datatracker.ietf.org/doc/html/rfc2616) by the IETF.
 
 The [**Windows.Web.Http**](/uwp/api/Windows.Web.Http) namespace represents HTTP content as the HTTP entity body and headers including cookies. HTTP content can be associated with an HTTP request or an HTTP response. The **Windows.Web.Http** namespace provides a number of different classes to represent HTTP content.
 
