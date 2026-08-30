@@ -138,6 +138,69 @@ jobs:
 
 Commit the workflow file to your main branch, and then go to the Actions tab on your GitHub repository and watch your workflow run! It should successfully run and produce artifacts that contain your built MSIX app.
 
+## Build an x86 and x64 bundle for the Microsoft Store
+
+The preceding workflow uses a matrix to create separate x86 and x64 packages for sideloading. To create one package upload file for the Microsoft Store, build both architectures in a single MSBuild invocation instead. The `AppxBundlePlatforms` property specifies the architectures in the bundle, `AppxBundle=Always` creates the bundle, and `UapAppxPackageBuildMode=StoreUpload` creates the `.msixupload` file.
+
+Use the following workflow instead of the workflow in step 3:
+
+```yaml
+name: WinUI Microsoft Store package
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    env:
+      Solution_Name: your-solution-name.sln
+      Configuration: Release
+      Bundle_Platforms: x86|x64
+      Appx_Package_Dir: Packages\
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Install .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    - name: Setup MSBuild.exe
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Restore the application
+      run: msbuild $env:Solution_Name /t:Restore /p:Configuration=$env:Configuration
+
+    - name: Create the Store package
+      run: >
+        msbuild $env:Solution_Name
+        /p:Configuration=$env:Configuration
+        /p:Platform=x86
+        /p:AppxBundlePlatforms="$env:Bundle_Platforms"
+        /p:AppxBundle=Always
+        /p:UapAppxPackageBuildMode=StoreUpload
+        /p:AppxPackageDir="$env:Appx_Package_Dir"
+        /p:AppxPackageSigningEnabled=false
+        /p:GenerateAppxPackageOnBuild=true
+
+    - name: Upload the Store package
+      uses: actions/upload-artifact@v4
+      with:
+        name: Microsoft Store package
+        path: '**/Packages/**'
+```
+
+The `Platform=x86` property selects the solution configuration that invokes the packaging target. `AppxBundlePlatforms=x86|x64` controls which architectures that target builds and includes in the bundle. The Microsoft Store signs the package after submission, so this example disables package signing.
+
+Before you upload the `.msixupload` file, make sure the package identity in your manifest matches the identity that Partner Center assigns to your app. For the remaining submission steps, see [Create an app submission](../publish/publish-your-app/msix/create-app-submission.md).
+
 ## Building from command line
 
 If you want to build your solution by using the command line, or by using any other CI system, run MSBuild with these arguments. The `GenerateAppxPackageOnBuild` property causes the MSIX package to be generated.
@@ -147,6 +210,20 @@ If you want to build your solution by using the command line, or by using any ot
 /p:UapAppxPackageBuildMode=SideloadOnly
 /p:AppxBundle=Never
 /p:GenerateAppxPackageOnBuild=true
+```
+
+To create the x86 and x64 package upload file for the Microsoft Store from the command line, run:
+
+```powershell
+msbuild YourSolution.sln `
+    /p:Configuration=Release `
+    /p:Platform=x86 `
+    /p:AppxBundlePlatforms="x86|x64" `
+    /p:AppxBundle=Always `
+    /p:UapAppxPackageBuildMode=StoreUpload `
+    /p:AppxPackageDir="Packages\" `
+    /p:AppxPackageSigningEnabled=false `
+    /p:GenerateAppxPackageOnBuild=true
 ```
 
 ::: zone-end
