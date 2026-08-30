@@ -1,7 +1,7 @@
 ---
 title: Set up WinGet MCP Server
 description: Learn how to set up the WinGet MCP server for use with AI agents in Visual Studio Code and GitHub Copilot CLI, including prerequisites, finding the executable path, and configuration.
-ms.date: 07/19/2026
+ms.date: 08/30/2026
 ms.topic: how-to
 no-loc: [winget, configure, --enable]
 ---
@@ -80,11 +80,11 @@ For detailed information about MCP configuration and setup in VS Code, see [Use 
 
 ## Configure the MCP server in GitHub Copilot CLI
 
-[GitHub Copilot CLI](https://docs.github.com/copilot/concepts/agents/about-copilot-cli) brings AI-powered assistance directly to your terminal. After registering the WinGet MCP server with Copilot CLI, you can search for and install packages using natural language prompts — without leaving the command line.
+[GitHub Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-copilot-cli) brings AI-powered assistance directly to your terminal. After registering the WinGet MCP server with Copilot CLI, you can search for and install packages using natural language prompts — without leaving the command line.
 
 ### Copilot CLI prerequisites
 
-- [GitHub Copilot CLI installed](https://docs.github.com/copilot/how-tos/set-up/install-copilot-cli) and authenticated
+- [GitHub Copilot CLI installed](https://docs.github.com/en/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli) and authenticated
 - The WinGet MCP server executable path (see [Find the WinGet MCP server executable path](#find-the-winget-mcp-server-executable-path))
 
 ### Option 1: Use the interactive `/mcp add` command (recommended)

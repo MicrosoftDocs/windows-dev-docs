@@ -1,7 +1,7 @@
 ---
 title: Set up continuous integration for your WinUI app
 description: How to automate WinUI builds with continuous integration using GitHub Actions and Azure Pipelines to produce sideload and/or Store packages.
-ms.date: 07/22/2026
+ms.date: 08/30/2026
 zone_pivot_groups: winui3-version-c#-only
 ms.topic: how-to
 keywords: ci, continuous integration, automated builds, github actions, pipelines, winui 3, winui3, windows app sdk
@@ -28,7 +28,7 @@ Then, close/cancel out of the dialogs and notice that a new **.pfx** file has be
 
 ## Step 2: Add your certificate to the Actions secrets
 
-You should avoid submitting certificates to your repo if at all possible, and git ignores them by default. To manage the safe handling of sensitive files like certificates, GitHub supports [secrets](https://docs.github.com/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets).
+You should avoid submitting certificates to your repo if at all possible, and git ignores them by default. To manage the safe handling of sensitive files like certificates, GitHub supports [secrets](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets).
 
 To upload a certificate for your automated build:
 

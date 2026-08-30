@@ -2,7 +2,7 @@
 description: Steps to use GitHub Actions to publish app updates to Microsoft Store.
 title: Publish app updates to Microsoft Store with GitHub Actions 
 ms.topic: how-to
-ms.date: 07/22/2026
+ms.date: 08/30/2026
 ---
 
 # Publishing app updates to Microsoft Store with GitHub Actions 
@@ -49,7 +49,7 @@ You can automate app updates using GitHub Actions for both types of apps, **MSIX
 
 ## [MSIX](#tab/msix)
 
-[Add the GitHub Action Workflow](https://docs.github.com/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing package and app metadata updates to store. 
+[Add the GitHub Action Workflow](https://docs.github.com/en/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing package and app metadata updates to store. 
 
 To understand how to automate package and metadata updates using GitHub Actions, check out the following video:
 
@@ -177,7 +177,7 @@ For more information on commands, refer [Microsoft Store Developer CLI (MSIX)](/
 
 ## [MSI/EXE](#tab/msiexe)
 
-[Add the GitHub Action Workflow](https://docs.github.com/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing package and app metadata updates to store.
+[Add the GitHub Action Workflow](https://docs.github.com/en/actions/tutorials/create-an-example-workflow) to invoke the Microsoft GitHub action (microsoft-store-apppublisher) for publishing package and app metadata updates to store.
 
 ### For package updates
 

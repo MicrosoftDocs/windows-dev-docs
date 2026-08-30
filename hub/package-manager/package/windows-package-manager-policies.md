@@ -1,7 +1,7 @@
 ---
 title: Windows Package Manager repository policies
 description: Provides the Windows Package Manager repository policies.
-ms.date: 11/28/2022
+ms.date: 08/30/2026
 ms.topic: overview
 ---
 
@@ -16,7 +16,7 @@ ms.topic: overview
 Thank you for your interest in providing a Product to the Windows Package Manager repository.
 
 - **Product** refers to content in whatever form including, but not limited to, apps, games, titles, and any additional content sold or offered from within a **Product**.
-- **Submission** refers to a [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) of manifest files and includes but is not limited to the Product and metadata about the Product.
+- **Submission** refers to a [pull request](https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request) of manifest files and includes but is not limited to the Product and metadata about the Product.
 
 A few principles to get you started:
 
