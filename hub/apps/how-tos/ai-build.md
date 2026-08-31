@@ -2,7 +2,7 @@
 title: "Tutorial: Build a Windows app with GitHub Copilot"
 description: A step-by-step tutorial for building a WinUI 3 Windows app using GitHub Copilot, the WinUI 3 plugin, and the Microsoft Learn MCP server.
 ms.topic: tutorial
-ms.date: 05/19/2026
+ms.date: 08/31/2026
 ms.author: jken
 author: GrantMeStrength
 keywords: windows, github copilot, winui, tutorial, agent mode, mcp server
@@ -12,6 +12,9 @@ ms.localizationpriority: medium
 # Tutorial: Build a Windows app with GitHub Copilot
 
 In this tutorial, you use GitHub Copilot in agent mode to build a complete WinUI 3 app — a simple **notes app** with a list of notes, the ability to add and delete entries, and a settings page. You'll see exactly which prompts to use at each step, and how the WinUI 3 plugin and Learn MCP Server keep Copilot accurate throughout.
+
+> [!NOTE]
+> This article focuses on GitHub Copilot and its Windows development tools. If you're new to AI-assisted development, start with [Build a WinUI app with an AI coding assistant](../tutorials/winui-ai-assisted/intro.md) to learn a tool-neutral workflow for inspecting and verifying generated code.
 
 > [!div class="checklist"]
 > * Scaffold a WinUI 3 project with Copilot

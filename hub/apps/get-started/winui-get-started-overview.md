@@ -1,8 +1,8 @@
 ---
 title: Get started with WinUI
-description: Choose your development path to build Windows apps with WinUI 3 and the Windows App SDK — using Visual Studio or the command line.
+description: Choose a development setup and learn how to build Windows apps with WinUI 3, including a guided AI-assisted development workflow.
 ms.topic: overview
-ms.date: 07/07/2026
+ms.date: 08/31/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -30,6 +30,12 @@ Two supported paths exist for creating a WinUI 3 project.
 
 Both paths produce equivalent WinUI 3 projects. The Visual Studio path handles MSIX signing and deployment automatically. The command-line path uses `dotnet run` for local development (the included `Microsoft.Windows.SDK.BuildTools.WinApp` package handles debug identity automatically); packaging for distribution requires additional steps.
 
+## Build with an AI coding assistant
+
+You can use an AI coding assistant with either development path. The assistant can generate project code and explain unfamiliar concepts, but you still need to constrain it to WinUI 3, build its changes, inspect the result, and verify Windows APIs against current documentation.
+
+The [AI-assisted WinUI tutorial](../tutorials/winui-ai-assisted/intro.md) teaches a repeatable **Ask → Generate → Build → Inspect → Verify → Refine** workflow. It also shows how to detect generated code that mixes WinUI 3 with UWP, WPF, or other Windows UI frameworks.
+
 ## Prerequisites
 
 Both paths share the same minimum requirements.
@@ -47,3 +53,6 @@ The Windows App SDK is a separate install from Windows. Visual Studio installs i
 
 > [!div class="nextstepaction"]
 > [Quick start: Command line](start-here.md?tabs=command-line)
+
+> [!div class="nextstepaction"]
+> [Tutorial: Build a WinUI app with an AI coding assistant](../tutorials/winui-ai-assisted/intro.md)

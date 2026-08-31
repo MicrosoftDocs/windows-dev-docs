@@ -77,7 +77,7 @@ items:
       href: get-started/winui-get-started-overview.md
     - name: Get started with WinUI
       href: get-started/start-here.md
-    - name: "Tutorial: Create your first WinUI app"
+    - name: "Tutorial: Create your first WinUI 3 app"
       items:
       - name: Introduction
         href: tutorials/winui-notes/intro.md
@@ -91,6 +91,18 @@ items:
         href: tutorials/winui-notes/all-notes.md
       - name: 5. Navigation
         href: tutorials/winui-notes/navigation.md
+    - name: "Tutorial: Build with an AI coding assistant"
+      items:
+      - name: Introduction
+        href: tutorials/winui-ai-assisted/intro.md
+      - name: 1. Plan and prompt
+        href: tutorials/winui-ai-assisted/plan.md
+      - name: 2. Data and persistence
+        href: tutorials/winui-ai-assisted/data.md
+      - name: 3. Accessible and adaptive UI
+        href: tutorials/winui-ai-assisted/interface.md
+      - name: 4. Verify and refine
+        href: tutorials/winui-ai-assisted/verify.md
   - name: Migrate and modernize
     href: windows-app-sdk/migrate-to-windows-app-sdk/toc.yml
   - name: Tools and samples

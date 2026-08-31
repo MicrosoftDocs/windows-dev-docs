@@ -2,7 +2,7 @@
 title: "Quick start: Create your first WinUI 3 app"
 description: Create, build, and run your first WinUI 3 app with the Windows App SDK using Visual Studio 2026 or the .NET command line.
 ms.topic: quickstart
-ms.date: 08/29/2026
+ms.date: 08/31/2026
 author: GrantMeStrength
 ms.author: jken
 keywords: windows, desktop development
@@ -132,6 +132,9 @@ If you run into issues building or running your first app, try these common fixe
 > If none of the above resolves your issue, search the [Windows App SDK GitHub issues](https://github.com/microsoft/WindowsAppSDK/issues) or ask on [Microsoft Q&A](/answers/tags/windows-app-sdk).
 
 ## Next steps
+
+> [!TIP]
+> If you plan to use an AI coding assistant, continue with [Build a WinUI app with an AI coding assistant](../tutorials/winui-ai-assisted/intro.md). It teaches how to constrain generated code to WinUI 3 and verify the result.
 
 :::row:::
     :::column:::
