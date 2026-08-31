@@ -1,137 +1,166 @@
 ---
 title: Moving from Mac (Unix) to Windows
-description: A guide to help you transition from a Mac (Unix) to a Windows development environment, including shortcut key mapping and a brief overview of concepts that differ between Mac and Windows.
+description: Set up a Windows development environment with current tools, shortcuts, Unix commands, WSL, WinGet, Dev Drive, and PowerToys.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: how-to
-keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, help changing dev environments, Mac OS X to Windows, help moving from Mac to PC
+keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, Mac OS X to Windows, help moving from Mac to PC
 ms.localizationpriority: medium
-ms.date: 06/04/2026
+ms.date: 08/31/2026
 ---
 
-# Guide for changing your dev environment from Mac to Windows
+# Moving from Mac (Unix) to Windows
 
-The following tips and control equivalents help you transition between a Mac and Windows (or WSL/Linux) development environment.
+This guide helps you transfer familiar macOS development workflows to Windows, Windows Subsystem for Linux (WSL), and Windows-native developer tools.
 
-For app development, the nearest equivalent to Xcode is [Visual Studio](https://visualstudio.microsoft.com). For cross-platform source code editing (and a huge number of plug-ins), [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432) is the most popular choice.
+For native Windows app development, the nearest equivalent to Xcode is [Visual Studio](https://visualstudio.microsoft.com). For cross-platform source code editing and a large extension ecosystem, use [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432). If you build Windows apps from a terminal or a cross-platform framework, the public-preview [Windows App Development CLI](../apps/dev-tools/winapp-cli/index.md) can set up SDKs, add package identity, and create MSIX packages.
+
+## Set up Windows for development
+
+Start with these Windows 11 features:
+
+1. **Configure developer settings.** On Windows 11, version 25H2 and later, open **Settings > System > Advanced** to configure file extensions, hidden files, long paths, the default terminal, PowerShell scripts, sudo, Developer Mode, and Dev Drive. On earlier releases, search Settings for **For developers**. Developer Mode is primarily needed to develop, deploy, and test Windows apps; it isn't required for most web or cross-platform development. For details, see [Advanced Windows Settings](../advanced-settings/index.md).
+1. **Install tools with WinGet.** [Windows Package Manager (WinGet)](/windows/package-manager/) is the Windows equivalent of a package manager such as Homebrew. Use it to search for, install, upgrade, remove, and configure applications. For example, `winget upgrade --all` updates packages that WinGet manages.
+1. **Make setup repeatable.** [WinGet Configuration](/windows/package-manager/configuration/) uses a YAML file to declare packages and Windows settings. Store a configuration with your project or onboarding documentation, review its resources before running it, and apply it with:
+
+    ```powershell
+    winget configure -f <path-to-configuration-file>
+    ```
+
+1. **Consider a Dev Drive.** [Dev Drive](../dev-drive/index.md) is a ReFS volume optimized for development workloads. Use it for source repositories, package caches, and build output rather than general documents. Create one from **Settings > System > Storage > Advanced storage settings > Disks & volumes**.
 
 ## Keyboard shortcuts
 
 > [!TIP]
-> Use [PowerToys Keyboard Manager](../powertoys/keyboard-manager.md) to map Windows shortcuts to the shortcuts you use on a Mac.
+> Use [PowerToys Keyboard Manager](../powertoys/keyboard-manager.md) to remap keys and shortcuts. [PowerToys Quick Accent](../powertoys/quick-accent.md) provides fast access to accented characters.
 
-| **Operation** | **Mac** | **Windows** |
-|---------------|--------------------|---------------------|
+| Operation | macOS | Windows |
+| --- | --- | --- |
 | Copy | Command+C | Ctrl+C |
 | Cut | Command+X | Ctrl+X |
 | Paste | Command+V | Ctrl+V |
 | Undo | Command+Z | Ctrl+Z |
 | Save | Command+S | Ctrl+S |
 | Open | Command+O | Ctrl+O |
-| Lock computer | Command+Control+Q | WindowsKey+L |
-| Show desktop | Command+F3 | WindowsKey+D |
-| Open file browser | Command+N | WindowsKey+E |
-| Minimize windows | Command+M | WindowsKey+M |
-| Search | Command+Space | WindowsKey |
-| Close active window | Command+W | Control+W |
-| Switch current task | Command+Tab | Alt+Tab |
-| Maximize a window to full screen | Control+Command+F | WindowsKey+Up |
-| Save screen (Screenshot) | Command+Shift+3 | WindowsKey+PrtScn (saves to file) or PrtScn (to clipboard) |
-| Save region/window (Screenshot) | Command+Shift+4 | WindowsKey+Shift+S (opens Snipping Tool) |
+| Lock computer | Command+Control+Q | Windows key+L |
+| Show desktop | Command+F3 | Windows key+D |
+| Open file browser | Command+N in Finder | Windows key+E |
+| Minimize all windows in the front app or across the desktop | Command+Option+M (front app) | Windows key+M (desktop) |
+| Search | Command+Space | Windows key+S |
+| Close a document or tab | Command+W | Ctrl+W |
+| Quit the active app or close the active window | Command+Q (quit app) | Alt+F4 (close window) |
+| Switch apps | Command+Tab | Alt+Tab |
+| Show open windows | Control+Up | Windows key+Tab |
+| Switch virtual desktops | Control+Left or Control+Right | Windows key+Ctrl+Left or Windows key+Ctrl+Right |
+| Open Snap layouts | N/A | Windows key+Z |
+| Save a screenshot | Command+Shift+3 | Windows key+PrtScn |
+| Capture a region or window | Command+Shift+4 | Windows key+Shift+S |
 | View item information or properties | Command+I | Alt+Enter |
- | Select all items | Command+A | Ctrl+A |
-| Select more than one item in a list (noncontiguous) | Command, then click each item | Control, then click each item |
-| Type special characters | Option+ character key | Alt+ character key|
+| Select all items | Command+A | Ctrl+A |
+| Select noncontiguous items | Command, then select each item | Ctrl, then select each item |
+| Open emoji and symbol picker | Control+Command+Space | Windows key+. |
+
+In Windows Terminal, use Ctrl+Shift+C and Ctrl+Shift+V to copy and paste by default. Ctrl+C remains available to interrupt a running command.
 
 ## Trackpad shortcuts
 
 > [!NOTE]
-> Some of these shortcuts require a "Precision Trackpad," such as the trackpad on Surface devices and some other third-party laptops. 
-> 
-> You can configure trackpad options on both platforms.
+> These gestures require a precision touchpad. Configure three- and four-finger gestures under **Settings > Bluetooth & devices > Touchpad**.
 
- **Operation** | **Mac** | **Windows** |
-|---------------|--------------------|---------------------|
-| Scroll | Two finger vertical swipe | Two finger vertical swipe |
-| Zoom | Two finger pinch in and out | Two finger pinch in and out |
-| Swipe back and forward between views | Two finger sideways swipe | Two finger sideways swipe |
-| Switch virtual workspaces | Four fingers sideways swipe | Four fingers sideways swipe |
-| Display currently open apps | Four fingers upward swipe | Three fingers upward swipe |
-| Switch between apps | N/A | Slow three finger sideways swipe |
-| Go to desktop | Spread out four fingers | Three finger swipe downwards |
-| Open Action center | Two finger slide from right | Three finger tap |
-| Open extra information | Three finger tap | N/A |
-|Show launchpad / start an app | Pinch with four fingers | Tap with four fingers |
+| Operation | macOS | Windows |
+| --- | --- | --- |
+| Scroll | Two-finger vertical swipe | Two-finger vertical swipe |
+| Zoom | Two-finger pinch | Two-finger pinch |
+| Open a context menu | Two-finger click | Two-finger tap |
+| Show open windows | Four-finger upward swipe | Three-finger upward swipe |
+| Show desktop | Spread four fingers | Three-finger downward swipe |
+| Switch apps | N/A | Three-finger left or right swipe |
+| Switch virtual desktops | Four-finger left or right swipe | Four-finger left or right swipe |
+
+For the current gesture list, see [Touch gestures for Windows](https://support.microsoft.com/windows/touch-gestures-for-windows-a9d28305-4818-a5df-4e2b-e5590f850741).
 
 ## Command-line shells and terminals
 
-Windows supports several command-line shells and terminals. These tools sometimes work a little differently from the Mac's BASH shell and terminal emulator apps like Terminal and iTerm.
+Windows Terminal can host PowerShell, Command Prompt, WSL distributions, SSH, Azure CLI, Git Bash, and other command-line applications.
 
-### Windows shells
+### PowerShell
 
-Windows has two primary command-line shells:
+[PowerShell](/powershell/scripting/overview) is a cross-platform shell and automation language built on .NET. PowerShell 7 is open source, runs on Windows, macOS, and Linux, and installs alongside the Windows PowerShell 5.1 version included with Windows. Install the current version with WinGet:
 
-1. **[PowerShell](/powershell/scripting/overview)** - PowerShell is a cross-platform task automation and configuration management framework. It consists of a command-line shell and scripting language built on .NET. With PowerShell, administrators, developers, and power-users can quickly control and automate tasks that manage complex processes and various aspects of the environment and operating system. PowerShell is [fully open-source](https://github.com/powershell/powershell), and because it's cross-platform, it's also [available for Mac and Linux](/powershell/scripting/install/installing-powershell).
+```powershell
+winget install --id Microsoft.PowerShell --source winget
+```
 
-    **Mac and Linux BASH shell users**: PowerShell also supports many command aliases that you're already familiar with. For example:
-    - List the contents of the current directory with: `ls`
-    - Move files with: `mv`
-    - Move to a new directory with: `cd <path>`
+Launch PowerShell 7 with `pwsh`. Commands such as `ls`, `mv`, and `cat` are aliases for PowerShell cmdlets, not GNU utilities. Their parameters and object-based pipeline behavior differ from Bash. Use [`Get-Help`](/powershell/scripting/learn/ps101/02-help-system) and read about [PowerShell aliases](/powershell/scripting/learn/shell/using-aliases) when translating scripts.
 
-    Some commands and arguments are different in PowerShell versus BASH. Learn more by entering: [`get-help`](/powershell/scripting/learn/ps101/02-help-system) in PowerShell or check out the [compatibility aliases](/powershell/scripting/samples/appendix-1---compatibility-aliases) in the docs.
+Command Prompt remains available for batch files and tools that depend on Cmd syntax.
 
-    To run PowerShell as an administrator, enter "PowerShell" in your Windows start menu, then select **Run as Administrator**.
+### Native Unix-style tools
 
-1. **Windows Command Line (Cmd)** - Windows still ships the traditional Command Prompt (and Console - see below), providing compatibility with current and legacy MS-DOS-compatible commands and batch files. Cmd is useful when running existing or older batch files or command-line operations. However, learn and use PowerShell since Cmd is now in maintenance and won't receive any improvements or new features in the future.
+Many familiar commands run natively on Windows without WSL:
 
-### Native Unix-style commands
+- **[Coreutils for Windows](../core-utils/overview.md)** provides Microsoft-maintained builds of commands such as `ls`, `cat`, `cp`, `mv`, `grep`, `find`, `head`, `tail`, `wc`, `sort`, and `uniq`. Install it with `winget install Microsoft.Coreutils`. PowerShell aliases can take precedence, so use names such as `ls.exe` or `cp.exe` when you specifically want the Coreutils command.
+- **[sudo](../advanced-settings/sudo/index.md)** elevates a command through User Account Control on Windows 11, version 24H2 and later. Unlike Unix `sudo`, it doesn't run a command as another user. On Windows 11, version 25H2 and later, enable it under **Settings > System > Advanced**.
+- **[curl](../curl/index.md)** and **[tar](../tar/index.md)** are included for downloading files and working with archives.
+- **[Edit](../edit/index.md)** is a lightweight terminal text editor included in current Windows 11 releases. Install it on other supported systems with `winget install Microsoft.Edit`.
 
-If you're coming from a Mac or Linux background, you'll find many familiar commands available natively on Windows without needing WSL:
+## Use Linux with WSL
 
-- **[Coreutils for Windows](../core-utils/overview.md)**: A native port of GNU Coreutils that brings commands like `ls`, `cat`, `cp`, `mv`, `grep`, `head`, `tail`, `wc`, `sort`, `uniq`, and more to Windows. Install via WinGet (`winget install uutils.coreutils`) or from GitHub. In PowerShell, built-in aliases may take precedence — use `ls.exe`, `cp.exe`, etc. to call the Coreutils versions directly. See the [full command list](../core-utils/commands.md).
-- **[sudo](../advanced-settings/sudo/index.md)**: Run commands with elevated privileges, just like on macOS. Available on Windows 11 24H2 and later — enable it in **Settings > For Developers**.
-- **[curl](../curl/index.md)** and **[tar](../tar/index.md)**: Available natively for downloading files and working with archives.
-- **[Edit](../edit/index.md)**: A lightweight terminal-based text editor for quick edits from the command line. Included in Windows 11 starting with the September 2025 update, or install via WinGet (`winget install Microsoft.Edit`).
+[Windows Subsystem for Linux (WSL)](/windows/wsl/) runs a Linux environment directly on Windows and is often the most familiar option for developers coming from macOS. New installations use WSL 2 by default.
 
-These tools mean you can use your familiar Unix workflow directly in Windows without switching to WSL for basic tasks.
+To install WSL with the default Ubuntu distribution, run the following command in an elevated PowerShell window, and then restart Windows:
 
-### Linux shells
+```powershell
+wsl --install
+```
 
-You can now install Windows Subsystem for Linux (WSL) to support running a Linux shell within Windows. This means that you can run **bash**, with whichever specific Linux distribution you choose, integrated right inside Windows. Using WSL provides the kind of environment most familiar to Mac users. For example, you use **ls** to list the files in a current directory, not **dir** as you would with the traditional Windows Cmd Shell. To learn about installing and using WSL, see the [Windows Subsystem for Linux Installation Guide](/windows/wsl/install). Linux distributions that you can install on Windows with WSL include:
+To choose a different distribution, list the available distributions and install one by name instead:
 
-1. Ubuntu 24.04 LTS
-1. Ubuntu 22.04 LTS
-1. Kali Linux
-1. Debian GNU/Linux
-1. openSUSE Leap 15.6
-1. SUSE Linux Enterprise Server 15 SP6
+```powershell
+wsl --list --online
+wsl --install -d <DistributionName>
+```
 
-Just to name a few. Find more in the [WSL install docs](/windows/wsl/install#change-the-default-linux-distribution-installed) and install them directly from the [Microsoft Store](https://aka.ms/wslstore).
+After installation, use the following command to update WSL:
 
-## Windows terminals
+```powershell
+wsl --update
+```
 
-In addition to many third-party offerings, Microsoft provides two terminals. These terminals are GUI applications that provide access to command-line shells and applications.
+For the best performance with Linux tools, store projects in the Linux file system, such as `/home/<user>/project`, rather than under `/mnt/c`. From WSL, run `explorer.exe .` to open the current directory in File Explorer. Windows exposes Linux files under `\\wsl$`, and Windows and Linux commands can call each other.
 
-1. **[Windows Terminal](/windows/terminal/)**: Windows Terminal is a modern, highly configurable command-line terminal application that provides very high performance, low-latency command-line user experience, multiple tabs, split window panes, custom themes and styles, multiple "profiles" for different shells or command-line apps, and considerable opportunities for you to configure and personalize many aspects of your command-line user experience. Windows Terminal comes pre-installed on Windows 11. On Windows 10, you can install it from the [Microsoft Store](https://aka.ms/terminal).
+Visual Studio Code can open a project inside WSL with `code .`, keeping the editor UI on Windows while extensions, terminals, and tools run in Linux. See [Developing in WSL with Visual Studio Code](/windows/wsl/tutorials/wsl-vscode) and [Working across Windows and Linux file systems](/windows/wsl/filesystems).
 
-    You can use Windows Terminal to open tabs connected to PowerShell, WSL shells (like Ubuntu or Debian), the traditional Windows Command Prompt, or any other command-line app (for example, SSH, Azure CLI, Git Bash).
+## Use Windows Terminal
 
-1. **[Console](/windows/console/)**: On macOS and Linux, users usually start their preferred terminal application, which then creates and connects to the user's default shell (for example, BASH).
+[Windows Terminal](/windows/terminal/) is the recommended host for command-line work on Windows. It supports profiles, tabs, split panes, themes, Unicode, and GPU-accelerated text rendering. Windows Terminal is included with Windows 11 and is available from the Microsoft Store for Windows 10.
 
-    However, due to a quirk of history, Windows users traditionally start their shell, and Windows automatically starts and connects a GUI Console app.
+- Open its command palette with Ctrl+Shift+P.
+- Split the current profile into panes with Alt+Shift+Plus or Alt+Shift+Minus.
+- Create profiles for PowerShell, WSL, Command Prompt, SSH, and other tools.
 
-    While you can still launch shells directly and use the legacy Windows Console, it's highly recommended that you instead install and use Windows Terminal to experience the best, fastest, most productive command-line experience.
+The legacy Windows Console Host remains available for compatibility with older command-line applications.
+
+## Window management and productivity
+
+Windows 11 includes Snap layouts, Snap Assist, Snap groups, and multiple desktops. Hover over a window's maximize button or press Windows key+Z to choose a layout. Use Windows key+Tab to view Snap groups and desktops.
+
+[Microsoft PowerToys](../powertoys/index.md) adds utilities for developers and power users. [Command Palette](../powertoys/command-palette/overview.md) is a Spotlight-like launcher for apps, commands, files, settings, WinGet packages, open windows, clipboard history, and terminal profiles. Open it with Windows key+Alt+Space. Other useful utilities include Keyboard Manager, Quick Accent, FancyZones, and Workspaces.
+
+File Explorer combines local and cloud files, pinned locations, tabs, and recent items. Use **View > Show** to display file extensions and hidden files. The streamlined context menu keeps common commands at the top; select **Show more options** for legacy shell extensions.
 
 ## Apps and utilities
 
- **App** | **macOS** | **Windows** |
-|---------------|--------------------|---------------------|
-| Settings and Preferences | System Preferences | Settings |
-| Task manager | Activity Monitor | Task Manager |
-| Disk formatting | Disk Utility | Disk Management |
-| Text editing | TextEdit | Notepad or [Edit](../edit/index.md) (terminal) |
-| Event viewing | Console | Event Viewer |
-| Find files/apps | Command+Space | Windows key |
-| Package manager | Homebrew | [WinGet](/windows/package-manager/) |
-| Developer storage | N/A | [Dev Drive](../dev-drive/index.md) |
-| Unix CLI tools | Built-in (ls, cat, grep, etc.) | [Coreutils](../core-utils/overview.md) + [sudo](../advanced-settings/sudo/index.md) |
-| Window management | Mission Control | Snap Layouts (WindowsKey+Z) |
-| Productivity utilities | N/A | [PowerToys](../powertoys/index.md) |
+| Task | macOS | Windows |
+| --- | --- | --- |
+| Settings | System Settings | Settings |
+| Monitor processes | Activity Monitor | Task Manager |
+| Format and partition disks | Disk Utility | Disk Management |
+| Edit text | TextEdit | Notepad or [Edit](../edit/index.md) |
+| View system events | Console | Event Viewer |
+| Find files and apps | Spotlight | Windows Search or [PowerToys Command Palette](../powertoys/command-palette/overview.md) |
+| Manage packages | Homebrew | [WinGet](/windows/package-manager/) |
+| Store development files | N/A | [Dev Drive](../dev-drive/index.md) |
+| Run Unix command-line tools | Built in | [Coreutils](../core-utils/overview.md), [sudo](../advanced-settings/sudo/index.md), or WSL |
+| Arrange windows | Mission Control | Snap layouts and multiple desktops |
+| Add productivity utilities | N/A | [PowerToys](../powertoys/index.md) |
