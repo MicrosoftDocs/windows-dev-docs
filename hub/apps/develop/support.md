@@ -112,7 +112,7 @@ If you're publishing apps to the Microsoft Store or need help with Partner Cente
 ### Store publishers
 
 - **[Partner Center dashboard](https://partner.microsoft.com/dashboard)** - Manage your apps and submissions
-- **[Partner Center support (Copilot)](https://occclientglobal.iconchannelserviceprod.microsoft.com/?organizationid=6a25e557-3464-4468-abaa-94794b5f8437&partnercode=windowsdevcenter&locale=en-us)** - Get help with Partner Center accounts and Store submissions *(requires Partner Center account)*
+- **Create a support case with Dev Center support** - Get help with Partner Center account management, enrollment, app management, payouts and more - [Entra ID users click here](https://engagecenter.microsoft.com/#view/Microsoft_AzureCXP_EngageHub/EngageHubMenu.MenuView/targetExperience/sfb/sapId/bc9d4067-7218-61b9-1d2c-68ae591acf9d) and [MSA users click here](https://engagecenter.microsoft.com/f8cdef31-a31e-4b4a-93e4-5f571e91255a/#view/Microsoft_AzureCXP_EngageHub/EngageHubMenu.MenuView/targetExperience/sfb/sapId/bc9d4067-7218-61b9-1d2c-68ae591acf9d).
 - **[Report app certification issues](mailto:reportapp@microsoft.com)** - Contact the certification team about specific app failures
 
 ### Enterprise support
