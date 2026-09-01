@@ -1,13 +1,13 @@
 ---
 ms.topic: include
-ms.date: 07/07/2026
+ms.date: 08/31/2026
 ---
 
 :::row:::
     :::column:::
-        [![Core concepts icon](../apps/images/tile-coreconcepts.png)](../apps/get-started/index.md)<br>
-        **[Core concepts](../apps/get-started/index.md)**<br>
-       Learn the fundamental building blocks of the Windows platform, including the Windows SDK, Windows App SDK, and how to choose the right app framework.
+        [![Choose a development path icon](../apps/images/tile-coreconcepts.png)](../apps/get-started/index.md)<br>
+        **[Choose a development path](../apps/get-started/index.md)**<br>
+       Start a new app with WinUI 3, modernize an existing desktop app, or find guidance for another framework.
     :::column-end:::
     :::column:::
        [![Get started with WinUI icon](../apps/images/tile-getstarted.png)](../apps/get-started/winui-get-started-overview.md)<br>

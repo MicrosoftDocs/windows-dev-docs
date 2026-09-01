@@ -1,12 +1,12 @@
 ### YamlMime:Hub
 title: Windows app development documentation
-summary: "Build native Windows desktop apps with the Windows App SDK and WinUI 3 — the recommended platform for new development using C#, C++, and XAML on Windows 10 and 11."
+summary: "Build native Windows desktop apps with the Windows App SDK and WinUI 3, the recommended UI framework for new Windows apps."
 brand: windows
 metadata:
    title: Windows app development documentation
-   description: Build native Windows desktop apps with Windows App SDK, WinUI 3, C#, C++, and XAML. The recommended platform for new Windows 10 and 11 desktop development, with packaging, deployment, and Microsoft Store publishing.
+   description: Build native Windows desktop apps with Windows App SDK and WinUI 3, the recommended UI framework for new Windows apps using C# or C++.
    ms.topic: hub-page
-   ms.date: 07/13/2026
+   ms.date: 08/31/2026
    ms.localizationpriority: medium
 
 highlightedContent:
@@ -18,65 +18,9 @@ highlightedContent:
     - title: Introduction to the Windows developer platform
       itemType: concept
       url: /windows/apps/introduction
-    - title: Build your first WinUI 3 app
+    - title: Start building with WinUI 3
       itemType: tutorial
       url: /windows/apps/get-started/start-here
-
-conceptualContent:
-  title: Which platform should I use?
-  summary: "Choose the framework that fits your scenario. WinUI 3 with the Windows App SDK is recommended for new native Windows apps. UWP is in maintenance mode — for new projects use Windows App SDK with WinUI 3, and to modernize existing UWP apps see the migration guide."
-  items:
-    - title: WinUI 3 (Windows App SDK)
-      summary: "Recommended for new native Windows desktop apps. Build with C# or C++ and XAML. Supports Windows 10 1809+ and Windows 11."
-      links:
-        - url: /windows/apps/winui/winui3
-          itemType: overview
-          text: WinUI 3 and Windows App SDK overview
-        - url: /windows/apps/get-started/start-here
-          itemType: get-started
-          text: Get started with your first WinUI 3 app
-        - url: /windows/apps/windows-app-sdk/downloads
-          itemType: download
-          text: Download Windows App SDK
-    - title: WPF (.NET)
-      summary: "Mature XAML framework for .NET desktop apps. Modernize existing WPF apps with Windows App SDK interop to access new Windows features."
-      links:
-        - url: /dotnet/desktop/wpf/overview/
-          itemType: overview
-          text: WPF framework overview
-        - url: /windows/apps/desktop/modernize/
-          itemType: concept
-          text: Modernize a WPF app with Windows App SDK
-    - title: Windows Forms (.NET)
-      summary: "Rapid UI development for line-of-business apps. Still supported with .NET 8+; modernize incrementally with Windows App SDK interop."
-      links:
-        - url: /dotnet/desktop/winforms/overview/
-          itemType: overview
-          text: Windows Forms overview
-        - url: /windows/apps/desktop/modernize/
-          itemType: concept
-          text: Add Windows App SDK features to WinForms apps
-    - title: .NET MAUI
-      summary: "Cross-platform framework targeting Windows, macOS, iOS, and Android from one C# and XAML codebase."
-      links:
-        - url: /dotnet/maui/what-is-maui
-          itemType: overview
-          text: .NET MAUI cross-platform overview
-    - title: C++ and Win32
-      summary: "Direct OS access for high-performance apps, games, and system utilities. Use Win32, COM, or C++/WinRT projections."
-      links:
-        - url: /windows/win32/
-          itemType: overview
-          text: Win32 and COM API reference
-        - url: /windows/uwp/cpp-and-winrt-apis/
-          itemType: concept
-          text: C++/WinRT for Windows Runtime APIs
-    - title: Progressive Web Apps (PWA)
-      summary: "Web-first apps with Windows integration — taskbar, notifications, offline support. Build with HTML, CSS, and JavaScript."
-      links:
-        - url: /microsoft-edge/progressive-web-apps-chromium/
-          itemType: overview
-          text: Build PWAs for Windows
 
 productDirectory:
   title: Your path to building Windows apps
@@ -89,7 +33,7 @@ productDirectory:
       - url: /windows/apps/introduction
         text: Introduction to the Windows developer platform
       - url: /windows/apps/get-started
-        text: Core concepts for Windows app development
+        text: Choose a Windows development path
       - url: /windows/apps/get-started/start-here
         text: Get started with your first WinUI 3 app
       - url: /windows/apps/windows-app-sdk/set-up-your-development-environment
