@@ -1,15 +1,17 @@
 ---
-title: Windows Application Development - Best Practices
-description: A collection of best practices related to UI/UX, security, performance, and more.
+title: Windows app development best practices
+description: Build reliable Windows apps with current guidance for user experience, performance, hardware, deployment, accessibility, security, and privacy.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: best-practice
-ms.date: 08/29/2026
+ms.date: 09/01/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
 
-# Windows application development - Best practices
+# Windows app development best practices
 
-The best practices in this article help you build great Windows apps that reach and delight about 1.5 billion diverse PC users around the world. This article is divided into the following sections:
+The best practices in this article help you build reliable Windows apps for a diverse range of people, devices, and environments. This article is divided into the following sections:
 
 1. **[User experience](#user-experience-ux)**: Guidance in this section helps you improve the look, feel, and usability of your apps.
 1. **[Performance and fundamentals](#performance-and-fundamentals)**: Guidance in this section helps you improve your app's performance and resource utilization.
@@ -103,7 +105,7 @@ Windows 11 brings beautiful UI innovations to the Windows operating system that 
 
 The visual and behavioral changes are built in to [WinUI](../winui/winui3/index.md). Use WinUI where you can to take advantage of the work that the Windows development team already did. If you can't use WinUI, consider emulating the styles demonstrated in the [design toolkits](https://www.aka.ms/WinUI/3.0-figma-toolkit) and [WinUI 3 Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 
-[Common controls](../develop/ui/controls/index.md) are one way that you can utilize these updates immediately. Use the latest common controls whenever possible to get the benefits of compatibility and accessibility for free. And these common controls are more cost effective than building your own custom controls when you factor in maintenance and testing costs.
+[Common controls](../develop/ui/controls/index.md) provide current Windows styles, input behavior, and built-in accessibility support. Prefer them to custom controls unless your scenario requires behavior that the platform controls don't provide.
 
 ![An image of common UI controls](images/great-apps/controls.png)
 
@@ -130,14 +132,9 @@ If your app defines a context menu extension, the following requirements must be
 - Your context menu extension must be implemented by using the [**IExplorerCommand**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) interface. Context menu extensions that implement [**IContextMenu**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-icontextmenu) will appear in the older context menu instead.
 - Your app must be a *packaged app* so that it has package identity at runtime. See [Features that require package identity](../desktop/modernize/modernize-packaged-apps.md) for some options for packaging your app.
 
-##### Share dialog
+##### Windows Share Sheet
 
-For Windows 11, we improved the behavior of the Share dialog in several ways.  
-
-- Discoverability settings for nearby sharing are now at the top of the dialog and more settings are available at the bottom.
-- All apps can now participate in the Share dialog as targets, including unpackaged desktop apps and PWAs that are installed through Microsoft Edge.
-  - A previously unpackaged desktop app can participate as a target in the Share dialog if you package it with external location (see [Grant package identity by packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps.md)). For sample code that demonstrates how to do that, see the [PackageWithExternalLocation](https://github.com/microsoft/AppModelSamples/tree/master/Samples/PackageWithExternalLocation) sample app.
-  - A PWA can participate in the Share dialog if it implements the [Web Share Target API](/microsoft-edge/progressive-web-apps-chromium/webappmanifests#identify-your-app-as-a-share-target).
+The [Windows Share Sheet](../develop/windows-integration/integrate-sharesheet-overview.md) lets apps send content to other apps and register to receive shared content. It also supports app-provided suggestions for the suggestions row. Packaging, identity, and registration requirements depend on whether your app sends, receives, or provides suggestions and whether it is packaged, unpackaged, or a PWA. Follow the task-specific guidance instead of assuming that one registration model works for every app.
 
 ![An image of the Share dialog in Windows 11](images/great-apps/share-target.png)
 
@@ -147,10 +144,10 @@ Windows 11 has [updated icons ("Segoe Fluent Icons")](../design/iconography/inde
 
 ![An image of a selection of windows icons.](images/great-apps/icons.png)
 
-- New icons called "Segoe Fluent Icons" are introduced for monoline icons. Controls in WinUI 2.6 and greater use the new icons and typography automatically.
+- New icons called "Segoe Fluent Icons" are introduced for monoline icons. Current WinUI controls use the latest Windows icons and typography automatically.
 - File type icons are updated. If your app is using icons in `imageres.dll` or `shell32.dll`, then icons will be updated automatically. Otherwise, a manual style update might be needed.
 - App icons - Follow the latest guidance for [Icons in Windows apps](../develop/ui/controls/icons.md) used in places like launchers on Start and TaskBar.
-- Animated icons - Lottie animation support was added to WinUI and we recommend using [AnimatedIcon](../develop/ui/controls/animated-icon.md) functionality to animate your icons in a meaningful way. Just as with other stylistic changes, you will need WinUI 2.6 or greater.
+- Animated icons - Use [AnimatedIcon](../develop/ui/controls/animated-icon.md) to add meaningful icon animation in WinUI apps.
 - Custom experiences written in XAML that specify `Segoe UI` in code, should instead specify `Segoe UI Variable`.
 
 > [!NOTE]
@@ -195,9 +192,9 @@ In most cases, your app's window has rounded corners by default on Windows 11. I
 
 Windows shell integration lets users benefit from your app even when it's not running in the foreground or visible on-screen. When your app integrates well with Windows, it becomes part of the user's workflow with other apps and helps create a seamless experience.
 
-#### Toast notifications
+#### App notifications
 
-[Toast notifications](../develop/notifications/app-notifications/app-notifications-ux-guidance.md) are the Windows notifications that appear at the bottom of the user's screen and in the Notification Center.
+[App notifications](../develop/notifications/app-notifications/app-notifications-ux-guidance.md) appear as popups and in Notification Center.
 
   - Personalize, make actionable, and ensure notifications are useful to your users. Give your users what they want, not what you want them to know.
   - Avoid noisy notifications. Too many interruptions from your app lead to users turning off this critical communication channel for your app.
@@ -230,6 +227,8 @@ Following the best practices in this section helps you meet your customers' expe
 - [Improve the responsiveness of your app's launch and key interactions](../develop/performance/responsive.md):
   - Define your key interaction scenarios and add ETW events to measure.
   - Set goals based on the interaction class associated with user expectations.
+  - Measure cold and warm launch, critical interactions, and regressions on representative lower-end and Arm64 hardware.
+  - Record traces with Windows Performance Recorder and analyze them with Windows Performance Analyzer before optimizing.
 
 For more information, see the [Performance and fundamentals overview](../develop/performance/index.md). This article answers questions such as "What is application performance and why is it important?" and "What tools can I use to measure Windows application performance?" It also links to case studies, related blogs, support communities, and information on how performance engineering intersects with sustainability by reducing the impact your application has on our planet.
 
@@ -240,19 +239,20 @@ You can build, package, and deliver Windows apps in many ways. The best practice
 People run Windows across conventional devices as well as an increasingly diverse, modern range of devices. Devices today come not only with x86/x64-based, but also Arm-based, architectures; not only with mouse and keyboard but also touch screens, touchpads, and pens; with cameras, GPS, and sensors like gyroscopes; and with graphics and neural processing chipsets that enable not only amazing visuals but also hardware-accelerated artificial intelligence (AI). Customers expect apps to take advantage of the hardware (that they have paid for!) and be cognizant of the device form factor to give them an appropriately optimized experience.
 
 - Support a variety of inputs and interactions - [Input and interactions overview](../develop/input/index.md)
-- Achieve AI powered productivity with Win ML - [Introduction to Windows Machine Learning](/windows/ai/new-windows-ml/overview).
-- Use AI models that run locally and power Microsoft Foundry on Windows features on Copilot+ PCs - [What is Windows ML?](/windows/ai/apis/).
-- Use a variety of AI-powered features supported by Windows AI APIs in the Windows App SDK and machine learning (ML) models that run locally on Copilot+ PCs - [What are Windows AI APIs?](/windows/ai/apis/).
+- Use [Windows AI APIs](/windows/ai/apis/) for ready-to-use, Windows-managed AI capabilities. Check each API's hardware, operating system, and package identity requirements.
+- Use [Foundry Local](/windows/ai/foundry-local/get-started) to discover, download, and run supported language and speech models locally.
+- Use [Windows ML](/windows/ai/new-windows-ml/overview) to run custom ONNX models with execution providers for available CPU, GPU, and NPU hardware.
+- Apply [responsible AI practices](/windows/ai/rai/) when you design, evaluate, and ship AI-assisted experiences.
 
-### MSIX app attach and Azure Virtual Desktop
+### App Attach and Azure Virtual Desktop
 
-To make your app run best in an enterprise environment, add support for MSIX app attach.
+To deliver applications dynamically in an Azure Virtual Desktop environment, evaluate App Attach.
 
-[MSIX app attach](/azure/virtual-desktop/what-is-app-attach) lets you deliver MSIX applications to both physical and virtual machines. It's made specifically for [Azure Virtual Desktop](/azure/virtual-desktop/overview) (AVD), a desktop and app virtualization service that runs on the cloud. Using MSIX app attach with AVD can help you improve sign-in times for users, and it can reduce infrastructure costs for your enterprise.  
+[App Attach](/azure/virtual-desktop/what-is-app-attach) dynamically attaches supported application packages to user sessions without installing the applications in the session-host image. It is designed for [Azure Virtual Desktop](/azure/virtual-desktop/overview).
 
 ### Windows on Arm
 
-Windows on Arm devices — including Copilot+ PCs, Surface Pro X, and Surface Pro 11 — benefit from extended battery life, integrated mobile data, and access to on-device AI capabilities via the NPU. These devices provide broad application compatibility through the Prism emulation layer, which runs existing x86 and x64 applications without modification.
+Windows on Arm devices can provide extended battery life and, on supported devices, on-device AI acceleration through an NPU. Windows 11 uses the Prism emulation layer to run many existing x86 and x64 applications.
 
 For best performance, build native ARM64 binaries. .NET apps can target `win-arm64` with no code changes. For large C/C++ codebases, [Arm64EC](/windows/arm/arm64ec) lets you incrementally recompile performance-critical modules to native ARM64 while the remaining x64 code runs under emulation — all within a single binary.
 
@@ -282,7 +282,7 @@ Reliable installation, update, and uninstallation experiences are important part
 
 ### Application discovery
 
-  - Listing your app on the [Microsoft Store](https://blogs.windows.com/windowsexperience/2021/06/24/building-a-new-open-microsoft-store-on-windows-11/) makes your app more discoverable for users.
+  - Listing your app on the [Microsoft Store](../publish/index.md) makes your app more discoverable for users.
   - If you host your app across multiple channels (for example, on a website and on the Microsoft Store), use a consistent application identity and update mechanism across all channels.
   - [Distribute your app through the Microsoft Store](../distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md) to make it more discoverable for users. Note that Windows users access Store apps through the Windows Package Manager [WinGet](../../package-manager/winget/index.md). If you don't publish to the Microsoft Store, you can still make your app easily discoverable in WinGet via the [WinGet repository](../../package-manager/package/index.md).
 
@@ -323,32 +323,23 @@ If full MSIX packaging isn't an option for your app, consider packaged with exte
 
 ## Accessibility
 
-Accessible Windows applications support rich and [inclusive experiences](https://www.microsoft.com/design/inclusive/) for as many people as possible. Inclusive design creates better products for everyone. To make sure your app is accessible and inclusive, consider what improved functionality and usability means in relation to:
+Accessible Windows applications support rich and [inclusive experiences](https://www.microsoft.com/design/inclusive/) for as many people as possible. To make sure your app is accessible and inclusive, consider what improved functionality and usability means in relation to:
 
 - People with disabilities (both temporary and permanent).
 - Personal preferences.
 - Specific work styles.
 - Situational constraints (such as shared work spaces, driving, cooking, glare, and so on).
 
-In fact, the [World Health Organization](https://www.who.int/news-room/fact-sheets/detail/disability-and-health) defines disability not as a personal characteristic, but rather as a mismatched interaction between a person and the physical and digital world around them.
-
-> ### Accessibility is good for both people and business
->
-> **Accessibility is a responsibility**
->
-> More than 1 billion people worldwide experience some form of disability. However, only one in 10 have access to the assistive technology needed to fully participate in our economies and societies. Typically, the unemployment rate for people with disabilities is twice that of people without a disability. And disabilities - whether situational, temporary, or permanent - can affect any of us at any time.
->
-> **Accessibility is an opportunity**
->
-> Inclusive organizations that embrace best practices for employing and supporting persons with disabilities in the workplace outperform their peers and do better at attracting and keeping top talent. Millennials, who are 75% of the global workforce, typically choose employers who reflect their values. Diversity and inclusion top that list.
-
 ### Incorporating accessibility
 
-Incorporating accessibility into your Windows apps maximizes user engagement, increases product satisfaction, and encourages product loyalty. Proactively designing and implementing accessible experiences typically reduces development and maintenance costs over the long term.
+Build accessibility into design, implementation, and release criteria:
 
-Some common solutions include providing information in alternative formats (such as captions on a video) or enabling the use of assistive technologies (such as screen readers).
-
-Applications designed with accessibility in mind are easier to maintain, update, and redesign. In addition to helping your app reach people with disabilities, factoring in accessibility can reduce the cost of maintaining your app.
+- Prefer platform controls and expose accurate accessible names, roles, states, and values through UI Automation.
+- Make every interaction available from the keyboard and provide a visible keyboard focus indicator.
+- Don't communicate meaning through color alone. Test every critical workflow with contrast themes.
+- Test text and display scaling, including layouts at 200% text scaling.
+- Provide captions or transcripts for audio and video content.
+- Test critical workflows with Narrator and Accessibility Insights for Windows.
 
 For detailed guidance on building accessible Windows apps, see [Accessibility overview](../design/accessibility/accessibility-overview.md).
 
@@ -359,7 +350,7 @@ For detailed guidance on building accessible Windows apps, see [Accessibility ov
 1. [Inspect in Accessibility Insights for Windows](https://accessibilityinsights.io/docs/windows/getstarted/inspect/). Inspect the accessibility tree to find low-hanging fruit like hints in labels, incorrect roles, and other problems.
 1. [Event monitoring in Accessibility Insights for Windows · Accessibility Insights](https://accessibilityinsights.io/docs/en/windows/getstarted/eventmonitoring/). See [Supporting UI Automation Control Types](/windows/win32/winauto/uiauto-supportinguiautocontroltypes) for more info on event monitoring.
 1. Run Accessibility Insights automated checks in your PRs or CI/CD. For more info, see [axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples).
-1. Fix all bugs you find, as they all have a direct impact on accessibility.
+1. Treat critical accessibility regressions as release-blocking issues. Track any exception with an owner and a planned resolution.
 
 ## Security and privacy
 
@@ -388,9 +379,11 @@ Windows is built on a foundation of security and privacy, and Windows 11 is desi
 - Use all security mitigations provided by your compiler and toolset (see [Security Features In Microsoft Visual C++](https://devblogs.microsoft.com/cppblog/security-features-in-microsoft-visual-c/) for Visual C++).
 - Always use your chosen language or framework's standard libraries for cryptography and other security-sensitive code. _Don't try to build your own._
 - Digitally sign all components of your application – not just the installer, but also the uninstaller (if you have one). Also sign all the EXE, DLL, and other executable files that make up your app.
-  - Digital signatures enable the user to verify the authenticity of your app and allow Enterprise admins to secure their devices using [Windows Defender Application Control](/windows/security/threat-protection/windows-defender-application-control/wdac-and-applocker-overview).
+  - Digital signatures enable the user to verify the authenticity of your app and allow enterprise admins to secure their devices using [App Control for Business](/windows/security/application-security/application-control/app-control-for-business/appcontrol-and-applocker-overview).
   - Using MSIX packaging is one way to achieve this goal.
-- Ensure all network communication is over a secure transport, such as SSL.
+- Keep third-party packages and SDKs current, monitor them for known vulnerabilities, and remove dependencies that you no longer use.
+- Store credentials and secrets with platform or service credential stores. Don't embed them in source code, configuration files, logs, or client binaries.
+- Ensure all network communication is over a secure transport, such as TLS.
 - Provide guardrails or other mitigations that can help protect users from accidentally performing harmful actions, even when coerced into doing so by attackers.
   - Simple "Are you sure you want to do _X_? _Yes / No_" dialogs are typically not effective, because users are conditioned to click "Yes."
 

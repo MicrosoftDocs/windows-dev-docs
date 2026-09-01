@@ -1,8 +1,10 @@
 ---
 title: Windows developer glossary
-description: A glossary of key terms and concepts for Windows application development including WinUI, WinAppSDK, and AI tools.
+description: Definitions of current Windows app development terms, including WinUI, Windows App SDK, packaging, deployment, interoperability, and Windows AI.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: glossary
-ms.date: 08/29/2026
+ms.date: 09/01/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -13,9 +15,13 @@ content-type: glossary
 
 This glossary promotes a common vocabulary among Windows developers.
 
+#### Advanced Windows Settings
+
+The Windows 11 settings surface for developer-focused options such as Developer Mode, sudo, long paths, file extensions, Dev Drive, PowerShell script execution, and the default terminal. On Windows 11, version 25H2 and later, open **Settings > System > Advanced**. See [Advanced Windows Settings](../../advanced-settings/index.md).
+
 #### App lifecycle management (ALM)
 
-Manage an application's execution state: not running, running in the background, running in the foreground, or suspended. See [UWP app lifecycle](/windows/uwp/launch-resume/app-lifecycle) and [Windows App SDK app lifecycle](../windows-app-sdk/applifecycle/applifecycle.md).
+The processes and APIs that manage how an app starts, activates, runs, restarts, and terminates. UWP apps can transition between foreground, background, and suspended states. Windows App SDK desktop apps use the Win32 process lifecycle and aren't suspended by the UWP lifecycle manager. See [UWP app lifecycle](/windows/uwp/launch-resume/app-lifecycle) and [Windows App SDK app lifecycle](../windows-app-sdk/applifecycle/applifecycle.md).
 
 #### Application model
 
@@ -24,7 +30,6 @@ Often referred to as "app model." The application model combines deployment, iso
 #### Application packaging
 
 Describes the way in which your app is packaged before being deployed and installed by users. An app can be packaged, unpackaged, or packaged with external location (see the [Windows developer FAQ](windows-developer-faq.md)).
-
 
 #### Bootstrapper
 
@@ -44,19 +49,19 @@ A storage volume optimized for developer workloads. Dev Drive uses the Resilient
 
 #### Dev Home
 
-An open-source dashboard app for Windows developers that helps set up development environments, manage dev drives, and monitor system performance. See [Dev Home](https://github.com/microsoft/devhome).
+An open-source Windows developer dashboard that was retired in May 2025. Its repository is archived. Use [Advanced Windows Settings](../../advanced-settings/index.md), [WinGet Configuration](../../package-manager/configuration/index.md), and [Dev Drive](../../dev-drive/index.md) for current setup workflows.
 
 #### DirectML
 
-A high‑performance, hardware‑accelerated API for machine learning on Windows that runs on a broad range of GPUs (and increasingly NPUs) using the DirectX 12 stack. See [DirectML overview](/windows/ai/directml/dml-intro).
+A high-performance, hardware-accelerated DirectX 12 API for machine learning workloads on supported GPUs. For higher-level ONNX inference across available CPUs, GPUs, and NPUs, see [Windows ML](/windows/ai/new-windows-ml/overview). See [DirectML overview](/windows/ai/directml/dml-intro).
 
 #### Dynamic Dependencies
 
-[Dynamic Dependencies](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md) makes framework packages accessible to all kinds of apps: packaged and unpackaged.
+[Dynamic Dependencies](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md) make framework package contents available to packaged and unpackaged apps at run time.
 
 #### Fluent Design
 
-[Fluent Design](https://aka.ms/fluent) is a design system that lets you create reusable cross-platform user experiences. Fluent 2 is the latest design system for Windows and is used by WinUI.
+[Fluent Design](https://aka.ms/fluent) is the design system for Windows experiences. WinUI provides controls, materials, typography, and interaction patterns that implement Fluent guidance.
 
 #### Foundry Local
 
@@ -98,13 +103,13 @@ You can use Microsoft Foundation Classes (MFC) to create complex user interfaces
 
 A managed platform for building, evaluating, and deploying generative AI applications with foundation models. Formerly Azure AI Foundry. See [Microsoft Foundry documentation](/azure/ai-foundry/).
 
-#### MSIX (Microsoft Installer package format)
+#### MSIX
 
-MSIX is a Windows app package format that combines the best features of MSI, .appx, App-V, and ClickOnce to provide a modern and reliable packaging experience. It's a modern application package format that lets you easily deploy your Windows applications. MSIX can be used to package apps built using Windows App SDK, Win32, WPF, or Windows Forms. When you use MSIX to deploy your apps, your app is a *packaged* app. A packaged app can check for updates, and can control when updates are applied. [What is MSIX?](/windows/msix/overview).
+MSIX is a Windows app package format for reliable installation, update, and removal. You can use MSIX with apps built using Windows App SDK, Win32, WPF, or Windows Forms. An app deployed with MSIX is a *packaged app*. See [What is MSIX?](/windows/msix/overview).
 
 #### Native apps
 
-Traditionally, "native" refers to applications built without using the .NET runtime. In this case, "native" is synonymous with "unmanaged", and can be used to describe apps that manage their own memory and security concerns. Alternatively, some developers use "native" to indicate that an application has been built to run specifically on Windows, calling Windows APIs directly.
+A Windows-specific app that integrates with Windows UI and platform capabilities. A native Windows app can use managed C# and .NET, unmanaged C++, or both. This meaning is distinct from *native code*, which means code that executes outside a managed runtime.
 
 #### P/Invoke (Platform Invocation Services)
 
@@ -116,7 +121,7 @@ The .NET mechanism for calling unmanaged (native) functions from managed C# code
 
 #### Neural Processing Unit (NPU)
 
-A dedicated on‑device AI accelerator optimized for transformer operations and other ML workloads. Windows apps can target NPUs via [Windows AI APIs](/windows/ai/apis/), [Foundry Local](/windows/ai/foundry-local/get-started), or [Windows ML execution providers](/windows/ai/new-windows-ml/supported-execution-providers).
+A dedicated on-device AI accelerator optimized for machine learning workloads. Windows apps can use NPUs through supported [Windows AI APIs](/windows/ai/apis/), [Foundry Local](/windows/ai/foundry-local/get-started), or [Windows ML execution providers](/windows/ai/new-windows-ml/supported-execution-providers).
 
 #### ONNX Runtime (ORT)
 
@@ -124,11 +129,19 @@ A high‑performance, cross‑platform inference engine for models in the ONNX f
 
 #### Packaged app
 
-For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](../package-and-deploy/index.md). That topic also explains the advantages and disadvantages of each option.
+An app whose files, manifest, identity, and deployment information are contained in a package such as MSIX. Packaged apps have package identity and can use package-managed installation, update, and removal. See [Packaging overview](../package-and-deploy/packaging/index.md).
 
 #### Packaged app with external location
 
-For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](../package-and-deploy/index.md). That topic also explains the advantages and disadvantages of each option.
+An app that uses a small identity package while keeping its binaries outside the package and retaining its existing installer and update process. Also called an app with external location or a sparse package. See [Packaging overview](../package-and-deploy/packaging/index.md).
+
+#### Package identity
+
+A system-managed identity defined by a package manifest. Some Windows features, including certain background, push notification, shell integration, and Windows AI scenarios, require package identity. See [Features that require package identity](../desktop/modernize/modernize-packaged-apps.md).
+
+#### Framework-dependent deployment
+
+A Windows App SDK deployment mode in which the app uses Windows App SDK runtime components installed separately on the device. It produces a smaller app deployment but requires the matching Windows App SDK runtime on the device. See [Windows App SDK deployment overview](../package-and-deploy/deploy-overview.md).
 
 #### PowerToys
 
@@ -175,7 +188,11 @@ Apps that aren't managed by the .NET runtime. If you're handling your own memory
 
 #### Unpackaged app
 
-For definitions of apps that are packaged, unpackaged, and packaged with external location, see [Deployment overview](../package-and-deploy/index.md). That topic also explains the advantages and disadvantages of each option.
+An app installed and updated outside the Windows package deployment system, such as through MSI, EXE, ClickOnce, scripts, or xcopy deployment. An unpackaged app doesn't have package identity. To retain externally located binaries while adding identity, use the packaged-with-external-location model. See [Packaging overview](../package-and-deploy/packaging/index.md).
+
+#### Self-contained deployment
+
+A Windows App SDK deployment mode that includes the framework components with the app instead of using separately installed runtime packages. It increases deployment size but lets the app service its Windows App SDK dependencies with the app. See [Windows App SDK deployment overview](../package-and-deploy/deploy-overview.md).
 
 #### Visual Studio extension (VSIX)
 
@@ -195,11 +212,15 @@ Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP Win
 
 #### Windows App Development CLI (winapp CLI)
 
-An open-source command-line tool for packaging, signing, and managing Windows apps. Works with WinUI, WPF, WinForms, Electron, Rust, Flutter, and more. See [winapp CLI on GitHub](https://github.com/microsoft/WinAppCli).
+An open-source, public-preview command-line tool for managing Windows SDKs, package identity, manifests, certificates, builds, packaging, and UI automation across Windows app frameworks. See [Windows App Development CLI](../dev-tools/winapp-cli/index.md).
 
 #### Windows App SDK
 
-A set of developer components and tools that represent the next evolution of the Windows app development platform. The successor to WinUI for UWP for desktop application development. It lifts libraries from the OS into a standalone SDK that you can use to build backward-compatible desktop apps and often ships new features and capabilities. See [Overview of app development options](./index.md).
+A set of independently serviced components and tools for Windows desktop app development. It includes WinUI, app lifecycle, windowing, notifications, resources, text, and other APIs. The Windows App SDK complements rather than replaces the Windows SDK. See [Windows App SDK](../windows-app-sdk/index.md).
+
+#### Windows App SDK runtime
+
+The framework, Main, and Singleton packages used by framework-dependent Windows App SDK apps. Packaged apps normally acquire the runtime through package deployment; unpackaged apps use automatic or explicit dynamic dependency initialization. See [Windows App SDK deployment overview](../package-and-deploy/deploy-overview.md).
 
 #### Windows Forms
 
@@ -223,7 +244,7 @@ WinUI for UWP is tightly integrated with Windows SDKs and provides native Window
 
 #### XAML Islands
 
-XAML Islands lets you host WinRT XAML controls in non-UWP desktop (Win32, WinForms, WPF) apps starting in Windows 10, version 1903. [Host WinRT XAML controls in desktop apps (XAML Islands)](/windows/uwp/xaml-islands/xaml-islands).
+A hosting technique for placing XAML content inside an app that uses another desktop UI framework. Legacy [system XAML Islands](/windows/uwp/xaml-islands/xaml-islands) host UWP XAML controls. WinUI XAML Islands host Windows App SDK controls and use different APIs, namespaces, and host requirements; see the [Windows App SDK Islands samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Islands).
 
 #### Windows ML
 

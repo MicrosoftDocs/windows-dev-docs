@@ -4,7 +4,7 @@ description: A practical guide for developers new to Windows with paths for macO
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 07/22/2026
+ms.date: 09/01/2026
 ms.localizationpriority: medium
 ---
 
@@ -19,12 +19,15 @@ Pick the path that matches your background:
 - [Coming from web development](#coming-from-web-development)
 - [Coming from iOS or Android development](#coming-from-ios-or-android-development)
 - [Coming from .NET on another platform](#coming-from-net-on-another-platform)
+- [Coming from an existing Windows app](#coming-from-an-existing-windows-app)
 
 ---
 
 ## Coming from macOS
 
 You're comfortable with Xcode, Homebrew, the Terminal, and building apps that feel native on the platform they run on. On Windows, that same instinct for native quality has a clear path.
+
+For a detailed setup and workflow comparison, see [Moving from Mac (Unix) to Windows](../../dev-environment/mac-to-windows.md).
 
 **Your tools map to these Windows equivalents:**
 
@@ -34,7 +37,7 @@ You're comfortable with Xcode, Homebrew, the Terminal, and building apps that fe
 | Xcode | [Visual Studio 2026](/visualstudio/) |
 | iTerm2 / Terminal.app | [Windows Terminal](/windows/terminal/) |
 | zsh / bash | [PowerShell](/powershell/) |
-| Spotlight | Windows Search / [PowerToys Run](https://aka.ms/powertoys) |
+| Spotlight | Windows Search / [PowerToys Command Palette](../../powertoys/command-palette/overview.md) |
 | Finder | File Explorer |
 | launchd plists | Windows Services / Task Scheduler |
 | `~/Library/Application Support` | `%APPDATA%` |
@@ -55,8 +58,8 @@ This installs Visual Studio 2026 with the required workloads and enables Develop
 
 - File paths use backslash (`\`) by default, but PowerShell and most tools also accept forward slashes (`/`).
 - File paths are **case-insensitive by default** on Windows (though per-directory case sensitivity can be enabled).
-- Apps are distributed as [MSIX packages](/windows/msix/) (similar to `.app` bundles) or through the [Microsoft Store](/windows/apps/publish/).
-- There is no direct equivalent of the macOS Keychain for storing secrets; use the [Windows Credential Manager](/windows/win32/secauthn/credentials-management) or [Azure Key Vault](https://azure.microsoft.com/products/key-vault/) for apps.
+- Windows supports [MSIX packages](/windows/msix/) and traditional installers such as MSI and EXE. The [Microsoft Store](/windows/apps/publish/) accepts supported packaged and unpackaged app types.
+- Store app credentials in [Credential Locker](../develop/security/credential-locker.md). For new authentication experiences, evaluate [Windows Hello and passkeys](../develop/security/intro.md). Use Azure Key Vault for server-side or centrally managed secrets, not as a desktop credential store.
 - In Windows Terminal or PowerShell, use `explorer .` to open the current folder in File Explorer — the equivalent of `open .` in macOS Terminal.
 
 ---
@@ -67,13 +70,15 @@ You're at home in a terminal, comfortable with shell scripts, package managers, 
 
 **Run your existing Linux tools with WSL**
 
-[Windows Subsystem for Linux (WSL)](/windows/wsl/) runs a full Linux distribution alongside Windows. Your existing bash scripts, makefiles, gcc/clang toolchains, Docker workflows, and Python environments work unchanged.
+[Windows Subsystem for Linux (WSL)](/windows/wsl/) runs a Linux distribution alongside Windows. It supports common bash scripts, build toolchains, container workflows, and Python environments, although filesystem, networking, and device behavior can differ from a native Linux installation.
 
 ```powershell
 wsl --install
 ```
 
 After installation, open Ubuntu from [Windows Terminal](/windows/terminal/). Your Windows files are accessible at `/mnt/c/`. [VS Code](https://code.visualstudio.com/) connects to your WSL environment via the [WSL extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl).
+
+For best performance, keep projects used by Linux tools in the WSL file system, such as `/home/<user>/project`, instead of under `/mnt/c`. See [Working across Windows and Linux file systems](/windows/wsl/filesystems).
 
 **Your tools map to these Windows equivalents:**
 
@@ -113,10 +118,8 @@ Windows uses CRLF (`\r\n`); Linux uses LF (`\n`). Add a `.gitattributes` file to
 *.ps1 text eol=crlf
 ```
 
-**Tips and gotchas**
-
-- WSL lets you run `code .` from a Linux shell to open VS Code on Windows with full access to your Linux filesystem — no copying files between environments.
-- Use `pip install` in WSL for your training environment, but ship inference via the [ONNX Runtime](https://onnxruntime.ai/) NuGet package in your Windows app — same model file, two runtimes, zero rework.
+> [!TIP]
+> Run `code .` from a WSL shell to open the current Linux project in VS Code on Windows, with extensions and tools running inside WSL.
 
 ---
 
@@ -146,19 +149,12 @@ You have several options for shipping a Windows app from a web codebase:
 | [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows) | Shared React codebase targeting Windows and other platforms |
 | [Electron on Windows](https://www.electronjs.org/docs/latest/tutorial/windows-taskbar) | Existing Electron app shipping on Windows |
 
-**React Native for Windows** is the most direct path if you're already writing React Native for iOS and Android. Add Windows as a target platform with:
-
-```powershell
-npx react-native init MyApp
-cd MyApp
-npx react-native-windows-init --overwrite
-```
-
-See [React Native for Windows – Getting Started](/windows/dev-environment/javascript/react-native-for-windows) for a full guide.
+**React Native for Windows** is a direct path if you're already writing React Native for iOS and Android. Follow [React Native for Windows - Getting Started](/windows/dev-environment/javascript/react-native-for-windows) for current project creation and version requirements.
 
 **Key Windows platform features for web developers**
 
-- [Windows Notifications](/windows/apps/windows-app-sdk/notifications/app-notifications/): Toast notifications that appear in the Action Center.
+- [App notifications](../develop/notifications/app-notifications/index.md): Notifications that appear as popups and in Notification Center.
+- [Push notifications](../develop/notifications/push-notifications/index.md): Cloud-originated notifications delivered through Windows Push Notification Services.
 - [Share target](../develop/windows-integration/integrate-sharesheet-overview.md): Let users share content from other apps to yours.
 - [File type associations](/windows/apps/develop/launch/): Open files directly in your app from File Explorer.
 
@@ -184,17 +180,18 @@ You're used to a simulator, a mobile-first design mindset, and deploying through
 | App Store / Google Play | [Microsoft Store](/windows/apps/publish/) |
 | `.ipa` / `.apk` | [MSIX](/windows/msix/) package |
 | `UserDefaults` / `SharedPreferences` | [ApplicationData](/uwp/api/windows.storage.applicationdata) (requires package identity) or local settings |
-| Push notifications (APNs / FCM) | [Windows Push Notification Services (WNS)](/windows/apps/windows-app-sdk/notifications/push-notifications/) |
+| Push notifications (APNs / FCM) | [Windows Push Notification Services (WNS)](../develop/notifications/push-notifications/index.md) |
 
 **Build cross-platform with .NET MAUI**
 
 If you're targeting Windows, iOS, and Android from a single codebase, [.NET MAUI](/dotnet/maui/) is the recommended framework. You write C# and XAML once and deploy to all platforms.
 
 ```powershell
-winget install Microsoft.DotNet.SDK.9
+winget install Microsoft.DotNet.SDK.10
+dotnet workload install maui-windows
 dotnet new maui -n MyApp
 cd MyApp
-dotnet run -f net9.0-windows10.0.19041.0
+dotnet run -f net10.0-windows10.0.19041.0
 ```
 
 **Build a native Windows app with WinUI 3**
@@ -205,9 +202,7 @@ For a Windows-only experience that takes full advantage of Fluent Design, notifi
 
 WinUI 3 desktop apps do not have a managed lifecycle the way iOS and Android apps do. There is no `applicationDidEnterBackground` equivalent. Apps run as normal Windows processes. For background work, use [background execution in Windows App SDK](../develop/launch/background-execution.md) or [Windows Services](/windows/win32/services/services).
 
-**Tips and gotchas**
-
-- Use `winget` from the command line to install dev tools quickly — it's similar to using `sdkmanager` for Android SDK components. For example: `winget install Microsoft.VisualStudio.2022.Community`.
+Use `winget configure -f https://aka.ms/winui-config` to install the current Visual Studio WinUI workload and enable Developer Mode.
 
 ---
 
@@ -217,11 +212,11 @@ You write C# or F# and use .NET on macOS or Linux. Most of your skills transfer 
 
 **Your .NET code already runs on Windows**
 
-.NET 8 and later are cross-platform. Your class libraries, ASP.NET Core services, console apps, and worker services run on Windows without modification. The Windows-specific differences are:
+Current supported .NET releases are cross-platform. Your class libraries, ASP.NET Core services, console apps, and worker services can run on Windows. The Windows-specific differences are:
 
 - **UI frameworks**: On Windows, you have [WinUI 3](/windows/apps/winui/winui3/), [WPF](/dotnet/desktop/wpf/overview/), and [WinForms](/dotnet/desktop/winforms/overview/) in addition to [.NET MAUI](/dotnet/maui/).
-- **Platform APIs**: The [Windows App SDK](../windows-app-sdk/index.md) exposes Windows-specific capabilities—notifications, windowing, file pickers, sharing, push notifications—as NuGet packages.
-- **Packaging**: Windows apps are distributed as [MSIX packages](/windows/msix/), not `.deb`, `.rpm`, or `.dmg` files.
+- **Platform APIs**: Windows apps commonly use both the [Windows App SDK](../windows-app-sdk/index.md) for WinUI and independently serviced components, and the Windows SDK for operating-system APIs such as Win32, WinRT, DirectX, devices, pickers, and shell integration.
+- **Packaging**: Windows apps can use [MSIX, packaged-with-external-location, or unpackaged deployment](../package-and-deploy/packaging/index.md), depending on their identity, installation, and update requirements.
 
 **Choose the right UI framework**
 
@@ -245,9 +240,18 @@ Then follow the [Quick start: Create your first WinUI 3 app](../get-started/star
 
 **Key Windows-specific NuGet packages**
 
-- `Microsoft.WindowsAppSDK` — windowing, notifications, app lifecycle, push notifications
+- `Microsoft.WindowsAppSDK` — WinUI, windowing, notifications, app lifecycle, resources, and other independently serviced Windows components
 - `Microsoft.Windows.SDK.BuildTools` — Windows SDK build support
 - `Microsoft.Toolkit.Uwp.Notifications` — toast notification builder (legacy; prefer `Microsoft.WindowsAppSDK` for new apps)
+
+---
+
+## Coming from an existing Windows app
+
+You can modernize an existing Windows app incrementally instead of replacing its UI framework immediately.
+
+- For a WPF, Windows Forms, MFC, or Win32 app, keep the existing UI while adding supported Windows App SDK APIs, package identity, MSIX deployment, and current Windows platform features. See [Modernize desktop apps](../desktop/modernize/index.md) and [Use the Windows App SDK in an existing project](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md).
+- For a UWP app, moving to modern .NET with Native AOT and migrating the UI to WinUI are separate decisions. See [Modernize your UWP app with .NET and Native AOT](/windows/uwp/dotnet-native/modernize-uwp-apps-with-dotnet) and [Migrate from UWP to the Windows App SDK](../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md).
 
 ---
 
@@ -270,28 +274,27 @@ Use a [WinGet Configuration file](../../package-manager/configuration/index.md) 
 
 ### Developer Mode
 
-Enable [Developer Mode](/windows/advanced-settings/developer-mode) before running or sideloading apps you build. Open Windows Settings > **System** > **Advanced** and toggle **Developer Mode** to **On**, or run:
-
-```powershell
-# Requires elevation
-reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\AppModelUnlock" /t REG_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"
-```
+Enable [Developer Mode](/windows/advanced-settings/developer-mode) when your development workflow requires local deployment, debugging, or testing of unpackaged or loosely registered apps. On Windows 11, version 25H2 and later, open **Settings > System > Advanced**. Developer Mode isn't required for end users to install properly signed applications.
 
 ### Packaging and distribution
 
-Windows apps are distributed as [MSIX packages](/windows/msix/) or through traditional installers. MSIX provides clean install/uninstall, automatic updates via the Store, and app isolation.
+Choose packaging separately from your distribution channel:
 
-- **Microsoft Store**: Submit packaged apps for discovery and distribution. See [Publish Windows apps and games](/windows/apps/publish/).
+- **MSIX packaged apps** have package identity and support clean deployment through the Store or App Installer.
+- **Packaged apps with external location** add package identity while retaining an existing installer and externally located binaries.
+- **Unpackaged apps** can use MSI, EXE, ClickOnce, scripts, or xcopy deployment, but don't have package identity by default.
+- **Microsoft Store**: Submit qualifying MSIX, MSI, or EXE apps for discovery and distribution. Update responsibilities differ by package type. See [Publish Windows apps and games](/windows/apps/publish/).
 - **WinGet**: Publish to the [winget-pkgs community repository](https://github.com/microsoft/winget-pkgs) so users can install your app with `winget install`.
+
+See [Packaging overview](../package-and-deploy/packaging/index.md) for a comparison.
 
 ### AI-assisted development tools
 
 Several Windows developer tools include AI features:
 
 - **GitHub Copilot in Visual Studio / VS Code**: Inline completions, chat, and multi-file edits.
-- **Intelligent Terminal**: An experimental Windows Terminal build with a built-in agent pane — see [Announcing Intelligent Terminal version 0.1](https://devblogs.microsoft.com/commandline/announcing-intelligent-terminal-version-0-1/).
 - **Windows Development Skills**: Structured knowledge that lets AI agents build native Windows apps end-to-end — see [Get started with Windows Development Skills](https://aka.ms/winui-skills).
-- **WinApp CLI**: A command-line tool for scaffolding, packaging, and deploying Windows apps, designed for automation and AI agent workflows.
+- **[Windows App Development CLI](../dev-tools/winapp-cli/index.md)**: A public-preview command-line tool for managing SDKs, package identity, manifests, certificates, builds, packaging, and UI automation across Windows app frameworks.
 
 See [AI-assisted development for Windows](../develop/ai-assisted/index.md) for more.
 
