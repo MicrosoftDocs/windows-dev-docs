@@ -1,7 +1,7 @@
 ---
 title: Generate a C# projection from a C++/WinRT component, distribute as a NuGet for .NET apps
 description: In this topic, we walk through using [C#/WinRT](/windows/uwp/csharp-winrt/) to generate a C# .NET projection (or interop) assembly from a C++/WinRT Windows Runtime component, and distribute it as a NuGet package for .NET applications.
-ms.date: 04/13/2026
+ms.date: 08/30/2026
 ms.topic: how-to
 keywords: windows 10, c#, winrt, cswinrt, projection
 ms.localizationpriority: medium
@@ -132,6 +132,11 @@ Before you can invoke the `cswinrt.exe` tool to generate the projection assembly
 
     > [!NOTE]
     > For this walkthrough and the related sample code, the solution is built for **x64** and **Release**. Note that the **SimpleMathProjection** project is configured to build for AnyCPU for all solution architecture configurations.
+
+    > [!IMPORTANT]
+    > The AnyCPU configuration in this walkthrough applies to the NuGet distribution pattern shown later in the article. The managed projection assembly is architecture-neutral, while NuGet selects the native implementation DLL from an architecture-specific runtime folder.
+    >
+    > If the projection project uses [`<UseUwp>true</UseUwp>`](/windows/uwp/dotnet-native/modernize-uwp-apps-with-dotnet), or otherwise participates in MSIX or AppX packaging and directly references the native C++/WinRT project, don't target AnyCPU. Configure the projection and native projects to use the same concrete platform, such as x86, x64, or ARM64. For multiple architectures, create matching solution and project configurations and build each architecture separately. Otherwise, package validation can fail with error APPX0505 because the neutral projection architecture doesn't match the referenced native project.
 
 3. Add a second `PropertyGroup` element (immediately after the first) that sets several C#/WinRT properties.
 
