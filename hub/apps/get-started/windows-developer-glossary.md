@@ -4,7 +4,7 @@ description: Definitions of current Windows app development terms, including Win
 author: GrantMeStrength
 ms.author: jken
 ms.topic: glossary
-ms.date: 09/01/2026
+ms.date: 09/02/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -244,7 +244,7 @@ WinUI for UWP is tightly integrated with Windows SDKs and provides native Window
 
 #### XAML Islands
 
-A hosting technique for placing XAML content inside an app that uses another desktop UI framework. Legacy [system XAML Islands](/windows/uwp/xaml-islands/xaml-islands) host UWP XAML controls. WinUI XAML Islands host Windows App SDK controls and use different APIs, namespaces, and host requirements; see the [Windows App SDK Islands samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Islands).
+A hosting technique for placing XAML content inside an app that uses another desktop UI framework. Legacy [system XAML Islands](/windows/uwp/xaml-islands/xaml-islands) host UWP XAML controls. [WinUI XAML Islands](../desktop/modernize/host-controls-existing-desktop-apps.md) host Windows App SDK controls and use different APIs, namespaces, and host requirements.
 
 #### Windows ML
 

@@ -86,6 +86,7 @@ The following tables list common modernization features and whether each one req
 | Feature | Windows App SDK required? | Package identity required? |
 |---|---|---|
 | [WinUI 3 components in a desktop app](../../winui/winui3/index.md) | Yes | No |
+| [Host WinUI controls with XAML Islands](host-controls-existing-desktop-apps.md) | Yes | No |
 | [Render text with DWriteCore](../../windows-app-sdk/dwritecore.md) | Yes | No |
 | [Apply Mica or Acrylic to Win32 apps](ui/apply-mica-win32.md) | No | No |
 | [Apply rounded corners](ui/apply-rounded-corners.md) | No | No |
@@ -132,6 +133,7 @@ For the full list of platform features available in desktop apps, see [Windows a
 ## Related content
 
 - [Call Windows Runtime APIs in desktop apps](winrt-apis-desktop-apps.md)
+- [Host WinUI controls with XAML Islands](host-controls-existing-desktop-apps.md)
 - [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
 - [Packaging overview](../../package-and-deploy/packaging/index.md)
 - [Choose your migration path](../../windows-app-sdk/migrate-to-windows-app-sdk/migration-decision-guide.md)

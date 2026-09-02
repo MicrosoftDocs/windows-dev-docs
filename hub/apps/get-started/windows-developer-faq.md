@@ -87,7 +87,7 @@ Topics covered include:
 
 > Note that [WinUI](../winui/winui3/index.md) (a UI framework) ships with the [Windows App SDK](../windows-app-sdk/index.md) (a Windows platform development framework).
 >
-> You can migrate an app's UI to WinUI, or use WinUI XAML Islands to host Windows App SDK controls in a supported existing desktop host. See the [Windows App SDK Islands samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Islands). Legacy system XAML Islands host UWP XAML controls and use different APIs.
+> You can migrate an app's UI to WinUI, or use [WinUI XAML Islands](../desktop/modernize/host-controls-existing-desktop-apps.md) to host Windows App SDK controls in a supported existing desktop host. Legacy system XAML Islands host UWP XAML controls and use different APIs.
 >
 > Elements of the Windows App SDK can often be used in desktop apps, depending on how the existing app was built. UWP apps are not supported by Windows App SDK.
 >
@@ -219,7 +219,7 @@ Topics covered include:
 
 > WinUI is the UI framework included in the Windows App SDK. XAML Islands are a hosting technique that lets an existing desktop app place XAML content alongside UI from another framework.
 >
-> The term can refer to legacy [system XAML Islands](/windows/uwp/xaml-islands/xaml-islands) that host UWP XAML controls, or to WinUI XAML Islands that host Windows App SDK controls in supported desktop hosts. The APIs, namespaces, and host requirements differ. See the [Windows App SDK Islands samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Islands) for WinUI examples.
+> The term can refer to legacy [system XAML Islands](/windows/uwp/xaml-islands/xaml-islands) that host UWP XAML controls, or to [WinUI XAML Islands](../desktop/modernize/host-controls-existing-desktop-apps.md) that host Windows App SDK controls in supported desktop hosts. The APIs, namespaces, and host requirements differ.
 
 </details>
 
