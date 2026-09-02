@@ -1,6 +1,6 @@
 ---
 ms.topic: include
-ms.date: 08/31/2026
+ms.date: 09/02/2026
 ---
 
 :::row:::
@@ -27,6 +27,9 @@ ms.date: 08/31/2026
         Stay up to date with the latest Windows platform updates, SDK releases, and new capabilities.
     :::column-end:::
     :::column:::
+       [![Line-of-business apps icon](../apps/images/tile-samples.png)](../apps/get-started/line-of-business/index.md)<br>
+        **[Line-of-business apps](../apps/get-started/line-of-business/index.md)**<br>
+        Build enterprise line-of-business apps with WinUI 3, covering data display, forms, authentication, and deployment.
     :::column-end:::
     :::column:::
     :::column-end:::

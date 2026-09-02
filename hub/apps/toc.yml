@@ -103,6 +103,22 @@ items:
         href: tutorials/winui-ai-assisted/interface.md
       - name: 4. Verify and refine
         href: tutorials/winui-ai-assisted/verify.md
+    - name: Line-of-business apps
+      items:
+      - name: Overview
+        href: get-started/line-of-business/index.md
+      - name: Display tabular data
+        href: get-started/line-of-business/display-tabular-data.md
+      - name: Build a validated form
+        href: get-started/line-of-business/build-validated-form.md
+      - name: Connect to a database
+        href: get-started/line-of-business/connect-to-a-database.md
+      - name: Design for productivity
+        href: get-started/line-of-business/design-for-lob.md
+      - name: Add AI capabilities
+        href: get-started/line-of-business/ai-for-lob-apps.md
+      - name: Windows Forms patterns and WinUI 3 equivalents
+        href: get-started/line-of-business/migrate-winforms-patterns.md
   - name: Migrate and modernize
     href: windows-app-sdk/migrate-to-windows-app-sdk/toc.yml
   - name: Tools and samples
