@@ -2,7 +2,7 @@
 title: Migrate WPF app patterns to WinUI 3
 description: WinUI 3 shares many XAML concepts with WPF and is optimized for modern Windows experiences. This topic maps common WPF patterns to their WinUI 3 equivalents to help you plan your migration.
 ms.topic: concept-article
-ms.date: 07/09/2026
+ms.date: 09/02/2026
 keywords: windows, app, sdk, wpf, winui, winui3, migration, patterns, equivalents
 ms.localizationpriority: medium
 ---
@@ -15,6 +15,8 @@ This topic maps common WPF patterns to their WinUI 3 equivalents so you can plan
 
 > [!TIP]
 > For general WPF + Windows App SDK guidance, see [Use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md?pivots=dotnet).
+>
+> Before you choose an implementation path, use [Plan your modernization with an AI assistant](modernize-with-ai-assistant.md) to have an AI coding assistant inspect your solution and draft a plan grounded in the migration guidance.
 
 ## Controls
 
@@ -83,11 +85,12 @@ WinUI 3 XAML uses the same core concepts as WPF — resource dictionaries, style
 
 ## AI-assisted migration
 
-For a GitHub Copilot-assisted walkthrough of WPF → WinUI 3 migration, see [Migrate WPF apps to WinUI 3 with AI](../../develop/ai-assisted/migrate/wpf-to-winui.md).
+For a GitHub Copilot-assisted walkthrough of WPF to WinUI 3 migration, see [Migrate WPF apps to WinUI 3 with AI](../../develop/ai-assisted/migrate/wpf-to-winui.md).
 
 ## See also
 
 - [Choose your migration path](migration-decision-guide.md)
+- [Plan your modernization with an AI assistant](modernize-with-ai-assistant.md)
 - [Migration terminology](migration-terminology.md)
 - [Overall migration strategy](overall-migration-strategy.md)
 - [AI-assisted modernization](ai-modernize.md)

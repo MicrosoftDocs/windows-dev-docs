@@ -13,6 +13,9 @@ Windows Forms and WinUI 3 are both .NET desktop UI frameworks, but they use diff
 
 You don't need to rewrite a working Windows Forms app solely to adopt a newer UI framework. Compare the business value, accessibility requirements, deployment constraints, test coverage, and lifetime of the existing app. You can also adopt supported non-XAML Windows App SDK capabilities without migrating every screen.
 
+> [!TIP]
+> Use [Plan your modernization with an AI assistant](../../windows-app-sdk/migrate-to-windows-app-sdk/modernize-with-ai-assistant.md) to have an AI coding assistant inspect your solution and draft an incremental plan grounded in the migration guidance.
+
 ## Understand the main differences
 
 - **UI definition:** Windows Forms commonly uses generated designer code. WinUI 3 defines the visual tree in XAML and connects it to C#.
@@ -91,6 +94,7 @@ MVVM is useful when a screen has substantial state, commands, or testable busine
 
 ## Related content
 
+- [Plan your modernization with an AI assistant](../../windows-app-sdk/migrate-to-windows-app-sdk/modernize-with-ai-assistant.md)
 - [Migration decision guide](../../windows-app-sdk/migrate-to-windows-app-sdk/migration-decision-guide.md)
 - [Migration strategy overview](../../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md)
 - [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)

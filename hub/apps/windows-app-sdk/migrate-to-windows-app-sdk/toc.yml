@@ -3,6 +3,8 @@ items:
   href: overall-migration-strategy.md
 - name: Choose your migration path
   href: migration-decision-guide.md
+- name: Plan with an AI assistant
+  href: modernize-with-ai-assistant.md
 - name: Migration terminology
   href: migration-terminology.md
 - name: Migrate from UWP to Windows App SDK
@@ -47,7 +49,7 @@ items:
     href: case-study-2.md
   - name: Additional migration guidance
     href: misc-info.md
-- name: AI-assisted migration
+- name: Modernize with GitHub Copilot
   href: ai-modernize.md
 - name: Modernize your desktop app
   href: ../../desktop/modernize/index.md

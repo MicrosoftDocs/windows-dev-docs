@@ -2,7 +2,7 @@
 title: Choose your migration path - upgrade, modernize, or rebuild
 description: Decide whether to upgrade your Windows desktop app to modern .NET, modernize it with the Windows App SDK, or rebuild the UI with WinUI 3.
 ms.topic: concept-article
-ms.date: 07/22/2026
+ms.date: 09/02/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -15,6 +15,9 @@ When you have an existing WPF, WinForms, or Win32 desktop app, you have three br
 > **You don't have to migrate to WinUI 3.** WPF and WinForms are fully supported on modern .NET and continue to receive feature updates. Many apps are best served by upgrading to modern .NET and adding Windows App SDK features incrementally — without changing the UI framework.
 
 For definitions of the terms used on this page, see [Migration terminology](migration-terminology.md).
+
+> [!TIP]
+> Before you change code, use [Plan your modernization with an AI assistant](modernize-with-ai-assistant.md) to have an AI coding assistant analyze your project and draft an incremental plan grounded in this documentation.
 
 ## Decision overview
 
@@ -98,7 +101,7 @@ This path moves your app's UI layer to WinUI 3, the native UI framework for mode
 - [Migrate from UWP to the Windows App SDK](migrate-to-windows-app-sdk-ovw.md) — if your starting point is UWP
 
 > [!IMPORTANT]
-> WinUI 3 requires modern .NET (.NET 6 or later). If your app is on .NET Framework, you need to **upgrade** first (Path 1), then **migrate** the UI. Targeting the current LTS release is recommended.
+> A C# WinUI 3 app requires modern .NET and can't target .NET Framework. If your C# app is on .NET Framework, you need to **upgrade** first (Path 1), then **migrate** the UI. A C++/WinRT WinUI 3 app doesn't require .NET.
 
 ## Common migration blockers
 
@@ -109,13 +112,14 @@ These issues frequently block or complicate upgrades and migrations. Each requir
 | **WCF services** | WCF server is not available on modern .NET. WCF client is available via [System.ServiceModel packages](https://www.nuget.org/packages/System.ServiceModel.Http). | Migrate server-side WCF to [CoreWCF](https://github.com/CoreWCF/CoreWCF) or [gRPC](/aspnet/core/grpc/). Client-side WCF works on modern .NET. |
 | **ASMX web services** | ASMX is not available on modern .NET. | Replace with ASP.NET Core Web API or minimal API endpoints. |
 | **`System.Configuration` (app.config)** | `ConfigurationManager` works on modern .NET via a [compatibility NuGet package](https://www.nuget.org/packages/System.Configuration.ConfigurationManager), but does not support all features. | For new code, use the [Options pattern](/dotnet/core/extensions/options) with `appsettings.json`. Migrate existing settings incrementally. |
-| **COM interop** | Most COM interop works on modern .NET. Some scenarios involving apartment threading or registration-free COM need testing. | Test COM-dependent features early. Use [ComWrappers](/dotnet/standard/native-interop/comwrappers) for new interop code. |
+| **COM interop** | Most COM interop works on modern .NET. Some scenarios involving apartment threading or registration-free COM need testing. | Test COM-dependent features early. Use [ComWrappers](/dotnet/standard/native-interop/tutorial-comwrappers) for new interop code. |
 | **Third-party UI controls** | Control vendors may not yet support WinUI 3. Most support modern .NET for WPF and WinForms. | Check vendor documentation for modern .NET and WinUI 3 support before starting. Telerik, DevExpress, Syncfusion, and Infragistics all publish compatibility matrices. |
 | **Visual Basic projects** | VB.NET is supported for WPF and WinForms on modern .NET, but the [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) has limited VB support. | Expect more manual work. The Upgrade Assistant handles project file conversion; code changes may require manual review. |
 
 ## See also
 
 - [Migration terminology](migration-terminology.md)
+- [Plan your modernization with an AI assistant](modernize-with-ai-assistant.md)
 - [Modernize your desktop apps](../../desktop/modernize/index.md)
 - [.NET Upgrade Assistant overview](/dotnet/core/porting/upgrade-assistant-overview)
 - [GitHub Copilot modernization agent](/dotnet/core/porting/github-copilot-app-modernization/)
