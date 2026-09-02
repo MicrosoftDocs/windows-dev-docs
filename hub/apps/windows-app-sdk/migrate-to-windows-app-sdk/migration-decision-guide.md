@@ -45,7 +45,7 @@ Use this table to evaluate which path fits your project. Score each row and see 
 | **WCF or ASMX services** | ⚠️ Requires [CoreWCF](/dotnet/core/additional-tools/wcf-web-service-reference-guide) migration | ✅ No impact on service layer | ⚠️ Same WCF migration required |
 | **COM interop** | ⚠️ Test thoroughly — most COM interop works on modern .NET | ✅ No changes needed | ⚠️ Most COM interop works; some WinRT APIs require [HWND initialization](wpf-patterns-winui3.md) |
 | **Third-party UI controls** (Telerik, DevExpress, Syncfusion) | ✅ Most vendors support modern .NET | ✅ No UI changes | ❌ Vendors must offer WinUI 3 versions — check compatibility |
-| **Team capacity** | Low — largely automated with [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) | Low — incremental, no deadline | High — requires UI development and testing |
+| **Team capacity** | Low–Medium — [GitHub Copilot upgrade](/dotnet/core/porting/github-copilot-upgrade/overview) can assist, but you must review dependencies and validate the result | Low — incremental, no deadline | High — requires UI development and testing |
 | **Visual Studio XAML Designer** | ✅ Supported for WPF on modern .NET | ✅ Supported | ❌ [Not yet available for WinUI 3](wpf-patterns-winui3.md#developer-tooling) |
 | **Long-term .NET support** | ✅ Gains LTS support and performance | ⚠️ .NET Framework 4.8 is supported but receives only security fixes | ✅ WinUI 3 runs on modern .NET (.NET 6 or later) |
 
@@ -61,14 +61,14 @@ This path keeps your UI framework (WPF or WinForms) and moves the runtime from .
 
 ### How to get started
 
-1. Run the [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) against your solution.
+1. Use [GitHub Copilot upgrade](/dotnet/core/porting/github-copilot-upgrade/overview) to assess your solution and plan the upgrade.
 2. Resolve dependency issues — most NuGet packages have modern .NET versions.
 3. Address [common migration blockers](#common-migration-blockers) such as WCF or `System.Configuration`.
 4. Test thoroughly, especially COM interop and third-party controls.
 
 ### AI tooling
 
-The [GitHub Copilot modernization agent](/dotnet/core/porting/github-copilot-app-modernization/) can automate much of this upgrade. It analyzes your solution, resolves dependency chains, and generates pull requests.
+[GitHub Copilot upgrade](/dotnet/core/porting/github-copilot-upgrade/overview) can assist with assessment, planning, code changes, and validation. Review its recommendations and validate each change in your app.
 
 ## Path 2 — Modernize in place
 
@@ -114,14 +114,13 @@ These issues frequently block or complicate upgrades and migrations. Each requir
 | **`System.Configuration` (app.config)** | `ConfigurationManager` works on modern .NET via a [compatibility NuGet package](https://www.nuget.org/packages/System.Configuration.ConfigurationManager), but does not support all features. | For new code, use the [Options pattern](/dotnet/core/extensions/options) with `appsettings.json`. Migrate existing settings incrementally. |
 | **COM interop** | Most COM interop works on modern .NET. Some scenarios involving apartment threading or registration-free COM need testing. | Test COM-dependent features early. Use [ComWrappers](/dotnet/standard/native-interop/tutorial-comwrappers) for new interop code. |
 | **Third-party UI controls** | Control vendors may not yet support WinUI 3. Most support modern .NET for WPF and WinForms. | Check vendor documentation for modern .NET and WinUI 3 support before starting. Telerik, DevExpress, Syncfusion, and Infragistics all publish compatibility matrices. |
-| **Visual Basic projects** | VB.NET is supported for WPF and WinForms on modern .NET, but the [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) has limited VB support. | Expect more manual work. The Upgrade Assistant handles project file conversion; code changes may require manual review. |
+| **Visual Basic projects** | Visual Basic is supported for WPF and WinForms on modern .NET, but the GitHub Copilot upgrade workflow doesn't fully support Visual Basic projects. | Follow the manual [WPF](/dotnet/desktop/wpf/migration/) or [Windows Forms](/dotnet/desktop/winforms/migration/) upgrade guidance and validate each project. |
 
 ## See also
 
 - [Migration terminology](migration-terminology.md)
 - [Plan your modernization with an AI assistant](modernize-with-ai-assistant.md)
 - [Modernize your desktop apps](../../desktop/modernize/index.md)
-- [.NET Upgrade Assistant overview](/dotnet/core/porting/upgrade-assistant-overview)
-- [GitHub Copilot modernization agent](/dotnet/core/porting/github-copilot-app-modernization/)
+- [GitHub Copilot upgrade](/dotnet/core/porting/github-copilot-upgrade/overview)
 - [Migrate WPF app patterns to WinUI 3](wpf-patterns-winui3.md)
 - [Overall migration strategy](overall-migration-strategy.md)

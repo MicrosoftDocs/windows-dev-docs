@@ -1,8 +1,10 @@
 ---
 title: Migrate from UWP to the Windows App SDK
 description: How to migrate a UWP app to the Windows App SDK and WinUI 3, including strategy, feature mapping, supported features, and step-by-step feature area guides.
-ms.date: 07/09/2026
+ms.date: 09/02/2026
 ms.topic: upgrade-and-migration-article
+author: GrantMeStrength
+ms.author: jken
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, overview, hybrid crt, hybrid, crt
 ms.localizationpriority: medium
 ---
@@ -19,7 +21,7 @@ To migrate your app from UWP to the Windows App SDK, your UI code likely needs j
 > [!TIP]
 > You can also use AI tools to accelerate your migration. See [Migrate a UWP app to WinUI 3 with AI assistance](../../develop/ai-assisted/migrate/uwp-to-winui.md) for a quick-reference API substitution table and a starter prompt you can use with GitHub Copilot.
 
-Here are the high-level steps for migrating manually. See also the [.NET Upgrade Assistant tool](#migrating-by-using-the-net-upgrade-assistant-tool) if you're migrating a C# UWP app.
+Here are the high-level steps for migrating manually:
 
 1. Create a new WinUI packaged desktop project (see [Create your first WinUI project](../../get-started/start-here.md)). That could go into your project's existing solution.
 2. Copy your XAML/UI code. In many cases you can simply change namespaces (for example, **Windows.UI.\*** to **Microsoft.UI.\***).
@@ -33,9 +35,12 @@ The topics in the table below describe and demonstrate how to manually migrate y
 > [!NOTE]
 > If your UWP app's source code is written in C++/CX, then also see [Move to C++/WinRT from C++/CX](/windows/uwp/cpp-and-winrt-apis/move-to-winrt-from-cx).
 
-## Migrating by using the .NET Upgrade Assistant tool
+## Legacy .NET Upgrade Assistant guidance
 
-As a further step in assisting you to migrate your UWP apps to the Windows App SDK and WinUI, we've leveraged the .NET Upgrade Assistant, adding support for migrating C# UWP apps. The UWP support automates much of the migration process. For more info, see the topic [Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant](upgrade-assistant.md).
+> [!IMPORTANT]
+> .NET Upgrade Assistant is deprecated. Don't use it to start a new migration. GitHub Copilot upgrade doesn't currently document UWP-to-WinUI 3 as a supported upgrade path.
+
+If you're maintaining a C# UWP migration that already uses .NET Upgrade Assistant, see the [legacy .NET Upgrade Assistant guidance](upgrade-assistant.md). For a new migration, use the manual steps and AI-assisted UWP guidance on this page.
 
 ## Containerization benefits
 
@@ -53,7 +58,7 @@ When transitioning to the Windows App SDK, UWP applications might lose the inher
 | [Case study 1—PhotoLab (C#)](case-study-1.md) | This topic is a case study of taking the C# [UWP PhotoLab sample app](https://github.com/microsoft/Windows-appsample-photo-lab), and migrating it to the Windows App SDK. |
 | [Case study 2—Photo Editor (C++/WinRT)](case-study-2.md) | This topic is a case study of taking the C++/WinRT [UWP Photo Editor sample app](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/), and migrating it to the Windows App SDK. |
 | [Additional migration guidance](misc-info.md) | This topic contains additional migration guidance not categorized into a feature area in the [feature area guides](guides/feature-area-guides-ovw.md). |
-| [Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant](upgrade-assistant.md) | The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [WinUI](../../winui/winui3/index.md) app that uses the Windows App SDK. |
+| [Legacy .NET Upgrade Assistant guidance for UWP](upgrade-assistant.md) | Reference information for maintaining an existing C# UWP migration that used the deprecated .NET Upgrade Assistant. |
 | [Use AI to help modernize your app](./ai-modernize.md) | How to use GitHub Copilot to accelerate modernization of an existing desktop app to Windows App SDK and WinUI 3. |
 
 ## See also

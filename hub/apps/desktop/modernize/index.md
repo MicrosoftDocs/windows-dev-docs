@@ -2,7 +2,9 @@
 description: Learn how to modernize your existing WPF, Windows Forms, or Win32 desktop app with the Windows App SDK, MSIX packaging, and modern Windows APIs—no rewrite needed.
 title: Modernize existing desktop apps
 ms.topic: concept-article
-ms.date: 08/14/2026
+ms.date: 09/02/2026
+author: GrantMeStrength
+ms.author: jken
 ms.localizationpriority: medium
 ---
 
@@ -19,7 +21,7 @@ If your goal is to fully modernize your app's UI layer, we recommend migrating t
 If you want to add Windows features to your existing app framework (WPF, Windows Forms, or C++ Win32) without changing your UI layer, use one of the [modernization approaches](#modernization-approaches) described in this article.
 
 > [!NOTE]
-> This article covers adding modern Windows features to your existing desktop app. If you want to modernize your .NET toolchain or C++ compiler, see [GitHub Copilot modernization for .NET](/dotnet/core/porting/github-copilot-app-modernization/) or the [Microsoft C++ porting and upgrading guide](/cpp/porting/visual-cpp-porting-and-upgrading-guide).
+> This article covers adding modern Windows features to your existing desktop app. If you want to modernize your .NET toolchain or C++ compiler, see [GitHub Copilot upgrade](/dotnet/core/porting/github-copilot-upgrade/overview) or the [Microsoft C++ porting and upgrading guide](/cpp/porting/visual-cpp-porting-and-upgrading-guide).
 
 ## Modernization approaches
 
@@ -125,7 +127,7 @@ For the full list of platform features available in desktop apps, see [Windows a
 
 ## AI-assisted modernization
 
-The [GitHub Copilot modernization agent](/dotnet/core/porting/github-copilot-app-modernization/) can analyze your desktop solution and generate pull requests that add modern Windows features or upgrade your app to a newer .NET version. For details, see [AI-assisted modernization](../../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md).
+[GitHub Copilot upgrade](/dotnet/core/porting/github-copilot-upgrade/overview) can assess and upgrade supported .NET desktop projects. For AI-assisted Windows feature adoption and UI migration, see [AI-assisted modernization](../../windows-app-sdk/migrate-to-windows-app-sdk/ai-modernize.md).
 
 ## Related content
 

@@ -3,6 +3,8 @@ title: Migrate WPF app patterns to WinUI 3
 description: WinUI 3 shares many XAML concepts with WPF and is optimized for modern Windows experiences. This topic maps common WPF patterns to their WinUI 3 equivalents to help you plan your migration.
 ms.topic: concept-article
 ms.date: 09/02/2026
+author: GrantMeStrength
+ms.author: jken
 keywords: windows, app, sdk, wpf, winui, winui3, migration, patterns, equivalents
 ms.localizationpriority: medium
 ---
@@ -65,7 +67,7 @@ WinUI 3 XAML uses the same core concepts as WPF — resource dictionaries, style
 
 | WPF pattern | WinUI 3 equivalent | Notes |
 |---|---|---|
-| `.resx` resource files | `.resw` + `ResourceLoader` | WinUI 3 uses `.resw` files and the [ResourceLoader](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourceloader) API. The .NET Upgrade Assistant can automate much of this conversion. |
+| `.resx` resource files | `.resw` + `ResourceLoader` | WinUI 3 uses `.resw` files and the [ResourceLoader](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourceloader) API. Migrate the resource strings and update the resource lookup code as part of the UI migration. |
 | `x:Static` markup extension | `x:Bind` to a static property | Use `x:Bind` with a static property or a singleton accessor. `x:Bind` is compiled and produces clearer error messages than `x:Static`. |
 | Merged resource dictionaries | ✅ Supported | `ResourceDictionary.MergedDictionaries` works in WinUI 3. |
 | Theme-specific resource dictionaries | ✅ Supported | `ResourceDictionary.ThemeDictionaries` is the WinUI 3 mechanism for per-theme resources, and integrates with automatic dark/light mode switching. |

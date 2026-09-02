@@ -4,7 +4,7 @@ description: Find answers about Windows app frameworks, SDKs, tooling, interoper
 author: GrantMeStrength
 ms.author: jken
 ms.topic: faq
-ms.date: 09/01/2026
+ms.date: 09/02/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -249,7 +249,7 @@ Topics covered include:
 
 > If you've already invested heavily in WPF, you can continue using it for existing apps. WPF is a mature, stable framework widely used to build Windows desktop apps.
 > 
-> Consider using the [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) to migrate .NET Framework WPF apps to the latest .NET platform. It analyzes your codebase and provides guidance on updating it.
+> Use [GitHub Copilot upgrade](/dotnet/core/porting/github-copilot-upgrade/overview) to assess and upgrade a .NET Framework WPF app to modern .NET. Review the generated plan and validate each change in your app.
 
 </details>
 

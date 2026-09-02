@@ -2,7 +2,7 @@
 title: Migration terminology - upgrade, migrate, port, modernize
 description: Canonical definitions for the terms upgrade, migrate, port, and modernize as they apply to Windows desktop app development.
 ms.topic: concept-article
-ms.date: 07/09/2026
+ms.date: 09/02/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -27,7 +27,7 @@ The terms *upgrade*, *migrate*, *port*, and *modernize* describe different activ
 
 | What you want to do | Term | Where to start |
 |---|---|---|
-| Move a WPF or WinForms app from .NET Framework to .NET 8+ | Upgrade | [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) |
+| Move a WPF or WinForms app from .NET Framework to .NET 8+ | Upgrade | [GitHub Copilot upgrade](/dotnet/core/porting/github-copilot-upgrade/overview) |
 | Move a UWP app to Windows App SDK and WinUI 3 | Migrate | [Migrate from UWP to the Windows App SDK](migrate-to-windows-app-sdk-ovw.md) |
 | Rewrite a desktop app's UI in WinUI 3 | Migrate | [Migrate WPF app patterns to WinUI 3](wpf-patterns-winui3.md) |
 | Add Windows features to an existing WPF, WinForms, or Win32 app | Modernize | [Modernize your desktop apps](../../desktop/modernize/index.md) |

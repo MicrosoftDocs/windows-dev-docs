@@ -1,23 +1,26 @@
 ---
-title: Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
-description: The [.NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview) is a command-line tool that can assist with migrating a C# UWP app to a [WinUI](../../winui/winui3/index.md) app that uses the Windows App SDK.
+title: Legacy .NET Upgrade Assistant guidance for UWP
+description: Reference the deprecated .NET Upgrade Assistant workflow only when maintaining an existing C# UWP-to-WinUI 3 migration.
 ms.topic: upgrade-and-migration-article
-ms.date: 05/28/2026
+ms.date: 09/02/2026
+author: GrantMeStrength
+ms.author: jken
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, .NET Upgrade Assistant, Upgrade, Assistant, UWP, 
 ms.localizationpriority: medium
 ---
 
-# Migrate from UWP to the Windows App SDK with the .NET Upgrade Assistant
+# Legacy .NET Upgrade Assistant guidance for UWP
 
-The .NET Upgrade Assistant (see [Overview of the .NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-overview)) is a Visual Studio extension (recommended), and a command-line tool, that can assist with migrating a C# Universal Windows Platform (UWP) app to a [WinUI 3](/windows/apps/winui/) app that uses the Windows App SDK.
+> [!IMPORTANT]
+> [.NET Upgrade Assistant is deprecated](/dotnet/core/porting/upgrade-assistant-overview). Don't use it to start a new migration. This article remains available for teams that need to maintain or reproduce an existing C# UWP-to-WinUI 3 migration that used the tool.
 
-Our roadmap for UWP support in the .NET Upgrade Assistant includes further tooling improvements, and adding migration support for new features. If you find issues related to the .NET Upgrade Assistant, then you can file them within Visual Studio by selecting **Help** > **Send Feedback** > **Report a Problem**.
+GitHub Copilot upgrade replaces .NET Upgrade Assistant for supported .NET upgrades, but it doesn't currently document UWP-to-WinUI 3 as a supported upgrade path. For a new UWP migration, follow [Migrate from UWP to the Windows App SDK](migrate-to-windows-app-sdk-ovw.md) or use the [AI-assisted UWP migration guidance](../../develop/ai-assisted/migrate/uwp-to-winui.md).
 
-Also see the [Upgrade Assistant](https://github.com/dotnet/upgrade-assistant) GitHub repository. Options for running the tool on the command-line are documented there.
+The remaining sections describe the legacy tool's behavior and limitations.
 
-## Install the .NET Upgrade Assistant
+## Install the legacy tool
 
-You can install the .NET Upgrade Assistant as a Visual Studio extension or as a .NET command-line tool. For more info, see [Install the .NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-install).
+If you need to reproduce or continue an existing migration, you can enable the built-in legacy .NET Upgrade Assistant in a supported version of Visual Studio or install it as a .NET command-line tool. For more info, see [Install the .NET Upgrade Assistant](/dotnet/core/porting/upgrade-assistant-install).
 
 ## Summary
 
@@ -44,11 +47,11 @@ As it runs, the tool also aims to provide migration guidance in the form of warn
 
 ## What the tool supports
 
-This release of the .NET Upgrade Assistant is currently in preview, and is receiving frequent updates. The tool currently supports only the C# programming language; not C++. And in most cases with this release, your project will require additional effort from you to complete the migration.
+The deprecated tool's UWP migration support applies only to C#, not C++. In most cases, your project requires additional manual work to complete the migration.
 
 The tool aims to migrate your project and code so that it compiles. But some features require you to investigate and fix them (via **Task List** TODOs). For more information about what to consider before migrating, see [What's supported when migrating from UWP to WinUI](./what-is-supported.md).
 
-Because of the following limitations of the current release of the .NET Upgrade Assistant, you might choose to wait for a future release before migrating your app:
+The legacy UWP migration workflow has the following limitations:
 
 * Migrating from [**ApplicationView**](/uwp/api/windows.ui.viewmanagement.applicationview) APIs isn't supported.
 * Migrating from [**AppWindow**](/uwp/api/windows.ui.windowmanagement.appwindow.trycreateasync)-related APIs isn't supported.
@@ -59,8 +62,6 @@ Where possible, the tool tries to generate a warning; and it intentionally cause
 * Windows Runtime Components aren't supported.
 - Multi-window apps might not be migrated correctly.
 - A project that follows a non-standard file structure (such as `App.xaml` and `App.xaml.cs` not being in the root folder) might not be migrated correctly.
-
-The [Upgrade Assistant GitHub repository](https://github.com/dotnet/upgrade-assistant) documents troubleshooting tips and known issues. If you find any issues while using the tool, please report them in that same GitHub repository, tagging them with an area tag of `UWP`. We appreciate it!
 
 > [!NOTE]
 > For guidance about the migration process&mdash;and the differences between UWP and Windows App SDK features and APIs&mdash;see [Migrate from UWP to the Windows App SDK](./migrate-to-windows-app-sdk-ovw.md).
@@ -84,7 +85,7 @@ As source material, we'll be migrating the UWP [PhotoLab sample](https://github.
 
 1. Open the PhotoLab solution in Visual Studio.
 
-1. Having installed the .NET Upgrade Assistant extension (see [Install the .NET Upgrade Assistant](#install-the-net-upgrade-assistant) earlier in this topic), right-click on the project in **Solution Explorer**, and click **Upgrade**.
+1. Having installed the .NET Upgrade Assistant extension (see [Install the legacy tool](#install-the-legacy-tool) earlier in this topic), right-click on the project in **Solution Explorer**, and click **Upgrade**.
 
 1. Choose the **Upgrade project to a newer .NET version** option.
 
@@ -194,7 +195,7 @@ To use many of the XAML controls, ensure that your `app.xaml` file includes the 
 
 There are several known problems that can occur when using the .NET Upgrade Assistant. In some cases, these problems are with the [try-convert tool](https://github.com/dotnet/try-convert) that the .NET Upgrade Assistant uses internally.
 
-But for more troubleshooting tips and known issues, see the [Upgrade Assistant](https://github.com/dotnet/upgrade-assistant) GitHub repository.
+For current guidance about completing the migration manually, see [Migrate from UWP to the Windows App SDK](migrate-to-windows-app-sdk-ovw.md).
 
 ## See Also
 

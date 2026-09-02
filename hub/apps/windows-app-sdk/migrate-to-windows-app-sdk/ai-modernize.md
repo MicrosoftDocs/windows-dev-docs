@@ -2,7 +2,7 @@
 title: Modernize or port a Windows app with GitHub Copilot
 description: Use GitHub Copilot, the WinUI 3 migration plugin, and winapp CLI to migrate UWP apps to WinUI 3, modernize WPF/WinForms apps, and add Windows features to cross-platform apps.
 ms.topic: how-to
-ms.date: 04/17/2026
+ms.date: 09/02/2026
 ms.author: jken
 author: GrantMeStrength
 keywords: windows, github copilot, uwp migration, winui 3, wpf, winforms, modernization, winapp cli
@@ -78,13 +78,13 @@ Before you start, it's worth deciding which direction makes sense for your app. 
 
 | Your situation | Recommended path |
 |---|---|
-| Keep WPF or WinForms as your UI framework, move to .NET 9+ | **Upgrade in place** — use the [GitHub Copilot modernization for .NET](/dotnet/core/porting/github-copilot-app-modernization/overview) agent to automate the project file and code changes |
+| Keep WPF or WinForms as your UI framework, move to .NET 9+ | **Upgrade in place** — use [GitHub Copilot upgrade](/dotnet/core/porting/github-copilot-upgrade/overview) to assess the solution, plan the upgrade, and assist with code changes |
 | Add modern Windows features (notifications, AI, shell integration) to your existing app without changing the UI framework | **Add Windows App SDK features** — see the scenarios below; use winapp CLI to add package identity if needed |
 | Need modern Fluent UI, touch support, WinRT depth, or a fresh codebase | **Rebuild with WinUI 3** — see [WPF patterns in WinUI 3](wpf-patterns-winui3.md) for API mapping; for a Copilot-assisted approach see [Migrate a UWP app to WinUI 3](#migrate-a-uwp-app-to-winui-3) (UWP-specific, but the Copilot workflow is similar) |
-| LOB app with WCF, COM, or heavy third-party UI controls | **Upgrade in place first**, then modernize incrementally — the [GitHub Copilot modernization for .NET](/dotnet/core/porting/github-copilot-app-modernization/overview) agent can assist with WCF → CoreWCF, EF, and ASP.NET Core upgrades |
+| LOB app with WCF, COM, or heavy third-party UI controls | **Upgrade in place first**, then modernize incrementally — use [GitHub Copilot upgrade](/dotnet/core/porting/github-copilot-upgrade/overview) to assess the .NET upgrade, and plan COM and third-party control validation separately |
 
 > [!NOTE]
-> "Upgrade" (moving to a newer .NET version on the same UI framework) and "rebuild" (moving to WinUI 3) are separate decisions. You can upgrade now and rebuild later, or do both together for a greenfield replacement. The GitHub Copilot modernization for .NET covers the upgrade path; the sections below cover adding Windows App SDK features to your existing app.
+> "Upgrade" (moving to a newer .NET version on the same UI framework) and "rebuild" (moving to WinUI 3) are separate decisions. You can upgrade now and rebuild later, or do both together for a greenfield replacement. GitHub Copilot upgrade covers supported .NET upgrade paths; the sections below cover adding Windows App SDK features to your existing app.
 
 WPF and WinForms apps can adopt Windows App SDK features without a full rewrite. Copilot + the Learn MCP Server makes it easy to find and integrate specific features.
 
