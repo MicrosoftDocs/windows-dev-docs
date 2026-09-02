@@ -1,6 +1,4 @@
 items:
-- name: Build Windows apps
-  href: ../../desktop/index.yml
 - name: Migrate and modernize overview
   href: overall-migration-strategy.md
 - name: Choose your migration path
