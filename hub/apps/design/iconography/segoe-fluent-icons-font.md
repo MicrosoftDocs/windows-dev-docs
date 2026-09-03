@@ -2,7 +2,7 @@
 description: This article lists and provides usage guidance for the glyphs that come with the Segoe Fluent Icons font.
 title: Segoe Fluent Icons font
 label: Segoe Fluent Icons font
-ms.date: 02/19/2026
+ms.date: 09/03/2026
 ms.topic: article
 keywords: windows 11
 ms.localizationpriority: medium
@@ -69,6 +69,9 @@ You can also use the static resource `SymbolThemeFontFamily` to access `Segoe Fl
 * On Windows 11: There's nothing you need to do, the font comes with Windows.
 * On Windows 10: `Segoe Fluent Icons` is not included by default on Windows 10. You can download it from the [Design resources](../downloads/index.md#fonts) page.
 * On a Mac or other device: You can download `Segoe Fluent Icons` and other fonts from the [Design resources](../downloads/index.md#fonts) page. You can download the font for use in design and development, but you may not ship it to another platform.
+
+> [!NOTE]
+> The standalone version of `Segoe Fluent Icons` available from the [Design resources](../downloads/index.md#fonts) page can lag behind the version that ships with Windows 11, so it might not include every glyph listed in this article. If a glyph shown here appears as a missing-character box when you use a downloaded copy of the font, use the version of `Segoe Fluent Icons` that comes with an up-to-date Windows 11 installation, which contains the current set of glyphs.
 
 ## Examples
 
