@@ -4,7 +4,7 @@ description: Plan an incremental migration for a WPF, Windows Forms, or Win32 ap
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 09/02/2026
+ms.date: 09/03/2026
 # customer intent: As a developer with an existing Windows desktop app, I want an AI coding assistant to produce a realistic modernization plan for my codebase.
 ---
 
@@ -31,13 +31,22 @@ This article covers planning. For tool-specific migration workflows, see [Modern
 Copy the following prompt into your AI coding assistant's chat:
 
 ```text
-You are helping me modernize an existing Windows desktop application. Your goal
-is to add modern capabilities to an app that already ships, not to rewrite it.
-Treat "keep the app releasable at every step" as a hard constraint.
+Analyze this existing Windows desktop application and produce an evidence-based,
+incremental modernization plan. The goal is to add modern capabilities, not to
+rewrite the app. The app must build, run, and remain releasable after every
+phase.
 
-## Step 1: Investigate before advising
+## Phase 1: Investigate and stop
 
-Inspect my project files and report what you find. Don't guess. Cover:
+In your first response, do only the following:
+
+1. Inspect my project files and report the findings listed below.
+2. Identify information that you can't determine from the project.
+3. Ask all necessary questions in one batch.
+4. Stop and wait for my response. Don't recommend a migration path yet.
+
+Report the investigation as a table with Finding, Evidence in the project, and
+Uncertainty columns. Cover:
 
 - App and UI technology and version (WPF, Windows Forms, or Win32, including
   MFC), and approximately how many windows, forms, and dialogs the app contains.
@@ -54,17 +63,16 @@ Inspect my project files and report what you find. Don't guess. Cover:
 - Architecture signals. Determine whether presentation logic is separable from
   business logic or tightly coupled to the UI technology.
 
-Ask me, in one batch, about anything you can't determine from the code. Include
-these questions:
+Include these questions:
 
 1. What capability am I trying to add?
 2. What can I not change? Consider the deployment channel, minimum operating
    system version, control vendors, compliance requirements, and release
    cadence.
 
-Wait for my answers before continuing.
+After I answer, complete phases 2 through 4.
 
-## Step 2: Ground your recommendations
+## Phase 2: Ground your recommendations
 
 Base your guidance on the current Windows App SDK and Windows developer
 documentation at https://learn.microsoft.com/windows/apps/. Start with the
@@ -73,14 +81,15 @@ https://learn.microsoft.com/windows/apps/windows-app-sdk/migrate-to-windows-app-
 
 Follow these grounding rules:
 
-- Cite the specific documentation page behind each recommendation.
+- Cite the specific documentation page supporting each material recommendation.
 - Confirm that each returned URL and page title match the documentation you
   intended to cite. If a URL redirects to different or older content, report
   the redirect and don't treat the content as current guidance.
 - Check my project explicitly against documented framework, runtime, operating
   system, packaging, and deployment prerequisites.
-- If the documentation doesn't cover something, say so. Don't fill the gap
-  with an inference and present it as documented guidance.
+- Separate documented facts from judgment. If the documentation or project
+  evidence doesn't support a statement, label it [ASSUMPTION]. If the
+  documentation doesn't cover something, say so rather than guessing.
 - Never invent APIs, MSBuild properties, package names, or NuGet identifiers.
   If you can't verify that one exists, say that you are unsure.
 - Identify any preview, experimental, unsupported, or deprecated dependency.
@@ -92,7 +101,7 @@ Follow these grounding rules:
 - For a native C++ or MFC project, mark .NET-specific criteria and tooling as
   not applicable.
 
-## Step 3: Recommend a path
+## Phase 3: Recommend a path
 
 Use the exact path labels from the migration decision guide: Upgrade in place,
 Modernize in place, or Move to WinUI 3.
@@ -102,12 +111,12 @@ Modernize in place, or Move to WinUI 3.
   moving from one path to the next.
 - If different requested capabilities require different paths, identify that
   conflict instead of forcing one answer.
-- Explain why each rejected path loses. Distinguish BLOCKED (a documented
-  prerequisite or unsupported combination prevents it) from NOT RECOMMENDED
-  (it is possible, but its cost or risk isn't justified).
+- Explain why the other paths are BLOCKED (a documented prerequisite or
+  unsupported combination prevents them) or NOT RECOMMENDED (they are possible,
+  but their cost or risk isn't justified).
 - If the choice is close, identify the deciding factor.
 
-## Step 4: Produce the plan
+## Phase 4: Produce the plan
 
 Provide:
 
@@ -127,8 +136,6 @@ Provide:
 - Name the actual files, classes, projects, and dependencies in my code.
   Generic migration advice doesn't satisfy this request.
 - Prefer a shorter plan supported by evidence over a longer speculative plan.
-- Mark any unverified statement with [ASSUMPTION], including causal claims
-  about why my app behaves in a particular way.
 - If you can't complete a section, include its heading and state what
   information is missing. Don't invent content to fill it.
 ```
