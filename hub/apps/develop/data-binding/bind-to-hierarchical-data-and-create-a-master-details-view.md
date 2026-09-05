@@ -2,7 +2,7 @@
 ms.assetid: 6c563dd4-3dd0-4175-a1ab-7a1103fc9559
 title: "Tutorial: Bind hierarchical data and create a master/details view with WinUI"
 description: Create a multi-level master/details view of hierarchical data in WinUI by binding items controls to CollectionViewSource instances. Learn how to implement this structure.
-ms.date: 11/11/2025
+ms.date: 09/05/2026
 ms.topic: how-to
 keywords: windows 10, windows 11, winui, windows app sdk, windows ui, xBind
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Tutorial: Bind hierarchical data and create a master/details view"
 
-Learn how to create a multilevel master/details view of hierarchical data in WinUI by binding items controls to [CollectionViewSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances. This article explains how to use the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) for better performance and the [{Binding} markup extension](/windows/apps/develop/platform/xaml/binding-markup-extension) when flexibility is needed.
+Learn how to create a multilevel master/details view of hierarchical data in WinUI by binding items controls to [CollectionViewSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances. This article explains how to use the [{x:Bind} markup extension](../platform/xaml/x-bind-markup-extension.md) for better performance and the [{Binding} markup extension](../platform/xaml/binding-markup-extension.md) when flexibility is needed.
 
 One common structure for WinUI apps is to navigate to different details pages when a user makes a selection in a master list. This structure is useful when you want to provide a rich visual representation of each item at every level in a hierarchy. Another option is to display multiple levels of data on a single page. This structure is useful when you want to display a few simple lists that let the user quickly drill down to an item of interest. This article describes how to implement this interaction. The [CollectionViewSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances keep track of the current selection at each hierarchical level.
 
@@ -24,7 +24,7 @@ You create a view of a sports team hierarchy that's organized into lists for lea
 
 ## Prerequisites
 
-This article assumes that you know how to create a basic WinUI app. For instructions on creating your first WinUI app, see [Create a WinUI app](/windows/apps/tutorials/winui-notes/intro).
+This article assumes that you know how to create a basic WinUI app. For instructions on creating your first WinUI app, see [Create a WinUI app](../../tutorials/winui-notes/intro.md).
 
 ## Create the project
 

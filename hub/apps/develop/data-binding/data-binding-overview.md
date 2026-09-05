@@ -2,7 +2,7 @@
 ms.assetid: 02a08657-285d-4804-a006-168c22aa4904
 title: "Tutorial: Data Binding basics"
 description: Learn how to bind controls to data in WinUI apps. Discover how to bind single items or collections, implement details views, and format data for display.
-ms.date: 07/15/2026
+ms.date: 09/05/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui
 ms.localizationpriority: medium
@@ -178,7 +178,7 @@ You can choose to display all the details of `Recording` objects in [ListView](/
 You can implement this arrangement in two ways. You can bind the details view to the [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem) property of the [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview). Or you can use a [CollectionViewSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource). In this case, you bind both the `ListView` and the details view to the `CollectionViewSource`. This approach takes care of the currently selected item for you. Both techniques are shown in the following sections, and they both give the same results (shown in the illustration).
 
 > [!NOTE]
-> So far in this topic, you used only the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension). But both of the techniques shown in the following sections require the more flexible (but less performant) [{Binding} markup extension](/windows/apps/develop/platform/xaml/binding-markup-extension).
+> So far in this topic, you used only the [{x:Bind} markup extension](../platform/xaml/x-bind-markup-extension.md). But both of the techniques shown in the following sections require the more flexible (but less performant) [{Binding} markup extension](../platform/xaml/binding-markup-extension.md).
 
 First, here's the [SelectedItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.selector.selecteditem) technique. For a C# application, the only change necessary is to the markup.
 
@@ -308,13 +308,13 @@ While `x:Bind` is powerful, you can't use it in certain scenarios:
 For practical examples and a deeper understanding of when to use each, see the following topics:
 
 - [Data binding in depth](data-binding-in-depth.md)
-- [x:Bind markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension)
+- [x:Bind markup extension](../platform/xaml/x-bind-markup-extension.md)
 
 ## Related content
 
 - [Data binding](index.md)
 - [Data binding in depth](data-binding-in-depth.md)
 - [Data binding and MVVM](data-binding-and-mvvm.md)
-- [MVVM performance tips for WinUI apps](/windows/apps/develop/performance/mvvm-performance-tips)
+- [MVVM performance tips for WinUI apps](../performance/mvvm-performance-tips.md)
 - [CommunityToolkit MVVM](/dotnet/communitytoolkit/mvvm/)
 - [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery)

@@ -1,7 +1,7 @@
 ---
 description: Learn how to use functions in x:Bind to simplify value conversion and create complex bindings in WinUI apps.
 title: Functions in x:Bind with WinUI
-ms.date: 07/15/2026
+ms.date: 09/05/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, xaml, winui, windows ui, xBind, winui 3
 ms.localizationpriority: medium
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 WinUI apps allow you to use functions as the leaf step of the data binding path in the `{x:Bind}` markup extension. This feature simplifies value conversion and enables bindings to depend on multiple parameters, making your app more dynamic and efficient.
 
 > [!TIP]
-> For general info about using data binding in your app with `{x:Bind}` (and for an all-up comparison between `{x:Bind}` and `{Binding}`), see [Data binding in depth](data-binding-in-depth.md) and [{x:Bind} Markup Extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension).
+> For general info about using data binding in your app with `{x:Bind}` (and for an all-up comparison between `{x:Bind}` and `{Binding}`), see [Data binding in depth](data-binding-in-depth.md) and [{x:Bind} Markup Extension](../platform/xaml/x-bind-markup-extension.md).
 
 In the following example, the background and foreground of the item are bound to functions that do conversion based on the color parameter.
 
@@ -51,7 +51,7 @@ public class ColorEntry
 
 ## Path to the function
 
-Specify the [path to the function](/windows/apps/develop/platform/xaml/x-bind-markup-extension#property-path) like other property paths. The path can include [dots](/windows/apps/develop/platform/xaml/x-bind-markup-extension#property-path-resolution) (.), [indexers](/windows/apps/develop/platform/xaml/x-bind-markup-extension#collections), or [casts](/windows/apps/develop/platform/xaml/x-bind-markup-extension#casting) to locate the function.
+Specify the [path to the function](../platform/xaml/x-bind-markup-extension.md#property-path) like other property paths. The path can include [dots](../platform/xaml/x-bind-markup-extension.md#property-path-resolution) (.), [indexers](../platform/xaml/x-bind-markup-extension.md#collections), or [casts](../platform/xaml/x-bind-markup-extension.md#casting) to locate the function.
 
 Use the `XMLNamespace:ClassName.MethodName` syntax to specify static functions. For example, use the following syntax to bind to static functions in code-behind.
 
@@ -167,7 +167,7 @@ Specify multiple function arguments separated by commas (,).
 - Boolean – Specify as "x:True" or "x:False".
 
 > [!TIP]
-> [TargetNullValue](/windows/apps/develop/platform/xaml/x-bind-markup-extension#properties-that-you-can-set-with-xbind) applies to the result of the function call, not to any bound arguments.
+> [TargetNullValue](../platform/xaml/x-bind-markup-extension.md#properties-that-you-can-set-with-xbind) applies to the result of the function call, not to any bound arguments.
 
 ### Two-way function bindings
 
@@ -179,7 +179,7 @@ In a two-way binding scenario, you must specify a second function for the revers
 
 ## See also
 
-- [{x:Bind} Markup Extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension)
+- [{x:Bind} Markup Extension](../platform/xaml/x-bind-markup-extension.md)
 - [Data binding in depth](data-binding-in-depth.md)
 - [Data binding overview](data-binding-overview.md)
 - [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery)

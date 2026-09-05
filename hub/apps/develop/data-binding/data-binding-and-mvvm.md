@@ -4,7 +4,7 @@ title: Windows data binding and MVVM
 description: Learn how data binding in the Model-View-ViewModel (MVVM) pattern enables loose coupling between UI and non-UI code for better maintainability.
 author: GrantMeStrength
 ms.author: jken
-ms.date: 07/16/2026
+ms.date: 09/05/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui, mvvm
 ms.localizationpriority: medium
@@ -36,7 +36,7 @@ In contrast with MVVM, an app with a more conventional "code-behind" structure t
 When you use the MVVM pattern, divide your app into the following layers:
 
 * The **model** layer defines the types that represent your business data. This layer includes everything required to model the core app domain and often includes core app logic. This layer is completely independent of the view and view-model layers and often resides partially in the cloud. Given a fully implemented model layer, you can create multiple different client apps if you choose, such as Windows App SDK and web apps that work with the same underlying data.
-* The **view** layer defines the UI by using XAML markup. The markup includes data binding expressions (such as [x:Bind](/windows/apps/develop/platform/xaml/x-bind-markup-extension)) that define the connection between specific UI components and various view-model and model members. You can sometimes use code-behind files as part of the view layer to contain additional code needed to customize or manipulate the UI or to extract data from event handler arguments before calling a view-model method that performs the work.
+* The **view** layer defines the UI by using XAML markup. The markup includes data binding expressions (such as [x:Bind](../platform/xaml/x-bind-markup-extension.md)) that define the connection between specific UI components and various view-model and model members. You can sometimes use code-behind files as part of the view layer to contain additional code needed to customize or manipulate the UI or to extract data from event handler arguments before calling a view-model method that performs the work.
 * The **view-model** layer provides data binding targets for the view. In many cases, the view-model exposes the model directly or provides members that wrap specific model members. The view-model can also define members for keeping track of data that is relevant to the UI but not to the model, such as the display order of a list of items. The view-model also serves as an integration point with other services such as data access code. For simple projects, you might not need a separate model layer, but only a view-model that encapsulates all the data you need.
 
 ## Basic and advanced MVVM
@@ -45,7 +45,7 @@ As with any design pattern, there is more than one way to implement MVVM, and ma
 
 Although sophisticated MVVM frameworks can be very useful, especially for enterprise-scale projects, there is typically a cost associated with adopting any particular pattern or technique, and the benefits are not always clear, depending on the scale and size of your project. Fortunately, you can adopt only those techniques that provide a clear and tangible benefit, and ignore others until you need them.
 
-In particular, you can get a lot of benefit simply by understanding and applying the full power of data binding and separating your app logic into the layers described earlier. This can be achieved using only the capabilities provided by the Windows App SDK, and without using any external frameworks. In particular, the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) makes data binding easier and higher performing than in previous XAML platforms, eliminating the need for a lot of the boilerplate code required earlier.
+In particular, you can get a lot of benefit simply by understanding and applying the full power of data binding and separating your app logic into the layers described earlier. This can be achieved using only the capabilities provided by the Windows App SDK, and without using any external frameworks. In particular, the [{x:Bind} markup extension](../platform/xaml/x-bind-markup-extension.md) makes data binding easier and higher performing than in previous XAML platforms, eliminating the need for a lot of the boilerplate code required earlier.
 
 For additional guidance on using MVVM, see the [CommunityToolkit MVVM](/dotnet/communitytoolkit/mvvm/) library, which provides base classes like `ObservableObject` and `RelayCommand`, along with source generators (via `[ObservableProperty]` and `[RelayCommand]` attributes) that eliminate boilerplate code. The [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery) also demonstrates data binding and MVVM patterns with WinUI 3.
 
@@ -123,7 +123,7 @@ For guidance on combining MVVM with dependency injection, configuration, and ent
 ### Topics
 
 [Data binding in depth](data-binding-in-depth.md)  
-[{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension)  
+[{x:Bind} markup extension](../platform/xaml/x-bind-markup-extension.md)  
 [MVVM performance tips for WinUI apps](../performance/mvvm-performance-tips.md)  
 [Architecture patterns for WinUI 3 desktop apps](../architecture-patterns.md)
 

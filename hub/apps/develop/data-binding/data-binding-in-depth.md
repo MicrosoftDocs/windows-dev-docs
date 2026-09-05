@@ -2,7 +2,7 @@
 ms.assetid: 2a50c798-6244-4fda-9091-a10a9e87fae2
 title: Windows data binding in depth
 description: Learn how to use data binding in WinUI applications to simplify UI development and improve app maintainability.
-ms.date: 08/21/2026
+ms.date: 09/05/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui
 ms.localizationpriority: medium
@@ -21,7 +21,7 @@ This article describes the WinUI 3 data binding features using the APIs in the [
 
 ## Important APIs
 
-- [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension)
+- [{x:Bind} markup extension](../platform/xaml/x-bind-markup-extension.md)
 - [Binding class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding)
 - [DataContext](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext)
 - [INotifyPropertyChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.inotifypropertychanged)
@@ -36,7 +36,7 @@ You can use data binding to simply display values from a data source when the UI
 - You could use the one-way mode to bind a [ListView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview) to a collection of real-time news articles grouped by newspaper section.
 - You could use the two-way mode to bind a [TextBox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox) to a customer's name in a form.
 
-Independent of mode, there are two kinds of binding, and you typically declare both in UI markup. You can choose to use either the [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) or the [{Binding} markup extension](/windows/apps/develop/platform/xaml/binding-markup-extension). You can even use a mixture of the two in the same app—even on the same UI element. `{x:Bind}` was new in UWP for Windows 10 and it has better performance. All the details described in this topic apply to both kinds of binding unless we explicitly say otherwise.
+Independent of mode, there are two kinds of binding, and you typically declare both in UI markup. You can choose to use either the [{x:Bind} markup extension](../platform/xaml/x-bind-markup-extension.md) or the [{Binding} markup extension](../platform/xaml/binding-markup-extension.md). You can even use a mixture of the two in the same app—even on the same UI element. `{x:Bind}` was new in UWP for Windows 10 and it has better performance. All the details described in this topic apply to both kinds of binding unless we explicitly say otherwise.
 
 ### Sample apps
 
@@ -46,7 +46,7 @@ Independent of mode, there are two kinds of binding, and you typically declare b
 
 - A *binding source*. This source provides the data for the binding. It can be an instance of any class that has members whose values you want to display in your UI.
 - A *binding target*. This target is a [DependencyProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyproperty) of the [FrameworkElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement) in your UI that displays the data.
-- A *binding object*. This object transfers data values from the source to the target, and optionally from the target back to the source. The binding object is created at XAML load time from your [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) or [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) markup extension.
+- A *binding object*. This object transfers data values from the source to the target, and optionally from the target back to the source. The binding object is created at XAML load time from your [{x:Bind}](../platform/xaml/x-bind-markup-extension.md) or [{Binding}](../platform/xaml/binding-markup-extension.md) markup extension.
 
 In the following sections, you take a closer look at the binding source, the binding target, and the binding object. The sections link together with the example of binding a button's content to a string property named `NextButtonText`, which belongs to a class named `HostViewModel`.
 
@@ -165,9 +165,9 @@ You can treat a binding source either as a single object whose properties contai
 |-|-|-|
 | Bind to an object. | Can be any object. | Can be any object. |
 | Get property change notifications from a bound object. | Object must implement [INotifyPropertyChanged](/dotnet/api/system.componentmodel.inotifypropertychanged). | Object must implement [INotifyPropertyChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.inotifypropertychanged). |
-| Bind to a collection. | [List&lt;T&gt;](/dotnet/api/system.collections.generic.list-1) | [IVector](/uwp/api/windows.foundation.collections.ivector_t_) of [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable), or [IBindableObservableVector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.interop.ibindableobservablevector). See [XAML items controls; bind to a C++/WinRT collection](/windows/apps/develop/cpp-winrt/binding-collection) and [Collections with C++/WinRT](/windows/apps/develop/cpp-winrt/collections). |
+| Bind to a collection. | [List&lt;T&gt;](/dotnet/api/system.collections.generic.list-1) | [IVector](/uwp/api/windows.foundation.collections.ivector_t_) of [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable), or [IBindableObservableVector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.interop.ibindableobservablevector). See [XAML items controls; bind to a C++/WinRT collection](../cpp-winrt/binding-collection.md) and [Collections with C++/WinRT](../cpp-winrt/collections.md). |
 | Get collection change notifications from a bound collection. | [ObservableCollection&lt;T&gt;](/dotnet/api/system.collections.objectmodel.observablecollection-1)|[IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_) of [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable). For example, [winrt::single_threaded_observable_vector&lt;T&gt;](/uwp/cpp-ref-for-winrt/single-threaded-observable-vector). |
-| Implement a collection that supports binding. | Extend [List&lt;T&gt;](/dotnet/api/system.collections.generic.list-1) or implement [IList](/dotnet/api/system.collections.ilist), [IList](/dotnet/api/system.collections.generic.ilist-1)&lt;[Object](/dotnet/api/system.object)&gt;, [IEnumerable](/dotnet/api/system.collections.ienumerable), or [IEnumerable](/dotnet/api/system.collections.generic.ienumerable-1)&lt;Object&gt;. Binding to generic `IList<T>` and `IEnumerable<T>` isn't supported. | Implement [IVector](/uwp/api/windows.foundation.collections.ivector_t_) of [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable). See [XAML items controls; bind to a C++/WinRT collection](/windows/apps/develop/cpp-winrt/binding-collection) and [Collections with C++/WinRT](/windows/apps/develop/cpp-winrt/collections). |
+| Implement a collection that supports binding. | Extend [List&lt;T&gt;](/dotnet/api/system.collections.generic.list-1) or implement [IList](/dotnet/api/system.collections.ilist), [IList](/dotnet/api/system.collections.generic.ilist-1)&lt;[Object](/dotnet/api/system.object)&gt;, [IEnumerable](/dotnet/api/system.collections.ienumerable), or [IEnumerable](/dotnet/api/system.collections.generic.ienumerable-1)&lt;Object&gt;. Binding to generic `IList<T>` and `IEnumerable<T>` isn't supported. | Implement [IVector](/uwp/api/windows.foundation.collections.ivector_t_) of [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable). See [XAML items controls; bind to a C++/WinRT collection](../cpp-winrt/binding-collection.md) and [Collections with C++/WinRT](../cpp-winrt/collections.md). |
 | Implement a collection that supports collection change notifications. | Extend [ObservableCollection&lt;T&gt;](/dotnet/api/system.collections.objectmodel.observablecollection-1) or implement (non-generic) [IList](/dotnet/api/system.collections.ilist) and [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged). | Implement [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_) of [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable), or [IBindableObservableVector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.interop.ibindableobservablevector). |
 | Implement a collection that supports incremental loading. | Extend [ObservableCollection&lt;T&gt;](/dotnet/api/system.collections.objectmodel.observablecollection-1) or implement (non-generic) [IList](/dotnet/api/system.collections.ilist) and [INotifyCollectionChanged](/dotnet/api/system.collections.specialized.inotifycollectionchanged). Additionally, implement [ISupportIncrementalLoading](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.isupportincrementalloading). | Implement [IObservableVector](/uwp/api/windows.foundation.collections.iobservablevector_t_) of [IInspectable](/windows/win32/api/inspectable/nn-inspectable-iinspectable), or [IBindableObservableVector](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.interop.ibindableobservablevector). Additionally, implement [ISupportIncrementalLoading](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.isupportincrementalloading) |
 
@@ -175,7 +175,7 @@ You can bind list controls to arbitrarily large data sources, and still achieve 
 
 ### Binding target
 
-In the following two examples, the `Button.Content` property is the binding target. Its value is set to a markup extension that declares the binding object. The first example shows [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension), and the second example shows [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension). Declaring bindings in markup is the common case because it's convenient, readable, and toolable. But if you need to, you can avoid markup and imperatively (programmatically) create an instance of the [Binding](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding) class instead.
+In the following two examples, the `Button.Content` property is the binding target. Its value is set to a markup extension that declares the binding object. The first example shows [{x:Bind}](../platform/xaml/x-bind-markup-extension.md), and the second example shows [{Binding}](../platform/xaml/binding-markup-extension.md). Declaring bindings in markup is the common case because it's convenient, readable, and toolable. But if you need to, you can avoid markup and imperatively (programmatically) create an instance of the [Binding](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding) class instead.
 
 ``` xaml
 <Button Content="{x:Bind ...}" ... />
@@ -185,14 +185,14 @@ In the following two examples, the `Button.Content` property is the binding targ
 <Button Content="{Binding ...}" ... />
 ```
 
-If you're using C++/WinRT, then you need to add the [BindableAttribute](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute) attribute to any runtime class that you want to use the [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) markup extension with.
+If you're using C++/WinRT, then you need to add the [BindableAttribute](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute) attribute to any runtime class that you want to use the [{Binding}](../platform/xaml/binding-markup-extension.md) markup extension with.
 
 > [!IMPORTANT]
-> If you're using C++/WinRT, then the [BindableAttribute](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute) attribute is available with Windows App SDK. Without that attribute, you need to implement the [ICustomPropertyProvider](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustomproperty) interfaces in order to be able to use the [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) markup extension.
+> If you're using C++/WinRT, then the [BindableAttribute](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute) attribute is available with Windows App SDK. Without that attribute, you need to implement the [ICustomPropertyProvider](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustomproperty) interfaces in order to be able to use the [{Binding}](../platform/xaml/binding-markup-extension.md) markup extension.
 
 ### Binding object declared using {x:Bind}
 
-Before you author your [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) markup, you need to expose your binding source class from the class that represents your page of markup. Add a property (of type `HostViewModel` in this case) to your `MainWindow` window class.
+Before you author your [{x:Bind}](../platform/xaml/x-bind-markup-extension.md) markup, you need to expose your binding source class from the class that represents your page of markup. Add a property (of type `HostViewModel` in this case) to your `MainWindow` window class.
 
 ``` csharp
 namespace DataBindingInDepth
@@ -219,9 +219,9 @@ After you add the property, you can take a closer look at the markup that declar
 </Window>
 ```
 
-Notice the value that you specify for `Path`. The window interprets this value in its own context. In this case, the path begins by referencing the `ViewModel` property that you just added to the `MainWindow` page. That property returns a `HostViewModel` instance, so you can *dot* into that object to access the `HostViewModel.NextButtonText` property. You specify `Mode` to override the [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) default of one-time.
+Notice the value that you specify for `Path`. The window interprets this value in its own context. In this case, the path begins by referencing the `ViewModel` property that you just added to the `MainWindow` page. That property returns a `HostViewModel` instance, so you can *dot* into that object to access the `HostViewModel.NextButtonText` property. You specify `Mode` to override the [{x:Bind}](../platform/xaml/x-bind-markup-extension.md) default of one-time.
 
-The [Path](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.path) property supports a variety of syntax options for binding to nested properties, attached properties, and integer and string indexers. For more info, see [Property-path syntax](/windows/apps/develop/platform/xaml/property-path-syntax). Binding to string indexers gives you the effect of binding to dynamic properties without having to implement [ICustomPropertyProvider](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider). For other settings, see [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension).
+The [Path](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.path) property supports a variety of syntax options for binding to nested properties, attached properties, and integer and string indexers. For more info, see [Property-path syntax](../platform/xaml/property-path-syntax.md). Binding to string indexers gives you the effect of binding to dynamic properties without having to implement [ICustomPropertyProvider](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider). For other settings, see [{x:Bind} markup extension](../platform/xaml/x-bind-markup-extension.md).
 
 To illustrate that the `HostViewModel.NextButtonText` property is observable, add a `Click` event handler to the button, and update the value of `HostViewModel.NextButtonText`. Build, run, and click the button to see the value of the button's `Content` update.
 
@@ -262,7 +262,7 @@ The partial classes for your windows generate code to support `{x:Bind}` at comp
 
 ### Binding object declared by using {Binding}
 
-If you use C++/WinRT, add the [BindableAttribute](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute) attribute to any runtime class that you want to bind to when you use the [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) markup extension. To use [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension), you don't need that attribute.
+If you use C++/WinRT, add the [BindableAttribute](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute) attribute to any runtime class that you want to bind to when you use the [{Binding}](../platform/xaml/binding-markup-extension.md) markup extension. To use [{x:Bind}](../platform/xaml/x-bind-markup-extension.md), you don't need that attribute.
 
 ```cppwinrt
 // HostViewModel.idl
@@ -276,9 +276,9 @@ runtimeclass HostViewModel : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
 ```
 
 > [!IMPORTANT]
-> If you're using C++/WinRT, then the [BindableAttribute](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute) attribute is available with Windows App SDK. Without that attribute, you need to implement the [ICustomPropertyProvider](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustomproperty) interfaces in order to be able to use the [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) markup extension.
+> If you're using C++/WinRT, then the [BindableAttribute](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindableattribute) attribute is available with Windows App SDK. Without that attribute, you need to implement the [ICustomPropertyProvider](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider) and [ICustomProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustomproperty) interfaces in order to be able to use the [{Binding}](../platform/xaml/binding-markup-extension.md) markup extension.
 
-By default, [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) assumes that you're binding to the [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext) of your markup window. So, set the `DataContext` of your window to be an instance of your binding source class (of type `HostViewModel` in this case). The following example shows the markup that declares the binding object. It uses the same `Button.Content` binding target used in the "Binding target" section earlier, and it binds to the `HostViewModel.NextButtonText` property.
+By default, [{Binding}](../platform/xaml/binding-markup-extension.md) assumes that you're binding to the [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext) of your markup window. So, set the `DataContext` of your window to be an instance of your binding source class (of type `HostViewModel` in this case). The following example shows the markup that declares the binding object. It uses the same `Button.Content` binding target used in the "Binding target" section earlier, and it binds to the `HostViewModel.NextButtonText` property.
 
 ``` xaml
 <Window xmlns:viewmodel="using:DataBindingInDepth" ... >
@@ -298,11 +298,11 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Notice the value specified for `Path`. The window's [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext) interprets this value, which in this example is set to an instance of `HostViewModel`. The path references the `HostViewModel.NextButtonText` property. You can omit `Mode`, because the [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) default of one-way works here.
+Notice the value specified for `Path`. The window's [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext) interprets this value, which in this example is set to an instance of `HostViewModel`. The path references the `HostViewModel.NextButtonText` property. You can omit `Mode`, because the [{Binding}](../platform/xaml/binding-markup-extension.md) default of one-way works here.
 
 The default value of [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext) for a UI element is the inherited value of its parent. You can override that default by setting `DataContext` explicitly, which is in turn inherited by children by default. Setting `DataContext` explicitly on an element is useful when you want to have multiple bindings that use the same source.
 
-A binding object has a `Source` property, which defaults to the [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext) of the UI element on which the binding is declared. You can override this default by setting `Source`, `RelativeSource`, or `ElementName` explicitly on the binding (see [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) for details).
+A binding object has a `Source` property, which defaults to the [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext) of the UI element on which the binding is declared. You can override this default by setting `Source`, `RelativeSource`, or `ElementName` explicitly on the binding (see [{Binding}](../platform/xaml/binding-markup-extension.md) for details).
 
 Inside a [**DataTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate), the [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext) is automatically set to the data object being templated. The following example could be used as the `ItemTemplate` of an items control bound to a collection of any type that has string properties named `Title` and `Description`.
 
@@ -318,7 +318,7 @@ Inside a [**DataTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml
 > [!NOTE]
 > By default, changes to [**TextBox.Text**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.text) are sent to a two-way bound source when the [**TextBox**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox) loses focus. To cause changes to be sent after every user keystroke, set `UpdateSourceTrigger` to `PropertyChanged` on the binding in markup. You can also completely take control of when changes are sent to the source by setting `UpdateSourceTrigger` to `Explicit`. You then handle events on the text box (typically [**TextBox.TextChanged**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textbox.textchanged)), call [**GetBindingExpression**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.getbindingexpression) on the target to get a [**BindingExpression**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindingexpression) object, and finally call [**BindingExpression.UpdateSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindingexpression.updatesource) to programmatically update the data source.
 
-The [**Path**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.path) property supports a variety of syntax options for binding to nested properties, attached properties, and integer and string indexers. For more info, see [Property-path syntax](/windows/apps/develop/platform/xaml/property-path-syntax). Binding to string indexers gives you the effect of binding to dynamic properties without having to implement [**ICustomPropertyProvider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider). The [**ElementName**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.elementname) property is useful for element-to-element binding. The [**RelativeSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.relativesource) property has several uses, one of which is as a more powerful alternative to template binding inside a [**ControlTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.controltemplate). For other settings, see [{Binding} markup extension](/windows/apps/develop/platform/xaml/binding-markup-extension) and the [**Binding**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding) class.
+The [**Path**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.path) property supports a variety of syntax options for binding to nested properties, attached properties, and integer and string indexers. For more info, see [Property-path syntax](../platform/xaml/property-path-syntax.md). Binding to string indexers gives you the effect of binding to dynamic properties without having to implement [**ICustomPropertyProvider**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.icustompropertyprovider). The [**ElementName**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.elementname) property is useful for element-to-element binding. The [**RelativeSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding.relativesource) property has several uses, one of which is as a more powerful alternative to template binding inside a [**ControlTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.controltemplate). For other settings, see [{Binding} markup extension](../platform/xaml/binding-markup-extension.md) and the [**Binding**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding) class.
 
 ## What if the source and the target aren't the same type?
 
@@ -412,7 +412,7 @@ You can bind the property of one XAML element to the property of another XAML el
 
 ## Resource dictionaries with {x:Bind}
 
-The [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) depends on code generation, so it needs a code-behind file containing a constructor that calls `InitializeComponent` (to initialize the generated code). To reuse the resource dictionary, instantiate its type (so that `InitializeComponent` is called) instead of referencing its filename. Here's an example of what to do if you have an existing resource dictionary and you want to use `{x:Bind}` in it.
+The [{x:Bind} markup extension](../platform/xaml/x-bind-markup-extension.md) depends on code generation, so it needs a code-behind file containing a constructor that calls `InitializeComponent` (to initialize the generated code). To reuse the resource dictionary, instantiate its type (so that `InitializeComponent` is called) instead of referencing its filename. Here's an example of what to do if you have an existing resource dictionary and you want to use `{x:Bind}` in it.
 
 ``` xaml
 <!-- TemplatesResourceDictionary.xaml -->
@@ -655,7 +655,7 @@ In this example:
 
 ## Event binding and ICommand
 
-[{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) supports a feature called event binding. With this feature, you can specify the handler for an event by using a binding. This feature is an additional option for handling events, on top of handling events with a method in the code-behind file. Suppose you have a `ListViewDoubleTapped` event handler in your `MainWindow` class.
+[{x:Bind}](../platform/xaml/x-bind-markup-extension.md) supports a feature called event binding. With this feature, you can specify the handler for an event by using a binding. This feature is an additional option for handling events, on top of handling events with a method in the code-behind file. Suppose you have a `ListViewDoubleTapped` event handler in your `MainWindow` class.
 
 ``` csharp
 public sealed partial class MainWindow : Window
@@ -676,7 +676,7 @@ You can bind a ListView's **DoubleTapped** event to a method in the **MainWindow
 
 You can't use overloaded methods to handle an event with this technique. Also, if the method that handles the event has parameters, then all of them must be assignable from the types of all of the event's parameters, respectively. In this case, `ListViewDoubleTapped` isn't overloaded and it has no parameters (but it would still be valid even if it took two `object` parameters).
 
-The event binding technique is similar to implementing and consuming commands. In a WinUI 3 .NET app, a command is a property that returns an object that implements the [**System.Windows.Input.ICommand**](/dotnet/api/system.windows.input.icommand) interface. Both [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) and [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) work with commands. You can use the following reusable `DelegateCommand` implementation to connect view-model actions to command bindings.
+The event binding technique is similar to implementing and consuming commands. In a WinUI 3 .NET app, a command is a property that returns an object that implements the [**System.Windows.Input.ICommand**](/dotnet/api/system.windows.input.icommand) interface. Both [{x:Bind}](../platform/xaml/x-bind-markup-extension.md) and [{Binding}](../platform/xaml/binding-markup-extension.md) work with commands. You can use the following reusable `DelegateCommand` implementation to connect view-model actions to command bindings.
 
 ``` csharp
 using System;
@@ -802,7 +802,7 @@ public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
 }
 ```
 
-Remember that when using [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) with data templates, you need to indicate the type being bound to by setting an `x:DataType` value. If the type is generic, then you can't express that in markup so you need to use [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) instead in the group style header template.
+Remember that when using [{x:Bind}](../platform/xaml/x-bind-markup-extension.md) with data templates, you need to indicate the type being bound to by setting an `x:DataType` value. If the type is generic, then you can't express that in markup so you need to use [{Binding}](../platform/xaml/binding-markup-extension.md) instead in the group style header template.
 
 ``` xaml
     <Grid.Resources>
@@ -840,14 +840,14 @@ When you bind to hierarchical data—such as subcategories within categories—y
 
 Your binding markup contains the names of properties (and, for C#, sometimes fields and methods). So when you rename a property, you also need to change any binding that references it. If you forget to do that, you create a data binding bug, and your app either doesn't compile or doesn't run correctly.
 
-The binding objects that [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) and [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) create are largely functionally equivalent. But `{x:Bind}` has type information for the binding source, and it generates source code at compile time. With `{x:Bind}`, you get the same kind of problem detection that you get with the rest of your code. That detection includes compile-time validation of your binding expressions and debugging by setting breakpoints in the source code generated as the partial class for your page. You can find these classes in the files in your `obj` folder, with names like (for C#) `<view name>.g.cs`). If you have a problem with a binding, turn on **Break On Unhandled Exceptions** in the Microsoft Visual Studio debugger. The debugger breaks execution at that point, and you can then debug what went wrong. The code generated by `{x:Bind}` follows the same pattern for each part of the graph of binding source nodes, and you can use the info in the **Call Stack** window to help determine the sequence of calls that led up to the problem.
+The binding objects that [{x:Bind}](../platform/xaml/x-bind-markup-extension.md) and [{Binding}](../platform/xaml/binding-markup-extension.md) create are largely functionally equivalent. But `{x:Bind}` has type information for the binding source, and it generates source code at compile time. With `{x:Bind}`, you get the same kind of problem detection that you get with the rest of your code. That detection includes compile-time validation of your binding expressions and debugging by setting breakpoints in the source code generated as the partial class for your page. You can find these classes in the files in your `obj` folder, with names like (for C#) `<view name>.g.cs`). If you have a problem with a binding, turn on **Break On Unhandled Exceptions** in the Microsoft Visual Studio debugger. The debugger breaks execution at that point, and you can then debug what went wrong. The code generated by `{x:Bind}` follows the same pattern for each part of the graph of binding source nodes, and you can use the info in the **Call Stack** window to help determine the sequence of calls that led up to the problem.
 
-[{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) doesn't have type information for the binding source. But when you run your app with the debugger attached, any binding errors appear in the **Output** and **XAML Binding Failures** windows in Visual Studio. For more information on debugging binding errors in Visual Studio, see [XAML data binding diagnostics](/visualstudio/xaml-tools/xaml-data-binding-diagnostics).
+[{Binding}](../platform/xaml/binding-markup-extension.md) doesn't have type information for the binding source. But when you run your app with the debugger attached, any binding errors appear in the **Output** and **XAML Binding Failures** windows in Visual Studio. For more information on debugging binding errors in Visual Studio, see [XAML data binding diagnostics](/visualstudio/xaml-tools/xaml-data-binding-diagnostics).
 
 ## Creating bindings in code
 
 > [!NOTE]
-> This section only applies to [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension), because you can't create [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) bindings in code. However, you can achieve some of the same benefits of `{x:Bind}` with [**DependencyObject.RegisterPropertyChangedCallback**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.registerpropertychangedcallback), which enables you to register for change notifications on any dependency property.
+> This section only applies to [{Binding}](../platform/xaml/binding-markup-extension.md), because you can't create [{x:Bind}](../platform/xaml/x-bind-markup-extension.md) bindings in code. However, you can achieve some of the same benefits of `{x:Bind}` with [**DependencyObject.RegisterPropertyChangedCallback**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject.registerpropertychangedcallback), which enables you to register for change notifications on any dependency property.
 
 You can also connect UI elements to data by using procedural code instead of XAML. To do this, create a new [**Binding**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.binding) object, set the appropriate properties, then call [**FrameworkElement.SetBinding**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.setbinding) or [**BindingOperations.SetBinding**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.bindingoperations.setbinding). Creating bindings programmatically is useful when you want to choose the binding property values at run time or share a single binding among multiple controls. However, you can't change the binding property values after you call `SetBinding`.
 
@@ -897,6 +897,6 @@ MyTextBox.SetBinding(TextBox.ForegroundProperty, binding);
 
 - [Data binding overview](data-binding-overview.md)
 - [Data binding and MVVM](data-binding-and-mvvm.md)
-- [MVVM performance tips for WinUI apps](/windows/apps/develop/performance/mvvm-performance-tips)
+- [MVVM performance tips for WinUI apps](../performance/mvvm-performance-tips.md)
 - [CommunityToolkit MVVM](/dotnet/communitytoolkit/mvvm/)
 - [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery)
