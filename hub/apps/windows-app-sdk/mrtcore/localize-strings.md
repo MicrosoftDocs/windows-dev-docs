@@ -1,7 +1,7 @@
 ---
 description: If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
 title: Localize strings in your UI and app package manifest
-ms.date: 06/02/2026
+ms.date: 09/05/2026
 ms.topic: how-to
 keywords: windows 10, windows 11, winui, windows app sdk, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
@@ -9,7 +9,7 @@ ms.localizationpriority: medium
 
 # Localize strings in your UI and the app package manifest
 
-For more info about the value proposition of localizing your Windows App SDK app, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal).
+For more info about the value proposition of localizing your Windows App SDK app, see [Globalization and localization](../../design/globalizing/globalizing-portal.md).
 
 If you want your app to support different display languages, and you have string literals in your code or XAML markup or app package manifest, then move those strings into a Resources File (.resw). You can then make a translated copy of that Resources File for each language that your app supports.
 
@@ -44,7 +44,7 @@ Unlike image resources, where only one image resource is contained in an image r
 
 ## Refer to a string resource identifier from XAML
 
-You use an [x:Uid directive](/windows/apps/develop/platform/xaml/x-uid-directive) to associate a control or other element in your markup with a string resource identifier.
+You use an [x:Uid directive](../../develop/platform/xaml/x-uid-directive.md) to associate a control or other element in your markup with a string resource identifier.
 
 ```xaml
 <TextBlock x:Uid="Greeting"/>
@@ -57,7 +57,7 @@ When assigning a string resource identifier to a XAML element, be certain that *
 Instead of setting **Width** from a Resources File, you'll probably want to allow controls to dynamically size to content.
 
 > [!NOTE]
-> For [attached properties](/windows/apps/develop/platform/xaml/attached-properties-overview), you need a special syntax in the **Name** column of a .resw file. For example, to set a value for the [AutomationProperties.Name](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.nameproperty) attached property for the "Greeting" identifier, this is what you would enter in the **Name** column.
+> For [attached properties](../../develop/platform/xaml/attached-properties-overview.md), you need a special syntax in the **Name** column of a .resw file. For example, to set a value for the [AutomationProperties.Name](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties.nameproperty) attached property for the "Greeting" identifier, this is what you would enter in the **Name** column.
 
 ```xml
 Greeting.[using:Microsoft.UI.Xaml.Automation]AutomationProperties.Name
@@ -270,6 +270,6 @@ To ensure proper localization of a packaged WinUI 3 desktop app, declare each su
 
 ## See also
 
-- [Make your app localizable](/windows/apps/design/globalizing/prepare-your-app-for-localization)
+- [Make your app localizable](../../design/globalizing/prepare-your-app-for-localization.md)
 - [MRT Core sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/ResourceManagement)
 - [How to load string resources](/previous-versions/windows/apps/hh965323(v=win.10))

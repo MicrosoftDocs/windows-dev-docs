@@ -1,7 +1,7 @@
 ---
 description: This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each qualifier name.
 title: Tailor your resources for language, scale, high contrast and other qualifiers
-ms.date: 07/14/2025
+ms.date: 09/05/2026
 ms.topic: how-to
 keywords: windows 10, windows 11, windows app sdk, winui, resource, image, asset, MRT, qualifier
 ms.localizationpriority: medium
@@ -11,9 +11,9 @@ ms.localizationpriority: medium
 
 This topic explains the general concept of resource qualifiers, how to use them, and the purpose of each of the qualifier names. See [**ResourceContext.QualifierValues**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.resources.resourcecontext.qualifiervalues) for a reference table of all the possible qualifier values.
 
-Your app can load assets and resources that are tailored to runtime contexts such as display language, high contrast, [display scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor), and many others. The way you do this is to name your resources' folders or files to match the qualifier names and qualifier values that correspond to those contexts. For example, you may want your app to load a different set of image assets in high contrast mode.
+Your app can load assets and resources that are tailored to runtime contexts such as display language, high contrast, [display scale factor](../../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor), and many others. The way you do this is to name your resources' folders or files to match the qualifier names and qualifier values that correspond to those contexts. For example, you may want your app to load a different set of image assets in high contrast mode.
 
-For more info about the value proposition of localizing your app, see [Globalization and localization](/windows/apps/design/globalizing/globalizing-portal).
+For more info about the value proposition of localizing your app, see [Globalization and localization](../../design/globalizing/globalizing-portal.md).
 
 ## Qualifier name, qualifier value, and qualifier
 
@@ -166,11 +166,11 @@ See [Localize your UI strings](localize-strings.md) for more information on maki
 
 ## LayoutDirection
 
-A `layoutdirection` qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their [FlowDirection](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.flowdirection) property (see [Adjust layout and fonts, and support RTL](/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl)). However, the `layoutdirection` qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.
+A `layoutdirection` qualifier corresponds to the layout direction of the display language setting. For example, an image may need to be mirrored for a right-to-left language such as Arabic or Hebrew. Layout panels and images in your UI will respond to layout direction appropriately if you set their [FlowDirection](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.flowdirection) property (see [Adjust layout and fonts, and support RTL](../../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)). However, the `layoutdirection` qualifier is for cases where simple flipping isn't adequate, and it allows you to respond to the directionality of specific reading order and text alignment in more general ways.
 
 ## Scale
 
-Windows automatically selects a scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. See [Effective pixels and scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor). You should create your images at several recommended sizes (at least 100, 200, and 400) so that Windows can either choose the perfect size or can use the nearest size and scale it. So that Windows can identify which physical file contains the correct size of image for the display scale factor, you use a `scale` qualifier. The scale of a resource matches the value of [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale), or the next-largest-scaled resource.
+Windows automatically selects a scale factor for each display based on its DPI (dots-per-inch) and the viewing distance of the device. See [Effective pixels and scale factor](../../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor). You should create your images at several recommended sizes (at least 100, 200, and 400) so that Windows can either choose the perfect size or can use the nearest size and scale it. So that Windows can identify which physical file contains the correct size of image for the display scale factor, you use a `scale` qualifier. The scale of a resource matches the value of [DisplayInformation.ResolutionScale](/uwp/api/windows.graphics.display.displayinformation.ResolutionScale), or the next-largest-scaled resource.
 
 Here's an example of setting the qualifier at the folder level.
 
@@ -224,11 +224,11 @@ For backwards compatibility, Windows includes logic to detect a monochromatic ic
 
 ## Related topics
 
-- [Effective pixels and scale factor](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor)
+- [Effective pixels and scale factor](../../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)
 - [Manage resources with MRT Core](mrtcore-overview.md)
 - [How to prepare for localization](/previous-versions/windows/apps/hh967762(v=win.10))
 - [Localize your UI strings](localize-strings.md)
 - [BCP-47](https://tools.ietf.org/html/bcp47)
 - [United Nations Statistic Division M49 composition of region codes](https://unstats.un.org/unsd/methods/m49/m49regin.htm)
 - [IANA language subtag registry](https://www.iana.org/assignments/language-subtag-registry)
-- [Adjust layout and fonts, and support RTL](/windows/apps/design/globalizing/adjust-layout-and-fonts--and-support-rtl)
+- [Adjust layout and fonts, and support RTL](../../design/globalizing/adjust-layout-and-fonts--and-support-rtl.md)
