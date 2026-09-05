@@ -1,7 +1,7 @@
 ---
 description: Deep-dive topics like layout, navigation, input, typography, and motion. Everything you need to build a solid UX foundation for your Windows app.
 title: Design guidelines
-ms.date: 12/16/2025
+ms.date: 09/05/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -99,3 +99,15 @@ Use these fundamentals as a guide throughout your design process—whether you'r
     :::column:::
     :::column-end:::
 :::row-end:::
+
+---
+
+## Historical design guidelines
+
+Design guidance for earlier versions of Windows is spread across the **Previous versions** archive on Microsoft Learn, which can make it hard to find. The following pages collect visual and interaction guidelines that remain available for reference. Use them for historical context. For apps you build today, follow the current Fluent guidance above.
+
+- [Visual design guidelines (Windows 7)](https://learn.microsoft.com/windows/win32/uxguide/visuals)
+- [Creating Windows XP Icons](https://learn.microsoft.com/previous-versions/ms997636(v=msdn.10))
+- [The Microsoft Windows User Experience (Windows 98 and Windows 2000)](https://learn.microsoft.com/previous-versions/ms997612(v=msdn.10))
+- [MMC 3.0 design guidelines](https://learn.microsoft.com/previous-versions/windows/desktop/bb246433(v=vs.85))
+- [Wizard watermark and header artwork](https://learn.microsoft.com/previous-versions/ms737878(v=vs.85))
