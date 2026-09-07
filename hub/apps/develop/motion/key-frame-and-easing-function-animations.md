@@ -2,7 +2,7 @@
 title: Key-frame animations and easing function animations
 ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
 description: Linear key-frame animations, key-frame animations with a KeySpline value, or easing functions are three different techniques for approximately the same scenario.
-ms.date: 10/31/2025
+ms.date: 09/05/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -189,7 +189,7 @@ When an easing function is applied to a **From**/**To**/**By** animation, it's c
 
 One type of animation deserves special mention because it's the only way you can apply an animated value to properties that aren't of type [**Double**](/dotnet/api/system.double), [**Point**](/uwp/api/Windows.Foundation.Point), or [**Color**](/uwp/api/Windows.UI.Color). This is the key-frame animation [**ObjectAnimationUsingKeyFrames**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.ObjectAnimationUsingKeyFrames). Animating using [**Object**](/dotnet/api/system.object) values is different because there's no possibility of interpolating the values between the frames. When the frame's [**KeyTime**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.objectkeyframe.keytime) is reached, the animated value is immediately set to the value specified in the key frame's **Value**. Because there's no interpolation, there's only one key frame you use in the **ObjectAnimationUsingKeyFrames** key frames collection: [**DiscreteObjectKeyFrame**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.DiscreteObjectKeyFrame).
 
-The [**Value**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.objectkeyframe.value) of a [**DiscreteObjectKeyFrame**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.DiscreteObjectKeyFrame) is often set using property element syntax, because the object value you are trying to set often is not expressible as a string to fill **Value** in attribute syntax. You can still use attribute syntax if you use a reference such as [StaticResource](/windows/apps/develop/platform/xaml/staticresource-markup-extension).
+The [**Value**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.objectkeyframe.value) of a [**DiscreteObjectKeyFrame**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.DiscreteObjectKeyFrame) is often set using property element syntax, because the object value you are trying to set often is not expressible as a string to fill **Value** in attribute syntax. You can still use attribute syntax if you use a reference such as [StaticResource](../platform/xaml/staticresource-markup-extension.md).
 
 One place you'll see an [**ObjectAnimationUsingKeyFrames**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.ObjectAnimationUsingKeyFrames) used in the default templates is when a template property references a [**Brush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Brush) resource. These resources are [**SolidColorBrush**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.SolidColorBrush) objects, not just a [**Color**](/uwp/api/Windows.UI.Color) value, and they use resources that are defined as system themes ([**ThemeDictionaries**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary.themedictionaries)). They can be assigned directly to a **Brush**-type value such as [**TextBlock.Foreground**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.textblock.foreground) and don't need to use indirect targeting. But because a **SolidColorBrush** is not [**Double**](/dotnet/api/system.double), [**Point**](/uwp/api/Windows.Foundation.Point), or **Color**, you have to use a **ObjectAnimationUsingKeyFrames** to use the resource.
 
@@ -260,7 +260,7 @@ You can use more than one [**DiscreteObjectKeyFrame**](/windows/windows-app-sdk/
 
 ## Related topics
 
-- [Property-path syntax](/windows/apps/develop/platform/xaml/property-path-syntax)
-- [Dependency properties overview](/windows/apps/develop/platform/xaml/dependency-properties-overview)
+- [Property-path syntax](../platform/xaml/property-path-syntax.md)
+- [Dependency properties overview](../platform/xaml/dependency-properties-overview.md)
 - [Storyboard](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.storyboard)
 - [Storyboard.TargetProperty](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.storyboard.targetpropertyproperty)

@@ -2,7 +2,7 @@
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: Storyboarded animations
 description: Learn how to use storyboarded animations to change the value of a dependency property as a function of time.
-ms.date: 10/31/2025
+ms.date: 09/05/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -18,7 +18,7 @@ One of the main reasons you might be defining a storyboarded animation is if you
 
 Whether you are defining visual states or a custom animation for an app, the concepts and APIs for storyboarded animations that are described in this topic mostly apply to either.
 
-In order to be animated, the property you are targeting with a storyboarded animation must be a *dependency property*. A dependency property is a key feature of the Windows Runtime XAML implementation. The writeable properties of most common UI elements are typically implemented as dependency properties, so that you can animate them, apply data-bound values, or apply a [**Style**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Style) and target the property with a [**Setter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Setter). For more info about how dependency properties work, see [Dependency properties overview](/windows/apps/develop/platform/xaml/dependency-properties-overview).
+In order to be animated, the property you are targeting with a storyboarded animation must be a *dependency property*. A dependency property is a key feature of the Windows Runtime XAML implementation. The writeable properties of most common UI elements are typically implemented as dependency properties, so that you can animate them, apply data-bound values, or apply a [**Style**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Style) and target the property with a [**Setter**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Setter). For more info about how dependency properties work, see [Dependency properties overview](../platform/xaml/dependency-properties-overview.md).
 
 Most of the time, you define a storyboarded animation by writing XAML. If you use a tool such as Microsoft Visual Studio, it will produce the XAML for you. It's possible to define a storyboarded animation using code too, but that's less common.
 
@@ -48,7 +48,7 @@ Let's look at a simple example. In this XAML example, the [**Opacity**](/windows
 
 In the previous example, the storyboard was animating the [**Opacity**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.UIElement.Opacity) property of a [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Shapes.Rectangle). You don't declare the animations on the object itself. Instead, you do this within the animation definition of a storyboard. Storyboards are usually defined in XAML that's not in the immediate vicinity of the XAML UI definition of the object to animate. Instead, they're usually set up as a XAML resource.
 
-To connect an animation to a target, you reference the target by its identifying programming name. You should always apply the [x:Name attribute](/windows/apps/develop/platform/xaml/x-name-attribute) in the XAML UI definition to name the object that you want to animate. You then target the object to animate by setting [**Storyboard.TargetName**](/dotnet/api/system.windows.media.animation.storyboard.targetname) within the animation definition. For the value of **Storyboard.TargetName**, you use the name string of the target object, which is what you set earlier and elsewhere with x:Name attribute.
+To connect an animation to a target, you reference the target by its identifying programming name. You should always apply the [x:Name attribute](../platform/xaml/x-name-attribute.md) in the XAML UI definition to name the object that you want to animate. You then target the object to animate by setting [**Storyboard.TargetName**](/dotnet/api/system.windows.media.animation.storyboard.targetname) within the animation definition. For the value of **Storyboard.TargetName**, you use the name string of the target object, which is what you set earlier and elsewhere with x:Name attribute.
 
 ### Targeting the dependency property to animate
 
@@ -83,7 +83,7 @@ You'll notice some of these examples use square brackets around numbers. This is
 
 You can also animate XAML attached properties. Always enclose the full attached property name in parentheses, for example `(Canvas.Left)`. For more info, see [Animating XAML attached properties](./storyboarded-animations.md#animating-xaml-attached-properties).
 
-For more info on how to use a property path for indirect targeting of the property to animate, see [Property-path syntax](/windows/apps/develop/platform/xaml/property-path-syntax).
+For more info on how to use a property path for indirect targeting of the property to animate, see [Property-path syntax](../platform/xaml/property-path-syntax.md).
 
 ### Animation types
 
@@ -153,7 +153,7 @@ For more info about [**RepeatBehavior**](/windows/windows-app-sdk/api/winrt/micr
 
 ### **FillBehavior="Stop"**
 
-By default, when an animation ends, the animation leaves the property value as the final **To** or **By**-modified value even after its duration is surpassed. However, if you set the value of the [**FillBehavior**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.timeline.fillbehavior) property to [**FillBehavior.Stop**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.FillBehavior), the value of the animated value reverts to whatever the value was before the animation was applied, or more precisely to the current effective value as determined by the dependency property system (for more info on this distinction, see [Dependency properties overview](/windows/apps/develop/platform/xaml/dependency-properties-overview)).
+By default, when an animation ends, the animation leaves the property value as the final **To** or **By**-modified value even after its duration is surpassed. However, if you set the value of the [**FillBehavior**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.timeline.fillbehavior) property to [**FillBehavior.Stop**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.FillBehavior), the value of the animated value reverts to whatever the value was before the animation was applied, or more precisely to the current effective value as determined by the dependency property system (for more info on this distinction, see [Dependency properties overview](../platform/xaml/dependency-properties-overview.md)).
 
 ### **BeginTime**
 
@@ -181,7 +181,7 @@ The animation system can apply more than one animation to the value of a propert
 
 A [**Storyboard**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.Storyboard) is the container that you put animation objects in. You typically define the **Storyboard** as a resource that is available to the object that you want to animate, either in page-level [**Resources**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.resources) or [**Application.Resources**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.resources).
 
-This next example shows how the previous example [**Storyboard**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.Storyboard) would be contained in a page-level [**Resources**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.resources) definition, where the **Storyboard** is a keyed resource of the root [**Page**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Page). Note the [x:Name attribute](/windows/apps/develop/platform/xaml/x-name-attribute). This attribute is how you define a variable name for the **Storyboard**, so that other elements in XAML as well as code can refer to the **Storyboard** later.
+This next example shows how the previous example [**Storyboard**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.Storyboard) would be contained in a page-level [**Resources**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.resources) definition, where the **Storyboard** is a keyed resource of the root [**Page**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Page). Note the [x:Name attribute](../platform/xaml/x-name-attribute.md). This attribute is how you define a variable name for the **Storyboard**, so that other elements in XAML as well as code can refer to the **Storyboard** later.
 
 ```xaml
 <Page ...>
@@ -205,7 +205,7 @@ This next example shows how the previous example [**Storyboard**](/windows/windo
 Defining resources at the XAML root of a XAML file such as page.xaml or app.xaml is a common practice for how to organize keyed resources in your XAML. You also can factor resources into separate files and merge them into apps or pages. For more info, see [ResourceDictionary and XAML resource references](../platform/xaml/xaml-resource-dictionary.md).
 
 > [!NOTE]
-> Windows Runtime XAML supports identifying resources either using the [x:Key attribute](/windows/apps/develop/platform/xaml/x-key-attribute) or the [x:Name attribute](/windows/apps/develop/platform/xaml/x-name-attribute). Using x:Name attribute is more common for a [**Storyboard**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.Storyboard), because you'll want to reference it by variable name eventually, so that you can call its [**Begin**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.storyboard.begin) method and run the animations. If you do use [x:Key attribute](/windows/apps/develop/platform/xaml/x-key-attribute), you'll need to use [**ResourceDictionary**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ResourceDictionary) methods such as the [**Item**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary) indexer to retrieve it as a keyed resource and then cast the retrieved object to **Storyboard** to use the **Storyboard** methods.
+> Windows Runtime XAML supports identifying resources either using the [x:Key attribute](../platform/xaml/x-key-attribute.md) or the [x:Name attribute](../platform/xaml/x-name-attribute.md). Using x:Name attribute is more common for a [**Storyboard**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.Storyboard), because you'll want to reference it by variable name eventually, so that you can call its [**Begin**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.storyboard.begin) method and run the animations. If you do use [x:Key attribute](../platform/xaml/x-key-attribute.md), you'll need to use [**ResourceDictionary**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.ResourceDictionary) methods such as the [**Item**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.resourcedictionary) indexer to retrieve it as a keyed resource and then cast the retrieved object to **Storyboard** to use the **Storyboard** methods.
 
 ### Storyboards for visual states
 
@@ -298,7 +298,7 @@ There is one way to start an animation that can be declared entirely in XAML. Ho
 
 ## Animating XAML attached properties
 
-It's not a common scenario, but you can apply an animated value to a XAML attached property. For more info on what attached properties are and how they work, see [Attached properties overview](/windows/apps/develop/platform/xaml/attached-properties-overview). Targeting an attached property requires a [property-path syntax](/windows/apps/develop/platform/xaml/property-path-syntax) that encloses the property name in parentheses. You can animate the built-in attached properties such as [**Canvas.ZIndex**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.canvas.zindex) by using an [**ObjectAnimationUsingKeyFrames**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.ObjectAnimationUsingKeyFrames) that applies discrete integer values. However, an existing limitation of the Windows Runtime XAML implementation is that you cannot animate a custom attached property.
+It's not a common scenario, but you can apply an animated value to a XAML attached property. For more info on what attached properties are and how they work, see [Attached properties overview](../platform/xaml/attached-properties-overview.md). Targeting an attached property requires a [property-path syntax](../platform/xaml/property-path-syntax.md) that encloses the property name in parentheses. You can animate the built-in attached properties such as [**Canvas.ZIndex**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.canvas.zindex) by using an [**ObjectAnimationUsingKeyFrames**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.ObjectAnimationUsingKeyFrames) that applies discrete integer values. However, an existing limitation of the Windows Runtime XAML implementation is that you cannot animate a custom attached property.
 
 ## More animation types, and next steps for learning about animating your UI
 
@@ -317,8 +317,8 @@ In general, creating storyboarded animations in a WinUI 3 app is like WPF. But t
 
 ## Related topics
 
-- [Property-path syntax](/windows/apps/develop/platform/xaml/property-path-syntax)
-- [Dependency properties overview](/windows/apps/develop/platform/xaml/dependency-properties-overview)
+- [Property-path syntax](../platform/xaml/property-path-syntax.md)
+- [Dependency properties overview](../platform/xaml/dependency-properties-overview.md)
 - [Key-frame and easing function animations](key-frame-and-easing-function-animations.md)
 - [Storyboarded animations for visual states](/previous-versions/windows/apps/jj819808(v=win.10))
 - [Control templates](../platform/xaml/xaml-control-templates.md)
