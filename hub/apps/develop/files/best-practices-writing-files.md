@@ -1,7 +1,7 @@
 ---
 title: Best practices for writing to files
 description: Learn best practices for using various file writing methods of the FileIO and PathIO classes.
-ms.date: 02/06/2019
+ms.date: 09/06/2026
 ms.topic: best-practice
 keywords: windows 10, winui
 ms.localizationpriority: medium
@@ -186,7 +186,7 @@ else
 
 ### Synchronize access to the file
 
-The [Parallel Programming with .NET blog](https://devblogs.microsoft.com/pfxteam/) is a great resource for guidance about parallel programming. In particular, the [post about AsyncReaderWriterLock](https://devblogs.microsoft.com/pfxteam/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) describes how to maintain exclusive access to a file for writes while allowing concurrent read access. Keep in mind that serializing I/O will impact performance.
+The [Parallel Programming with .NET blog](https://devblogs.microsoft.com/dotnet/category/pfxteam/) is a great resource for guidance about parallel programming. In particular, the [post about AsyncReaderWriterLock](https://devblogs.microsoft.com/dotnet/building-async-coordination-primitives-part-7-asyncreaderwriterlock/) describes how to maintain exclusive access to a file for writes while allowing concurrent read access. Keep in mind that serializing I/O will impact performance.
 
 ## See also
 
