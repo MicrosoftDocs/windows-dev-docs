@@ -3,7 +3,7 @@ title: "AI-assisted WinUI tutorial - Add data and persistence"
 description: Use an AI coding assistant to add observable task data, commands, error reporting, and local JSON persistence to a WinUI 3 app.
 author: GrantMeStrength
 ms.author: jken
-ms.date: 08/31/2026
+ms.date: 09/08/2026
 ms.topic: tutorial
 ---
 
@@ -178,12 +178,40 @@ private async Task SaveAsync(string successMessage)
     }
     catch (Exception ex)
     {
-        ShowStatus($"Changes couldn't be saved: {ex.Message}");
+        ShowStatus($"Changes couldn't be saved: {ex.Message}", hasError: true);
     }
 }
 ```
 
 This isn't a silent fallback: the user receives an error, and the view model doesn't claim that the save succeeded.
+
+The commands and `SaveAsync` call two small helpers. `RefreshTaskState` raises change notification for the computed `Summary` property so the UI updates after the task list changes, and `ShowStatus` sets the observable status properties that the page binds to:
+
+```csharp
+[ObservableProperty]
+public partial string StatusMessage { get; set; } = string.Empty;
+
+[ObservableProperty]
+public partial bool IsStatusOpen { get; set; }
+
+[ObservableProperty]
+public partial bool HasError { get; set; }
+
+private void RefreshTaskState()
+{
+    OnPropertyChanged(nameof(Summary));
+    OnPropertyChanged(nameof(HasNoTasks));
+}
+
+private void ShowStatus(string message, bool hasError = false)
+{
+    StatusMessage = message;
+    HasError = hasError;
+    IsStatusOpen = true;
+}
+```
+
+Because `Summary` is a computed property rather than an `[ObservableProperty]`, you raise its change notification manually whenever `Tasks` changes.
 
 ## Build and inspect
 
