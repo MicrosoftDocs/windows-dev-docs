@@ -1,7 +1,7 @@
 ---
 title: App capability declarations
-description: To access certain APIs or resources (such as pictures or music), or devices (such as the camera or the microphone), you must declare app capabilities in your packaged Windows app's package manifest.
-ms.date: 08/29/2026
+description: Learn which capabilities to declare for UWP and other packaged Windows apps, including general-use, device, restricted, and custom capabilities.
+ms.date: 09/08/2026
 ms.topic: reference
 keywords: windows 11, windows 10, winui 3, windows app sdk, msix, packaged app, capabilities, package manifest
 author: GrantMeStrength
