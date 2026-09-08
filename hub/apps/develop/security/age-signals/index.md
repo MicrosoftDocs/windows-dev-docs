@@ -4,18 +4,18 @@ description: Learn how Windows Age APIs help apps provide safe, age-appropriate 
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 08/27/2026
+ms.date: 09/04/2026
 ---
 
-# Digital safety age signals overview
+# Age signals overview
 
-The Windows Age APIs provide a privacy-preserving mechanism for apps to determine the age group and age verified status of the signed-in user. These APIs are designed for apps that need to comply with child safety regulations without requiring the app to collect, store, or process date of birth or other personally identifiable information. Apps use these signals to adapt content, features, or access controls based on a user's age and verified status — without needing to implement their own age verification system.
+The Windows Age APIs provide privacy-preserving signals that apps can use to understand the age group and age-verification status of the signed-in user. The APIs return coarse signals instead of the user's exact age or date of birth. Apps can use these signals to adapt content, features, or access controls and must provide appropriate fallback behavior when a signal is unavailable.
 
 ## What are age signals?
 
-Age signals are values that the Windows provides to applications when a user takes an action to access age-related or restricted content. The caller application makes a request to access the user's age group and/or age verified status to inform the appropriate end-user experience.
+Age signals are values that Windows returns when an app calls the Age APIs for the current user. The app decides when to request the user's age group or age-verification status to inform the appropriate end-user experience.
 
-An age signal does **not** directly expose the user's age or date of birth. Instead, it provides an age range that the app can use to make content decisions. The _**GetUserAgeRangeAsync**_ API offers the following age groups:
+An age signal does **not** directly expose the user's exact age or date of birth. Instead, it provides an age range that the app can use to make content decisions. The `GetUserAgeRangeAsync` API offers the following age groups:
 
 - Under 10
 - 10-12
@@ -23,37 +23,48 @@ An age signal does **not** directly expose the user's age or date of birth. Inst
 - 16-17
 - 18+
 
-## Digital Safety APIs
+
+## Windows Age APIs
 
 > [!NOTE]
-> These APIs are documented ahead of availability. They aren't enabled at runtime yet, and are planned to be turned on in a future release later this year. Until then, calls return an unknown age range (`null`) and an unavailable verification status, so make sure your app falls back to its default behavior or age-gate.
+> The Windows Age APIs are broadly available to Windows Insiders now, and will be available to all Windows users soon.
 
 ### GetUserAgeRangeAsync
+
 Returns the user’s age range as a `UserAgeRange` object with `Lower` and `Upper` properties.
 
 | Age group | Return values |
-|-------|---------|
-| **Under 10** | {0, 9}|
-| **10-12**| {10, 12}|
-| **13-15**| {13, 15} |
-| **16-17**| {16,17} |
-| **18+**| {18, INT32_MAX} |
+| --- | --- |
+| **Under 10** | {0, 9} |
+| **10-12** | {10, 12} |
+| **13-15** | {13, 15} |
+| **16-17** | {16, 17} |
+| **18+** | {18, `INT32_MAX`} |
 | **Unknown** | `null` |
 
-When the result is `null`, apps should fall back to their default behavior or age-gate mechanism.
+When the result is `null`, the age range is unknown or unavailable. Apps must use their fallback experience and must not interpret `null` as a specific age group.
 
 ### GetAgeVerificationStatusAsync
-Returns the user's age verification status to indicate whether the user's age has been independently verified by the identity provider. This API is available to both 1P and 3P callers. Possible outputs include:
 
-- Verified
-- Unverified
-- OptedOut
-- TemporarilyUnavailable
-- NotApplicable 
+Returns a `UserAgeVerificationStatus` value indicating the age-verification state reported for the user. Possible values are:
 
-### Caller identity
+- `Verified`: The user's age has been verified.
+- `Unverified`: The user's age has not been verified.
+- `OptedOut`: The user has opted out of age verification.
+- `TemporarilyUnavailable`: The status cannot currently be determined.
+- `NotApplicable`: Verification does not apply, no verification signal is available, or the feature is unavailable or disabled.
 
-The Digital Safety platform validates the calling app's identity before returning signal values. This prevents unauthorized apps from querying another app's safety settings. Your app must be properly registered and identified to receive meaningful signal data.
+Apps must handle every value. `NotApplicable` and `TemporarilyUnavailable` do not establish that the user is either verified or unverified.
+
+### Caller authorization and consent
+
+The app package must declare the `userAccountInformation` capability. Access to age signals is also subject to the user's consent to let the app access account information in Windows privacy settings. If access isn't granted, the call can fail with `E_ACCESSDENIED`. The `User` object must represent the user running the current process.
+
+### Policy and availability
+
+When the Age APIs are unavailable or disabled, `GetUserAgeRangeAsync` returns `null` and `GetAgeVerificationStatusAsync` returns `NotApplicable`. Administrators can also configure a default age group or verification status through Group Policy or MDM; when configured, the APIs return the corresponding policy-defined value. Apps must check that the methods are available before calling them and retain fallback behavior for unavailable signals.
+
+Identity-provider age signals are currently retrieved only for Microsoft accounts. For other account types, when no administrative default is configured, `GetUserAgeRangeAsync` returns `null` and `GetAgeVerificationStatusAsync` returns `NotApplicable`.
 
 ## When to use age signals
 
@@ -65,23 +76,23 @@ Use age signals when your app:
 
 ## How age signals work at a high level
 
-:::image type="content" source="images/age-process-diagram.png" alt-text="Diagram showing the flow between Your app, the Digital Safety API local service, and Configuration.":::
+:::image type="content" source="images/age-process-diagram.png" alt-text="Diagram showing an app exchanging age-group information with the Digital Safety API local service, which communicates with configuration settings.":::
 
 ## Privacy and data handling
 
 Age signals are designed with privacy as a core principle:
 
-- **No personal data is exposed.** The API does not return the user's age, date of birth, or family relationship details.
+- **No exact age or date of birth is returned.** The APIs return an age bucket and an age-verification status.
 - **Age groups are generic.** They communicate common age groups for various use cases such as gaming or regional law.
 
 ## Platform requirements
 
 | Requirement | Details |
-|-------------|---------|
+| --- | --- |
 | **Minimum OS version** | Windows 11 |
-| **API surface** | Win32 COM (C/C++) |
-| **User context** | Must run in a user session with a Microsoft account signed in |
-| **App registration** | App identity must be established with the Digital Safety platform |
+| **API surface** | Windows Runtime methods on `Windows.System.User` |
+| **User context** | Calls apply only to the user running the current process. |
+| **App capability** | The app package must declare `userAccountInformation` |
 
 ## See also
 
