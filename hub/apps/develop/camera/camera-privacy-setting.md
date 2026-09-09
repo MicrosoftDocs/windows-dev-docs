@@ -1,9 +1,9 @@
 ---
-description: Learn how apps should handle the Windows camera privacy setting.
+description: Learn how to check camera access, handle privacy-related errors, open Windows camera settings, and provide fallback behavior.
 title: Handle the Windows camera privacy setting
-ms.date: 10/23/2024
+ms.date: 09/08/2026
 ms.topic: how-to
-keywords: windows 10, winui 3
+keywords: windows, camera privacy, winui 3, win32
 dev_langs:
 - csharp
 ms.localizationpriority: medium
@@ -170,4 +170,4 @@ if (FAILED(hr))
 
 ## Implement fallback behavior
 
-Apps should implement the previous steps to alert the user detect and alert the user that camera access is restricted due to privacy settings and to direct the user to the camera privacy Settings page to allow them to update their settings. After these steps, the app should retry camera initialization to see if access has been granted. If the user declines to update their settings to allow your app to access to the camera, consider providing alternative functionality. For example, you could disable camera features, switch to a different mode, or display a placeholder image in place of the camera preview.
+Apps should use the previous steps to detect restricted camera access, alert the user, and direct them to the camera privacy settings page. After the user returns from Settings, the app can retry camera initialization to determine whether access has been granted. If camera access remains unavailable, provide alternative functionality. For example, you could disable camera features, switch to a different mode, or display a placeholder image in place of the camera preview.
