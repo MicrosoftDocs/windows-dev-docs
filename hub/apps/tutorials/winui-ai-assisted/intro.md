@@ -3,7 +3,7 @@ title: Build a WinUI app with an AI coding assistant
 description: Learn a reliable workflow for building, inspecting, testing, and correcting a WinUI 3 app created with an AI coding assistant.
 author: GrantMeStrength
 ms.author: jken
-ms.date: 08/31/2026
+ms.date: 09/09/2026
 ms.topic: tutorial
 ms.localizationpriority: medium
 ---
@@ -55,6 +55,11 @@ Complete [Quick start: Create your first WinUI 3 app](../../get-started/start-he
 - An AI coding assistant that can read and edit files in your project.
 
 You don't need previous WinUI experience. The prompts in this tutorial are tool-neutral, so adapt their command wording to your assistant.
+
+> [!TIP]
+> **Explore the Windows App Development CLI**
+>
+> Prefer command-line tools? The [Windows App Development CLI (winapp)](../../dev-tools/winapp-cli/index.md) provides tools for Windows SDK setup, package identity, manifests, certificates, and MSIX packaging. It's currently available in public preview and is optional for this tutorial. You can continue with the Visual Studio or .NET CLI workflow described here.
 
 > [!IMPORTANT]
 > Review changes before you accept them. Don't paste credentials, private source code, personal data, or other sensitive information into a service that isn't approved for that data.
