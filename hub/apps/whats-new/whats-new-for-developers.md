@@ -2,7 +2,9 @@
 title: "What's new: SDK, WinUI, tools"
 description: Explore new Windows platform capabilities, SDK and API updates, design guidance, development tools, and productivity improvements.
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 08/25/2026
+author: GrantMeStrength
+ms.author: jken
+ms.date: 09/09/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -17,19 +19,23 @@ This section curates the latest platform capabilities, SDK and API additions, AI
 
 Find the latest downloads, release notes, and updates for the Windows SDK, Windows App SDK, and WinUI 3.
 
+Versions below are current as of September 9, 2026. Use the release notes to review the changes and requirements for each channel or SDK build.
+
 :::row:::
     :::column:::
         ![Windows App SDK icon](images/wasdk-hero.png)<br>
         **Windows App SDK**<br>
         Latest stable: 2.4.0<br>
         Latest experimental: 2.4.1-experimental<br>
-        [View release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.4.0)<br>
+        [Stable release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.4.0)<br>
+        [Experimental release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.4.1-exp)<br>
         [View downloads](../windows-app-sdk/downloads.md)
     :::column-end:::
     :::column:::
         ![Windows SDK icon](images/wsdk-hero.png)<br>
         **Windows SDK**<br>
-        Latest build: 10.0.28000.2705<br>
+        Latest 28000-series build: 10.0.28000.2705<br>
+        Latest 26100-series build: 10.0.26100.9169<br>
         [View release notes](../windows-sdk/release-notes.md)<br>
         [View downloads](../windows-sdk/downloads.md)
     :::column-end:::
@@ -37,13 +43,23 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 
 ---
 
-## Announced at Build – June 2026
+## Highlights – September 2026
 
-- **Windows Developer Configurations**: Get from a fresh Windows install to a ready-to-code environment in minutes with curated, open-source configuration files for toolchains, OS settings, and shells — [Windows Developer Configurations](/windows/dev-configs/).
-- **Coreutils for Windows**: A collection of essential Unix-style command-line utilities, now available natively on Windows — [Coreutils overview](/windows/core-utils/overview).
-- **Intelligent Terminal**: An experimental, open-source fork of Windows Terminal with native agent integration, automatic error detection, and a built-in agent pane for pair-programming in the shell — [Announcing Intelligent Terminal version 0.1](https://devblogs.microsoft.com/commandline/announcing-intelligent-terminal-version-0-1/).
-- **WSL Containers**: A built-in way to create, run, and interact with Linux containers on Windows by using a new CLI and API, coming soon to public preview — [WSL on GitHub](https://github.com/microsoft/wsl).
-- **Windows Development Skills**: Structured knowledge that enables AI agents to build native Windows apps end-to-end by using WinUI 3 skills and WinApp CLI — [Get started with Windows Development Skills](https://aka.ms/winui-skills).
+### SDK releases and developer blog posts
+
+- **.NET 11 Release Candidate 1**: The September 8 prerelease includes SDK tooling, C# 15, and Windows Forms updates, and comes with a go-live support license. Review the release notes and tool requirements before upgrading. See [Announcing .NET 11 Release Candidate 1](https://devblogs.microsoft.com/dotnet/dotnet-11-rc-1/).
+- **September .NET servicing updates**: Security and non-security updates are available for .NET 10, .NET 9, .NET 8, and .NET Framework. See [.NET and .NET Framework September 2026 servicing updates](https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-september-2026-servicing-updates/).
+- **Project Zenith**: The September 4 announcement describes a developer-focused Windows experience with preinstalled tools and development settings on new developer-class devices. Initial availability is planned for AMD's Ryzen AI Halo. See [Announcing Project Zenith](https://blogs.windows.com/windowsdeveloper/2026/09/04/announcing-project-zenith-the-ready-to-code-windows-experience/).
+- **Inside MSIX: servicing packages that are in use**: Learn why deployment can return `ERROR_PACKAGES_IN_USE`, and how application shutdown and deferred updates affect servicing. See [Servicing While In Use and ERROR_PACKAGES_IN_USE](https://devblogs.microsoft.com/insidemsix/msix-servicing-while-in-use/).
+- **Inside MSIX: package storage**: Learn how `PackageVolume` manages staged packages, default and offline volumes, and storage on non-system volumes. See [MSIX PackageVolume: How Package Storage Works](https://devblogs.microsoft.com/insidemsix/msix-packagevolume/).
+
+### Documentation highlights
+
+- **WinUI 3 line-of-business apps**: A new hub brings together guidance on tabular data, validated forms, database access, design, migration, and AI for business applications. See [Build line-of-business apps with WinUI](../get-started/line-of-business/index.md).
+- **AI-assisted WinUI development**: Build a task-tracking app while learning to inspect generated projects, check APIs against Microsoft Learn, and test the resulting UI and data behavior. See [Build a WinUI app with an AI coding assistant](../tutorials/winui-ai-assisted/intro.md).
+- **AI-assisted modernization planning**: Use an updated, tool-neutral prompt that asks an assistant to inspect an existing desktop app, clarify constraints, and propose an incremental plan grounded in documentation. See [Plan your modernization with an AI assistant](../windows-app-sdk/migrate-to-windows-app-sdk/modernize-with-ai-assistant.md).
+- **WinUI XAML Islands**: Updated hosting guidance explains how to add Windows App SDK controls to an existing desktop app and distinguishes WinUI XAML Islands from legacy UWP system XAML Islands. See [Host WinUI controls with XAML Islands](../desktop/modernize/host-controls-existing-desktop-apps.md).
+- **WinUI 3 performance workflow**: The performance overview now connects measurement, startup optimization, responsiveness and rendering, and remeasurement, with links to focused guidance for each bottleneck. See [Improve your WinUI 3 app's performance](../develop/performance/index.md#improve-your-winui-3-apps-performance).
 
 ---
 
@@ -69,6 +85,16 @@ Find the latest downloads, release notes, and updates for the Windows SDK, Windo
 - **.NET 11 Preview 6**: Features union type support in C#, async validation APIs, AI/agentic workflow enhancements, NativeAOT improvements, and enhanced runtime/JIT performance — [.NET 11 Preview 6](https://devblogs.microsoft.com/dotnet/dotnet-11-preview-6/)
 - **PowerToys 0.100**: A milestone release featuring a redesigned Shortcut Guide that detects the active app and shows relevant shortcuts as a side pane, a new Command Palette Extension Gallery for browsing and installing extensions, multi-monitor Dock support, and an upgrade to .NET 10 — [PowerToys 0.100 release notes](https://github.com/microsoft/PowerToys/releases/tag/v0.100.0)
 - **WSL Containers**: Run Linux containers on Windows by using the new `wslc.exe` CLI or the `Microsoft.WSL.Containers` NuGet package, which provides C#, C++, and C projections for programmatically pulling, running, and interacting with Linux containers — including stdin/stdout, file mounts, networking, and GPU access — from your Windows app — [WSL Containers overview](/windows/wsl/wsl-container)
+
+---
+
+## Announced at Build – June 2026
+
+- **Windows Developer Configurations**: Get from a fresh Windows install to a ready-to-code environment in minutes with curated, open-source configuration files for toolchains, OS settings, and shells — [Windows Developer Configurations](/windows/dev-configs/).
+- **Coreutils for Windows**: A collection of essential Unix-style command-line utilities, now available natively on Windows — [Coreutils overview](/windows/core-utils/overview).
+- **Intelligent Terminal**: An experimental, open-source fork of Windows Terminal with native agent integration, automatic error detection, and a built-in agent pane for pair-programming in the shell — [Announcing Intelligent Terminal version 0.1](https://devblogs.microsoft.com/commandline/announcing-intelligent-terminal-version-0-1/).
+- **WSL Containers (public preview)**: A CLI and API for creating, running, and interacting with Linux containers on Windows. Public preview became available on June 29. See [WSL container is now available for public preview](https://devblogs.microsoft.com/commandline/wsl-container-is-now-available-for-public-preview/).
+- **Windows Development Skills**: Structured knowledge that enables AI agents to build native Windows apps end-to-end by using WinUI 3 skills and WinApp CLI — [Get started with Windows Development Skills](https://aka.ms/winui-skills).
 
 ---
 
