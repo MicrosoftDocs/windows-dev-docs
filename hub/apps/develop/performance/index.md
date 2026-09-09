@@ -1,8 +1,10 @@
 ---
 title: Windows app performance and fundamentals overview
-description: Learn about ways to optimize the performance of your Windows apps.
+description: Measure and improve Windows app performance, with a WinUI 3 workflow for faster startup, responsive interactions, and rendering.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: concept-article
-ms.date: 02/27/2025
+ms.date: 09/09/2026
 ms.reviewer: adityar
 ms.localizationpriority: medium
 #Customer intent: As a Windows application developer, I want to learn how to measure and improve my application's performance so that my users have a better experience.
@@ -13,6 +15,38 @@ ms.localizationpriority: medium
 Improving the performance and fundamentals of your application gives it a feeling of polish and craftsmanship, while saving your customers time, money, battery life, and development effort. Your app will consume less power, improving battery life and reducing carbon emissions. Apps run more smoothly on less expensive hardware. Your customers' productivity increases.
 
 This page provides an overview of the technologies and development tools for measuring, understanding, and refining the performance of your Windows application.
+
+## Improve your WinUI 3 app's performance
+
+For a WinUI 3 app built with the Windows App SDK, follow this workflow to improve startup and everyday interactions. Use measurements to choose an optimization, then follow the linked guidance for implementation details.
+
+### Measure a baseline
+
+Choose a startup scenario and frequent interactions, such as navigation or scrolling, and [set measurable performance goals](planning-measuring-performance.md). Measure a Release build on representative hardware. Record cold and warm startup separately, including when the app becomes meaningfully interactive rather than only when its window appears.
+
+Use [WinUI 3 performance profiling](winui-perf.md) to locate expensive UI frames and investigate their CPU cost. If you need help selecting a profiler, see [Choosing between Visual Studio Performance Profiler and Windows Performance Toolkit](choose-between-tools.md).
+
+### Improve startup
+
+Identify the initialization and UI creation that must finish before the user can interact with the app. Defer nonessential work and load additional data progressively, without treating a loading indicator as a completed startup.
+
+Start with [WinUI app startup best practices](app-startup-performance.md). If XAML creation is a bottleneck, follow [Optimize XAML loading](optimize-xaml-loading.md) for element reduction, deferred loading, and resource management.
+
+### Improve responsiveness and rendering
+
+Choose the guidance that matches the bottleneck in your measurements:
+
+| Symptom | Guidance |
+| --- | --- |
+| Input or navigation stalls while the app loads data or computes results | [Keep the UI thread responsive](keep-ui-thread-responsive.md), including asynchronous I/O, background computation, and UI-thread updates. |
+| Layout takes too long, particularly with repeated templates | [Optimize XAML layout](optimize-xaml-layout.md) to reduce unnecessary layout structure. |
+| Lists or grids scroll slowly or create too many elements | [Optimize ListView and GridView](optimize-gridview-and-listview.md) for UI virtualization and smaller item templates; use [data virtualization](listview-and-gridview-data-optimization.md) when loading the data itself is the bottleneck. |
+
+### Remeasure and prevent regressions
+
+Repeat the same scenarios under comparable conditions after each change, and compare the results with your baseline. Check startup and interaction times alongside memory and CPU use: an improvement in one area can increase costs elsewhere.
+
+Keep the measurements as regression checks for future changes. Use [Plan and measure app performance](planning-measuring-performance.md) to refine your goals and instrumentation as your app evolves.
 
 ## What is application performance and why is it important?
 
@@ -125,4 +159,3 @@ Interested in learning how performance engineering intersects with sustainabilit
 * [Role of Performance Engineering in Designing Carbon Efficient Applications](https://devblogs.microsoft.com/sustainable-software/role-of-performance-engineering-techniques-in-designing-carbon-efficient-applications/)
 
 * [Green Energy Efficient Progressive Web Apps](https://devblogs.microsoft.com/sustainable-software/green-energy-efficient-progressive-web-apps/).
-
