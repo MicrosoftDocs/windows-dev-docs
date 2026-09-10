@@ -1,7 +1,7 @@
 ---
 title: File Locksmith Utility for Windows - PowerToys
 description: Learn how to use File Locksmith, a PowerToys utility that checks which files are in use and identifies blocking processes in Windows. Unlock files easily with this shell extension.
-ms.date: 08/20/2025
+ms.date: 07/26/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, File Locksmith, Win]
 # Customer intent: Learn how to configure and use the File Locksmith utility in PowerToys.
@@ -51,5 +51,9 @@ FileLocksmithCLI.exe --wait "C:\bin\output.exe"
 # Kill all processes that are locking a specific file:
 FileLocksmithCLI.exe --kill "C:\LockedFile.dat"
 ```
+
+## Known issues
+
+For a list of known issues and suggestions, see the [PowerToys product repository issues on GitHub](https://github.com/microsoft/PowerToys/issues?q=is%3Aopen+is%3Aissue+label%3A%22Product-File+Locksmith%22). You can search existing conversations there or [report a bug](https://github.com/microsoft/PowerToys/issues/new/choose) on the PowerToys product repo if you don't find a matching issue.
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
