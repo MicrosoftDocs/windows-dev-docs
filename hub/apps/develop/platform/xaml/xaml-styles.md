@@ -3,7 +3,7 @@ description: Styles let you set control properties and reuse those settings for 
 MS-HAID: dev\_ctrl\_layout\_txt.styling\_controls
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-ms.date: 01/03/2019
+ms.date: 07/30/2026
 title: XAML styles
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: XAML styles
@@ -244,15 +244,13 @@ Its required that you use a `ThemeDictionary` that is duplicated three times in 
 
 The best way to stay current with our latest visual styles is to avoid custom styles and templates (also known as re-templating). Styles are still a convenient way to apply a set of values consistently across controls in your app. When doing this, make sure to be based on our latest styles.
 
-For system controls that use WinUI styles (`Windows.UI.Xaml.Controls` namespace), set `BasedOn="{StaticResource Default<ControlName>Style}"`, where `<ControlName>` is the name of the control. For example:
+For WinUI 3 controls in the `Microsoft.UI.Xaml.Controls` namespace, always set `BasedOn="{StaticResource Default<ControlName>Style}"`, where `<ControlName>` is the name of the control. This ensures your style inherits the current WinUI 3 visual defaults—such as rounded corners and proper theming—and only overrides the specific properties you set. Omitting `BasedOn` replaces the default style entirely, which can cause controls to lose their expected WinUI 3 appearance. For example:
 
 ```xaml
-<Style TargetType="TextBox" BasedOn="{StaticResource DefaultTextBoxStyle}">
+<Style TargetType="Button" BasedOn="{StaticResource DefaultButtonStyle}">
     <Setter Property="Foreground" Value="Blue"/>
 </Style>
 ```
-
-For WinUI controls (`Microsoft.UI.Xaml.Controls` namespace), the default style is defined in the metadata, so omit `BasedOn`.
 
 ### Derived controls
 
