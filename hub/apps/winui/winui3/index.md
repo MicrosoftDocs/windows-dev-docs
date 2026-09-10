@@ -2,7 +2,7 @@
 title: WinUI 3
 description: Provides info for WinUI and Windows app development with the Windows App SDK. 
 ms.topic: article
-ms.date: 07/18/2025
+ms.date: 09/10/2026
 ---
 
 # WinUI 3
@@ -90,7 +90,7 @@ To get started with WinUI, try out these resources:
 :::row:::
     :::column:::
         [![Hello WinUI](images/hero-hello-winui.png)](../../get-started/start-here.md)<br>
-        **[Hello, WinUI](../../get-started/start-here.md)**<br>
+        **[Create and run a WinUI 3 project](../../get-started/start-here.md)**<br>
         Setup your development environment and build your first WinUI app.
     :::column-end:::
     :::column:::

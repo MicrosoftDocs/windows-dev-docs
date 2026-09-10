@@ -1,7 +1,7 @@
 ---
 title: "Walkthrough: WinUI 3 app with Win32 interop"
 description: Step-by-step walkthrough of calling Win32 APIs from a WinUI 3 desktop app using CsWin32 to customize a title bar and set window size.
-ms.date: 07/22/2026
+ms.date: 09/10/2026
 ms.topic: how-to
 keywords: windows 11, windows 10, COM, win32, winui, interop, CsWin32
 ms.localizationpriority: high
@@ -21,7 +21,7 @@ This walkthrough shows how to build a **WinUI 3** desktop app that uses Win32 AP
 
 ## Prerequisites
 
-1. [Start developing Windows apps](../../get-started/start-here.md)
+1. [Create and run a WinUI 3 project](../../get-started/start-here.md)
 
 ## Basic managed C#/.NET app
 
@@ -111,7 +111,7 @@ For a more extensive sample, see the [AppWindow gallery sample](https://github.c
 In this second example, we show how to customize the window's title bar and its content. Before following along with it, review these topics:
 
 * [Install tools for the Windows App SDK](/windows/apps/windows-app-sdk/set-up-your-development-environment).
-* [Create your first WinUI project](/windows/apps/winui/winui3/create-your-first-winui3-app).
+* [Create and run a WinUI 3 project](../../get-started/start-here.md).
 
 ### Create a new project
 

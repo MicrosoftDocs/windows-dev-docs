@@ -75,9 +75,9 @@ items:
     items:
     - name: Overview
       href: get-started/winui-get-started-overview.md
-    - name: Get started with WinUI
+    - name: "Quickstart: Create and run a WinUI 3 project"
       href: get-started/start-here.md
-    - name: "Tutorial: Create your first WinUI 3 app"
+    - name: "Tutorial: Build a WinUI 3 notes app"
       items:
       - name: Introduction
         href: tutorials/winui-notes/intro.md
@@ -91,7 +91,7 @@ items:
         href: tutorials/winui-notes/all-notes.md
       - name: 5. Navigation
         href: tutorials/winui-notes/navigation.md
-    - name: "Tutorial: Build with an AI coding assistant"
+    - name: "Tutorial: Build a WinUI 3 task app with an AI assistant"
       items:
       - name: Introduction
         href: tutorials/winui-ai-assisted/intro.md

@@ -2,7 +2,7 @@
 ms.assetid: 02a08657-285d-4804-a006-168c22aa4904
 title: "Tutorial: Data Binding basics"
 description: Learn how to bind controls to data in WinUI apps. Discover how to bind single items or collections, implement details views, and format data for display.
-ms.date: 09/05/2026
+ms.date: 09/10/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui
 ms.localizationpriority: medium
@@ -17,7 +17,7 @@ Data binding in WinUI 3 apps lets you efficiently connect controls to data sourc
 
 ## Prerequisites
 
-This topic assumes that you know how to create a basic WinUI app with Windows App SDK. For instructions on creating your first WinUI app, see [Create a WinUI app](/windows/apps/tutorials/winui-notes/).
+This topic assumes that you know how to create a basic WinUI app with the Windows App SDK. For setup instructions, see [Quickstart: Create and run a WinUI 3 project](../../get-started/start-here.md). You don't need to complete the Notes tutorial.
 
 ## Create the project
 

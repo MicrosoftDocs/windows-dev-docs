@@ -1,7 +1,7 @@
 ---
 title: Data binding with WinUI and MVVM Toolkit tutorial - Introduction
 description: Implement data binding, dependency injection, and unit testing in WinUI apps with MVVM Toolkit. Build maintainable Windows applications today.
-ms.date: 10/29/2025
+ms.date: 09/10/2026
 ms.topic: tutorial
 keywords: windows 11, windows app sdk, winui, windows ui, mvvm, mvvm toolkit, dotnet
 ms.localizationpriority: medium
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 # Data binding, dependency injection, and unit testing in WinUI
 
-This tutorial series demonstrates how to implement data binding, dependency injection, and unit testing with the Model-View-ViewModel (MVVM) design pattern and the [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/) in a WinUI app. It builds on the [Create a WinUI app](/windows/apps/tutorials/winui-notes/intro) tutorial and shows you how to update your view models to leverage the MVVM Toolkit and the differences between the MVVM Toolkit and traditional MVVM approaches.
+This tutorial series demonstrates how to implement data binding, dependency injection, and unit testing with the Model-View-ViewModel (MVVM) design pattern and the [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/) in a WinUI app. It builds on the [Build a WinUI 3 notes app](/windows/apps/tutorials/winui-notes/intro) tutorial and shows you how to update your view models to leverage the MVVM Toolkit and the differences between the MVVM Toolkit and traditional MVVM approaches.
 
 You can download or view the code for this tutorial from the [GitHub repo](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes-mvvm-toolkit).
 
@@ -30,7 +30,7 @@ In this tutorial, you learn how to:
 To complete this tutorial, you need the following prerequisites:
 
 - [Visual Studio 2026](https://visualstudio.microsoft.com/vs/) with the **WinUI application development** workload installed.
-- A starter project created by following the steps in the [Create a WinUI app](/windows/apps/tutorials/winui-notes/intro) tutorial. If you're already familiar with the tutorial, you can download the code to get started here from the [GitHub repo](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes).
+- A starter project created by following the steps in the [Build a WinUI 3 notes app](/windows/apps/tutorials/winui-notes/intro) tutorial. If you're already familiar with the tutorial, you can download the code to get started here from the [GitHub repo](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes).
 
 ## What is the MVVM Toolkit?
 
@@ -63,7 +63,7 @@ For more background on the MVVM design pattern, see [Windows data binding and MV
 
 ## The WinUI Notes app
 
-The final application you build in this tutorial is a refactored version of the WinUI Notes app from the [Create a WinUI app](/windows/apps/tutorials/winui-notes/intro) tutorial. The app lets users create, save, and load multiple notes. The user interface of the original app stays the same, but the updated architecture uses the MVVM Toolkit for data binding and view model management.
+The final application you build in this tutorial is a refactored version of the WinUI Notes app from the [Build a WinUI 3 notes app](/windows/apps/tutorials/winui-notes/intro) tutorial. The app lets users create, save, and load multiple notes. The user interface of the original app stays the same, but the updated architecture uses the MVVM Toolkit for data binding and view model management.
 
 _AllNotesPage_
 

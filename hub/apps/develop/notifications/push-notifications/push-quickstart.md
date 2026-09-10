@@ -2,7 +2,7 @@
 title: Quickstart Push notifications in the Windows App SDK
 description: Send push notifications using the Windows App SDK
 ms.topic: quickstart
-ms.date: 07/15/2026
+ms.date: 09/10/2026
 keywords: push, notification
 ms.localizationpriority: medium
 ms.custom:
@@ -16,7 +16,7 @@ In this quickstart you will create a desktop Windows application that sends and 
 
 ## Prerequisites
 
-- [Start developing Windows apps](../../../get-started/start-here.md)
+- [Create and run a WinUI 3 project](../../../get-started/start-here.md)
 - Either [Create a new project that uses the Windows App SDK](../../../get-started/start-here.md) OR [Use the Windows App SDK in an existing project](../../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
 - An [Azure Account](https://azure.microsoft.com/pricing/purchase-options/azure-account?cid=msft_learn) is required in order to use Windows App SDK push notifications.
 - Read [Push notifications overview](./index.md)

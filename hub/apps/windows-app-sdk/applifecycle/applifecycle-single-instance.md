@@ -2,7 +2,7 @@
 description: Describes how to use app instancing features with the app lifecycle API in WinUI with C# and the Windows App SDK.
 title: How to create a single-instanced WinUI app with C#
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 09/10/2026
 keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, multi instance, winui, windows app sdk, c#
 #customer intent: As a Windows developer, I want to learn how to create a single-instanced WinUI app so that I can ensure only one instance of my app is running at a time.
 ---
@@ -20,7 +20,7 @@ In this article, you will learn how to:
 
 ## Pre-requisites
 
-This tutorial uses Visual Studio and builds on the WinUI blank app template. If you're new to WinUI development, you can get set up by following the instructions in [Get started with WinUI](../../get-started/start-here.md). There you'll install Visual Studio, configure it for developing apps with WinUI while ensuring you have the latest version of WinUI and the Windows App SDK, and create a Hello World project.
+This tutorial uses Visual Studio and builds on the WinUI blank app template. If you're new to WinUI development, you can get set up by following the instructions in [Create and run a WinUI 3 project](../../get-started/start-here.md). There you'll install Visual Studio, configure it for developing apps with WinUI while ensuring you have the latest version of WinUI and the Windows App SDK, and create a Hello World project.
 
 When you've done that, come back here to learn how to turn your "Hello World" project into a single-instanced app.
 

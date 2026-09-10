@@ -2,7 +2,7 @@
 title: Visual Studio for Windows app development
 description: Visual Studio is the recommended IDE for building Windows apps with WinUI and the Windows App SDK. Learn about key features and available project templates.
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui, visual studio
-ms.date: 03/03/2026
+ms.date: 09/10/2026
 ms.topic: article
 ---
 
@@ -17,7 +17,7 @@ Key features for Windows app developers include:
 - **IntelliSense for XAML and C#/C++** — get code completion, quick info, and error highlighting for both markup and code-behind
 - **Integrated debugging** — set breakpoints in XAML and code, inspect data bindings, and diagnose UI rendering issues
 
-To get started, see [Start developing Windows apps](../get-started/start-here.md).
+To get started, see [Create and run a WinUI 3 project](../get-started/start-here.md).
 
 ## WinUI project templates
 
@@ -27,7 +27,7 @@ Visual Studio includes project templates to help you quickly create WinUI apps. 
 
 ### WinUI Blank App (Packaged)
 
-Creates a desktop app in C# (.NET) or C++ (Win32) with a WinUI-based UI.The project starts with a single window derived from **Microsoft.UI.Xaml.Window**, ready for you to add your own controls and pages. This is the recommended starting point for most new apps. For a walkthrough, see [Start developing Windows apps](../get-started/start-here.md).
+Creates a desktop app in C# (.NET) or C++ (Win32) with a WinUI-based UI.The project starts with a single window derived from **Microsoft.UI.Xaml.Window**, ready for you to add your own controls and pages. This is the recommended starting point for most new apps. For a walkthrough, see [Create and run a WinUI 3 project](../get-started/start-here.md).
 
 ### Blank App (Packaged with WAP Project)
 
@@ -62,5 +62,5 @@ Item templates let you add new files to an existing WinUI project. Right-click y
 ## See also
 
 * [Windows App SDK](../windows-app-sdk/index.md)
-* [Start developing Windows apps](../get-started/start-here.md)
+* [Create and run a WinUI 3 project](../get-started/start-here.md)
 * [Windows App SDK Samples](https://github.com/microsoft/WindowsAppSDK-Samples)

@@ -1,7 +1,7 @@
 ---
 title: Use WinRT COM interop classes in .NET
 description: Use .NET projections of WinRT COM interop interfaces (IInitializeWithWindow, IWindowNative, GetWindowIdFromWindow) to bridge WinUI 3 and Win32.
-ms.date: 07/22/2026
+ms.date: 09/10/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -26,7 +26,7 @@ The C# interop classes listed in the next section ([Available C# interop classes
 
 ### In a WinUI 3 C# desktop project
 
-When you create a new WinUI project in Visual Studio (see [Create your first WinUI project](../../get-started/start-here.md)), your project is already configured, and you can start using all of the C# interop classes right away.
+When you create a new WinUI project in Visual Studio (see [Create and run a WinUI 3 project](../../get-started/start-here.md)), your project is already configured, and you can start using all of the C# interop classes right away.
 
 ### In other C# desktop project types (WPF or WinForms)
 
@@ -87,7 +87,7 @@ The [**Microsoft.UI.Win32Interop**](../../api-reference/cs-interop-apis/microsof
 
 ## Code example
 
-This code example demonstrates how to use two of the C# interop classes in a WinUI application (see [Create your first WinUI project](../../get-started/start-here.md)). The example scenario is to display a [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker). But before displaying the picker in a desktop app, it's necessary to initialize it with the handle (HWND) of the owner window.
+This code example demonstrates how to use two of the C# interop classes in a WinUI application (see [Create and run a WinUI 3 project](../../get-started/start-here.md)). The example scenario is to display a [**Windows.Storage.Pickers.FolderPicker**](/uwp/api/windows.storage.pickers.folderpicker). But before displaying the picker in a desktop app, it's necessary to initialize it with the handle (HWND) of the owner window.
 
 1. You can obtain a window handle (HWND) by using the [**IWindowNative**](/windows/windows-app-sdk/api/win32/microsoft.ui.xaml.window/nn-microsoft-ui-xaml-window-iwindownative) WinRT COM interop interface. And (looking in the table in the previous section) that interface is represented by the **WinRT.Interop.WindowNative** C# interop class. Here, the `this` object is a reference to a [**Microsoft.UI.Xaml.Window**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) object from the main window code-behind file.
 2. To initialize a piece of UI with an owner window, you use the [**IInitializeWithWindow**](/windows/win32/api/shobjidl_core/nn-shobjidl_core-iinitializewithwindow) WinRT COM interop interface. And that interface is represented by the **WinRT.Interop.InitializeWithWindow** C# interop class.
@@ -130,7 +130,7 @@ There are currently no known issues for the C# interop classes. To provide feedb
 
 * [Choose your interop approach](../../develop/interop/index.md)
 * [Call Win32 APIs from C# (CsWin32)](../../develop/interop/call-win32-apis.md)
-* [Create your first WinUI project](../../get-started/start-here.md)
+* [Create and run a WinUI 3 project](../../get-started/start-here.md)
 * [Manage app windows](../../develop/ui/manage-app-windows.md)
 * [Retrieve a window handle (HWND)](../../develop/ui/retrieve-hwnd.md)
 * [Display WinRT UI objects that depend on CoreWindow](../../develop/ui/display-ui-objects.md)

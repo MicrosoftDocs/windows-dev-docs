@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Use a SQLite database in a Windows app"
 description: Learn how to use a SQLite database in a Windows app to store and retrieve data in a lightweight database on the user's device.
-ms.date: 09/25/2025
+ms.date: 09/10/2026
 ms.topic: how-to
 keywords: windows 10, windows 11, windows app sdk, winui, SQLite, database
 ms.localizationpriority: medium
@@ -76,7 +76,7 @@ The rest of this guide helps you to use this library.
 
 ## Set up your solution to use the Microsoft.Data.Sqlite library
 
-We'll start with a basic WinUI project, and then install the SQLite NuGet package. See [Create a WinUI app](/windows/apps/tutorials/winui-notes/intro) for instructions on how to create your first WinUI project.
+We'll start with a basic WinUI project, and then install the SQLite NuGet package. See [Quickstart: Create and run a WinUI 3 project](../../get-started/start-here.md) for setup instructions; you don't need to complete the Notes tutorial.
 
 All supported versions of Windows support SQLite, so your app does not have to package SQLite libraries. Instead, your app can use the version of SQLite that comes installed with Windows. This helps you in a few ways.
 

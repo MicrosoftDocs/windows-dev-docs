@@ -1,15 +1,19 @@
 ---
-title: WinUI Notes tutorial - Introduction
-description: WinUI Notes tutorial introduction.
+title: Build a WinUI 3 notes app
+description: Learn XAML and C# fundamentals by building a two-page WinUI 3 notes app with local file storage, data binding, and navigation.
 author: GrantMeStrength
 ms.author: jken
-ms.date: 07/15/2026
+ms.date: 09/10/2026
 ms.topic: tutorial
 ms.localizationpriority: medium
 ---
-# Create your first WinUI 3 app
+# Build a WinUI 3 notes app
+
+<a id="create-your-first-winui-3-app"></a>
 
 This tutorial series demonstrates how to create a WinUI app using XAML and C#. The app you'll create is a note app, where the user can create, save, and load multiple notes. You can download or view the code for this tutorial from the [GitHub repo](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes).
+
+Start here after you can build and run a blank project. This is a step-by-step introduction to WinUI 3 fundamentals using Visual Studio; no AI coding assistant or MVVM Toolkit is required.
 
 In this tutorial, you learn how to:
 
@@ -22,7 +26,7 @@ In this tutorial, you learn how to:
 > - Use navigation to move to and from pages in the app.
 > - Use resources like documentation and sample apps to create your own app.
 
-You'll use Visual Studio 2026 to create an app that you can use to enter a note and save it to local app storage. You can find the source code for this app here. The app will have two pages:
+You'll create an app that you can use to enter a note and save it to local app storage. The app will have two pages:
 
 - `NotePage` - a page for editing a single note.
 - `AllNotesPage` - a page to show all the saved notes.
@@ -39,7 +43,7 @@ _NotePage_
 
 ## Create the Visual Studio project
 
-To begin this tutorial, you must create a WinUI app project in Visual Studio using the `WinUI Blank App (Packaged)` C# project template. When creating the project, use the following settings:
+Follow the Visual Studio path in [Quickstart: Create and run a WinUI 3 project](../../get-started/start-here.md?tabs=visual-studio) for tool installation and project creation. Use a packaged C# project with these tutorial-specific settings:
 
 - **Project Name**
 
@@ -49,10 +53,7 @@ To begin this tutorial, you must create a WinUI app project in Visual Studio usi
 
   This tutorial uses features that are available in Windows App SDK 1.7 and later. Make sure the Windows App SDK NuGet package is updated to version 1.7 or later.  
 
-> [!IMPORTANT]
-> If you have not created a WinUI project before, follow the steps in **[Start developing Windows apps](../../get-started/start-here.md)** to make sure your dev environment and Visual Studio project are set up correctly.
-
-When you run your blank app project (as outlined in [Start developing Windows apps](../../get-started/start-here.md)), you should see an empty window that looks like this:
+Build and launch the blank `WinUINotes` project before continuing. You should see an empty window that looks like this:
 
 :::image type="content" source="media/intro/step-0.png" alt-text="The notes app window with a title bar and empty content area.":::
 

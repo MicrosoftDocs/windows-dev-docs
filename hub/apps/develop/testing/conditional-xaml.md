@@ -4,7 +4,7 @@ description: Use new APIs in XAML markup while maintaining compatibility with pr
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 05/22/2026
+ms.date: 09/10/2026
 ---
 
 # Conditional XAML
@@ -15,7 +15,7 @@ Conditional XAML requires Windows 10 version 1809 (build 17763) or later, which 
 
 ## Prerequisites
 
-- A Windows App SDK project. For setup steps, see [Create your first WinUI 3 app](../../get-started/start-here.md).
+- A Windows App SDK project. For setup steps, see [Create and run a WinUI 3 project](../../get-started/start-here.md).
 - Familiarity with [Version adaptive apps](version-adaptive-apps.md) and the `ApiInformation` class.
 
 > [!IMPORTANT]

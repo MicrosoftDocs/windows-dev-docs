@@ -2,7 +2,7 @@
 ms.assetid: 6c563dd4-3dd0-4175-a1ab-7a1103fc9559
 title: "Tutorial: Bind hierarchical data and create a master/details view with WinUI"
 description: Create a multi-level master/details view of hierarchical data in WinUI by binding items controls to CollectionViewSource instances. Learn how to implement this structure.
-ms.date: 09/05/2026
+ms.date: 09/10/2026
 ms.topic: how-to
 keywords: windows 10, windows 11, winui, windows app sdk, windows ui, xBind
 ms.localizationpriority: medium
@@ -24,7 +24,7 @@ You create a view of a sports team hierarchy that's organized into lists for lea
 
 ## Prerequisites
 
-This article assumes that you know how to create a basic WinUI app. For instructions on creating your first WinUI app, see [Create a WinUI app](../../tutorials/winui-notes/intro.md).
+This article assumes that you know how to create a basic WinUI app. For setup instructions, see [Quickstart: Create and run a WinUI 3 project](../../get-started/start-here.md). You don't need to complete the Notes tutorial.
 
 ## Create the project
 

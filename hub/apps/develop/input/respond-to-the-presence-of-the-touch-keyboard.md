@@ -5,7 +5,7 @@ ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions
-ms.date: 08/23/2026
+ms.date: 09/10/2026
 ms.topic: how-to
 
 
@@ -37,7 +37,7 @@ You should have a basic understanding of standard keyboard interactions, handlin
 
 If you're new to developing Windows apps, have a look through these topics to get familiar with the technologies discussed here.
 
-- [Create your first WinUI 3 app](/windows/apps/get-started/start-here)
+- [Create and run a WinUI 3 project](/windows/apps/get-started/start-here)
 - Learn about events with [Events and routed events overview](/windows/apps/develop/platform/xaml/events-and-routed-events-overview)
 
 **User experience guidelines:**

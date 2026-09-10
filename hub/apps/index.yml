@@ -6,7 +6,7 @@ metadata:
    title: Windows app development documentation
    description: Build native Windows desktop apps with Windows App SDK and WinUI 3, the recommended UI framework for new Windows apps using C# or C++.
    ms.topic: hub-page
-   ms.date: 08/31/2026
+   ms.date: 09/10/2026
    ms.localizationpriority: medium
 
 highlightedContent:
@@ -18,8 +18,8 @@ highlightedContent:
     - title: Introduction to the Windows developer platform
       itemType: concept
       url: /windows/apps/introduction
-    - title: Start building with WinUI 3
-      itemType: tutorial
+    - title: "Quickstart: Create and run a WinUI 3 project"
+      itemType: quickstart
       url: /windows/apps/get-started/start-here
 
 productDirectory:
@@ -35,7 +35,7 @@ productDirectory:
       - url: /windows/apps/get-started
         text: Choose a Windows development path
       - url: /windows/apps/get-started/start-here
-        text: Get started with your first WinUI 3 app
+        text: Create and run a WinUI 3 project
       - url: /windows/apps/windows-app-sdk/set-up-your-development-environment
         text: Set up your development environment
   - title: Design

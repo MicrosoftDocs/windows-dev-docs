@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Create a Windows Hello login app"
 description: This is the first part of a complete walkthrough on how to create a packaged Windows app that uses Windows Hello as an alternative to traditional username and password authentication systems.
-ms.date: 07/08/2024
+ms.date: 09/10/2026
 ms.topic: how-to
 keywords: windows, winrt, security, identity, winui
 ms.custom: sfi-image-nochange
@@ -17,7 +17,7 @@ Before you begin, you should read the [Windows Hello](windows-hello.md) overview
 
 ## Get started
 
-In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2026 on a Windows 10 or Windows 11 machine. See [Start developing Windows apps](/windows/apps/get-started/start-here) for complete instructions on setting up your development environment.
+In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2026 on a Windows 10 or Windows 11 machine. See [Create and run a WinUI 3 project](/windows/apps/get-started/start-here) for complete instructions on setting up your development environment.
 
 - In Visual Studio, select **File** > **New** > **Project**.
 - In the **New Project** dialog's drop-down filters, select **C#/C++**, **Windows**, and **WinUI**, respectively.

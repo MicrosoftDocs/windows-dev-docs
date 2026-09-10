@@ -3,7 +3,7 @@ title: WinUI Notes -Step 5 - Navigation
 description: WinUI Notes - Step 5 - Add navigation between pages
 author: GrantMeStrength
 ms.author: jken
-ms.date: 09/02/2025
+ms.date: 09/10/2026
 ms.topic: tutorial
 ---
 # Navigate between pages
@@ -198,7 +198,7 @@ Now you can run your app. Try adding new notes, navigating back and forth betwee
 
 ## Next steps
 
-Congratulations! You've completed the _Create a WinUI app_ tutorial!
+You've completed the *Build a WinUI 3 notes app* tutorial.
 
 In order to keep things simple and introduce some foundational concepts, this tutorial focused on simplicity over efficiency, and introduced features at the most basic level. So while the app works, there are some things that can be improved.
 

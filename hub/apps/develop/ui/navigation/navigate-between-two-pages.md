@@ -5,7 +5,7 @@ ms.assetid: 0A364C8B-715F-4407-9426-92267E8FB525
 label: Peer-to-peer navigation between two pages
 template: detail.hbs
 op-migration-status: ready
-ms.date: 08/26/2026
+ms.date: 09/10/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 dev_langs:
@@ -29,7 +29,7 @@ Almost every app requires navigation between pages. Even a simple app with a sin
 ## 1. Create a blank app
 To create a blank app in Visual Studio:
 
-1. To set up your development computer, see [Start developing Windows apps](../../../get-started/start-here.md).
+1. To set up your development computer, see [Create and run a WinUI 3 project](../../../get-started/start-here.md).
 1. From the Microsoft Visual Studio start window, select **Create a new project**, OR, on the Visual Studio menu, choose **File** > **New** > **Project**.
 1. In the **Create a new project** dialog's drop-down filters, select **C#** or **C++**, **Windows**, and **WinUI**, respectively.
 1. Select the **WinUI Blank App (Packaged)** project template, and click **Next**. That template creates a desktop app with a WinUI-based user interface.

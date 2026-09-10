@@ -1,7 +1,7 @@
 ---
 title: WinUI Notes part 2 - Navigation parameters
 description: WinUI Notes part 2 navigation parameters.
-ms.date: 06/16/2026
+ms.date: 09/10/2026
 ms.topic: tutorial
 ms.localizationpriority: medium
 ---
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 Now that the `Note` has a `State`, update the navigation to pass it back to `AllNotesPage`, where you can handle it as appropriate based on it's `State`. This also gives you the opportunity to improve the user experience related to navigation.
 
 > [!TIP]
-> If needed, review [Create your first WinUI 3 app, Step 1 - Navigation](/windows/apps/tutorials/winui-notes/navigation). It's helpful to understand how the navigation is set up before making these changes.
+> If needed, review [Notes tutorial: Navigate between pages](../winui-notes/navigation.md). It's helpful to understand how the navigation is set up before making these changes.
 
 Currently, all navigation from `NotePage` back to `AllNotesPage` is done with a simple call to [Frame.GoBack](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.goback). However, the `GoBack` method doesn't allow you to pass a navigation parameter. In order to pass a `Note` as a parameter, you'll need to replace the back navigation with a forward navigation ([Frame.Navigate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.frame.navigate)). `GoBack` also doesn't add an entry to the navigation stack like a forward navigation does, so you'll need to manage the backstack to prevent this forward navigation from being added.
 

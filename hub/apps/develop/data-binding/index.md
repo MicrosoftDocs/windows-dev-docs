@@ -2,7 +2,7 @@
 ms.assetid: adfa70f3-a4d9-45d1-8957-c26a7703a276
 title: Data binding in Windows apps - A guide for developers
 description: Learn data binding in Windows apps to connect UI with data dynamically. Explore x:Bind and Binding markup extensions with examples and MVVM best practices.
-ms.date: 09/05/2026
+ms.date: 09/10/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui
 ms.localizationpriority: medium
@@ -23,7 +23,7 @@ Whether you're displaying a single data item, binding to collections, or impleme
 | [Data binding in depth](data-binding-in-depth.md) | This topic describes data binding features in detail. |
 | [Bind hierarchical data and create a master/details view](bind-to-hierarchical-data-and-create-a-master-details-view.md) | You can make a multilevel master/details (also known as list-details) view of hierarchical data by binding items controls to [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) instances that are bound together in a chain. |
 | [Data binding and MVVM](data-binding-and-mvvm.md) | This topic describes the Model-View-ViewModel (MVVM) UI architectural design pattern. Data binding is at the core of MVVM, and enables loose coupling between UI and non-UI code. |
-| [How to data bind with the MVVM Toolkit in WinUI apps](../../tutorials/winui-mvvm-toolkit/intro.md) | This tutorial builds on the [Create a WinUI app](../../tutorials/winui-notes/intro.md) tutorial and shows you how to implement data binding with the [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/). It covers updating your view models to leverage the MVVM Toolkit and the differences between the MVVM Toolkit and traditional MVVM approaches. |
+| [How to data bind with the MVVM Toolkit in WinUI apps](../../tutorials/winui-mvvm-toolkit/intro.md) | This tutorial builds on the [Build a WinUI 3 notes app](../../tutorials/winui-notes/intro.md) tutorial and shows you how to implement data binding with the [MVVM Toolkit](/dotnet/communitytoolkit/mvvm/). It covers updating your view models to leverage the MVVM Toolkit and the differences between the MVVM Toolkit and traditional MVVM approaches. |
 | [Functions in x:Bind](function-bindings.md) | In Windows App SDK apps, `{x:Bind}` supports using a function as the leaf step of the binding path. In this topic, learn how properties are bound to functions to do conversions, date formatting, text formatting, text concatenations, and more. |
 
 ## Related content

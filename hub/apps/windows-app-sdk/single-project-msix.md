@@ -2,7 +2,7 @@
 title: Package your app using single-project MSIX
 description: This article provides instructions for how to generate an MSIX desktop app via a single project in Visual Studio.
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 09/10/2026
 keywords: windows, win32, desktop development, Windows App SDK, msix, packaging project, single project, single project msix, winui 3
 ms.localizationpriority: medium
 ---
@@ -48,7 +48,7 @@ To confirm that you have the extension installed, click **Extensions** > **Manag
 
 ## Create a new project
 
-If you're using Windows App SDK 1.0 Preview 2 or later, then you can create a new WinUI-based app that includes single-project MSIX support simply by using the **WinUI Blank App (Packaged)** template. For more information, see [Create your first WinUI project](../get-started/start-here.md).
+If you're using Windows App SDK 1.0 Preview 2 or later, then you can create a new WinUI-based app that includes single-project MSIX support simply by using the **WinUI Blank App (Packaged)** template. For more information, see [Create and run a WinUI 3 project](../get-started/start-here.md).
 
 ## Modify an existing project
 

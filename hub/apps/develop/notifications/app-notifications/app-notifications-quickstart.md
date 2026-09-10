@@ -2,7 +2,7 @@
 title: "Quickstart: Send and Handle App Notifications"
 description: Send and respond to local app notifications in a WinUI app using the Windows App SDK. Walk through creating notification content, handling foreground and background activation, and configuring the app manifest.
 ms.topic: quickstart
-ms.date: 07/15/2026
+ms.date: 09/10/2026
 keywords: toast, local, notification, windows app sdk, winappsdk
 ms.localizationpriority: medium
 ms.custom: template-quickstart
@@ -30,7 +30,7 @@ For complete sample apps that implement app notifications, see the [Windows App 
 - Make sure Windows Application Development is selected.
 - Make sure Windows UI Application Development is selected.
 
-For more information about managing workloads in Visual Studio, see [Modify Visual Studio workloads, components, and language packs](/visualstudio/install/modify-visual-studio). For more information about getting started with WinUI, see [Get started with WinUI](../../../get-started/start-here.md). To add the Windows App SDK to an existing project, see [Use the Windows App SDK in an existing project](../../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md).
+For more information about managing workloads in Visual Studio, see [Modify Visual Studio workloads, components, and language packs](/visualstudio/install/modify-visual-studio). For more information about getting started with WinUI, see [Create and run a WinUI 3 project](../../../get-started/start-here.md). To add the Windows App SDK to an existing project, see [Use the Windows App SDK in an existing project](../../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md).
 
 ## Create a new WinUI app project in Visual Studio
 

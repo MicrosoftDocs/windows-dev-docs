@@ -1,7 +1,7 @@
 ---
 title: Data Binding with WinUI and MVVM Toolkit - Step 4 - Add unit tests
 description: Create a unit test project to test your ViewModels and services independently of the UI layer.
-ms.date: 10/29/2025
+ms.date: 09/10/2026
 ms.topic: tutorial
 keywords: windows 11, windows app sdk, winui, windows ui, mvvm, mvvm toolkit, dotnet, unit testing
 ms.localizationpriority: medium
@@ -326,7 +326,7 @@ Now that you understand how to implement MVVM with the MVVM Toolkit and dependen
 
 - [MVVM Toolkit documentation](/dotnet/communitytoolkit/mvvm/)
 - [.NET Community Toolkit](/dotnet/communitytoolkit/introduction)
-- [Create a WinUI app tutorial](/windows/apps/tutorials/winui-notes/intro)
+- [Build a WinUI 3 notes app](/windows/apps/tutorials/winui-notes/intro)
 - [Data binding overview](/windows/apps/develop/data-binding/data-binding-overview)
 - [Dependency injection in .NET](/dotnet/core/extensions/dependency-injection)
 - [Unit testing in .NET](/dotnet/core/testing/)

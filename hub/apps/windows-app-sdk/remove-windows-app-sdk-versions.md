@@ -2,7 +2,7 @@
 title: Remove outdated Windows App SDK runtime versions from your development computer
 description: This article provides instructions for removing older versions of the Windows App SDK VSIX and runtime packages
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 09/10/2026
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
@@ -57,5 +57,5 @@ On the **Apps & features** page, search for **reunion** to filter and show insta
 - [Runtime architecture](deployment-architecture.md)
 - [Check for installed versions of the Windows App SDK runtime](check-windows-app-sdk-versions.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Create your first WinUI project](../get-started/start-here.md)
+- [Create and run a WinUI 3 project](../get-started/start-here.md)
 - [Use the Windows App SDK in an existing project](use-windows-app-sdk-in-existing-project.md)

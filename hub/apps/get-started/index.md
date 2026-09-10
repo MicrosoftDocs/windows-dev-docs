@@ -4,7 +4,7 @@ description: Choose a path for a new WinUI 3 app, an existing desktop app, a UWP
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 08/31/2026
+ms.date: 09/10/2026
 keywords: windows, desktop development, windows sdk, windows app sdk, winui
 ms.localizationpriority: medium
 #customer intent: As a developer, I want to choose the recommended path for a new app or find guidance for my existing app.
@@ -34,9 +34,9 @@ If you maintain an existing WPF, Windows Forms, or Win32 app, you don't necessar
 WinUI 3 provides the native UI framework for Windows desktop apps. It uses XAML with C# or C++ and ships as part of the Windows App SDK.
 
 > [!div class="nextstepaction"]
-> [Build your first WinUI 3 app](start-here.md)
+> [Create and run a WinUI 3 project](start-here.md)
 
-For more information, see the [WinUI 3 overview](../winui/winui3/index.md), [Windows App SDK overview](../windows-app-sdk/index.md), and [WinUI 3 tutorial](../tutorials/winui-notes/intro.md).
+For more information, see the [WinUI 3 overview](../winui/winui3/index.md), [Windows App SDK overview](../windows-app-sdk/index.md), and [Build a WinUI 3 notes app](../tutorials/winui-notes/intro.md).
 
 ## Modernize or migrate an existing app
 

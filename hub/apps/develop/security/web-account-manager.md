@@ -4,7 +4,7 @@ description: Learn how to use Web Account Manager (WAM) APIs with HWND interop t
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 07/15/2026
+ms.date: 09/10/2026
 ---
 
 # Use Web Account Manager in a WinUI 3 desktop app
@@ -16,7 +16,7 @@ This article describes how to use [`AccountsSettingsPaneInterop`](/windows/win32
 
 ## Prerequisites
 
-- A WinUI 3 desktop app project targeting .NET 6 or later (see [Create your first WinUI 3 project](/windows/apps/winui/winui3/create-your-first-winui3-app)).
+- A WinUI 3 desktop app project targeting .NET 6 or later (see [Create and run a WinUI 3 project](../../get-started/start-here.md)).
 - Windows 10 version 1809 (build 17763) or later.
 - An app registration in the [Azure portal](https://portal.azure.com) with an **Application (client) ID**. Configure the supported account types to match the accounts you want to sign in:
   - **Personal Microsoft accounts** for consumer (MSA) sign-in.

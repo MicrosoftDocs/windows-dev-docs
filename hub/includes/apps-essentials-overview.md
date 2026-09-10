@@ -1,6 +1,6 @@
 ---
 ms.topic: include
-ms.date: 09/02/2026
+ms.date: 09/10/2026
 ---
 
 :::row:::
@@ -10,9 +10,9 @@ ms.date: 09/02/2026
        Start a new app with WinUI 3, modernize an existing desktop app, or find guidance for another framework.
     :::column-end:::
     :::column:::
-       [![Get started with WinUI icon](../apps/images/tile-getstarted.png)](../apps/get-started/winui-get-started-overview.md)<br>
-        **[Get started with WinUI](../apps/get-started/winui-get-started-overview.md)**<br>
-        Build your first WinUI app and get familiar with the basics of the platform and tooling.
+       [![Get started with WinUI 3 icon](../apps/images/tile-getstarted.png)](../apps/get-started/winui-get-started-overview.md)<br>
+        **[Get started with WinUI 3](../apps/get-started/winui-get-started-overview.md)**<br>
+        Choose your tools, run a blank project, and pick a WinUI 3 learning path.
     :::column-end:::
     :::column:::
        [![Help and guidance icon](../apps/images/tile-help.png)](../apps/get-started/best-practices.md)<br>

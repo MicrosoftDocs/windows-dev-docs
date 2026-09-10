@@ -2,7 +2,7 @@
 title: Windows apps--packaging, deployment, and process
 description: This topic discusses your options around app packaging, deploy/distribute/install, and your app's run-time process.
 ms.topic: article
-ms.date: 08/29/2026
+ms.date: 09/10/2026
 keywords: intro, introduction, all-up, all, up, Windows, Windows apps, packaging, deployment, process, run-time
 ms.localizationpriority: medium
 ---
@@ -25,7 +25,7 @@ For a full explanation of the packaged, packaged with external location, and unp
 
 For info about how to configure your app as packaged or unpackaged:
 
-* **WinUI 3 apps (Windows App SDK)**. See the `AppxPackage` Visual Studio project property in [Project properties](../package-and-deploy/project-properties.md); and see [Create your first WinUI (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app).
+* **WinUI 3 apps (Windows App SDK)**. See the `AppxPackage` Visual Studio project property in [Project properties](../package-and-deploy/project-properties.md); and see [Create and run a WinUI 3 project](start-here.md).
 * **Desktop apps**. See [Set up your desktop app for MSIX packaging](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 * **Universal Windows Platform (UWP) apps**. UWP apps are already configured as packaged; and that configuration can't be changed.
 

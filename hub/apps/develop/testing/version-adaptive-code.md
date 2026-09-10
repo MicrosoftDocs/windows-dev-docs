@@ -4,7 +4,7 @@ description: Use the ApiInformation class to use new APIs while maintaining comp
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 05/22/2026
+ms.date: 09/10/2026
 ---
 
 # Version adaptive code
@@ -15,7 +15,7 @@ For background information about `ApiInformation`, API contracts, and configurin
 
 ## Prerequisites
 
-- A Windows App SDK project (packaged or unpackaged). See [Quick start: Create your first WinUI 3 app](../../get-started/start-here.md).
+- A Windows App SDK project (packaged or unpackaged). See [Quickstart: Create and run a WinUI 3 project](../../get-started/start-here.md).
 - Familiarity with the Windows Runtime (WinRT) type system, since `ApiInformation` checks apply to `Windows.*` namespace types only.
 
 ## Runtime API checks

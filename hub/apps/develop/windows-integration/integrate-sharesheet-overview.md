@@ -4,7 +4,7 @@ title: "Share on Windows: integrate the Windows Share Sheet"
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 08/21/2026
+ms.date: 09/10/2026
 ms.localizationpriority: medium
 keywords: share on windows, windows share, share sheet, windows 11 share, sharesheet, file sharing, share button, packaged apps, pwa, c++, winui 3, windows app sdk
 #customer intent: As a Windows developer, I want to learn how to integrate share options in my Windows app so that users can share content with other Windows apps.
@@ -40,7 +40,7 @@ These pages are organized by **developer task**, not by packaging model. Whether
 - [People on Windows (Cross-device People API)](cross-device-people-api.md)
 - [DataFormat & FileType reference](dataformat-reference.md)
 - [Windows App SDK deployment overview](/windows/apps/package-and-deploy/deploy-overview)
-- [Create your first WinUI project](/windows/apps/winui/winui3/create-your-first-winui3-app)
+- [Create and run a WinUI 3 project](../../get-started/start-here.md)
 - [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)
 - [Packaging overview](/windows/apps/package-and-deploy/packaging/)
 - [Identity, Registration and Activation of Non-packaged Win32 Apps](https://blogs.windows.com/windowsdeveloper/2019/10/29/identity-registration-and-activation-of-non-packaged-win32-apps/)

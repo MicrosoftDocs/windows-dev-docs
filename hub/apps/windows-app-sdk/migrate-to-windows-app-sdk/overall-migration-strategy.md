@@ -2,7 +2,7 @@
 title: Migration and modernization overview
 description: Strategies and steps for migrating a UWP app to the Windows App SDK and WinUI 3, including project setup and code migration.
 ms.topic: overview
-ms.date: 07/15/2026
+ms.date: 09/10/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting
 ms.localizationpriority: medium
 ---
@@ -63,7 +63,7 @@ Download the latest Windows App SDK version from [Windows App SDK downloads](../
 
 ## Create a new project
 
-In Visual Studio, [Create your first WinUI project](../../get-started/start-here.md). For example, use the **WinUI Blank App (Packaged)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
+In Visual Studio, [Create and run a WinUI 3 project](../../get-started/start-here.md). For example, use the **WinUI Blank App (Packaged)** project template. You can find that project template in the **Create a new project** dialog by choosing language: *C#* or *C++*; platform: *Windows App SDK*; project type: *WinUI* or *Desktop*.
 
 You'll see two projects in **Solution Explorer**&mdash;one is qualified as **(Desktop)**, and the other as **(Package)**.
 

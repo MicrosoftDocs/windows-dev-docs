@@ -2,7 +2,7 @@
 title: XAML runtime design tools for WinUI 3
 description: Learn how to use XAML Hot Reload, Live Visual Tree, Live Property Explorer, and a UI playground page to design and iterate on WinUI 3 UI at runtime.
 ms.topic: how-to
-ms.date: 05/28/2026
+ms.date: 09/10/2026
 ---
 
 # XAML runtime design tools for WinUI 3
@@ -29,7 +29,7 @@ The runtime tools described in this article are valuable whether or not a design
 ## Prerequisites
 
 - Visual Studio 2022 version 17.0 or later (XAML Hot Reload and Live Visual Tree are included).
-- A WinUI 3 project using the Windows App SDK. See [Start developing Windows apps](/windows/apps/get-started/start-here) to create one.
+- A WinUI 3 project using the Windows App SDK. See [Create and run a WinUI 3 project](/windows/apps/get-started/start-here) to create one.
 - Your project should target **.NET 6** or later (C#) or use C++/WinRT.
 
 ## Step 1: Start your app under the debugger

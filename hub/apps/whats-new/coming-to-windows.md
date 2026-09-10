@@ -4,7 +4,7 @@ description: A practical guide for developers new to Windows with paths for macO
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 09/01/2026
+ms.date: 09/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -52,7 +52,7 @@ Get started in one command:
 winget configure -f https://aka.ms/winui-config
 ```
 
-This installs Visual Studio 2026 with the required workloads and enables Developer Mode. Then see [Quick start: Create your first WinUI 3 app](../get-started/start-here.md).
+This installs Visual Studio 2026 with the required workloads and enables Developer Mode. Then see [Quickstart: Create and run a WinUI 3 project](../get-started/start-here.md).
 
 **Key differences to be aware of**
 
@@ -103,7 +103,7 @@ winget install Docker.DockerDesktop
 
 **Build native Windows apps with C++ or C#**
 
-For system-level work, [Win32 APIs](/windows/win32/) are the Windows equivalent of POSIX. For GUI apps, [WinUI 3](/windows/apps/winui/winui3/) with C++ or C# gives you native performance and platform integration. See [Quick start: Create your first WinUI 3 app](../get-started/start-here.md).
+For system-level work, [Win32 APIs](/windows/win32/) are the Windows equivalent of POSIX. For GUI apps, [WinUI 3](/windows/apps/winui/winui3/) with C++ or C# gives you native performance and platform integration. See [Quickstart: Create and run a WinUI 3 project](../get-started/start-here.md).
 
 > [!TIP]
 > For heavy build workloads (compiling large C++ or Rust projects), store source code on a [Dev Drive](/windows/dev-drive/) volume. Dev Drive uses the Resilient File System (ReFS) with developer-optimized settings and can significantly reduce build times.
@@ -236,7 +236,7 @@ Install the .NET SDK and Visual Studio with the WinUI workload:
 winget configure -f https://aka.ms/winui-config
 ```
 
-Then follow the [Quick start: Create your first WinUI 3 app](../get-started/start-here.md).
+Then follow the [Quickstart: Create and run a WinUI 3 project](../get-started/start-here.md).
 
 **Key Windows-specific NuGet packages**
 
@@ -302,7 +302,7 @@ See [AI-assisted development for Windows](../develop/ai-assisted/index.md) for m
 
 ## Next steps
 
-- [Quick start: Create your first WinUI 3 app](../get-started/start-here.md)
+- [Quickstart: Create and run a WinUI 3 project](../get-started/start-here.md)
 - [Set up your development environment](../../dev-environment/index.md)
 - [Windows developer FAQ](../get-started/windows-developer-faq.md)
 - [Windows developer glossary](../get-started/windows-developer-glossary.md)

@@ -4,7 +4,7 @@ description: Find answers about Windows app frameworks, SDKs, tooling, interoper
 author: GrantMeStrength
 ms.author: jken
 ms.topic: faq
-ms.date: 09/02/2026
+ms.date: 09/10/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -99,7 +99,7 @@ Topics covered include:
 
 <details><summary>Do I need to use Visual Studio to build WinUI apps?</summary>
 
-> No. WinUI XAML builds use MSBuild, but you can build with the .NET SDK and current WinUI templates from the command line in another editor. See the [.NET and command-line path](./winui-get-started-overview.md).
+> No. WinUI XAML builds use MSBuild, but you can build with the .NET SDK and current WinUI templates from the command line in another editor. See the [command-line quickstart](start-here.md?tabs=command-line).
 >
 > [Visual Studio 2026](/visualstudio/windows/) provides the richest integrated editing, debugging, profiling, and XAML Hot Reload experience. Use the workflow that matches your tooling requirements.
 
@@ -240,7 +240,7 @@ Topics covered include:
 > See [Sample and resources](../dev-tools/samples.md). Some notable repositories:
 > 
 > - [WindowsAppSDK-Samples](https://github.com/microsoft/WindowsAppSDK-Samples): Demonstrates how to use specific Windows App SDK API sets.
-> - [Windows topic-specific samples](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes): Contains a WinUI notes sample used in the [Create a WinUI app](/windows/apps/tutorials/winui-notes/) tutorial.
+> - [Windows topic-specific samples](https://github.com/MicrosoftDocs/windows-topic-specific-samples/tree/winui-3/tutorials/winui-notes): Contains the sample used in the [Build a WinUI 3 notes app](../tutorials/winui-notes/intro.md) tutorial.
 > - [WinUI 3 Gallery](https://github.com/microsoft/WinUI-Gallery): Showcases WinUI and Windows App SDK. Also available in the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC).
 
 </details>

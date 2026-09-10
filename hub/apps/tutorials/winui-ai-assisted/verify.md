@@ -3,7 +3,7 @@ title: "AI-assisted WinUI tutorial - Verify and refine"
 description: Catch framework mistakes in AI-generated Windows code, verify each API against Microsoft Learn, and test the finished WinUI 3 app.
 author: GrantMeStrength
 ms.author: jken
-ms.date: 08/31/2026
+ms.date: 09/10/2026
 ms.topic: tutorial
 ---
 
@@ -105,7 +105,7 @@ You have built a small WinUI 3 app and practiced a workflow you can reuse:
 
 Continue with:
 
-- [Create your first WinUI app](../winui-notes/intro.md) for a deterministic, code-focused introduction to XAML, navigation, and file storage.
+- [Build a WinUI 3 notes app](../winui-notes/intro.md) for a deterministic, code-focused introduction to XAML, navigation, and file storage.
 - [Data binding, dependency injection, and unit testing in WinUI](../winui-mvvm-toolkit/intro.md) for a larger MVVM architecture.
 - [WinUI 3 Gallery](../../dev-tools/samples.md#winui-3-gallery) to verify controls and interaction patterns in a running sample.
 - [Windows App SDK API reference](/windows/windows-app-sdk/api/winrt/) to confirm generated API choices.

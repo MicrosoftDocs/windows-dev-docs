@@ -2,7 +2,7 @@
 title: Restart API (Windows App SDK)
 description: Describes how to use the Restart API, AppRestartFailureReason Restart(), with the App Lifecycle API (Windows App SDK).
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 09/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -26,8 +26,8 @@ The Restart API returns an [`AppRestartFailureReason`](/uwp/api/windows.applicat
 
 To use the app lifecycle API in the Windows App SDK:
 
-1. Download and install the latest release of the Windows App SDK. For more information, see [Get started with WinUI](../../get-started/start-here.md).
-2. Follow the instructions to [Create your first WinUI project](../../get-started/start-here.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
+1. Download and install the latest release of the Windows App SDK. For more information, see [Create and run a WinUI 3 project](../../get-started/start-here.md).
+2. Follow the instructions to [Create and run a WinUI 3 project](../../get-started/start-here.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## What is this Restart Method?
 

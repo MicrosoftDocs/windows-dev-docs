@@ -2,7 +2,7 @@
 title: Build desktop Windows apps with the Windows App SDK 
 description: Learn about the Windows App SDK, benefits it provides to developers, what is ready for developers now, and how to give feedback.
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 09/10/2026
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium
 ---
@@ -76,7 +76,7 @@ The Windows App SDK is available through multiple release channels that let you 
 
 ### Get started with the Windows App SDK
 
-- For new apps, explore [WinUI](../winui/winui3/index.md) and [get started building your first WinUI app](../get-started/start-here.md).
+- For new apps, explore [WinUI](../winui/winui3/index.md) and [create and run a WinUI 3 project](../get-started/start-here.md).
 
 - To integrate the Windows App SDK into an existing WPF, Windows Forms, Win32, or cross-platform project, see [use the Windows App SDK in an existing app](use-windows-app-sdk-in-existing-project.md)  guidance.
 - For version-specific details, visit [Release channels](release-channels.md) and [Downloads](downloads.md).
@@ -91,4 +91,4 @@ We are building the Windows App SDK as an open source project. We have a lot mor
 ## Related topics
 
 - [Release channels and release notes](release-channels.md)
-- [Create your first WinUI project](../get-started/start-here.md)
+- [Create and run a WinUI 3 project](../get-started/start-here.md)

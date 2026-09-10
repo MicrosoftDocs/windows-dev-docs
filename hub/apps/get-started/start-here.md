@@ -1,8 +1,8 @@
 ---
-title: "Quick start: Create your first WinUI 3 app"
-description: Create, build, and run your first WinUI 3 app with the Windows App SDK using Visual Studio 2026 or the .NET command line.
+title: "Quickstart: Create and run a WinUI 3 project"
+description: Set up your development tools, create a blank C# WinUI 3 project, and build and run it with Visual Studio or the .NET command line.
 ms.topic: quickstart
-ms.date: 08/31/2026
+ms.date: 09/10/2026
 author: GrantMeStrength
 ms.author: jken
 keywords: windows, desktop development
@@ -10,9 +10,13 @@ ms.localizationpriority: medium
 ms.collection: windows11
 ---
 
-# Quick start: Create your first WinUI 3 app
+# Quickstart: Create and run a WinUI 3 project
 
-Create, build, and run your first WinUI 3 app. Choose **Visual Studio** for a full IDE experience with visual designer support, or **dotnet new** to work from the command line in any editor. Use the tabs below to switch between the two approaches.
+<a id="quick-start-create-your-first-winui-3-app"></a>
+
+Set up your tools, create a blank C# WinUI 3 project, and confirm that it builds and launches. Choose **Visual Studio** for an integrated editor and debugger, or **dotnet new** to work from the command line in any editor. Use the tabs below to switch between the two approaches.
+
+This quickstart stops at a running project. To add a user interface, storage, and navigation, continue afterward with [Build a WinUI 3 notes app](../tutorials/winui-notes/intro.md).
 
 #### [Visual Studio](#tab/visual-studio)
 
@@ -133,14 +137,18 @@ If you run into issues building or running your first app, try these common fixe
 
 ## Next steps
 
-> [!TIP]
-> If you plan to use an AI coding assistant, continue with [Build a WinUI app with an AI coding assistant](../tutorials/winui-ai-assisted/intro.md). It teaches how to constrain generated code to WinUI 3 and verify the result.
+Your development setup is ready. The recommended next step is the Notes tutorial, which teaches XAML and C# fundamentals in Visual Studio. If you prefer to learn an AI-assisted workflow, choose the Task Tally tutorial instead; you don't need to complete both.
+
+> [!div class="nextstepaction"]
+> [Build a WinUI 3 notes app](../tutorials/winui-notes/intro.md)
+
+For the optional AI-assisted path, see [Build a WinUI 3 task app with an AI assistant](../tutorials/winui-ai-assisted/intro.md). It teaches how to constrain generated code to WinUI 3 and verify the result.
 
 :::row:::
     :::column:::
         [![Hello WinUI](../winui/winui3/images/hero-hello-winui.png)](../tutorials/winui-notes/intro.md)<br>
-        **[Build your first WinUI app](../tutorials/winui-notes/intro.md)**<br>
-        Ready to go further? Follow the step-by-step tutorial to build a full WinUI app.
+        **[Build a WinUI 3 notes app](../tutorials/winui-notes/intro.md)**<br>
+        Learn XAML, events, file storage, data binding, and navigation in a two-page C# app.
     :::column-end:::
     :::column:::
         [![WinUI 3 Gallery](../winui/winui3/images/winui-gallery.png)](../dev-tools/samples.md#winui-3-gallery)<br>

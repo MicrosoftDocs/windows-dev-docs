@@ -1,14 +1,16 @@
 ---
-title: Build a WinUI app with an AI coding assistant
-description: Learn a reliable workflow for building, inspecting, testing, and correcting a WinUI 3 app created with an AI coding assistant.
+title: Build a WinUI 3 task app with an AI assistant
+description: Build a C# WinUI 3 task app while learning to prompt an AI assistant, inspect generated code, verify APIs, and refine the result.
 author: GrantMeStrength
 ms.author: jken
-ms.date: 09/09/2026
+ms.date: 09/10/2026
 ms.topic: tutorial
 ms.localizationpriority: medium
 ---
 
-# Build a WinUI app with an AI coding assistant
+# Build a WinUI 3 task app with an AI assistant
+
+<a id="build-a-winui-app-with-an-ai-coding-assistant"></a>
 
 AI coding assistants can create a working app quickly, but they can also combine APIs from different generations of Windows development. A response might look convincing while mixing WinUI 3 with UWP, WPF, WinUI 2, or .NET MAUI.
 
@@ -47,12 +49,9 @@ You use C#, WinUI 3, the Windows App SDK, and the MVVM Toolkit. The app is packa
 
 ## Prerequisites
 
-Complete [Quick start: Create your first WinUI 3 app](../../get-started/start-here.md) first. You need:
+Complete [Quickstart: Create and run a WinUI 3 project](../../get-started/start-here.md) first, using either its Visual Studio or command-line setup. You also need an AI coding assistant that can read and edit files in your project.
 
-- Windows 10 version 1809 (build 17763) or later.
-- Developer Mode enabled.
-- Visual Studio 2026 with the WinUI application development workload, or the .NET 10 SDK and WinUI templates.
-- An AI coding assistant that can read and edit files in your project.
+You create a separate `TaskTally` project in this tutorial. The [Notes tutorial](../winui-notes/intro.md) is an alternative for learning XAML and C# fundamentals, not a prerequisite.
 
 You don't need previous WinUI experience. The prompts in this tutorial are tool-neutral, so adapt their command wording to your assistant.
 

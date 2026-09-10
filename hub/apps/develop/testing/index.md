@@ -4,7 +4,7 @@ description: Learn how to test Windows App SDK and WinUI 3 apps, including unit 
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 07/22/2026
+ms.date: 09/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -33,7 +33,7 @@ In this tutorial, you learn how to:
 
 ### Prerequisites
 
-You must have Visual Studio installed and setup for WinUI development. See [Quick start: Set up your environment and create a WinUI 3 project](../../get-started/start-here.md).
+You must have Visual Studio installed and setup for WinUI development. See [Quickstart: Create and run a WinUI 3 project](../../get-started/start-here.md).
 
 ### Create a WinUI Unit Test App project
 

@@ -4,7 +4,7 @@ description: Build reliable Windows apps with current guidance for user experien
 author: GrantMeStrength
 ms.author: jken
 ms.topic: best-practice
-ms.date: 09/01/2026
+ms.date: 09/10/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
@@ -419,6 +419,6 @@ Your privacy policy must:
 
 ## Related articles
 
-- [Create your first WinUI project](./start-here.md)
+- [Create and run a WinUI 3 project](./start-here.md)
 - [Windows Developer FAQ](./windows-developer-faq.md)
 - [Call Win32 APIs from a C# Windows app (CsWin32)](../develop/interop/call-win32-apis.md)

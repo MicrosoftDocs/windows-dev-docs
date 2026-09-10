@@ -1,7 +1,7 @@
 ---
 title: WinUI Notes part 2 - Note state
 description: WinUI Notes part 2 note state.
-ms.date: 06/16/2026
+ms.date: 09/10/2026
 ms.topic: tutorial
 ms.localizationpriority: medium
 ---
@@ -42,7 +42,7 @@ First, you need to add code to update the collection when a note is added or del
 
 :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
-- [Create your first WinUI 3 app, Step 4](../winui-notes/all-notes.md)
+- [Notes tutorial: Add a view and model for all notes](../winui-notes/all-notes.md)
 - [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1)
 
 ## Add State to the note

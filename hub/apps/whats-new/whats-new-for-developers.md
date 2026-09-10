@@ -4,7 +4,7 @@ description: Explore new Windows platform capabilities, SDK and API updates, des
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
 author: GrantMeStrength
 ms.author: jken
-ms.date: 09/09/2026
+ms.date: 09/10/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -56,7 +56,7 @@ Versions below are current as of September 9, 2026. Use the release notes to rev
 ### Documentation highlights
 
 - **WinUI 3 line-of-business apps**: A new hub brings together guidance on tabular data, validated forms, database access, design, migration, and AI for business applications. See [Build line-of-business apps with WinUI](../get-started/line-of-business/index.md).
-- **AI-assisted WinUI development**: Build a task-tracking app while learning to inspect generated projects, check APIs against Microsoft Learn, and test the resulting UI and data behavior. See [Build a WinUI app with an AI coding assistant](../tutorials/winui-ai-assisted/intro.md).
+- **AI-assisted WinUI development**: Build a task-tracking app while learning to inspect generated projects, check APIs against Microsoft Learn, and test the resulting UI and data behavior. See [Build a WinUI 3 task app with an AI assistant](../tutorials/winui-ai-assisted/intro.md).
 - **AI-assisted modernization planning**: Use an updated, tool-neutral prompt that asks an assistant to inspect an existing desktop app, clarify constraints, and propose an incremental plan grounded in documentation. See [Plan your modernization with an AI assistant](../windows-app-sdk/migrate-to-windows-app-sdk/modernize-with-ai-assistant.md).
 - **WinUI XAML Islands**: Updated hosting guidance explains how to add Windows App SDK controls to an existing desktop app and distinguishes WinUI XAML Islands from legacy UWP system XAML Islands. See [Host WinUI controls with XAML Islands](../desktop/modernize/host-controls-existing-desktop-apps.md).
 - **WinUI 3 performance workflow**: The performance overview now connects measurement, startup optimization, responsiveness and rendering, and remeasurement, with links to focused guidance for each bottleneck. See [Improve your WinUI 3 app's performance](../develop/performance/index.md#improve-your-winui-3-apps-performance).
@@ -153,7 +153,7 @@ Versions below are current as of September 9, 2026. Use the release notes to rev
 
 | Feature | Description |
 | :------ | :------ |
-| [Start developing Windows apps](/windows/apps/get-started/start-here) | Comprehensive starting point for Windows app development. |
+| [Create and run a WinUI 3 project](/windows/apps/get-started/start-here) | Comprehensive starting point for Windows app development. |
 | [WinUI agent plugin](https://devblogs.microsoft.com/ifdef-windows/build-native-windows-apps-with-ai-agents-for-winui-and-windows-app-sdk/) | 8-skill GitHub Copilot / Claude Code plugin for end-to-end WinUI development. |
 | [dotnet new WinUI templates](https://devblogs.microsoft.com/ifdef-windows/introducing-dotnet-new-templates-for-winui/) | Command-line project templates for WinUI (Blank, NavigationView, TabView, MVVM). |
 | [WinApp VS Code extension](https://devblogs.microsoft.com/ifdef-windows/announcing-the-winapp-vs-code-extension-run-debug-and-package-windows-apps-in-vs-code/) | Run, debug, and package Windows apps from any framework directly in VS Code. |

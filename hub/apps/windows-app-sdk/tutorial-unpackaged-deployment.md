@@ -2,7 +2,7 @@
 title: Tutorial--Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK
 description: This article shows how to configure an app that's not installed by using MSIX (that is, it's packaged with external location or unpackaged) to use the bootstrapper API so that it explicitly loads the Windows App SDK runtime, and calls Windows App SDK APIs. Apps that are not installed via MSIX include apps packaged with external location, and unpackaged apps.
 ms.topic: tutorial
-ms.date: 07/07/2026
+ms.date: 09/10/2026
 keywords: windows win32, windows app development, Windows App SDK
 ms.localizationpriority: medium
 ---
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 This article shows how to configure an app that's not installed by using MSIX (that is, it's packaged with external location or unpackaged) to use the bootstrapper API so that it explicitly loads the Windows App SDK runtime, and calls Windows App SDK APIs. Apps that are not installed via MSIX include apps packaged with external location, and unpackaged apps.
 
 > [!IMPORTANT]
-> Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from a packaged with external location or unpackaged app is to use *auto-initialization* via the `<WindowsPackageType>` project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI 3 project, see [Create your first WinUI project](../get-started/start-here.md). Or, if have an existing project that's not WinUI, then see [Use the Windows App SDK in an existing project](./use-windows-app-sdk-in-existing-project.md).
+> Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from a packaged with external location or unpackaged app is to use *auto-initialization* via the `<WindowsPackageType>` project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI 3 project, see [Create and run a WinUI 3 project](../get-started/start-here.md). Or, if have an existing project that's not WinUI, then see [Use the Windows App SDK in an existing project](./use-windows-app-sdk-in-existing-project.md).
 >
 > If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. And that's the approach that this topic demonstrates. Also, for more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](./use-windows-app-sdk-run-time.md).
 

@@ -1,13 +1,15 @@
 ---
-title: Get started with WinUI
-description: Choose a development setup and learn how to build Windows apps with WinUI 3, including a guided AI-assisted development workflow.
+title: Get started with WinUI 3
+description: Choose a WinUI 3 learning path, run a blank project, build a notes app, or learn an optional AI-assisted development workflow.
 ms.topic: overview
-ms.date: 08/31/2026
+ms.date: 09/10/2026
 author: GrantMeStrength
 ms.author: jken
 ---
 
-# Get started with WinUI
+# Get started with WinUI 3
+
+<a id="get-started-with-winui"></a>
 
 :::image type="content" source="images/minesweeper-then-and-now.png" alt-text="A modern WinUI 3 Minesweeper app alongside the classic Windows Minesweeper, showing the evolution of Windows app development.":::
 
@@ -18,41 +20,50 @@ WinUI 3 is the native UI framework for building Windows desktop apps. It is part
 
 ## Choose your path
 
-Two supported paths exist for creating a WinUI 3 project.
+Start with the quickstart to set up your tools and run a blank project. Then choose a tutorial based on what you want to learn.
 
-| | Visual Studio | Command line |
+| Your goal | Start here | Outcome |
 |---|---|---|
-| **Best for** | Developers new to Windows development, visual UI designers, or anyone who wants a full IDE experience | Developers comfortable with the terminal, CI/CD pipelines, or scripted environment setup |
-| **Tooling** | Visual Studio 2026 with the Windows App SDK and WinUI workloads installed | .NET 10 SDK with `dotnet new` WinUI templates |
-| **Project creation** | New Project wizard — select the **Blank App, Packaged (WinUI 3 in Desktop)** template | `dotnet new winui -n MyApp` |
-| **Build and run** | Press F5 — Visual Studio builds, signs, deploys the MSIX package, and launches the app | `dotnet run` — builds and launches the app with package identity (requires Developer Mode) |
-| **Debugging** | Full Visual Studio debugger with XAML live preview | Attach a debugger manually or open the generated `.sln` in Visual Studio |
+| Set up your tools and run a project | [Quickstart: Create and run a WinUI 3 project](start-here.md) | A blank C# project that builds and launches. |
+| Learn XAML and C# fundamentals | [Build a WinUI 3 notes app](../tutorials/winui-notes/intro.md) | A two-page app with file storage, data binding, and navigation. This is the recommended first tutorial. |
+| Learn to direct and review an AI coding assistant | [Build a WinUI 3 task app with an AI assistant](../tutorials/winui-ai-assisted/intro.md) | A task app and a workflow for inspecting and correcting generated code. This is an optional alternative to the Notes tutorial. |
+| Apply WinUI to a business workflow | [Line-of-business apps](line-of-business/index.md) | Scenario guidance for data display, forms, databases, and productivity. Start here if you already have a working app. |
 
-Both paths produce equivalent WinUI 3 projects. The Visual Studio path handles MSIX signing and deployment automatically. The command-line path uses `dotnet run` for local development (the included `Microsoft.Windows.SDK.BuildTools.WinApp` package handles debug identity automatically); packaging for distribution requires additional steps.
+The quickstart and both beginner tutorials use C#. WinUI 3 also supports C++, but these walkthroughs don't provide C++ versions.
+
+## Choose your tools
+
+The quickstart provides two setup paths. Your tool choice is separate from your choice of tutorial.
+
+| Tooling | Best for | Setup |
+|---|---|---|
+| Visual Studio | An integrated editor and debugger. The Notes tutorial uses Visual Studio. | [Visual Studio quickstart](start-here.md?tabs=visual-studio) |
+| .NET command line | Creating, building, and running a C# project from a terminal and editing it in your preferred editor. | [Command-line quickstart](start-here.md?tabs=command-line) |
+
+The AI-assisted tutorial supports either setup. Follow the quickstart for current SDK requirements, template names, and build and launch instructions.
 
 ## Build with an AI coding assistant
 
-You can use an AI coding assistant with either development path. The assistant can generate project code and explain unfamiliar concepts, but you still need to constrain it to WinUI 3, build its changes, inspect the result, and verify Windows APIs against current documentation.
+An AI coding assistant is optional. It can generate project code and explain unfamiliar concepts, but you still need to constrain it to WinUI 3, build its changes, inspect the result, and verify Windows APIs against current documentation.
 
 The [AI-assisted WinUI tutorial](../tutorials/winui-ai-assisted/intro.md) teaches a repeatable **Ask → Generate → Build → Inspect → Verify → Refine** workflow. It also shows how to detect generated code that mixes WinUI 3 with UWP, WPF, or other Windows UI frameworks.
 
 ## Prerequisites
 
-Both paths share the same minimum requirements.
+You need a Windows development device, Developer Mode, and the tools for your chosen setup. See the [quickstart](start-here.md) for supported versions and installation steps.
 
-- **Windows 10 version 1809** (build 17763) or later — Windows 11 is recommended
-- **Developer Mode** enabled on your device (`ms-settings:developers`)
-- **Visual Studio 2026** (Visual Studio path) or **.NET 10 SDK** (command-line path)
+Each tutorial lists its additional requirements. The Notes tutorial uses a packaged project named `WinUINotes`; the AI-assisted tutorial creates a separate project named `TaskTally`.
 
-The Windows App SDK is a separate install from Windows. Visual Studio installs it as part of the workload setup. For the command-line path, the `dotnet new winui` templates bring in the required NuGet packages automatically.
+## After the fundamentals
+
+Continue with existing tutorials rather than starting another blank project:
+
+- [WinUI Notes part 2: Navigation and data binding](../tutorials/winui-notes-pt2/0-intro.md) extends the Notes app with page caching and property-change notification.
+- [Data binding, dependency injection, and unit testing in WinUI](../tutorials/winui-mvvm-toolkit/intro.md) refactors the Notes app with the MVVM Toolkit. You can complete the Notes tutorial or use its downloadable sample as the starting point.
+
+For independent tasks in an existing app, use the [line-of-business guidance](line-of-business/index.md). Those articles are not additional steps in the beginner tutorials.
 
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Quick start: Visual Studio](start-here.md?tabs=visual-studio)
-
-> [!div class="nextstepaction"]
-> [Quick start: Command line](start-here.md?tabs=command-line)
-
-> [!div class="nextstepaction"]
-> [Tutorial: Build a WinUI app with an AI coding assistant](../tutorials/winui-ai-assisted/intro.md)
+> [Quickstart: Create and run a WinUI 3 project](start-here.md)

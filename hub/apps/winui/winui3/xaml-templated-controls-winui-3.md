@@ -1,7 +1,7 @@
 ---
 description: This article walks you through creating a XAML templated control for WinUI 3 with C# or C++/WinRT.
 title: Build XAML templated controls
-ms.date: 03/03/2026
+ms.date: 09/10/2026
 ms.topic: how-to
 keywords: windows 11, Windows App SDK, winui, custom control, templated control
 ms.localizationpriority: high
@@ -17,7 +17,7 @@ This article walks you through creating a templated XAML control for WinUI 3. Te
 ::: zone pivot="lang-csharp"
 
 1. Set up your development environment&mdash;see [Install tools for the Windows App SDK](../../get-started/start-here.md).
-2. Follow the instructions on how to [Create your first WinUI project](create-your-first-winui3-app.md).
+2. Follow the instructions on how to [Create and run a WinUI 3 project](../../get-started/start-here.md).
 
 To create standalone WinUI components in C# for consumption from both C# and C++/WinRT apps, see the article [Walkthrough: Create a C# component with WinUI controls, and consume it from a C++ Windows App SDK application](../../develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md).
 
@@ -25,7 +25,7 @@ To create standalone WinUI components in C# for consumption from both C# and C++
 
 ::: zone pivot="lang-cppwinrt"
 
-1. [Start developing Windows apps](../../get-started/start-here.md)
+1. [Create and run a WinUI 3 project](../../get-started/start-here.md)
 2. Download and install the latest version of the [C++/WinRT Visual Studio Extension (VSIX)](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264)
 
 ::: zone-end

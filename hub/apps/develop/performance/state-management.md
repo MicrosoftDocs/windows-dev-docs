@@ -4,7 +4,7 @@ description: Learn how to manage application state in your Windows App SDK deskt
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 05/22/2026
+ms.date: 09/10/2026
 ---
 
 # Manage app state effectively
@@ -13,7 +13,7 @@ In a desktop Windows App SDK application, your process continues to run until th
 
 ## Prerequisites
 
-- A Windows App SDK desktop project. For setup steps, see [Create your first WinUI 3 app](../../get-started/start-here.md).
+- A Windows App SDK desktop project. For setup steps, see [Create and run a WinUI 3 project](../../get-started/start-here.md).
 - Familiarity with the `Microsoft.UI.Windowing.AppWindow` class and, for packaged apps, `Windows.Storage.ApplicationData`.
 
 > [!IMPORTANT]

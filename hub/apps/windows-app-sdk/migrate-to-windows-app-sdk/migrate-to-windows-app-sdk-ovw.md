@@ -1,7 +1,7 @@
 ---
 title: Migrate from UWP to the Windows App SDK
 description: How to migrate a UWP app to the Windows App SDK and WinUI 3, including strategy, feature mapping, supported features, and step-by-step feature area guides.
-ms.date: 09/02/2026
+ms.date: 09/10/2026
 ms.topic: upgrade-and-migration-article
 author: GrantMeStrength
 ms.author: jken
@@ -23,7 +23,7 @@ To migrate your app from UWP to the Windows App SDK, your UI code likely needs j
 
 Here are the high-level steps for migrating manually:
 
-1. Create a new WinUI packaged desktop project (see [Create your first WinUI project](../../get-started/start-here.md)). That could go into your project's existing solution.
+1. Create a new WinUI packaged desktop project (see [Create and run a WinUI 3 project](../../get-started/start-here.md)). That could go into your project's existing solution.
 2. Copy your XAML/UI code. In many cases you can simply change namespaces (for example, **Windows.UI.\*** to **Microsoft.UI.\***).
 3. Copy your app logic code. Some APIs need tweaks, such as **Popup**, **Picker**s, and **SecondaryTile**s.
 

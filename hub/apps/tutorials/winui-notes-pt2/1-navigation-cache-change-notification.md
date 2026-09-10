@@ -1,7 +1,7 @@
 ---
 title: WinUI Notes part 2 - navigation cache
 description: WinUI Notes part 2 navigation cache.
-ms.date: 06/16/2026
+ms.date: 09/10/2026
 ms.topic: tutorial
 ms.localizationpriority: medium
 ---
@@ -151,7 +151,7 @@ Since the user can't update the text in the `TextBlock`, only a `OneWay` binding
 
 :::image type="icon" source="media/doc-icon-sm.png" border="false"::: Learn more in the docs:
 
-- [Create your first WinUI 3 app, Step 3](../winui-notes/view-model.md)
+- [Notes tutorial: Add a view and model for the note](../winui-notes/view-model.md)
 - [Windows data binding in depth](../../develop/data-binding/data-binding-in-depth.md)
 - [INotifyPropertyChanged.PropertyChanged event](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.inotifypropertychanged.propertychanged)
 - [CallerMemberName attribute](/dotnet/api/system.runtime.compilerservices.callermembernameattribute)

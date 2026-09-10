@@ -4,7 +4,7 @@ description: Describes the project properties that you can set in your Visual St
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
-ms.date: 08/29/2026
+ms.date: 09/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -91,7 +91,7 @@ Here's an excerpt from a typical `.csproj` file for a C# WinUI 3 project, showin
 ## Related topics
 
 * [Deployment overview](index.md)
-* [Create your first WinUI (Windows App SDK) project](/windows/apps/winui/winui3/create-your-first-winui3-app)
+* [Create and run a WinUI 3 project](../get-started/start-here.md)
 * [Package your app using single-project MSIX](../windows-app-sdk/single-project-msix.md)
 * [RuntimeCompatibilityOptions](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions)
 * [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../windows-app-sdk/use-windows-app-sdk-run-time.md)
