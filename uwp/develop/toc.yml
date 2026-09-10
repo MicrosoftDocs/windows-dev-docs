@@ -119,6 +119,8 @@ items:
       items:
       - name: Scenario 1 (PRI APIs)
         href: ../app-resources/pri-apis-scenario-1.md
+    - name: Package resource index (PRI) file format
+      href: ../app-resources/pri-file-format.md
     - name: Compile resources manually with MakePri.exe
       href: ../app-resources/compile-resources-manually-with-makepri.md
     - name: MakePri.exe command-line options

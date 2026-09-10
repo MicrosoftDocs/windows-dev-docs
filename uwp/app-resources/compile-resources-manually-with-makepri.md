@@ -59,4 +59,5 @@ When PRI files are built for other components, class libraries, assemblies, DLLs
 * [MakePri.exe command-line options](makepri-exe-command-options.md)
 * [MakePri.exe configuration](makepri-exe-configuration.md)
 * [MakePri.exe format-specific indexers](makepri-exe-format-specific-indexers.md)
+* [Package resource index (PRI) file format](pri-file-format.md)
 * [Tailor your resources for language, scale, and other qualifiers](tailor-resources-lang-scale-contrast.md)

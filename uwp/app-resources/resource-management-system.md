@@ -19,6 +19,7 @@ Every app package should contain a binary index of the resources in the app. Thi
 - PRI files can be created and dumped with the tool [MakePRI.exe](compile-resources-manually-with-makepri.md).
 - For typical app development you won't need MakePRI.exe because it's already integrated into the Visual Studio compile workflow. And Visual Studio supports editing PRI files in a dedicated UI. However, your localizers and the tools they use might rely upon MakePRI.exe.
 - Each PRI file contains a named collection of resources, referred to as a resource map. When a PRI file from a package is loaded, the resource map name is verified to match the package identity name.
+- For a description of what a PRI file contains, and how to inspect one, see [Package resource index (PRI) file format](pri-file-format.md).
 - PRI files contain only data, so they don't use the portable executable (PE) format. They are specifically designed to be data-only as the resource format for Windows. They replace resources contained within DLLs in the Win32 app model.
 
 ## UWP API access to app resources
@@ -59,5 +60,6 @@ Resource candidates are chosen based on a particular [**ResourceContext**](/uwp/
 * [ResourceContext](/uwp/api/windows.applicationmodel.resources.core.resourcecontext?branch=live)
 
 ## Related topics
+* [Package resource index (PRI) file format](pri-file-format.md)
 * [Localize strings in your UI and app package manifest](localize-strings-ui-manifest.md)
 * [Load images and assets tailored for scale, theme, high contrast, and others](images-tailored-for-scale-theme-contrast.md)
