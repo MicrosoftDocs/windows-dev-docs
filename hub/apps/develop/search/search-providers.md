@@ -2,7 +2,7 @@
 title: Windows Search web search providers
 description: Learn how to integrate a web search provider into the Windows Search experience using suggestion and preview HTTPS endpoints.
 ms.topic: article
-ms.date: 08/26/2026
+ms.date: 09/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 Windows Search currently uses the Web Search from Microsoft Bing app to return web content and search results. In the European Economic Area (EEA), you can install apps that implement a web search provider to return web content and search results in Windows Search.
 
-:::image type="content" source="images/search-integration.png" alt-text="Screenshot of the Windows Search UI with 3rd party search provider integration.":::
+:::image type="content" source="images/search-integration.png" alt-text="Windows Search results showing custom suggestion icons and default spyglass icons from two web search providers.":::
 
 Search providers integrate with the Search experience by creating an [MSIX package](/windows/msix/) with a package manifest file that provides the required information for the OS to register the search provider. After installation, the search provider is enabled by default in Windows Search experiences. In Windows Settings, users can enable and disable installed search providers and manage the order of providers in search results. Users can remove a search provider through the **Settings > Apps > Installed apps** page in Windows Settings.
 
@@ -118,16 +118,31 @@ The search provider HTTPS endpoint for suggestions must return a JSON document w
 | url | The URL for the search suggestion on the provider web site. |
 | query | The user query associated with the search suggestion. |
 | previewPaneUrl | The URL of the preview endpoint from which an HTML preview of the suggestion can be retrieved. |
+| secondaryIconUrl | Optional. The URL of an image that is displayed in place of the default spyglass icon for the suggestion. If this key is not present, the default spyglass icon is displayed. For best display quality, the image should be square. Cropping of images that are not square is not guaranteed. |
 | Text | The text description of the suggestion. |
 
 ```json
-{"Suggestions": 
-   [{"Attributes": 
-     {"url":"https://www.contoso.com/search?q=projection+matrix","query":"projection matrix","previewPaneUrl":"http://www.contoso.com/preview"} ,"Text":"projection matrix"}, 
-    {"Attributes": 
-     {"url":"https://www.contoso.com/search?q=rotation+matrix","query":"rotation matrix","previewPaneUrl":"http://www.contoso.com/preview"} ,"Text":"rotation matrix"}
-    ] 
-} 
+{
+  "Suggestions": [
+    {
+      "Attributes": {
+        "url": "https://www.contoso.com/search?q=projection+matrix",
+        "query": "projection matrix",
+        "previewPaneUrl": "https://www.contoso.com/preview",
+        "secondaryIconUrl": "https://www.contoso.com/icon.png"
+      },
+      "Text": "projection matrix"
+    },
+    {
+      "Attributes": {
+        "url": "https://www.contoso.com/search?q=rotation+matrix",
+        "query": "rotation matrix",
+        "previewPaneUrl": "https://www.contoso.com/preview"
+      },
+      "Text": "rotation matrix"
+    }
+  ]
+}
 ```
 
 ## Implement a Windows Search provider preview endpoint
