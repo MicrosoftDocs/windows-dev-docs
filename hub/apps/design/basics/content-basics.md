@@ -5,7 +5,7 @@ ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 09/24/2020
+ms.date: 09/11/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -73,7 +73,7 @@ The use of consistently sized spacing and gutters semantically groups an experie
 
 ## Text + hierarchy
 
-Our type ramp (link) is designed to provide an array of sizes that can help communicate hierarchy within an app.  
+Our [type ramp](../signature-experiences/typography.md#type-ramp) is designed to provide an array of sizes that can help communicate hierarchy within an app.
 
 :::row:::
     :::column:::
@@ -142,7 +142,7 @@ Some examples of how controls can relate to each other in common configurations.
         :::image type="content" source="images/expander-with-controls.png" alt-text="An example of an expander with child controls.":::
     :::column-end:::
     :::column:::
-        Examples showing how to use an expander control (link) with list styles and common controls. Controls should be right-aligned with 16epx between the control and expander button.
+        Examples showing how to use an [expander control](../../develop/ui/controls/expander.md) with list styles and common controls. Controls should be right-aligned with 16epx between the control and expander button.
     :::column-end:::
 :::row-end:::
 
