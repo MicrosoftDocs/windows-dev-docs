@@ -2,7 +2,7 @@
 title: Windows App SDK 1.8 release notes
 description: Provides information about what's new in Windows App SDK 1.8.
 ms.topic: release-notes
-ms.date: 08/13/2026
+ms.date: 09/11/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -421,7 +421,7 @@ Released: **September 23, 2025** <br><br>
 <details><summary>Known issues</summary>
 
 >
-> - C# developers must manually reference the  [System.Numerics.Tensors]() version 9.0.0 or greater NuGet package in order to use the `Microsoft.ML.OnnxRuntime.Tensors`. Without this NuGet package reference, you will experience the following runtime error when calling the `Microsoft.ML.OnnxRuntime.Tensors` APIs: `Could not load file or assembly 'System.Numerics.Tensors, Version=9.0.0.0`.
+> - C# developers must manually reference the [System.Numerics.Tensors](https://www.nuget.org/packages/System.Numerics.Tensors/9.0.0) version 9.0.0 or greater NuGet package in order to use the `Microsoft.ML.OnnxRuntime.Tensors`. Without this NuGet package reference, you will experience the following runtime error when calling the `Microsoft.ML.OnnxRuntime.Tensors` APIs: `Could not load file or assembly 'System.Numerics.Tensors, Version=9.0.0.0`.
 >
 
 </details>
