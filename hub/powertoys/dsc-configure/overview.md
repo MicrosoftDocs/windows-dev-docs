@@ -54,26 +54,31 @@ PowerToys offers two distinct DSC implementations:
 
 ## Key differences
 
-| Feature                  | PowerShell DSC                                      | Microsoft DSC                                                    |
-|--------------------------|-----------------------------------------------------|------------------------------------------------------------------|
-| **DSC Version**          | v2                                                  | v3                                                               |
-| **Prerequisites**        | PowerShell 7.2+, PSDesiredStateConfiguration 2.0.7+ | None (standalone)                                                |
-| **Module Name**          | `Microsoft.PowerToys.Configure`                     | Resource types under `Microsoft.PowerToys/`                      |
-| **Command-line tool**    | PowerShell cmdlets                                  | `PowerToys.DSC.exe`                                              |
-| **Configuration format** | YAML (WinGet configuration)                         | YAML (Microsoft DSC configuration documents), JSON or Bicep JSON |
-| **Resource model**       | Single `PowerToysConfigure` resource                | Individual resources per module (e.g., `AwakeSettings`)          |
-| **Platform support**     | Windows only                                        | Cross-platform ready                                             |
-| **Schema support**       | Limited                                             | Full JSON schema generation                                      |
-| **Manifest generation**  | No                                                  | Yes                                                              |
+| Feature                  | PowerShell DSC                                      | Microsoft DSC                                                                                                                                    |
+|--------------------------|-----------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| **DSC Version**          | v2                                                  | v3                                                                                                                                               |
+| **Prerequisites**        | PowerShell 7.2+, PSDesiredStateConfiguration 2.0.7+ | None (standalone)                                                                                                                                |
+| **Module Name**          | `Microsoft.PowerToys.Configure`                     | Resource types under `Microsoft.PowerToys/`                                                                                                      |
+| **Command-line tool**    | PowerShell cmdlets                                  | `PowerToys.DSC.exe`                                                                                                                              |
+| **Configuration format** | YAML (WinGet configuration)                         | YAML (Microsoft DSC configuration documents), JSON or Bicep JSON                                                                                 |
+| **Resource model**       | Single `PowerToysConfigure` resource                | One settings resource per utility (for example, `AwakeSettings`), plus data resources such as `KeyboardManagerProfile` and `FancyZonesLayouts` |
+| **Platform support**     | Windows only                                        | Cross-platform ready                                                                                                                             |
+| **Schema support**       | Limited                                             | Full JSON schema generation                                                                                                                      |
+| **Manifest generation**  | No                                                  | Yes                                                                                                                                              |
 
 > [!IMPORTANT]
 > While Microsoft DSC is cross-platform ready and can run on Windows, Linux, and macOS, PowerToys itself is a Windows-only application. The Microsoft DSC implementation provides a modern, cross-platform architecture that aligns with the broader DSC v3 ecosystem, but PowerToys configuration can only be applied on Windows systems where PowerToys is installed.
 
 ## Configuration scope
 
-Both approaches support configuring all PowerToys utilities:
+Both approaches manage the settings that you can change in the PowerToys Settings app, such as whether a utility is enabled, its activation shortcuts, and its behavior and appearance options. The approaches differ in which utilities they cover and in whether they can manage the data a utility stores outside of its settings.
 
-- General application settings (startup, theme, updates)
+### Utility settings
+
+Both approaches manage the settings of the following utilities:
+
+- General application settings (startup, theme, updates, enabled utilities)
+- Advanced Paste
 - Always On Top
 - Awake
 - Color Picker
@@ -88,16 +93,31 @@ Both approaches support configuring all PowerToys utilities:
 - Mouse Highlighter
 - Mouse Jump
 - Mouse Pointer Crosshairs
-- Mouse Without Borders
 - Peek
-- PowerToys Run (PowerLauncher)
+- PowerRename
 - Quick Accent (PowerAccent)
 - Registry Preview
 - Screen Ruler (MeasureTool)
 - Shortcut Guide
 - Text Extractor (PowerOCR)
-- Video Conference Mute
 - Workspaces
+- ZoomIt
+
+PowerShell DSC also manages the settings of utilities that Microsoft DSC doesn't expose yet, such as Alt Window Cycle, Cursor Wrap, Grab And Move, Light Switch, and the File Explorer add-ons. Individual settings that aren't suitable for automation are skipped by both approaches.
+
+> [!NOTE]
+> Microsoft DSC intentionally excludes Mouse Without Borders, PowerToys Run, and New+. Their settings contain a connection security key or absolute file paths, which aren't portable between systems.
+
+### Utility data
+
+Some utilities store their configuration in dedicated files rather than in their settings. Microsoft DSC provides resources that manage this data declaratively. PowerShell DSC manages settings only.
+
+| Utility          | Data                                                                  | Microsoft DSC resource                       |
+|------------------|-----------------------------------------------------------------------|----------------------------------------------|
+| Keyboard Manager | Key remappings and shortcut remappings                                | `Microsoft.PowerToys/KeyboardManagerProfile` |
+| FancyZones       | Custom layouts, layout templates, layout hotkeys, and default layouts | `Microsoft.PowerToys/FancyZonesLayouts`      |
+
+When these resources are applied while PowerToys is running, the utility picks up the change immediately. Otherwise, the change takes effect the next time PowerToys starts.
 
 ## Next steps
 

@@ -4,7 +4,7 @@ description: >-
   Learn how to configure PowerToys utilities using Microsoft Desired State
   Configuration v3 with the PowerToys.DSC.exe command-line tool. Modern
   declarative configuration for PowerToys.
-ms.date: 10/19/2025
+ms.date: 09/13/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Microsoft DSC, WinGet]
 # customer intent: As a Windows power user or IT administrator, I want to
@@ -83,10 +83,12 @@ PowerToys.DSC.exe test --resource 'settings' --module Awake --input $input
 
 ### 2. Microsoft DSC configuration documents
 
-Use standard Microsoft DSC configuration documents to define PowerToys settings:
+Use standard Microsoft DSC configuration documents to define PowerToys settings.
+
+Save the following configuration as `powertoys.dsc.config.yaml`:
 
 ```yaml
-# powertoys-config.dsc.yaml
+# yaml-language-server: $schema=https://aka.ms/dsc/schemas/v3/bundled/config/document.vscode.json
 $schema: https://aka.ms/dsc/schemas/v3/bundled/config/document.json
 resources:
   - name: Configure Awake
@@ -105,10 +107,11 @@ available) or through WinGet configuration.
 
 ### 3. WinGet configuration integration
 
-Integrate PowerToys configuration with WinGet package installation:
+Integrate PowerToys configuration with WinGet package installation. Save the
+following configuration as `powertoys.dsc.config.winget`:
 
 ```yaml
-# winget-powertoys.yaml
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
 $schema: https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
 metadata:
   winget:
@@ -134,7 +137,7 @@ resources:
 Apply with WinGet:
 
 ```powershell
-winget configure winget-powertoys.yaml
+winget configure powertoys.dsc.config.winget
 ```
 
 ## Common operations
@@ -219,9 +222,9 @@ PowerToys.DSC.exe schema --resource 'settings' --module ColorPicker
 PowerToys.DSC.exe schema --resource 'settings' --module ColorPicker | ConvertFrom-Json | ConvertTo-Json -Depth 10
 ```
 
-### Generate DSC manifests
+### Generate Microsoft DSC resource manifests
 
-Create DSC resource manifest files:
+Create Microsoft DSC resource manifest files for PowerToys modules:
 
 ```powershell
 # Generate manifest for a specific module
@@ -234,12 +237,33 @@ PowerToys.DSC.exe manifest --resource 'settings' --outputDir C:\manifests
 PowerToys.DSC.exe manifest --resource 'settings' --module FancyZones
 ```
 
+> [!NOTE]
+> Microsoft DSC discovers resource manifests in directories listed in the `PATH`
+> environment variable by default. Add your output directory to `PATH`, or generate
+> manifests in the PowerToys installation directory if it is already on `PATH`:
+>
+> ```powershell
+> # Get the directory containing the PowerToys executable
+> $powerToysDirectory = Split-Path -Path (Get-Command PowerToys.DSC.exe -ErrorAction Stop).Source -Parent
+>
+> # Generate manifests in that directory
+> PowerToys.DSC.exe manifest --resource 'settings' --outputDir $powerToysDirectory
+> ```
+>
+> This example requires the PowerToys installation directory to be on `PATH` and
+> write permission to that directory. If `DSC_RESOURCE_PATH` is defined, Microsoft
+> DSC searches those directories instead of `PATH`. Include your manifest directory
+> in that variable instead. For more information, see
+> [DSC environment variables][09].
+
 ## Configuration examples
 
 ### Example 1: Configure FancyZones
 
+Save the following configuration as `fancyzones.dsc.config.yaml`:
+
 ```yaml
-# fancyzones-config.dsc.yaml
+# yaml-language-server: $schema=https://aka.ms/dsc/schemas/v3/bundled/config/document.vscode.json
 $schema: https://aka.ms/dsc/schemas/v3/bundled/config/document.json
 resources:
   - name: Configure FancyZones window management
@@ -258,8 +282,10 @@ resources:
 
 ### Example 2: Configure multiple utilities
 
+Save the following configuration as `multi-utility.dsc.config.yaml`:
+
 ```yaml
-# multi-utility-config.dsc.yaml
+# yaml-language-server: $schema=https://aka.ms/dsc/schemas/v3/bundled/config/document.vscode.json
 $schema: https://aka.ms/dsc/schemas/v3/bundled/config/document.json
 resources:
   - name: Configure general app settings
@@ -300,8 +326,10 @@ resources:
 
 ### Example 3: Install and configure with WinGet
 
+Save the following configuration as `complete-setup.dsc.config.winget`:
+
 ```yaml
-# complete-setup.yaml
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
 $schema: https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
 metadata:
   winget:
@@ -419,3 +447,4 @@ If you're migrating from the PowerShell DSC module
 [06]: /windows/package-manager/configuration/
 [07]: https://github.com/microsoft/winget-cli/releases
 [08]: https://github.com/PowerShell/DSC/releases
+[09]: /powershell/dsc/concepts/environment-variables/?view=dsc-3.0&preserve-view=true
