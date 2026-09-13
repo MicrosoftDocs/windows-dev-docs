@@ -4,7 +4,7 @@ description: Learn how Windows Age APIs help apps provide safe, age-appropriate 
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 09/04/2026
+ms.date: 09/11/2026
 ---
 
 # Age signals overview
@@ -15,7 +15,7 @@ The Windows Age APIs provide privacy-preserving signals that apps can use to und
 
 Age signals are values that Windows returns when an app calls the Age APIs for the current user. The app decides when to request the user's age group or age-verification status to inform the appropriate end-user experience.
 
-An age signal does **not** directly expose the user's exact age or date of birth. Instead, it provides an age range that the app can use to make content decisions. The `GetUserAgeRangeAsync` API offers the following age groups:
+An age signal does **not** directly expose the user's exact age or date of birth. Instead, it provides an age range that the app can use to make content decisions. The [`GetUserAgeRangeAsync`](/uwp/api/windows.system.user.getuseragerangeasync) API offers the following age groups:
 
 - Under 10
 - 10-12
@@ -27,11 +27,11 @@ An age signal does **not** directly expose the user's exact age or date of birth
 ## Windows Age APIs
 
 > [!NOTE]
-> The Windows Age APIs are broadly available to Windows Insiders now, and will be available to all Windows users soon.
+> The Windows Age APIs are broadly available to Windows Insiders now starting from build 26220.9472, and will be available to all Windows users soon.
 
 ### GetUserAgeRangeAsync
 
-Returns the user’s age range as a `UserAgeRange` object with `Lower` and `Upper` properties.
+The [`GetUserAgeRangeAsync`](/uwp/api/windows.system.user.getuseragerangeasync) method returns the user’s age range as a [`UserAgeRange`](/uwp/api/windows.system.useragerange) object with [`Lower`](/uwp/api/windows.system.useragerange.lower) and [`Upper`](/uwp/api/windows.system.useragerange.upper) properties.
 
 | Age group | Return values |
 | --- | --- |
@@ -46,7 +46,7 @@ When the result is `null`, the age range is unknown or unavailable. Apps must us
 
 ### GetAgeVerificationStatusAsync
 
-Returns a `UserAgeVerificationStatus` value indicating the age-verification state reported for the user. Possible values are:
+The [`GetAgeVerificationStatusAsync`](/uwp/api/windows.system.user.getageverificationstatusasync) method returns a [`UserAgeVerificationStatus`](/uwp/api/windows.system.userageverificationstatus) value indicating the age-verification state reported for the user. Possible values are:
 
 - `Verified`: The user's age has been verified.
 - `Unverified`: The user's age has not been verified.
@@ -58,7 +58,7 @@ Apps must handle every value. `NotApplicable` and `TemporarilyUnavailable` do no
 
 ### Caller authorization and consent
 
-The app package must declare the `userAccountInformation` capability. Access to age signals is also subject to the user's consent to let the app access account information in Windows privacy settings. If access isn't granted, the call can fail with `E_ACCESSDENIED`. The `User` object must represent the user running the current process.
+The app package must declare the `userAccountInformation` capability. Access to age signals is also subject to the user's consent to let the app access account information in Windows privacy settings. If access isn't granted, the call can fail with `E_ACCESSDENIED`. The [`User`](/uwp/api/windows.system.user) object must represent the user running the current process.
 
 ### Policy and availability
 
@@ -90,7 +90,7 @@ Age signals are designed with privacy as a core principle:
 | Requirement | Details |
 | --- | --- |
 | **Minimum OS version** | Windows 11 |
-| **API surface** | Windows Runtime methods on `Windows.System.User` |
+| **API surface** | Windows Runtime methods on [`Windows.System.User`](/uwp/api/windows.system.user) |
 | **User context** | Calls apply only to the user running the current process. |
 | **App capability** | The app package must declare `userAccountInformation` |
 
