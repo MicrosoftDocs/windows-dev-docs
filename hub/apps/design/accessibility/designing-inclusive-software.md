@@ -4,7 +4,7 @@ ms.assetid: A6393A57-53F2-4F06-89AF-0D806FD76DB0
 title: Designing inclusive software in Windows
 label: Designing inclusive software
 template: detail.hbs
-ms.date: 08/29/2026
+ms.date: 09/14/2026
 ms.topic: how-to
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 This topic describes how inclusive design treats accessibility as a core engineering and product-quality concern from the beginning of the lifecycle, not as a final compliance step, and informs how products look, feel, function, and behave. It outlines how to design and build Windows apps that are fully usable across a wide range of abilities, environments, and preferences.
 
-"We define disability as a mismatch between the needs of the individual and the service, product or environment offered. Anyone can experience a disability. It is a common human trait to be excluded."  \- from the [Inclusive](https://www.microsoft.com/design/inclusive/) video  
+"We define disability as a mismatch between the needs of the individual and the service, product or environment offered. Anyone can experience a disability. It is a common human trait to be excluded."  \- from the [Inclusive](https://inclusive.microsoft.design/) video  
 
 Inclusive design improves products for everyone. Features originally intended for a specific scenario frequently become mainstream because they reduce friction for many users. Sidewalk curb cuts, television remote controls, and easy-fastening shoes are familiar examples: each began as an accommodation for a subset of users and became broadly beneficial. The same pattern applies in software when accessibility is built into core interaction and visual systems.
 
@@ -109,7 +109,7 @@ In summary, apply these seven steps to keep inclusive design actionable througho
 
 ## Related topics
 
-* [Inclusive design](https://www.microsoft.com/design/inclusive/)
+* [Inclusive design](https://inclusive.microsoft.design/)
 * [Engineering Software for Accessibility](https://www.microsoft.com/download/details.aspx?id=19262)
 * [Microsoft accessibility developer hub](https://developer.microsoft.com/windows/accessible-apps)
 * [Develop accessible Windows apps](../../develop/accessibility.md)

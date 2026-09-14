@@ -4,7 +4,7 @@ description: Build reliable Windows apps with current guidance for user experien
 author: GrantMeStrength
 ms.author: jken
 ms.topic: best-practice
-ms.date: 09/10/2026
+ms.date: 09/14/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
@@ -323,7 +323,7 @@ If full MSIX packaging isn't an option for your app, consider packaged with exte
 
 ## Accessibility
 
-Accessible Windows applications support rich and [inclusive experiences](https://www.microsoft.com/design/inclusive/) for as many people as possible. To make sure your app is accessible and inclusive, consider what improved functionality and usability means in relation to:
+Accessible Windows applications support rich and [inclusive experiences](https://inclusive.microsoft.design/) for as many people as possible. To make sure your app is accessible and inclusive, consider what improved functionality and usability means in relation to:
 
 - People with disabilities (both temporary and permanent).
 - Personal preferences.
@@ -348,7 +348,7 @@ For detailed guidance on building accessible Windows apps, see [Accessibility ov
 **Accessibility Insights** is a powerful suite of tools for developers to test the accessibility of their apps and services. Use the following tools to test accessibility:
 
 1. [Inspect in Accessibility Insights for Windows](https://accessibilityinsights.io/docs/windows/getstarted/inspect/). Inspect the accessibility tree to find low-hanging fruit like hints in labels, incorrect roles, and other problems.
-1. [Event monitoring in Accessibility Insights for Windows · Accessibility Insights](https://accessibilityinsights.io/docs/en/windows/getstarted/eventmonitoring/). See [Supporting UI Automation Control Types](/windows/win32/winauto/uiauto-supportinguiautocontroltypes) for more info on event monitoring.
+1. [Event monitoring in Accessibility Insights for Windows · Accessibility Insights](https://accessibilityinsights.io/docs/windows/getstarted/eventmonitoring/). See [Supporting UI Automation Control Types](/windows/win32/winauto/uiauto-supportinguiautocontroltypes) for more info on event monitoring.
 1. Run Accessibility Insights automated checks in your PRs or CI/CD. For more info, see [axe-pipelines-samples](https://github.com/microsoft/axe-pipelines-samples).
 1. Treat critical accessibility regressions as release-blocking issues. Track any exception with an owner and a planned resolution.
 

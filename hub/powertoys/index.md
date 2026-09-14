@@ -1,7 +1,7 @@
 ---
 title: Microsoft PowerToys - Windows Utilities for Power Users
 description: Microsoft PowerToys includes 25+ free Windows utilities including FancyZones, PowerToys Run, Color Picker, PowerRename, and more. Boost productivity for power users on Windows 10/11.
-ms.date: 08/25/2026
+ms.date: 09/14/2026
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always On Top]
@@ -229,7 +229,7 @@ The currently available utilities include:
 PowerToys welcomes your contributions! The PowerToys development team is excited to partner with the power user community to build the best Windows utilities that help users get the most out of their workflows. There are a variety of ways to contribute:
 
 - Write a [tech spec](https://codeburst.io/on-writing-tech-specs-6404c9791159)
-- Submit a [design concept or recommendation](https://www.microsoft.com/design/inclusive/)
+- Submit a [design concept or recommendation](https://inclusive.microsoft.design/)
 - [Contribute to documentation](/contribute/)
 - Identify and fix bugs in the [source code](https://github.com/microsoft/PowerToys/tree/main/src)
 - [Code new features and PowerToy utilities](https://github.com/microsoft/PowerToys/tree/main/doc/devdocs)
