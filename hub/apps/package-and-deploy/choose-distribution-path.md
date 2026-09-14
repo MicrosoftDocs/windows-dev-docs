@@ -4,7 +4,7 @@ description: Compare the available Windows app distribution paths — Microsoft 
 author: GrantMeStrength
 ms.author: jken
 ms.topic: concept-article
-ms.date: 08/29/2026
+ms.date: 09/14/2026
 ms.localizationpriority: medium
 ---
 
@@ -69,7 +69,7 @@ A PWA is a web app that browsers can install as a standalone app. It can run off
 
 **Requirements:**
 - App must be served over HTTPS
-- A [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Manifest) and [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+- A [web app manifest](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Manifest) and [service worker](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
 - App must pass [Store certification requirements](../publish/publish-your-app/msix/app-package-requirements.md)
 
 **Limitations:**

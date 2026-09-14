@@ -2,7 +2,7 @@
 description: This section describes how you can use the Microsoft Store Web installer to improve distribution of your app on the web
 title: How to use the Microsoft Store Web Installer to distribute your apps on the web.
 ms.topic: how-to
-ms.date: 12/09/2025
+ms.date: 09/14/2026
 keywords: uwp, microsoft store installer, store installer, web installer
 ms.localizationpriority: medium
 ---
@@ -82,7 +82,7 @@ To enable the Store Web Installer for your app, set the following parameters in 
     1. Go to the [Microsoft Store badge creator](https://apps.microsoft.com/badge) page.
     2. Provide your app’s 12-character Store ID (found in your Partner Center under the Product Identity section).
     
-    The badge is a [web component](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) that automatically detects the user’s language and theme. It won’t inherit CSS styles from your page, but you can customize its size using a [CSS part selector](https://developer.mozilla.org/en-US/docs/Web/CSS/::part):
+    The badge is a [web component](https://developer.mozilla.org/en-US/docs/Web/API/Web_components) that automatically detects the user’s language and theme. It won’t inherit CSS styles from your page, but you can customize its size using a [CSS part selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Selectors/::part):
     
     ```css
     /* Adjust the badge size to match other buttons on your page. */

@@ -1,7 +1,7 @@
 ---
 title: Create your package manifest
 description: If you want to submit a software package to the Windows Package Manager repository, start by creating a package manifest.
-ms.date: 03/24/2026
+ms.date: 09/14/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -219,7 +219,7 @@ You can often figure out what silent `Switches` are available for an installer b
 | Installer | Command  | Documentation |  
 | :--- | :-- | :--- |  
 | MSI | `/q` | [MSI Command-Line Options](/windows/win32/msi/command-line-options) |
-| InstallShield | `/s`  | [InstallShield Command-Line Parameters](https://community.flexera.com/t5/InstallShield-Knowledge-Base/Installshield-Setup-exe-Command-Line-Parameters/ta-p/4270) |
+| InstallShield | `/s`  | [InstallShield Command-Line Parameters](https://community.revenera.com/s/article/installshield-setup-exe-command-line-parameters) |
 | Inno Setup | `/SILENT or /VERYSILENT` | [Inno Setup documentation](https://jrsoftware.org/ishelp/) |
 | Nullsoft | `/S` | [Nullsoft Silent Installers/Uninstallers](https://nsis.sourceforge.io/Docs/Chapter4.html#silent) |
 
