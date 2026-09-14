@@ -1,7 +1,7 @@
 ---
 title: Update a list of commands
 description: Learn how to update the elements in your Command Palette extension.
-ms.date: 3/23/2025
+ms.date: 09/12/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to learn how to develop an extension for the Command Palette.
@@ -13,7 +13,7 @@ no-loc: [PowerToys, Windows, Insider]
 
 So far we've shown how to return a list of static items in your extension. However, your items can also change, to show real-time data, or to reflect the state of the system. In this article, we'll show you how to update the list of commands in your extension.
 
-Almost all extension objects in the Command Palette implement the **IPropChanged** interface. This allows them to notify the Command Palette when they've changed, and the Command Palette will update the UI to reflect those changes. By creating your extension via the Command Palette, you are using the [toolkit](/windows/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit) implementations, this interface has already been implemented for you for properties that support it.
+Almost all extension objects in the Command Palette implement the **IPropChanged** interface. This allows them to notify the Command Palette when they've changed, and the Command Palette will update the UI to reflect those changes. By creating your extension via the Command Palette, you are using the [toolkit](./microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit.md) implementations, this interface has already been implemented for you for properties that support it.
 
 ## Updating Title of Page
 

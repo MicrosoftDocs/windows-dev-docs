@@ -1,7 +1,7 @@
 ---
 title: Publish a Command Palette extension to Microsoft Store
 description: Step-by-step guide to publishing your Command Palette extension to the Microsoft Store using MSIX packages and Partner Center.
-ms.date: 04/10/2026
+ms.date: 09/12/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to publish my Command Palette extension to the Microsoft Store.
@@ -18,7 +18,7 @@ Registration as an individual developer is free. To get started, visit the [Micr
 > MSIX is Microsoft's modern app packaging format that provides secure installation, automatic updates, and clean uninstallation. It replaces older formats like MSI and ensures your extension integrates properly with Windows security and deployment features.
 
 > [!NOTE]
-> This guide provides basic Microsoft Store publishing steps specific to Command Palette extensions. For comprehensive Microsoft Store publishing guidance, including detailed submission requirements, certification processes, and best practices, see [Publish Windows apps and games](/windows/apps/publish/).
+> This guide provides basic Microsoft Store publishing steps specific to Command Palette extensions. For comprehensive Microsoft Store publishing guidance, including detailed submission requirements, certification processes, and best practices, see [Publish Windows apps and games](../../apps/publish/index.md).
 
 ## Prerequisites
 

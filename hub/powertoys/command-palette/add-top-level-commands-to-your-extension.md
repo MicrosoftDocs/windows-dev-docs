@@ -1,7 +1,7 @@
 ---
 title: Add top-level commands to your extension
 description: Learn how to add new top-level commands to your Command Palette extension.
-ms.date: 3/23/2025
+ms.date: 09/12/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to learn how to develop an extension for the Command Palette.
@@ -56,7 +56,7 @@ public <ExtensionName>CommandsProvider()
 ```
 
 > [!NOTE]
-> The `ShowMessageCommand()` functionality was created prior at [InvokableCommand Command](/windows/powertoys/command-palette/adding-commands#invokableCommand-command)
+> The `ShowMessageCommand()` functionality was created prior at [InvokableCommand Command](./adding-commands.md#invokableCommand-command)
 
 1. Deploy your extension
 1. In Command Palette, `Reload`
