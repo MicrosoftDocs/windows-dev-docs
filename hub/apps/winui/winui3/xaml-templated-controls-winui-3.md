@@ -1,7 +1,7 @@
 ---
 description: This article walks you through creating a XAML templated control for WinUI 3 with C# or C++/WinRT.
 title: Build XAML templated controls
-ms.date: 09/10/2026
+ms.date: 09/12/2026
 ms.topic: how-to
 keywords: windows 11, Windows App SDK, winui, custom control, templated control
 ms.localizationpriority: high
@@ -114,7 +114,7 @@ private static void OnLabelChanged(DependencyObject d, DependencyPropertyChanged
 }
 ```
 
-For more information on how dependency properties work, see [Dependency properties overview](/windows/apps/develop/platform/xaml/dependency-properties-overview).
+For more information on how dependency properties work, see [Dependency properties overview](../../develop/platform/xaml/dependency-properties-overview.md).
 
 ::: zone-end
 
@@ -139,7 +139,7 @@ namespace BgLabelControlApp
 }
 ```
 
-The listing above shows the pattern that you follow when declaring a dependency property (DP). There are two pieces to each DP. First, you declare a read-only static property of type DependencyProperty. It has the name of your DP plus Property. You'll use this static property in your implementation. Second, you declare a read-write instance property with the type and name of your DP. If you wish to author an attached property (rather than a DP), then see the code examples in [Custom attached properties](/windows/apps/develop/platform/xaml/custom-attached-properties).
+The listing above shows the pattern that you follow when declaring a dependency property (DP). There are two pieces to each DP. First, you declare a read-only static property of type DependencyProperty. It has the name of your DP plus Property. You'll use this static property in your implementation. Second, you declare a read-write instance property with the type and name of your DP. If you wish to author an attached property (rather than a DP), then see the code examples in [Custom attached properties](../../develop/platform/xaml/custom-attached-properties.md).
 
 Replace the contents of BgLabelControl.h with the following code.
 
@@ -272,7 +272,7 @@ Delete the default contents of Generic.xaml, and paste in the markup below.
 
 The **TargetType** attribute of the **Style** element is set to our **BgLabelControl** type within the **BgLabelControlApp** namespace. This type is the same value specified for the **DefaultStyleKey** property in the control's constructor, which identifies this as the default style for the control.
 
-The **Text** property of the **TextBlock** in the control template is bound to our control's **Label** dependency property using the [TemplateBinding](/windows/apps/develop/platform/xaml/templatebinding-markup-extension) markup extension. The **Grid** background is bound to the **Background** dependency property inherited from the **Control** class.
+The **Text** property of the **TextBlock** in the control template is bound to our control's **Label** dependency property using the [TemplateBinding](../../develop/platform/xaml/templatebinding-markup-extension.md) markup extension. The **Grid** background is bound to the **Background** dependency property inherited from the **Control** class.
 
 ## Add an instance of BgLabelControl to the main UI page
 

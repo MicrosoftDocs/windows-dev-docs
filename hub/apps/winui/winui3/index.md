@@ -2,7 +2,7 @@
 title: WinUI 3
 description: Provides info for WinUI and Windows app development with the Windows App SDK. 
 ms.topic: article
-ms.date: 09/10/2026
+ms.date: 09/12/2026
 ---
 
 # WinUI 3
@@ -77,7 +77,7 @@ WinUI combines the flexibility of the Win32 app model with the richness of moder
     :::column-end:::
     :::column span="2":::
         **Powers key experiences in Windows**<br>
-        Parts of the Windows shell and its built-in apps are built with WinUI. Open-source projects like [PowerToys](/windows/powertoys/) are also built with WinUI.
+        Parts of the Windows shell and its built-in apps are built with WinUI. Open-source projects like [PowerToys](../../../powertoys/index.md) are also built with WinUI.
     :::column-end:::    
 :::row-end:::
 
