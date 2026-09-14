@@ -2,7 +2,7 @@
 title: Set up Node.js on native Windows
 description: A guide to help you get your Node.js development environment set up directly on Windows.
 ms.topic: install-set-up-deploy
-ms.date: 12/12/2024
+ms.date: 09/14/2026
 ---
 
 # Install Node.js on Windows
@@ -84,7 +84,7 @@ If you prefer to use a code editor or IDE other than Visual Studio Code, the fol
 
 ## Install Git
 
-If you plan to collaborate with others, or host your project on an open-source site (like GitHub), VS Code supports [version control with Git](https://code.visualstudio.com/docs/editor/versioncontrol#_git-support). The Source Control tab in VS Code tracks all of your changes and has common Git commands (add, commit, push, pull) built right into the UI. You first need to install Git to power the Source Control panel.
+If you plan to collaborate with others, or host your project on an open-source site (like GitHub), VS Code supports [version control with Git](https://code.visualstudio.com/docs/sourcecontrol/overview#_git-support). The Source Control tab in VS Code tracks all of your changes and has common Git commands (add, commit, push, pull) built right into the UI. You first need to install Git to power the Source Control panel.
 
 1. Download and install Git for Windows from [the git-scm website](https://git-scm.com/download/win).
 

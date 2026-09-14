@@ -1,7 +1,7 @@
 ---
 title: Set up WinGet MCP Server
 description: Learn how to set up the WinGet MCP server for use with AI agents in Visual Studio Code and GitHub Copilot CLI, including prerequisites, finding the executable path, and configuration.
-ms.date: 08/30/2026
+ms.date: 09/14/2026
 ms.topic: how-to
 no-loc: [winget, configure, --enable]
 ---
@@ -76,7 +76,7 @@ This configuration tells MCP clients to:
 - Use standard I/O communication between the client and server
 - Register the server with the identifier `winget-mcp`
 
-For detailed information about MCP configuration and setup in VS Code, see [Use MCP servers in VS Code](https://code.visualstudio.com/docs/copilot/customization/mcp-servers).
+For detailed information about MCP configuration and setup in VS Code, see [Use MCP servers in VS Code](https://code.visualstudio.com/docs/agent-customization/mcp-servers).
 
 ## Configure the MCP server in GitHub Copilot CLI
 

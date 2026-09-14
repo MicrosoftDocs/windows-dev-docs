@@ -1,7 +1,7 @@
 ---
 title: PowerToys Workspaces Utility for Windows Desktop Management
 description: Learn how to use PowerToys Workspaces utility to efficiently launch applications in custom positions and configurations. Create desktop layouts, add CLI arguments, and manage workspaces with this Windows desktop manager tool.
-ms.date: 08/20/2025
+ms.date: 09/14/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Win]
 # customer intent: As a Windows power user, I want to learn how to use the Workspaces utility for Windows.
@@ -60,7 +60,7 @@ To launch apps in a desired state, CLI arguments can be added to each app in the
 
 You can find more information on VS Code and Terminal CLI arguments can be found below:
 
-- [VS Code CLI Docs](https://code.visualstudio.com/docs/editor/command-line)
+- [VS Code CLI Docs](https://code.visualstudio.com/docs/configure/command-line)
 - [Terminal CLI Docs](/windows/terminal/command-line-arguments?tabs=windows)
 
 > [!TIP]

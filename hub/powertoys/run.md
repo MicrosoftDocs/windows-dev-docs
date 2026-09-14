@@ -1,7 +1,7 @@
 ---
 title: PowerToys Run Quick Launcher for Windows
 description: PowerToys Run is a quick launcher for Windows power users with search, calculator, and productivity features. Learn how to install and use this free utility.
-ms.date: 08/20/2025
+ms.date: 09/14/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, PowerToys Run, Window Walker]
@@ -163,7 +163,7 @@ For example, when opening Visual Studio Code, specify the folder to be opened wi
 
 `Visual Studio Code -- C:\myFolder`
 
-Visual Studio Code also supports a set of [command line parameters](https://code.visualstudio.com/docs/editor/command-line), which can be used with their corresponding arguments in PowerToys Run to, for instance, view the difference between files:
+Visual Studio Code also supports a set of [command line parameters](https://code.visualstudio.com/docs/configure/command-line), which can be used with their corresponding arguments in PowerToys Run to, for instance, view the difference between files:
 
 `Visual Studio Code -d C:\foo.txt C:\bar.txt`
 

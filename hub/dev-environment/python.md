@@ -2,7 +2,7 @@
 title: Python on Windows for beginners
 description: A guide to help you get started if your brand new to using Python on Windows.
 ms.topic: get-started
-ms.date: 03/23/2026
+ms.date: 09/14/2026
 ms.custom: copilot-scenario-highlight
 ---
 
@@ -161,6 +161,6 @@ You're now ready for Python development.
 > - [Editing Python in VS Code](https://code.visualstudio.com/docs/python/editing): Learn more about how to take advantage of VS Code's autocomplete and IntelliSense support for Python, including how to customize their behavior... or just turn them off.
 > - [Linting Python](https://code.visualstudio.com/docs/python/linting): Linting is the process of running a program that will analyse code for potential errors. Learn about the different forms of linting support VS Code provides for Python and how to set it up.
 > - [Debugging Python](https://code.visualstudio.com/docs/python/debugging): Debugging is the process of identifying and removing errors from a computer program. This article covers how to initialize and configure debugging for Python with VS Code, how to set and validate breakpoints, attach a local script, perform debugging for different app types or on a remote computer, and some basic troubleshooting.
-> - [Unit testing Python](https://code.visualstudio.com/docs/python/unit-testing): Covers some background explaining what unit testing means, an example walkthrough, enabling a test framework, creating and running your tests, debugging tests, and test configuration settings.
+> - [Unit testing Python](https://code.visualstudio.com/docs/python/testing): Covers some background explaining what unit testing means, an example walkthrough, enabling a test framework, creating and running your tests, debugging tests, and test configuration settings.
 
 </details>
