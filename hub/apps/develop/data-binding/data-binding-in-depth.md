@@ -429,14 +429,17 @@ namespace ExampleNamespace
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
 
-    <Window.Resources>
-        <ResourceDictionary>
-            .... 
-            <ResourceDictionary.MergedDictionaries>
-                <examplenamespace:TemplatesResourceDictionary/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                .... 
+                <ResourceDictionary.MergedDictionaries>
+                    <examplenamespace:TemplatesResourceDictionary/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+        ...
+    </Grid>
 </Window>
 ```
 
@@ -552,15 +555,15 @@ Usage in MainWindow.xaml with a ViewModel that provides runtime values:
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
 
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <examplenamespace:TemplatesResourceDictionary/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
-
     <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <examplenamespace:TemplatesResourceDictionary/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
         <Grid.DataContext>
             <examplenamespace:ButtonThemeViewModel/>
         </Grid.DataContext>
@@ -708,16 +711,15 @@ To activate the grouping facility of a [**CollectionViewSource**](/windows/windo
 The following example illustrates the "has-a-group" pattern. The window class has a property named [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext), which returns an instance of our view model. The [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) binds to the `Authors` property of the view model (`Authors` is the collection of group objects) and also specifies that it's the `Author.BookSkus` property that contains the grouped items. Finally, the [**GridView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview) is bound to the `CollectionViewSource`, and has its group style defined so that it can render the items in groups.
 
 ``` xaml
-<Window.Resources>
+<Page.Resources>
     <CollectionViewSource
-    x:Name="AuthorHasACollectionOfBookSku"
-    Source="{x:Bind ViewModel.Authors}"
-    IsSourceGrouped="true"
-    ItemsPath="BookSkus"/>
-</Window.Resources>
+        x:Name="AuthorHasACollectionOfBookSku"
+        Source="{x:Bind ViewModel.Authors}"
+        IsSourceGrouped="true"
+        ItemsPath="BookSkus"/>
+</Page.Resources>
 ...
-<GridView
-ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
+<GridView ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
     <GridView.GroupStyle>
         <GroupStyle
             HeaderTemplate="{StaticResource AuthorGroupHeaderTemplateWide}" ... />
@@ -753,11 +755,12 @@ public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
 Remember that when using [{x:Bind}](/windows/apps/develop/platform/xaml/x-bind-markup-extension) with data templates, you need to indicate the type being bound to by setting an `x:DataType` value. If the type is generic, then you can't express that in markup so you need to use [{Binding}](/windows/apps/develop/platform/xaml/binding-markup-extension) instead in the group style header template.
 
 ``` xaml
-    <Grid.Resources>
+    <Page.Resources>
         <CollectionViewSource x:Name="GenreIsACollectionOfBookSku"
-        Source="{x:Bind Genres}"
-        IsSourceGrouped="true"/>
-    </Grid.Resources>
+            Source="{x:Bind Genres}"
+            IsSourceGrouped="true"/>
+    </Page.Resources>
+
     <GridView ItemsSource="{x:Bind GenreIsACollectionOfBookSku}">
         <GridView.ItemTemplate x:DataType="local:BookTemplate">
             <DataTemplate>
