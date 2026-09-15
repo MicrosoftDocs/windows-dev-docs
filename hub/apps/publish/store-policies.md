@@ -1,7 +1,7 @@
 ---
-title: Microsoft Store Policies version 7.19
+title: Microsoft Store Policies version 7.20
 description: Products on the Store must meet our certification standards, offer customers a truly useful and engaging experience, and provide a good fit for the Store.
-ms.date: 07/30/2026
+ms.date: 09/14/2026
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -9,11 +9,11 @@ ms.localizationpriority: high
 
 # Microsoft Store Policies
 
-**Document version: 7.19**
+**Document version: 7.20**
 
-**Publish date: September 10, 2025**
+**Publish date: September 15, 2026**
 
-**Effective date: October 14, 2025**
+**Effective date: October 22, 2026**
 
 > [!NOTE]
 > Some older versions of this agreement, along with summary of recent changes are available at [Change history for Microsoft Store Policies](store-policies-change-history.md).
@@ -30,8 +30,6 @@ Adhering to these policies should help you make choices that enhance your produc
 
 Your products are crucial to the experience of hundreds of millions of customers. We can’t wait to see what you create and are thrilled to help deliver your products to the world.
 
-If you have feedback on the policies, please let us know by commenting in [our forum](/answers/topics/partner-center-general.html). We will consider every comment.
-
 ## Table of Contents
 
 **Product Policies:**
@@ -46,7 +44,7 @@ If you have feedback on the policies, please let us know by commenting in [our f
 - [10.8 Financial Transactions](#108-financial-transactions)
 - [10.9 Notifications](#109-notifications)
 - [10.10 Advertising Conduct and Content](#1010-advertising-conduct-and-content)
-- [10.13 Gaming and Xbox](#1013-gaming-and-xbox)
+- [10.13 Gaming and XBOX](#1013-gaming-and-xbox)
 - [10.14 Account Type](#1014-account-type)
 
 **Content Policies:**
@@ -110,15 +108,18 @@ Search terms must adhere to the following guidelines:
 
 **10.1.4**
 
-- Your product must have distinct and informative metadata and must provide a valuable and quality user experience. 
-- Your product must also have an active presence in the Store.
+Your product must
+
+- have distinct and informative metadata.
+- provide a valuable and quality user experience.
+- have an active presence in the Store.
 
 
 **10.1.5**
 
 Your product may, with user consent and after initial download of the primary product, enable acquisition of:
 
-- Other products published by you as long as the other products are also distributed through the Microsoft Store and the acquisition of those products is through the Store.
+- Other products published by you as long as the other products are also distributed through the Store and the acquisition of those products is through the Store.
 - Add-ons or extensions, excluding non-Microsoft drivers or NT services, that enhance the functionality of the product.
 
 
@@ -139,8 +140,8 @@ Your product must not jeopardize or compromise user security, or the security or
 
 **10.2.1**
 
-- Products that browse the web must use either the Chromium or the Gecko open-source engine. To ensure compatibility and security of user experience they must be updated to be no older than within 2 major versions of those open source projects (for example, if the latest released major version of Chromium is 85, any browser based on Chromium must be on at least Chromium version 83 or higher),and known security issues must be patched in a more timely fashion. Any included private or proprietary components, or components not otherwise available under an open-source license that affect compatibility of web site experience (such as codecs) shall be licensable on reasonable terms to other browser publishers to achieve compatibility. Compatibility and consistency of web site experience presented to browsers on the same engine shall be the primary test of meeting this engine consistency requirement (including publisher’s own sites). Existing browsers in the Windows Store may continue to use the EdgeHTML engine.
-- Products that browse the web that are made available on the Xbox Console must not offer any functionality that would allow a user of the app to download or copy files, aside from those necessary for functionality of the app.
+- Products that browse the web must use either the Chromium or the Gecko open-source engine. To ensure compatibility and security of user experience they must be updated to be no older than within 2 major versions of those open source projects (for example, if the latest released major version of Chromium is 85, any browser based on Chromium must be on at least Chromium version 83 or higher),and known security issues must be patched in a more timely fashion. Any included private or proprietary components, or components not otherwise available under an open-source license that affect compatibility of web site experience (such as codecs) shall be licensable on reasonable terms to other browser publishers to achieve compatibility. Compatibility and consistency of web site experience presented to browsers on the same engine shall be the primary test of meeting this engine consistency requirement (including publisher’s own sites). Existing browsers in the Store may continue to use the EdgeHTML engine.
+- Products that browse the web that are made available on the XBOX Console must not offer any functionality that would allow a user of the app to download or copy files, aside from those necessary for functionality of the app.
 
 
 
@@ -160,7 +161,7 @@ Generally, dependency on non-Microsoft provided drivers or NT services is not al
 
 **10.2.5**
 
-All game products, (exclusive of games made available through a subscription in PC gaming subscription products) and any products offered on Xbox consoles must be submitted using supported package types for ingestion and distribution by the Microsoft Store. For any products submitted in this manner, such products and in-product offerings must be installed and updated only through the Microsoft Store. (Note: This policy does not apply to products that are subject to the requirements in 10.2.9.)
+All game products, (exclusive of games made available through a subscription in PC gaming subscription products) and any products offered on XBOX consoles must be submitted using supported package types for ingestion and distribution by the Store. For any products submitted in this manner, such products and in-product offerings must be installed and updated only through the Store. (Note: This policy does not apply to products that are subject to the requirements in 10.2.9.)
 
 **10.2.6**
 
@@ -281,9 +282,9 @@ The following products are required to use the Microsoft Store in-product purcha
 
 - (a) Games (excluding games made available through a subscription in PC gaming subscription products and in-app purchases in such games)
 
-- (b) Products offered on Xbox consoles.  
+- (b) Products offered on XBOX consoles.
 
-If your product is required to use the **Microsoft in-product purchase API** it must not direct users to a purchase mechanism other than the Microsoft Store in-product purchase API but may enable users to consume previously purchased digital content or services.
+If your product is required to use the Microsoft in-product purchase API it must not direct users to a purchase mechanism other than the Microsoft Store in-product purchase API but may enable users to consume previously purchased digital content or services.
 
 Non-game products made available on PC devices may either use a secure third-party purchase API or the Microsoft Store in-product purchase API for in-app purchases of digital items or services that are consumed or used within the product.
 
@@ -342,7 +343,7 @@ Non-game products made available on PC devices may either use a secure third-par
 
 In cases where you determine the pricing for your product or in-app purchases, all pricing, including sales or discounting, for your digital products or services must:
 
-- Comply with all applicable laws, regulations and regulatory guidelines, including without limitation, the Federal Trade Commission [Guides Against Deceptive Pricing](https://www.ecfr.gov/cgi-bin/text-idx?SID=676bd39fe43a808fcb417973b3d0247e&mc=true&tpl=/ecfrbrowse/Title16/16cfr233_main_02.tpl).
+- Comply with all applicable laws, regulations and regulatory guidelines, including without limitation, the Federal Trade Commission [Guides Against Deceptive Pricing](https://www.ecfr.gov/current/title-16/chapter-I/subchapter-B/part-233).
 
 - Not be priced irrationally high relative to the features and functionality provided by your product.
 
@@ -398,76 +399,76 @@ Your privacy statement or terms of use must let users know you will send Persona
 
 **10.10.6**
 
-If your product is directed at children under the age of 13 (as defined in the [Children’s Online Privacy Protection Act](https://www.ftc.gov/tips-advice/business-center/privacy-and-security/children%27s-privacy)), you must notify Microsoft of this fact in Partner Center and ensure that all ad content displayed in your product is appropriate for children under the age of 13.
+If your product is directed at children under the age of 13 (as defined in the [Children’s Online Privacy Protection Act](https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa)), you must notify Microsoft of this fact in Partner Center and ensure that all ad content displayed in your product is appropriate for children under the age of 13.
 
 **10.10.7**
 
-If your product is a game and targets Xbox consoles, then Section 10.13.11 applies and supersedes policies in Section 10.10 where there is conflict.
+If your product is a game and targets XBOX consoles, then Section 10.13.11 applies and supersedes policies in Section 10.10 where there is conflict.
 
 ### 10.11 Policy removed
 
 ### 10.12 Policy removed
 
-### 10.13 Gaming and Xbox
+### 10.13 Gaming and XBOX
 
-For products that are primarily gaming experiences or target Xbox consoles, the following requirements apply:
+For products that are primarily gaming experiences, and are discoverable across XBOX-branded stores or experiences, the following requirements apply:
 
 > [!NOTE]
-> Additional requirements for titles which use Xbox network on PC/Mobile and/or the Creators program on Xbox consoles are available at https://aka.ms/xboxlivepolicy.
+> Additional requirements for titles which use XBOX network on PC/Mobile and/or the Creators program on XBOX consoles are available at https://aka.ms/XBOXlivepolicy.
 
 
 **10.13.1**
 
-Game products that target Xbox consoles, including products that primarily offer remote game play/control functionality of games running on other devices or platforms, must use Xbox network services through the ID@Xbox program. Optionally, you may publish your game product to console without integration of Xbox network Services through the [Xbox Creators](https://go.microsoft.com/fwlink/?linkid=844722) program.
+Game products that target XBOX consoles, including products that primarily offer remote game play/control functionality of games running on other devices or platforms, must use XBOX services through the ID@XBOX program. Optionally, you may publish your game product to console without integration of XBOX services through the [XBOX Creators](https://go.microsoft.com/fwlink/?linkid=844722) program.
 
 **10.13.2**
 
-Game products that allow cross-player communication or synchronous network play on Xbox consoles must use Xbox network and be approved through the [ID@Xbox](https://www.xbox.com/Developers/id) program.
+Game products that allow cross-player communication or synchronous network play on XBOX consoles must use XBOX network and be approved through the [ID@XBOX](https://www.xbox.com/Developers/id) program.
 
 **10.13.3**
 
-Game products on Xbox consoles must not present an alternate friends list obtained outside Xbox network.
+Game products on XBOX consoles must not present an alternate friends list obtained outside XBOX network.
 
 **10.13.4**
 
-Products published to Xbox consoles must not:
+Products published to XBOX consoles must not:
 
-- Include the sale of Xbox game products, Xbox consoles or Xbox console accessories outside the Store.
+- Include the sale of XBOX game products, XBOX consoles or XBOX console accessories outside the Store.
 - Request or store Microsoft Account usernames or passwords.
 - Enable general browsing of the operating system, file systems or attached physical media file structures.
 
 
 **10.13.5**
 
-Game products that use Xbox network must:
+Game products that use XBOX network must:
 
-- Automatically sign the user in to Xbox network, or offer the user the option to sign in, before gameplay begins.
-- Display the user's Xbox gamertag as their primary display and profile name.
-- Adhere to the [Xbox Console Dash publisher preferences](https://go.microsoft.com/fwlink/?linkid=2320410) for any in-game sponsorships, ads, or dedicated ad spots
+- Automatically sign the user in to XBOX network, or offer the user the option to sign in, before gameplay begins.
+- Display the user's XBOX gamertag as their primary display and profile name.
+- Adhere to the [XBOX Console Dash publisher preferences](https://go.microsoft.com/fwlink/?linkid=2320410) for any in-game sponsorships, ads, or dedicated ad spots.
 
 **10.13.6**
 
-Game products that use Xbox network and offer multiplayer gameplay, user generated content or user communication:
+Game products that use XBOX network and offer multiplayer gameplay, user generated content or user communication:
 
-- Must not allow gameplay until the user signs in to Xbox network.
+- Must not allow gameplay until the user signs in to XBOX network.
 - Must respect [parental and service controls](/gaming/xbox-live/get-started/setup-ide/creators/unity-win10/check-user-privileges-in-unity).
 
 **10.13.7**
 
-Game products must gracefully handle errors with or disconnection from the Xbox network service. When attempting to retry a connection request following a failure, game products must honor the retry policies set by Xbox Games. When they are unable to retrieve configuration information for or communicate with any non-Microsoft service, game products must not direct users to Microsoft support.
+Game products must gracefully handle errors with or disconnection from the XBOX network service. When attempting to retry a connection request following a failure, game products must honor the retry policies set by XBOX Games. When they are unable to retrieve configuration information for or communicate with any non-Microsoft service, game products must not direct users to Microsoft support.
 
 **10.13.8**
 
-Game products must not store user information sourced from the Xbox network, such as profile data, preferences, or display names, beyond a locally stored cache used to support loss of network connectivity. Any such caches must be updated on the next available connection to the service.
+Game products must not store user information sourced from the XBOX network, such as profile data, preferences, or display names, beyond a locally stored cache used to support loss of network connectivity. Any such caches must be updated on the next available connection to the service.
 
 **10.13.9**
 
-Xbox network game products must comply with the following requirements for service usage:
+XBOX network game products must comply with the following requirements for service usage:
 
-- Do not link or federate the Xbox network user account identifier or other user account data with other services or identity providers.
+- Do not link or federate the XBOX network user account identifier or other user account data with other services or identity providers.
 - Do not provide services or user data in a way that it could be included in a search engine or directory.
 - Keep your secret key and access tokens private, except if you share them with an agent acting to operate your product and the agent signs a confidentiality agreement.
-- Do not duplicate the Xbox network Friends service.
+- Do not duplicate the XBOX network Friends service.
 
 **10.13.10**
 
@@ -475,24 +476,83 @@ Products that emulate a game system or game platform are not allowed on any devi
 
 **10.13.11**
 
-The following privacy requirements apply to Xbox network user data:
+The following privacy requirements apply to XBOX network services and user data:
 
 - Services and user data must be used appropriately in games. This data includes (without limitation) usage data, account identifiers and any other personally identifiable data, statistics, scores, ratings, rankings, connections with other users, and any other data relating to a user’s social activity.
 
-- Services and user data may not be used in conjunction with third-party services for the purposes of serving personalized or targeted advertising on Xbox Consoles. 
+- Services and user data may not be used in conjunction with third-party services for the purposes of serving personalized or targeted advertising on XBOX Consoles.
 
-- Services and user data are only for use in your game by you. Don't sell, license, or share any data obtained from us or our services. If you receive personal data of end users through Xbox network, you are an independent controller of such data and must have a privacy statement (or policy) in place with end users governing your use of personal data, as required by the App Developer Agreement. We recommend you include a link to your privacy statement on your website and on the Microsoft Store pages for your games.
+- Services and user data are only for use in your game by you. Don't sell, license, or share any data obtained from us or our services. If you receive personal data of end users through XBOX network, you are an independent controller of such data and must have a privacy statement (or policy) in place with end users governing your use of personal data, as required by the App Developer Agreement. We recommend you include a link to your privacy statement on your website and on the Microsoft Store pages for your games.
 
-- Don’t store any Xbox network social graph data (for example, friends lists), except for account identifiers for users who’ve linked their Xbox network account with your game.
+- Don’t store any XBOX network social graph data (for example, friends lists), except for account identifiers for users who’ve linked their XBOX network account with your game.
 
-- Delete all account identifiers, when you remove your game from our service, or when a user unlinks their Xbox network account from your game. Do not share services or user data (even if anonymous, aggregate, or derived data) to any ad network, data broker or other advertising or monetization-related service.
+- Delete all account identifiers, when you remove your game from our service, or when a user unlinks their XBOX network account from your game. Do not share services or user data (even if anonymous, aggregate, or derived data) to any ad network, data broker or other advertising or monetization-related service.
 
-- When Microsoft receives requests from end users to delete their personal data, we will communicate the requests to you by providing a list of end user identifiers. You must check the list at least every 30 days to ensure you receive all delete requests and must use the information provided on the list only to satisfy the delete requests of end users. You can find details about this process at [Deleted Account List Tools](https://forums.xboxlive.com/users/login.html).
+When Microsoft receives requests from end users to delete their personal data, we will communicate the requests to you by providing a list of end user identifiers. You must check the list at least every 30 days to ensure you receive all delete requests and must use the information provided on the list only to satisfy the delete requests of end users. You can find details about this process at [Deleted Account List Tools](https://forums.xboxlive.com/users/login.html).
 
-**10.13.12**
+**10.13.12 Support across XBOX devices**
 
-If you provide digital game content for purchase that is shared or roamed on any other platform, network, or store then compliance with [XR-007](/gaming/gdk/docs/store/policies/xr/xr007) is required.
+“XBOX devices” means any device that supports access to XBOX games, including XBOX Consoles, Microsoft or third-party PC-based devices that play XBOX games natively, and Microsoft or third-party streaming devices.
 
+Games that use the same product code (i.e. Store ID) and are natively playable (e.g. download, install, and play) across XBOX devices must support the following:
+
+- **Primary input:** Support navigation via gamepad input for games that are natively playable on XBOX console devices. Games may require additional peripherals for use with prior approval. We recommend, but do not require, that games support the primary input device for other XBOX devices, such as PC and handhelds, where the game is natively playable.
+- **Game Saves:** For each XBOX device supported, adhere to the game save compatibility requirements specified in XR-052: User State and Title-Save Location, Roaming and Dependencies.
+- **Online multiplayer:** If supported, players must not be segmented based on device type within the same generation of an XBOX device family (e.g. XBOX Series S and XBOX Series X).
+- **Game Modes:** All game modes must be the same across devices within the same generation of an XBOX device family, and modes cannot be excluded from one XBOX device within that generation, subject to technical limitations. Games cannot break saves or charge players for any new, updated, or additional feature on a newer device within the same generation.
+
+**10.13.13 CrossPlatform Digital Game Entitlements and Commerce, Game Progress, Cross-Platform and Cross-Network Play and Companion Apps**
+
+If your digital game content integrates with XBOX Network Services, then this section applies to any digital content that is shared, roamed, or made available across platforms, networks, or digital storefronts outside the Microsoft Store.
+
+**User Specific Data Use**
+
+Publishers are permitted to use user specific data from XBOX services, Microsoft Store, and other platforms on the XBOX network, subject to the following limitations:
+
+- **Game Progress, InGame Items, and Statistics**
+  - Titles can, at their discretion, sync game progress, virtual currency wallets, and ingame items (including those unlocked with virtual currency) across gaming platforms and networks.
+  - As part of user progress, a title can provide holistic statistic values, including the unlock of achievements, as long as those achievements do not require play or a purchase using another platform.
+- **Microsoft Store Managed Entitlements**
+  - Digital content or PDLC (such as a map pack, expansions of the base game or experiences that provides additional gameplay) that is sold and managed in the Microsoft Store (including XBOX console store) and across other platform stores may not be shared or roamed across gaming networks.
+  - However, for clarity and at the title’s discretion:
+    - A bundle of ingame items (such as virtual currency or items unlocked with virtual currency) that are sold through the Microsoft Store and are managed by the title may be shared or roamed across gaming networks.
+    - Digital content or PDLC such as an expansion of the base game may also be sold in-game for virtual currency, so long as the digital content is from the same IP and is usable or playable within the base game.
+    - Unique premium base games from the same IP sold through in-game stores are ineligible for purchase with virtual currency.
+    - Unique premium base games unrelated to the IP of the base game are ineligible to be sold through in-game stores.
+
+**Cross-Platform Content Offered for Purchase on Other Platforms, Networks, or Stores**
+
+If you offer cross-platform content for purchase on another platform, network, or store, the following conditions apply:
+
+Titles must:
+
+- offer the same or better forsale content offers in the Microsoft Store (including Microsoft Store on Windows) to ensure that XBOX users are not disadvantaged, including but not limited to release timing, market coverage, features (e.g. gameplay experiences and capabilities), content (such as bonus virtual currency or bonus ingame benefits), language and localization, and physical token card offerings; and
+- include a corresponding offer in Microsoft’s Digital Content at Retail program (i.e., Code to Content) if digital codes are sold directly to consumers.
+
+**CrossPlatform Play**
+
+Titles can, at their discretion, enable synchronous or asynchronous crossplatform gameplay among XBOX network users on XBOX networkenabled platforms, including XBOX consoles and Microsoft Store on Windows.
+
+**CrossNetwork and Companion Application Play**
+
+Titles can, at their discretion, enable synchronous or asynchronous crossnetwork gameplay among XBOX network users and users of nonXBOX gaming networks with the following restrictions:
+
+- Games must visually identify XBOX network users when also playing with nonXBOX gaming network players.
+- Crossnetwork communication must be restricted based on XBOX network safety settings.
+- Titles that require crossnetwork play must state such requirement in the title’s Product Detail Page (PDP) in the Microsoft Store, including Microsoft Store on Windows.
+
+**10.13.14 Metadata and In-Game Localization**
+
+If a title is released in regions where the following languages are supported, then all applicable metadata must be localized in:
+
+- EFIGS (English, French, Italian, German, Spanish)
+- Portuguese (Brazilian Portuguese preferable)
+- Japanese (Sort String must be in Hiragana, single byte space, and single byte number.  All other strings can be made up of Hiragana, Katakana, Kanji, Alpha-numeric and English if no direct translation is available e.g. Halo )
+- Simplified Chinese (Traditional Chinese is optional)
+
+The [Windows supported languages table](https://learn.microsoft.com/windows-hardware/manufacture/desktop/available-language-packs-for-windows?view=windows-11) and [Console-supported languages table](https://learn.microsoft.com/gaming/gdk/docs/gdk-dev/game-principles/localization/console_supported_languages) provide the available language requirements that must be followed for localization on PDPs in different release regions and in-Game (should the partner opt to localize in-game).
+
+PDP metadata localization is encouraged for all other countries/languages and is at the discretion of the Publisher.
 
 ### 10.14 Account Type
 
@@ -564,7 +624,16 @@ China
 
 ### 11.11 Age Ratings
 
-You must obtain an age rating for your product when you submit it in Partner Center (https://aka.ms/age-ratings). You are responsible for accurately completing the International Age Rate Coalition (IARC) rating questionnaire during submission to obtain the appropriate rating.
+**11.11.1**
+
+You must obtain an age rating for your product when you submit it in Partner Center. You are responsible for accurately completing the International Age Rating Coalition (IARC) rating questionnaire during submission to obtain the appropriate rating. For more information, see:
+
+- Microsoft Store Apps and Games: [Age ratings for MSIX app - Windows apps | Microsoft Learn](https://aka.ms/age-ratings)
+- XBOX games: [Age ratings - Game Publishing Guide | Microsoft Learn](https://learn.microsoft.com/gaming/game-publishing/concepts/age-ratings)
+
+**11.11.2**
+
+You are responsible for ensuring that the age rating information for your product remains accurate and current throughout the product lifecycle, including when changes to your product may affect its assigned age rating. If your product receives a new age rating from any rating authority, or if any age rating information changes, you must promptly update the corresponding information in Partner Center.
 
 **11.11.3**
 
@@ -572,11 +641,15 @@ If your product provides content (such as user-generated, retail or other web-ba
 
 ### 11.12 User Generated Content
 
-User Generated Content (UGC) is content that users contribute to an app or product and which can be viewed or accessed by other users in an online state. If your product contains UGC, you must:
+User Generated Content (UGC) is content that users contribute to a product and which can be viewed or accessed by other users in an online state. If your product contains UGC, you must:
 
-- Publish and make available to users a product terms of service and/or content guidelines for User Generated Content either in product or on your website.
-- Provide a means for users to report inappropriate content within the product to the developer for review and removal/disablement if in violation of content guidelines and/or implement a method for proactive detection of inappropriate or harmful UGC.
+- Publish and make available to users a product terms of service, code of conduct, and/or content guidelines for User Generated Content that are accessible fromwithin the product and on your website.
+- Provide a means for users to report inappropriate, illegal, or harmful UGC within the product to the developer for review and removal or disablement if found to violate applicable content guidelines, and/or implement a method for proactive detection of inappropriate or harmful UGC.
+- Respect user safety, parental, and content privilege settings, and gracefully handle scenarios in which a user does not have access to UGC or related online functionality due to restricted privileges.
 - Remove or disable UGC when requested by Microsoft.
+- If your product integrates with a third-party game mod or UGC platform, you must:
+  - integrate with the applicable reporting or complaint mechanisms where available and comply with any moderation obligations required under your agreement with the third-party provider.
+  - clearly disclose to users when content is not created, published, or sourced by the developer or publisher, including through an in-product disclaimer, dialog, or visual indicator where appropriate.
 
 ### 11.13 Third Party Digital Storefronts Content
 
@@ -625,7 +698,7 @@ Products that contain dynamic content created by generative AI models in respons
 
 
 ---
-<sup>1</sup>"Store" or "Microsoft Store" means a Microsoft owned or operated platform, however named, through which Apps may be offered to or acquired by Customers. Unless otherwise specified, Store includes the Microsoft Store, the Windows Store, and the Xbox Store.
+<sup>1</sup>"Store" or "Microsoft Store" means a Microsoft owned or operated platform, however named, through which Apps may be offered to or acquired by Customers. Unless otherwise specified, Store includes the Microsoft Store, the Windows Store, and XBOX-branded stores.
 
 ## Certification Appeal Process
 
@@ -649,5 +722,5 @@ Numbers reported from 7/1/2025 - 6/30/2026:
 ### See also
 
 - [Change history for Microsoft Store Policies](store-policies-change-history.md)
-- [Microsoft Store Policies and Code of Conduct](store-policies-and-code-of-conduct.md)
+- [Developer Code of Conduct](store-developer-code-of-conduct.md)
 - [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)

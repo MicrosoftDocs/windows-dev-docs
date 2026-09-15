@@ -366,6 +366,8 @@ items:
       - name: Store Policies change history
         href: store-policies-change-history.md
         items:
+          - name: Microsoft Store Policies 7.19
+            href: store-policy-archive/store-policy-7-19.md
           - name: Microsoft Store Policies 7.18
             href: store-policy-archive/store-policy-7-18.md
           - name: Microsoft Store Policies 7.17

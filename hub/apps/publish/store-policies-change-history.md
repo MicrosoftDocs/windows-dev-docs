@@ -1,7 +1,7 @@
 ---
 title: Change history for Microsoft Store Policies
 description: View a table showing the history of changes for Microsoft Store Policies with descriptions of additions, updates, and deletions for each change.
-ms.date: 09/10/2025
+ms.date: 09/14/2026
 ms.topic: article
 keywords: store policies agreement
 ms.localizationpriority: high
@@ -26,10 +26,29 @@ ms.assetid: D451D271-A6CA-4B46-AE99-C2269E8A078C
 <tbody>
 </tr>
 
+<tr class="odd">
+<td>September 15, 2026</td>
+<td><a href="store-policies.md">7.20</a></td>
+<td>
+
+Updated Xbox to XBOX throughout the document to reflect updated branding
+
+New 10.13.12, Support across XBOX devices, details requirements for primary input, game saves, online multiplayer, and game modes for games that use the same product code across XBOX devices
+
+New 10.13.13 Cross Platform Digital Game Entitlements and Commerce, Game Progress, Cross-Platform and Cross-Network Play and Companion Apps details requirements if your game integrates with XBOX Network services, and has any digital content that is shared, roamed, or made available across platforms, networks, or digital storefronts outside the Store
+
+New 10.13.14 Required Metadata and In-Game Localization, including support for English, French, Spanish, German, Portuguese, Japanese and Simplified Chinese in regions where these languages are supported
+
+Updated 11.11, Age Ratings, requires accurate and updated product age rating throughout a product’s lifecycle or when a new age rating is received from any rating authority.
+
+Updated 11.12, User Generated Content, including addition reporting and content moderation expectations if a product integrates with a third-party game mod or UGC platform.
+
+</td>
+</tr>
 
 <tr class="even">
 <td>September 10, 2025</td>
-<td><a href="store-policies.md">7.19</a></td>
+<td><a href="./store-policy-archive/store-policy-7-19.md">7.19</a></td>
 <td>
 
 Updated all references of "Xbox Live" to "Xbox network" to align with updated branding.
@@ -384,5 +403,5 @@ New 11.16 New policy aims to ensure transparency in how live generative AI techn
 
 ### See also
 
-- [Microsoft Store Policies and Code of Conduct](store-policies-and-code-of-conduct.md)
+- [Developer Code of Conduct](store-developer-code-of-conduct.md)
 - [App Developer Agreement](https://go.microsoft.com/fwlink/?linkid=528905)
