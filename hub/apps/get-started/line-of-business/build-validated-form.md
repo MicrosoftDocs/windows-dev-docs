@@ -2,7 +2,7 @@
 title: Build a data-entry form with validation in WinUI 3
 description: Design an accessible WinUI 3 data-entry form and implement validation that fits your app architecture and business rules.
 ms.topic: how-to
-ms.date: 09/02/2026
+ms.date: 09/16/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -13,7 +13,7 @@ Data-entry forms must explain requirements, identify invalid values, and prevent
 
 WinUI 3 doesn't provide a complete form-validation framework equivalent to WPF validation or the Windows Forms `ErrorProvider`. Your app must define how validation rules run, how errors are exposed, and how the UI presents them.
 
-:::image type="content" source="images/02-validated-form.png" alt-text="A New Customer form with an inline email validation message and a disabled Save button.":::
+:::image type="content" source="images/validate-customer-form.png" alt-text="A customer form in a WinUI 3 app showing required-field validation messages for the name and email fields.":::
 
 ## Choose a validation strategy
 

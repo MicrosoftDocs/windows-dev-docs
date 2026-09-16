@@ -2,7 +2,7 @@
 title: Display tabular data in a WinUI app
 description: Choose a WinUI 3 approach for displaying collections and tabular data with ListView, ItemsView, or a supported grid control.
 ms.topic: how-to
-ms.date: 09/02/2026
+ms.date: 09/16/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -11,7 +11,7 @@ ms.author: jken
 
 Line-of-business apps often display records that users need to scan, select, filter, sort, or edit. WinUI 3 includes virtualizing collection controls, but it doesn't include a first-party DataGrid control.
 
-:::image type="content" source="images/01-tabular-data-cards.png" alt-text="A WinUI 3 customer list with card-style rows that show name, company, region, and status.":::
+:::image type="content" source="images/display-tabular-data.png" alt-text="A customer list in a WinUI 3 app with search, company information, and account status columns.":::
 
 ## Choose a control
 

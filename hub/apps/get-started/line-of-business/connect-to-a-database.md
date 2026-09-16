@@ -2,7 +2,7 @@
 title: Connect a WinUI app to a database
 description: Connect a WinUI 3 app to local or enterprise data using Entity Framework Core, asynchronous operations, and secure service boundaries.
 ms.topic: how-to
-ms.date: 09/02/2026
+ms.date: 09/16/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -11,7 +11,7 @@ ms.author: jken
 
 A line-of-business app can store data on the device, call an enterprise service, or combine both approaches for offline use. Keep database code outside the UI layer so that you can test it, handle failures consistently, and change providers without rewriting the view.
 
-:::image type="content" source="images/03-database-access.png" alt-text="A WinUI 3 task tracker displaying records loaded from a local SQLite database.":::
+:::image type="content" source="images/connect-to-database.png" alt-text="A customer portfolio in a WinUI 3 app with account metrics, filters, and records loaded from business data.":::
 
 ## Choose an architecture
 

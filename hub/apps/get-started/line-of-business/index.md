@@ -2,7 +2,7 @@
 title: Build line-of-business apps with WinUI - overview
 description: A hub for developers building enterprise line-of-business apps with WinUI 3, covering data, forms, migration, design, and AI.
 ms.topic: overview
-ms.date: 09/02/2026
+ms.date: 09/16/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -13,7 +13,7 @@ This hub is for developers building line-of-business (LOB) apps, such as interna
 
 WinUI 3 provides Fluent Design controls and XAML data binding. The Windows App SDK delivers WinUI 3 and also provides APIs for app lifecycle, windowing, notifications, and other Windows capabilities. Packaging and deployment are separate architectural choices.
 
-![Diagram showing WinUI 3 and Windows App SDK at the center with five line-of-business capabilities radiating out as peers.](images/lob-journey.png)
+![A line-of-business dashboard on a laptop receiving information from business data, cloud services, and existing systems.](images/lob-overview.png)
 
 ## Choose an approach
 

@@ -2,7 +2,7 @@
 title: Add AI capabilities to a line-of-business WinUI app
 description: Compare on-device Windows AI, ONNX Runtime, and cloud AI approaches for WinUI 3 business apps based on privacy and deployment needs.
 ms.topic: how-to
-ms.date: 09/02/2026
+ms.date: 09/16/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -11,7 +11,7 @@ ms.author: jken
 
 AI can add summarization, extraction, classification, search, and assistance to a business workflow. Choose an architecture based on data policy, model quality, supported hardware, connectivity, latency, and operating cost.
 
-:::image type="content" source="images/05-local-ai.png" alt-text="A WinUI 3 support-ticket app displaying an on-device AI summary and suggested category.":::
+:::image type="content" source="images/add-ai-capabilities.png" alt-text="A WinUI 3 support app with a ticket list, customer request details, and an option to analyze the ticket with local AI.":::
 
 ## Prerequisites
 

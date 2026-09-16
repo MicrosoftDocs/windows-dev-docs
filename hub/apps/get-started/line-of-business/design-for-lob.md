@@ -2,7 +2,7 @@
 title: Design for productivity in WinUI LOB apps
 description: Design WinUI 3 line-of-business apps for productivity with guidance on theming, materials, accessibility, layouts, and navigation.
 ms.topic: concept-article
-ms.date: 09/02/2026
+ms.date: 09/16/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -11,7 +11,7 @@ ms.author: jken
 
 Productivity-focused apps must make frequent tasks efficient while remaining readable, accessible, and predictable. Start with WinUI controls and theme resources, then customize only where the workflow requires it.
 
-:::image type="content" source="images/04-design-showcase.png" alt-text="A WinUI 3 dashboard with a NavigationView, Mica backdrop, and summary cards in the light theme.":::
+:::image type="content" source="images/productivity-dashboard.png" alt-text="A WinUI 3 productivity dashboard with navigation, an operating summary, action buttons, and business metric cards.":::
 
 ## Use theme resources
 
