@@ -1,10 +1,10 @@
 ---
 title: Windows developer glossary
-description: Definitions of current Windows app development terms, including WinUI, Windows App SDK, packaging, deployment, interoperability, and Windows AI.
+description: Definitions of current Windows app development terms, including WinUI 3, Windows App SDK, packaging, deployment, interop, and Windows AI.
 author: GrantMeStrength
 ms.author: jken
 ms.topic: glossary
-ms.date: 09/02/2026
+ms.date: 09/16/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -61,7 +61,7 @@ A high-performance, hardware-accelerated DirectX 12 API for machine learning wor
 
 #### Fluent Design
 
-[Fluent Design](https://aka.ms/fluent) is the design system for Windows experiences. WinUI provides controls, materials, typography, and interaction patterns that implement Fluent guidance.
+[Fluent Design](https://aka.ms/fluent) is the design system for Windows experiences. WinUI 3 provides controls, materials, typography, and interaction patterns that implement Fluent guidance.
 
 #### Foundry Local
 
@@ -180,7 +180,7 @@ Text recognition, also known as optical character recognition (OCR), is supporte
 An application development platform and application model that uses Windows Runtime (WinRT) APIs to deliver packaged apps. UWP apps run in a sandboxed environment, and they inherit the security of the UWP platform. [Learn more about UWP](/windows/uwp/).
 
 >[!NOTE]
-> Build Windows apps with [Windows App SDK and WinUI](index.md). You can also use [WPF](/dotnet/desktop/wpf/getting-started).
+> Build Windows apps with [Windows App SDK and WinUI 3](index.md). You can also use [WPF](/dotnet/desktop/wpf/getting-started).
 
 #### Unmanaged app
 
@@ -192,7 +192,7 @@ An app installed and updated outside the Windows package deployment system, such
 
 #### Self-contained deployment
 
-A Windows App SDK deployment mode that includes the framework components with the app instead of using separately installed runtime packages. It increases deployment size but lets the app service its Windows App SDK dependencies with the app. See [Windows App SDK deployment overview](../package-and-deploy/deploy-overview.md).
+A Windows App SDK deployment mode that includes the framework components with the app instead of using separately installed runtime packages. It increases deployment size and makes the app publisher responsible for distributing Windows App SDK servicing updates with new app versions. See [Windows App SDK deployment overview](../package-and-deploy/deploy-overview.md).
 
 #### Visual Studio extension (VSIX)
 
@@ -200,15 +200,15 @@ Lets you create, package, and deploy Visual Studio extensions. [Get started with
 
 #### WebView2
 
-A control that allows app developers to embed web content (HTML/CSS/JS) in their native apps using the Microsoft Edge (Chromium) rendering engine. You can use WebView2 in WinUI, Win32 C++, WPF, and WinForms. See [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/).
+A control that allows app developers to embed web content (HTML/CSS/JS) in their native apps using the Microsoft Edge (Chromium) rendering engine. You can use WebView2 in WinUI 3, Win32 C++, WPF, and WinForms. See [Introduction to Microsoft Edge WebView2](/microsoft-edge/webview2/).
 
 #### Microsoft Foundry on Windows
 
-Microsoft Foundry on Windows offers AI-backed features and APIs on Windows 10 and later PCs. Some features like Phi Silica require Copilot+ PC hardware. See [Windows AI APIs overview](/windows/ai/overview).
+The umbrella for Windows AI APIs, Foundry Local, and Windows ML. Operating-system, hardware, model, and package requirements vary by technology and API. See [Microsoft Foundry on Windows](/windows/ai/overview) and [Choose your Windows AI solution](/windows/ai/windows-ai-comparison).
 
 #### Windows API
 
-Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP WinRT APIs, and the WinRT/Win32 APIs that are part of the Windows App SDK and WinUI.
+Refers to the entire set of Windows APIs including Win32 APIs, COM APIs, UWP WinRT APIs, and the WinRT/Win32 APIs that are part of the Windows App SDK and WinUI 3.
 
 #### Windows App Development CLI (winapp CLI)
 
@@ -216,7 +216,7 @@ An open-source, public-preview command-line tool for managing Windows SDKs, pack
 
 #### Windows App SDK
 
-A set of independently serviced components and tools for Windows desktop app development. It includes WinUI, app lifecycle, windowing, notifications, resources, text, and other APIs. The Windows App SDK complements rather than replaces the Windows SDK. See [Windows App SDK](../windows-app-sdk/index.md).
+A set of independently serviced components and tools for Windows desktop app development. It includes WinUI 3, app lifecycle, windowing, notifications, resources, text, and other APIs. The Windows App SDK complements rather than replaces the Windows SDK. See [Windows App SDK](../windows-app-sdk/index.md).
 
 #### Windows App SDK runtime
 
@@ -234,13 +234,13 @@ A UI framework for building Windows desktop applications. WPF applications are b
 
 The Windows SDK is a collection of headers, libraries, metadata, and tools that allow you to build desktop and UWP Windows apps. The Windows SDK is not the same as the [Windows App SDK](#windows-app-sdk).
 
-#### WinUI (previously referred to as WinUI 3)
+#### WinUI 3
 
-The latest and recommended UI framework for Windows desktop apps. This framework is made available through the Windows App SDK, and has been decoupled from the Windows operating system. WinUI uses [Fluent Design](https://aka.ms/fluent) to provide a native UX framework for Windows desktop apps. It will feel very familiar if you've worked with WinUI for UWP. Note that WinUI apps are commonly referred to as "WinUI apps". See [WinUI](../winui/winui3/index.md).
+Microsoft's current native UI framework for Windows desktop apps. WinUI 3 is delivered through the Windows App SDK and is decoupled from the Windows operating system. It uses [Fluent Design](https://aka.ms/fluent) and will feel familiar if you've worked with WinUI 2 for UWP. See [WinUI 3](../winui/winui3/index.md).
 
-#### WinUI for UWP (previously referred to as WinUI 2)
+#### WinUI for UWP (WinUI 2)
 
-WinUI for UWP is tightly integrated with Windows SDKs and provides native Windows UI controls and other user interface elements for UWP applications and desktop applications using XAML Islands. See [WinUI for UWP](/windows/uwp/get-started/winui2/).
+WinUI 2, also called WinUI for UWP, is tightly integrated with Windows SDKs and provides native Windows UI controls and other user interface elements for UWP applications and desktop applications using system XAML Islands. WinUI 2 and WinUI 3 use different XAML namespaces and aren't binary-compatible. See [WinUI for UWP](/windows/uwp/get-started/winui2/).
 
 #### XAML Islands
 
