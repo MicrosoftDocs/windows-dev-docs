@@ -2,7 +2,7 @@
 title: Windows App SDK 2.0 release notes
 description: Release notes for Windows App SDK 2.0 across the Stable, Preview, and Experimental channels, with feature highlights, bug fixes, and API changes.
 ms.topic: release-notes
-ms.date: 08/25/2026
+ms.date: 09/16/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -13,6 +13,113 @@ zone_pivot_groups: wasdk-release-channels
 [!INCLUDE [wasdk-releasenotes](../../../includes/wasdk-release-notes.md)]
 
 :::zone pivot="stable"
+
+## Version 2.5.1
+
+Released: **September 16, 2026** <br><br>
+
+<details><summary>Windows Error Reporting support</summary>
+
+>
+> Added support for the `windows.diagnosticServiceModule` package-manifest extension.
+> Self-contained .NET MSIX apps can use this extension to declare diagnostic modules, allowing
+> Windows Error Reporting to load them and collect actionable crash dumps.
+>
+
+</details>
+
+<details><summary>Limited-access AppContentSearch APIs</summary>
+
+>
+> New `AppContentIndex` APIs are now available as a limited-access feature (LAF) to apps that have obtained
+> a LAF token. These APIs let apps provide text and image content for
+> indexing and query that content using lexical matching and, on supported NPU-enabled devices,
+> semantic matching. `AppContentIndex` supports semantic search and retrieval-augmented generation
+> (RAG) scenarios.
+> ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): AppContentSearchNewAPI_LafCheck)
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> - Fixed a crash in windowed-popup input handling when a focus or pointer event was processed
+>   after the popup's island had been disposed.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): PointerInputProcessor_ReleaseCaptureOnDisposedIsland)
+> - Fixed a crash in `NavigationView` when resizing the control could produce a negative pane
+>   `MaxHeight`.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): NavigationView_UpdatePaneLayoutNegativeMaxHeight)
+> - Fixed an issue where the property set returned by
+>   `ElementCompositionPreview.GetPointerPositionPropertySet` stopped updating while a pointer was
+>   pressed.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): PointerPositionPropertySet_UpdateWhilePressed)
+> - Fixed a crash in `NavigationView` when an expanded item's flyout was shown after the item had
+>   been collapsed or recycled.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): NavigationViewItem_DeferredFlyoutShowStaleState)
+> - Fixed a fail-fast when a `KeyboardAccelerator` used an OEM or punctuation key, such as a comma,
+>   semicolon, or bracket, and displayed the accelerator shortcut label.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): KeyboardAccelerator_OemKeyNoFailFast)
+> - Fixed a fatal process exit that could occur during XAML shutdown in apps hosting WinUI 3 on
+>   more than one UI thread.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WindowsXamlManager_ActivationFactoryCacheResetRace)
+> - Fixed an issue where a `CommandBar` with no secondary commands could show an empty overflow
+>   button at fractional display scales such as 175%.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): CommandBar_SpuriousOverflowButtonAtFractionalScale)
+> - Fixed an issue that prevented apps using the System Composition Engine from calling
+>   `VisualInteractionSource.CreateFromIVisualElement`.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): CompositionEngine_SwitcherSeptemberFixes)
+> - Fixed effect graphs and `SceneLighting` rendering for apps using the System Composition Engine.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): CompositionEngine_SwitcherSeptemberFixes)
+> - Fixed `InputPointerSource.ActivationBehavior` not honoring `NoActivate` when using the System
+>   Composition Engine.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): CompositionEngine_SwitcherSeptemberFixes)
+> - Fixed `CompositionEngine` selection behavior for null inputs and no-op selections.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): CompositionEngine_SwitcherSeptemberFixes)
+> - Fixed cursor customization for lifted input when using the System Composition Engine.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): CompositionEngine_SwitcherSeptemberFixes)
+> - Fixed `ICompositionObject` queries on gradient stop collections when using the System
+>   Composition Engine.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, operating system composition fix)
+> - Fixed `ContentExternalOutputLink` border and background behavior when using the System
+>   Composition Engine.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, operating system composition fix)
+> - Fixed access to `VisualReferenceController` when using the System Composition Engine.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, operating system composition fix)
+> - Fixed a registration issue that could occur when installing the Windows App SDK.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, deployment registration fix)
+> - Fixed an issue where Video Super Resolution could fail during initialization or inference with
+>   the updated ONNX Runtime dependency.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, dependency compatibility update)
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the 2.4.0 release:
+> ```
+> Microsoft.Windows.Search.AppContentIndex
+>
+>     AppIndexContentRegion
+>         CreateFromBitmap
+>         CreateFromImageStream
+>
+>     AppManagedIndexableAppContent
+>         CreateFromBitmap
+>         CreateFromImageStream
+>
+>     ContentRegionImageOptions
+>
+>     ContentRegionTextOptions
+>         AllowSemanticIndexing
+>
+>     ImageOcrIndexingOptions
+> ```
+>
+
+</details>
 
 ## Version 2.4.0
 
