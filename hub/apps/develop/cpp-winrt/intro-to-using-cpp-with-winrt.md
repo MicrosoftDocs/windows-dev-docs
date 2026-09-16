@@ -1,7 +1,7 @@
 ---
 description: Introduction to C++/WinRT, the standard C++17 projection for Windows Runtime APIs, with setup guidance and links to key concepts.
 title: Introduction to C++/WinRT
-ms.date: 07/22/2026
+ms.date: 09/12/2026
 ms.topic: concept-article
 keywords: windows 11, windows 10, standard, c++, cpp, winrt, projection, introduction, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -33,7 +33,7 @@ The Windows Runtime is based on Component Object Model (COM) APIs, and it's desi
 When you're browsing [Windows Runtime APIs](/uwp/api/), click the **Language** combo box in the upper right, and select **C++/WinRT** to view API syntax blocks as they appear in the C++/WinRT language projection.
 
 ## Visual Studio support for C++/WinRT, XAML, the VSIX extension, and the NuGet package
-For Visual Studio support, you'll need Visual Studio 2022 or later. From within the Visual Studio Installer, install the **Universal Windows Platform development** workload. In **Installation Details** > **Universal Windows Platform development**, check the **C++ (v14x) Universal Windows Platform tools** option(s) if you haven't already done so. And, in Windows **Settings** > **Privacy \& security** > **For developers**, enable the **Developer mode** option.
+For Visual Studio support, you'll need Visual Studio 2022 or later. From within the Visual Studio Installer, install the **WinUI application development** workload. For C++ development, also select **C++ WinUI app development tools** under that workload in the **Installation details** pane. And, in Windows **Settings** > **Privacy \& security** > **For developers**, enable the **Developer mode** option.
 
 > [!NOTE]
 > Visual Studio 2022 and later ship with C++/WinRT project and item templates built in, along with native debug visualization (natvis) of C++/WinRT projected types. If you're using an older version of Visual Studio, install the [C++/WinRT VSIX extension](https://marketplace.visualstudio.com/items?itemName=CppWinRTTeam.cppwinrt101804264) from the Visual Studio Marketplace.
