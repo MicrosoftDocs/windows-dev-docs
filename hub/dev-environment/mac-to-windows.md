@@ -6,7 +6,7 @@ ms.author: jken
 ms.topic: how-to
 keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, Mac OS X to Windows, help moving from Mac to PC
 ms.localizationpriority: medium
-ms.date: 08/31/2026
+ms.date: 09/12/2026
 ---
 
 # Moving from Mac (Unix) to Windows
@@ -20,8 +20,8 @@ For native Windows app development, the nearest equivalent to Xcode is [Visual S
 Start with these Windows 11 features:
 
 1. **Configure developer settings.** On Windows 11, version 25H2 and later, open **Settings > System > Advanced** to configure file extensions, hidden files, long paths, the default terminal, PowerShell scripts, sudo, Developer Mode, and Dev Drive. On earlier releases, search Settings for **For developers**. Developer Mode is primarily needed to develop, deploy, and test Windows apps; it isn't required for most web or cross-platform development. For details, see [Advanced Windows Settings](../advanced-settings/index.md).
-1. **Install tools with WinGet.** [Windows Package Manager (WinGet)](/windows/package-manager/) is the Windows equivalent of a package manager such as Homebrew. Use it to search for, install, upgrade, remove, and configure applications. For example, `winget upgrade --all` updates packages that WinGet manages.
-1. **Make setup repeatable.** [WinGet Configuration](/windows/package-manager/configuration/) uses a YAML file to declare packages and Windows settings. Store a configuration with your project or onboarding documentation, review its resources before running it, and apply it with:
+1. **Install tools with WinGet.** [Windows Package Manager (WinGet)](../package-manager/index.md) is the Windows equivalent of a package manager such as Homebrew. Use it to search for, install, upgrade, remove, and configure applications. For example, `winget upgrade --all` updates packages that WinGet manages.
+1. **Make setup repeatable.** [WinGet Configuration](../package-manager/configuration/index.md) uses a YAML file to declare packages and Windows settings. Store a configuration with your project or onboarding documentation, review its resources before running it, and apply it with:
 
     ```powershell
     winget configure -f <path-to-configuration-file>
@@ -159,7 +159,7 @@ File Explorer combines local and cloud files, pinned locations, tabs, and recent
 | Edit text | TextEdit | Notepad or [Edit](../edit/index.md) |
 | View system events | Console | Event Viewer |
 | Find files and apps | Spotlight | Windows Search or [PowerToys Command Palette](../powertoys/command-palette/overview.md) |
-| Manage packages | Homebrew | [WinGet](/windows/package-manager/) |
+| Manage packages | Homebrew | [WinGet](../package-manager/index.md) |
 | Store development files | N/A | [Dev Drive](../dev-drive/index.md) |
 | Run Unix command-line tools | Built in | [Coreutils](../core-utils/overview.md), [sudo](../advanced-settings/sudo/index.md), or WSL |
 | Arrange windows | Mission Control | Snap layouts and multiple desktops |
