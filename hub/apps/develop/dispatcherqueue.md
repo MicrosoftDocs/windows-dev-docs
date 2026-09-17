@@ -1,7 +1,7 @@
 ---
 title: DispatcherQueue
 description: Describes the purpose and function of the Windows App SDK DispatcherQueue class, and how to program with it.
-ms.date: 07/15/2026
+ms.date: 09/17/2026
 ms.topic: article
 keywords: windows 11, windows 10, dispatcherqueue, dispatcherqueuecontroller
 ms.localizationpriority: high
@@ -20,6 +20,38 @@ ms.localizationpriority: high
 * The **DispatcherQueue** is a thread singleton (there can be at most one of them running on any given thread). By default, a thread has no **DispatcherQueue**.
 * A thread owner may create a [DispatcherQueueController](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller) to initialize the **DispatcherQueue** for the thread. At that point, any code can access the thread's **DispatcherQueue**; but only the **DispatcherQueueController**'s owner has access to the [DispatcherQueueController.ShutdownQueue](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller.shutdownqueue) method, which drains the **DispatcherQueue**, and raises **ShutdownStarting** and **ShutdownCompleted** events.
 * An outermost message loop owner must create a **DispatcherQueue** instance. Only the code in charge of running a thread's outermost message loop knows when dispatch is complete, which is the appropriate time to shut down the **DispatcherQueue**. That means that components that rely on **DispatcherQueue** mustn't create the **DispatcherQueue** unless they own the thread's message loop.
+
+## Choose a threading model
+
+Choose how to create the **DispatcherQueueController** based on who owns the thread and its message loop.
+
+| Method | Thread and event-loop behavior |
+|---|---|
+| [CreateOnDedicatedThread](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller.createondedicatedthread) | Creates a new thread and runs the **DispatcherQueue** event loop on that thread. Don't call [RunEventLoop](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueue.runeventloop) for this queue. |
+| [CreateOnCurrentThread](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller.createoncurrentthread) | Associates a **DispatcherQueue** with the calling thread. Your code must run a USER32 message pump or call **RunEventLoop** so that queued work and timers can run. |
+
+For example, the following C++/WinRT code creates a repeating timer on a new dedicated thread. Retain the controller and timer for as long as you need the timer.
+
+```cppwinrt
+using namespace winrt::Microsoft::UI::Dispatching;
+
+DispatcherQueueController queueController{
+    DispatcherQueueController::CreateOnDedicatedThread()
+};
+DispatcherQueueTimer timer{ queueController.DispatcherQueue().CreateTimer() };
+
+timer.Interval(std::chrono::seconds{ 1 });
+timer.Tick([](auto const&, auto const&)
+{
+    // This handler runs on the dedicated DispatcherQueue thread.
+});
+timer.Start();
+```
+
+The dedicated thread's event loop starts automatically. When you no longer need the queue, stop the timer and call [ShutdownQueueAsync](/windows/windows-app-sdk/api/winrt/microsoft.ui.dispatching.dispatcherqueuecontroller.shutdownqueueasync).
+
+> [!IMPORTANT]
+> The examples in this article use the Windows App SDK types in the `Microsoft.UI.Dispatching` namespace. The Win32 [CreateDispatcherQueueController](/windows/win32/api/dispatcherqueue/nf-dispatcherqueue-createdispatcherqueuecontroller) function creates the separate `Windows.System.DispatcherQueueController` type. Don't mix objects from the two API families.
 
 ## Run-down
 
