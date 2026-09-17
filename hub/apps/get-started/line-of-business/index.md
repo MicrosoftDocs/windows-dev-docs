@@ -2,7 +2,7 @@
 title: Build line-of-business apps with WinUI - overview
 description: A hub for developers building enterprise line-of-business apps with WinUI 3, covering data, forms, migration, design, and AI.
 ms.topic: overview
-ms.date: 09/16/2026
+ms.date: 09/17/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -59,6 +59,7 @@ The `CommunityToolkit.Mvvm` package remains a Microsoft-maintained option for im
 
 - [Deployment overview](../../package-and-deploy/deploy-overview.md)
 - [Choose a distribution method](../../package-and-deploy/choose-distribution-path.md)
+- [Distribute LOB apps to enterprises](../../publish/distribute-lob-apps-to-enterprises.md)
 
 ## Modernize an existing app
 
