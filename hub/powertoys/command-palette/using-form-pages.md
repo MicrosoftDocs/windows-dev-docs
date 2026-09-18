@@ -18,7 +18,7 @@ Now that we know how to present basic markdown content, let's try displaying som
 You can create a card in the Command Palette with the `IFormContent` interface (see [FormContent](./microsoft-commandpalette-extensions-toolkit/formcontent.md) for the toolkit implementation). This allows you to provide the Adaptive Card JSON, and the Command Palette will render it for you. When the user submits the form, Command Palette will call the `SubmitForm` method on your form, with the JSON payload and inputs from the form.
 
 > [!TIP]
-> Adaptive card payloads can be created using the [Adaptive Card Designer](https://adaptivecards.io/designer/). You can design your card there, and then copy the JSON payload into your extension.
+> Adaptive card payloads can be created using the [Adaptive Card Designer](https://adaptivecards.io/designer). You can design your card there, and then copy the JSON payload into your extension.
 
 1. In the `Pages` directory, add a new class
 1. Name the class `FormPage`
