@@ -212,8 +212,6 @@ items:
                     href: launch/web-to-app-linking.md
                   - name: Support accelerated URI activations
                     href: launch/accelerated-launch.md
-              - name: Reserved file and URI scheme names
-                href: launch/reserved-uri-scheme-names.md
           - name: Background tasks
             href: ../windows-app-sdk/applifecycle/background-tasks.md
           - name: DispatcherQueue

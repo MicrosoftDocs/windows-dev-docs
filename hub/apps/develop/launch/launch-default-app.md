@@ -1,7 +1,7 @@
 ---
 title: Launch the default Windows app for a URI
 description: Learn how to launch the default app for a Uniform Resource Identifier (URI). URIs allow you to launch another Windows app to perform a specific task. This topic also provides an overview of the many URI schemes built into Windows.
-ms.date: 02/11/2025
+ms.date: 09/18/2026
 ms.topic: concept-article
 keywords: windows 10, uwp, winui, windows 11, winrt
 ms.localizationpriority: medium
@@ -33,7 +33,7 @@ For example, the following URI opens the default browser and displays the Micros
 
 You can also launch custom URI schemes too. If there is no app installed to handle that URI, you can recommend an app for the user to install. For more info, see [Recommend an app if one is not available to handle the URI](#recommend-an-app-if-one-is-not-available-to-handle-the-uri).
 
-In general, your app can't select the app that is launched. The user determines which app is launched. More than one app can register to handle the same URI scheme. The exception to this is for reserved URI schemes. Registrations of reserved URI schemes are ignored. For the full list of reserved URI schemes, see [Handle URI activation](handle-uri-activation.md). In cases where more than one app may have registered the same URI scheme, your app can recommend a specific app to be launched. For more info, see [Recommend an app if one is not available to handle the URI](#recommend-an-app-if-one-is-not-available-to-handle-the-uri).
+In general, your app can't select the app that is launched. The user determines which app is launched. More than one app can register to handle the same URI scheme. In cases where more than one app has registered the same URI scheme, your app can recommend a specific app to be launched. For more info, see [Recommend an app if one is not available to handle the URI](#recommend-an-app-if-one-is-not-available-to-handle-the-uri).
 
 ## Important APIs
 

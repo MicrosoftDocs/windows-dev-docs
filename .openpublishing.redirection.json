@@ -6646,8 +6646,13 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/develop/launch/reserved-uri-scheme-names.md",
+      "redirect_url": "/windows/apps/develop/launch/handle-uri-activation",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "uwp/launch-resume/reserved-uri-scheme-names.md",
-      "redirect_url": "/windows/apps/develop/launch/reserved-uri-scheme-names",
+      "redirect_url": "/windows/apps/develop/launch/handle-uri-activation",
       "redirect_document_id": false
     },
     {

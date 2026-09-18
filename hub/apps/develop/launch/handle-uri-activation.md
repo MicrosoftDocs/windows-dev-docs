@@ -1,7 +1,7 @@
 ---
 title: Handle URI activation with a Windows app
 description: Learn how to register a Windows app to become the default handler for a Uniform Resource Identifier (URI) scheme name.
-ms.date: 08/30/2026
+ms.date: 09/18/2026
 ms.topic: how-to
 keywords: windows 10, uwp, windows 11
 ms.localizationpriority: medium
@@ -27,9 +27,6 @@ The following APIs are used in this topic:
 - [Windows.UI.Xaml.Application.OnActivated](/uwp/api/windows.ui.xaml.application.onactivated)
 - [AppInstance.GetCurrent().GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)
 
-> [!NOTE]
-> In Windows, certain URIs and file extensions are reserved for use by built-in apps and the operating system. Attempts to register your app with a reserved URI or file extension will be ignored. See [Reserved URI scheme names and file types](reserved-uri-scheme-names.md) for an alphabetic list of Uri schemes that you can't register for your apps because they are either reserved or forbidden.
-
 ## Step 1: Specify the extension point in the package manifest
 
 The app receives activation events only for the URI scheme names listed in the package manifest. Here's how you indicate that your app handles the `alsdk` URI scheme name.
@@ -44,7 +41,6 @@ The app receives activation events only for the URI scheme names listed in the p
 | **Display Name** | Specify the display name to identify the URI scheme name in the [Set Default Programs](/windows/desktop/shell/default-programs) on the **Control Panel**. |
 | **Name** | Choose a name for the Uri scheme. |
 |  | **Note**  The Name must be in all lower case letters. |
-|  | **Reserved and forbidden file types** See [Reserved URI scheme names and file types](reserved-uri-scheme-names.md) for an alphabetic list of Uri schemes that you can't register for your Windows apps because they are either reserved or forbidden. |
 | **Executable** | Specifies the default launch executable for the protocol. If not specified, the app's executable is used. If specified, the string must be between 1 and 256 characters in length, must end with ".exe", and cannot contain these characters: &gt;, &lt;, :, ", &#124;, ?, or \*. If specified, the **Entry point** is also used. If the **Entry point** isn't specified, the entry point defined for the app is used. |
 | **Entry point** | Specifies the task that handles the protocol extension. This is normally the fully namespace-qualified name of a Windows Runtime type. If not specified, the entry point for the app is used. |
 | **Start page** | The web page that handles the extensibility point. |

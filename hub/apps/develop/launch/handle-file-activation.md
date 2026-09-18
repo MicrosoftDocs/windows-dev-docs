@@ -1,7 +1,7 @@
 ---
 title: Handle file activation in a Windows app
 description: A Windows app can register to become the default handler for a certain file type.
-ms.date: 02/11/2025
+ms.date: 09/18/2026
 ms.topic: concept-article
 keywords: windows 10, uwp, windows 11, winui, winrt
 ms.localizationpriority: medium
@@ -20,9 +20,6 @@ Your app can register to become the default handler for a certain file type. Bot
 We recommend that you only register for a file type if you expect to handle all file launches for that type of file. If your app only needs to use the file type internally, then you don't need to register to be the default handler. If you do choose to register for a file type, you must provide the end user with the functionality that is expected when your app is activated for that file type. For example, a picture viewer app may register to display a .jpg file. For more info on file associations, see [Guidelines for file types and URIs](../files/index.md).
 
 These steps show how to register for a custom file type, .alsdk, and how to activate your app when the user launches an .alsdk file.
-
-> [!NOTE]
-> In Windows, certain URIs and file extensions are reserved for use by built-in apps and the operating system. Attempts to register your app with a reserved URI or file extension will be ignored. See [Reserved URI scheme names and file types](reserved-uri-scheme-names.md) for an alphabetic list of Uri schemes that you can't register for your apps because they are either reserved or forbidden.
 
 ## Important APIs
 
@@ -47,7 +44,7 @@ The app receives activation events only for the file extensions listed in the pa
 | **Info Tip** | Specify the [info tip](/windows/win32/shell/fa-progids) for a group of file types. This tool tip text appears when the user hovers on the icon for a file of this type. |
 | **Name** | Choose a name for a group of file types that share the same display name, logo, info tip, and edit flags. Choose a group name that can stay the same across app updates. **Note**  The Name must be in all lower case letters. |
 | **Content Type** | Specify the MIME content type, such as **image/jpeg**, for a particular file type. **Important Note about allowed content types:** Here is an alphabetic list of MIME content types that you cannot enter into the package manifest because they are either reserved or forbidden: **application/force-download**, **application/octet-stream**, **application/unknown**, **application/x-msdownload**. |
-| **File type** | Specify the file type to register for, preceded by a period, for example, “.jpeg”. **Reserved and forbidden file types:** See [Reserved URI scheme names and file types](reserved-uri-scheme-names.md) for an alphabetic list of file types for built-in apps that you can't register for your WinUI apps because they are either reserved or forbidden. |
+| **File type** | Specify the file type to register for, preceded by a period, for example, “.jpeg”. |
 
 2. Enter `alsdk` as the **Name**.
 3. Enter `.alsdk` as the **File Type**.

@@ -2,7 +2,7 @@
 title: Launching, resuming, and background tasks
 description: This section describes what happens when a Universal Windows Platform (UWP) app is started, suspended, resumed, and terminated.
 ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
-ms.date: 02/13/2025
+ms.date: 09/18/2026
 ms.topic: concept-article
 keywords: windows 10, uwp, background task, app service, connected devices, remote systems
 ms.localizationpriority: medium
@@ -68,7 +68,6 @@ See other topics related to launching an app below.
 |-------|-------------|
 | [Continue user activity, even across devices](useractivities.md) | Reengage users with your app, even across devices, by launching your app where the user left off. |
 | [Auto-launching with AutoPlay](auto-launching-with-autoplay.md) | You can use AutoPlay to provide your app as an option when a user connects a device to their PC. This includes non-volume devices such as a camera or media player, or volume devices such as a USB thumb drive, SD card, or DVD. |
-| [Reserved file and URI scheme names](/windows/apps/develop/launch/reserved-uri-scheme-names) | This topic lists the reserved file and URI scheme names that are not available to your app. |
 
 ## App services and extensions
 
