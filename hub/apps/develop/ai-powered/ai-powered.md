@@ -1,7 +1,7 @@
 ---
 description: This article lists the Windows features that are powered using AI and links to the how-to articles that show how to use them.
 title: AI-powered features
-ms.date: 04/27/2026
+ms.date: 09/18/2026
 ms.topic: article
 keywords: windows 10, windows 11, winui 3, ai, artificial intelligence
 ms.localizationpriority: medium
@@ -25,7 +25,7 @@ This section provides guidance for using the Windows App SDK to create apps that
 
 | Topic | Description |
 |---------------------------|-----------------------------|
-| [App Content Search](/windows/ai/apis/app-content-search) | Learn how to use App Content Search to enable AI-powered search capabilities. |
+| [App Content Search](/windows/ai/apis/app-content-search) | Learn how to add on-device keyword and semantic search over your app's text and images. |
 | [Phi Silica](/windows/ai/apis/phi-silica) | Learn how to use Phi Silica to enhance app performance with AI acceleration. |
 | [Imaging SDK](/windows/ai/apis/imaging) | Learn how to use the Imaging SDK to add AI-powered image processing capabilities to your apps. |
 | [Image generation API](/windows/ai/apis/image-generation) | Learn how to use the Image Generation API to create images from text prompts. |
