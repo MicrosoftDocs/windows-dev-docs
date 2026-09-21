@@ -2,12 +2,12 @@
 title: Install React on Windows
 description: Install a React development environment directly on Windows using Vite and Node.js.
 ms.topic: install-set-up-deploy
-ms.date: 03/23/2026
+ms.date: 09/20/2026
 ---
 
 # Install React directly on Windows
 
-This guide walks through setting up a React development environment directly on Windows using the [Vite](https://vitejs.dev/) frontend tooling.
+This guide walks through setting up a React development environment directly on Windows using the [Vite](https://vite.dev/) frontend tooling.
 
 We recommend these instructions if you are new to React or building a project that does not need a Linux environment. If you plan to use Bash tooling extensively or deploy to a Linux server, consider [installing React on WSL](./react-on-wsl.md) instead.
 
@@ -57,7 +57,7 @@ For background on React and the different scenarios — web apps, mobile apps (R
     npm run build
     ```
 
-    Output is placed in the `dist` folder. See [Deploying a Static Site](https://vitejs.dev/guide/static-deploy.html) for hosting options.
+    Output is placed in the `dist` folder. See [Deploying a Static Site](https://vite.dev/guide/static-deploy.html) for hosting options.
 
 > [!NOTE]
 > Vite is ideal for single-page apps (SPAs). If you need server-side rendering or a Node.js backend, consider [Next.js](https://nextjs.org/docs) instead. For static site generation, see [Gatsby](https://www.gatsbyjs.com/docs/).
@@ -65,7 +65,7 @@ For background on React and the different scenarios — web apps, mobile apps (R
 ## Additional resources
 
 - [React docs](https://react.dev)
-- [Vite docs](https://vitejs.dev/)
+- [Vite docs](https://vite.dev/)
 - [Using React in Visual Studio Code](https://code.visualstudio.com/docs/nodejs/reactjs-tutorial)
 - [React learning path on Microsoft Learn](/training/paths/react/)
 - [Install NodeJS on Windows](./nodejs-on-windows.md)
