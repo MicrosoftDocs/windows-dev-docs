@@ -186,4 +186,4 @@ if (hapticsController.IsIntensitySupported)
 
 ## Related articles
 
-- [Pen and stylus interactions](pen-and-stylus-interactions.md)
+- [Pen and stylus interactions](/windows/uwp/ui-input/pen-and-stylus-interactions)

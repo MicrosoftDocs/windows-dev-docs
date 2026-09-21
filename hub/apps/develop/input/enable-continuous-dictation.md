@@ -172,5 +172,5 @@ To cancel immediately and discard pending results, call `CancelAsync` instead of
 ## Related articles
 
 - [Speech recognition](speech-recognition.md)
-- [Speech interactions](speech-interactions.md)
+- [Speech interactions](/windows/uwp/ui-input/speech-interactions)
 - [Define custom recognition constraints](define-custom-recognition-constraints.md)

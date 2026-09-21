@@ -183,7 +183,7 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 
 ## Related articles
 
-- [Speech interactions](speech-interactions.md)
+- [Speech interactions](/windows/uwp/ui-input/speech-interactions)
 - [Enable continuous dictation](enable-continuous-dictation.md)
 - [Define custom recognition constraints](define-custom-recognition-constraints.md)
 - [Specify the speech recognizer language](specify-the-speech-recognizer-language.md)

@@ -41,7 +41,7 @@ For the complete list of supported and unsupported WinRT APIs in desktop apps, s
 | --- | --- |
 | [Identify input devices](identify-input-devices.md) | Identify the input devices connected to a Windows app device and identify their capabilities and attributes. |
 | [Pointer](handle-pointer-input.md) | Receive, process, and manage input data from pointing devices such as touch, mouse, pen/stylus, and touchpad. |
-| [Pen and Windows Ink](pen-and-stylus-interactions.md) | Handle pen-specific input properties such as pressure, tilt, barrel button, and eraser detection. |
+| [Pen and Windows Ink](/windows/uwp/ui-input/pen-and-stylus-interactions) | Handle pen-specific input properties such as pressure, tilt, barrel button, and eraser detection. |
 | [Touch](touch-interactions.md) | Handle touch input, enabling immersive experiences that your users can explore with confidence. |
 | [Mouse](mouse-interactions.md) | Handle mouse input in your app, including button clicks, scroll wheel, and pointer movement. |
 | [Keyboard](keyboard-interactions.md) | Handle keyboard input, an essential part of the interaction experience and indispensable for accessibility. |
@@ -66,7 +66,7 @@ For the complete list of supported and unsupported WinRT APIs in desktop apps, s
 
 | Topic | Description |
 | --- | --- |
-| [Speech](speech-interactions.md) | Integrate speech recognition and text-to-speech directly into the user experience of your app. Requires package identity. |
+| [Speech](/windows/uwp/ui-input/speech-interactions) | Integrate speech recognition and text-to-speech directly into the user experience of your app. Requires package identity. |
 | [Haptics](haptics.md) | Add touch feedback to reinforce user input and create more responsive, intuitive interactions. |
 
 ## Related topics

@@ -46,7 +46,7 @@ The following common controls will automatically use ThemeShadow to cast shadows
 - [Tooltip](controls/tooltips.md) (16px)
 - [Number Box](controls/number-box.md)
 - [TabView](controls/tab-view.md)
-- [Media transport control](controls/media-playback.md#media-transport-controls), [InkToolbar](controls/inking-controls.md)
+- [Media transport control](controls/media-playback.md#media-transport-controls), [InkToolbar](/windows/uwp/ui-input/inking-controls)
 - [BreadcrumbBar](controls/breadcrumbbar.md)
 - [Connected animation](../motion/connected-animation.md)
 
