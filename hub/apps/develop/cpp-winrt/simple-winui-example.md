@@ -1,7 +1,7 @@
 ---
 title: A basic C++/WinRT Windows UI Library 2 example (UWP)
 description: This topic walks you through the process of adding basic support for the [Windows UI Library (WinUI)](https://github.com/Microsoft/microsoft-ui-xaml) to your C++/WinRT UWP project. Specifically, this topic deals with WinUI 2, which is for UWP apps.
-ms.date: 06/01/2026
+ms.date: 09/19/2026
 ms.topic: article
 keywords: windows 10, standard, c++, cpp, winrt, Windows UI Library, WinUI, WinUI 2, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -9,10 +9,10 @@ ms.localizationpriority: medium
 
 # A basic C++/WinRT Windows UI Library 2 example (UWP)
 
-This topic walks you through the process of adding basic support for the [Windows UI Library (WinUI)](https://github.com/Microsoft/microsoft-ui-xaml) to your C++/WinRT UWP project. Specifically, this topic deals with WinUI 2, which is for UWP apps. For desktop apps, there's [WinUI 3](/windows/apps/winui/winui3/). Incidentally, WinUI is itself written in C++/WinRT.
+This topic walks you through the process of adding basic support for the [Windows UI Library (WinUI)](https://github.com/Microsoft/microsoft-ui-xaml) to your C++/WinRT UWP project. Specifically, this topic deals with WinUI 2, which is for UWP apps. For desktop apps, there's [WinUI 3](../../winui/winui3/index.md). Incidentally, WinUI is itself written in C++/WinRT.
 
 > [!IMPORTANT]
-> For desktop apps, the [Windows App SDK](/windows/apps/windows-app-sdk/) provides [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/). WinUI 3 is not intended to work with the walkthrough in this topic, which is for UWP. Also see [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw).
+> For desktop apps, the [Windows App SDK](../../windows-app-sdk/index.md) provides [Windows UI Library (WinUI) 3](../../winui/winui3/index.md). WinUI 3 is not intended to work with the walkthrough in this topic, which is for UWP. Also see [Migrate from UWP to the Windows App SDK](../../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md).
 
 > [!NOTE]
 > The Windows UI Library (WinUI) toolkit is available as NuGet packages that you can add to any existing or new project using Visual Studio, as we'll see in this topic. For more background, setup, and support info, see [Getting started with the Windows UI Library](/uwp/toolkits/winui/getting-started).
@@ -74,6 +74,6 @@ You can now build and run the project.
 
 ## Related topics
 * [Getting started with the Windows UI Library](/uwp/toolkits/winui/getting-started)
-* [Windows App SDK](/windows/apps/windows-app-sdk/)
-* [Windows UI Library (WinUI) 3](/windows/apps/winui/winui3/)
-* [Migrate from UWP to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw)
+* [Windows App SDK](../../windows-app-sdk/index.md)
+* [Windows UI Library (WinUI) 3](../../winui/winui3/index.md)
+* [Migrate from UWP to the Windows App SDK](../../windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw.md)

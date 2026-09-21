@@ -1,7 +1,7 @@
 ---
 description: This topic shows how to register and revoke event-handling delegates using C++/WinRT.
 title: Handle events by using delegates in C++/WinRT
-ms.date: 06/12/2026
+ms.date: 09/19/2026
 ms.topic: how-to
 keywords: windows 10, windows 11, windows app sdk, winui 3, standard, c++, cpp, winrt, projected, projection, handle, event, delegate
 ms.localizationpriority: medium
@@ -10,12 +10,12 @@ ms.localizationpriority: medium
 # Handle events by using delegates in C++/WinRT
 
 > [!IMPORTANT]
-> **Building with the Windows App SDK?** This article's code uses UWP (`Windows.UI.Xaml`) namespaces. If your project targets WinUI 3 (Windows App SDK), substitute `Microsoft.UI.Xaml` (and related `Microsoft.UI.*` namespaces) throughout. See [Mapping UWP APIs to the Windows App SDK](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table) for a complete mapping and [UI migration guide](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3) for additional details.
+> **Building with the Windows App SDK?** This article's code uses UWP (`Windows.UI.Xaml`) namespaces. If your project targets WinUI 3 (Windows App SDK), substitute `Microsoft.UI.Xaml` (and related `Microsoft.UI.*` namespaces) throughout. See [Mapping UWP APIs to the Windows App SDK](../../windows-app-sdk/migrate-to-windows-app-sdk/api-mapping-table.md) for a complete mapping and [UI migration guide](../../windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md) for additional details.
 
-This topic shows how to register and revoke event-handling delegates using [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt). You can handle an event using any standard C++ function-like object.
+This topic shows how to register and revoke event-handling delegates using [C++/WinRT](./intro-to-using-cpp-with-winrt.md). You can handle an event using any standard C++ function-like object.
 
 > [!NOTE]
-> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+> For info about installing and using the C++/WinRT Visual Studio Extension (VSIX) and the NuGet package (which together provide project template and build support), see [Visual Studio support for C++/WinRT](./intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 ## Using Visual Studio to add an event handler
 
@@ -277,7 +277,7 @@ void ProcessFeedAsync()
 }
 ```
 
-As the "coroutine" comment above suggests, instead of using a delegate with the completed events of asynchronous actions and operations, you'll probably find it more natural to use coroutines. For details, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-winrt/concurrency).
+As the "coroutine" comment above suggests, instead of using a delegate with the completed events of asynchronous actions and operations, you'll probably find it more natural to use coroutines. For details, and code examples, see [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md).
 
 > [!NOTE]
 > It's not correct to implement more than one *completion handler* for an asynchronous action or operation. You can have either a single delegate for its completed event, or you can `co_await` it. If you have both, then the second will fail.
@@ -318,6 +318,6 @@ If you handle an event with an object's member function, or from within a lambda
 * [winrt::implements::get_strong function](/uwp/cpp-ref-for-winrt/implements#implementsget_strong-function)
 
 ## Related topics
-* [Author events in C++/WinRT](/windows/apps/develop/cpp-winrt/author-events)
-* [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-winrt/concurrency)
+* [Author events in C++/WinRT](./author-events.md)
+* [Concurrency and asynchronous operations with C++/WinRT](./concurrency.md)
 * [Strong and weak references in C++/WinRT](./weak-references.md)
