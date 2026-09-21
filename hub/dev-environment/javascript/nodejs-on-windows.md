@@ -2,7 +2,7 @@
 title: Set up Node.js on native Windows
 description: A guide to help you get your Node.js development environment set up directly on Windows.
 ms.topic: install-set-up-deploy
-ms.date: 09/14/2026
+ms.date: 09/20/2026
 ---
 
 # Install Node.js on Windows
@@ -92,7 +92,7 @@ If you plan to collaborate with others, or host your project on an open-source s
 
 3. If you've never worked with Git before, [GitHub Guides](https://guides.github.com/) can help you get started.
 
-4. We recommend adding a [.gitignore file](https://help.github.com/en/articles/ignoring-files) to your Node projects. Here is [GitHub's default gitignore template for Node.js](https://github.com/github/gitignore/blob/master/Node.gitignore).
+4. We recommend adding a [.gitignore file](https://docs.github.com/en/get-started/git-basics/ignoring-files) to your Node projects. Here is [GitHub's default gitignore template for Node.js](https://github.com/github/gitignore/blob/master/Node.gitignore).
 
 ## Node.js on Windows Server
 

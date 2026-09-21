@@ -1,7 +1,7 @@
 ---
 title: Configure PowerToys with Group Policy Settings
 description: Learn how to configure and manage PowerToys utilities using Group Policy settings, administrative templates, and registry configurations for enterprise environments.
-ms.date: 08/25/2026
+ms.date: 09/20/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Group Policy, Win]
 # customer intent: As a Windows power user, I want to learn how to configure PowerToys using Group Policy settings.
@@ -24,7 +24,7 @@ You can find the latest administrative templates (ADMX files) in the assets sect
 
 ### Add the administrative template to Active Directory
 
-1. On a domain controller or workstation with RSAT, go to the **PolicyDefinition** folder (also known as the _Central Store_) on any domain controller for your domain. For older versions of Windows Server, you might need to create the **PolicyDefinition** folder. For more information, see [How to create and manage the Central Store for Group Policy Administrative Templates in Windows](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra).
+1. On a domain controller or workstation with RSAT, go to the **PolicyDefinition** folder (also known as the _Central Store_) on any domain controller for your domain. For older versions of Windows Server, you might need to create the **PolicyDefinition** folder. For more information, see [How to create and manage the Central Store for Group Policy Administrative Templates in Windows](https://learn.microsoft.com/troubleshoot/windows-client/group-policy/create-and-manage-central-store).
 2. Copy the _PowerToys.admx_ file to the PolicyDefinition folder. (Example: _%systemroot%\sysvol\domain\policies\PolicyDefinitions_)
 3. Copy the _PowerToys.adml_ file to the matching language folder in the PolicyDefinition folder. Create the folder if it doesn't already exist. (Example: _%systemroot%\sysvol\domain\policies\PolicyDefinitions\EN-US_)
 4. If your domain has more than one domain controller, the new ADMX files will be replicated to them at the next domain replication interval.
