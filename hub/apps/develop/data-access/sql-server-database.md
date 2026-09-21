@@ -1,7 +1,7 @@
 ---
 title: "Tutorial: Use a SQL Server database in a Windows app"
 description: Learn how to connect a Windows App SDK app directly to a SQL Server database, and store and retrieve data by using Microsoft.Data.SqlClient.
-ms.date: 08/06/2026
+ms.date: 09/21/2026
 ms.topic: how-to
 keywords: windows 10, windows 11, Windows App SDK, SQL Server, database
 ms.localizationpriority: medium
@@ -11,6 +11,8 @@ ms.localizationpriority: medium
 # Tutorial: Use a SQL Server database in a Windows app
 
 Your app can connect directly to a SQL Server database and then store and retrieve data by using classes in the [Microsoft.Data.SqlClient](/dotnet/api/microsoft.data.sqlclient) namespace.
+
+This tutorial is intended for learning, prototypes, and controlled environments where direct database access from the client is acceptable. For enterprise line-of-business apps that use shared production data, prefer an authenticated service layer that owns database access and centralizes authorization, validation, auditing, versioning, and credential protection. For more information, see [Connect a WinUI app to a database](../../get-started/line-of-business/connect-to-a-database.md).
 
 ## Getting started
 
