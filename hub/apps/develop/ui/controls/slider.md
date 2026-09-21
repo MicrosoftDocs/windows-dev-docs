@@ -117,7 +117,7 @@ When you're designing a custom slider, consider ways to present all the necessar
 
 A slider with tick marks at 10 point intervals from 0 to 100.
 
-![A slider with tick marks](images/slider-ticks.png)
+![A slider with tick marks](images/slider-ticks.PNG)
 
 ## Create a slider
 

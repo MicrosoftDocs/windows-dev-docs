@@ -74,7 +74,7 @@ deviceWatcher.Stopped += DeviceWatcher_Stopped;
 deviceWatcher.Start();
 ```
 
-Once you've started the DeviceWatcher, you will receive [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) for each device that satisfies the query in the handler for the [Added](/uwp/api/windows.devices.enumeration.devicewatcher.added) event for the devices in question. For a more detailed look at DeviceWatcher see the complete sample [on Github](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/DeviceEnumerationAndPairing).
+Once you've started the DeviceWatcher, you will receive [DeviceInformation](/uwp/api/Windows.Devices.Enumeration.DeviceInformation) for each device that satisfies the query in the handler for the [Added](/uwp/api/windows.devices.enumeration.devicewatcher.added) event for the devices in question. For a more detailed look at DeviceWatcher see the complete sample [on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/DeviceEnumerationAndPairing).
 
 ## Connect to the device
 

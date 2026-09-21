@@ -30,7 +30,7 @@ The RFCOMM APIs use the concept of service identifiers. Although a service ident
 
 Apps can perform multi-step device operations in a background task so that they can run to completion even if the app is moved to the background and suspended. This allows for reliable device servicing such as changes to persistent settings or firmware, and content synchronization, without requiring the user to sit and watch a progress bar. Use the [**DeviceServicingTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceServicingTrigger) for device servicing and the [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) for content synchronization. Note that these background tasks constrain the amount of time the app can run in the background, and are not intended to allow indefinite operation or infinite synchronization.
 
-For a complete code sample that details RFCOMM operation, see the [**Bluetooth Rfcomm Chat Sample**](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BluetoothRfcommChat) on Github.  
+For a complete code sample that details RFCOMM operation, see the [**Bluetooth Rfcomm Chat Sample**](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BluetoothRfcommChat) on GitHub.  
 
 ## Send a file as a client
 

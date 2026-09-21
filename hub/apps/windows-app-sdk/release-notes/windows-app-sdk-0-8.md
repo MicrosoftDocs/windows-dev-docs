@@ -112,7 +112,7 @@ This is a servicing release of the Windows App SDK that includes more critical b
 > - Fixed issue that was causing WinUI apps using [pointer input](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.pointer) to crash.
 > - Fixed issue causing the title bar buttons (min, max, close) to not have rounded corners on Windows 11.
 > - Fixed issue causing the resizing layout options to not appear when hovering over maximize/restore button on Windows 11.
-> - Fixed issue causing a crashing exception where creating a [PointCollection](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.pointcollection) object. For more information, see [issue 971](https://github.com/microsoft/CsWinRT/issues/971) on Github.
+> - Fixed issue causing a crashing exception where creating a [PointCollection](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.pointcollection) object. For more information, see [issue 971](https://github.com/microsoft/CsWinRT/issues/971) on GitHub.
 >
 
 </details>

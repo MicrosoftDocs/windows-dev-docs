@@ -150,7 +150,7 @@ If you need a zero-extraction single binary, or if extraction behavior is not ac
 
 Unpackaged WinUI 3 apps lack package identity, which means they cannot access certain Windows features:
 
-- No automatic update via App Installer or Windows Store
+- No automatic update via App Installer or Microsoft Store
 - No background task registration via package manifest
 - No file type associations or protocol handlers via package manifest
 - No Start menu tile customization via package manifest

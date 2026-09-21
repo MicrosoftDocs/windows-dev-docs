@@ -18,7 +18,7 @@ To demonstrate data binding, these templates bind **GridViewItems** to the examp
 ## Icon and text
 Use these templates to display a collection of apps in a grid with an icon and text.
 
-![small icon and text gridview example](images/listitems/icontext.png)
+![small icon and text gridview example](images/ListItems/icontext.PNG)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -37,7 +37,7 @@ Use these templates to display a collection of apps in a grid with an icon and t
 </GridView>
 ```
 
-![icon and double line text gridview example](images/listitems/icontext2.png)
+![icon and double line text gridview example](images/ListItems/icontext2.PNG)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -62,7 +62,7 @@ Use these templates to display a collection of apps in a grid with an icon and t
 ## Image gallery
 Use this template to display a collection of images in a grid with multi-select mode.
 
-![gridview items layout](images/listitems/gridviewitems.png)
+![gridview items layout](images/ListItems/gridviewitems.png)
 ```xaml
 <GridView SelectionMode="Multiple">
     <GridView.ItemTemplate>
@@ -80,7 +80,7 @@ Use this template to display a collection of images in a grid with multi-select 
 ## Image and text
 Use these templates to display a media collection with text underneath.
 
-![square image and text gridview example](images/listitems/imageandtext.png)
+![square image and text gridview example](images/ListItems/imageandtext.png)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -102,7 +102,7 @@ Use these templates to display a media collection with text underneath.
 </GridView>
 ```
 
-![rectangle image and text gridview example](images/listitems/imageandtext2.png)
+![rectangle image and text gridview example](images/ListItems/imageandtext2.PNG)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>
@@ -127,7 +127,7 @@ Use these templates to display a media collection with text underneath.
 ## Image with text overlay
 Use this template to display a media collection with text overlay.
 
-![Image and text overlay gridview example](images/listitems/imageoverlay.png)
+![Image and text overlay gridview example](images/ListItems/imageoverlay.png)
 ```xaml
 <GridView ItemsSource="{x:Bind ViewModel.Recordings}">
     <GridView.ItemTemplate>

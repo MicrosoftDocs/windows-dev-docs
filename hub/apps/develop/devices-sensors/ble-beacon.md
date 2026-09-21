@@ -152,4 +152,4 @@ An alternative to judging pure distance is to define "buckets". Radios tend to r
 
 ## Example
 
-For a fully functional example of Bluetooth LE Advertisements, see the [Bluetooth Advertisement Sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BluetoothAdvertisement) on Github.
+For a fully functional example of Bluetooth LE Advertisements, see the [Bluetooth Advertisement Sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BluetoothAdvertisement) on GitHub.

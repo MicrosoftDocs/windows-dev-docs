@@ -18,8 +18,8 @@ To demonstrate data binding, these templates bind **ListViewItems** to the examp
 ## Single line list item
 Use this template to display a list of items with an image and a single line of text.
 
-![single line list item example](images/listitems/singlelineexample.png)
-![single line list item](images/listitems/singlelineicon.png)
+![single line list item example](images/ListItems/singlelineexample.PNG)
+![single line list item](images/ListItems/singlelineicon.png)
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
     <ListView.ItemTemplate>
@@ -36,8 +36,8 @@ Use this template to display a list of items with an image and a single line of 
 ## Double line list item 
 Use this template to display a list of items with an image and two lines of text.
 
-![double line list item with icon example](images/listitems/doublelineexample.png) 
-![double line list item with icon](images/listitems/doublelineicon.png)
+![double line list item with icon example](images/ListItems/doublelineexample.PNG) 
+![double line list item with icon](images/ListItems/doublelineicon.PNG)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -62,8 +62,8 @@ Use this template to display a list of items with an image and two lines of text
 ## Triple line list item
 Use this template to display a list of items with three lines of text.
 
-![triple line list item example](images/listitems/triplelineexample.png)
-![triple line list item](images/listitems/tripleline.png)
+![triple line list item example](images/ListItems/triplelineexample.PNG)
+![triple line list item](images/ListItems/tripleline.png)
 
 ```xaml
 <ListView ItemsSource="{x:Bind ViewModel.Recordings}">
@@ -82,7 +82,7 @@ Use this template to display a list of items with three lines of text.
 ## Table list item
 Use this template to display a list of items with text in defined columns.
 
-![table list item example](images/listitems/tablelist.png)
+![table list item example](images/ListItems/tablelist.png)
 ```xaml
 <ListView  ItemsSource="{x:Bind ViewModel.Recordings}">
     <ListView.HeaderTemplate>

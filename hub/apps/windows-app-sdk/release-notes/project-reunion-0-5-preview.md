@@ -94,7 +94,7 @@ Below is a list of user-facing bugs that the team has fixed since Preview 3. The
   - Thanks to @j0shuams for filing this [issue on GitHub](https://github.com/microsoft/microsoft-ui-xaml/issues/3694)!
 - Press and hold on RichTextBlock puts flyout in wrong place
 - Left/Right arrows aren't moving focus through RadioButtons
-  - Thanks to @vmadurga for filing this [issue on Github](https://github.com/microsoft/microsoft-ui-xaml/issues/3385)!
+  - Thanks to @vmadurga for filing this [issue on GitHub](https://github.com/microsoft/microsoft-ui-xaml/issues/3385)!
 - Narrator remains silent when user hits the down/up arrow keys to select the next/previous month/year/date in DatePicker
 
 - NavigationView light-dismiss doesn't work in WinUI 3

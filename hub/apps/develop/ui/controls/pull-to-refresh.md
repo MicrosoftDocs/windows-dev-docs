@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 Pull-to-refresh lets a user pull down on a list of data using touch in order to retrieve more data. Pull-to-refresh is widely used on devices with a touch screen. You can use the APIs shown here to implement pull-to-refresh in your app.
 
-![pull-to-refresh gif](images/pull-to-refresh.gif)
+![pull-to-refresh gif](images/Pull-To-Refresh.gif)
 
 ## Is this the right control?
 

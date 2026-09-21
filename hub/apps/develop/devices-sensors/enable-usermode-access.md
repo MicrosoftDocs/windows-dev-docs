@@ -1170,7 +1170,7 @@ DefinitionBlock ("ACPITABL.dat", "SSDT", 1, "MSFT", "RHPROXY", 1)
 }
 ```
 
-### Appendix C - Sample Powershell script to generate GPIO resources
+### Appendix C - Sample PowerShell script to generate GPIO resources
 
 The following script can be used to generate the GPIO resource declarations for Raspberry Pi:
 

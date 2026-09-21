@@ -108,7 +108,7 @@ You can add items to the ListView or GridView [Items](/windows/windows-app-sdk/a
 
 Both of these options produce the same list view, as shown here:
 
-![Screenshot of a simple list view displaying a list of fruits.](images/listview-basic-code-example2.png)
+![Screenshot of a simple list view displaying a list of fruits.](images/listview-basic-code-example2.PNG)
 
 **Method 2: Add items by setting the ItemsSource property**
 

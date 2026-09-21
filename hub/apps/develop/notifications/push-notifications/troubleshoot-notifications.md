@@ -81,7 +81,7 @@ If WNS doesn't return "200 OK", your notification will not be delivered to the c
 
 ### Notification request returns "401 Unauthorized"
 
-- **Cause**: Your app server must use the correct Package Security Identifier (Package SID) and secret key given to you when registered your app. If you have recently changed your secret key in the Windows Store Dashboard, you will also need to update your app server. 
+- **Cause**: Your app server must use the correct Package Security Identifier (Package SID) and secret key given to you when registered your app. If you have recently changed your secret key in the Microsoft Store Dashboard, you will also need to update your app server. 
 
   **Fix**: Visit the Windows StoreDashboard to verify your Package SID and secret.
 
@@ -93,9 +93,9 @@ If WNS doesn't return "200 OK", your notification will not be delivered to the c
 
 ### Notification request returns "403 Forbidden"
 
-- **Cause**: This error occurs when the access token that you presented does not match the credentials required to send notifications to the corresponding channel URL. Every app must be registered with the Windows Store to receive credentials for its app server. For each app, only the credentials provided by the Windows Store can be used to send notifications to that app and they can be used only for that particular app.
+- **Cause**: This error occurs when the access token that you presented does not match the credentials required to send notifications to the corresponding channel URL. Every app must be registered with the Microsoft Store to receive credentials for its app server. For each app, only the credentials provided by the Microsoft Store can be used to send notifications to that app and they can be used only for that particular app.
 
-  **Fix**: Log into the Windows Store Dashboard with your developer account. Select your app and click "Advanced Features" -\> "Manage your cloud service settings". Select "Identifying your app" to read instructions on updating your app manifest to match your cloud service credentials.
+  **Fix**: Log into the Microsoft Store Dashboard with your developer account. Select your app and click "Advanced Features" -\> "Manage your cloud service settings". Select "Identifying your app" to read instructions on updating your app manifest to match your cloud service credentials.
 
 ### Notification request returns "404 Not Found"
 
@@ -113,7 +113,7 @@ If WNS doesn't return "200 OK", your notification will not be delivered to the c
 
 - **Cause**: The channel URL has expired. No further notifications can be sent until your app runs and requests a new channel URL.
 
-  **Fix**: Your Windows Store app should request a channel URL each time it is launched. The channel URL that it is assigned is not guaranteed to remain the same. If the URL has changed, the client should update the information on its cloud server. 
+  **Fix**: Your Microsoft Store app should request a channel URL each time it is launched. The channel URL that it is assigned is not guaranteed to remain the same. If the URL has changed, the client should update the information on its cloud server. 
 
 ### Errors when attempting to create a push notification channel
 
@@ -138,9 +138,9 @@ If WNS doesn't return "200 OK", your notification will not be delivered to the c
 
 ### Creating a notification channel results in an WPN\_E\_INVALID\_APP error
 
-- **Cause**: Your app must use a valid package name. If you have not received one yet, you can get it through the Windows Store portal under "Advanced Features".
+- **Cause**: Your app must use a valid package name. If you have not received one yet, you can get it through the Microsoft Store portal under "Advanced Features".
 
-  **Fix**: For details on retrieving a Package Security Identifier (PKSID) for your Windows Store app, see [Windows Push Notification Services (WNS) overview](wns-overview.md).
+  **Fix**: For details on retrieving a Package Security Identifier (PKSID) for your Microsoft Store app, see [Windows Push Notification Services (WNS) overview](wns-overview.md).
 
 ## Reporting an issue
 

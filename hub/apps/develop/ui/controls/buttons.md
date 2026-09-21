@@ -111,7 +111,7 @@ The back button is a system-provided UI element that enables backward navigation
 
 This example uses three buttons, **Save**, **Don't Save**, and **Cancel**, in a dialog that asks users if they want to save their work.
 
-![Example of buttons, used in a dialog](images/button-dialog-example.png)
+![Example of buttons, used in a dialog](images/button-dialog-example.PNG)
 
 ## Create a button
 

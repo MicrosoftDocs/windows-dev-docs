@@ -31,7 +31,7 @@ The following table lists the Windows app controls available in WinUI, with link
 
 | Image | Control | Description |
 |---|---|---|
-| ![Buttons](images/Button.png) | [Buttons](buttons.md) | A control that responds to user input and raises a Click event. Includes button, drop-down button, split button, toggle button, and more. |
+| ![Buttons](images/button.png) | [Buttons](buttons.md) | A control that responds to user input and raises a Click event. Includes button, drop-down button, split button, toggle button, and more. |
 | ![Check boxes](images/CheckBox.png) | [Check boxes](checkbox.md) | A control that a user can select or clear. |
 | ![Combo boxes](images/ComboBox.png) | [Combo boxes](combo-box.md) | A drop-down list of items a user can select from. |
 | ![Hyperlinks](images/HyperlinkButton.png) | [Hyperlinks](hyperlinks.md) | A button that appears as hyperlink text, and can navigate to a URI or handle a Click event. |

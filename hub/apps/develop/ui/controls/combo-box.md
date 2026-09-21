@@ -14,7 +14,7 @@ Use a combo box (also known as a drop-down list) to present a list of items that
 
 When the combo box is closed, it either displays the current selection or is empty if there is no selected item. When the user expands the combo box, it displays the list of selectable items.
 
-![An image of a drop-down list in its compact state.](images/combo-box-no-selection.png)
+![An image of a drop-down list in its compact state.](images/combo-box-no-selection.PNG)
 
 ## Is this the right control?
 
@@ -27,7 +27,7 @@ When the combo box is closed, it either displays the current selection or is emp
 
 A combo box in its compact state can show a header.
 
-![Screenshot showing a drop-down list in its compact state.](images/combo-box-no-selection.png)
+![Screenshot showing a drop-down list in its compact state.](images/combo-box-no-selection.PNG)
 
 Although combo boxes expand to support longer string lengths, avoid excessively long strings that are difficult to read.
 

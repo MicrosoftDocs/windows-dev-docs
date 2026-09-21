@@ -88,7 +88,7 @@ Don't try to build the project yet. We'll be doing that in a later step.
 
 So far, your **Solution Explorer** should look similar to this (your version numbers will be different).
 
-![Solution Explorer showing projection project dependencies](images/projection-dependencies.png)
+![Solution Explorer showing projection project dependencies](images/projection-dependencies.PNG)
 
 ## Build projects out of source
 
@@ -280,7 +280,7 @@ To consume **SimpleMathComponent** from a .NET project, you can simply add to a 
 
 5. Save and close the files you just edited, and build and run the console app. You should see the output below.
 
-    ![Console NET5 output](images/console-output.png)
+    ![Console NET5 output](images/console-output.PNG)
 
 ## Known issues
 

@@ -138,7 +138,7 @@ Run `citool.exe -r` from an admin command prompt to refresh the policy .
 
 Use this policy to test your own apps as a developer.
 
-This policy checks binaries and scripts against Smart App Control in evaluation mode, without checking the Intelligent Security Graph. It means that only apps that a trusted certificate properly signs are allowed without audit events. Because reputation might not be available for newly published binaries and can change over time, ensuring that you correctly sign all your binaries is the best way to make sure users don't encounter issues when using your app. This requirement also applies when publishing through the Windows Store, where a signature from a cert obtained from a trusted Certificate Authority is required.
+This policy checks binaries and scripts against Smart App Control in evaluation mode, without checking the Intelligent Security Graph. It means that only apps that a trusted certificate properly signs are allowed without audit events. Because reputation might not be available for newly published binaries and can change over time, ensuring that you correctly sign all your binaries is the best way to make sure users don't encounter issues when using your app. This requirement also applies when publishing through the Microsoft Store, where a signature from a cert obtained from a trusted Certificate Authority is required.
 
 You can apply this policy even when you set Smart App Control to Off. When you apply this policy, the output for `citool.exe -lp` shows `VerifiedAndReputableDesktopEvaluationAuditNoISG` as the policy name.
 

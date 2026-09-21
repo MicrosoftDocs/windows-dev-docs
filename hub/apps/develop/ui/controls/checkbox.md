@@ -50,7 +50,7 @@ Both **check box** and **radio button** controls let the user select from a list
 - When using indeterminate state, use subordinate check boxes to show which options are selected and which are not. Design the UI so that the user can get see the sub-choices.
 - Don't use the indeterminate state to represent a third state. The indeterminate state is used to indicate that an option is set for some, but not all, sub-choices. So, don't allow users to set an indeterminate state directly. For an example of what not to do, this check box uses the indeterminate state to indicate medium spiciness:
 
-    ![An indeterminate check box](images/spicyoptions2.png)
+    ![An indeterminate check box](images/spicyoptions2.PNG)
 
     Instead, use a radio button group that has three options.
 

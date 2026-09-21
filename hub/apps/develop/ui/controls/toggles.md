@@ -19,9 +19,9 @@ To create a toggle switch control, you use the  [ToggleSwitch class](/windows/wi
 
 Use a toggle switch for binary operations that take effect right after the user flips the toggle switch.
 
-![Toggle switch, on](images/toggle-switch-on.png)
+![Toggle switch, on](images/toggle-switch-on.PNG)
 
-![Toggle switch off](images/toggle-switch-off.png)
+![Toggle switch off](images/toggle-switch-off.PNG)
 
 Think of the toggle switch as a physical power switch for a device: you flip it on or off when you want to enable or disable the action performed by the device.
 

@@ -297,7 +297,7 @@ zone_pivot_groups: wasdk-release-channels
 <details><summary>Improved debugging and source availability</summary>
 
 >
-> We now inject Github source server information for code in the microsoft-ui-xaml repo into our public symbols, allowing debuggers to automatically download source code. We also made other fixes and improvements to our symbols across the entire Windows App SDK to improve the debugging experience.
+> We now inject GitHub source server information for code in the microsoft-ui-xaml repo into our public symbols, allowing debuggers to automatically download source code. We also made other fixes and improvements to our symbols across the entire Windows App SDK to improve the debugging experience.
 >
 
 </details>

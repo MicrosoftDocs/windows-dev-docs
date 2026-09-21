@@ -28,7 +28,7 @@ This walkthrough requires the following tools and components:
 
     Leave the **Place solution and project in the same directory** box unchecked (otherwise, the `packages` folder for the C++ application in the preceding section will end up interfering with the C# library project).
 
-    ![New library dialog](images\create-winui-library.png)
+    ![New library dialog](images/create-winui-library.png)
 
 1. Delete the `Class1.cs` file that's included by default.
 
