@@ -2,7 +2,7 @@
 title: Windowing overview for WinUI and Windows App SDK
 description: Overview of windowing APIs in the Windows App SDK
 ms.topic: article
-ms.date: 09/04/2026
+ms.date: 09/19/2026
 keywords: windowing, window, AppWindow, Windows App SDK
 ms.localizationpriority: medium
 no-loc: [window handle, Effective pixels, effective pixels, Windows, Window, AppWindow]
@@ -100,7 +100,7 @@ The [Window.Content](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window
 
 You can modify your app's title bar to varying degrees; setting the title and icon, changing the colors, or completely replacing the title bar with custom app content.
 
-For information about using title bar APIs, including code examples, see [Title bar customization](/windows/apps/develop/title-bar).
+For information about using title bar APIs, including code examples, see [Title bar customization](../title-bar.md).
 
 ### Size and position
 
@@ -111,11 +111,11 @@ For information about using title bar APIs, including code examples, see [Title 
 | >>> | [Move](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.move), [Resize](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize), [ResizeClient](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resizeclient), [MoveAndResize](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveandresize) |
 | >>> | [MoveInZOrderAtBottom](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveinzorderatbottom), [MoveInZOrderAtTop](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveinzorderattop), [MoveInZOrderBelow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.moveinzorderbelow) |
 
-You use the [Window.Bounds](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.bounds) property and [SizeChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.sizechanged) event for managing things in your app UI, like moving elements around when the window size changes. XAML uses _[effective pixels](/windows/apps/design/layout/screen-sizes-and-breakpoints-for-responsive-design#effective-pixels-and-scale-factor)_ (epx), not actual physical pixels. Effective pixels are a virtual unit of measurement, and they're used to express layout dimensions and spacing, independent of screen density.
+You use the [Window.Bounds](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.bounds) property and [SizeChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.sizechanged) event for managing things in your app UI, like moving elements around when the window size changes. XAML uses _[effective pixels](../../design/layout/screen-sizes-and-breakpoints-for-responsive-design.md#effective-pixels-and-scale-factor)_ (epx), not actual physical pixels. Effective pixels are a virtual unit of measurement, and they're used to express layout dimensions and spacing, independent of screen density.
 
 AppWindow, on the other hand, uses the [Window Coordinate System](/windows/win32/gdi/window-coordinate-system), where the basic unit of measurement is physical _device pixels_. You use the AppWindow APIs for windowing actions, like resizing the window or moving it in relation to something else on the screen.
 
-In some cases you might need to use measurements from one class in the other class, in which case you'll need to convert between effective pixels and device pixels. For example, if you set drag regions in a custom title bar, you'll need to convert measurements. For an example of how to use [XamlRoot.RasterizationScale](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.rasterizationscale) to convert measurements, see the [interactive content](/windows/apps/develop/title-bar#interactive-content) section of the _Title bar customization_ article.
+In some cases you might need to use measurements from one class in the other class, in which case you'll need to convert between effective pixels and device pixels. For example, if you set drag regions in a custom title bar, you'll need to convert measurements. For an example of how to use [XamlRoot.RasterizationScale](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.xamlroot.rasterizationscale) to convert measurements, see the [interactive content](../title-bar.md#interactive-content) section of the _Title bar customization_ article.
 
 ### Appearance and behavior
 

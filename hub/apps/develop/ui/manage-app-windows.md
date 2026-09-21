@@ -2,7 +2,7 @@
 title: Manage app windows
 description: Use AppWindow APIs in the Windows App SDK
 ms.topic: article
-ms.date: 07/22/2025
+ms.date: 09/19/2026
 keywords: windowing, window, AppWindow, Windows App SDK
 ms.localizationpriority: medium
 no-loc: [AppWindow, Window]
@@ -97,8 +97,8 @@ This example moves the window to be centered on the screen when the user clicks 
 
 This occurs in the code file for a [Page](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.page) class, so you don't automatically have access to the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) or [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) objects. You have a few options for getting the AppWindow.
 
-- If you keep a reference to the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) as described in [Track the current window](/windows/apps/develop/ui/windowing-overview#track-the-current-window) or [Track instances of Window](/windows/apps/develop/ui/multiple-windows#track-instances-of-window), you can get the Window, then get [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) from the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property.
-- Or, you can call the static [AppWindow.GetFromWindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.getfromwindowid) method to get the AppWindow instance, as shown here. (See [Determining the window that's hosting a visual element](/windows/apps/develop/ui/retrieve-hwnd#determining-the-window-thats-hosting-a-visual-element).)
+- If you keep a reference to the [Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) as described in [Track the current window](./windowing-overview.md#track-the-current-window) or [Track instances of Window](./multiple-windows.md#track-instances-of-window), you can get the Window, then get [AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) from the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property.
+- Or, you can call the static [AppWindow.GetFromWindowId](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.getfromwindowid) method to get the AppWindow instance, as shown here. (See [Determining the window that's hosting a visual element](./retrieve-hwnd.md#determining-the-window-thats-hosting-a-visual-element).)
 
 ```csharp
 private void MoveWindowButton_Click(object sender, RoutedEventArgs e)

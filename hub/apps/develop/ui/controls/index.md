@@ -4,7 +4,7 @@ title: Windows Controls and patterns - Windows app development
 keywords: winui controls, user interface, app controls, windows controls
 label: Controls & patterns
 template: detail.hbs
-ms.date: 05/28/2026
+ms.date: 09/19/2026
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
@@ -78,7 +78,7 @@ The following table lists the Windows app controls available in WinUI, with link
 | ![Shapes](images/Shape.png) | [Shapes](shapes.md) | Draw shapes such as ellipses, rectangles, and polygons. |
 
 > [!NOTE]
-> **Inking controls (InkCanvas, InkToolbar):** These UWP controls are not available in the stable WinUI 3 channel. `InkCanvas` is available as an experimental API (introduced in Windows App SDK 2.0 Experimental 1). For current status and alternatives, see [Known control gaps](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported#known-control-gaps).
+> **Inking controls (InkCanvas, InkToolbar):** These UWP controls are not available in the stable WinUI 3 channel. `InkCanvas` is available as an experimental API (introduced in Windows App SDK 2.0 Experimental 1). For current status and alternatives, see [Known control gaps](../../../windows-app-sdk/migrate-to-windows-app-sdk/what-is-supported.md#known-control-gaps).
 
 ### Menus and toolbars
 

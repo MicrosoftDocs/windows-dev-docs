@@ -4,7 +4,7 @@ title: Intro to controls and events
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
-ms.date: 08/28/2026
+ms.date: 09/19/2026
 ms.topic: article
 keywords: winui, xaml controls, windows app sdk
 ms.localizationpriority: medium
@@ -44,7 +44,7 @@ The Visual Studio Toolbox displays many of the controls that you can use in your
 
 ## Set the name of a control
 
-To work with a control in code, you set its [x:Name](/windows/apps/develop/platform/xaml/x-name-attribute) attribute and reference it by name in your code. You can set the name in the Visual Studio Properties window or in XAML. Here's how to set the name of the currently selected control by using the Name text box at the top of the Properties window.
+To work with a control in code, you set its [x:Name](../../platform/xaml/x-name-attribute.md) attribute and reference it by name in your code. You can set the name in the Visual Studio Properties window or in XAML. Here's how to set the name of the currently selected control by using the Name text box at the top of the Properties window.
 
 To name a control
 1. Select the element to name.
@@ -92,7 +92,7 @@ Button1().Foreground(Media::SolidColorBrush(Windows::UI::Colors::Beige()));
 
 ## Create an event handler
 
-Every control exposes events that let you respond to user actions or other changes in your app. A Button, for example, raises a `Click` event when a user clicks it. To respond to that event, you write an *event handler*—a method that runs when the event is raised. You can wire up an event handler in the Properties window, in XAML, or in code-behind. For more info about events, see [Events and routed events overview](/windows/apps/develop/platform/xaml/events-and-routed-events-overview).
+Every control exposes events that let you respond to user actions or other changes in your app. A Button, for example, raises a `Click` event when a user clicks it. To respond to that event, you write an *event handler*—a method that runs when the event is raised. You can wire up an event handler in the Properties window, in XAML, or in code-behind. For more info about events, see [Events and routed events overview](../../platform/xaml/events-and-routed-events-overview.md).
 
 ### Event handler parameters
 

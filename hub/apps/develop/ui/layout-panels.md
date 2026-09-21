@@ -1,7 +1,7 @@
 ---
 description: Learn how to use built-in XAML layout panels like RelativePanel, StackPanel, Grid, and Canvas to arrange and group UI elements in your app.
 title: Layout panels for Windows apps
-ms.date: 09/24/2020
+ms.date: 09/19/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -39,7 +39,7 @@ Here is an example of how you can set the [**Canvas.Left**](/dotnet/api/system.w
 </Canvas>
 ```
 
-For more info about attached properties, see [Attached properties overview](/windows/apps/develop/platform/xaml/attached-properties-overview).
+For more info about attached properties, see [Attached properties overview](../platform/xaml/attached-properties-overview.md).
 
 ### Panel borders
 

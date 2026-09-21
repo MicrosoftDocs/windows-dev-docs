@@ -4,7 +4,7 @@ description: Combine Mica backdrop, custom title bar, NavigationView, and InfoBa
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 08/26/2026
+ms.date: 09/19/2026
 ---
 
 # Structure a modern WinUI 3 desktop app
@@ -50,7 +50,7 @@ For more options and C++ examples, see [Apply Mica or Acrylic materials in deskt
 
 ## Set up a custom title bar
 
-Use the [TitleBar](/windows/apps/develop/ui/controls/title-bar) control to render the app icon, title, and an optional subtitle in the title bar area. The control reserves space for the system caption buttons and the minimum drag region for you, so you don't have to calculate caption-button padding manually.
+Use the [TitleBar](./controls/title-bar.md) control to render the app icon, title, and an optional subtitle in the title bar area. The control reserves space for the system caption buttons and the minimum drag region for you, so you don't have to calculate caption-button padding manually.
 
 Define the title bar in XAML:
 
@@ -93,7 +93,7 @@ public MainWindow()
 > Keep app identity in the title bar only. Don't repeat the app name or icon in the page content, because this creates visual clutter and wastes vertical space.
 
 > [!NOTE]
-> The `TitleBar` control is available starting in [Windows App SDK 1.7](/windows/apps/windows-app-sdk/release-notes/windows-app-sdk-1-7). If the control isn't available in your project, update to Windows App SDK 1.7 or later. The control also provides built-in back and pane-toggle buttons that you can use with `NavigationView`, and it can host other content. For the full list of properties, see [Title bar](/windows/apps/develop/ui/controls/title-bar).
+> The `TitleBar` control is available starting in [Windows App SDK 1.7](../../windows-app-sdk/release-notes/windows-app-sdk-1-7.md). If the control isn't available in your project, update to Windows App SDK 1.7 or later. The control also provides built-in back and pane-toggle buttons that you can use with `NavigationView`, and it can host other content. For the full list of properties, see [Title bar](./controls/title-bar.md).
 
 For the full title bar API reference, see [Title bar customization](../title-bar.md).
 
@@ -242,4 +242,4 @@ Here's a starter `MainWindow.xaml` that brings the elements together. The `Title
 - [Title bar customization](../title-bar.md)
 - [NavigationView control](/windows/apps/design/controls/navigationview)
 - [InfoBar control](/windows/apps/design/controls/infobar)
-- [App silhouette patterns](/windows/apps/design/basics/app-silhouette)
+- [App silhouette patterns](../../design/basics/app-silhouette.md)

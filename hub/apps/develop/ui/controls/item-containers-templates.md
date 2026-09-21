@@ -3,7 +3,7 @@ description: Use templates to modify the look of items in ListView or GridView c
 title: Item containers and templates
 label: Item containers and templates
 template: detail.hbs
-ms.date: 07/08/2026
+ms.date: 09/19/2026
 ms.topic: article
 keywords: winui, xaml controls
 ms.assetid: d8eb818d-b62e-4314-a612-f29142dbd93f
@@ -178,7 +178,7 @@ You typically want to show a more rich presentation of your data. To specify exa
 Here, you define a DataTemplate that shows a [Rectangle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.rectangle) in the color of the item, along with the color name and RGB values. 
 
 > [!NOTE]
-> When you use the [x:Bind markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
+> When you use the [x:Bind markup extension](../../platform/xaml/x-bind-markup-extension.md) in a DataTemplate, you have to specify the DataType (`x:DataType`) on the DataTemplate.
 
 **XAML**
 ```xaml
@@ -346,7 +346,7 @@ Now the list view looks like this with space between the items.
 
 ![List view items with padding applied](images/listview-data-template-1.png)
 
-In the ListViewItem default style, the ListViewItemPresenter **ContentMargin** property has a [TemplateBinding](/windows/apps/develop/platform/xaml/templatebinding-markup-extension) to the ListViewItem **Padding** property (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`). When we set the Padding property, that value is really being passed to the ListViewItemPresenter ContentMargin property.
+In the ListViewItem default style, the ListViewItemPresenter **ContentMargin** property has a [TemplateBinding](../../platform/xaml/templatebinding-markup-extension.md) to the ListViewItem **Padding** property (`<ListViewItemPresenter ContentMargin="{TemplateBinding Padding}"/>`). When we set the Padding property, that value is really being passed to the ListViewItemPresenter ContentMargin property.
 
 To modify other ListViewItemPresenter properties that aren't template bound to ListViewItems properties, you need to retemplate the ListViewItem with a new ListViewItemPresenter that you can modify properties on. 
 

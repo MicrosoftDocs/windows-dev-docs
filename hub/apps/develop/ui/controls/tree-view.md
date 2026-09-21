@@ -5,7 +5,7 @@ label: Tree view
 template: detail.hbs
 author: GrantMeStrength
 ms.author: jken
-ms.date: 07/15/2026
+ms.date: 09/19/2026
 ms.topic: how-to
 doc-status: Published
 dev_langs:
@@ -166,7 +166,7 @@ Dim pictureNode As New TreeViewNode With {.Content = picturesFolder}
 ```
 
 > [!NOTE]
-> To get access to the **Pictures** folder, you need to specify the **Pictures Library** capability in the app manifest. See [App capability declarations](/windows/apps/package-and-deploy/app-capability-declarations) for more information.
+> To get access to the **Pictures** folder, you need to specify the **Pictures Library** capability in the app manifest. See [App capability declarations](../../../package-and-deploy/app-capability-declarations.md) for more information.
 
 You can provide a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.datatemplate) to specify how the data item is displayed in the tree view.
 
@@ -784,7 +784,7 @@ This example shows how to create a tree view that shows the contents and structu
 A custom item template is used to display the data items, which are of type [IStorageItem](/uwp/api/windows.storage.istorageitem).
 
 > [!IMPORTANT]
-> The code in this example requires the **picturesLibrary** and **musicLibrary** capabilities. For more info about file access, see [File access permissions](/windows/apps/develop/files/file-access-permissions), [Enumerate and query files and folders](/windows/apps/develop/files/list-files-folders), and [Files and folders in the Music, Pictures, and Videos libraries](/windows/apps/develop/files/music-pictures-videos-libraries).
+> The code in this example requires the **picturesLibrary** and **musicLibrary** capabilities. For more info about file access, see [File access permissions](../../files/file-access-permissions.md), [Enumerate and query files and folders](../../files/list-files-folders.md), and [Files and folders in the Music, Pictures, and Videos libraries](../../files/music-pictures-videos-libraries.md).
 
 ```xaml
 <Page

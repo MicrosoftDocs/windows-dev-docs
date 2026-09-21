@@ -3,7 +3,7 @@ description: Displays items in a collection, such as photos in an album or items
 title: Guidelines for items view controls
 label: Items view
 template: detail.hbs
-ms.date: 10/10/2023
+ms.date: 09/19/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -72,7 +72,7 @@ Here, the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.con
 You can also bind the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.itemssource) property to a collection in XAML. For more info, see [Data binding with XAML](/windows/uwp/data-binding/data-binding-quickstart).
 
 > [!IMPORTANT]
-> When you use the [x:Bind markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) in a DataTemplate, you have to specify the data type (`x:DataType`) on the data template.
+> When you use the [x:Bind markup extension](../../platform/xaml/x-bind-markup-extension.md) in a DataTemplate, you have to specify the data type (`x:DataType`) on the data template.
 
 Here, the ItemsSource is bound to a collection of custom data objects (of type `Photo`).
 

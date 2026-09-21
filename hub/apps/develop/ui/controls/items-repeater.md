@@ -3,7 +3,7 @@ description: ItemsRepeater is a light-weight control to generate and present a c
 title: ItemsRepeater
 label: ItemsRepeater
 template: detail.hbs
-ms.date: 07/15/2026
+ms.date: 09/19/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -55,7 +55,7 @@ ItemsRepeater itemsRepeater1 = new ItemsRepeater();
 itemsRepeater1.ItemsSource = Items;
 ```
 
-You can also bind the **ItemsSource** property to a collection in XAML. For more info about data binding, see [Data binding overview](/windows/apps/develop/data-binding/).
+You can also bind the **ItemsSource** property to a collection in XAML. For more info about data binding, see [Data binding overview](../../data-binding/index.md).
 
 ```xaml
 <ItemsRepeater ItemsSource="{x:Bind Items}"/>
@@ -72,7 +72,7 @@ However, you typically want to show a more rich presentation of your data by usi
 In this example, the data object is a simple string. The **DataTemplate** includes an image to the left of the text, and styles the **TextBlock** to display the string in a teal color.
 
 > [!NOTE]
-> When you use the [x:Bind markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension) in a **DataTemplate**, you have to specify the DataType (`x:DataType`) on the DataTemplate.
+> When you use the [x:Bind markup extension](../../platform/xaml/x-bind-markup-extension.md) in a **DataTemplate**, you have to specify the DataType (`x:DataType`) on the DataTemplate.
 
 ```xaml
 <DataTemplate x:DataType="x:String">

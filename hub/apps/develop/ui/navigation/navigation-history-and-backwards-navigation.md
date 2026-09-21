@@ -3,7 +3,7 @@ description: Learn how to implement backwards navigation for traversing the user
 title: Navigation history and backwards navigation
 template: detail.hbs
 op-migration-status: ready
-ms.date: 04/10/2025
+ms.date: 09/19/2026
 ms.topic: article
 ms.localizationpriority: medium
 dev_langs: 
@@ -26,7 +26,7 @@ To implement backwards navigation in your app, place a back button at the top le
 
 ## Back button
 
-We recommend that you place the back button in the upper left corner of your app. If you [customize the title bar](../../title-bar.md), place the back button in the title bar. See [Title bar design > Back button](/windows/apps/design/basics/titlebar-design#back-button) for more info.
+We recommend that you place the back button in the upper left corner of your app. If you [customize the title bar](../../title-bar.md), place the back button in the title bar. See [Title bar design > Back button](../../../design/basics/titlebar-design.md#back-button) for more info.
 
 If you use the [TitleBar](../controls/title-bar.md) control to create a custom title bar, use the built-in back button. Set [IsBackButtonVisible](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonvisible) to `true`, set [IsBackButtonEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.isbackbuttonenabled) as needed, and handle the [BackRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.backrequested) event to navigate.
 
@@ -91,7 +91,7 @@ This example code demonstrates how to implement backwards navigation behavior wi
 If you use the back button in a `NavigationView` or `TitleBar` control, you can put the frame navigation code directly in the event handler method without needing to duplicate it for each page. However, if you create a back button in the content of your app pages, you would need to duplicate the frame navigation code in each page's code-behind file. To avoid duplication, you can put the navigation related code in the `App` class in the `App.xaml.*` code-behind page and then call it from anywhere in your app, as shown here.
 
 > [!IMPORTANT]
-> You need to update the existing code for `m_window` in the `App` class to create a public static property for `Window` as shown here in the last lines of code. See [Change Window.Current to App.Window](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3#change-windowsuixamlwindowcurrent-to-appwindow) for more info.
+> You need to update the existing code for `m_window` in the `App` class to create a public static property for `Window` as shown here in the last lines of code. See [Change Window.Current to App.Window](../../../windows-app-sdk/migrate-to-windows-app-sdk/guides/winui3.md#change-windowsuixamlwindowcurrent-to-appwindow) for more info.
 
 ```csharp
 // MainPage.xaml.cs

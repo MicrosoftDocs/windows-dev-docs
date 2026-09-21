@@ -1,7 +1,7 @@
 ---
 description: Learn how to use the XAML flexible layout system with automatic sizing, layout panels, visual states, and separate UI definitions to create a responsive UI.
 title: Responsive layouts
-ms.date: 09/26/2024
+ms.date: 09/19/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -90,7 +90,7 @@ You can reveal or hide an element by setting its [**Visibility**](/windows/windo
 You can change an element's Visibility property in code or in a visual state. When the Visibility of an element is changed, all of its child elements are also changed. You can replace sections of your UI by revealing one panel while collapsing another.
 
 > [!TIP]
-> When you have elements in your UI that are **Collapsed** by default, the objects are still created at startup, even though they aren't visible. You can defer loading these elements until they are shown by using the **x:Load attribute** to delay the creation of the objects. This can improve startup performance. For more info, see [x:Load attribute](/windows/apps/develop/platform/xaml/x-load-attribute).
+> When you have elements in your UI that are **Collapsed** by default, the objects are still created at startup, even though they aren't visible. You can defer loading these elements until they are shown by using the **x:Load attribute** to delay the creation of the objects. This can improve startup performance. For more info, see [x:Load attribute](../platform/xaml/x-load-attribute.md).
 
 ### Style resources
 

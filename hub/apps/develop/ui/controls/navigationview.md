@@ -2,7 +2,7 @@
 description: NavigationView is an adaptive control that implements top-level navigation patterns for your app.
 title: NavigationView
 template: detail.hbs
-ms.date: 07/15/2026
+ms.date: 09/19/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -403,7 +403,7 @@ You can hide or disable the back button by setting these properties:
 
 This example shows how you can use NavigationView with both a top navigation pane on large window sizes and a left navigation pane on small window sizes. It can be adapted to left-only navigation by removing the *top* navigation settings in the VisualStateManager.
 
-The example demonstrates a common way to set up navigation data that will work for many scenarios. In this example, you first store (in the tag of the [NavigationViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitem)) the full type name of the page to which you want to navigate. In the event handler, you unbox that value, turn it into a [Type](/dotnet/api/system.type)(C#) or **Windows::UI::Xaml::Interop::TypeName** (C++/WinRT) object, and use that to navigate to the destination page. This lets you create unit tests to confirm that the values inside your tags are of a valid type. (Also see [Boxing and unboxing values to IInspectable with C++/WinRT](/windows/apps/develop/cpp-winrt/boxing)). It also demonstrates how to implement backwards navigation with NavigationView's back button.
+The example demonstrates a common way to set up navigation data that will work for many scenarios. In this example, you first store (in the tag of the [NavigationViewItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.navigationviewitem)) the full type name of the page to which you want to navigate. In the event handler, you unbox that value, turn it into a [Type](/dotnet/api/system.type)(C#) or **Windows::UI::Xaml::Interop::TypeName** (C++/WinRT) object, and use that to navigate to the destination page. This lets you create unit tests to confirm that the values inside your tags are of a valid type. (Also see [Boxing and unboxing values to IInspectable with C++/WinRT](../../cpp-winrt/boxing.md)). It also demonstrates how to implement backwards navigation with NavigationView's back button.
 
 This code assumes that your app contains pages with the following names to navigate to: *HomePage*, *AppsPage*, *GamesPage*, *MusicPage*, *MyContentPage*, and *SettingsPage*. Code for these pages is not shown.
 

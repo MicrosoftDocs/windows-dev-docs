@@ -4,7 +4,7 @@ title: Check boxes
 ms.assetid: 6231A806-287D-43EE-BD8D-39D2FF761914
 label: Check boxes
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 09/19/2026
 ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
@@ -95,7 +95,7 @@ In this example, the **IsChecked** property of the check box to agree to terms o
 #### Using x:Bind
 
 > [!NOTE]
-> We only show the relevant code here. For more info about data binding see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart). Specific {x:Bind} info (such as casting) is detailed in [{x:Bind} markup extension](/windows/apps/develop/platform/xaml/x-bind-markup-extension).
+> We only show the relevant code here. For more info about data binding see [Data binding overview](/windows/uwp/data-binding/data-binding-quickstart). Specific {x:Bind} info (such as casting) is detailed in [{x:Bind} markup extension](../../platform/xaml/x-bind-markup-extension.md).
 
 ```xaml
 <StackPanel Grid.Column="2" Margin="40">
