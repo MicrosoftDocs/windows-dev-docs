@@ -4,7 +4,7 @@ description: Explore new Windows platform capabilities, SDK and API updates, des
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
 author: GrantMeStrength
 ms.author: jken
-ms.date: 09/10/2026
+ms.date: 09/19/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -90,8 +90,8 @@ Versions below are current as of September 9, 2026. Use the release notes to rev
 
 ## Announced at Build – June 2026
 
-- **Windows Developer Configurations**: Get from a fresh Windows install to a ready-to-code environment in minutes with curated, open-source configuration files for toolchains, OS settings, and shells — [Windows Developer Configurations](/windows/dev-configs/).
-- **Coreutils for Windows**: A collection of essential Unix-style command-line utilities, now available natively on Windows — [Coreutils overview](/windows/core-utils/overview).
+- **Windows Developer Configurations**: Get from a fresh Windows install to a ready-to-code environment in minutes with curated, open-source configuration files for toolchains, OS settings, and shells — [Windows Developer Configurations](../../dev-configs/index.md).
+- **Coreutils for Windows**: A collection of essential Unix-style command-line utilities, now available natively on Windows — [Coreutils overview](../../core-utils/overview.md).
 - **Intelligent Terminal**: An experimental, open-source fork of Windows Terminal with native agent integration, automatic error detection, and a built-in agent pane for pair-programming in the shell — [Announcing Intelligent Terminal version 0.1](https://devblogs.microsoft.com/commandline/announcing-intelligent-terminal-version-0-1/).
 - **WSL Containers (public preview)**: A CLI and API for creating, running, and interacting with Linux containers on Windows. Public preview became available on June 29. See [WSL container is now available for public preview](https://devblogs.microsoft.com/commandline/wsl-container-is-now-available-for-public-preview/).
 - **Windows Development Skills**: Structured knowledge that enables AI agents to build native Windows apps end-to-end by using WinUI 3 skills and WinApp CLI — [Get started with Windows Development Skills](https://aka.ms/winui-skills).
@@ -130,30 +130,30 @@ Versions below are current as of September 9, 2026. Use the release notes to rev
 - **Windows notifications overview**: Confused by `AppNotificationManager` vs `ToastNotificationManager`? New overview page explains which notification API to use for your app type, with a feature comparison table and links to samples — [Windows notifications overview](../develop/notifications/index.md).
 - **Performance docs for WinUI**: The full set of Windows app performance documentation — startup, memory, XAML layout, animations, ListView/GridView optimization, and more — is now available under the WinUI developer section at [Windows app performance](../develop/performance/index.md).
 - **Visual layer and Composition docs for WinUI**: Documentation for the Visual layer (`Microsoft.UI.Composition`) — including visuals, animations, effects, brushes, lighting, and shadows — is available in the WinUI/Windows App SDK developer section at [Visual layer overview](../develop/composition/visual-layer.md).
-- **Command Palette extension toolkit**: New API reference documentation for the PowerToys Command Palette extension toolkit, covering built-in commands (`CopyPathCommand`, `OpenFileCommand`, `OpenInConsoleCommand`, and more) and layout types — [Command Palette extension toolkit](/windows/powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit).
-- **Java getting started for Windows**: New guide for setting up a Java development environment on Windows, covering JDK installation, `JAVA_HOME` configuration, editor options, and WSL considerations — [Java on Windows](/windows/dev-environment/java).
+- **Command Palette extension toolkit**: New API reference documentation for the PowerToys Command Palette extension toolkit, covering built-in commands (`CopyPathCommand`, `OpenFileCommand`, `OpenInConsoleCommand`, and more) and layout types — [Command Palette extension toolkit](../../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit.md).
+- **Java getting started for Windows**: New guide for setting up a Java development environment on Windows, covering JDK installation, `JAVA_HOME` configuration, editor options, and WSL considerations — [Java on Windows](../../dev-environment/java.md).
 - **Windows app platform overview**: New landing page for the Platform section of the Windows developer docs, with entry points to accessibility, AI, files, notifications, UI, and more — [Windows app platform overview](../develop/features-overview.md).
-- **PowerToys 0.99**: New Power Display utility for controlling monitors from the system tray, Grab And Move for resizing windows from anywhere, and improvements to Command Palette and the Dock — [PowerToys 0.99 release](https://devblogs.microsoft.com/commandline/powertoys-0-99-is-here-new-monitor-controls-easier-window-management-and-dock-upgrades/) — [Microsoft PowerToys: Utilities to customize Windows](/windows/powertoys/).
+- **PowerToys 0.99**: New Power Display utility for controlling monitors from the system tray, Grab And Move for resizing windows from anywhere, and improvements to Command Palette and the Dock — [PowerToys 0.99 release](https://devblogs.microsoft.com/commandline/powertoys-0-99-is-here-new-monitor-controls-easier-window-management-and-dock-upgrades/) — [Microsoft PowerToys: Utilities to customize Windows](../../powertoys/index.md).
 - **Windows Terminal 1.25**: New settings page for extensions, improved multi-language Command Palette suggestions, and a completely rebuilt windowing architecture with more reliable tray icon and Quake mode — [Windows Terminal 1.25 release](https://devblogs.microsoft.com/commandline/windows-terminal-preview-1-25-release/)
 - **Segoe Fluent Icons Font updated**: The Segoe Fluent Icons Font documentation now includes the latest icon additions and usage guidance — [View icons](/windows/apps/design/style/segoe-fluent-icons-font).
 - **WinUI terminology clarification**: Updated terminology across documentation for clarity — "WinUI 2" is now "WinUI for UWP" and "WinUI 3" is now just "WinUI" to reflect current naming conventions.
-- **Windows Developer Support hub**: New centralized support page with quick help actions, community channels, and Microsoft support contacts — [Get support](/windows/apps/develop/support).
+- **Windows Developer Support hub**: New centralized support page with quick help actions, community channels, and Microsoft support contacts — [Get support](../develop/support.md).
 - **Windows App SDK release notes**: Refactored and consolidated history from 0.5 through 2.0 — find the latest fixes and APIs in one place ([release notes hub](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md)).
-- **Windows SDK updates**: New overview and detailed release notes to track SDK changes ([overview](/windows/apps/windows-sdk/) · [release notes](/windows/apps/windows-sdk/release-notes)).
+- **Windows SDK updates**: New overview and detailed release notes to track SDK changes ([overview](../windows-sdk/index.md) · [release notes](../windows-sdk/release-notes.md)).
 - **WinAppCLI public preview**: The Windows App Development CLI is a command-line interface for managing Windows SDKs, packaging, generating app identity, manifests, certificates, and using build tools with any app framework — ([GitHub repo](https://github.com/microsoft/WinAppCli)).
 - **Cross Device Resume (XDR) overview**: Introduces Windows app continuity across devices and technologies available to enable XDR scenarios ([overview](../develop/windows-integration/cross-device-resume-overview.md)).
 - **Implement XDR using WNS raw notifications**: Step-by-step guide to integrate app continuity via WNS, including prerequisites and Python/JavaScript examples ([how-to](../develop/windows-integration/integrate-app-continuity.md)).
 - **AI on Windows**: Fresh overview for building AI‑powered experiences on Windows, with entry points to APIs and tooling ([Windows AI overview](/windows/ai/)).
 - **Packaged vs. unpackaged guidance**: Updated guidance for choosing and configuring packaged or unpackaged apps, including WinUI scenarios ([decision guide](../get-started/intro-pack-dep-proc.md)).
 - **UWP capability declarations**: Revised topic clarifying capability types, privacy‑sensitive capabilities, and Store submission considerations ([declare capabilities](/windows/uwp/packaging/app-capability-declarations)).
-- **Microsoft Store**: The latest news from the [Microsoft Store](/windows/apps/publish/whats-new-individual-developer) including waived fees and updated analytics.
+- **Microsoft Store**: The latest news from the [Microsoft Store](../publish/whats-new-individual-developer.md) including waived fees and updated analytics.
 
 
 ### Windows app development documentation and resources
 
 | Feature | Description |
 | :------ | :------ |
-| [Create and run a WinUI 3 project](/windows/apps/get-started/start-here) | Comprehensive starting point for Windows app development. |
+| [Create and run a WinUI 3 project](../get-started/start-here.md) | Comprehensive starting point for Windows app development. |
 | [WinUI agent plugin](https://devblogs.microsoft.com/ifdef-windows/build-native-windows-apps-with-ai-agents-for-winui-and-windows-app-sdk/) | 8-skill GitHub Copilot / Claude Code plugin for end-to-end WinUI development. |
 | [dotnet new WinUI templates](https://devblogs.microsoft.com/ifdef-windows/introducing-dotnet-new-templates-for-winui/) | Command-line project templates for WinUI (Blank, NavigationView, TabView, MVVM). |
 | [WinApp VS Code extension](https://devblogs.microsoft.com/ifdef-windows/announcing-the-winapp-vs-code-extension-run-debug-and-package-windows-apps-in-vs-code/) | Run, debug, and package Windows apps from any framework directly in VS Code. |

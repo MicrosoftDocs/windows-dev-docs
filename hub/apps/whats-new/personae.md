@@ -2,7 +2,7 @@
 title: Choose tools and frameworks for your Windows app
 description: Compare common Windows developer profiles and application types to choose suitable frameworks, technologies, and development tools.
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 09/16/2026
+ms.date: 09/19/2026
 author: GrantMeStrength
 ms.author: jken
 ms.reviewer: jken
@@ -29,7 +29,7 @@ These profiles represent common Windows development scenarios. Your project migh
 
         **Builds:** Productivity tools, creative design apps, and utilities
 
-        **Technologies:** [WinUI 3](/windows/apps/winui/winui3/), [WPF](/dotnet/desktop/wpf/overview/), [Windows App SDK](/windows/apps/windows-app-sdk/), [.NET MAUI](/dotnet/maui/), [.NET](/dotnet/), [Windows AI APIs](/windows/ai/), [Foundry Local](/windows/ai/foundry-local/get-started), and [Windows ML](/windows/ai/new-windows-ml/overview)
+        **Technologies:** [WinUI 3](../winui/winui3/index.md), [WPF](/dotnet/desktop/wpf/overview/), [Windows App SDK](../windows-app-sdk/index.md), [.NET MAUI](/dotnet/maui/), [.NET](/dotnet/), [Windows AI APIs](/windows/ai/), [Foundry Local](/windows/ai/foundry-local/get-started), and [Windows ML](/windows/ai/new-windows-ml/overview)
 
         **Tools:** Visual Studio and Visual Studio Code
 
@@ -111,7 +111,7 @@ These profiles represent common Windows development scenarios. Your project migh
 
         **Builds:** Mobile productivity apps, cross-platform utilities, and consumer apps
 
-        **Technologies:** [.NET MAUI](/dotnet/maui/), [React Native for Windows](/windows/dev-environment/javascript/react-native-for-windows), and [Uno Platform](https://platform.uno)
+        **Technologies:** [.NET MAUI](/dotnet/maui/), [React Native for Windows](../../dev-environment/javascript/react-native-for-windows.md), and [Uno Platform](https://platform.uno)
 
         **Tools:** Visual Studio, Visual Studio Code, and Azure App Service
 
@@ -148,7 +148,7 @@ Different application types have different goals, architectures, and platform re
 | Application type | Typical use | Technologies to consider |
 |------------------|-------------|--------------------------|
 | Enterprise | Internal line-of-business systems, data-driven dashboards, and workflow tools | [WPF](/dotnet/desktop/wpf/overview), [Windows Forms](/dotnet/desktop/winforms/overview), or [.NET MAUI](/dotnet/maui/) for the UI; [.NET](/dotnet/) and [Entity Framework Core](/ef/core/) for application logic and data; [MSIX](/windows/msix/) for packaging; [Azure DevOps](/azure/devops/) for development workflows |
-| Utility | Focused desktop tools that start quickly and follow current Windows design conventions | [WinUI 3](/windows/apps/winui/winui3/) or [.NET MAUI](/dotnet/maui/) for the UI; [Windows App SDK](/windows/apps/windows-app-sdk/) for Windows capabilities; [MSIX](/windows/msix/) for packaging; [Fluent Design](/windows/apps/design/) for the user experience |
+| Utility | Focused desktop tools that start quickly and follow current Windows design conventions | [WinUI 3](../winui/winui3/index.md) or [.NET MAUI](/dotnet/maui/) for the UI; [Windows App SDK](../windows-app-sdk/index.md) for Windows capabilities; [MSIX](/windows/msix/) for packaging; [Fluent Design](../design/index.md) for the user experience |
 | AI-enabled | Apps that add text, image, speech, or language intelligence by using models on the device | [Windows AI APIs](/windows/ai/apis/get-started) for Windows-managed capabilities on supported devices; [Foundry Local](/windows/ai/foundry-local/get-started) for supported open-source models; [Windows ML](/windows/ai/new-windows-ml/overview) for custom ONNX models across CPU, GPU, and NPU |
 | Games and immersive experiences | Games, simulations, and extended-reality experiences that require advanced graphics | [DirectX 12](/windows/win32/direct3d12/), [Microsoft GDK](/gaming/gdk/), [Unity](https://unity.com), [Unreal Engine](https://www.unrealengine.com), and [Visual Studio](/visualstudio/) |
 | Headless or background | Services, agents, and command-line tools that run without a user interface | [.NET](/dotnet/) or [C++](/cpp/); [Windows Services](/windows/win32/services/) for long-running service processes; [PowerShell](/powershell/) and [Task Scheduler](/windows/win32/taskschd/task-scheduler-start-page) for automation |
