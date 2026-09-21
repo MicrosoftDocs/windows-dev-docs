@@ -2,7 +2,7 @@
 title: Build line-of-business apps with WinUI - overview
 description: A hub for developers building enterprise line-of-business apps with WinUI 3, covering data, forms, migration, design, and AI.
 ms.topic: overview
-ms.date: 09/17/2026
+ms.date: 09/21/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -27,6 +27,7 @@ Use this table as a starting point. The appropriate choice depends on your app's
 | Authenticate users | Prefer an identity library and OS broker, such as MSAL with Web Account Manager (WAM), instead of implementing an OAuth flow directly. |
 | Store structured data locally | Consider EF Core with SQLite. |
 | Access enterprise data | Prefer an authenticated HTTPS service layer. Don't embed shared database credentials in a desktop client. |
+| Meet enterprise manageability requirements | Plan policy-aware settings, deployment configuration, audit logging, data protection, and supportability before rollout. |
 | Keep the UI responsive | Use asynchronous APIs and avoid blocking the UI thread. Dispatch UI updates only when work completes on another thread. |
 | Add AI features | Choose an on-device Windows AI API, ONNX Runtime, or a cloud AI service based on privacy, hardware, connectivity, and model requirements. |
 | Package and deploy | Choose packaged with MSIX, packaged with external location, or unpackaged. Separately choose a framework-dependent or self-contained Windows App SDK deployment. |
@@ -59,6 +60,12 @@ The `CommunityToolkit.Mvvm` package remains a Microsoft-maintained option for im
 
 - [Deployment overview](../../package-and-deploy/deploy-overview.md)
 - [Choose a distribution method](../../package-and-deploy/choose-distribution-path.md)
+
+### Prepare for enterprise management
+
+- [Plan enterprise manageability for WinUI LOB apps](enterprise-manageability.md)
+- [Distribute LOB apps to enterprises](../../publish/distribute-lob-apps-to-enterprises.md)
+- [App capability declarations](../../package-and-deploy/app-capability-declarations.md)
 - [Distribute LOB apps to enterprises](../../publish/distribute-lob-apps-to-enterprises.md)
 
 ## Modernize an existing app

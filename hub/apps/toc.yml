@@ -113,6 +113,8 @@ items:
         href: get-started/line-of-business/build-validated-form.md
       - name: Connect to a database
         href: get-started/line-of-business/connect-to-a-database.md
+      - name: Plan enterprise manageability
+        href: get-started/line-of-business/enterprise-manageability.md
       - name: Design for productivity
         href: get-started/line-of-business/design-for-lob.md
       - name: Add AI capabilities
