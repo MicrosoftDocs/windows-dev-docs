@@ -1,7 +1,7 @@
 ---
 title: Accelerate warm launches of your Windows app
 description: Learn how to make your already-running Windows app respond to URI and tile launches faster with an experimental API. Reduce launch latency and improve performance.
-ms.date: 10/22/2025
+ms.date: 09/21/2026
 ms.topic: how-to
 keywords: windows 11
 ms.localizationpriority: low
@@ -121,13 +121,13 @@ DEFINE_GUID(CLSID_ExperimentalAPIInvoker, 0x81AF2611, 0xE262, 0x4090, 0xA1, 0x5B
 
 ### Method: “RegisterAcceleratedUriLaunch”
 
-Register for protocol launches delivered as a null-terminated UTF-16 string (PCWSTR) via WM_COPYDATA to the target HWND.
+Register for protocol launches delivered as a null-terminated UTF-16 string (PCWSTR) via WM_COPYDATA to the target HWND. The WPARAM of this message is the process ID of the caller, if available.
 
 You can call this method only once per `IExperimentalAPIInvoker` object instance. Once you register, don't release the object until after you unregister.
 
 | Parameter name | Type | Description |
 |-|-|-|
-| `"targetWindow"` | `VT_I8` | The HWND, cast to a signed LONGLONG, that receives a window message when your app is launched for its primary tile in the Start Menu or other locations. |
+| `"targetWindow"` | `VT_I8` | The HWND, cast to a signed LONGLONG, that receives a WM_COPYDATA window message when your app is launched for a registered URI scheme. |
 | `"copyDataFormatId"` | `VT_UI4` | Value that's passed as the COPYDATASTRUCT.dwData when delivering the URI string. |
 | `"schemes"` | `VT_LPWSTR \| VT_VECTOR` | List of URI schemes to register for. Only those that the calling process is the default handler for are accelerated. |
 
@@ -137,11 +137,13 @@ Unregister from URI launches. No arguments. Must be called on the same object th
 
 ### Method: “RegisterAcceleratedTileLaunch”
 
-Register for tile launches delivered by a chosen window message. You can call this method only once for each `IExperimentalAPIInvoker` object instance. After you register, don't release the object until you unregister.
+Register for tile launches delivered by a chosen window message. The WPARAM of this message is the process ID of the caller, if available.
+
+You can call this method only once for each `IExperimentalAPIInvoker` object instance. After you register, don't release the object until you unregister.
 
 | Parameter name | Type | Description |
 |-|-|-|
-| `"targetWindow"` | `VT_I8` | The HWND, cast to a signed LONGLONG, that receives a window message when your app is launched for its primary tile in the Start Menu or other locations. |
+| `"targetWindow"` | `VT_I8` | The HWND, cast to a signed LONGLONG, that receives a window message when your app is launched for its primary tile in the Start Menu or Taskbar. |
 | `"messageId"` | `VT_UI4` | The window message ID that goes to the specified target window. |
 
 ### Method: “UnregisterAcceleratedTileLaunch”
