@@ -2,7 +2,7 @@
 title: Handle Microsoft Copilot hardware key state changes
 description: Learn how to register to be activated and receive notifications when the Microsoft Copilot hardware key or Windows key + C is pressed. 
 ms.topic: how-to
-ms.date: 10/25/2024
+ms.date: 07/27/2026
 ms.localizationpriority: medium
 ---
 
@@ -159,6 +159,8 @@ In addition to URI activation, apps can register to support fast path invocation
 
 To add support for fast path invocation, update the "com.microsoft.windows.copilotkeyprovider" extension to add the *MessageWParam* attribute to the **SingleTap**, **PressAndHoldStart**, and **PressAndHoldStop** elements. Each *MessageWParam* value must be a unique 32-bit integer, but the values used are chosen by the app. This example uses values of 0, 1, and 2, respectively. These values will be used later in the example when they are passed in the *wParam* parameter of a Windows message to determine the current pressed state of the Windows Copilot hardware key. 
 
+You can also add the optional **PenButtonSingleClick**, **PenButtonDoubleClick**, and **PenButtonPressAndHold** elements. When your app is registered as a Copilot key provider, these elements let the app respond to the barrel or tail button on a pen: a single click, a double click, or a press and hold, respectively. This example assigns them *MessageWParam* values of 3, 4, and 5. Each of the pen-button elements also supports an optional *DisplayName* attribute (for example, `DisplayName="ms-resource:///Resources/PenSingleClickModeName"` or a literal string such as `DisplayName="Voice"`) that labels the mode in **Settings**. The following example omits *DisplayName* for clarity.
+
 ```xml
 <!-- Package.appxmanifest -->
 
@@ -172,6 +174,9 @@ To add support for fast path invocation, update the "com.microsoft.windows.copil
       <SingleTap MessageWParam="0">myapp-copilothotkey://?state=Tap</SingleTap>
       <PressAndHoldStart MessageWParam="1">myapp-copilothotkey://?state=Down</PressAndHoldStart>
       <PressAndHoldStop MessageWParam="2">myapp-copilothotkey://?state=Up</PressAndHoldStop>
+      <PenButtonSingleClick MessageWParam="3">myapp-copilothotkey://?state=PenSingleClick</PenButtonSingleClick>
+      <PenButtonDoubleClick MessageWParam="4">myapp-copilothotkey://?state=PenDoubleClick</PenButtonDoubleClick>
+      <PenButtonPressAndHold MessageWParam="5">myapp-copilothotkey://?state=PenPressAndHold</PenButtonPressAndHold>
     </uap3:Properties>
   </uap3:AppExtension>
 </uap3:Extension>
@@ -254,6 +259,18 @@ private LRESULT WindowSubClass(HWND hWnd, uint uMsg, WPARAM wParam, LPARAM lPara
                     break;
                 case 2:
                     SetState("PressAndHold END");
+                    break;
+                case 3:
+                    SetState("PenButton SingleClick");
+                    break;
+                case 4:
+                    SetState("PenButton DoubleClick");
+                    break;
+                case 5:
+                    SetState("PenButton PressAndHold");
+                    break;
+                default:
+                    SetState($"Unknown MessageWParam: {wParam.Value}");
                     break;
             }
         }
