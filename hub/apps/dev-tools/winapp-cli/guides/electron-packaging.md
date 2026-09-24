@@ -1,7 +1,7 @@
 ---
 title: Packaging Your Electron App for Distribution
 description: Package your Electron app as a signed MSIX installer with the winapp CLI, covering manifest setup, certificate generation, and installation.
-ms.date: 08/19/2026
+ms.date: 09/24/2026
 ms.topic: how-to
 ---
 
@@ -137,7 +137,9 @@ module.exports = {
         appManifest: '.\\Package.appxmanifest',
         windowsSignOptions: {
           certificateFile: '.\\devcert.pfx',
-          certificatePassword: 'password'
+          // Development certificate default password — read this from an
+          // environment variable once you sign with a real certificate.
+          certificatePassword: process.env.WINDOWS_CERT_PASSWORD || 'password'
         }
       }
     }
@@ -145,6 +147,9 @@ module.exports = {
   // ... rest of your config
 };
 ```
+
+> [!IMPORTANT]
+> `forge.config.js` is normally committed to source control, so never put a real signing certificate's password in it. The `password` default above only makes sense because `devcert.pfx` is a throwaway development certificate. For production signing, keep the certificate and its password in your CI secret store — or use Azure Trusted Signing, which has no password at all. See [Security guidance](../security.md).
 
 #### Update Package.appxmanifest
 

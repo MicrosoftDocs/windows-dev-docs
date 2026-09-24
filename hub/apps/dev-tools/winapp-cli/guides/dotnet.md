@@ -1,7 +1,7 @@
 ---
 title: Using winapp CLI with .NET
 description: Add Windows App SDK support to a .NET WPF or WinForms project with the winapp CLI, then build, add identity, and package the app as MSIX.
-ms.date: 08/19/2026
+ms.date: 09/24/2026
 ms.topic: how-to
 ---
 
@@ -108,7 +108,7 @@ This command will:
 - Create `Package.appxmanifest` and `Assets` folder for your app identity
 
 > [!NOTE]
-> Unlike native/C++ projects, the .NET flow does **not** create a `winapp.yaml` file. NuGet packages are managed directly via your `.csproj`. Use `dotnet restore` to restore packages after cloning.
+> Unlike native/C++ projects, the .NET flow does **not** create a `winapp.yaml` file. NuGet packages are managed directly via your `.csproj`. After cloning, run `winapp restore` or `dotnet restore`.
 
 You can open `Package.appxmanifest` to further customize properties like the display name, publisher, and capabilities.
 
@@ -120,29 +120,21 @@ dotnet list package
 
 You should see `Microsoft.WindowsAppSDK` and `Microsoft.Windows.SDK.BuildTools` in the output.
 
-### Add Execution Alias (for console apps)
+### Console output (nothing to do)
 
-Because we're building a console app, we need to make sure `dotnet run` keeps console output in the current terminal. By default, `dotnet run` launches the packaged app via AUMID activation, which opens a new window — and the window closes immediately when the console app finishes, swallowing any output.
+Because we're building a console app, console output needs to stay in the current terminal. AUMID activation gives a packaged app no console, so a console app would run correctly and print nothing.
 
-To fix this, you'll add an execution alias to the manifest and tell the run integration to launch via that alias instead.
+winapp handles this for you: an app with `OutputType=Exe` is launched through an execution alias instead, which inherits your terminal's stdin/stdout/stderr. It adds the required `uap5:ExecutionAlias` to the manifest it stages, so there is nothing to configure.
 
-> **Skip this step if you're building a UI app** (WPF, WinForms, WinUI). Those apps render their own window, so the default AUMID launch is what you want.
+> **UI apps** (WPF, WinForms, WinUI) render their own window, so they keep AUMID activation.
 
-1. Add the execution alias to your manifest:
+To force AUMID for a console app anyway, set the following inside any `<PropertyGroup>` in `dotnet-app.csproj` — the app then runs without a console and prints nothing to the terminal:
 
-   ```powershell
-   winapp manifest add-alias
-   ```
+```xml
+<WinAppRunUseExecutionAlias>false</WinAppRunUseExecutionAlias>
+```
 
-   This adds a `uap5:ExecutionAlias` to `Package.appxmanifest` (defaulting to your project's exe name) so the app can be launched by name from a terminal.
-
-2. Tell the `dotnet run` integration to use the alias. Open `dotnet-app.csproj` and add the following inside any `<PropertyGroup>` (or create a new `<PropertyGroup>` if needed):
-
-   ```xml
-   <WinAppRunUseExecutionAlias>true</WinAppRunUseExecutionAlias>
-   ```
-
-   With this property set, `dotnet run` launches the app via its execution alias and inherits the current terminal's stdin/stdout/stderr so you see console output inline.
+If you'd rather choose the command name yourself, run `winapp manifest add-alias` to declare one in `Package.appxmanifest`; an alias you author is used as-is.
 
 ## 5. Debug with Identity
 
@@ -153,6 +145,33 @@ dotnet run
 ```
 
 This automatically invokes `winapp run` under the hood — creating a loose layout package, registering it with Windows, and launching your app with full package identity.
+
+Arguments you write after `dotnet run` go to **your application**, exactly as they would if the
+project did not reference this package:
+
+```powershell
+dotnet run --devtools          # your app receives --devtools
+dotnet run -- --devtools       # identical: the SDK consumes the -- before forwarding
+```
+
+Use `--` when your app's flag is also a `dotnet run` option (`--configuration`, `--framework`,
+`--project`, `-c`, `-f`, `-r`, ...) — without it the SDK claims the token and your app never
+receives it:
+
+```powershell
+dotnet run -- --configuration Release   # your app receives --configuration Release
+```
+
+Configure the WinApp launcher itself with the `WinAppRun*` MSBuild properties. MSBuild consumes
+these, so they never reach your application:
+
+```powershell
+dotnet run -p:WinAppRunDebugOutput=true --devtools
+```
+
+Here the property configures WinApp while `--devtools` is passed to your app. See
+[`dotnet run` support](https://github.com/microsoft/WinAppCli/blob/main/docs/dotnet-run-support.md) for the full property list, including which
+properties cannot be combined.
 
 > [!NOTE]
 > You may see NuGet vulnerability warnings (NU1900) about package sources. These are safe to ignore — they don't affect your build.
@@ -175,6 +194,15 @@ winapp run .
 winapp run .\dotnet-app.csproj -c Debug --arch x64
 ```
 
+To run the project's Native AOT configuration, [enable AOT in the project](../usage.md#project-mode-net-sdk-projects) and run:
+
+```powershell
+winapp run . --aot
+winapp run . --aot -c Release
+```
+
+Use x64 or ARM64. For a one-time override, append `-p PublishAot=true`.
+
 You can still point `winapp run` at a pre-built output folder if you prefer (folder mode):
 
 ```powershell
@@ -184,7 +212,7 @@ winapp run .\bin\Debug\net10.0-windows10.0.26100.0
 
 Project mode supports both **packaged** and **unpackaged** WinUI apps — it detects which from the project's `WindowsPackageType` and installs the matching-architecture Windows App Runtime automatically. To force an unpackaged run of a packaged project, add `-p WindowsPackageType=None`.
 
-**Multi-project apps** (an app referencing class libraries) build correctly: winapp negotiates each project reference's platform automatically, so referencing an `AnyCPU`/`netstandard2.0` library doesn't fail with `CS0006` "metadata file could not be found".
+**Multi-project apps** (an app referencing class libraries) build correctly: winapp keeps `AnyCPU`/`netstandard2.0` references on their compatible platform instead of forcing the app's architecture across the graph. RID-only remains the default; when the effective configuration requires a self-contained profile (for example, a trimmed Release build), winapp selects the matching profile without changing referenced libraries' platforms.
 
 The `dotnet build` output streams live, with the exact invocation printed first. Add `--verbose` for winapp's own build decision traces. Requires .NET SDK 8.0.100 or newer. See [`winapp run` in the usage reference](../usage.md#project-mode-net-sdk-projects) for the full option list.
 
@@ -323,6 +351,8 @@ winapp pack .\bin\Release\net10.0-windows10.0.26100.0 --manifest .\Package.appxm
 ```
 
 > Note: The `pack` command automatically uses the Package.appxmanifest from your current directory and copies it to the target folder before packaging. The generated .msix file will be in the current directory.
+
+> Tip: You can also skip locating the build-output folder and pack straight from the project — `winapp package .\dotnet-app.csproj --cert .\devcert.pfx` publishes the project and packages its output in one step (project mode defaults to the Release configuration). Project mode accepts the build options `-c`, `--arch`, `-f`, `--no-build`, `--no-restore`, `-p`; add `--no-build` to package an existing build without rebuilding.
 
 ### Install the Certificate
 

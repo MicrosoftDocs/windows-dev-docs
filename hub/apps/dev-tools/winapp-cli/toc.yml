@@ -6,6 +6,10 @@
   href: debugging.md
 - name: UI Automation
   href: ui-automation.md
+- name: Windows Sandbox execution
+  href: sandbox-execution.md
+- name: Security guidance
+  href: security.md
 - name: Framework guides
   href: guides/index.md
   items:
