@@ -2,7 +2,7 @@
 title: Windows App SDK 1.8 release notes
 description: Provides information about what's new in Windows App SDK 1.8.
 ms.topic: release-notes
-ms.date: 09/11/2026
+ms.date: 09/24/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -13,6 +13,19 @@ zone_pivot_groups: wasdk-release-channels
 [!INCLUDE [wasdk-releasenotes](../../../includes/wasdk-release-notes.md)]
 
 :::zone pivot="stable"
+
+
+## Version 1.8.12 (1.8.260921001)
+
+Released: **September 24, 2026** <br><br>
+
+<details><summary>Bug fixes</summary>
+
+>
+> Fixed an issue where ExecutionProviderCatalog.FindAllProviders could return an execution provider in the NotPresent state on certain Arm64 devices even though ExecutionProvider.EnsureReadyAsync could not acquire it. The unavailable provider is no longer returned on affected devices. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, Windows ML provider availability fix)
+>
+
+</details>
 
 
 ## Version 1.8.11 (1.8.260804001)
