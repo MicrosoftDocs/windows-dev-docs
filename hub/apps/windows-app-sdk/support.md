@@ -15,7 +15,8 @@ The following table lists the Windows client and server releases supported by th
 
 | Windows App SDK | Release date | Windows client | Windows Server |
 |-----------------|--------------|----------------|----------------|
-| 1.8 | 2025-09-09 | Win11 25H2<br>Win11 24H2<br>Win11 23H2<br>Win11 22H2<br>Win11 21H2<br>Win10 23H2<br>Win10 22H2<br>Win10 21H2<br>Win10 1809 | Server 2022<br>Server 2019 |
+| 2 | 2026-04-29 | Win11 26H2<br>Win11 25H2<br>Win11 24H2<br>Win11 23H2<br>Win11 22H2<br>Win11 21H2<br>Win10 23H2<br>Win10 22H2<br>Win10 21H2<br>Win10 1809 | Server 2022<br>Server 2019 |
+| 1.8 | 2025-09-09 | Win11 26H2<br>Win11 25H2<br>Win11 24H2<br>Win11 23H2<br>Win11 22H2<br>Win11 21H2<br>Win10 23H2<br>Win10 22H2<br>Win10 21H2<br>Win10 1809 | Server 2022<br>Server 2019 |
 | 1.7 | 2025-03-18 | Win11 25H2<br>Win11 24H2<br>Win11 23H2<br>Win11 22H2<br>Win11 21H2<br>Win10 23H2<br>Win10 22H2<br>Win10 21H2<br>Win10 1809 | Server 2022<br>Server 2019 |
 | 1.6 | 2024-09-04 | Win11 25H2<br>Win11 24H2<br>Win11 23H2<br>Win11 22H2<br>Win11 21H2<br>Win10 23H2<br>Win10 22H2<br>Win10 21H2<br>Win10 1809 | Server 2022<br>Server 2019 |
 
