@@ -39,6 +39,7 @@ Windows provides a rich set of platform contracts that let your app participate 
 | Feature | Description |
 |--|--|
 | [Connected Experiences](connected-experiences-overview.md) | Developer documentation for Connected Experiences, covering Share, People, and Resume integrations across Windows surfaces. |
+| [Install your desktop app from Phone Link notifications](phone-link-notification-integration.md) | Connect mobile notifications in Phone Link to your installed Windows desktop app or its Microsoft Store installation page. |
 | [Smart App Control](../smart-app-control/overview.md) | Protect users from untrusted or potentially dangerous code using Microsoft's app intelligence services and Windows code integrity features. |
 
 ## Shell and desktop integration

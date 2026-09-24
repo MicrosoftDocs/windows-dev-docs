@@ -844,6 +844,8 @@ items:
             items:
               - name: Overview
                 href: windows-integration/connected-experiences-overview.md
+              - name: Phone Link notifications
+                href: windows-integration/phone-link-notification-integration.md
               - name: Windows Share
                 items:
                   - name: Overview
