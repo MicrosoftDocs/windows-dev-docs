@@ -4,7 +4,7 @@ description: Learn how Windows Age APIs help apps provide safe, age-appropriate 
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 09/11/2026
+ms.date: 09/24/2026
 ---
 
 # Age signals overview
@@ -25,9 +25,6 @@ An age signal does **not** directly expose the user's exact age or date of birth
 
 
 ## Windows Age APIs
-
-> [!NOTE]
-> The Windows Age APIs are broadly available to Windows Insiders now starting from build 26220.9472, and will be available to all Windows users soon.
 
 ### GetUserAgeRangeAsync
 
