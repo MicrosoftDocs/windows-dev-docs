@@ -2,16 +2,13 @@
 title: Sign your app for Smart App Control compliance
 description: Learn how to sign your code to ensure Smart App Control compliance using one of several supported methods.
 ms.topic: concept-article
-ms.date: 09/20/2022
+ms.date: 09/22/2026
 # customer intent: As a Windows developer, I want to learn how to sign my code to ensure Smart App Control compliance.
 ---
 
 # Sign your app for Smart App Control compliance
 
-Code signing is a cryptographic operation that can be performed on an app in order to verify its contents and publisher.Smart App Control allows applications signed with RSA-based digital certificates to run on protected devices. It does not currently support elliptic-curve cryptography (ECC).
-
-> [!NOTE]
-> Smart App Control's signature check does not currently support Elliptic-curve cryptography (ECC) signatures. Please use ensure all applications are signed with RSA-based digital certificates.
+Code signing is a cryptographic operation that can be performed on an app in order to verify its contents and publisher. Smart App Control allows applications signed with trusted digital certificates to run on protected devices. Smart App Control supports both RSA and elliptic curve cryptography (ECC) code signing certificates. Developers should ensure their applications are signed with a valid code signing certificate issued by a trusted provider.
 
 There are several ways to sign your app.
 
@@ -19,9 +16,9 @@ There are several ways to sign your app.
 
 Code can be signed with any certificate, but Smart App Control only considers certificates issued by trusted providers. For information about how to obtain a code signing certificate from a trusted provider, see [Manage code signing certificates](/windows-hardware/drivers/dashboard/code-signing-cert-manage#get-or-renew-a-code-signing-certificate).
 
-## Sign your app with Trusted Signing
+## Sign your app with Artifact Signing
 
-[Trusted Signing](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/trusted-signing-is-in-public-preview/ba-p/4103457) (formerly Azure Code Signing) is the preferred way to sign your app. Trusted Signing is currently in public preview.
+[Artifact Signing](/azure/artifact-signing/) is the preferred way to sign your app. Artifact Signing is now Generally Available (GA) to customers.
 
 ## Sign your app with signtool.exe
 
@@ -30,5 +27,6 @@ Signtool.exe is an app included with Visual Studio that can sign apps with a dig
 ## Related content
 
 - [Manage code signing certificates](/windows-hardware/drivers/dashboard/code-signing-cert-manage#get-or-renew-a-code-signing-certificate)
-- [Trusted Signing](https://techcommunity.microsoft.com/t5/security-compliance-and-identity/trusted-signing-is-in-public-preview/ba-p/4103457)
+- [Artifact Signing](/azure/artifact-signing/)
+
 - [SignTool](/windows/win32/seccrypto/signtool)
