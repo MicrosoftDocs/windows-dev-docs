@@ -38,6 +38,10 @@ The following table shows which features are currently available in each release
 | [Push notifications](notifications/push-notifications/index.md)                                                          | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [App notifications](notifications/app-notifications/index.md)                                                            | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
 | [Windows Widgets](../design/widgets/index.md)                                                                            | :heavy_check_mark: Available              | :heavy_check_mark: Available                  | :heavy_check_mark: Available                             |
+| [App Content Search](/windows/ai/apis/app-content-search)                                                                 | :heavy_check_mark: Available              | :x: Not available                             | :heavy_check_mark: Available                             |
+
+> [!NOTE]
+> App Content Search entered the Stable channel in Windows App SDK 2.5.1 and is a [Limited Access Feature](https://aka.ms/laffeatures). Apps must obtain a token before calling the APIs. The experimental channel release does not require a token.
 
 ## Windows App SDK release servicing policy
 
