@@ -1,7 +1,7 @@
 ---
 title: Get user input with forms
 description: Learn how to use Adaptive Cards forms in your Command Palette extension.
-ms.date: 3/23/2025
+ms.date: 09/24/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: As a Windows developer, I want to learn how to develop an extension for the Command Palette.
@@ -18,7 +18,7 @@ Now that we know how to present basic markdown content, let's try displaying som
 You can create a card in the Command Palette with the `IFormContent` interface (see [FormContent](./microsoft-commandpalette-extensions-toolkit/formcontent.md) for the toolkit implementation). This allows you to provide the Adaptive Card JSON, and the Command Palette will render it for you. When the user submits the form, Command Palette will call the `SubmitForm` method on your form, with the JSON payload and inputs from the form.
 
 > [!TIP]
-> Adaptive card payloads can be created using the [Adaptive Card Designer](https://adaptivecards.io/designer/). You can design your card there, and then copy the JSON payload into your extension.
+> Adaptive card payloads can be created using the [Adaptive Card Designer](https://adaptivecards.io/designer). You can design your card there, and then copy the JSON payload into your extension.
 
 1. In the `Pages` directory, add a new class
 1. Name the class `FormPage`
@@ -138,9 +138,9 @@ public <ExtensionName>CommandsProvider()
 
 ![Screenshot of extension using ContentPage for simple form](../images/command-palette/form-simple.png)
 
-Adaptive Cards can do more complex forms, including using another json object to dynamically create custom forms. You'll first set up your form with the [Adaptive Card Designer](https://adaptivecards.io/designer/) and then update your command.
+Adaptive Cards can do more complex forms, including using another json object to dynamically create custom forms. You'll first set up your form with the [Adaptive Card Designer](https://adaptivecards.io/designer) and then update your command.
 
-1. Open https://adaptivecards.io/designer/ 
+1. Open the [Adaptive Card Designer](https://adaptivecards.io/designer).
 1. In the `CARD PAYLOAD EDITOR` replace the json with:
 
 ```json
@@ -271,7 +271,7 @@ For a full example of using Forms and Content pages, head on over to [`SamplePag
 
 ## Key Items
 
-- Define your form layout using the `TemplateJson` property of your `FormContent`. This is the JSON payload from the CARD PAYLOAD EDITOR in the https://adaptivecards.io/designer/. It describes the structure and UI of your form.
+- Define your form layout using the `TemplateJson` property of your `FormContent`. This is the JSON payload from the CARD PAYLOAD EDITOR in the [Adaptive Card Designer](https://adaptivecards.io/designer). It describes the structure and UI of your form.
 
 - Optionally bind dynamic data using the `DataJson` property. This is the JSON from the SAMPLE DATA EDITOR in the Adaptive Card Designer. It allows you to inject dynamic values into your card using ${...} placeholders, making your forms easier to localize and maintain.
 
