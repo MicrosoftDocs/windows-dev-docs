@@ -4,7 +4,7 @@ description: Learn how Windows App SDK desktop apps handle background execution 
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 07/08/2026
+ms.date: 09/26/2026
 ---
 
 # Background execution in Windows App SDK desktop apps
@@ -109,5 +109,5 @@ When you have work that should not be interrupted by power management (for examp
 
 - [App lifecycle for Windows App SDK](app-lifecycle.md)
 - [Extended execution for desktop apps](extended-execution.md)
-- [Create and register a background task](/windows/apps/develop/launch/create-and-register-a-background-task)
+- [Create and register a background task](./create-and-register-a-background-task.md)
 - [Manage memory usage](reduce-memory-usage.md)

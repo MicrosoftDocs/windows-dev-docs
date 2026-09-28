@@ -1,7 +1,7 @@
 ---
 title: Accelerate warm launches of your Windows app
 description: Learn how to make your already-running Windows app respond to URI and tile launches faster with an experimental API. Reduce launch latency and improve performance.
-ms.date: 09/21/2026
+ms.date: 09/26/2026
 ms.topic: how-to
 keywords: windows 11
 ms.localizationpriority: low
@@ -20,7 +20,7 @@ This article describes how to accelerate warm launches for single-instance Windo
 
 :::image type="content" source="images/accelerated-launch-fast.png" alt-text="Screenshot of flow diagram showing accelerated warm-launch pathway without intermediary process.":::
 
-This accelerated launch functionality doesn't cover every kind of launch, from every source application, on every version of Windows. As a result, your application must still maintain its own implementation of single-instancing (see [App instancing with the app lifecycle API](/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing) for one approach).
+This accelerated launch functionality doesn't cover every kind of launch, from every source application, on every version of Windows. As a result, your application must still maintain its own implementation of single-instancing (see [App instancing with the app lifecycle API](../../windows-app-sdk/applifecycle/applifecycle-instancing.md) for one approach).
 
 The rest of this article walks through creating a simple C++ WinUI 3 app that supports accelerated warm Start Menu and Protocol launches.
 
@@ -33,7 +33,7 @@ In Visual Studio, create a new project. For this example, in the **Create a new 
 
 ## Implement single-instancing
 
-You can use any technique of your choice to implement single-instancing within your app. In this example, use the [Windows App SDK’s App Lifecycle APIs](/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing).
+You can use any technique of your choice to implement single-instancing within your app. In this example, use the [Windows App SDK’s App Lifecycle APIs](../../windows-app-sdk/applifecycle/applifecycle-instancing.md).
 
 ``` cpp
 void App::OnLaunched([[maybe_unused]] LaunchActivatedEventArgs const& e)
@@ -414,6 +414,6 @@ With this code, your app benefits from accelerated launches on OS versions that 
 
 [Handle URI activation](handle-uri-activation.md)
 
-[App instancing with the app lifecycle API](/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing)
+[App instancing with the app lifecycle API](../../windows-app-sdk/applifecycle/applifecycle-instancing.md)
 
-[Windows App SDK’s App Lifecycle APIs](/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing)
+[Windows App SDK’s App Lifecycle APIs](../../windows-app-sdk/applifecycle/applifecycle-instancing.md)

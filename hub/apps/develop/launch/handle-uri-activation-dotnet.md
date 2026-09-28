@@ -152,12 +152,12 @@ private void OnActivated(object sender, AppActivationArguments args)
 }
 ```
 
-For more information about app instancing, see [App instancing with the app lifecycle API](/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing).
+For more information about app instancing, see [App instancing with the app lifecycle API](../../windows-app-sdk/applifecycle/applifecycle-instancing.md).
 
 
 ## Related content
 
-- [Rich activation with the app lifecycle API](/windows/apps/windows-app-sdk/applifecycle/applifecycle-rich-activation)
+- [Rich activation with the app lifecycle API](../../windows-app-sdk/applifecycle/applifecycle-rich-activation.md)
 - [Handle URI activation](handle-uri-activation.md)
 - [Handle file activation](handle-file-activation.md)
 - [Default Programs](/windows/desktop/shell/default-programs)

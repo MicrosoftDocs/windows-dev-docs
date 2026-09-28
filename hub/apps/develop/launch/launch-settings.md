@@ -1,7 +1,7 @@
 ---
 title: Launch Windows Settings
 description: Learn how to launch Windows Settings from your Windows apps using the ms-settings URI scheme.
-ms.date: 07/16/2026
+ms.date: 09/26/2026
 ms.topic: concept-article
 keywords: windows 10, windows, settings, windows 11, uwp, uri
 ms.localizationpriority: medium
@@ -133,7 +133,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Bluetooth | ms-settings:bluetooth |
 | Connected Devices | ms-settings:connecteddevices |
 | Default camera | ms-settings:camera (**Behavior deprecated in Windows 10, version 1809 and later**) |
-| Camera settings | ms-settings:camera (**Behavior introduced in Windows 11, build 22000 and later**) Append the query string parameter `cameraId` set to the Uri-escaped symbolic link name of a camera device to directly launch the settings for that camera. For more information, see [Launch the camera settings page](/windows/apps/develop/camera/launch-camera-settings).|
+| Camera settings | ms-settings:camera (**Behavior introduced in Windows 11, build 22000 and later**) Append the query string parameter `cameraId` set to the Uri-escaped symbolic link name of a camera device to directly launch the settings for that camera. For more information, see [Launch the camera settings page](../camera/launch-camera-settings.md).|
 | Mouse & touchpad | ms-settings:mousetouchpad (touchpad settings only available on devices that have a touchpad) |
 | Pen & Windows Ink | ms-settings:pen |
 | Pen shortcut button | ms-settings:pen-button |

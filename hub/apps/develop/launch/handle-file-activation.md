@@ -1,7 +1,7 @@
 ---
 title: Handle file activation in a Windows app
 description: A Windows app can register to become the default handler for a certain file type.
-ms.date: 09/18/2026
+ms.date: 09/26/2026
 ms.topic: concept-article
 keywords: windows 10, uwp, windows 11, winui, winrt
 ms.localizationpriority: medium
@@ -112,7 +112,7 @@ void App::OnFileActivated(Windows::ApplicationModel::Activation::FileActivatedEv
 > When launched via File Contract, make sure that Back button takes the user back to the screen that launched the app and not to the app's previous content.
 
 > [!NOTE]
-> In a WinUI app, in App.OnLaunched (or in fact at any time) you can call ([AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)) to retrieve the activated event args, and check them to determine how the app was activated. See [Application lifecycle functionality migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle) for more information about lifecycle differences between UWP and WinUI apps.
+> In a WinUI app, in App.OnLaunched (or in fact at any time) you can call ([AppInstance.GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs)) to retrieve the activated event args, and check them to determine how the app was activated. See [Application lifecycle functionality migration](../../windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle.md) for more information about lifecycle differences between UWP and WinUI apps.
 
 We recommend that you create a new XAML **Frame** for each activation event that opens a new page. That way, the navigation backstack for the new XAML Frame doesn't contain any previous content that the app might have on the current window when suspended. If you decide to use a single XAML **Frame** for Launch and for File Contracts, then you should clear the pages in the **Frame**'s navigation journal before navigating to a new page.
 

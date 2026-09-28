@@ -4,7 +4,7 @@ description: Learn how the application lifecycle works for Windows App SDK deskt
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 07/10/2026
+ms.date: 09/26/2026
 ---
 
 # App lifecycle for Windows App SDK desktop apps
@@ -195,5 +195,5 @@ There is no "terminated by the system to free resources" state as in UWP. Your a
 - [App activation for Windows App SDK](activate-an-app.md)
 - [Manage memory in your desktop app](reduce-memory-usage.md)
 - [Multi-instance apps](multi-instance-apps.md)
-- [Rich activation in the Windows App SDK](/windows/apps/windows-app-sdk/applifecycle/applifecycle-rich-activation)
-- [App instancing in the Windows App SDK](/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing)
+- [Rich activation in the Windows App SDK](../../windows-app-sdk/applifecycle/applifecycle-rich-activation.md)
+- [App instancing in the Windows App SDK](../../windows-app-sdk/applifecycle/applifecycle-instancing.md)

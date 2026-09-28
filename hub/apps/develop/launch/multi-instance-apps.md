@@ -4,7 +4,7 @@ description: Learn how to create multi-instance Windows App SDK desktop apps usi
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 07/10/2026
+ms.date: 09/26/2026
 ---
 
 # Multi-instance apps with Windows App SDK
@@ -140,4 +140,4 @@ AppInstance.GetCurrent().UnregisterKey();
 
 - [App lifecycle for Windows App SDK](app-lifecycle.md)
 - [App activation for Windows App SDK](activate-an-app.md)
-- [App instancing in the Windows App SDK](/windows/apps/windows-app-sdk/applifecycle/applifecycle-instancing)
+- [App instancing in the Windows App SDK](../../windows-app-sdk/applifecycle/applifecycle-instancing.md)

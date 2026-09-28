@@ -4,7 +4,7 @@ description: Learn how to create console apps that use Windows App SDK features,
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 07/08/2026
+ms.date: 09/26/2026
 ---
 
 # Console apps with Windows App SDK
@@ -112,4 +112,4 @@ Console apps work well for background processing tasks:
 
 - [App lifecycle for Windows App SDK](app-lifecycle.md)
 - [Multi-instance apps](multi-instance-apps.md)
-- [Windows App SDK overview](/windows/apps/windows-app-sdk/)
+- [Windows App SDK overview](../../windows-app-sdk/index.md)

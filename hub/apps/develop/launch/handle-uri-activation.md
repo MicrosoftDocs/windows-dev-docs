@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 Learn how to register an app to become the default handler for a Uniform Resource Identifier (URI) scheme name. WinUI apps can register to be a default handler for a URI scheme name. If the user chooses your app as the default handler for a URI scheme name, your app will be activated every time that type of URI is launched.
 
 > [!NOTE]
-> **App model matters.** This page covers protocol registration via the **package manifest** for packaged apps (WinUI 3, MSIX-packaged WPF/Win32). If your app is **unpackaged** (a plain WPF or Win32 app), register your protocol using [ActivationRegistrationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager) and handle activation with `AppInstance.GetCurrent().GetActivatedEventArgs()`. For a complete WPF walkthrough (including single-instance redirection), see [Handle URI protocol activation in a WPF app](/windows/apps/develop/launch/handle-uri-activation-dotnet#handle-the-activation).
+> **App model matters.** This page covers protocol registration via the **package manifest** for packaged apps (WinUI 3, MSIX-packaged WPF/Win32). If your app is **unpackaged** (a plain WPF or Win32 app), register your protocol using [ActivationRegistrationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager) and handle activation with `AppInstance.GetCurrent().GetActivatedEventArgs()`. For a complete WPF walkthrough (including single-instance redirection), see [Handle URI protocol activation in a WPF app](./handle-uri-activation-dotnet.md#handle-the-activation).
 
 We recommend that you only register for a URI scheme name if you expect to handle all URI launches for that type of URI scheme. If you do choose to register for a URI scheme name, you must provide the end user with the functionality that is expected when your app is activated for that URI scheme. For example, an app that registers for the mailto: URI scheme name should open to a new e-mail message so that the user can compose a new e-mail. For more info on URI associations, see [Files, folders, and libraries](../files/index.md).
 
@@ -77,7 +77,7 @@ Apps that become the default for a URI scheme name have their icons displayed in
 ## Step 3: Handle the activated event
 
 > [!NOTE]
-> In a WinUI app, in App.OnLaunched (or in fact at any time) you can call [AppInstance.GetCurrent().GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) to retrieve the activated event args, and check them to determine how the app was activated. See [Application lifecycle functionality migration](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle) for more information about lifecycle differences between UWP and WinUI apps.
+> In a WinUI app, in App.OnLaunched (or in fact at any time) you can call [AppInstance.GetCurrent().GetActivatedEventArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appinstance.getactivatedeventargs) to retrieve the activated event args, and check them to determine how the app was activated. See [Application lifecycle functionality migration](../../windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle.md) for more information about lifecycle differences between UWP and WinUI apps.
 
 - [Windows.UI.Xaml.Application.OnActivated](/uwp/api/windows.ui.xaml.application.onactivated)
 
@@ -161,8 +161,8 @@ If you decide that you want your apps to use a single XAML [**Frame**](/windows/
 
 ## Related content
 
-- [Handle URI protocol activation in a WPF app](/windows/apps/develop/launch/handle-uri-activation-dotnet#handle-the-activation)
-- [Rich activation with the app lifecycle API](/windows/apps/windows-app-sdk/applifecycle/applifecycle-rich-activation)
+- [Handle URI protocol activation in a WPF app](./handle-uri-activation-dotnet.md#handle-the-activation)
+- [Rich activation with the app lifecycle API](../../windows-app-sdk/applifecycle/applifecycle-rich-activation.md)
 - [Association UWP launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/AssociationLaunching)
 - [Default Programs](/windows/desktop/shell/default-programs)
 - [Handle file activation](handle-file-activation.md)

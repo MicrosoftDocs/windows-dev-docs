@@ -1,7 +1,7 @@
 ---
 title: Launch Snipping Tool
 description: This topic describes how to use the protocol launch framework for Snipping Tool. Your app can use these URI schemes to launch Snipping Tool's capture overlay to create a new snip or recording.
-ms.date: 04/22/2026
+ms.date: 09/26/2026
 ms.topic: concept-article
 keywords: windows 11, uri, snipping tool, capture
 ms.localizationpriority: medium
@@ -281,7 +281,7 @@ Register a custom protocol in your `Package.appxmanifest` so your app can receiv
 </Extensions>
 ```
 
-See [Handle URI activation](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle#protocol-activation) for more details on registering and handling protocol activations.
+See [Handle URI activation](handle-uri-activation.md) for more details on registering and handling protocol activations.
 
 ### Step 2: Launch Snipping Tool
 
@@ -436,6 +436,6 @@ Snipping Tool validates all `redirect-uri` values before launching them. The fol
 
 ## Related content
 
-- [Handle URI activation](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle#protocol-activation)
+- [Handle URI activation](handle-uri-activation.md)
 - [SharedStorageAccessManager class](/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager)
 - [Use Snipping Tool to capture screenshots](https://support.microsoft.com/windows/use-snipping-tool-to-capture-screenshots-00246869-1843-655f-f220-97299b865f6b)

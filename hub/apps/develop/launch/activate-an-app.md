@@ -4,7 +4,7 @@ description: Learn how to handle app activation in Windows App SDK desktop apps,
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 07/10/2026
+ms.date: 09/26/2026
 ---
 
 # App activation for Windows App SDK desktop apps
@@ -141,7 +141,7 @@ Register the associations in your app manifest:
 </Extensions>
 ```
 
-For startup activation, see [Configure your app to start at log-in](/windows/apps/windows-app-sdk/applifecycle/applifecycle-rich-activation#startup-activation).
+For startup activation, see [Configure your app to start at log-in](../../windows-app-sdk/applifecycle/applifecycle-rich-activation.md#register-for-rich-activation).
 
 ### Unpackaged apps
 
@@ -168,7 +168,7 @@ ActivationRegistrationManager.RegisterForFileTypeActivation(
 
 To remove a registration (for example, during uninstall), call the matching `UnregisterForProtocolActivation` or `UnregisterForFileTypeActivation` method.
 
-Both packaged and unpackaged apps retrieve activation arguments the same way, using `AppInstance.GetCurrent().GetActivatedEventArgs()`, as shown earlier in this article. For more detail, see [Rich activation with the app lifecycle API](/windows/apps/windows-app-sdk/applifecycle/applifecycle-rich-activation).
+Both packaged and unpackaged apps retrieve activation arguments the same way, using `AppInstance.GetCurrent().GetActivatedEventArgs()`, as shown earlier in this article. For more detail, see [Rich activation with the app lifecycle API](../../windows-app-sdk/applifecycle/applifecycle-rich-activation.md).
 
 ## Handle activation in a running instance
 
@@ -186,6 +186,6 @@ If your app is already running when a second activation occurs, you can redirect
 ## Related content
 
 - [App lifecycle for Windows App SDK](app-lifecycle.md)
-- [Handle file activation](/windows/apps/develop/launch/handle-file-activation)
-- [Handle URI activation](/windows/apps/develop/launch/handle-uri-activation)
-- [Rich activation in the Windows App SDK](/windows/apps/windows-app-sdk/applifecycle/applifecycle-rich-activation)
+- [Handle file activation](./handle-file-activation.md)
+- [Handle URI activation](./handle-uri-activation.md)
+- [Rich activation in the Windows App SDK](../../windows-app-sdk/applifecycle/applifecycle-rich-activation.md)

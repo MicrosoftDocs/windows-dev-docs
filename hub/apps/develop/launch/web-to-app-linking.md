@@ -2,7 +2,7 @@
 title: Enable apps for websites using app URI handlers
 description: Drive user engagement with your app by supporting the Apps for Websites feature.
 keywords: Deep Linking Windows, uwp, winui, windows 11, windows 10
-ms.date: 08/21/2026
+ms.date: 09/26/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 # customer-intent: As a Windows developer, I want to learn how to use the Apps for Websites feature to drive user engagement with my app.
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 # Enable apps for websites using app URI handlers
 
 > [!IMPORTANT]
-> **Packaging required.** The `windows.appUriHandler` extension used in this feature requires a **packaged app** — either a full MSIX package or a sparse package (packaging with external location). If your app is currently unpackaged, you must first grant it a package identity. For guidance, see [Grant identity to an unpackaged app](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-overview). For handling custom `myapp://` URI schemes in an unpackaged app, see [Handle URI activation](handle-uri-activation.md) instead.
+> **Packaging required.** The `windows.appUriHandler` extension used in this feature requires a **packaged app** — either a full MSIX package or a sparse package (packaging with external location). If your app is currently unpackaged, you must first grant it a package identity. For guidance, see [Grant identity to an unpackaged app](../../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md). For handling custom `myapp://` URI schemes in an unpackaged app, see [Handle URI activation](handle-uri-activation.md) instead.
 
 Apps for Websites associates your app with a website so that when someone opens a link to your website, your app is launched instead of opening the browser. If your app is not installed, your website opens in the browser as usual. Users can trust this experience because only verified content owners can register for a link. Users will be able to check all of their registered web-to-app links by going to Settings > Apps > Apps for websites.
 
