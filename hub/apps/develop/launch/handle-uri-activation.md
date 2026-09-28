@@ -1,7 +1,7 @@
 ---
 title: Handle URI activation with a Windows app
 description: Learn how to register a Windows app to become the default handler for a Uniform Resource Identifier (URI) scheme name.
-ms.date: 09/18/2026
+ms.date: 09/27/2026
 ms.topic: how-to
 keywords: windows 10, uwp, windows 11
 ms.localizationpriority: medium
@@ -163,6 +163,6 @@ If you decide that you want your apps to use a single XAML [**Frame**](/windows/
 
 - [Handle URI protocol activation in a WPF app](/windows/apps/develop/launch/handle-uri-activation-dotnet#handle-the-activation)
 - [Rich activation with the app lifecycle API](/windows/apps/windows-app-sdk/applifecycle/applifecycle-rich-activation)
-- [Association UWP launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
+- [Association UWP launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/AssociationLaunching)
 - [Default Programs](/windows/desktop/shell/default-programs)
 - [Handle file activation](handle-file-activation.md)

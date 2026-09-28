@@ -5,7 +5,7 @@ ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
 label: Respond to the presence of the touch keyboard
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions
-ms.date: 09/10/2026
+ms.date: 09/27/2026
 ms.topic: how-to
 
 
@@ -215,7 +215,7 @@ void Scenario2_ShowHideEvents::OnHiding(InputPane^ /*sender*/, InputPaneVisibili
 
 ### Samples
 
-- [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/TouchKeyboard) (UWP)
+- [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/TouchKeyboard) (UWP)
 - [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery) - For WinUI 3 control examples
 - [WinUI Gallery keyboard accessibility sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/AccessibilityKeyboard)
 

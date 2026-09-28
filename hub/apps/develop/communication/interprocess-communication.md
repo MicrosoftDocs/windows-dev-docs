@@ -4,7 +4,7 @@ description: Learn about ways to perform interprocess communication between Wind
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
-ms.date: 07/12/2026
+ms.date: 09/27/2026
 ---
 
 # Interprocess communication (IPC)
@@ -179,9 +179,9 @@ Packaged desktop apps (see [Building an MSIX package from your code](/windows/ms
 
 [RPC](/windows/win32/rpc/rpc-start-page) can be used to connect a packaged application to a Win32 RPC endpoint, provided that the packaged application has the correct capabilities to match the ACLs on the RPC endpoint.
 
-Custom capabilities enable OEMs and IHVs to [define arbitrary capabilities](/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-driver-developers#reserving-a-custom-capability), [ACL their RPC endpoints with them](/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-driver-developers#allowing-access-to-an-rpc-endpoint-to-a-uwp-app-using-the-custom-capability), and then [grant those capabilities to authorized client applications](/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-driver-developers#preparing-the-signed-custom-capability-descriptor-sccd-file). For a full sample application, see the [CustomCapability](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomCapability) sample.
+Custom capabilities enable OEMs and IHVs to [define arbitrary capabilities](/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-driver-developers#reserving-a-custom-capability), [ACL their RPC endpoints with them](/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-driver-developers#allowing-access-to-an-rpc-endpoint-to-a-uwp-app-using-the-custom-capability), and then [grant those capabilities to authorized client applications](/windows-hardware/drivers/devapps/hardware-support-app--hsa--steps-for-driver-developers#preparing-the-signed-custom-capability-descriptor-sccd-file). For a full sample application, see the [CustomCapability](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CustomCapability) sample.
 
-RPC endpoints can also be ACLed to specific packaged applications to limit access to the endpoint to just those applications without requiring the management overhead of custom capabilities. You can use the [DeriveAppContainerSidFromAppContainerName](/windows/win32/api/userenv/nf-userenv-deriveappcontainersidfromappcontainername) API to derive a SID from a package family name, and then ACL the RPC endpoint with the SID as shown in the [CustomCapability](https://github.com/Microsoft/Windows-universal-samples/blob/master/Samples/CustomCapability/Service/Server/RpcServer.cpp) sample.
+RPC endpoints can also be ACLed to specific packaged applications to limit access to the endpoint to just those applications without requiring the management overhead of custom capabilities. You can use the [DeriveAppContainerSidFromAppContainerName](/windows/win32/api/userenv/nf-userenv-deriveappcontainersidfromappcontainername) API to derive a SID from a package family name, and then ACL the RPC endpoint with the SID as shown in the [CustomCapability](https://github.com/Microsoft/Windows-universal-samples/blob/main/Samples/CustomCapability/Service/Server/RpcServer.cpp) sample.
 
 ## Shared memory
 

@@ -1,7 +1,7 @@
 ---
 title: Best practices for writing to files
 description: Learn best practices for using various file writing methods of the FileIO and PathIO classes.
-ms.date: 09/06/2026
+ms.date: 09/27/2026
 ms.topic: best-practice
 keywords: windows 10, winui
 ms.localizationpriority: medium
@@ -51,7 +51,7 @@ The first two scenarios are the ones most commonly used by apps. Writing to the 
 
 The Write methods of the [FileIO](/uwp/api/Windows.Storage.FileIO) and [PathIO](/uwp/api/windows.storage.pathio) classes wrap the steps on the third write model described above, with an added layer. This layer is encapsulated in a storage transaction.
 
-To protect the integrity of the original file in case something goes wrong while writing the data, the Write methods use a transactional model by opening the file using [OpenTransactedWriteAsync](/uwp/api/windows.storage.storagefile.opentransactedwriteasync). This process creates a [StorageStreamTransaction](/uwp/api/windows.storage.storagestreamtransaction) object. After this transaction object is created, the APIs write the data following a similar fashion to the [File Access](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess) sample or the code example in the [StorageStreamTransaction](/uwp/api/windows.storage.storagestreamtransaction) article.
+To protect the integrity of the original file in case something goes wrong while writing the data, the Write methods use a transactional model by opening the file using [OpenTransactedWriteAsync](/uwp/api/windows.storage.storagefile.opentransactedwriteasync). This process creates a [StorageStreamTransaction](/uwp/api/windows.storage.storagestreamtransaction) object. After this transaction object is created, the APIs write the data following a similar fashion to the [File Access](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/FileAccess) sample or the code example in the [StorageStreamTransaction](/uwp/api/windows.storage.storagestreamtransaction) article.
 
 The following diagram illustrates the underlying tasks performed by the WriteTextAsync method in a successful write operation. This illustration provides a simplified view of the operation. For example, it skips steps such as text encoding and async completion on different threads.
 
@@ -139,7 +139,7 @@ Unless the OS grants extended execution to your app, when your app is suspended 
 
 If your app operates on a small amount of state data during suspension, in most cases you can use the Write methods to flush the data. However, if your app uses a large amount of state data, consider using streams to directly store your data. This can help reduce the delay introduced by the transactional model of the Write methods. 
 
-For an example, see the [BasicSuspension](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicSuspension) sample.
+For an example, see the [BasicSuspension](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicSuspension) sample.
 
 ## Other examples and resources
 

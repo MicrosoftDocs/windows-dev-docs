@@ -1,7 +1,7 @@
 ---
 description: Learn how to implement copy and paste functionality in WinUI and UWP apps using the clipboard APIs. Includes code examples and best practices.
 title: Copy and Paste in WinUI and UWP Apps
-ms.date: 10/15/2025
+ms.date: 09/27/2026
 ms.topic: how-to
 keywords: windows 11, uwp, winrt, windows runtime, winui
 ms.localizationpriority: medium
@@ -176,7 +176,7 @@ Clipboard::ContentChanged([this](auto const&, auto const&)
 
 ## Related content
 
-- [Clipboard sample](https://github.com/microsoft/Windows-universal-samples/tree/master/Samples/Clipboard)
+- [Clipboard sample](https://github.com/microsoft/Windows-universal-samples/tree/main/Samples/Clipboard)
 - [Communication](index.md)
 - [DataTransfer](/uwp/api/windows.applicationmodel.datatransfer)
 - [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage)

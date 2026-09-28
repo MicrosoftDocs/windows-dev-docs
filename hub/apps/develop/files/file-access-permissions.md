@@ -2,7 +2,7 @@
 ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
 title: File access permissions
 description: Apps can access certain file system locations by default. Apps can also access additional locations through the file picker, or by declaring capabilities.
-ms.date: 01/28/2022
+ms.date: 09/27/2026
 ms.topic: how-to
 keywords: windows 10, winui
 ms.localizationpriority: medium
@@ -39,7 +39,7 @@ There are two primary ways to access files and folders in your app's install dir
     ```
 
 
-    You can then access files and folders in the directory using [StorageFolder](/uwp/api/Windows.Storage.StorageFolder) methods. In the example, this StorageFolder is stored in the `installDirectory` variable. You can learn more about working with your app package and install directory from the [App package information sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Package) on GitHub.
+    You can then access files and folders in the directory using [StorageFolder](/uwp/api/Windows.Storage.StorageFolder) methods. In the example, this StorageFolder is stored in the `installDirectory` variable. You can learn more about working with your app package and install directory from the [App package information sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Package) on GitHub.
 
 2. You can retrieve a file directly from your app's install directory by using an app URI, like this:
 
@@ -93,7 +93,7 @@ There are two primary ways to access files and folders from your app's data loca
 
     If you want to access your app's roaming or temporary folder, use the [RoamingFolder](/uwp/api/windows.storage.applicationdata.roamingfolder) or [TemporaryFolder](/uwp/api/windows.storage.applicationdata.temporaryfolder) property instead.
 
-    After you retrieve a [StorageFolder](/uwp/api/Windows.Storage.StorageFolder) that represents an app data location, you can access files and folders in that location by using StorageFolder methods. In the example, these StorageFolder objects are stored in the `localFolder` variable. You can learn more about using app data locations from the guidance on the [ApplicationData class](/uwp/api/windows.storage.applicationdata) page, and by downloading the [Application data sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ApplicationData) from GitHub.
+    After you retrieve a [StorageFolder](/uwp/api/Windows.Storage.StorageFolder) that represents an app data location, you can access files and folders in that location by using StorageFolder methods. In the example, these StorageFolder objects are stored in the `localFolder` variable. You can learn more about using app data locations from the guidance on the [ApplicationData class](/uwp/api/windows.storage.applicationdata) page, and by downloading the [Application data sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/ApplicationData) from GitHub.
 
 2. You can retrieve a file directly from your app's local folder by using an app URI, like this:
 

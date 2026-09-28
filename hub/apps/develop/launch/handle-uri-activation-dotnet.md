@@ -1,7 +1,7 @@
 ---
 title: Handle URI activation with a WPF or Windows Forms app
 description: Learn how to register a .NET app to become the default handler for a Uniform Resource Identifier (URI) scheme name.
-ms.date: 02/11/2025
+ms.date: 09/27/2026
 ms.topic: how-to
 keywords: windows 10, windows 11
 ms.localizationpriority: medium
@@ -161,4 +161,4 @@ For more information about app instancing, see [App instancing with the app life
 - [Handle URI activation](handle-uri-activation.md)
 - [Handle file activation](handle-file-activation.md)
 - [Default Programs](/windows/desktop/shell/default-programs)
-- [UWP Association launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/AssociationLaunching)
+- [UWP Association launching sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/AssociationLaunching)

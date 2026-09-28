@@ -2,7 +2,7 @@
 ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
 title: Track recently used files and folders
 description: Track files that your user accesses frequently by adding them to your app's most recently used list (MRU).
-ms.date: 12/19/2018
+ms.date: 09/27/2026
 ms.topic: how-to
 keywords: windows 10, winui
 ms.localizationpriority: medium
@@ -19,7 +19,7 @@ Track files that your user accesses frequently by adding them to your app's most
 Your app's MRU is represented by the [StorageItemMostRecentlyUsedList](/uwp/api/Windows.Storage.AccessCache.StorageItemMostRecentlyUsedList) class, which you obtain from the static [StorageApplicationPermissions.MostRecentlyUsedList](/uwp/api/windows.storage.accesscache.storageapplicationpermissions.mostrecentlyusedlist) property. MRU items are stored as [IStorageItem](/uwp/api/Windows.Storage.IStorageItem) objects, so both [StorageFile](/uwp/api/Windows.Storage.StorageFile) objects (which represent files) and [StorageFolder](/uwp/api/Windows.Storage.StorageFolder) objects (which represent folders) can be added to the MRU.
 
 > [!NOTE]
-> For complete samples, see the [File picker sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FilePicker) and the [File access sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
+> For complete samples, see the [File picker sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/FilePicker) and the [File access sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/FileAccess).
 
 ## Prerequisites
 

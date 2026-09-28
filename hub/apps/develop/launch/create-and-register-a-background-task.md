@@ -1,7 +1,7 @@
 ---
 title: Working with background tasks in Windows apps
 description: Learn how to create and register a background task in your app with the Windows Runtime (WinRT) BackgroundTaskBuilder class.
-ms.date: 02/11/2025
+ms.date: 09/27/2026
 ms.topic: concept-article
 keywords: windows 10, uwp, windows 11, winui, winrt
 ms.localizationpriority: medium
@@ -22,7 +22,7 @@ Learn how to create and register a background task in your app with the Windows 
 
 ## Register a background task
 
-See the [BackgroundTask sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask/cs/BackgroundTask) for a complete example of registering a background task in a Universal Windows Platform (UWP) app.
+See the [BackgroundTask sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BackgroundTask/cs/BackgroundTask) for a complete example of registering a background task in a Universal Windows Platform (UWP) app.
 
 The following example shows the registration of a Win32 COM task that runs on a recurring 15 minute timer.
 
@@ -304,5 +304,5 @@ If your background task requires network connectivity, be aware of the following
 ## Related content
 
 - [BackgroundTaskBuilder class](/uwp/api/windows.applicationmodel.background.backgroundtaskbuilder)
-- [BackgroundTask sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundTask/cs/BackgroundTask)
+- [BackgroundTask sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BackgroundTask/cs/BackgroundTask)
 - [Launching Windows apps and managing background tasks](index.md)

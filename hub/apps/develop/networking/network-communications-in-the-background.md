@@ -1,7 +1,7 @@
 ---
 description: To continue network communication while it's in the background, an app can use background tasks and either socket broker or control channel triggers.
 title: Network communications in the background
-ms.date: 06/25/2026
+ms.date: 09/27/2026
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
@@ -146,7 +146,7 @@ case SocketActivityTriggerReason.SocketClosed:
   deferral.Complete();
 ```
 
-For a complete sample demonstrating the use of the [**SocketActivityTrigger**](/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) and socket broker, see the [SocketActivityStreamSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/SocketActivityStreamSocket). The initialization of the socket is performed in Scenario1\_Connect.xaml.cs, and the background task implementation is in SocketActivityTask.cs.
+For a complete sample demonstrating the use of the [**SocketActivityTrigger**](/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger) and socket broker, see the [SocketActivityStreamSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/SocketActivityStreamSocket). The initialization of the socket is performed in Scenario1\_Connect.xaml.cs, and the background task implementation is in SocketActivityTask.cs.
 
 You will probably notice that the sample calls **TransferOwnership** as soon as it creates a new socket or acquires an existing socket, rather than using the **OnSuspending** even handler to do so as described in this topic. This is because the sample focuses on demonstrating the [**SocketActivityTrigger**](/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger), and doesn't use the socket for any other activity while it is running. Your app will probably be more complex, and should use **OnSuspending** to determine when to call **TransferOwnership**.
 

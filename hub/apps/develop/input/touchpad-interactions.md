@@ -5,7 +5,7 @@ ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
 label: Touchpad interactions
 template: detail.hbs
 keywords: touchpad, PTP, touch, pointer, input, user interaction
-ms.date: 08/21/2026
+ms.date: 09/27/2026
 ms.topic: article
 
 
@@ -108,10 +108,10 @@ If you need to customize the mouse cursor:
 
 ### Samples
 
-- [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BasicInput)
-- [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/LowLatencyInput)
-- [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/UserInteractionMode)
-- [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlFocusVisuals)
+- [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicInput)
+- [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LowLatencyInput)
+- [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/UserInteractionMode)
+- [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlFocusVisuals)
 - [WinUI Gallery ScrollViewer sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ScrollViewer)
 - [WinUI Gallery ScrollView sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ScrollView)
 

@@ -2,7 +2,7 @@
 ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
 title: Create, write, and read a file
 description: Learn how to create, write, and read a file using the WinUI objects FileIO, StorageFolder, and StorageFile.
-ms.date: 12/19/2018
+ms.date: 09/27/2026
 ms.topic: article
 keywords: windows 10, winui
 ms.localizationpriority: medium
@@ -21,7 +21,7 @@ dev_langs:
 Read and write a file using a [StorageFile](/uwp/api/windows.storage.storagefile) object.
 
 > [!NOTE]
-> For a complete sample, see the [File access sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
+> For a complete sample, see the [File access sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/FileAccess).
 
 ## Prerequisites
 

@@ -3,7 +3,7 @@ title: Guidelines for thumbnail images in WinUI apps
 description: Learn how to use thumbnail images to help users preview files as they browse in a WinUI app.
 label: Thumbnail images
 template: detail.hbs
-ms.date: 3/25/2022
+ms.date: 09/27/2026
 ms.topic: article
 keywords: windows 10, winui
 ms.localizationpriority: medium
@@ -160,5 +160,5 @@ Otherwise, no thumbnail is retrieved.</td>
 - [ThumbnailMode enum](/uwp/api/windows.storage.fileproperties.thumbnailmode)
 - [StorageItemThumbnail class](/uwp/api/Windows.Storage.FileProperties.StorageItemThumbnail)
 - [StorageFile class](/uwp/api/windows.storage.storagefile)
-- [File and folder thumbnail sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileThumbnails)
+- [File and folder thumbnail sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/FileThumbnails)
 - [List and grid view](/windows/apps/design/controls/lists)

@@ -2,7 +2,7 @@
 ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
 title: Enumerate and query files and folders
 description: Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
-ms.date: 03/31/2026
+ms.date: 09/27/2026
 ms.topic: how-to
 keywords: windows 10, winui
 ms.localizationpriority: medium
@@ -17,7 +17,7 @@ Access files and folders in either a folder, library, device, or network locatio
 For guidance on how to store your WinUI app's data, see the [ApplicationData](/uwp/api/windows.storage.applicationdata) class.
 
 > [!NOTE]
-> For a complete sample, see the [Folder enumeration sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FolderEnumeration).
+> For a complete sample, see the [Folder enumeration sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/FolderEnumeration).
 
 ## Prerequisites
 

@@ -1,7 +1,7 @@
 ---
 description: Sockets are a low-level data transfer technology on top of which many networking protocols are implemented. Windows offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required.
 title: Sockets
-ms.date: 06/25/2026
+ms.date: 09/27/2026
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
@@ -515,7 +515,7 @@ void StreamSocketListener_ConnectionReceived(Windows::Networking::Sockets::Strea
 }
 ```
 
-From the perspective of the **StreamSocket**, the completion handler is done executing (and the socket is eligible for disposal) before the continuation body runs. So, to keep your socket from being disposed if you want to use it inside that continuation, you need to either reference the socket directly (via lambda capture) and use it, or indirectly (by continuing to access `args->Socket` inside continuations), or force continuation tasks to be inline. You can see the first technique (lambda capture) in action in the [StreamSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket). The C++/CX code in the [Build a basic TCP socket client and server](#build-a-basic-tcp-socket-client-and-server) section above uses the second technique&mdash;it echoes the request back as a response, and it accesses `args->Socket` from within one of the innermost continuations.
+From the perspective of the **StreamSocket**, the completion handler is done executing (and the socket is eligible for disposal) before the continuation body runs. So, to keep your socket from being disposed if you want to use it inside that continuation, you need to either reference the socket directly (via lambda capture) and use it, or indirectly (by continuing to access `args->Socket` inside continuations), or force continuation tasks to be inline. You can see the first technique (lambda capture) in action in the [StreamSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/StreamSocket). The C++/CX code in the [Build a basic TCP socket client and server](#build-a-basic-tcp-socket-client-and-server) section above uses the second technique&mdash;it echoes the request back as a response, and it accesses `args->Socket` from within one of the innermost continuations.
 
 The third technique is appropriate when you're not echoing a response back. You use the `task_continuation_context::use_synchronous_execution()` option to force PPL to execute the continuation body inline. Here's a code example showing how to do it.
 
@@ -1378,4 +1378,4 @@ The [**HostName**](/uwp/api/Windows.Networking.HostName) constructor can throw a
 * [Windows Sockets 2 (Winsock)](/windows/desktop/WinSock/windows-sockets-start-page-2)
 
 ## Samples
-* [StreamSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/StreamSocket)
+* [StreamSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/StreamSocket)

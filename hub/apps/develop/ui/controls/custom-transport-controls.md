@@ -4,7 +4,7 @@ title: Create custom media transport controls
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 09/27/2026
 ms.topic: how-to
 keywords: winui, xaml controls
 ms.localizationpriority: medium
@@ -20,7 +20,7 @@ MediaPlayerElement has customizable XAML transport controls to manage control of
 Before starting, you should be familiar with the MediaPlayerElement and the MediaTransportControls classes. For more info, see the MediaPlayerElement control guide.
 
 > [!TIP]
-> The examples in this topic are based on the [Media Transport Controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls). You can download the sample to view and run the completed code.
+> The examples in this topic are based on the [Media Transport Controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlCustomMediaTransportControls). You can download the sample to view and run the completed code.
 
 ## When should you customize the template?
 
@@ -86,7 +86,7 @@ For more info about modifying styles and templates, see [Styling controls](../..
 
 ### Create a derived control
 
-To add to or modify the functionality of the transport controls, you must create a new class that's derived from MediaTransportControls. A derived class called `CustomMediaTransportControls` is shown in the [Media Transport Controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls) and the remaining examples on this page.
+To add to or modify the functionality of the transport controls, you must create a new class that's derived from MediaTransportControls. A derived class called `CustomMediaTransportControls` is shown in the [Media Transport Controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlCustomMediaTransportControls) and the remaining examples on this page.
 
 **To create a new class derived from MediaTransportControls**
 1. Add a new class file to your project.
@@ -193,7 +193,7 @@ Because the overflow menu is comprised of text buttons, you must add a text labe
 
 ### Adding a custom button
 
-One reason you might want to customize MediaTransportControls is to add a custom command to the control. Whether you add it as a primary command or a secondary command, the procedure for creating the command button and modifying its behavior is the same. In the [Media Transport Controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlCustomMediaTransportControls), a "rating" button is added to the primary commands.
+One reason you might want to customize MediaTransportControls is to add a custom command to the control. Whether you add it as a primary command or a secondary command, the procedure for creating the command button and modifying its behavior is the same. In the [Media Transport Controls sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlCustomMediaTransportControls), a "rating" button is added to the primary commands.
 
 **To add a custom command button**
 1. Create an AppBarButton object and add it to the CommandBar in the control template.

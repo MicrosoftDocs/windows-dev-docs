@@ -3,7 +3,7 @@ description: Displays the avatar image for a person, if one is available; if not
 title: Person picture control
 template: detail.hbs
 label: Person picture
-ms.date: 02/26/2025
+ms.date: 09/27/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -157,4 +157,4 @@ If there isn't an image, the control displays the contact's name or initials; if
 ## Related articles
 
 * [Contacts and calendar](/windows/uwp/contacts-and-calendar/index)
-* [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/ContactCards)
+* [Contact cards sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/ContactCards)

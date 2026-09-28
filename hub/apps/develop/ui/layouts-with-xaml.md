@@ -1,7 +1,7 @@
 ---
 description: Learn how to use the XAML flexible layout system with automatic sizing, layout panels, visual states, and separate UI definitions to create a responsive UI.
 title: Responsive layouts
-ms.date: 09/19/2026
+ms.date: 09/27/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -265,13 +265,13 @@ This example shows how to set the [**RelativePanel.AlignHorizontalCenterWithPane
 
 ### Custom state triggers
 
-You can extend the [**StateTrigger**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.statetrigger) class to create custom triggers for a wide range of scenarios. For example, you can create a StateTrigger to trigger different states based on input type, then increase the margins around a control when the input type is touch. Or create a StateTrigger to apply different states based on the device family the app is run on. For examples of how to build custom triggers and use them to create optimized UI experiences from within a single XAML view, see the [State triggers sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers).
+You can extend the [**StateTrigger**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.statetrigger) class to create custom triggers for a wide range of scenarios. For example, you can create a StateTrigger to trigger different states based on input type, then increase the margins around a control when the input type is touch. Or create a StateTrigger to apply different states based on the device family the app is run on. For examples of how to build custom triggers and use them to create optimized UI experiences from within a single XAML view, see the [State triggers sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlStateTriggers).
 
 ### Visual states and styles
 
 You can use Style resources in visual states to apply a set of property changes to multiple controls. For more info about using styles, see [Styling controls](../../develop/platform/xaml/xaml-styles.md).
 
-In this simplified XAML from the State triggers sample, a Style resource is applied to a Button to adjust the size and margins for mouse or touch input. For the complete code and the definition of the custom state trigger, see the [State triggers sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers).
+In this simplified XAML from the State triggers sample, a Style resource is applied to a Button to adjust the size and margins for mouse or touch input. For the complete code and the definition of the custom state trigger, see the [State triggers sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlStateTriggers).
 
 ```xaml
 <Page ... >
@@ -339,5 +339,5 @@ In this simplified XAML from the State triggers sample, a Style resource is appl
 
 ## Related topics
 
-- [State triggers sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlStateTriggers)
-- [Tailored multiple views sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlTailoredMultipleViews)
+- [State triggers sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlStateTriggers)
+- [Tailored multiple views sample (GitHub)](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlTailoredMultipleViews)

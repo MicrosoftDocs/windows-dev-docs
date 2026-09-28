@@ -1,7 +1,7 @@
 ---
 description: WebSockets provide a mechanism for fast, secure, two-way communication between a client and a server over the web using HTTP(S), and supporting both UTF-8 and binary messages.
 title: WebSockets
-ms.date: 08/30/2026
+ms.date: 09/27/2026
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
@@ -834,4 +834,4 @@ protected:
 * [Which networking technology?](which-networking-technology.md)
 
 ## Samples
-* [WebSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/WebSocket)
+* [WebSocket sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/WebSocket)

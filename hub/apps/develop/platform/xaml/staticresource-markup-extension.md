@@ -2,7 +2,7 @@
 description: Provides a value for any XAML attribute by evaluating a reference to an already defined resource. Resources are defined in a ResourceDictionary, and a StaticResource usage references the key of that resource in the ResourceDictionary.
 title: StaticResource markup extension
 ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
-ms.date: 07/27/2026
+ms.date: 09/27/2026
 ms.topic: article
 keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
@@ -44,7 +44,7 @@ In the Windows Runtime XAML processor implementation, there is no backing class 
 
 ### An example {StaticResource} usage
 
-This example XAML is taken from the [XAML data binding sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlBind).
+This example XAML is taken from the [XAML data binding sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlBind).
 
 ```xml
 <StackPanel Margin="5">

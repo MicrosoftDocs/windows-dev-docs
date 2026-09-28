@@ -4,7 +4,7 @@ title: List/details
 ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
 label: List/details
 template: detail.hbs
-ms.date: 07/10/2026
+ms.date: 09/27/2026
 ms.topic: article
 keywords: winui, xaml controls
 ms.localizationpriority: medium
@@ -84,8 +84,8 @@ To create an adaptive layout, define different [**VisualStates**](/windows/windo
 ## Get the sample code
 
 The following samples implement the list/details pattern with adaptive layouts and demonstrate data binding to static, database, and online resources: 
-- [Master/detail sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlMasterDetail) 
-- [ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/XamlListView)
+- [Master/detail sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlMasterDetail) 
+- [ListView and GridView sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlListView)
 - [Customer orders database sample](https://github.com/Microsoft/Windows-appsample-customers-orders-database)
 - [RSS Reader sample](https://github.com/Microsoft/Windows-appsample-rssreader)
 

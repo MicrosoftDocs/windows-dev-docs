@@ -1,7 +1,7 @@
 ---
 title: Windows Hello
 description: This article describes the Windows Hello technology that ships as part of Windows and discusses how developers can implement this technology to protect their Windows apps and backend services.
-ms.date: 07/08/2024
+ms.date: 09/27/2026
 ms.topic: article
 keywords: windows, winrt, security, identity
 ms.custom: sfi-image-nochange
@@ -265,7 +265,7 @@ A basic challenge–response flow is shown in this sequence diagram:
 
 ![Windows Hello challenge response](images/windows-hello-challenge-response.png)
 
-Next, the server must validate the signature. When you request the public key and send it to the server to use for future validation, it is in an ASN.1-encoded publicKeyInfo blob. If you examine the [Windows Hello code sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport), you will see that there are helper classes to wrap Crypt32 functions to translate the ASN.1-encoded blob to a CNG blob, which is more commonly used. The blob contains the public key algorithm, which is RSA, and the RSA public key.
+Next, the server must validate the signature. When you request the public key and send it to the server to use for future validation, it is in an ASN.1-encoded publicKeyInfo blob. If you examine the [Windows Hello code sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/MicrosoftPassport), you will see that there are helper classes to wrap Crypt32 functions to translate the ASN.1-encoded blob to a CNG blob, which is more commonly used. The blob contains the public key algorithm, which is RSA, and the RSA public key.
 
 In the sample, the reason we convert the ASN.1-encoded blob to a CNG blob is so that it can be used with [CNG](/windows/win32/SecCNG/cng-portal) and the BCrypt API. If you look up the CNG blob, it will point you to the related [BCRYPT_KEY_BLOB structure](/windows/win32/api/bcrypt/ns-bcrypt-bcrypt_key_blob). This API surface can be used for authentication and encryption in Windows applications. ASN.1 is a documented standard for communicating data structures that can be serialized, and it's commonly used in public key cryptography and with certificates. That's why the public key information is returned in this manner. The public key is an RSA key; and that's the algorithm that Windows Hello uses when it signs data.
 
@@ -399,7 +399,7 @@ Mission accomplished! You just made the Internet a safer place!
 
 - [Windows Hello overview](https://www.microsoft.com/windows/tips/windows-hello)
 - [Plan a Windows Hello for Business deployment](/windows/security/identity-protection/hello-for-business/deploy/)
-- [Windows Hello UWP code sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/MicrosoftPassport)
+- [Windows Hello UWP code sample on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/MicrosoftPassport)
 
 ### Terminology
 

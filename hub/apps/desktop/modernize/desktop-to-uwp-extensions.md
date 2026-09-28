@@ -1,7 +1,7 @@
 ---
 description: You can use extensions to integrate your packaged desktop app with Windows 10 and later releases in predefined ways.
 title: Integrate your desktop app with Windows using packaging extensions
-ms.date: 09/10/2026
+ms.date: 09/27/2026
 ms.topic: how-to
 keywords: windows 11, windows 10, uwp
 ms.assetid: 0a8cedac-172a-4efd-8b6b-67fd3667df34
@@ -907,7 +907,7 @@ Find the complete schema reference here: [com:ComServer](/uwp/schemas/appxpackag
 
 To register your context menu handler, follow these instructions.
 
-1. In your desktop application, implement a [context menu handler](/windows/desktop/shell/context-menu-handlers) by implementing the [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) or [IExplorerCommandState](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) interface. For a sample, see the [ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) code sample. Make sure that you define a class GUID for each of your implementation objects. For example, the following code defines a class ID for an implementation of [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand).
+1. In your desktop application, implement a [context menu handler](/windows/desktop/shell/context-menu-handlers) by implementing the [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand) or [IExplorerCommandState](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommandstate) interface. For a sample, see the [ExplorerCommandVerb](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/Win7Samples/winui/shell/appshellintegration/ExplorerCommandVerb) code sample. Make sure that you define a class GUID for each of your implementation objects. For example, the following code defines a class ID for an implementation of [IExplorerCommand](/windows/desktop/api/shobjidl_core/nn-shobjidl_core-iexplorercommand).
 
     ```cpp
     class __declspec(uuid("00001111-aaaa-2222-bbbb-3333cccc4444")) CExplorerCommandVerb;

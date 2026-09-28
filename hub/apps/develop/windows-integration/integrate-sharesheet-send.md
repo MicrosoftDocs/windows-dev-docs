@@ -4,7 +4,7 @@ title: "Share content from your app - integrate Windows Share"
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 06/22/2026
+ms.date: 09/27/2026
 ms.localizationpriority: medium
 ---
 
@@ -217,7 +217,7 @@ private void ShareButton_Click()
 }
 ```
 
-For a complete example, see the [WPF Share Source sample](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource).
+For a complete example, see the [WPF Share Source sample](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/ShareSource).
 
 ## Source-side events
 

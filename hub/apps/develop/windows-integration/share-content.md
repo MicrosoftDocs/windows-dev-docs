@@ -2,7 +2,7 @@
 title: Share content from your Windows app
 description: Learn how to use the Windows Share contract to share text, links, images, and files from packaged Windows apps, including UWP and WinUI 3 desktop apps.
 ms.topic: how-to
-ms.date: 06/25/2026
+ms.date: 09/27/2026
 ms.localizationpriority: medium
 keywords: windows share, share contract, datatransfermanager, datapackage, winui 3, windows app sdk
 author: GrantMeStrength
@@ -18,7 +18,7 @@ This article explains how to implement the *source* side of the Share contract: 
 The `Windows.ApplicationModel.DataTransfer` APIs used in this article work for apps that have package identity, including UWP apps and packaged WinUI 3 desktop apps. Unpackaged Win32 apps can participate by granting package identity and then using `IDataTransferManagerInterop`.
 
 > [!NOTE]
-> WinUI 3 desktop apps don't have a `CoreWindow`, so you can't call `DataTransferManager.GetForCurrentView()` or `DataTransferManager.ShowShareUI()` directly. Instead, use the [IDataTransferManagerInterop](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) COM interop interface to associate the `DataTransferManager` with your window handle and to show the share UI. For code examples, see [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects#for-classes-that-implement-idatatransfermanagerinterop). You can also refer to the [WPF Sharing content source app sample](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource) for a complete implementation.
+> WinUI 3 desktop apps don't have a `CoreWindow`, so you can't call `DataTransferManager.GetForCurrentView()` or `DataTransferManager.ShowShareUI()` directly. Instead, use the [IDataTransferManagerInterop](/windows/win32/api/shobjidl_core/nn-shobjidl_core-idatatransfermanagerinterop) COM interop interface to associate the `DataTransferManager` with your window handle and to show the share UI. For code examples, see [Display WinRT UI objects that depend on CoreWindow](/windows/apps/develop/ui-input/display-ui-objects#for-classes-that-implement-idatatransfermanagerinterop). You can also refer to the [WPF Sharing content source app sample](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/ShareSource) for a complete implementation.
 
 ## Set up an event handler
 
@@ -152,4 +152,4 @@ private async void OnDeferredImageRequested(DataProviderRequest request)
 - [DataPackage](/uwp/api/windows.applicationmodel.datatransfer.datapackage)
 - [DataRequest](/uwp/api/windows.applicationmodel.datatransfer.datarequest)
 - [FailWithDisplayText](/uwp/api/windows.applicationmodel.datatransfer.datarequest.failwithdisplaytext)
-- [WPF Sharing content source app sample](https://github.com/microsoft/Windows-classic-samples/tree/master/Samples/ShareSource)
+- [WPF Sharing content source app sample](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/ShareSource)

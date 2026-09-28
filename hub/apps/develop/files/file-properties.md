@@ -2,7 +2,7 @@
 ms.assetid: AC96F645-1BDE-4316-85E0-2FBDE0A0A62A
 title: Get file properties
 description: Get properties&\#8212;top-level, basic, and extended&\#8212;for a file represented by a StorageFile object.
-ms.date: 12/19/2018
+ms.date: 09/27/2026
 ms.topic: how-to
 keywords: windows 10, winui
 ms.localizationpriority: medium
@@ -18,7 +18,7 @@ ms.localizationpriority: medium
 Get properties—top-level, basic, and extended—for a file represented by a [StorageFile](/uwp/api/Windows.Storage.StorageFile) object.
 
 > [!NOTE]
-> For a complete sample, see the [File access sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/FileAccess).
+> For a complete sample, see the [File access sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/FileAccess).
 
 ## Prerequisites
 
