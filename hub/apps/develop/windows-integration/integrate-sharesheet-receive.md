@@ -4,7 +4,7 @@ title: "Receive content in your app - integrate Windows Share"
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 06/22/2026
+ms.date: 09/26/2026
 ms.localizationpriority: medium
 ---
 
@@ -71,7 +71,7 @@ Edit your `package.appxmanifest` to register as a Share Target. Declare **only**
 When your app is activated as a Share Target, handle the `OnShareTargetActivated` event:
 
 > [!NOTE]
-> `OnShareTargetActivated` is the activation override for UWP apps (`Windows.UI.Xaml.Application`). Packaged desktop apps (WinUI 3, WPF, WinForms) receive share activation through `AppInstance.GetActivatedEventArgs` and check for `ExtendedActivationKind.ShareTarget`. See [Get activation info for packaged apps](/windows/apps/desktop/modernize/get-activation-info-for-packaged-apps).
+> `OnShareTargetActivated` is the activation override for UWP apps (`Windows.UI.Xaml.Application`). Packaged desktop apps (WinUI 3, WPF, WinForms) receive share activation through `AppInstance.GetActivatedEventArgs` and check for `ExtendedActivationKind.ShareTarget`. See [Get activation info for packaged apps](../../desktop/modernize/get-activation-info-for-packaged-apps.md).
 
 ```csharp
 protected override async void OnShareTargetActivated(ShareTargetActivatedEventArgs args)
@@ -215,7 +215,7 @@ Only declare file types your PWA can handle. For example, don't declare `*` as a
 
 ## Receive shares in an unpackaged Win32 app
 
-To register as a Share Target, your app needs [package identity](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). If your Win32 app is unpackaged, grant it package identity in one of two ways:
+To register as a Share Target, your app needs [package identity](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md). If your Win32 app is unpackaged, grant it package identity in one of two ways:
 
 - **Repackage with MSIX** (preferred): use the **Windows Application Packaging Project** template in Visual Studio for a clean, trusted install. See [Set up your desktop application for MSIX packaging](/windows/msix/desktop/desktop-to-uwp-packaging-dot-net).
 - **Package with external location** (sparse package): add an empty MSIX package that carries identity, the share target registration, and visual assets, while your existing installer keeps managing the app binaries. Use this only when you have an installer you can't move to MSIX.

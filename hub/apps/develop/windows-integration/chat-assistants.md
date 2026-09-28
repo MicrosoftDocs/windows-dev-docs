@@ -4,7 +4,7 @@ description: Learn how to register a packaged Windows app as a Chat Assistant Ap
 author: GrantMeStrength
 ms.author: jken
 ms.topic: concept-article
-ms.date: 08/17/2026
+ms.date: 09/26/2026
 ms.localizationpriority: medium
 ai-usage: ai-assisted
 
@@ -43,7 +43,7 @@ Person-to-person communication services aren't Chat Assistant Apps for these pur
 
 ### Native Windows integration
 
-Package your app as MSIX with a package manifest, and sign it through a verified publisher. Unpackaged apps can't declare this extension. The app must provide native Windows integration rather than only wrapping a website or providing a thin Progressive Web App (PWA). For more information, see [An overview of Package Identity in Windows apps](/windows/apps/desktop/modernize/package-identity-overview).
+Package your app as MSIX with a package manifest, and sign it through a verified publisher. Unpackaged apps can't declare this extension. The app must provide native Windows integration rather than only wrapping a website or providing a thin Progressive Web App (PWA). For more information, see [An overview of Package Identity in Windows apps](../../desktop/modernize/package-identity-overview.md).
 
 ### Privacy, safety, and responsible AI
 
@@ -121,5 +121,5 @@ The attestation statement must read exactly as follows. Replace only `{publisher
 
 ## Related content
 
-- [An overview of Package Identity in Windows apps](/windows/apps/desktop/modernize/package-identity-overview)
+- [An overview of Package Identity in Windows apps](../../desktop/modernize/package-identity-overview.md)
 - [uap3:AppExtension manifest element](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual)

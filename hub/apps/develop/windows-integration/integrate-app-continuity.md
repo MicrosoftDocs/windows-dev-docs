@@ -4,7 +4,7 @@ description: Learn how to implement Windows Resume using Windows Push Notificati
 #customer intent: As a Windows developer, I want to learn how to update my app to integrate application continuity with Windows Push Notifications raw notifications.
 author: drewbatgit
 ms.author: drewbat
-ms.date: 05/27/2026
+ms.date: 09/26/2026
 ms.topic: how-to
 ---
 
@@ -31,7 +31,7 @@ Before proceeding with the integration, ensure the following tasks are completed
 - Register Application with the Windows Push Notification Service (WNS): You must register your application with WNS to receive notifications. See [Send notifications to Universal Windows Platform apps using Azure Notification Hubs](/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification) for more information.
 - Obtain Access Credentials: Acquire the Package Security Identifier (SID) and client secret from the Azure portal. 
 - Configure the Channel URI: Ensure the app can request and store the channel URI for notifications. See [How to request, create, and save a notification channel](/windows/apps/design/shell/tiles-and-notifications/request-create-save-notification-channel) for more information.
-- WNS notifications use XML payloads for transmission. See [App notification content](/windows/apps/develop/notifications/app-notifications/app-notifications-content) for more information. For Resume, we are employing raw notifications. Ensure your Windows application supports payload associated with wns/raw notification. See [Raw notification overview](/windows/apps/design/shell/tiles-and-notifications/raw-notification-overview) for more information.
+- WNS notifications use XML payloads for transmission. See [App notification content](../notifications/app-notifications/app-notifications-content.md) for more information. For Resume, we are employing raw notifications. Ensure your Windows application supports payload associated with wns/raw notification. See [Raw notification overview](/windows/apps/design/shell/tiles-and-notifications/raw-notification-overview) for more information.
 
 ## Implementation steps
 

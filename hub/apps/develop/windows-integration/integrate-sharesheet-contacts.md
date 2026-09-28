@@ -4,7 +4,7 @@ title: "Appear in suggestions row - integrate Windows Share"
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 06/22/2026
+ms.date: 09/26/2026
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +18,7 @@ The suggestions row appears at the top of the Share Sheet and shows contacts the
 
 ## Enable contact suggestions for your app
 
-To make your app's contacts appear in the suggestions row, your app needs [package identity](/windows/apps/desktop/modernize/package-identity-overview). The high-level steps are:
+To make your app's contacts appear in the suggestions row, your app needs [package identity](../../desktop/modernize/package-identity-overview.md). The high-level steps are:
 
 1. Create a `UserDataAccount` for the People contract
 2. Store your app's contacts in the Windows `ContactStore`

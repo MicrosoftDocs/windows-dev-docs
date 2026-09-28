@@ -2,7 +2,7 @@
 title: Microsoft Copilot hardware key providers
 description: Learn how to register as an app that can be selected as the launch app for the Microsoft Copilot hardware key. 
 ms.topic: article
-ms.date: 10/25/2024
+ms.date: 09/26/2026
 ms.localizationpriority: medium
 ---
 
@@ -17,7 +17,7 @@ Starting with Windows Build 22621, apps can register to be included in the picke
 
 ## Microsoft Copilot hardware key app extension
 
-An app must be packaged in order to register as a Microsoft Copilot hardware key provider. For information on app packaging, see [An overview of Package Identity in Windows app](/windows/apps/desktop/modernize/package-identity-overview). The app package manifest file, `Package.appxmanifest`, supports many different extensions and features for Windows apps. The app package manifest format is defined by a set of schemas that are documented in the [Package manifest schema reference](/uwp/schemas/appxpackage/uapmanifestschema/schema-root).  Microsoft Copilot hardware key providers declare their registration information within the [uap3:AppExtension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual). The **Name** attribute of the extension must be set to "com.microsoft.windows.copilotkeyprovider".
+An app must be packaged in order to register as a Microsoft Copilot hardware key provider. For information on app packaging, see [An overview of Package Identity in Windows app](../../desktop/modernize/package-identity-overview.md). The app package manifest file, `Package.appxmanifest`, supports many different extensions and features for Windows apps. The app package manifest format is defined by a set of schemas that are documented in the [Package manifest schema reference](/uwp/schemas/appxpackage/uapmanifestschema/schema-root).  Microsoft Copilot hardware key providers declare their registration information within the [uap3:AppExtension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual). The **Name** attribute of the extension must be set to "com.microsoft.windows.copilotkeyprovider".
 
 
 ```xml

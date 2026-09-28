@@ -2,7 +2,7 @@
 title: Add items to the Windows jump list
 description: Add tasks and custom groups to your app's Windows jump list — the shortcut menu shown when a user right-clicks your app on the taskbar.
 ms.topic: how-to
-ms.date: 07/06/2026
+ms.date: 09/26/2026
 author: GrantMeStrength
 ms.author: jken
 ms.localizationpriority: medium
@@ -20,7 +20,7 @@ A *jump list* is the shortcut menu that Windows displays when a user right-click
 
 ## Prerequisites
 
-- Your app must have package identity: either [packaged with MSIX](/windows/msix/overview) or [packaged with external location](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). Unpackaged apps are not supported.
+- Your app must have package identity: either [packaged with MSIX](/windows/msix/overview) or [packaged with external location](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md). Unpackaged apps are not supported.
 - Target Windows 10, version 1607 (Anniversary Update, build 14393) or later.
 
 ## Load the current jump list

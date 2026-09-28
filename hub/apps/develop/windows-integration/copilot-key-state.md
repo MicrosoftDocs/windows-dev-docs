@@ -2,7 +2,7 @@
 title: Handle Microsoft Copilot hardware key state changes
 description: Learn how to register to be activated and receive notifications when the Microsoft Copilot hardware key or Windows key + C is pressed. 
 ms.topic: how-to
-ms.date: 07/27/2026
+ms.date: 09/26/2026
 ms.localizationpriority: medium
 ---
 
@@ -77,7 +77,7 @@ public MainWindow(string state)
 
 ## Register for URI activation
 
-The system launches Microsoft Copilot hardware key providers using URI activation. Register a launch protocol by adding the [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol) element to your app manifest. For more information about how to register as the default handler for a URI scheme, see [Handle URI activation](/windows/apps/develop/launch/handle-uri-activation).
+The system launches Microsoft Copilot hardware key providers using URI activation. Register a launch protocol by adding the [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol) element to your app manifest. For more information about how to register as the default handler for a URI scheme, see [Handle URI activation](../launch/handle-uri-activation.md).
 
 The following example shows the **uap:Extension** registering the URI scheme "myapp-copilothotkey".
 
@@ -99,7 +99,7 @@ The following example shows the **uap:Extension** registering the URI scheme "my
  
 ## Microsoft Copilot hardware key app extension
 
-An app must be packaged in order to register as a Microsoft Copilot hardware key provider. For information on app packaging, see [An overview of Package Identity in Windows app](/windows/apps/desktop/modernize/package-identity-overview). Microsoft Copilot hardware key providers declare their registration information within the [uap3:AppExtension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual). The **Name** attribute of the extension must be set to "com.microsoft.windows.copilotkeyprovider". To support the key state changes, apps must provide some additional entries to their **uap3:AppExtension** declaration.
+An app must be packaged in order to register as a Microsoft Copilot hardware key provider. For information on app packaging, see [An overview of Package Identity in Windows app](../../desktop/modernize/package-identity-overview.md). Microsoft Copilot hardware key providers declare their registration information within the [uap3:AppExtension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual). The **Name** attribute of the extension must be set to "com.microsoft.windows.copilotkeyprovider". To support the key state changes, apps must provide some additional entries to their **uap3:AppExtension** declaration.
 
 Inside of the **uap3:AppExtension** element, add a [uap3:Properties](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-properties-manual) element with child elements **PressAndHoldStart** and **PressAndHoldStop**. The contents of these elements should be the URI of the protocol scheme registered in the manifest in the previous step. The query string arguments specify whether the URI is being launched because the user pressed and held the hot key or because the user released the hot key. The app uses these query string values during app activation to determine the correct action to take. Specifying the **SingleTap** element is optional but can be useful to determine if the app was launched from the Copilot hardware key.
 
@@ -149,7 +149,7 @@ protected override void OnLaunched(Microsoft.UI.Xaml.LaunchActivatedEventArgs ar
 ```
 
 > [!IMPORTANT]
-> Note that, by default, WinUI apps are multi-instanced, which means that a new instance will be launched whenever the Microsoft Copilot hot key is pressed or released. This may be the desired behavior for many providers, but if you would prefer, you can update you app to use a single instance. For more information, see [Create a single-instanced WinUI app with C#](/windows/apps/windows-app-sdk/applifecycle/applifecycle-single-instance).
+> Note that, by default, WinUI apps are multi-instanced, which means that a new instance will be launched whenever the Microsoft Copilot hot key is pressed or released. This may be the desired behavior for many providers, but if you would prefer, you can update you app to use a single instance. For more information, see [Create a single-instanced WinUI app with C#](../../windows-app-sdk/applifecycle/applifecycle-single-instance.md).
 
 ## Handle fast path invocation
 

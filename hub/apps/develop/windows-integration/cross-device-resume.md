@@ -1,7 +1,7 @@
 ---
 title: Resume with promoted install (for Android only)
 description: Learn how to use the Continuity SDK to implement Windows Resume with Android apps.
-ms.date: 05/27/2026
+ms.date: 09/26/2026
 ms.topic: how-to
 # customer intent: As a Windows developer, I want to learn how to integrate my app with Windows Resume so that users can continue activities from Android on Windows.
 ---
@@ -24,7 +24,7 @@ By following this guidance, you can create a smooth and integrated user experien
 > - The **PackageId** of your application 
 > - The Google Play store URL for your application 
 >
-> If the request is approved, you will receive instructions on how to unlock the feature. Approvals will be based on your communication, provided that your scenario meets the outlined [Scenario Requirements](/windows/cross-device/phonelink/#scenario-requirements).
+> If the request is approved, you will receive instructions on how to unlock the feature. Approvals will be based on your communication, provided that your scenario meets the outlined [Scenario Requirements](../../../cross-device/phonelink/index.md#scenario-requirements).
 
 ## Prerequisites
 
@@ -400,7 +400,7 @@ Every application is different, and it's up to Windows to understand the target 
 
 ## Intent URIs
 
-URIs allow you to launch another app to perform a specific task, enabling helpful app-to-app scenarios. For more infomation about launching apps using URIs, see [Launch the default Windows app for a URI](/windows/apps/develop/launch/launch-default-app) and [Create Deep Links to App Content | Android Developers](https://developer.android.com/training/app-links/create-deeplinks).
+URIs allow you to launch another app to perform a specific task, enabling helpful app-to-app scenarios. For more infomation about launching apps using URIs, see [Launch the default Windows app for a URI](../launch/launch-default-app.md) and [Create Deep Links to App Content | Android Developers](https://developer.android.com/training/app-links/create-deeplinks).
 
 ## Handling API responses in Windows
 
@@ -508,6 +508,6 @@ It is the responsibility of each app to deserialize and decrypt the argument rec
 
 ## Related content
 
-- [Handle URI activation](/windows/apps/develop/launch/handle-uri-activation)
+- [Handle URI activation](../launch/handle-uri-activation.md)
 - [Integrate with Windows](index.md)
 - [Cross Device People API](cross-device-people-api.md)

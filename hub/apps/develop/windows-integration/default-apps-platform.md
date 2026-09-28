@@ -2,7 +2,7 @@
 title: Windows app defaults platform
 description: Learn how to integrate with the default apps platform on Windows and how to direct users to change the default app settings in Windows 11. 
 ms.topic: article
-ms.date: 10/25/2024
+ms.date: 09/26/2026
 ms.localizationpriority: medium
 ---
 
@@ -28,7 +28,7 @@ Your app can register to become the default handler for a file and link types. B
 
 ## Default apps platform best practices for developers
 
-* Use the `ms-settings:defaultapps` URI to launch the Default Apps settings page or your app’s page within Default Apps directly. For more information, see [Launch the Default Apps settings page](/windows/apps/develop/launch/launch-default-apps-settings).
+* Use the `ms-settings:defaultapps` URI to launch the Default Apps settings page or your app’s page within Default Apps directly. For more information, see [Launch the Default Apps settings page](../launch/launch-default-apps-settings.md).
 * Prompt users thoughtfully. Use contextual prompts when your app opens a file type it supports but is not the default.
 * Provide Clear Instructions: Include screenshots or step-by-step guides in your app or support site.
 * Respect User Choice: Avoid aggressive prompts or repeated notifications.
@@ -54,7 +54,7 @@ All apps can participate in the app defaults platform by registering for types t
 
 ## Handle activation
 
-When a Windows app is launched, Windows provides information to the app that allows it to determine that it has been launched from a file association or link type invocation. For more information, see [Handle file activation in a Windows app](/windows/apps/develop/launch/handle-file-activation) and [Handle URI activation with a Windows app](/windows/apps/develop/launch/handle-uri-activation).
+When a Windows app is launched, Windows provides information to the app that allows it to determine that it has been launched from a file association or link type invocation. For more information, see [Handle file activation in a Windows app](../launch/handle-file-activation.md) and [Handle URI activation with a Windows app](../launch/handle-uri-activation.md).
 
 ## Security considerations for the app defaults platform
 
@@ -64,7 +64,7 @@ To help protect users' default app choices from malware changing settings withou
 * User setting data for app defaults is obfuscated in registry data stores. Registry-based changes are not supported for apps.
 * User setting data for app defaults are protected by a Windows filter driver (UCPD.sys) that blocks apps from writing app defaults data.
 * Apps can query which app is the default for a given type. For more information, see [IApplicationAssociationRegistration::QueryCurrentDefault](/windows/win32/api/shobjidl_core/nf-shobjidl_core-iapplicationassociationregistration-querycurrentdefault).
-* Apps that are distributed by the Microsoft Store must abide by Microsoft Store policy, specifically [Section 10.2.8](/windows/apps/publish/store-policies#102-security) which requires that apps only use supported methods for updating Windows settings, including app default settings.
+* Apps that are distributed by the Microsoft Store must abide by Microsoft Store policy, specifically [Section 10.2.8](../../publish/store-policies.md#102-security) which requires that apps only use supported methods for updating Windows settings, including app default settings.
 
 
 ## App defaults in managed environments

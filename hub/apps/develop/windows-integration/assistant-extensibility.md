@@ -4,7 +4,7 @@ description: Learn how to register your packaged app as an assistant app using t
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
-ms.date: 07/10/2026
+ms.date: 09/26/2026
 ms.localizationpriority: medium
 ---
 
@@ -23,7 +23,7 @@ This registration does not guarantee any specific behavior or placement. It sign
 
 ## Register as an assistant app
 
-Your app must be packaged to register as an assistant app. For information on app packaging, see [An overview of Package Identity in Windows apps](/windows/apps/desktop/modernize/package-identity-overview).
+Your app must be packaged to register as an assistant app. For information on app packaging, see [An overview of Package Identity in Windows apps](../../desktop/modernize/package-identity-overview.md).
 
 Declare the registration in your app package manifest file (`Package.appxmanifest`) using a [uap3:AppExtension](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual). Set the **Name** attribute to `com.microsoft.windows.assistantExtension`.
 
@@ -76,5 +76,5 @@ No specific behavior or integration point is guaranteed by this registration alo
 ## See also
 
 - [Microsoft Copilot hardware key providers](microsoft-copilot-key-provider.md)
-- [An overview of Package Identity in Windows apps](/windows/apps/desktop/modernize/package-identity-overview)
+- [An overview of Package Identity in Windows apps](../../desktop/modernize/package-identity-overview.md)
 - [uap3:AppExtension manifest element](/uwp/schemas/appxpackage/uapmanifestschema/element-uap3-appextension-manual)
