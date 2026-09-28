@@ -2,7 +2,7 @@
 title: Sign your app for Smart App Control compliance
 description: Learn how to sign your code to ensure Smart App Control compliance using one of several supported methods.
 ms.topic: concept-article
-ms.date: 09/22/2026
+ms.date: 09/25/2026
 # customer intent: As a Windows developer, I want to learn how to sign my code to ensure Smart App Control compliance.
 ---
 
@@ -18,7 +18,7 @@ Code can be signed with any certificate, but Smart App Control only considers ce
 
 ## Sign your app with Artifact Signing
 
-[Artifact Signing](/azure/artifact-signing/) is the preferred way to sign your app. Artifact Signing is now Generally Available (GA) to customers.
+[Artifact Signing](/azure/artifact-signing/) is the preferred way to sign your app.
 
 ## Sign your app with signtool.exe
 
