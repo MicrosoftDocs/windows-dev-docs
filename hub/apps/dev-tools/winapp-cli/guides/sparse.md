@@ -1,7 +1,7 @@
 ---
 title: "Sparse packaging: grant identity to an unpackaged app"
 description: Grant package identity to an unpackaged desktop app using an identity-only (sparse) MSIX and external-location registration with the winapp CLI.
-ms.date: 08/19/2026
+ms.date: 09/26/2026
 ms.topic: how-to
 ---
 
@@ -9,11 +9,11 @@ ms.topic: how-to
 
 > For a working end-to-end example (WPF app + Inno Setup installer), see the [sparse-app](https://github.com/microsoft/WinAppCli/tree/main/samples/sparse-app) sample.
 
-A standard desktop executable — built with `dotnet build`, MSBuild, CMake, or any other toolchain — has no [package identity](/windows/apps/desktop/modernize/package-identity-overview). Without identity, it cannot use many modern Windows APIs (toast notifications, background tasks, share targets, startup tasks, the app data APIs, and more).
+A standard desktop executable — built with `dotnet build`, MSBuild, CMake, or any other toolchain — has no [package identity](../../../desktop/modernize/package-identity-overview.md). Without identity, it cannot use many modern Windows APIs (toast notifications, background tasks, share targets, startup tasks, the app data APIs, and more).
 
 **Sparse packaging** grants identity to an app *without* moving its binaries into an MSIX. You ship a tiny **identity-only** `.msix` (just a manifest) and register it alongside your normally-installed app using an *external location*. Your `.exe` stays exactly where your installer puts it. This is the production counterpart to [`winapp create-debug-identity`](../usage.md#create-debug-identity), which is for developer-time debugging only.
 
-This guide covers the three CLI steps that map to the first three steps of the official [Grant identity to non-packaged apps](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps) workflow:
+This guide covers the three CLI steps that map to the first three steps of the official [Grant identity to non-packaged apps](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md) workflow:
 
 | Step | Command | Result |
 |------|---------|--------|
@@ -288,5 +288,5 @@ SectionEnd
 ## See also
 
 - [CLI usage: `init`](../usage.md#init), [`pack`](../usage.md#pack), [`embed-identity`](../usage.md#embed-identity)
-- [Grant identity to non-packaged apps (Microsoft Learn)](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)
+- [Grant identity to non-packaged apps (Microsoft Learn)](../../../desktop/modernize/grant-identity-to-nonpackaged-apps.md)
 - [Debugging with package identity](../debugging.md)

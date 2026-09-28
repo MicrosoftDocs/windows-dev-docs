@@ -1,7 +1,7 @@
 ---
 title: Packaging Your Electron App for Distribution
 description: Package your Electron app as a signed MSIX installer with the winapp CLI, covering manifest setup, certificate generation, and installation.
-ms.date: 09/24/2026
+ms.date: 09/26/2026
 ms.topic: how-to
 ---
 
@@ -220,7 +220,7 @@ Submit your app to the Microsoft Store for the widest distribution and automatic
 3. Update `Package.appxmanifest` with your Store identity. No need to sign the msix, the store publishing process will sign it automatically. 
 5. Submit for certification
 
-Learn more: [Publish your app to the Microsoft Store](/windows/apps/publish/)
+Learn more: [Publish your app to the Microsoft Store](../../../publish/index.md)
 
 ### Enterprise Distribution
 Distribute directly to enterprise customers via:

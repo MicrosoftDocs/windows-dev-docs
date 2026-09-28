@@ -1,7 +1,7 @@
 ---
 title: Setting Up the Development Environment
 description: Set up your development environment for adding Windows APIs to an Electron app with the winapp CLI, including SDK install and project init.
-ms.date: 08/19/2026
+ms.date: 09/26/2026
 ms.topic: how-to
 ---
 
@@ -105,9 +105,9 @@ You can open `Package.appxmanifest` to further customize properties like the dis
 >
 > - **[Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk/)** - A development platform that lets you build Win32/desktop apps. It's designed around Windows APIs that are coupled to particular versions of the OS. Use this to access core Win32 APIs like file system, networking, and system services.
 > 
-> - **[Windows App SDK](/windows/apps/windows-app-sdk/)** - A new development platform that lets you build modern desktop apps that can be installed across Windows versions (down to Windows 10 1809). It provides a convenient, OS-decoupled abstraction around the rich catalogue of Windows OS APIs. The Windows App SDK includes WinUI 3 and provides access to modern features like AI capabilities (Phi Silica), notifications, window management, and more that receive regular updates independent of Windows OS releases.
+> - **[Windows App SDK](../../../windows-app-sdk/index.md)** - A new development platform that lets you build modern desktop apps that can be installed across Windows versions (down to Windows 10 1809). It provides a convenient, OS-decoupled abstraction around the rich catalogue of Windows OS APIs. The Windows App SDK includes WinUI 3 and provides access to modern features like AI capabilities (Phi Silica), notifications, window management, and more that receive regular updates independent of Windows OS releases.
 >
-> Learn more: [What's the difference between the Windows App SDK and the Windows SDK?](/windows/apps/get-started/windows-developer-faq#what-s-the-difference-between-the-windows-app-sdk-and-the-windows-sdk)
+> Learn more: [What's the difference between the Windows App SDK and the Windows SDK?](../../../get-started/windows-developer-faq.md#what-s-the-difference-between-the-windows-app-sdk-and-the-windows-sdk)
 
 ## Step 4: Add Restore to Your Build Pipeline
 
