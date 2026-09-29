@@ -2,7 +2,7 @@
 title: Windows App SDK 2.0 release notes
 description: Release notes for Windows App SDK 2.0 across the Stable, Preview, and Experimental channels, with feature highlights, bug fixes, and API changes.
 ms.topic: release-notes
-ms.date: 09/16/2026
+ms.date: 09/29/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -1186,6 +1186,246 @@ Released: **February 13, 2026** <br><br>
 :::zone-end
 
 :::zone pivot="experimental"
+
+## Version 2.5 Experimental (2.5.4-Experimental)
+
+Released: **September 29, 2026** <br><br>
+
+This experimental release follows [Windows App SDK 2.5.1 stable](#version-251) and generally brings over the changes from that release; see the [2.5.1 stable notes](#version-251) for those details. The sections below describe the experimental-only additions.
+
+<details><summary>Windows AI updates</summary>
+
+>
+> - New **AIComputeDevice** APIs let apps select the default, CPU, or NPU execution device when creating a **TextRecognizer**. **ContentRegionImageOptions.PreferredTextRecognizerDevice** provides the same device preference for OCR performed during App Content Index image indexing.
+> - AI Speech now uses **SpeechRecognitionModelFactory** and **SpeechRecognitionModelFactoryOptions** to configure and create speech-recognition models. Audio input methods now accept 16-bit sample buffers, continuous recognition stops asynchronously, and streaming recognition events expose provider-specific properties.
+> - **LanguageModel.ModelName**, **LanguageModel.ModelVersion**, and **LanguageModelLowRankAdapterStatus** let apps identify the installed language model and inspect the compatibility result when loading a low-rank adapter.
+> - **LanguageModelResponseStatus.BlockedByGameMode** and **LanguageModelResponseStatus.LowOnVram** identify responses that couldn't complete because game mode was active or available video memory was low.
+>
+
+</details>
+
+<details><summary>Theme resource binding API</summary>
+
+>
+> The new experimental **FrameworkElement.SetThemeResourceBinding** API lets apps create the equivalent of a `{ThemeResource}` binding from code.
+> ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WinUI_SetThemeResourceBinding)
+>
+
+</details>
+
+<details><summary>DataTemplate delegate construction</summary>
+
+>
+> A new experimental **DataTemplate** constructor accepts an app-provided delegate that creates the template's element subtree.
+> ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WinUI_DataTemplateFromDelegate)
+>
+
+</details>
+
+<details><summary>TableView control</summary>
+
+>
+> The experimental **TableView** control is now available in the public WinMDs. It supports grouping with templated group headers, sorting and filtering with column-header sort indicators, pointer and keyboard column resizing, and optional tooltips for cells and column headers.
+> ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): TableView_TabularBinaryActivation)
+>
+
+</details>
+
+<details><summary>Chart control</summary>
+
+>
+> This release adds an experimental WinUI 3 **Chart** control for presenting Cartesian data as line, area, and bar series. The control supports configurable axes, legends, data labels, and data markers.
+> ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Charts_ExperimentalControlApi)
+>
+
+</details>
+
+<details><summary>Inking updates</summary>
+
+>
+> - Added **InkPresenter.ActivateCustomDrying** and **InkSynchronizer**, which let apps render committed ink themselves by using **BeginDry** and **EndDry**.
+> - Fixed an access violation that could occur when reading **InkPresenter.StrokeContainer** while custom drying was active.
+> - Fixed **InkCanvas** presenter sizing under a **RenderTransform**.
+> - Aligned the experimental **InkToolbar** API with the reviewed design. The toolbar now targets an **InkPresenter** directly without requiring an **InkCanvas**.
+> ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InkCanvas_InkingSupport)
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> - Fixed a WinUI resource-tracking issue that could cause memory usage to grow when apps repeatedly created visual-state storyboards or resolved static or theme resources.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WinUI_ResourceGraphExpiredDependencyPruning)
+> - Improved cleanup of unreachable native WinUI objects in .NET apps after tab or page teardown.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WinUI_OrphanedObjectGCCollection)
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new and updated APIs compared to the **[2.4 Experimental](#version-24-experimental-241-experimental)** release:
+>
+> ```
+> Microsoft.UI.Xaml
+>
+>     DataTemplate
+>         DataTemplate (elementFactory)
+>
+>     DataTemplateElementFactory
+>
+>     FrameworkElement
+>         SetThemeResourceBinding
+> ```
+> ```
+> Microsoft.UI.Xaml.Controls
+>
+>     InkPresenter
+>         ActivateCustomDrying
+>         HighContrastAdjustment
+>
+>     InkToolbar
+>         TargetInkPresenter
+>
+>     InkStrokeInput
+>         InkPresenter
+>
+>     InkSynchronizer
+>
+>     InkUnprocessedInput
+>         InkPresenter
+> ```
+> ```
+> Microsoft.UI.Xaml.Controls.Charts
+>
+>     AreaSeries
+>     Axis
+>     BarOrientation
+>     BarSeries
+>     CartesianAxis
+>     CartesianSeries
+>     CategoryAxis
+>     CategorySortKey
+>     Chart
+>     DataLabelOverride
+>     DataMarkerOverride
+>     DateTimeAxis
+>     DateTimeIntervalType
+>     GridLines
+>     LinearAxis
+>     LineSeries
+>     MarkerShape
+>     Samples
+>     SortOrder
+>     StrokeDashStyle
+>     WinUIChartingContract
+>     XamlChartsResources
+> ```
+> ```
+> Microsoft.UI.Xaml.Controls.Tabular
+>
+>     ITableViewSortComparer
+>     SortDirection
+>     TableView
+>     TableViewAutomationPeer
+>     TableViewBeginningEditEventArgs
+>     TableViewCellAutomationPeer
+>     TableViewCellEditEndingEventArgs
+>     TableViewCellsPanel
+>     TableViewColumn
+>     TableViewColumnHeaderAutomationPeer
+>     TableViewDensity
+>     TableViewEditAction
+>     TableViewFrozenEdge
+>     TableViewGridLinesVisibility
+>     TableViewGroupHeader
+>     TableViewGroupHeaderAutomationPeer
+>     TableViewGroupHeaderToggleRequestedEventArgs
+>     TableViewGroupInfo
+>     TableViewHeadersVisibility
+>     TableViewIdentitySelector
+>     TableViewKeySelector
+>     TableViewPredicate
+>     TableViewRow
+>     TableViewRowAutomationPeer
+>     TableViewRowTemplateSelector
+>     TableViewSelectionMode
+>     TableViewSortCycle
+>     TableViewSortedEventArgs
+>     TableViewSortingEventArgs
+>     TableViewSource
+>     TableViewTemplateColumn
+>     TableViewTextColumn
+>     TabularControlsResources
+> ```
+> ```
+> Microsoft.UI.Xaml.XamlTypeInfo
+>
+>     XamlControlsChartsXamlMetaDataProvider
+>     XamlControlsTabularXamlMetaDataProvider
+> ```
+> ```
+> Microsoft.Windows.AI
+>
+>     AIComputeContract
+>     AIComputeDevice
+> ```
+> ```
+> Microsoft.Windows.AI.Imaging
+>
+>     TextRecognizer
+>         CreateAsync
+>         EnsureReadyAsync
+>         GetReadyState
+> ```
+> ```
+> Microsoft.Windows.AI.Speech
+>
+>     BatchRecognition
+>         Recognize
+>
+>     SpeechAudioProvider
+>         PushData
+>
+>     SpeechRecognitionModelFactory
+>     SpeechRecognitionModelFactoryOptions
+>
+>     StreamingRecognition
+>         StopContinuousRecognitionAsync
+>
+>     StreamingRecognizedEventArgs
+>         GetProperty
+>
+>     StreamingRecognizingEventArgs
+>         GetProperty
+> ```
+> ```
+> Microsoft.Windows.AI.Text
+>
+>     LanguageModel
+>         ModelName
+>         ModelVersion
+>
+>     LanguageModelLowRankAdapterResult
+>         Status
+>
+>     LanguageModelLowRankAdapterStatus
+>
+>     LanguageModelResponseStatus
+>         BlockedByGameMode
+>         LowOnVram
+> ```
+> ```
+> Microsoft.Windows.Search.AppContentIndex
+>
+>     ContentRegionImageOptions
+>         PreferredTextRecognizerDevice
+> ```
+>
+
+</details>
 
 ## Version 2.4 Experimental (2.4.1-Experimental)
 
