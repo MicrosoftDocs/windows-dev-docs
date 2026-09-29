@@ -4,7 +4,7 @@ description: Setting up your dev environment for beginners interested in develop
 ms.topic: how-to
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code
 ms.localizationpriority: medium
-ms.date: 03/24/2026
+ms.date: 09/28/2026
 ---
 
 # Set up your Rust development environment on Windows
@@ -19,6 +19,9 @@ Otherwise, install the [Microsoft C++ Build Tools](https://visualstudio.microsof
 > Use of the Microsoft C++ Build Tools requires a valid Visual Studio license (Community, Pro, or Enterprise). The Community edition is free for students, open-source contributors, and individuals.
 
 ## Step 2: Install Rust
+
+> [!IMPORTANT]
+> [Smart App Control](/windows/apps/develop/smart-app-control/overview) runs only code that it predicts to be safe or that is signed by a certificate authority in the Microsoft Trusted Root Program. The Rust toolchain for Windows is not currently Authenticode signed, so on a device that has Smart App Control turned on, the installed `cargo` and `rustc` binaries, and binaries produced by your build scripts, can be blocked from running. The block surfaces as `Application Control policy has blocked this file.` and is recorded in the **Applications and Services Logs > Microsoft > Windows > CodeIntegrity > Operational** event log; there's no other in-product signal, so the failure can look like a broken installer. Developer Mode and locally trusted certificates aren't exemptions. To check whether Smart App Control is on, go to **Settings > Privacy & security > Windows Security > App & browser control > Smart App Control settings**. For background, see [Smart App Control overview](/windows/apps/develop/smart-app-control/overview) and [Code signing options for Windows app developers](/windows/apps/package-and-deploy/code-signing-options).
 
 The official Rust installer, `rustup`, handles everything — the compiler, Cargo, and future updates.
 

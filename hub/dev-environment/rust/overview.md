@@ -4,7 +4,7 @@ description: An overview for beginners interested in developing on Windows with 
 ms.topic: concept-article
 keywords: rust, windows 10, microsoft, learning rust, rust on windows for beginners, rust with vs code
 ms.localizationpriority: medium
-ms.date: 09/20/2026
+ms.date: 09/28/2026
 ---
 
 # Overview of developing on Windows with Rust
@@ -21,6 +21,9 @@ Rust has topped Stack Overflow's [annual developer survey](https://survey.stacko
 - **crates.io** — the community package registry at [crates.io](https://crates.io/).
 
 ## Next steps
+
+> [!NOTE]
+> Before you install the toolchain, review the Smart App Control compatibility note in [Set up your Rust development environment on Windows](setup.md#step-2-install-rust). On a device where Smart App Control is running in enforcement mode, the unsigned Rust toolchain can be blocked from running.
 
 - [Set up your Rust development environment on Windows](setup.md)
 - [Rust for Windows, and the windows crate](rust-for-windows.md)
