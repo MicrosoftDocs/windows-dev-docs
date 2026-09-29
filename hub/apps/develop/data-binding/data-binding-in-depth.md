@@ -2,7 +2,7 @@
 ms.assetid: 2a50c798-6244-4fda-9091-a10a9e87fae2
 title: Windows data binding in depth
 description: Learn how to use data binding in WinUI applications to simplify UI development and improve app maintainability.
-ms.date: 09/05/2026
+ms.date: 09/24/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows app sdk, winui, windows ui
 ms.localizationpriority: medium
@@ -451,14 +451,17 @@ namespace ExampleNamespace
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
 
-    <Window.Resources>
-        <ResourceDictionary>
-            .... 
-            <ResourceDictionary.MergedDictionaries>
-                <examplenamespace:TemplatesResourceDictionary/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                ....
+                <ResourceDictionary.MergedDictionaries>
+                    <examplenamespace:TemplatesResourceDictionary/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+        ...
+    </Grid>
 </Window>
 ```
 
@@ -574,15 +577,15 @@ Usage in MainWindow.xaml with a ViewModel that provides runtime values:
     ....
     xmlns:examplenamespace="using:ExampleNamespace">
 
-    <Window.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <examplenamespace:TemplatesResourceDictionary/>
-            </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-    </Window.Resources>
-
     <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <examplenamespace:TemplatesResourceDictionary/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
         <Grid.DataContext>
             <examplenamespace:ButtonThemeViewModel/>
         </Grid.DataContext>
@@ -757,24 +760,24 @@ In general, to display a collection, you bind the [**ItemsSource**](/windows/win
 
 To activate the grouping facility of a [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource), set [**IsSourceGrouped**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource.issourcegrouped) to `true`. Whether you also need to set the [**ItemsPath**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource.itemspath) property depends on exactly how you author your group objects. There are two ways to author a group object: the "is-a-group" pattern, and the "has-a-group" pattern. In the "is-a-group" pattern, the group object derives from a collection type (for example, `List<T>`), so the group object actually is itself the group of items. With this pattern you do not need to set `ItemsPath`. In the "has-a-group" pattern, the group object has one or more properties of a collection type (such as `List<T>`), so the group "has a" group of items in the form of a property (or several groups of items in the form of several properties). With this pattern you need to set `ItemsPath` to the name of the property that contains the group of items.
 
-The following example illustrates the "has-a-group" pattern. The window class has a property named [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext), which returns an instance of our view model. The [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) binds to the `Authors` property of the view model (`Authors` is the collection of group objects) and also specifies that it's the `Author.BookSkus` property that contains the grouped items. Finally, the [**GridView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview) is bound to the `CollectionViewSource`, and has its group style defined so that it can render the items in groups.
+The following example illustrates the "has-a-group" pattern. The window class has a `ViewModel` property that returns an instance of our view model. The [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource) binds to the `Authors` property of the view model (`Authors` is the collection of group objects) and also specifies that it's the `Author.BookSkus` property that contains the grouped items. Finally, the [**GridView**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview) is bound to the `CollectionViewSource`, and has its group style defined so that it can render the items in groups.
 
 ``` xaml
-<Window.Resources>
-    <CollectionViewSource
-    x:Name="AuthorHasACollectionOfBookSku"
-    Source="{x:Bind ViewModel.Authors}"
-    IsSourceGrouped="true"
-    ItemsPath="BookSkus"/>
-</Window.Resources>
-...
-<GridView
-ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
-    <GridView.GroupStyle>
-        <GroupStyle
-            HeaderTemplate="{StaticResource AuthorGroupHeaderTemplateWide}" ... />
-    </GridView.GroupStyle>
-</GridView>
+<Grid>
+    <Grid.Resources>
+        <CollectionViewSource
+            x:Name="AuthorHasACollectionOfBookSku"
+            Source="{x:Bind ViewModel.Authors}"
+            IsSourceGrouped="true"
+            ItemsPath="BookSkus"/>
+    </Grid.Resources>
+    <GridView ItemsSource="{x:Bind AuthorHasACollectionOfBookSku}" ...>
+        <GridView.GroupStyle>
+            <GroupStyle
+                HeaderTemplate="{StaticResource AuthorGroupHeaderTemplateWide}" ... />
+        </GridView.GroupStyle>
+    </GridView>
+</Grid>
 ```
 
 You can implement the "is-a-group" pattern in one of two ways. One way is to author your own group class. Derive the class from `List<T>` (where *T* is the type of the items). For example, `public class Author : List<BookSku>`. The second way is to use a [LINQ](/previous-versions/bb397926(v=vs.140)) expression to dynamically create group objects (and a group class) from like property values of the **BookSku** items. This approach—maintaining only a flat list of items and grouping them together on the fly—is typical of an app that accesses data from a cloud service. You get the flexibility to group books by author or by genre (for example) without needing special group classes such as **Author** and **Genre**.
@@ -805,10 +808,11 @@ public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
 Remember that when using [{x:Bind}](../platform/xaml/x-bind-markup-extension.md) with data templates, you need to indicate the type being bound to by setting an `x:DataType` value. If the type is generic, then you can't express that in markup so you need to use [{Binding}](../platform/xaml/binding-markup-extension.md) instead in the group style header template.
 
 ``` xaml
+<Grid>
     <Grid.Resources>
         <CollectionViewSource x:Name="GenreIsACollectionOfBookSku"
-        Source="{x:Bind Genres}"
-        IsSourceGrouped="true"/>
+            Source="{x:Bind Genres}"
+            IsSourceGrouped="true"/>
     </Grid.Resources>
     <GridView ItemsSource="{x:Bind GenreIsACollectionOfBookSku}">
         <GridView.ItemTemplate x:DataType="local:BookTemplate">
@@ -826,6 +830,7 @@ Remember that when using [{x:Bind}](../platform/xaml/x-bind-markup-extension.md)
             </GroupStyle>
         </GridView.GroupStyle>
     </GridView>
+</Grid>
 ```
 
 A [**SemanticZoom**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.semanticzoom) control is a great way for your users to view and navigate grouped data. The [Bookstore2](https://codeload.github.com/MicrosoftDocs/windows-topic-specific-samples/zip/Bookstore2Universal_10) sample app illustrates how to use the `SemanticZoom`. In that app, you can view a list of books grouped by author (the zoomed-in view) or you can zoom out to see a jump list of authors (the zoomed-out view). The jump list affords much quicker navigation than scrolling through the list of books. The zoomed-in and zoomed-out views are actually `ListView` or `GridView` controls bound to the same `CollectionViewSource`.
