@@ -185,6 +185,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Game bar | ms-settings:gaming-gamebar |
 | Game DVR | ms-settings:gaming-gamedvr |
 | Game Mode | ms-settings:gaming-gamemode |
+| Xbox Mode | ms-settings:gaming-fullscreen |
 | Playing a game full screen | ms-settings:quietmomentsgame |
 | TruePlay | ms-settings:gaming-trueplay (**As of Windows 10, version 1809 (10.0; Build 17763), this feature is removed from Windows**) |
 
