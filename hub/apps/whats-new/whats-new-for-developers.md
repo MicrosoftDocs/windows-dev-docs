@@ -4,7 +4,7 @@ description: Explore new Windows platform capabilities, SDK and API updates, des
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
 author: GrantMeStrength
 ms.author: jken
-ms.date: 09/19/2026
+ms.date: 09/30/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -19,16 +19,16 @@ This section curates the latest platform capabilities, SDK and API additions, AI
 
 Find the latest downloads, release notes, and updates for the Windows SDK, Windows App SDK, and WinUI 3.
 
-Versions below are current as of September 9, 2026. Use the release notes to review the changes and requirements for each channel or SDK build.
+Versions below are current as of September 30, 2026. Use the release notes to review the changes and requirements for each channel or SDK build.
 
 :::row:::
     :::column:::
         ![Windows App SDK icon](images/wasdk-hero.png)<br>
         **Windows App SDK**<br>
-        Latest stable: 2.4.0<br>
-        Latest experimental: 2.4.1-experimental<br>
-        [Stable release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.4.0)<br>
-        [Experimental release notes](https://github.com/microsoft/WindowsAppSDK/releases/tag/v2.4.1-exp)<br>
+        Latest stable: 2.5.1<br>
+        Latest experimental: 2.5.4-experimental<br>
+        [Stable release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-251)<br>
+        [Experimental release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-25-experimental-254-experimental)<br>
         [View downloads](../windows-app-sdk/downloads.md)
     :::column-end:::
     :::column:::
@@ -47,6 +47,14 @@ Versions below are current as of September 9, 2026. Use the release notes to rev
 
 ### SDK releases and developer blog posts
 
+- **Windows App SDK 2.5 Experimental (2.5.4-experimental)**: The September 29 experimental release adds AI compute-device selection, updated speech-recognition and language-model APIs, programmatic theme-resource binding, delegate-based `DataTemplate` construction, experimental `TableView` and Chart controls, and updated inking APIs. See the [Windows App SDK 2.5 experimental release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-25-experimental-254-experimental).
+- **WSL Containers is generally available**: Build, run, and deploy Linux containers on Windows by using the `wslc.exe` CLI, its `container.exe` alias, or the WSL Containers API. The GA release adds container lifecycle, networking, health-check, storage, Microsoft Defender for Endpoint, and Microsoft Intune capabilities. See [WSL Containers now generally available](https://blogs.windows.com/windowsdeveloper/2026/09/29/wsl-containers-now-generally-available/) and the [WSL Containers architecture deep dive](https://devblogs.microsoft.com/commandline/wslc-architecture-deep-dive/).
+- **Visual Studio September update**: The update introduces Bring Your Own Model in preview, Copilot assistance for NuGet vulnerability fixes, pull-request exploration in the Git agent, improved branch-condition debugging, and Podman support for Attach to Process. See [Visual Studio September Update: Power Your Workflow with Your Model](https://devblogs.microsoft.com/visualstudio/visual-studio-september-update-power-your-workflow-with-your-model/).
+- **Inside MSIX: identify packaged processes**: Learn how to use Task Manager's **Package name** column to distinguish packaged processes from unpackaged processes. See [How to tell if a process is packaged](https://devblogs.microsoft.com/insidemsix/how-to-tell-if-a-process-is-packaged/).
+- **Windows App Development CLI 0.7.0**: The release adds Windows Sandbox execution, Native AOT support, one-step project packaging, single-file apps with package identity, the `winapp find-api` command, Reactor templates, and improved UI automation. See [WinAppCLI v0.7.0 release announcement](https://devblogs.microsoft.com/ifdef-windows/winappcli-v0-7-0-release-announcement/).
+- **Windows App SDK 2.5.1**: The September 16 stable release adds support for the `windows.diagnosticServiceModule` package-manifest extension, limited-access App Content Search APIs for lexical and semantic search scenarios, and reliability fixes across WinUI, input, and composition. See the [Windows App SDK 2.5.1 release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-251).
+- **.NET 11 performance improvements**: Review runtime, JIT, garbage collection, Native AOT, libraries, and SDK changes that improve application performance in .NET 11. See [Performance improvements in .NET 11](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-11/).
+- **Intelligent Terminal 0.2.2572**: The update includes more than 60 performance and reliability fixes, faster startup and context gathering, API keys for local models, optional automatic approval, and native agent slash commands. See [Intelligent Terminal 0.2.2572: Performance & Reliability](https://devblogs.microsoft.com/commandline/intelligent-terminal-0-2-25-performance-reliability/).
 - **.NET 11 Release Candidate 1**: The September 8 prerelease includes SDK tooling, C# 15, and Windows Forms updates, and comes with a go-live support license. Review the release notes and tool requirements before upgrading. See [Announcing .NET 11 Release Candidate 1](https://devblogs.microsoft.com/dotnet/dotnet-11-rc-1/).
 - **September .NET servicing updates**: Security and non-security updates are available for .NET 10, .NET 9, .NET 8, and .NET Framework. See [.NET and .NET Framework September 2026 servicing updates](https://devblogs.microsoft.com/dotnet/dotnet-and-dotnet-framework-september-2026-servicing-updates/).
 - **Project Zenith**: The September 4 announcement describes a developer-focused Windows experience with preinstalled tools and development settings on new developer-class devices. Initial availability is planned for AMD's Ryzen AI Halo. See [Announcing Project Zenith](https://blogs.windows.com/windowsdeveloper/2026/09/04/announcing-project-zenith-the-ready-to-code-windows-experience/).
