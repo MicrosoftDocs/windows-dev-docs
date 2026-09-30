@@ -2,7 +2,7 @@
 title: What's new in Windows SDK
 description: Provides information about release notes for the Windows SDK.
 ms.topic: release-notes
-ms.date: 08/27/2026
+ms.date: 09/30/2026
 keywords: windows win32, windows app development, Windows SDK, Windows Platform SDK, windows 11
 ms.localizationpriority: medium
 ---
@@ -15,6 +15,212 @@ You can update the SDK by manually installing the new build, updating in Visual 
 For the the latest builds, see [Downloads for the Windows SDK](./downloads.md).
 
 ## 28000 versions
+
+## Build 10.0.28000.2957
+
+Released: **September, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.ApplicationModel.Overlay**:
+> <br/>
+> New:
+>
+> - `OverlayContract`: New API contract for the `Windows.ApplicationModel.Overlay` namespace
+> - `OverlayApp`, `OverlayAppOptions`, `OverlayCommand`, `OverlayCommandSource`: New overlay app and command types
+> - `OverlayActivatedEventArgs`, `OverlayDisconnectedEventArgs`, `OverlayVisualTransitionEventArgs`: New overlay event argument types
+> - `OverlayTransitionAnimation`, `OverlayVisualState`: New overlay visual state and transition types
+>
+> **Windows.Management.Update**:
+> <br/>
+> Updated:
+>
+> - `WindowsSoftwareUpdateProvider.ProviderIdentity`: Gets the identity of the software update provider
+>
+> **Windows.Networking.Vpn**:
+> <br/>
+> New:
+>
+> - `VpnChannel.ConnectionDetail`, `VpnChannel.DisconnectReason`: Get details about the current connection and the reason it was disconnected
+> - `VpnChannel.SetErrorMessage(String, UInt32)`: New overload that sets an error message with an error code
+> - `VpnConnectionDetailsPreview`: Class exposing the connection `Type` and `Attempt` count
+> - `VpnConnectionTypePreview`, `VpnDisconnectReasonPreview`: Enumerations describing how a connection was started and why it ended
+> - `VpnManagementAgent.GetAlwaysOnActiveProfile`, `VpnManagementAgent.GetAlwaysOnActiveProfileAsync`, `VpnManagementAgent.SetAlwaysOnActiveProfile`, `VpnManagementAgent.SetAlwaysOnActiveProfileAsync`: Get or set the active always-on VPN profile
+>
+> **Windows.System**:
+> <br/>
+> New:
+>
+> - `User.GetUserAgeRangeAsync`: Gets the age range associated with the user
+> - `User.GetAgeVerificationStatusAsync`: Gets the age verification status of the user
+> - `UserAgeRange`: Class exposing the `Lower` and `Upper` bounds of a user's age range
+> - `UserAgeVerificationStatus`: Enumeration describing the user's age verification status
+>
+> [!NOTE]
+> The age signal APIs (`User.GetUserAgeRangeAsync`, `User.GetAgeVerificationStatusAsync`, `UserAgeRange`, and `UserAgeVerificationStatus`) are documented ahead of availability. They aren't enabled at runtime yet, and are planned to be turned on in a future release later this year. Calls made before then return no age data, so design your app to fall back to its default behavior.
+>
+> **Windows.System.RemoteDesktop.Provider**:
+> <br/>
+> Graduated from experimental to stable:
+>
+> - `IRemoteDesktopRegistrarStatics2`: The `RemoteDesktopRegistrar` static members added in build 10.0.28000.2526 are no longer experimental
+>
+> **Windows.UI.Input**:
+> <br/>
+> New:
+>
+> - `GamepadKeyRoutingConfiguration`: Runtime class that configures gamepad key routing
+> - `GamepadKeyRoutingConfiguration.IsSupported`: Indicates whether gamepad key routing configuration is supported
+> - `GamepadKeyRoutingConfiguration.IsKeyRoutingEnabled`: Gets whether gamepad key routing is enabled
+> - `GamepadKeyRoutingConfiguration.TrySetKeyRoutingEnabled`: Attempts to enable or disable gamepad key routing
+>
+> Removed (experimental):
+>
+> - `GamepadNavigationConfiguration`: The experimental class added in build 10.0.28000.2526 was removed and replaced by `GamepadKeyRoutingConfiguration`
+>
+> **Windows.ApplicationModel.Contacts**:
+> <br/>
+> Removed (experimental):
+>
+> - `ContactAnnotationOperations.Activity`: The experimental enumeration value was removed
+>
+> **Windows.Devices.WiFiDirect.Services**:
+> <br/>
+> Deprecated:
+>
+> - The Wi-Fi Direct Services APIs are now deprecated and might not work on all platforms
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Cryptography (wincrypt.h)**
+> <br/>
+> New post-quantum cryptography (PQC) and CMS support:
+>
+> - Composite ML-DSA and ML-KEM OIDs (for example `szOID_MLDSA44_ECDSA_P256_SHA256`, `szOID_MLKEM768_ECDH_P256_SHA3_256`) and matching `CRYPT32_COMPOSITE_*` algorithm names, pairing ML-DSA/ML-KEM with classical ECDSA/ECDH
+> - NIST AES-CCM and AES-GCM OIDs (`szOID_NIST_AES128_CCM` through `szOID_NIST_AES256_GCM`) and `CRYPT_OID_AES_EXTRA_INFO_*` values
+> - `szOID_RSA_HKDF_WITH_SHA256`: HKDF key-derivation OID
+> - Authenticated enveloped data: `CMSG_AUTH_ENVELOPED`, `CMSG_AUTH_ENVELOPED_ENCODE_INFO`, and `szOID_RSA_authEnvelopedData`
+> - KEM recipient info: `CMSG_KEM_RECIPIENT`, `CMSG_KEM_RECIPIENT_ENCODE_INFO`, `CMSG_KEM_RECIPIENT_INFO`, `CMSG_CTRL_KEM_DECRYPT`, `CMSG_CTRL_KEM_DECRYPT_PARA`, and `szOID_ORI_KEM`
+> - `CRYPT_MESSAGE_REQUIRE_OAEP_FLAG`, `CRYPT_MESSAGE_REQUIRE_AUTH_FLAG`: Message flags that require OAEP padding or authenticated encryption
+> - `szOID_PREHASH`: Prehash OID
+>
+> **Schannel (schannel.h)**
+> <br/>
+> New:
+>
+> - `TlsSignatureAlgorithm_Mldsa`: ML-DSA TLS signature algorithm value
+>
+> **WebAuthn (webauthn.h)**
+> <br/>
+> New:
+>
+> - `WEBAUTHN_COSE_ALGORITHM_ML_DSA_44`, `WEBAUTHN_COSE_ALGORITHM_ML_DSA_65`, `WEBAUTHN_COSE_ALGORITHM_ML_DSA_87`: ML-DSA COSE algorithm identifiers
+>
+> **Security and Identity (winnt.h)**
+> <br/>
+> New anti-tamper and process isolation support:
+>
+> - `SECURITY_ISOLATION_CONFIGURATION` and its `_GENERAL`, `_DEBUG`, `_UI`, `_PROCESS`, and `_SIGNING` sub-structures: Isolation configuration passed at process creation
+> - `SECURITY_ANTITAMPER_POLICY` and related structures (`SECURITY_ANTITAMPER_POLICY_DEBUG`, `SECURITY_ANTITAMPER_POLICY_PROCESS`, `SECURITY_ANTITAMPER_POLICY_SIGNING`, `SECURITY_ANTITAMPER_POLICY_MODULES`, `SECURITY_ANTITAMPER_IDENTITY`, `SECURITY_ANTITAMPER_ENTITLEMENT`), plus `SECURITY_ANTITAMPER_POLICY_PRESENT_*` flags: Anti-tamper policy definitions
+> - `SECURITY_ANTI_TAMPER_AUTHORITY` and `SECURITY_ANTI_TAMPER_*_RID` values: Anti-tamper SID authority and RIDs
+> - `SYSTEM_MANDATORY_APP_ACCESS_ALLOWED_ACE_TYPE`, `SYSTEM_MANDATORY_ACCESS_ALLOWED_ACE_TYPE`, `MANDATORY_ACCESS_SECURITY_INFORMATION`: New ACE types and security information flag
+> - `TokenHasTamperProtection`, `TokenAppIdentitySid`, `TokenAppInstanceSid`, `TokenAppSuiteSid`, `TokenEntitlements`: New `TOKEN_INFORMATION_CLASS` values
+>
+> **Process Creation (WinBase.h / processthreadsapi.h)**
+> <br/>
+> New:
+>
+> - `PROC_THREAD_ATTRIBUTE_ISOLATION_CONFIGURATION`: Process attribute that applies a `SECURITY_ISOLATION_CONFIGURATION`
+> - `PROC_THREAD_ATTRIBUTE_DESKTOP_APP_IDENTITY_POLICY`, `PROCESS_CREATION_DESKTOP_APP_IDENTITY_ENABLE`, `PROCESS_CREATION_DESKTOP_APP_IDENTITY_DISABLE`: Control desktop app identity for a new process
+> - `QUEUE_USER_APC_FLAGS` now has bitwise flag operators
+>
+> **System Information (winnt.h)**
+> <br/>
+> New:
+>
+> - `PROCESSOR_RELATIONSHIP.RelativePerformance`, `PROCESSOR_RELATIONSHIP.RelativeEfficiency`: Relative performance and efficiency of a processor
+> - `PF_APX_F_INSTRUCTIONS_AVAILABLE`, `PF_ARM_FEAT_ECV_INSTRUCTIONS_AVAILABLE`, `PF_ARM_FEAT_ECV_POFF_INSTRUCTIONS_AVAILABLE`: Processor feature flags
+> - `XSTATE_APX_F`, `XSTATE_MASK_APX_F`: Extended state for Intel APX
+> - `ARM64_CNTVCTSS_EL0`: ARM64 self-synchronized virtual count register
+> - `ATTRIBUTE_NODISCARD` (ntdef.h / winnt.h): Expands to `[[nodiscard]]` when the compiler supports it
+>
+> **DXCore (dxcore_interface.h)**
+> <br/>
+> New:
+>
+> - `IDXCoreAdapterFactory2` with `GetReservedAcceleratorMemoryInfo`, plus `DXCoreReservedAcceleratorMemoryInfo` and `DXCoreReservedAcceleratorMemoryFlags`: Query reserved accelerator memory
+> - `DXCoreMemoryType::ReservedPartition`: New memory type value
+>
+> **Media Foundation (mfapi.h / dxva.h)**
+> <br/>
+> New:
+>
+> - `MFT_DECODER_AUTO_POSTPROCESS`: Enables automatic post-processing after decode
+> - `MFSampleExtension_AverageBitrate`, `MFSampleExtension_ScenarioInfo`: Per-sample bitrate target and encoding scenario attributes
+> - `DXVA_PicParams_HEVC`: `EncoderBitrateHint`, `EncoderQualityHint`, and `ContentAwareHint` bit fields replace `ReservedBits6`
+>
+> **WinHTTP (winhttp.h)**
+> <br/>
+> New:
+>
+> - `WinHttpConnectionSetProxyInfo`, `WinHttpConnectionDeleteProxyInfo`, `WINHTTP_CONNECTION_PROXY_INFO`, and related types: Set or delete the proxy for a connection
+> - `WinHttpConnectionUpdateIfIndexTable`, `WINHTTP_CONNECTION_IFINDEX_LIST`: Map connections to interface indexes
+> - `WinHttpConnectionSetPolicyEntries`, `WinHttpConnectionDeletePolicyEntries`, `WinHttpConnectionDeletePolicyEntriesByAppSid`, `WINHTTP_CONNECTION_POLICY_ENTRY_LIST`, `WINHTTP_CONNECTION_POLICY_TAG`: Manage connection policy entries
+> - `WINHTTP_CONNECTION_POLICY_ALLOW_DEFAULT_INTERFACE_SELECTION`, `WINHTTP_FEATURE_CONNECTION_PROXY_EX`: New policy flag and feature value
+>
+> **DNS (WinDNS.h)**
+> <br/>
+> New:
+>
+> - `DnsConnectionDeletePolicyEntriesByAppSid`: Deletes DNS connection policy entries for an app SID
+> - `DNS_CONNECTION_POLICY_ALLOW_DEFAULT_INTERFACE_SELECTION`: New policy entry flag
+>
+> **Networking (ws2def.h / wlantypes.h)**
+> <br/>
+> New:
+>
+> - `AI_EXTRA_UNTRUSTED_QUERY`: Reserved addrinfo hint flag
+> - `DOT11_AUTH_ALGO_PQC_1X` / `DOT11_AUTH_ALGORITHM_PQC_1X`: Wi-Fi PQC 802.1X authentication algorithm
+>
+> **Windows Hypervisor Platform (WinHvPlatformDefs.h)**
+> <br/>
+> Updated:
+>
+> - `WHV_X64_PENDING_INTERRUPTION_REGISTER`: `NestedEvent` is renamed to `NestedGuestEvent`, and a `NestedException` bit is added
+>
+> **Shell Properties (propkey.h)**
+> <br/>
+> New:
+>
+> - `PKEY_ItemFolderPathDisplayNarrowNamespaceRelative`: Namespace-relative folder path for display
+>
+> **Print (prnasntp.h)**
+> <br/>
+> New:
+>
+> - `IID_IPrintAsyncCookie`, `IID_IPrintAsyncNewChannelCookie`, `IID_IAsyncGetSendNotificationCookie`, `IID_IAsyncGetSrvReferralCookie`: Interface IDs for asynchronous print notification
+>
+> **USB (usbspec.h)**
+> <br/>
+> New:
+>
+> - `USB_DEVICE_CLASS_RVC`: USB device class code
+>
+> **Status and Error Codes (ntstatus.h / winerror.h / wuerror.h)**
+> <br/>
+> New:
+>
+> - `STATUS_SPACES_API_VERSION_MISMATCH`, `STATUS_SPACES_METADATA_SIZE_INVALID`, `ERROR_SPACES_API_VERSION_MISMATCH`, `ERROR_SPACES_METADATA_SIZE_INVALID`: Storage Spaces error codes
+> - `FVE_E_WIM_TRUST_DISABLED_BY_POLICY`: BitLocker can't trust the WinRE image because the trust mechanism is disabled by policy
+> - `WU_E_UH_POSTREBOOT_VERSION_ABOVE_TARGET`, `WU_E_UH_POSTREBOOT_VERSION_BELOW_TARGET`, `WU_E_UH_COMMIT_FAILED`, `WU_E_UH_APPX_STAGING_TIMEOUT`: Windows Update handler error codes
+
+</details>
+
+---
 
 ## Build 10.0.28000.2705
 
@@ -806,6 +1012,147 @@ This is a major version bump to the **28000** SDK series.
 ---
 
 ## 26100 versions
+
+## Build 10.0.26100.9457
+
+Released: **September, 2026** <br><br>
+
+<details>
+<summary>WinRT API additions and updates</summary>
+
+> **Windows.ApplicationModel.Overlay**:
+> <br/>
+> New:
+>
+> - `OverlayContract`: New API contract for the `Windows.ApplicationModel.Overlay` namespace
+> - `OverlayApp`, `OverlayAppOptions`, `OverlayCommand`, `OverlayCommandSource`: New overlay app and command types
+> - `OverlayActivatedEventArgs`, `OverlayDisconnectedEventArgs`, `OverlayVisualTransitionEventArgs`: New overlay event argument types
+> - `OverlayTransitionAnimation`, `OverlayVisualState`: New overlay visual state and transition types
+>
+> **Windows.Graphics.DirectX**:
+> <br/>
+> New:
+>
+> - `DirectXColorSpace.RgbFullG10NoneP2020`, `DirectXColorSpace.RgbFullG22ExtNoneP709`, `DirectXColorSpace.RgbFullG22NoneP3`: New color space values
+>
+> **Windows.Networking.Vpn**:
+> <br/>
+> New:
+>
+> - `VpnChannel.ConnectionDetail`, `VpnChannel.DisconnectReason`: Get details about the current connection and the reason it was disconnected
+> - `VpnChannel.SetErrorMessage(String, UInt32)`: New overload that sets an error message with an error code
+> - `VpnConnectionDetailsPreview`: Class exposing the connection `Type` and `Attempt` count
+> - `VpnConnectionTypePreview`, `VpnDisconnectReasonPreview`: Enumerations describing how a connection was started and why it ended
+> - `VpnManagementAgent.GetAlwaysOnActiveProfile`, `VpnManagementAgent.GetAlwaysOnActiveProfileAsync`, `VpnManagementAgent.SetAlwaysOnActiveProfile`, `VpnManagementAgent.SetAlwaysOnActiveProfileAsync`: Get or set the active always-on VPN profile
+
+</details>
+
+<details>
+<summary>Win32 API additions and updates</summary>
+
+> **Security and Identity (winnt.h)**
+> <br/>
+> New anti-tamper and process isolation support:
+>
+> - `SECURITY_ISOLATION_CONFIGURATION` and its `_GENERAL`, `_DEBUG`, `_UI`, `_PROCESS`, and `_SIGNING` sub-structures: Isolation configuration passed at process creation
+> - `SECURITY_ANTITAMPER_POLICY` and related structures (`SECURITY_ANTITAMPER_POLICY_DEBUG`, `SECURITY_ANTITAMPER_POLICY_PROCESS`, `SECURITY_ANTITAMPER_POLICY_SIGNING`, `SECURITY_ANTITAMPER_POLICY_MODULES`, `SECURITY_ANTITAMPER_IDENTITY`, `SECURITY_ANTITAMPER_ENTITLEMENT`), plus `SECURITY_ANTITAMPER_POLICY_PRESENT_*` flags: Anti-tamper policy definitions
+> - `SECURITY_ANTI_TAMPER_AUTHORITY` and `SECURITY_ANTI_TAMPER_*_RID` values: Anti-tamper SID authority and RIDs
+> - `SYSTEM_MANDATORY_APP_ACCESS_ALLOWED_ACE_TYPE`, `SYSTEM_MANDATORY_ACCESS_ALLOWED_ACE_TYPE`, `MANDATORY_ACCESS_SECURITY_INFORMATION`: New ACE types and security information flag
+> - `TokenHasTamperProtection`, `TokenAppIdentitySid`, `TokenAppInstanceSid`, `TokenAppSuiteSid`, `TokenEntitlements`, `TokenAgentId`: New `TOKEN_INFORMATION_CLASS` values
+>
+> **Process Creation (WinBase.h)**
+> <br/>
+> New:
+>
+> - `PROC_THREAD_ATTRIBUTE_ISOLATION_CONFIGURATION`: Process attribute that applies a `SECURITY_ISOLATION_CONFIGURATION`
+> - `PROC_THREAD_ATTRIBUTE_SECURITY_ENVIRONMENT`: Process attribute for the security environment
+>
+> Updated:
+>
+> - `ProcThreadAttributeContainmentConfiguration` and `ProcThreadAttributeDesktopAppIdentityPolicy` changed from 31 and 32 to 33 and 34
+>
+> **User Profiles (UserEnv.h)**
+> <br/>
+> New:
+>
+> - `PT_COMPOSABLE_AGENT`, `PT_SHELL_AGENT`: Profile types for isolation-session agents
+>
+> **DirectX Graphics Infrastructure (dxgicommon.h)**
+> <br/>
+> New:
+>
+> - `DXGI_COLOR_SPACE_RGB_FULL_G10_NONE_P2020`, `DXGI_COLOR_SPACE_RGB_FULL_G22EXT_NONE_P709`, `DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P3`: New color space values
+>
+> **Media Foundation (mfapi.h / dxva.h)**
+> <br/>
+> New:
+>
+> - `MFT_DECODER_AUTO_POSTPROCESS`: Enables automatic post-processing after decode
+> - `MFSampleExtension_AverageBitrate`, `MFSampleExtension_ScenarioInfo`: Per-sample bitrate target and encoding scenario attributes
+> - `DXVA_PicParams_HEVC`: `EncoderBitrateHint`, `EncoderQualityHint`, and `ContentAwareHint` bit fields replace `ReservedBits6`
+>
+> **WinHTTP (winhttp.h)**
+> <br/>
+> New:
+>
+> - `WinHttpConnectionSetProxyInfo`, `WinHttpConnectionDeleteProxyInfo`, `WINHTTP_CONNECTION_PROXY_INFO`, and related types: Set or delete the proxy for a connection
+> - `WinHttpConnectionUpdateIfIndexTable`, `WINHTTP_CONNECTION_IFINDEX_LIST`: Map connections to interface indexes
+> - `WinHttpConnectionSetPolicyEntries`, `WinHttpConnectionDeletePolicyEntries`, `WinHttpConnectionDeletePolicyEntriesByAppSid`, `WINHTTP_CONNECTION_POLICY_ENTRY_LIST`, `WINHTTP_CONNECTION_POLICY_TAG`: Manage connection policy entries
+> - `WINHTTP_CONNECTION_POLICY_ALLOW_DEFAULT_INTERFACE_SELECTION`, `WINHTTP_FEATURE_CONNECTION_PROXY_EX`: New policy flag and feature value
+>
+> **DNS (WinDNS.h)**
+> <br/>
+> New:
+>
+> - `DnsConnectionDeletePolicyEntriesByAppSid`: Deletes DNS connection policy entries for an app SID
+> - `DNS_CONNECTION_POLICY_ALLOW_DEFAULT_INTERFACE_SELECTION`: New policy entry flag
+>
+> **Networking (wlantypes.h)**
+> <br/>
+> New:
+>
+> - `DOT11_AUTH_ALGO_PQC_1X` / `DOT11_AUTH_ALGORITHM_PQC_1X`: Wi-Fi PQC 802.1X authentication algorithm
+>
+> **Print (prnasntp.h)**
+> <br/>
+> New:
+>
+> - `IID_IPrintAsyncCookie`, `IID_IPrintAsyncNewChannelCookie`, `IID_IAsyncGetSendNotificationCookie`, `IID_IAsyncGetSrvReferralCookie`: Interface IDs for asynchronous print notification
+>
+> **USB (usbspec.h)**
+> <br/>
+> New:
+>
+> - `USB_DEVICE_CLASS_RVC`: USB device class code
+>
+> **Status and Error Codes (ntstatus.h / winerror.h)**
+> <br/>
+> New:
+>
+> - `STATUS_SPACES_API_VERSION_MISMATCH`, `STATUS_SPACES_METADATA_SIZE_INVALID`, `ERROR_SPACES_API_VERSION_MISMATCH`, `ERROR_SPACES_METADATA_SIZE_INVALID`: Storage Spaces error codes
+> - `FVE_E_WIM_TRUST_DISABLED_BY_POLICY`: BitLocker can't trust the WinRE image because the trust mechanism is disabled by policy
+>
+> **New headers**
+> <br/>
+>
+> - `i3c.h`: I3C protocol types and definitions
+> - `wini3c.h`: User-mode APIs for discovering and communicating with I3C targets
+> - `processmodel.h`: APIs for creating, querying, and managing process security environments and learning-mode traces
+
+</details>
+
+<details>
+<summary>COM API updates</summary>
+
+> **DirectX Graphics Infrastructure (dxgicommon.idl)**
+> <br/>
+> New:
+>
+> - `DXGI_COLOR_SPACE_RGB_FULL_G10_NONE_P2020`, `DXGI_COLOR_SPACE_RGB_FULL_G22EXT_NONE_P709`, `DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P3`: New color space values
+
+</details>
+
+---
 
 ## Build 10.0.26100.9169
 
