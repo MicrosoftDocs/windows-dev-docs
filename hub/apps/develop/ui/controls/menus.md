@@ -3,7 +3,7 @@ description: Menus and context menus display a list of commands or options when 
 title: Menu flyout and menu bar
 label: Menu flyout and menu bar
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 10/01/2026
 ms.topic: article
 ms.custom: RS5, 19H1
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
@@ -171,8 +171,8 @@ You use the same elements to create menus in a menu bar as in a menu flyout. How
 > This example shows only how to create the UI structure, but does not show implementation of any of the commands.
 
 ```xaml
-<muxc:MenuBar>
-    <muxc:MenuBarItem Title="File">
+<MenuBar>
+    <MenuBarItem Title="File">
         <MenuFlyoutSubItem Text="New">
             <MenuFlyoutItem Text="Plain Text Document"/>
             <MenuFlyoutItem Text="Rich Text Document"/>
@@ -182,30 +182,30 @@ You use the same elements to create menus in a menu bar as in a menu flyout. How
         <MenuFlyoutItem Text="Save"/>
         <MenuFlyoutSeparator />
         <MenuFlyoutItem Text="Exit"/>
-    </muxc:MenuBarItem>
+    </MenuBarItem>
 
-    <muxc:MenuBarItem Title="Edit">
+    <MenuBarItem Title="Edit">
         <MenuFlyoutItem Text="Undo"/>
         <MenuFlyoutItem Text="Cut"/>
         <MenuFlyoutItem Text="Copy"/>
         <MenuFlyoutItem Text="Paste"/>
-    </muxc:MenuBarItem>
+    </MenuBarItem>
 
-    <muxc:MenuBarItem Title="View">
+    <MenuBarItem Title="View">
         <MenuFlyoutItem Text="Output"/>
         <MenuFlyoutSeparator/>
-        <muxc:RadioMenuFlyoutItem Text="Landscape" GroupName="OrientationGroup"/>
-        <muxc:RadioMenuFlyoutItem Text="Portrait" GroupName="OrientationGroup" IsChecked="True"/>
+        <RadioMenuFlyoutItem Text="Landscape" GroupName="OrientationGroup"/>
+        <RadioMenuFlyoutItem Text="Portrait" GroupName="OrientationGroup" IsChecked="True"/>
         <MenuFlyoutSeparator/>
-        <muxc:RadioMenuFlyoutItem Text="Small icons" GroupName="SizeGroup"/>
-        <muxc:RadioMenuFlyoutItem Text="Medium icons" IsChecked="True" GroupName="SizeGroup"/>
-        <muxc:RadioMenuFlyoutItem Text="Large icons" GroupName="SizeGroup"/>
-    </muxc:MenuBarItem>
+        <RadioMenuFlyoutItem Text="Small icons" GroupName="SizeGroup"/>
+        <RadioMenuFlyoutItem Text="Medium icons" IsChecked="True" GroupName="SizeGroup"/>
+        <RadioMenuFlyoutItem Text="Large icons" GroupName="SizeGroup"/>
+    </MenuBarItem>
 
-    <muxc:MenuBarItem Title="Help">
+    <MenuBarItem Title="Help">
         <MenuFlyoutItem Text="About"/>
-    </muxc:MenuBarItem>
-</muxc:MenuBar>
+    </MenuBarItem>
+</MenuBar>
 ```
 
 ## Related articles
