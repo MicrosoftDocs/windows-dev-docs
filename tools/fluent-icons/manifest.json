@@ -1,0 +1,13 @@
+{
+  "repository": "https://github.com/microsoft/fluentui-system-icons",
+  "revision": "5bae3fb7771054c252a54b1d9210e9c03439fa1b",
+  "icons": [
+    { "name": "apps", "file": "sources/apps.svg", "upstreamPath": "assets/Apps/SVG/ic_fluent_apps_24_regular.svg" },
+    { "name": "design", "file": "sources/design.svg", "upstreamPath": "assets/Design%20Ideas/SVG/ic_fluent_design_ideas_24_regular.svg" },
+    { "name": "feature", "file": "sources/feature.svg", "upstreamPath": "assets/Puzzle%20Piece/SVG/ic_fluent_puzzle_piece_24_regular.svg" },
+    { "name": "package", "file": "sources/package.svg", "upstreamPath": "assets/Box%20Arrow%20Up/SVG/ic_fluent_box_arrow_up_24_regular.svg" },
+    { "name": "code", "file": "sources/code.svg", "upstreamPath": "assets/Code/SVG/ic_fluent_code_24_regular.svg" },
+    { "name": "editor", "file": "sources/editor.svg", "upstreamPath": "assets/Window%20Dev%20Tools/SVG/ic_fluent_window_dev_tools_24_regular.svg" },
+    { "name": "terminal", "file": "sources/terminal.svg", "upstreamPath": "assets/Window%20Console/SVG/ic_fluent_window_console_20_regular.svg" }
+  ]
+}

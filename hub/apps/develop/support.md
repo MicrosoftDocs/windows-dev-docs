@@ -1,8 +1,10 @@
 ---
 title: Help and guidance for Windows developers
-description: Find help and resources for developing Windows applications, including getting started guides, developer tools, community channels, and Microsoft support options.
+author: GrantMeStrength
+ms.author: jken
+description: Find Windows app development support, troubleshooting guidance, community resources, and links to current tools and SDK documentation.
 ms.topic: overview
-ms.date: 07/13/2026
+ms.date: 09/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -18,7 +20,7 @@ Use this table to find the right resource for your scenario:
 
 | If you need to... | Go here |
 |---|---|
-| Start building a WinUI 3 app | [Get started with the Windows App SDK](/windows/apps/get-started/) |
+| Start building a WinUI 3 app | [Getting started with WinUI](../get-started/index.yml) |
 | See controls, patterns, and code samples | [WinUI 3 Gallery](https://apps.microsoft.com/detail/winui-3-gallery/9P3JFPWWDZRC) |
 | Browse working code samples | [Windows App SDK samples on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples) |
 | Check what's new or changed | [Windows App SDK stable channel release notes](/windows/apps/windows-app-sdk/stable-channel) |
@@ -32,7 +34,7 @@ Use this table to find the right resource for your scenario:
 
 New to Windows app development? These resources help you go from zero to a running app:
 
-- **[Get started with the Windows App SDK](/windows/apps/get-started/)** - Set up your development environment and create your first app
+- **[Create your first WinUI app](../get-started/start-here.md)** - Set up your development environment and create your first app
 - **[WinUI 3 Gallery](https://apps.microsoft.com/detail/winui-3-gallery/9P3JFPWWDZRC)** - Explore WinUI 3 controls, design patterns, and code samples in an interactive app
 - **[Windows App SDK samples](https://github.com/microsoft/WindowsAppSDK-Samples)** - Browse working code examples covering common scenarios
 - **[Create a WinUI project from the command line](https://devblogs.microsoft.com/ifdef-windows/introducing-dotnet-new-templates-for-winui/)** - Use `dotnet new` templates to scaffold a WinUI app without Visual Studio

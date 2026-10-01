@@ -13,3 +13,15 @@ Privacy information can be found at https://privacy.microsoft.com/en-us/
 
 Microsoft and any contributors reserve all others rights, whether under their respective copyrights, patents,
 or trademarks, whether by implication, estoppel or otherwise.
+
+## Fluent System Icons
+
+The SVG sources in tools/fluent-icons/sources and derived SVG/PNG assets in
+hub/apps/images/fluent are from Microsoft Fluent System Icons, revision
+5bae3fb7771054c252a54b1d9210e9c03439fa1b:
+https://github.com/microsoft/fluentui-system-icons
+
+Copyright (c) 2020 Microsoft Corporation. Licensed under the MIT License.
+The full license is included in tools/fluent-icons/LICENSE.txt and
+hub/apps/images/fluent/LICENSE.txt. Derived assets are recolored and resized.
+These assets are not extracted from the Segoe Fluent Icons font.

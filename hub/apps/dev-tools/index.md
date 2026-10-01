@@ -1,23 +1,57 @@
 ---
-title: Tools and samples for Windows app development
-description: Explore developer tools for building Windows apps and configuring your development environment, including Visual Studio, CLI tools, Dev Drive, WinGet, Windows Terminal, WSL, and more.
+title: Resources for Windows app development
+description: Find code samples, step-by-step tutorials, and development tools for building, testing, packaging, and publishing Windows apps.
+author: GrantMeStrength
+ms.author: jken
 ms.topic: overview
-ms.date: 06/04/2026
+ms.date: 09/20/2026
 ---
 
-# Tools and samples for Windows app development
+# Resources for Windows app development
 
-Build Windows apps more efficiently with the right tools, samples, and AI-powered resources. From IDEs and command-line utilities to developer environment tools like Dev Drive, WinGet, and Windows Terminal, this section brings together everything you need to be productive as a Windows developer.
+Find code to adapt, follow a step-by-step tutorial, or choose tools for your development workflow.
 
-| Resource | Description |
-|---|---|
-| [Agentic AI tools](agentic-tools.md) | Enhance your AI coding agent with Windows-specific context using the Microsoft Learn MCP Server and community plugins like the WinUI 3 Development plugin for GitHub Copilot. |
-| [Visual Studio](visual-studio.md) | The recommended IDE for building Windows apps with WinUI and the Windows App SDK, featuring XAML Hot Reload, Live Visual Tree, and rich debugging. |
-| [Windows App Development CLI (winapp CLI)](winapp-cli/index.md) | A command-line interface for managing Windows SDKs, packaging, app identity, manifests, certificates, and build tools across any app framework. |
-| [CLI tools](../../core-utils/overview.md) | Command-line utilities for Windows, including Coreutils (ls, cat, grep, and more), the Edit text editor, curl, sudo, and tar. |
-| [Windows Developer Configurations](../../dev-configs/index.md) | Curated, declarative setups that configure your Windows development environment in one step — install tools, set preferences, and get coding faster. |
-| [Dev Drive](../../dev-drive/index.md) | A storage volume optimized for developer workloads, with a performance-tuned file system and Microsoft Defender antivirus integration for faster builds. |
-| [WinGet](/windows/package-manager/) | The Windows Package Manager — install, update, and configure development tools and dependencies from the command line. |
-| [Windows Terminal](/windows/terminal/) | A modern, GPU-accelerated terminal application with tabs, panes, Unicode support, and extensive customization for any command-line workflow. |
-| [Windows Subsystem for Linux](/windows/wsl/) | Run Linux distributions natively on Windows — use Linux command-line tools, utilities, and applications alongside your Windows development workflow. |
-| [Code samples](samples.md) | Browse sample apps that demonstrate Windows features, API usage patterns, and end-to-end scenarios — including the WinUI 3 Gallery and Windows App SDK samples. |
+## Code samples
+
+<div class="media">
+    <div class="media-left">
+        <img class="image is-24x24" src="../images/fluent/code.svg" alt="Code brackets." width="24" height="24">
+    </div>
+    <div class="media-content">
+        <p class="margin-block-none"><strong><a href="samples.md">Explore code samples and the WinUI Gallery</a></strong><br>
+        <span class="font-size-sm color-text-subtle">Find focused examples for Windows App SDK features, or browse WinUI controls and their source code in a running app.</span></p>
+    </div>
+</div>
+
+## Tutorials
+
+<div class="media">
+    <div class="media-left">
+        <img class="image is-24x24" src="../images/fluent/apps.svg" alt="A sequence of app development steps." width="24" height="24">
+    </div>
+    <div class="media-content">
+        <p class="margin-block-none"><strong><a href="../tutorials/index.md">Follow Windows app development tutorials</a></strong><br>
+        <span class="font-size-sm color-text-subtle">Build WinUI apps and learn workflows for data, files, graphics, testing, packaging, and AI-assisted development.</span></p>
+    </div>
+</div>
+
+## Tools
+
+<div class="media">
+    <div class="media-left">
+        <img class="image is-24x24" src="../images/fluent/editor.svg" alt="A code window with a developer tool." width="24" height="24">
+    </div>
+    <div class="media-content">
+        <p class="margin-block-none"><strong><a href="../tools/index.md">Compare Windows app development tools</a></strong><br>
+        <span class="font-size-sm color-text-subtle">Choose between Visual Studio, the WinApp extension for Visual Studio Code, Windows App Development CLI, and WinUI Agent.</span></p>
+    </div>
+</div>
+
+## Look up an API or SDK release
+
+- [Windows App SDK API reference](/windows/windows-app-sdk/api/winrt/)
+- [Win32 API reference](/windows/win32/api/)
+- [Windows App SDK overview](../windows-app-sdk/index.md) and [downloads and release notes](../windows-app-sdk/downloads.md)
+
+> [!div class="nextstepaction"]
+> [Return to the WinUI starting point](../get-started/index.yml)

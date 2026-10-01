@@ -8686,6 +8686,21 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/introduction.md",
+      "redirect_url": "/windows/apps/get-started/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/desktop/index.yml",
+      "redirect_url": "/windows/apps/",
+      "redirect_document_id": false
+    },
+    {
+      "source_path": "hub/apps/design/index.md",
+      "redirect_url": "/windows/apps/design/",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/get-started/client-frameworks-faq.yml",
       "redirect_url": "/windows/apps/get-started/windows-developer-faq",
       "redirect_document_id": false

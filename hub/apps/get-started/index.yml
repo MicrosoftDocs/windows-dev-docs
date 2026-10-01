@@ -1,0 +1,105 @@
+### YamlMime:ProductSubHub
+title: Getting started with WinUI
+metadata:
+  title: Getting started with WinUI
+  description: Learn how WinUI and the Windows App SDK work together, create your first app, and continue with guided Windows app projects.
+  author: GrantMeStrength
+  ms.author: jken
+  ms.topic: overview
+  ms.date: 09/30/2026
+brand: windows
+tocType: single
+productOverview:
+  title: Getting started with WinUI
+  summary: Discover WinUI, create your first Windows app, and keep building with practical, guided projects.
+getStarted:
+  title: Start here
+  summary: Create and run your first app, or learn how WinUI fits into the Windows App SDK.
+  items:
+    - title: Create your first WinUI app
+      description: Choose the winapp CLI or Visual Studio path, install your tools, and create a working app.
+      url: start-here.md
+    - title: Understand WinUI
+      description: Learn what WinUI provides and how it works with the Windows App SDK.
+      url: ../winui/winui3/index.md
+    - title: Migrate an existing app to WinUI
+      description: Plan how to move an existing app's UI to WinUI 3.
+      url: ../windows-app-sdk/migrate-to-windows-app-sdk/migration-decision-guide.md
+coreWorkflows:
+  title: Build your WinUI skills
+  summary: Learn core WinUI concepts, explore the controls, or build an app with a guided tutorial.
+  items:
+    - icon:
+        src: ../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: Learn XAML
+      description: Learn how to define a WinUI interface with XAML elements, attributes, resources, and markup extensions.
+      links:
+        - text: XAML overview
+          url: ../develop/platform/xaml/xaml-overview.md
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Explore controls and layouts
+      description: Choose WinUI controls and arrange them in adaptive layouts for different window sizes and inputs.
+      links:
+        - text: Controls overview
+          url: ../develop/ui/controls/index.md
+        - text: Layout overview
+          url: ../design/layout/index.md
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Use data binding and MVVM
+      description: Connect your interface to app data and organize presentation logic with the MVVM pattern.
+      links:
+        - text: Data binding overview
+          url: ../develop/data-binding/data-binding-overview.md
+        - text: Data binding and MVVM
+          url: ../develop/data-binding/data-binding-and-mvvm.md
+        - text: MVVM Toolkit tutorial
+          url: ../tutorials/winui-mvvm-toolkit/intro.md
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A code editor window.
+      title: Follow-up tutorials
+      description: Build complete WinUI apps with step-by-step tutorials that cover common development patterns.
+      links:
+        - text: Build a notes app
+          url: ../tutorials/winui-notes/intro.md
+        - text: Build with an AI assistant
+          url: ../tutorials/winui-ai-assisted/intro.md
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Explore apps and samples
+      description: See WinUI controls in a working app or adapt Windows App SDK code samples for your project.
+      links:
+        - text: WinUI Gallery
+          url: ../dev-tools/samples.md#winui-3-gallery
+        - text: Windows App SDK Samples
+          url: https://github.com/microsoft/WindowsAppSDK-Samples
+supportReference:
+  title: Continue your Windows app journey
+  summary: Move from your first app to design, platform features, deployment, and publishing.
+  items:
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A design editor window.
+      title: Design Windows apps
+      url: ../design/index.yml
+    - icon:
+        src: ../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: Add Windows features
+      url: ../develop/index.md
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Package and deploy
+      url: ../package-and-deploy/index.md
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Publish through Microsoft Store
+      url: ../publish/index.md

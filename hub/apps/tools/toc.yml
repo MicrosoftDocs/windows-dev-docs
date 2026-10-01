@@ -1,0 +1,11 @@
+items:
+- name: Overview
+  href: index.md
+- name: Visual Studio
+  href: ../dev-tools/visual-studio.md
+- name: Visual Studio Code extension
+  href: ../develop/ai-assisted/vs-code-tools.md#winapp-vs-code-extension
+- name: Windows App Development CLI
+  href: ../dev-tools/winapp-cli/index.md
+- name: WinUI Agent
+  href: ../develop/ai-assisted/winui-agent-plugin.md

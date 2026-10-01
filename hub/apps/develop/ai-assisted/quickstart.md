@@ -1,8 +1,8 @@
 ---
 title: "Quickstart: Build and publish a Windows app with AI"
-description: "Build and publish a WinUI 3 app in under 30 minutes using free tools: VS Code, the WinUI agent plugin, dotnet new templates, and the winapp CLI."
+description: Build and publish a WinUI 3 app with Visual Studio Code, the WinUI Agent, .NET templates, and the Windows App Development CLI.
 ms.topic: quickstart
-ms.date: 07/22/2026
+ms.date: 09/20/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -86,9 +86,6 @@ Or search **WinApp** in the Extensions panel (**Ctrl+Shift+X**). See [VS Code to
 ```powershell
 winapp --version
 ```
-
-> [!TIP]
-> For best results, also connect your AI agent to the [Microsoft Learn MCP server](vs-code-tools.md#microsoft-learn-mcp-server) — it fetches current WinUI 3 API docs at query time rather than relying on training data.
 
 ---
 

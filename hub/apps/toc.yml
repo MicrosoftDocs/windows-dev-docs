@@ -1,83 +1,14 @@
 items:
-- name: Build Windows apps
-  href: desktop/index.yml
+- name: Build with WinUI
+  expanded: true
   items:
-  - name: Overview
-    href: introduction.md
-  - name: Core concepts
-    expanded: true
+  - name: Get started
+    href: get-started/index.yml
+  - name: Build your first WinUI app
+    href: get-started/start-here.md
+  - name: Tutorials
     items:
-    - name: Overview
-      href: get-started/index.md
-    - name: Windows versions and SDKs
-      href: get-started/versioning-overview.md
-    - name: Windows SDK
-      items:
-      - name: Overview
-        href: windows-sdk/index.md
-      - name: Release notes
-        href: windows-sdk/release-notes.md
-      - name: Downloads
-        href: windows-sdk/downloads.md
-    - name: Windows App SDK
-      items:
-      - name: Overview
-        href: windows-app-sdk/index.md
-      - name: Release channels
-        href: windows-app-sdk/release-channels.md
-      - name: Supported Windows releases
-        href: windows-app-sdk/support.md
-      - name: Release notes
-        items:
-        - name: Windows App SDK 2.0
-          href: windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=preview
-        - name: Windows App SDK 1.8
-          href: windows-app-sdk/release-notes/windows-app-sdk-1-8.md
-        - name: Windows App SDK 1.7
-          href: windows-app-sdk/release-notes/windows-app-sdk-1-7.md
-        - name: Older versions
-          items:
-          - name: Windows App SDK 1.6
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-6.md
-          - name: Windows App SDK 1.5
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-5.md
-          - name: Windows App SDK 1.4
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-4.md
-          - name: Windows App SDK 1.3
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-3.md
-          - name: Windows App SDK 1.2
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-2.md
-          - name: Windows App SDK 1.1
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-1.md
-          - name: Windows App SDK 1.0
-            href: windows-app-sdk/release-notes/windows-app-sdk-1-0.md
-          - name: Windows App SDK 0.8
-            href: windows-app-sdk/release-notes/windows-app-sdk-0-8.md
-          - name: Windows App SDK 0.5
-            href: windows-app-sdk/release-notes/windows-app-sdk-0-5.md
-          - name: Project Reunion
-            items:
-            - name: Project Reunion 0.8 Preview
-              href: windows-app-sdk/release-notes/project-reunion-0-8-preview.md
-            - name: Project Reunion 0.5 Preview
-              href: windows-app-sdk/release-notes/project-reunion-0-5-preview.md
-            - name: Project Reunion 0.5
-              href: windows-app-sdk/release-notes/project-reunion-0-5.md
-      - name: Downloads
-        items:
-        - name: Latest
-          href: windows-app-sdk/downloads.md
-        - name: Archive
-          href: windows-app-sdk/downloads-archive.md
-    - name: WinUI
-      href: winui/winui3/index.md
-  - name: Start here
-    items:
-    - name: Overview
-      href: get-started/winui-get-started-overview.md
-    - name: "Quickstart: Create and run a WinUI 3 project"
-      href: get-started/start-here.md
-    - name: "Tutorial: Build a WinUI 3 notes app"
+    - name: Build a notes app
       items:
       - name: Introduction
         href: tutorials/winui-notes/intro.md
@@ -91,7 +22,7 @@ items:
         href: tutorials/winui-notes/all-notes.md
       - name: 5. Navigation
         href: tutorials/winui-notes/navigation.md
-    - name: "Tutorial: Build a WinUI 3 task app with an AI assistant"
+    - name: Build with an AI coding assistant
       items:
       - name: Introduction
         href: tutorials/winui-ai-assisted/intro.md
@@ -103,51 +34,76 @@ items:
         href: tutorials/winui-ai-assisted/interface.md
       - name: 4. Verify and refine
         href: tutorials/winui-ai-assisted/verify.md
-    - name: Line-of-business apps
+- name: Understand the platform
+  items:
+  - name: About WinUI
+    href: winui/winui3/index.md
+  - name: Windows App SDK
+    items:
+    - name: Overview
+      href: windows-app-sdk/index.md
+    - name: Release channels
+      href: windows-app-sdk/release-channels.md
+    - name: Supported Windows releases
+      href: windows-app-sdk/support.md
+    - name: Release notes
       items:
-      - name: Overview
-        href: get-started/line-of-business/index.md
-      - name: Display tabular data
-        href: get-started/line-of-business/display-tabular-data.md
-      - name: Build a validated form
-        href: get-started/line-of-business/build-validated-form.md
-      - name: Connect to a database
-        href: get-started/line-of-business/connect-to-a-database.md
-      - name: Plan enterprise manageability
-        href: get-started/line-of-business/enterprise-manageability.md
-      - name: Design for productivity
-        href: get-started/line-of-business/design-for-lob.md
-      - name: Add AI capabilities
-        href: get-started/line-of-business/ai-for-lob-apps.md
-      - name: Windows Forms patterns and WinUI 3 equivalents
-        href: get-started/line-of-business/migrate-winforms-patterns.md
-  - name: Migrate and modernize
-    href: windows-app-sdk/migrate-to-windows-app-sdk/toc.yml
-  - name: Tools and samples
+      - name: Windows App SDK 2.0
+        href: windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=preview
+      - name: Windows App SDK 1.8
+        href: windows-app-sdk/release-notes/windows-app-sdk-1-8.md
+      - name: Windows App SDK 1.7
+        href: windows-app-sdk/release-notes/windows-app-sdk-1-7.md
+      - name: Older versions
+        items:
+        - name: Windows App SDK 1.6
+          href: windows-app-sdk/release-notes/windows-app-sdk-1-6.md
+        - name: Windows App SDK 1.5
+          href: windows-app-sdk/release-notes/windows-app-sdk-1-5.md
+        - name: Windows App SDK 1.4
+          href: windows-app-sdk/release-notes/windows-app-sdk-1-4.md
+        - name: Windows App SDK 1.3
+          href: windows-app-sdk/release-notes/windows-app-sdk-1-3.md
+        - name: Windows App SDK 1.2
+          href: windows-app-sdk/release-notes/windows-app-sdk-1-2.md
+        - name: Windows App SDK 1.1
+          href: windows-app-sdk/release-notes/windows-app-sdk-1-1.md
+        - name: Windows App SDK 1.0
+          href: windows-app-sdk/release-notes/windows-app-sdk-1-0.md
+        - name: Windows App SDK 0.8
+          href: windows-app-sdk/release-notes/windows-app-sdk-0-8.md
+        - name: Windows App SDK 0.5
+          href: windows-app-sdk/release-notes/windows-app-sdk-0-5.md
+        - name: Project Reunion
+          items:
+          - name: Project Reunion 0.8 Preview
+            href: windows-app-sdk/release-notes/project-reunion-0-8-preview.md
+          - name: Project Reunion 0.5 Preview
+            href: windows-app-sdk/release-notes/project-reunion-0-5-preview.md
+          - name: Project Reunion 0.5
+            href: windows-app-sdk/release-notes/project-reunion-0-5.md
+    - name: Downloads
+      items:
+      - name: Latest
+        href: windows-app-sdk/downloads.md
+      - name: Archive
+        href: windows-app-sdk/downloads-archive.md
+  - name: Windows SDK
     items:
     - name: Overview
-      href: dev-tools/index.md
-    - name: Code samples
-      href: dev-tools/samples.md
-    - name: Visual Studio
-      href: dev-tools/visual-studio.md
-    - name: winapp CLI
-      href: dev-tools/winapp-cli/toc.yml
-    - name: Developer environment
-      href: /windows/dev-environment/
-  - name: Help and guidance
-    items:
-    - name: Overview
-      href: develop/support.md
-    - name: Windows developers and their tools
-      href: whats-new/personae.md
-    - name: Coming to Windows
-      href: whats-new/coming-to-windows.md
-    - name: Best practices
-      href: get-started/best-practices.md
-    - name: Glossary
-      href: get-started/windows-developer-glossary.md
-  - name: What's new
-    href: whats-new/whats-new-for-developers.md
+      href: windows-sdk/index.md
+    - name: Release notes
+      href: windows-sdk/release-notes.md
+    - name: Downloads
+      href: windows-sdk/downloads.md
+  - name: Windows versions and compatibility
+    href: get-started/versioning-overview.md
+- name: Help and guidance
+  href: develop/support.md
+  items:
   - name: FAQ
     href: get-started/windows-developer-faq.md
+  - name: Terminology
+    href: get-started/windows-developer-glossary.md
+- name: Resources
+  href: dev-tools/index.md

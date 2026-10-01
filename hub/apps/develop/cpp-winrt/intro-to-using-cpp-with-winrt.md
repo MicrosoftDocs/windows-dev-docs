@@ -1,7 +1,7 @@
 ---
 description: Introduction to C++/WinRT, the standard C++17 projection for Windows Runtime APIs, with setup guidance and links to key concepts.
 title: Introduction to C++/WinRT
-ms.date: 09/12/2026
+ms.date: 09/21/2026
 ms.topic: concept-article
 keywords: windows 11, windows 10, standard, c++, cpp, winrt, projection, introduction, windows app sdk, winui 3
 ms.localizationpriority: medium
@@ -17,7 +17,7 @@ ms.localizationpriority: medium
 C++/WinRT is an entirely standard modern C++17 language projection for Windows Runtime (WinRT) APIs, implemented as a header-file-based library, and designed to provide you with first-class access to the modern Windows API. With C++/WinRT, you can author and consume Windows Runtime APIs using any standards-compliant C++17 compiler. The Windows SDK includes C++/WinRT; it was introduced in version 10.0.17134.0 (Windows 10, version 1803).
 
 > [!TIP]
-> **When to choose C++/WinRT:** Use C++/WinRT when you need to build Windows apps in C++ — for example, when performance constraints require no garbage collector, when interoperating with existing C++ libraries, or when authoring Windows Runtime components. If your project doesn't have these requirements, consider [C# with WinUI 3](../../get-started/index.md) for faster development and built-in memory safety.
+> **When to choose C++/WinRT:** Use C++/WinRT when you need to build Windows apps in C++ — for example, when performance constraints require no garbage collector, when interoperating with existing C++ libraries, or when authoring Windows Runtime components. If your project doesn't have these requirements, consider [C# with WinUI 3](../../get-started/index.yml) for faster development and built-in memory safety.
 
 C++/WinRT is Microsoft's recommended replacement for the [C++/CX](/cpp/cppcx/visual-c-language-reference-c-cx?branch=live) language projection, and the [Windows Runtime C++ Template Library (WRL)](/cpp/windows/windows-runtime-cpp-template-library-wrl?branch=live). The full list of [topics about C++/WinRT](./index.md) includes info about both interoperating with, and porting from, C++/CX and WRL.
 

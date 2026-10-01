@@ -6,7 +6,7 @@ metadata:
    title: Windows app development documentation
    description: Build native Windows desktop apps with Windows App SDK and WinUI 3, the recommended UI framework for new Windows apps using C# or C++.
    ms.topic: hub-page
-   ms.date: 09/10/2026
+   ms.date: 09/30/2026
    ms.localizationpriority: medium
 
 highlightedContent:
@@ -15,29 +15,27 @@ highlightedContent:
     - title: What's new for Windows developers
       itemType: whats-new
       url: /windows/apps/whats-new/whats-new-for-developers
-    - title: Introduction to the Windows developer platform
-      itemType: concept
-      url: /windows/apps/introduction
-    - title: "Quickstart: Create and run a WinUI 3 project"
-      itemType: quickstart
-      url: /windows/apps/get-started/start-here
+    - title: Getting started with WinUI
+      itemType: tutorial
+      url: /windows/apps/get-started/
+    - title: Explore the Windows app platform
+      itemType: overview
+      url: /windows/apps/develop/
 
 productDirectory:
-  title: Your path to building Windows apps
-  summary: "Start with the fundamentals, design great experiences, build your app, and prepare it for distribution."
+  title: Build and ship Windows apps
+  summary: "Choose the part of the app development journey that matches what you want to do."
   items:
-  - title: Essentials
+  - title: Getting started
     imageSrc: /windows/apps/images/hub-essentials.svg
-    summary: "Set up your environment and learn the core concepts of Windows app development with the Windows App SDK."
+    summary: "Learn how WinUI and the Windows App SDK work together, create your first app, and continue with a guided project."
     links:
-      - url: /windows/apps/introduction
-        text: Introduction to the Windows developer platform
       - url: /windows/apps/get-started
-        text: Choose a Windows development path
+        text: Getting started with WinUI
       - url: /windows/apps/get-started/start-here
-        text: Create and run a WinUI 3 project
-      - url: /windows/apps/windows-app-sdk/set-up-your-development-environment
-        text: Set up your development environment
+        text: Create your first WinUI app
+      - url: /windows/apps/tutorials/winui-notes/intro
+        text: Build a WinUI Notes app
   - title: Design
     imageSrc: /windows/apps/images/hub-design.svg
     summary: "Apply Windows design principles to create apps that feel native, accessible, and consistent with the platform."
@@ -50,20 +48,28 @@ productDirectory:
         text: Windows app design guidelines
       - url: /windows/apps/design/downloads
         text: Design tools and resources
-  - title: Develop
+  - title: Add Windows features
     imageSrc: /windows/apps/images/hub-develop.svg
-    summary: "Build app features using Windows App SDK APIs — windowing, notifications, file access, input, graphics, and more."
+    summary: "Add windowing, notifications, file access, app lifecycle, input, graphics, and other Windows capabilities."
     links:
       - url: /windows/apps/develop/
-        text: Windows App SDK development overview
+        text: Windows app development overview
       - url: /windows/apps/develop/features-overview
-        text: Windows App SDK features and APIs
-      - url: /windows/apps/desktop/modernize/
-        text: Modernize existing apps with Windows App SDK
+        text: Explore Windows app features
       - url: /windows/apps/develop/platform/
         text: Windows development platform concepts
       - url: /windows/apps/api-reference/
         text: Windows App SDK API reference
+  - title: Modernize an existing app
+    imageSrc: /windows/apps/images/hub-wasdk.svg
+    summary: "Bring Windows App SDK features to an existing desktop app or migrate a UWP app to WinUI 3."
+    links:
+      - url: /windows/apps/desktop/modernize/
+        text: Windows desktop app modernization
+      - url: /windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy
+        text: Migrate from UWP to Windows App SDK
+      - url: /windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project
+        text: Use Windows App SDK in an existing project
   - title: Package and deploy
     imageSrc: /windows/apps/images/hub-package.svg
     summary: "Package your app with MSIX or deploy unpackaged. Choose between framework-dependent and self-contained deployment."
@@ -76,9 +82,9 @@ productDirectory:
         text: Choose a distribution path for your app
       - url: /windows/apps/package-and-deploy/deploy-overview
         text: Windows App SDK deployment options
-  - title: Publish
+  - title: Distribute through the Store
     imageSrc: /windows/apps/images/hub-publish.svg
-    summary: "Distribute your app through the Microsoft Store or alternative channels. Manage listings, updates, and analytics."
+    summary: "Publish your app in the Microsoft Store and manage its listing, certification, packages, and updates."
     links:
       - url: /windows/apps/publish/
         text: Microsoft Store publishing overview
@@ -88,66 +94,39 @@ productDirectory:
         text: Open a Microsoft Store developer account
       - url: /windows/apps/publish/publish-your-app/msix/reserve-your-apps-name
         text: Submit your app to the Microsoft Store
-  - title: Add AI to your Windows app
-    imageSrc: /windows/apps/images/hub-foundry.svg
-    summary: "Integrate on-device AI and cloud models into your app. Build for Copilot+ PCs with NPU acceleration using Windows AI Foundry."
-    links:
-      - url: /windows/ai/
-        text: Windows AI development overview
-      - url: /windows/ai/toolkit/
-        text: Get started with Windows AI Foundry toolkit
-      - url: /windows/ai/apis/
-        text: Windows AI APIs for Copilot+ PCs
 
 tools:
-  title: SDK reference and downloads
-  summary: "Jump directly to the SDK landing pages for reference docs, release notes, and downloads."
+  title: Tools and samples
+  summary: "Explore controls, inspect working code, and use tools that help you create Windows apps."
   items:
-    - title: Windows App SDK
-      imageSrc: /windows/apps/images/hub-wasdk.svg
-      url: /windows/apps/windows-app-sdk
-    - title: WinUI 3
+    - title: WinUI Gallery
       imageSrc: /windows/apps/images/hub-winui.svg
-      url: /windows/apps/winui/winui3
-    - title: Windows AI Foundry
-      imageSrc: /windows/apps/images/hub-foundry.svg
-      url: /windows/ai
-    - title: .NET desktop development
+      url: /windows/apps/dev-tools/samples#winui-3-gallery
+    - title: Windows App SDK samples
+      imageSrc: /windows/apps/images/hub-wasdk.svg
+      url: https://github.com/microsoft/WindowsAppSDK-Samples
+    - title: winapp CLI
       imageSrc: /windows/apps/images/hub-develop.svg
-      url: /dotnet/desktop/
+      url: /windows/apps/dev-tools/winapp-cli/
+    - title: Windows App SDK
+      imageSrc: /windows/apps/images/hub-package.svg
+      url: /windows/apps/windows-app-sdk/
 
 additionalContent:
   sections:
-    # Section
-    - title: Get started requirements
-      summary: "What you need to start building with the Windows App SDK. Targets Windows 10 version 1809 (build 17763) or later."
+    - title: More resources
       items:
-        - title: Windows App SDK (latest stable)
-          summary: "Download the current stable release. Includes WinUI 3, app lifecycle APIs, windowing, and deployment tools. Check the downloads page for the latest version number."
+        - title: Windows app developer support
+          summary: "Find support options, community resources, and answers to common Windows app development questions."
+          url: /windows/apps/develop/support
+        - title: Windows App SDK downloads
+          summary: "Download the current Windows App SDK release or find an earlier release."
           url: /windows/apps/windows-app-sdk/downloads
-        - title: WinUI 3 (included in Windows App SDK)
-          summary: "The native UI framework for Windows desktop apps. Ships as part of the Windows App SDK — no separate install needed."
-          url: /windows/apps/winui/winui3
-        - title: Visual Studio 2026 with Windows App SDK workload
-          summary: "Install Visual Studio 2026 with the '.NET desktop development' workload and Windows App SDK extension. Alternatively, use VS Code with C# Dev Kit."
-          url: /windows/apps/windows-app-sdk/set-up-your-development-environment
-        - title: Supported languages and runtimes
-          summary: "C# with .NET 8 or later, C++ (Win32 and C++/WinRT), Rust (via windows-rs crate). XAML is used for UI markup in WinUI 3 and WPF."
-          url: /windows/apps/windows-app-sdk/system-requirements
-    # Section
-    - title: Tools and resources
-      items:
-        - title: Windows app code samples on GitHub
-          summary: "Explore sample apps and code snippets that demonstrate Windows App SDK features, WinUI 3 controls, and platform APIs."
-          url: /windows/apps/get-started/samples
-        - title: Windows developer environment setup
-          summary: "Set up your development environment with Visual Studio, Windows App SDK, Dev Home, and the Windows Subsystem for Linux."
-          url: /windows/dev-environment/
         - title: Windows developer blog
           summary: "Read announcements, release updates, and deep dives from the Windows developer team."
           url: https://devblogs.microsoft.com/ifdef-windows/
-        - title: Migrate from UWP to Windows App SDK
-          summary: "UWP is in maintenance mode. Migrate existing UWP apps to the Windows App SDK to access current APIs and ongoing platform investment."
-          url: /windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy
+        - title: Windows app API reference
+          summary: "Find reference documentation for Windows App SDK, WinUI, Windows Runtime, and Win32 APIs."
+          url: /windows/apps/api-reference/
 
   footer: "[@WindowsDocs](https://dotnet.social/@windowsdocs) - [OneDevMinute on YouTube](/shows/One-Dev-Minute/?WT.mc_id=odm-c9-niner) - [Windows developer support](https://developer.microsoft.com/windows/support) - [Stack Overflow](https://stackoverflow.com/questions/tagged/windows)"

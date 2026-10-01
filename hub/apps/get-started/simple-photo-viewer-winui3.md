@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 # Tutorial: Create a simple photo viewer with WinUI 3
 
 > [!NOTE]
-> For info about the benefits of WinUI, as well as other app type options, see [Overview of framework options](./index.md).
+> For info about the benefits of WinUI, as well as other app type options, see [Getting started with WinUI](index.yml).
 
 In this topic we walk through the process of creating a new WinUI project in Visual Studio; and then building a simple app to display photos. We'll use controls, layout panels, and data-binding. And we'll be writing both XAML markup (which is *declarative*) and your choice of either C# or C++ code (which are *imperative*, or *procedural*). Use the language picker above the topic title to choose C# or C++/WinRT.
 

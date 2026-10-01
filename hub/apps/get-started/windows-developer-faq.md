@@ -4,7 +4,7 @@ description: Find answers about Windows app frameworks, SDKs, tooling, interoper
 author: GrantMeStrength
 ms.author: jken
 ms.topic: faq
-ms.date: 09/16/2026
+ms.date: 09/21/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -28,7 +28,7 @@ Topics covered include:
 
 > For an overview of today's options for Windows developers, watch the Windows Dev Chat episode [Choosing your ideal dev platform](https://www.youtube.com/live/4PJBJ8GICjM?si=T1uu4Dm8UKdf6lGn), which discusses WinUI 3, .NET MAUI, React Native, Blazor, and Progressive Web Apps (PWAs). You can find other episodes in the [Windows Dev Chat playlist](https://youtube.com/playlist?list=PLI_J2v67C23bxTffW4XewbUEAOfSVZkrk&si=uARk7gCetDMnrxkJ).
 >
-> You can also refer to the [overview of app development options](./index.md) for Windows developers.
+> You can also refer to the [overview of app development options](./index.yml) for Windows developers.
 
 </details>
 
@@ -406,7 +406,7 @@ Topics covered include:
 > - What languages or skills do you already have — .NET, JavaScript, something else?
 > - Do you need access to Windows-specific APIs?
 > - Which framework’s capabilities best match your app’s requirements?
-> - See [this table](index.md) for additional comparison factors.
+> - See [this table](index.yml) for additional comparison factors.
 > 
 > For many business apps, teams often choose based on existing skills and what the team is most comfortable using.
 
@@ -653,4 +653,4 @@ Topics covered include:
 ## Related content
 
 - [Windows developer glossary](windows-developer-glossary.md)
-- [Overview of app development options](./index.md)
+- [Overview of app development options](./index.yml)

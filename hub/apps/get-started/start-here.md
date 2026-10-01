@@ -1,163 +1,166 @@
 ---
-title: "Quickstart: Create and run a WinUI 3 project"
-description: Set up your development tools, create a blank C# WinUI 3 project, and build and run it with Visual Studio or the .NET command line.
-ms.topic: quickstart
-ms.date: 09/10/2026
+title: Build your first WinUI app
+description: Install your tools, create and run a C# WinUI app with winapp CLI or Visual Studio, and make a small change in the same project.
 author: GrantMeStrength
 ms.author: jken
-keywords: windows, desktop development
+ms.topic: quickstart
+ms.date: 09/19/2026
+keywords: windows, desktop development, winui
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
 
-# Quickstart: Create and run a WinUI 3 project
+# Build your first WinUI app
 
-<a id="quick-start-create-your-first-winui-3-app"></a>
+Build your first WinUI app and see it come to life on Windows. This quickstart takes you from tool setup to a running app, then guides you through your first interface update.
 
-Set up your tools, create a blank C# WinUI 3 project, and confirm that it builds and launches. Choose **Visual Studio** for an integrated editor and debugger, or **dotnet new** to work from the command line in any editor. Use the tabs below to switch between the two approaches.
+## Before you start
 
-This quickstart stops at a running project. To add a user interface, storage, and navigation, continue afterward with [Build a WinUI 3 notes app](../tutorials/winui-notes/intro.md).
+### What you'll learn
+
+> [!div class="checklist"]
+>
+> - Choose and set up your development tools.
+> - Create and run a WinUI app.
+> - Update the interface and see your change in the running app.
+
+### Choose your development tools
+
+Follow either recommended path through this quickstart:
+
+- [**winapp CLI**](../dev-tools/winapp-cli/index.md): Work from a terminal in your preferred editor. This command-line workflow also works well for agentic coding.
+- [**Visual Studio**](/visualstudio/ide/): Use an integrated development and debugging experience.
+
+If your tools are already installed, go to [Creating your first app](#creating-your-first-app).
+
+<a id="install-the-tools"></a>
+<a id="set-up-your-development-environment"></a>
+
+## Installing the tools
+
+#### [winapp CLI](#tab/command-line)
+
+1. Enable [Developer Mode](../../advanced-settings/developer-mode.md). You can open its settings with [Developer settings](ms-settings:developers).
+
+2. Install the [.NET 10 SDK](https://dotnet.microsoft.com/download/dotnet/10.0) and the [Windows App Development CLI](../dev-tools/winapp-cli/index.md). If you use [WinGet](../../package-manager/winget/index.md), run:
+
+   ```powershell
+   winget install --id Microsoft.DotNet.SDK.10 --exact --source winget
+   winget install --id Microsoft.WinAppCLI --exact --source winget
+   ```
+
+   Skip an installation if the required tool is already installed.
+
+3. Open a new terminal so it picks up the installed commands, then check the versions:
+
+   ```powershell
+   dotnet --version
+   winapp --version
+   ```
+
+   Use .NET SDK 10 or later and winapp CLI 0.6 or later for this workflow.
+
+> [!NOTE]
+> winapp CLI is in public preview. `winapp new` manages the WinUI project templates, but it does not install the .NET SDK. See the [CLI 0.6 announcement](https://devblogs.microsoft.com/ifdef-windows/windows-app-development-cli-v0-6-create-new-winui-applications-sign-packages-with-azure-and-more/) for the new project and run commands.
 
 #### [Visual Studio](#tab/visual-studio)
 
-## Set up your development environment
+Install [Visual Studio 2026](/visualstudio/ide/) with the **WinUI application development** workload and enable [Developer Mode](../../advanced-settings/developer-mode.md).
 
-To develop WinUI 3 apps with Visual Studio, you need [Visual Studio 2026](/visualstudio/ide/) with the required workloads and [Developer Mode](../../advanced-settings/developer-mode.md) enabled.
+### Set up with WinGet
 
-**Set up with WinGet (recommended)**
-
-Open [Windows Terminal](/windows/terminal/) and run the following command in PowerShell to automatically install Visual Studio 2026 with the required workloads and enable Developer Mode using a [WinGet Configuration file](../../package-manager/configuration/index.md):
+Open [Windows Terminal](/windows/terminal/) and run this PowerShell command to install the required Visual Studio workloads and enable Developer Mode through a [WinGet Configuration file](../../package-manager/configuration/index.md):
 
 ```powershell
 winget configure -f https://aka.ms/winui-config
 ```
 
-To review the config file and learn more, see its [README](https://github.com/microsoft/winget-dsc/blob/main/samples/Configuration%20files/Learn%20tutorials/WinUI/README.md) on GitHub.
+You can review the configuration and its requirements in the [configuration README](https://github.com/microsoft/winget-dsc/blob/main/samples/Configuration%20files/Learn%20tutorials/WinUI/README.md).
 
-> [!NOTE]
-> If WinGet is not available in your environment, install it first:
-> ```powershell
-> Install-Module -Name Microsoft.WinGet.Client -Force
-> Repair-WinGetPackageManager -AllUsers
-> ```
-> See [Using WinGet](../../package-manager/winget/index.md) for more information.
+### Set up manually
 
-**Set up manually**
+If you prefer manual setup or don't have WinGet:
 
-If you prefer to install tools manually:
+1. Enable [Developer Mode](../../advanced-settings/developer-mode.md).
+2. [Download and install Visual Studio 2026](https://visualstudio.microsoft.com/downloads/).
+3. In the Visual Studio Installer, select the **WinUI application development** workload.
 
-1. Enable [Developer Mode](../../advanced-settings/developer-mode.md): open Windows Settings, navigate to **[System > Advanced](ms-settings:developers)**, and toggle **Developer Mode** to **On**.
-
-2. [Download and install Visual Studio 2026](https://visualstudio.microsoft.com/downloads/). For details, see [Install Visual Studio](/visualstudio/install/install-visual-studio).
-
-3. In the Visual Studio Installer, select the **WinUI application development** workload on the **Workloads** tab. For C++ development, also select **C++ WinUI app development tools** under that workload in the **Installation details** pane.
-
-   :::image type="content" source="images/hello-world/vs-workload-winui.png" alt-text="A screenshot of the Visual Studio installer UI with the WinUI application development workload selected.":::
-
-> [!TIP]
-> If you don't see WinUI templates after installing Visual Studio, open the Visual Studio Installer, select **Modify**, and confirm the **WinUI application development** workload is checked. Restart Visual Studio after modifying the installation.
-
-## Create and launch your first WinUI 3 app
-
-1. Open Visual Studio 2026 and select **Create a new project**.
-
-2. Search for **WinUI**, select the **WinUI Blank App (Packaged)** C# project template, and select **Next**.
-
-   :::image type="content" source="images/hello-world/create-project.png" lightbox="images/hello-world/create-project.png" alt-text="Blank, packaged WinUI C# desktop app":::
-
-3. Enter a project name and select **Create**.
-
-   :::image type="content" source="images/hello-world/configure-project.png" lightbox="images/hello-world/configure-project.png" alt-text="Specify project details":::
-
-4. Press **Start** (**F5**) to build and run your app.
-
-   :::image type="content" source="images/hello-world/start-click.png" alt-text="Build and run your project":::
-
-   Your app builds, deploys, and launches in debug mode:
-
-   :::image type="content" source="images/hello-world/click-me.png" border="false" alt-text="Hello World project built and running":::
-
-   You've built and launched your first WinUI 3 app! 🎉
-
-#### [Command line](#tab/command-line)
-
-## Prerequisites
-
-- Windows 10 version 1809 (build 17763) or later
-- [Developer Mode](../../advanced-settings/developer-mode.md) enabled (`ms-settings:developers`)
-- [.NET 10 SDK](https://dotnet.microsoft.com/download) or later (verify with `dotnet --version`)
-
-## Create and run your first WinUI 3 app
-
-1. Install the WinUI 3 project templates for `dotnet new` (run once):
-
-   ```powershell
-   dotnet new install Microsoft.WindowsAppSDK.WinUI.CSharp.Templates
-   ```
-
-2. Create a new project and navigate into it:
-
-   ```powershell
-   dotnet new winui -n MyWinUIApp
-   cd MyWinUIApp
-   ```
-
-3. Build the project:
-
-   ```powershell
-   dotnet build
-   ```
-
-4. Run the app:
-
-   ```powershell
-   dotnet run
-   ```
-
-   The template includes `Microsoft.Windows.SDK.BuildTools.WinApp`, which hooks into the .NET CLI `run` target to register a debug identity and launch the app with MSIX package identity — no manual deployment step is required.
-
-   An empty app window opens. You've built and launched your first WinUI 3 app! 🎉
+   :::image type="content" source="images/hello-world/vs-workload-winui.png" alt-text="Visual Studio Installer with the WinUI application development workload selected.":::
 
 ---
 
+<a id="create-and-run-the-app"></a>
+<a id="create-and-launch-the-app"></a>
+<a id="creating-your-first-app"></a>
+
+## Creating your first app
+
+Use the workflow you installed above to create and launch the project.
+
+#### [winapp CLI](#tab/command-line)
+
+From a folder where you keep your projects, run:
+
+```powershell
+winapp new --name MyWinUIApp --template winui --use-defaults
+cd MyWinUIApp
+winapp run
+```
+
+`winapp new` creates the blank WinUI app. `winapp run` builds the project and launches it; you don't need a separate build or package-registration command.
+
+#### [Visual Studio](#tab/visual-studio)
+
+1. Open Visual Studio and select **Create a new project**.
+2. Search for **WinUI**, select the **WinUI Blank App (Packaged)** C# template, and select **Next**.
+
+   :::image type="content" source="images/hello-world/create-project.png" alt-text="The blank packaged WinUI C# project template in Visual Studio.":::
+
+3. Name the project `MyWinUIApp` and select **Create**.
+4. Press **F5** to build and run the app.
+
+---
+
+Your app opens a desktop window. Continue with **Make a change** below.
+
+<a id="make-a-change"></a>
+
+## Make a change
+
+Keep the project you just created. Add a message to its existing interface:
+
+1. Close the running app. Open `MainPage.xaml` in your editor. If your template doesn't contain that file, open `MainWindow.xaml` instead.
+2. Find the layout panel that holds the app's content. In the current CLI blank template, `MainPage.xaml` contains an empty `<Grid />`. Replace that empty grid with:
+
+   ```xaml
+   <Grid>
+       <TextBlock
+           Text="Hello, WinUI!"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Center" />
+   </Grid>
+   ```
+
+   If the panel already contains controls, add only the `TextBlock` inside that panel. Keep the existing controls, names, and event handlers. Don't replace the surrounding `Page` or `Window`, or the frame and title bar in `MainWindow.xaml`.
+
+3. Save the file. Run `winapp run` again from the project folder, or press **F5** in Visual Studio.
+
+Congratulations! You've created, run, and updated your first WinUI app. The window now displays **Hello, WinUI!**
+
 ## Troubleshooting
 
-If you run into issues building or running your first app, try these common fixes:
-
-| Problem | Solution |
-|---------|----------|
-| **WinUI templates don't appear in Visual Studio** | Open the Visual Studio Installer, select **Modify**, and confirm the **WinUI application development** workload is checked. Restart Visual Studio after modifying the installation. See the tip in [Set up your development environment](#set-up-your-development-environment) for details. |
-| **Build fails with SDK version errors** | Open the Visual Studio Installer and select **Individual components**. Verify that the Windows SDK version your project targets is installed. In your project file, confirm that `TargetFramework` matches the installed SDK (for example, `net10.0-windows10.0.26100.0`). |
-| **NuGet restore failures** | Clear the local NuGet cache and restore again. In a terminal, run: `dotnet nuget locals all --clear` then `dotnet restore`. |
-| **"Developer Mode not enabled" error** | Open Windows Settings > **[System > Advanced](ms-settings:developers)** and toggle **Developer Mode** to **On**. See [Enable Developer Mode](../../advanced-settings/developer-mode.md) for more information. |
-| **Changes not recognized after first SDK install** | After installing or updating the Windows App SDK or Visual Studio workloads for the first time, restart Visual Studio so it picks up the new components. |
-
-> [!TIP]
-> If none of the above resolves your issue, search the [Windows App SDK GitHub issues](https://github.com/microsoft/WindowsAppSDK/issues) or ask on [Microsoft Q&A](/answers/tags/windows-app-sdk).
+| Problem | What to check |
+|---|---|
+| `winapp` or `dotnet` is not recognized. | Reopen the terminal after installation. Use the version commands in the CLI tab to confirm both tools are available. |
+| `winapp new` is not recognized. | This workflow requires winapp CLI 0.6 or later. Update the CLI using the installation method you chose. |
+| WinUI templates don't appear in Visual Studio. | Open the Visual Studio Installer, select **Modify**, and confirm that the **WinUI application development** workload is installed. Restart Visual Studio afterward. |
+| The build reports an SDK or restore error. | Check the selected workflow's prerequisites and the first error in the build output. Use [Windows App SDK support](../windows-app-sdk/support.md) to check version requirements before changing project properties. |
+| Deployment reports that Developer Mode is disabled. | Enable [Developer Mode](../../advanced-settings/developer-mode.md), then run the app again. |
+| Your new message does not appear. | Save the XAML file and relaunch the project. In templates with a `MainPage.xaml`, add the message to that page rather than replacing the window's hosting frame. |
 
 ## Next steps
 
-Your development setup is ready. The recommended next step is the Notes tutorial, which teaches XAML and C# fundamentals in Visual Studio. If you prefer to learn an AI-assisted workflow, choose the Task Tally tutorial instead; you don't need to complete both.
-
 > [!div class="nextstepaction"]
-> [Build a WinUI 3 notes app](../tutorials/winui-notes/intro.md)
+> [Build a notes app](../tutorials/winui-notes/intro.md)
 
-For the optional AI-assisted path, see [Build a WinUI 3 task app with an AI assistant](../tutorials/winui-ai-assisted/intro.md). It teaches how to constrain generated code to WinUI 3 and verify the result.
-
-:::row:::
-    :::column:::
-        [![Hello WinUI](../winui/winui3/images/hero-hello-winui.png)](../tutorials/winui-notes/intro.md)<br>
-        **[Build a WinUI 3 notes app](../tutorials/winui-notes/intro.md)**<br>
-        Learn XAML, events, file storage, data binding, and navigation in a two-page C# app.
-    :::column-end:::
-    :::column:::
-        [![WinUI 3 Gallery](../winui/winui3/images/winui-gallery.png)](../dev-tools/samples.md#winui-3-gallery)<br>
-        **[WinUI 3 Gallery](../dev-tools/samples.md#winui-3-gallery)**<br>
-        Explore interactive examples of WinUI controls, features, and functionality.
-    :::column-end:::
-    :::column:::
-        [![Samples icon](../images/tile-samples.png)](../dev-tools/samples.md)<br>
-        **[Samples and resources](../dev-tools/samples.md)**<br>
-        Browse code samples, starter projects, and tools to accelerate your development.
-    :::column-end:::
-:::row-end:::
+The Notes tutorial uses a separate `WinUINotes` project to teach pages, navigation, data binding, and local storage. You can also find focused control examples in [Resources](../dev-tools/index.md).

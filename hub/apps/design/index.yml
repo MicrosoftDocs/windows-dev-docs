@@ -1,0 +1,112 @@
+### YamlMime:ProductSubHub
+title: Design Windows apps
+metadata:
+  title: Design Windows apps
+  description: Apply Fluent Design principles, accessibility guidance, layout patterns, motion, and visual styles to create Windows app experiences.
+  author: GrantMeStrength
+  ms.author: jken
+  ms.topic: overview
+  ms.date: 09/30/2026
+  keywords: windows app design, fluent design, winui 3, accessibility, layout, navigation, iconography
+brand: windows
+tocType: single
+productOverview:
+  title: Design Windows apps
+  summary: Create Windows app experiences that are clear, accessible, responsive, and consistent with Fluent Design.
+getStarted:
+  title: Start designing
+  summary: Establish your design direction, explore the Windows guidelines, and include accessibility from the beginning.
+  items:
+    - title: Apply Windows design principles
+      description: Use the principles that shape how Windows apps should look, feel, and behave.
+      url: design-principles.md
+    - title: Explore the design guidelines
+      description: Find guidance for color, commanding, layout, materials, motion, navigation, typography, and usability.
+      url: guidelines-overview.md
+    - title: Design accessible experiences
+      description: Plan for keyboard access, assistive technologies, adaptable visuals, and inclusive interaction patterns.
+      url: accessibility/accessibility-overview.md
+coreWorkflows:
+  title: Design your app experience
+  summary: Work through the visual, structural, and interaction decisions that shape a Windows app.
+  items:
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A design editor window.
+      title: Plan layout and navigation
+      description: Structure your app, adapt it to different window sizes, and help people move between pages and features.
+      links:
+        - text: Layout overview
+          url: layout/index.md
+        - text: Navigation basics
+          url: basics/navigation-basics.md
+        - text: App title bar
+          url: basics/titlebar-design.md
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Define color, materials, and typography
+      description: Build a coherent visual system by applying Windows color, material, elevation, and type guidance.
+      links:
+        - text: Color
+          url: signature-experiences/color.md
+        - text: Materials
+          url: signature-experiences/materials.md
+        - text: Typography
+          url: signature-experiences/typography.md
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Create app icons
+      description: Choose Windows iconography and create app assets that remain clear across sizes, themes, and surfaces.
+      links:
+        - text: Iconography overview
+          url: iconography/index.md
+        - text: App icon guidance
+          url: iconography/app-icons.md
+        - text: Generate app icons
+          url: iconography/visual-studio-asset-generation.md
+    - icon:
+        src: ../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: Add motion and interaction
+      description: Use motion, haptics, and commanding patterns to communicate changes and support direct interaction.
+      links:
+        - text: Motion
+          url: signature-experiences/motion.md
+        - text: Haptics
+          url: signature-experiences/haptics.md
+        - text: Commanding
+          url: basics/commanding-basics.md
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A design editor window.
+      title: Use design tools and resources
+      description: Use Windows design kits, fonts, icons, templates, and related resources when creating and prototyping your app.
+      links:
+        - text: Design tools and resources
+          url: downloads/index.md
+supportReference:
+  title: Continue your Windows app journey
+  summary: Move between onboarding, development, deployment, and publishing while you refine your app design.
+  items:
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Get started with WinUI
+      url: ../get-started/index.yml
+    - icon:
+        src: ../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: Add Windows features
+      url: ../develop/index.md
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Package and deploy
+      url: ../package-and-deploy/index.md
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A design editor window.
+      title: Publish through Microsoft Store
+      url: ../publish/index.md

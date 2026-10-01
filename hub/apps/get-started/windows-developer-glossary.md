@@ -4,7 +4,7 @@ description: Definitions of current Windows app development terms, including Win
 author: GrantMeStrength
 ms.author: jken
 ms.topic: glossary
-ms.date: 09/16/2026
+ms.date: 09/21/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -46,10 +46,6 @@ C++/WinRT is a standard C++17 language projection for Windows Runtime (WinRT) AP
 #### Dev Drive
 
 A storage volume optimized for developer workloads. Dev Drive uses the Resilient File System (ReFS) and provides faster performance for common development I/O operations like builds, package installs, and source control. See [Set up a Dev Drive on Windows 11](../../dev-drive/index.md).
-
-#### Dev Home
-
-An open-source Windows developer dashboard that was retired in May 2025. Its repository is archived. Use [Advanced Windows Settings](../../advanced-settings/index.md), [WinGet Configuration](../../package-manager/configuration/index.md), and [Dev Drive](../../dev-drive/index.md) for current setup workflows.
 
 #### DirectML
 
@@ -180,7 +176,7 @@ Text recognition, also known as optical character recognition (OCR), is supporte
 An application development platform and application model that uses Windows Runtime (WinRT) APIs to deliver packaged apps. UWP apps run in a sandboxed environment, and they inherit the security of the UWP platform. [Learn more about UWP](/windows/uwp/).
 
 >[!NOTE]
-> Build Windows apps with [Windows App SDK and WinUI 3](index.md). You can also use [WPF](/dotnet/desktop/wpf/getting-started).
+> Build Windows apps with [Windows App SDK and WinUI 3](index.yml). You can also use [WPF](/dotnet/desktop/wpf/getting-started).
 
 #### Unmanaged app
 
@@ -253,4 +249,4 @@ Windows APIs for running ONNX models locally in Windows apps, with automatic exe
 ## Related content
 
 - [Windows developer FAQ](windows-developer-faq.md)
-- [Overview of app development options](./index.md)
+- [Overview of app development options](./index.yml)

@@ -2,7 +2,7 @@
 title: Windows apps--packaging, deployment, and process
 description: This topic discusses your options around app packaging, deploy/distribute/install, and your app's run-time process.
 ms.topic: article
-ms.date: 09/10/2026
+ms.date: 09/30/2026
 keywords: intro, introduction, all-up, all, up, Windows, Windows apps, packaging, deployment, process, run-time
 ms.localizationpriority: medium
 ---
@@ -15,7 +15,7 @@ This topic discusses your options concerning:
 * How you'll deploy/distribute your app, and how it'll be installed.
 * Your app's run-time process, including how isolated it will be and what APIs will be available to it.
 
-You can make those decisions for both new and existing apps. But if you're still in the planning stage for a new app, then before you start to think about the considerations above, first decide what development platform and user interface (UI) framework you'll use for your app. And for that decision, see [An overview of Windows development options](index.md).
+You can make those decisions for both new and existing apps. But if you're still in the planning stage for a new app, then before you start to think about the considerations above, first decide what development platform and user interface (UI) framework you'll use for your app. For that decision, see [Getting started with WinUI](index.yml).
 
 ## Packaging options: packaged, packaged with external location, or unpackaged
 

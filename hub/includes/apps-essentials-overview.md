@@ -1,18 +1,18 @@
 ---
 ms.topic: include
-ms.date: 09/10/2026
+ms.date: 09/11/2026
 ---
 
 :::row:::
     :::column:::
-        [![Choose a development path icon](../apps/images/tile-coreconcepts.png)](../apps/get-started/index.md)<br>
-        **[Choose a development path](../apps/get-started/index.md)**<br>
-       Start a new app with WinUI 3, modernize an existing desktop app, or find guidance for another framework.
+        [![Get started with WinUI icon](../apps/images/tile-getstarted.png)](../apps/get-started/index.yml)<br>
+        **[Getting started with WinUI](../apps/get-started/index.yml)**<br>
+       Run your first WinUI app, then choose a coding or AI-assisted tutorial to build your skills.
     :::column-end:::
     :::column:::
-       [![Get started with WinUI 3 icon](../apps/images/tile-getstarted.png)](../apps/get-started/winui-get-started-overview.md)<br>
-        **[Get started with WinUI 3](../apps/get-started/winui-get-started-overview.md)**<br>
-        Choose your tools, run a blank project, and pick a WinUI 3 learning path.
+       [![WinUI overview icon](../apps/images/tile-coreconcepts.png)](../apps/winui/winui3/index.md)<br>
+        **[About WinUI](../apps/winui/winui3/index.md)**<br>
+        Learn what the UI framework provides before exploring the detailed SDK documentation.
     :::column-end:::
     :::column:::
        [![Help and guidance icon](../apps/images/tile-help.png)](../apps/get-started/best-practices.md)<br>
