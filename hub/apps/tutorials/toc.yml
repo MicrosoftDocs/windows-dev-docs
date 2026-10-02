@@ -1,139 +1,133 @@
 items:
-- name: Code samples
-  href: ../dev-tools/samples.md
-- name: Tutorials
-  href: index.md
-  expanded: true
+- name: Get started with WinUI
   items:
-  - name: Get started with WinUI
+  - name: Build your first WinUI app
+    href: ../get-started/start-here.md
+  - name: Build a notes app
     items:
-    - name: Build your first WinUI app
-      href: ../get-started/start-here.md
-    - name: Build a notes app
-      items:
-      - name: Introduction
-        href: winui-notes/intro.md
-      - name: 1. Project setup
-        href: winui-notes/project.md
-      - name: 2. Note page
-        href: winui-notes/note.md
-      - name: 3. View and model
-        href: winui-notes/view-model.md
-      - name: 4. All notes
-        href: winui-notes/all-notes.md
-      - name: 5. Navigation
-        href: winui-notes/navigation.md
-    - name: Extend the notes app
-      items:
-      - name: Introduction
-        href: winui-notes-pt2/0-intro.md
-      - name: 1. Navigation cache and change notification
-        href: winui-notes-pt2/1-navigation-cache-change-notification.md
-      - name: 2. Track note state
-        href: winui-notes-pt2/2-note-state.md
-      - name: 3. Pass navigation parameters
-        href: winui-notes-pt2/3-navigation-parameters.md
-  - name: Line-of-business apps
+    - name: Introduction
+      href: winui-notes/intro.md
+    - name: 1. Project setup
+      href: winui-notes/project.md
+    - name: 2. Note page
+      href: winui-notes/note.md
+    - name: 3. View and model
+      href: winui-notes/view-model.md
+    - name: 4. All notes
+      href: winui-notes/all-notes.md
+    - name: 5. Navigation
+      href: winui-notes/navigation.md
+  - name: Extend the notes app
     items:
-    - name: Overview
-      href: ../get-started/line-of-business/index.md
-    - name: Display tabular data
-      href: ../get-started/line-of-business/display-tabular-data.md
-    - name: Build a validated form
-      href: ../get-started/line-of-business/build-validated-form.md
-    - name: Connect to a database
-      href: ../get-started/line-of-business/connect-to-a-database.md
-    - name: Plan enterprise manageability
-      href: ../get-started/line-of-business/enterprise-manageability.md
-    - name: Design for productivity
-      href: ../get-started/line-of-business/design-for-lob.md
-    - name: Add AI capabilities
-      href: ../get-started/line-of-business/ai-for-lob-apps.md
-    - name: Windows Forms patterns and WinUI 3 equivalents
-      href: ../get-started/line-of-business/migrate-winforms-patterns.md
-  - name: Build with an AI coding assistant
+    - name: Introduction
+      href: winui-notes-pt2/0-intro.md
+    - name: 1. Navigation cache and change notification
+      href: winui-notes-pt2/1-navigation-cache-change-notification.md
+    - name: 2. Track note state
+      href: winui-notes-pt2/2-note-state.md
+    - name: 3. Pass navigation parameters
+      href: winui-notes-pt2/3-navigation-parameters.md
+- name: Line-of-business apps
+  items:
+  - name: Overview
+    href: ../get-started/line-of-business/index.md
+  - name: Display tabular data
+    href: ../get-started/line-of-business/display-tabular-data.md
+  - name: Build a validated form
+    href: ../get-started/line-of-business/build-validated-form.md
+  - name: Connect to a database
+    href: ../get-started/line-of-business/connect-to-a-database.md
+  - name: Plan enterprise manageability
+    href: ../get-started/line-of-business/enterprise-manageability.md
+  - name: Design for productivity
+    href: ../get-started/line-of-business/design-for-lob.md
+  - name: Add AI capabilities
+    href: ../get-started/line-of-business/ai-for-lob-apps.md
+  - name: Windows Forms patterns and WinUI 3 equivalents
+    href: ../get-started/line-of-business/migrate-winforms-patterns.md
+- name: Build with an AI coding assistant
+  items:
+  - name: Quickstart
+    href: ../develop/ai-assisted/quickstart.md
+  - name: Build a task app
     items:
-    - name: Quickstart
-      href: ../develop/ai-assisted/quickstart.md
-    - name: Build a task app
-      items:
-      - name: Introduction
-        href: winui-ai-assisted/intro.md
-      - name: 1. Plan and prompt
-        href: winui-ai-assisted/plan.md
-      - name: 2. Data and persistence
-        href: winui-ai-assisted/data.md
-      - name: 3. Accessible and adaptive UI
-        href: winui-ai-assisted/interface.md
-      - name: 4. Verify and refine
-        href: winui-ai-assisted/verify.md
-    - name: Set up GitHub Copilot
-      href: ../how-tos/ai-setup.md
-    - name: Build a Windows app with GitHub Copilot
-      href: ../how-tos/ai-build.md
-  - name: App architecture and data
+    - name: Introduction
+      href: winui-ai-assisted/intro.md
+    - name: 1. Plan and prompt
+      href: winui-ai-assisted/plan.md
+    - name: 2. Data and persistence
+      href: winui-ai-assisted/data.md
+    - name: 3. Accessible and adaptive UI
+      href: winui-ai-assisted/interface.md
+    - name: 4. Verify and refine
+      href: winui-ai-assisted/verify.md
+  - name: Set up GitHub Copilot
+    href: ../how-tos/ai-setup.md
+  - name: Build a Windows app with GitHub Copilot
+    href: ../how-tos/ai-build.md
+- name: App architecture and data
+  items:
+  - name: Data binding with the MVVM Toolkit
     items:
-    - name: Data binding with the MVVM Toolkit
-      items:
-      - name: Introduction
-        href: winui-mvvm-toolkit/intro.md
-      - name: 1. Create a class library
-        href: winui-mvvm-toolkit/class-library.md
-      - name: 2. Implement MVVM
-        href: winui-mvvm-toolkit/mvvm-implementation.md
-      - name: 3. Add dependency injection
-        href: winui-mvvm-toolkit/dependency-injection.md
-      - name: 4. Add unit tests
-        href: winui-mvvm-toolkit/unit-testing.md
-    - name: Data binding basics
-      href: ../develop/data-binding/data-binding-overview.md
-    - name: Create a master/details view
-      href: ../develop/data-binding/bind-to-hierarchical-data-and-create-a-master-details-view.md
-    - name: Use a SQLite database
-      href: ../develop/data-access/sqlite-data-access.md
-    - name: Use a SQL Server database
-      href: ../develop/data-access/sql-server-database.md
-    - name: Use an Azure Cosmos DB database
-      href: ../develop/data-access/cosmos-db-data-access.md
-    - name: Use a MySQL database
-      href: ../develop/data-access/mysql-database.md
-    - name: Use a MongoDB database
-      href: ../develop/data-access/mongodb-database.md
-  - name: Files and folders
-    items:
-    - name: Access files and folders with .NET
-      href: ../develop/files/dotnet-files.md
-    - name: Open files and folders with a picker
-      href: ../develop/files/using-file-folder-pickers.md
-    - name: Save a file with a picker
-      href: ../develop/files/pickers-save-file.md
-  - name: UI and graphics
-    items:
-    - name: Build a simple Win2D app
-      href: ../develop/win2d/quick-start.md
-    - name: Build XAML templated controls
-      href: ../winui/winui3/xaml-templated-controls-winui-3.md
-    - name: Create a custom panel
-      href: ../design/layout/boxpanel-example-custom-panel.md
-    - name: Implement navigation between two pages
-      href: ../develop/ui/navigation/navigate-between-two-pages.md
-  - name: Security
-    items:
-    - name: Create a Windows Hello login app
-      href: ../develop/security/windows-hello-login.md
-    - name: Create a Windows Hello login service
-      href: ../develop/security/windows-hello-auth-service.md
-  - name: Components and interop
-    items:
-    - name: Generate a C# projection from C++/WinRT
-      href: ../develop/platform/csharp-winrt/net-projection-from-cppwinrt-component.md
-    - name: Create a C#/WinRT component for C++/WinRT
-      href: ../develop/platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
-    - name: Create a C# component with WinUI controls
-      href: ../develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
-  - name: Packaging and deployment
-    items:
-    - name: Use the Windows App SDK bootstrapper API
-      href: ../windows-app-sdk/tutorial-unpackaged-deployment.md
-    - name: Set up CI for WinUI
-      href: ../package-and-deploy/ci-for-winui3.md
+    - name: Introduction
+      href: winui-mvvm-toolkit/intro.md
+    - name: 1. Create a class library
+      href: winui-mvvm-toolkit/class-library.md
+    - name: 2. Implement MVVM
+      href: winui-mvvm-toolkit/mvvm-implementation.md
+    - name: 3. Add dependency injection
+      href: winui-mvvm-toolkit/dependency-injection.md
+    - name: 4. Add unit tests
+      href: winui-mvvm-toolkit/unit-testing.md
+  - name: Data binding basics
+    href: ../develop/data-binding/data-binding-overview.md
+  - name: Create a master/details view
+    href: ../develop/data-binding/bind-to-hierarchical-data-and-create-a-master-details-view.md
+  - name: Use a SQLite database
+    href: ../develop/data-access/sqlite-data-access.md
+  - name: Use a SQL Server database
+    href: ../develop/data-access/sql-server-database.md
+  - name: Use an Azure Cosmos DB database
+    href: ../develop/data-access/cosmos-db-data-access.md
+  - name: Use a MySQL database
+    href: ../develop/data-access/mysql-database.md
+  - name: Use a MongoDB database
+    href: ../develop/data-access/mongodb-database.md
+- name: Files and folders
+  items:
+  - name: Access files and folders with .NET
+    href: ../develop/files/dotnet-files.md
+  - name: Open files and folders with a picker
+    href: ../develop/files/using-file-folder-pickers.md
+  - name: Save a file with a picker
+    href: ../develop/files/pickers-save-file.md
+- name: UI and graphics
+  items:
+  - name: Build a simple Win2D app
+    href: ../develop/win2d/quick-start.md
+  - name: Build XAML templated controls
+    href: ../winui/winui3/xaml-templated-controls-winui-3.md
+  - name: Create a custom panel
+    href: ../design/layout/boxpanel-example-custom-panel.md
+  - name: Implement navigation between two pages
+    href: ../develop/ui/navigation/navigate-between-two-pages.md
+- name: Security
+  items:
+  - name: Create a Windows Hello login app
+    href: ../develop/security/windows-hello-login.md
+  - name: Create a Windows Hello login service
+    href: ../develop/security/windows-hello-auth-service.md
+- name: Components and interop
+  items:
+  - name: Generate a C# projection from C++/WinRT
+    href: ../develop/platform/csharp-winrt/net-projection-from-cppwinrt-component.md
+  - name: Create a C#/WinRT component for C++/WinRT
+    href: ../develop/platform/csharp-winrt/create-windows-runtime-component-cswinrt.md
+  - name: Create a C# component with WinUI controls
+    href: ../develop/platform/csharp-winrt/create-winrt-component-winui-cswinrt.md
+- name: Packaging and deployment
+  items:
+  - name: Use the Windows App SDK bootstrapper API
+    href: ../windows-app-sdk/tutorial-unpackaged-deployment.md
+  - name: Set up CI for WinUI
+    href: ../package-and-deploy/ci-for-winui3.md

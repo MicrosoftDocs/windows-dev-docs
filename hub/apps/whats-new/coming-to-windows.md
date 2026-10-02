@@ -4,7 +4,7 @@ description: A practical guide for developers new to Windows with paths for macO
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 09/19/2026
+ms.date: 10/02/2026
 ms.localizationpriority: medium
 ---
 
@@ -44,7 +44,7 @@ For a detailed setup and workflow comparison, see [Moving from Mac (Unix) to Win
 
 **Build native Windows apps with WinUI 3**
 
-[WinUI 3](../winui/winui3/index.md) is the recommended UI framework for new Windows desktop apps—the equivalent of SwiftUI or AppKit for Windows. It uses [Fluent Design](../design/index.md) components, supports light/dark themes automatically, and runs on Windows 10 version 1809 and later.
+[WinUI 3](../winui/winui3/index.md) is the recommended UI framework for new Windows desktop apps—the equivalent of SwiftUI or AppKit for Windows. It uses [Fluent Design](../design/index.yml) components, supports light/dark themes automatically, and runs on Windows 10 version 1809 and later.
 
 Get started in one command:
 

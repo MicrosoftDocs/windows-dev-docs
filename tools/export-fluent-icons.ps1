@@ -13,7 +13,7 @@ Keep LICENSE.txt with redistributed output.
 #>
 [CmdletBinding()]
 param(
-    [ValidateSet('all', 'apps', 'design', 'feature', 'package', 'code', 'editor', 'terminal')]
+    [ValidateSet('all', 'accessibility', 'apps', 'design', 'feature', 'package', 'code', 'editor', 'terminal')]
     [string]$Icon = 'all',
 
     [Parameter(Mandatory = $true)]

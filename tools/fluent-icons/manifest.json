@@ -2,6 +2,7 @@
   "repository": "https://github.com/microsoft/fluentui-system-icons",
   "revision": "5bae3fb7771054c252a54b1d9210e9c03439fa1b",
   "icons": [
+    { "name": "accessibility", "file": "sources/accessibility.svg", "upstreamPath": "assets/Accessibility/SVG/ic_fluent_accessibility_24_regular.svg" },
     { "name": "apps", "file": "sources/apps.svg", "upstreamPath": "assets/Apps/SVG/ic_fluent_apps_24_regular.svg" },
     { "name": "design", "file": "sources/design.svg", "upstreamPath": "assets/Design%20Ideas/SVG/ic_fluent_design_ideas_24_regular.svg" },
     { "name": "feature", "file": "sources/feature.svg", "upstreamPath": "assets/Puzzle%20Piece/SVG/ic_fluent_puzzle_piece_24_regular.svg" },

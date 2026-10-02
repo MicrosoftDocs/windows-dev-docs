@@ -4,7 +4,7 @@ description: Find code samples, step-by-step tutorials, and development tools fo
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 09/20/2026
+ms.date: 10/02/2026
 ---
 
 # Resources for Windows app development
@@ -42,7 +42,7 @@ Find code to adapt, follow a step-by-step tutorial, or choose tools for your dev
         <img class="image is-24x24" src="../images/fluent/editor.svg" alt="A code window with a developer tool." width="24" height="24">
     </div>
     <div class="media-content">
-        <p class="margin-block-none"><strong><a href="../tools/index.md">Compare Windows app development tools</a></strong><br>
+        <p class="margin-block-none"><strong><a href="../tools/index.yml">Compare Windows app development tools</a></strong><br>
         <span class="font-size-sm color-text-subtle">Choose between Visual Studio, the WinApp extension for Visual Studio Code, Windows App Development CLI, and WinUI Agent.</span></p>
     </div>
 </div>

@@ -6,7 +6,7 @@ metadata:
    title: Windows app development documentation
    description: Build native Windows desktop apps with Windows App SDK and WinUI 3, the recommended UI framework for new Windows apps using C# or C++.
    ms.topic: hub-page
-   ms.date: 09/30/2026
+   ms.date: 10/02/2026
    ms.localizationpriority: medium
 
 highlightedContent:
@@ -20,7 +20,7 @@ highlightedContent:
       url: /windows/apps/get-started/
     - title: Explore the Windows app platform
       itemType: overview
-      url: /windows/apps/develop/
+      url: /windows/apps/develop/features-overview
 
 productDirectory:
   title: Build and ship Windows apps
@@ -40,7 +40,7 @@ productDirectory:
     imageSrc: /windows/apps/images/hub-design.svg
     summary: "Apply Windows design principles to create apps that feel native, accessible, and consistent with the platform."
     links:
-      - url: /windows/apps/design/index
+      - url: /windows/apps/design/
         text: Windows app design overview
       - url: /windows/apps/design/design-principles
         text: Windows design principles
@@ -52,10 +52,8 @@ productDirectory:
     imageSrc: /windows/apps/images/hub-develop.svg
     summary: "Add windowing, notifications, file access, app lifecycle, input, graphics, and other Windows capabilities."
     links:
-      - url: /windows/apps/develop/
-        text: Windows app development overview
       - url: /windows/apps/develop/features-overview
-        text: Explore Windows app features
+        text: Windows app development overview
       - url: /windows/apps/develop/platform/
         text: Windows development platform concepts
       - url: /windows/apps/api-reference/

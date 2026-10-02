@@ -6,7 +6,7 @@ metadata:
   author: GrantMeStrength
   ms.author: jken
   ms.topic: overview
-  ms.date: 09/30/2026
+  ms.date: 10/02/2026
   keywords: windows app design, fluent design, winui 3, accessibility, layout, navigation, iconography
 brand: windows
 tocType: single
@@ -43,8 +43,8 @@ coreWorkflows:
         - text: App title bar
           url: basics/titlebar-design.md
     - icon:
-        src: ../images/fluent-blue/apps.svg
-        alt: A collection of app windows.
+        src: ../images/fluent-blue/design.svg
+        alt: A paintbrush and shape representing visual design.
       title: Define color, materials, and typography
       description: Build a coherent visual system by applying Windows color, material, elevation, and type guidance.
       links:
@@ -69,7 +69,7 @@ coreWorkflows:
     - icon:
         src: ../images/fluent-blue/code.svg
         alt: Code brackets.
-      title: Add motion and interaction
+      title: Design motion and interaction
       description: Use motion, haptics, and commanding patterns to communicate changes and support direct interaction.
       links:
         - text: Motion
@@ -78,6 +78,18 @@ coreWorkflows:
           url: signature-experiences/haptics.md
         - text: Commanding
           url: basics/commanding-basics.md
+    - icon:
+        src: ../images/fluent-blue/accessibility.svg
+        alt: A person with outstretched arms representing accessibility.
+      title: Design for usability and inclusion
+      description: Make your app understandable and adaptable across abilities, languages, input methods, and preferences.
+      links:
+        - text: Usability overview
+          url: usability/index.md
+        - text: Designing inclusive software
+          url: accessibility/designing-inclusive-software.md
+        - text: Design for bidirectional text
+          url: globalizing/design-for-bidi-text.md
     - icon:
         src: ../images/fluent-blue/editor.svg
         alt: A design editor window.
@@ -99,10 +111,10 @@ supportReference:
         src: ../images/fluent-blue/code.svg
         alt: Code brackets.
       title: Add Windows features
-      url: ../develop/index.md
+      url: ../develop/features-overview.yml
     - icon:
-        src: ../images/fluent-blue/feature.svg
-        alt: A puzzle piece representing app features.
+        src: ../images/fluent-blue/package.svg
+        alt: A package with an upward arrow.
       title: Package and deploy
       url: ../package-and-deploy/index.md
     - icon:

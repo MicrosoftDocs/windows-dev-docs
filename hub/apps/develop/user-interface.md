@@ -2,7 +2,7 @@
 description: Overview of User Interface features available for building Windows apps, including controls, layout, navigation, motion, and windowing.
 title: User interface overview
 ms.topic: overview
-ms.date: 03/04/2026
+ms.date: 10/02/2026
 ms.localizationpriority: medium
 ---
 
@@ -10,7 +10,7 @@ ms.localizationpriority: medium
 
 Building a great Windows app means crafting a user interface that's intuitive, responsive, and visually polished. The Windows platform provides a rich set of UI building blocks—from ready-to-use controls and flexible layout systems to smooth animations and windowing APIs—so you can create experiences that feel right at home on Windows.
 
-For design principles, patterns, and visual guidance, see the [Design overview](../design/index.md).
+For design principles, patterns, and visual guidance, see the [Design overview](../design/index.yml).
 
 ## Controls
 

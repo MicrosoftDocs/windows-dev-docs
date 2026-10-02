@@ -1,0 +1,100 @@
+items:
+  - name: Overview
+    href: index.yml
+  - name: About APIs and interop
+    href: ../develop/interop/index.md
+    items:
+      - name: Call Win32 APIs from C# (CsWin32)
+        href: ../develop/interop/call-win32-apis.md
+      - name: Use WinRT COM interop classes in .NET
+        href: ../desktop/modernize/winrt-com-interop-csharp.md
+      - name: WinRT APIs not supported in desktop apps
+        href: ../desktop/modernize/winrt-api-desktop-app-support.md
+      - name: "Walkthrough: WinUI 3 app with Win32 interop"
+        href: ../winui/winui3/desktop-winui3-app-with-basic-interop.md
+  - name: Windows SDK API reference
+    items:
+      - name: WinRT API reference >>
+        href: /uwp/api/
+      - name: WinUI for UWP API reference >>
+        href: /windows/winui/api/
+      - name: Win32 API reference >>
+        href: /windows/win32/api/
+  - name: Windows App SDK API reference
+    items:
+      - name: WinRT API reference >>
+        href: /windows/windows-app-sdk/api/winrt/
+      - name: Win32 API reference
+        items:
+          - name: Win32 API reference >>
+            href: /windows/windows-app-sdk/api/win32
+          - name: Bootstrapper C++ API
+            href: bootstrapper-cpp-api/index.md
+            items:
+              - name: Constants for use with the Bootstrapper C++ API
+                href: bootstrapper-cpp-api/bootstrapper-cpp-api-constants.md
+              - name: Microsoft:Windows:ApplicationModel namespace
+                href: bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.md
+                items:
+                  - name: PackageVersion class
+                    href: bootstrapper-cpp-api/microsoft.windows.applicationmodel/microsoft.windows.applicationmodel.packageversion.md
+              - name: Microsoft:Windows:ApplicationModel:DynamicDependency:Bootstrap namespace
+                href: bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md
+                items:
+                  - name: Initialize function
+                    href: bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initialize.md
+                  - name: InitializeFailFast function
+                    href: bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializefailfast.md
+                  - name: InitializeNoThrow function
+                    href: bootstrapper-cpp-api/microsoft.windows.applicationmodel.dynamicdependency.bootstrap/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.initializenothrow.md
+      - name: WinUI API reference
+        items:
+          - name: COM interop APIs for WinUI
+            href: /windows/windows-app-sdk/api/win32/_winuicominterop/
+          - name: C# Interop APIs for WinUI
+            href: cs-interop-apis/index.md
+            items:
+              - name: Microsoft.UI namespace
+                href: cs-interop-apis/microsoft.ui/microsoft.ui.md
+                items:
+                  - name: Win32Interop class
+                    href: cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.md
+                    items:
+                      - name: Methods
+                        items:
+                          - name: Win32Interop.GetDisplayIdFromMonitor
+                            href: cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getdisplayidfrommonitor.md
+                          - name: Win32Interop.GetIconFromIconId
+                            href: cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonfromiconid.md
+                          - name: Win32Interop.GetIconIdFromIcon
+                            href: cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.geticonidfromicon.md
+                          - name: Win32Interop.GetMonitorFromDisplayId
+                            href: cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getmonitorfromdisplayid.md
+                          - name: Win32Interop.GetWindowFromWindowId
+                            href: cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowfromwindowid.md
+                          - name: Win32Interop.GetWindowIdFromWindow
+                            href: cs-interop-apis/microsoft.ui/microsoft.ui.win32interop.getwindowidfromwindow.md
+      - name: Bootstrapper C# APIs
+        href: cs-bootstrapper-apis/index.md
+        items:
+          - name: Constants for use with the Bootstrapper C# APIs
+            href: cs-bootstrapper-apis/cs-bootstrapper-apis-constants.md
+          - name: Microsoft.Windows.ApplicationModel.DynamicDependency namespace
+            href: cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.md
+            items:
+              - name: Bootstrap class
+                href: cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md
+              - name: PackageVersion struct
+                href: cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.packageversion.md
+  - name: .NET API reference >>
+    href: /dotnet/api/
+  - name: Schema specs for Windows apps >>
+    href: /uwp/schemas/
+  - name: Windows Settings reference
+    items:
+    - name: Windows 10 and Windows 11 settings reference
+      href: ../develop/settings/settings-common.md
+    - name: Windows 11 settings reference
+      href: ../develop/settings/settings-windows-11.md
+    - name: Cloud Data Store Settings Reader Tool (readCloudDataSettings.exe)
+      href: ../develop/settings/readclouddatasettings-exe.md

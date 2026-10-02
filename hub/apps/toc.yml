@@ -7,33 +7,7 @@ items:
   - name: Build your first WinUI app
     href: get-started/start-here.md
   - name: Tutorials
-    items:
-    - name: Build a notes app
-      items:
-      - name: Introduction
-        href: tutorials/winui-notes/intro.md
-      - name: 1. Project setup
-        href: tutorials/winui-notes/project.md
-      - name: 2. Note page
-        href: tutorials/winui-notes/note.md
-      - name: 3. View and model
-        href: tutorials/winui-notes/view-model.md
-      - name: 4. All notes
-        href: tutorials/winui-notes/all-notes.md
-      - name: 5. Navigation
-        href: tutorials/winui-notes/navigation.md
-    - name: Build with an AI coding assistant
-      items:
-      - name: Introduction
-        href: tutorials/winui-ai-assisted/intro.md
-      - name: 1. Plan and prompt
-        href: tutorials/winui-ai-assisted/plan.md
-      - name: 2. Data and persistence
-        href: tutorials/winui-ai-assisted/data.md
-      - name: 3. Accessible and adaptive UI
-        href: tutorials/winui-ai-assisted/interface.md
-      - name: 4. Verify and refine
-        href: tutorials/winui-ai-assisted/verify.md
+    href: tutorials/toc.yml
 - name: Understand the platform
   items:
   - name: About WinUI
@@ -98,6 +72,8 @@ items:
       href: windows-sdk/downloads.md
   - name: Windows versions and compatibility
     href: get-started/versioning-overview.md
+- name: API reference
+  href: api-reference/toc.yml
 - name: Help and guidance
   href: develop/support.md
   items:
@@ -105,5 +81,7 @@ items:
     href: get-started/windows-developer-faq.md
   - name: Terminology
     href: get-started/windows-developer-glossary.md
-- name: Resources
-  href: dev-tools/index.md
+- name: Tools
+  href: tools/toc.yml
+- name: Code samples
+  href: dev-tools/samples.md

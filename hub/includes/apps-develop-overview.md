@@ -3,13 +3,13 @@ author: GrantMeStrength
 ms.author: jken
 ms.service: windows-app-sdk
 ms.topic: include
-ms.date: 08/14/2026
+ms.date: 10/02/2026
 ---
 
 :::row:::
     :::column:::
-       :::image type="icon" source="../apps/develop/images/tile-features.png" link="../apps/develop/features-overview.md":::<br>
-        **[Windows app platform](../apps/develop/features-overview.md)**<br>
+       :::image type="icon" source="../apps/develop/images/tile-features.png" link="../apps/develop/features-overview.yml":::<br>
+        **[Windows app platform](../apps/develop/features-overview.yml)**<br>
         The Windows app platform provides features and APIs for building Windows desktop apps.
     :::column-end:::
     :::column:::
@@ -20,8 +20,8 @@ ms.date: 08/14/2026
 :::row-end:::
 :::row:::
     :::column:::
-       :::image type="icon" source="../apps/develop/images/tile-apireference.png" link="../apps/api-reference/index.md":::<br>
-        **[API reference](../apps/api-reference/index.md)**<br>
+       :::image type="icon" source="../apps/develop/images/tile-apireference.png" link="../apps/api-reference/index.yml":::<br>
+        **[API reference](../apps/api-reference/index.yml)**<br>
         Browse the API reference for every Windows App SDK namespace and feature.
     :::column-end:::
     :::column:::

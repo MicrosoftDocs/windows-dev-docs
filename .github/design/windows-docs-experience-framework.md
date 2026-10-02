@@ -4,7 +4,7 @@ description: Define a WinUI-first documentation framework with evidence-based jo
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
-ms.date: 09/11/2026
+ms.date: 10/02/2026
 ---
 
 # Windows documentation experience framework
@@ -15,7 +15,7 @@ This is an internal design framework for the Windows app documentation experienc
 
 The intended promise is: **build a new app with WinUI 3, or bring an existing app to WinUI 3.** Readers should reach a useful result without first reconstructing the Windows platform taxonomy.
 
-The working navigation direction is **Getting started, Design, Add Windows features, Modernize an existing app, Package and deploy, Distribute through the Store, Resources**. Final implementation requires review. This document preserves the Windows App SDK collection, gives tools and samples a dedicated Resources ToC, and treats modernization as a distinct entry journey.
+The working navigation direction is **Getting started, Design, Add Windows features, Modernize an existing app, Package and deploy, Distribute through the Store, Tools, Code samples**. Final implementation requires review. This document preserves the Windows App SDK collection, gives tools a dedicated ProductSubHub and ToC, keeps code samples directly accessible, and treats modernization as a distinct entry journey.
 
 Research date: September 7, 2026. The pre-change content baseline is commit `fbd4d0833`; some source links below now resolve to revised pages in this draft. The comparison examines representative official entry pages, quickstarts, and migration guidance, not entire competing documentation sites. Observations about structure are evidence; predictions about reader confusion are hypotheses to test, not measured abandonment or conversion rates.
 
@@ -32,7 +32,7 @@ The problem is that those assets do not consistently form one understandable exp
 | Setup descriptions disagree. | [Quickstart](../../hub/apps/get-started/start-here.md), homepage, and WinUI getting-started overview use different workload or template descriptions. | Readers and agents may assemble an incompatible setup. | Maintain one setup contract; distinguish supported platform versions from the tutorial's selected toolchain. |
 | A tooling promise conflicts with another article. | The quickstart advertises visual designer support; [runtime design tools](../../hub/apps/develop/ui/xaml-runtime-design-tools.md) states that the WinUI 3 XAML Designer is unavailable. | Readers may mistake a product limitation for a broken installation. | Name limitations where they affect a decision; do not imply a runtime tool is an equivalent design-time replacement. |
 | The first-run handoff changes scale abruptly. | The quickstart ends at a running window; [Notes project setup](../../hub/apps/tutorials/winui-notes/project.md) introduces project anatomy, a custom title bar, and navigation infrastructure. | Readers may lose momentum before implementing behavior. | Continue the same project with one small UI change before a larger application tutorial. |
-| Resources have competing entry points. | The first ToC, [Develop ToC](../../hub/apps/develop/toc.yml), and DocsRoot's `content-nav/MSDocsHeader-WinDevCenter.yml` distribute tools, samples, and agent setup across sections. | The route depends on where the reader enters. | Give Resources a canonical landing page and ToC; keep useful contextual links elsewhere. |
+| Tools and samples have competing entry points. | The first ToC, [Develop ToC](../../hub/apps/develop/toc.yml), and DocsRoot's `content-nav/MSDocsHeader-WinDevCenter.yml` distribute tools, samples, and agent setup across sections. | The route depends on where the reader enters. | Give Tools a canonical landing page and ToC, keep code samples directly accessible, and retain useful contextual links elsewhere. |
 | Machine-oriented content has a separate version snapshot. | [Root llms.txt](../../llms.txt) describes Visual Studio 2022 setup and its own current-version list, while the quickstart describes Visual Studio 2026 and a .NET 10 CLI baseline. | An agent may follow a different contract from a human. | Align machine entry points with canonical setup and release sources instead of maintaining independent version claims. |
 
 Do not conclude that cards are inherently better than prose or every overview is redundant. Equally, an existing article does not earn a place in the new experience merely because it exists. Preserve authoritative knowledge and meaningful destinations, not the current page count.
@@ -137,9 +137,10 @@ The proposed L0 responsibilities are:
 | Modernize an existing app | Assessment, framework mappings, migration steps, and incremental adoption | Guidance limited to full UI migration to WinUI 3 |
 | Package and deploy | Packaging, identity, runtime delivery, signing, distribution mechanics | Store listing and account management |
 | Distribute through the Store | Store submission, listings, certification, commerce, and management | Every possible distribution channel |
-| Resources | Developer tools, coding-assistant setup, samples, Gallery, and useful external references | A second authoritative copy of SDK releases or setup requirements |
+| Tools | Developer environments, command-line workflows, coding-assistant setup, testing, and automation | A second authoritative copy of SDK releases or setup requirements |
+| Code samples | Focused examples, WinUI Gallery, and links to maintained sample repositories | A duplicate tools catalog or tutorial hierarchy |
 
-Within the first section's ToC, use **Build with WinUI** as a non-clickable group and put **Get started** first within it, before the first-app quickstart and tutorials. Keep **Understand the platform** as the next top-level group, with Windows App SDK overview, channels, support, release notes, and downloads grouped within it. A Resources shortcut to downloads does not move ownership of the SDK collection.
+Within the first section's ToC, use **Build with WinUI** as a non-clickable group and put **Get started** first within it, before the first-app quickstart and tutorials. Keep **Understand the platform** as the next top-level group, with Windows App SDK overview, channels, support, release notes, and downloads grouped within it. Tools and code-samples shortcuts do not move ownership of the SDK collection.
 
 Migration remains a proposed L0 because existing-app developers have a distinct job, not because Azure has the same label. Link to it from Get started without duplicating its full sidebar. Keep framework-specific modernization in its respective documentation and retain a single authoritative home for shared SDK guidance.
 
@@ -338,7 +339,7 @@ Use task-based comparisons against the current experience. For a small pilot, as
 |---|---|
 | Find the WinUI first-run route | Wrong turns, repeated introductions, and whether the required setup is clear |
 | Change behavior in the running app | Whether the same project continues and the expected interaction works |
-| Find a control example or development tool | Whether Resources is discoverable without navigating through unrelated features |
+| Find a control example or development tool | Whether Code samples and Tools are discoverable without navigating through unrelated features |
 | Find an SDK release or support detail | Whether the Windows App SDK collection remains coherent |
 | Assess a WPF-to-WinUI migration | Whether the destination and known gaps are clear without pushing unrelated modernization |
 | Give an agent the first-app task | Whether it selects the same framework and setup contract as the human route |
@@ -352,28 +353,29 @@ The initial experiment used isolated pages and an in-page navigation proposal. A
 | Canonical page | Purpose |
 |---|---|
 | [Getting started with WinUI](../../hub/apps/get-started/index.yml) | The canonical WinUI entry page: three starting choices, five blue-icon learning and sample paths, and four links that continue the app journey through design, development, deployment, and publishing. |
-| [Design Windows apps](../../hub/apps/design/index.yml) | The canonical design entry page: three starting choices, five design workflow paths, and four links that continue the app journey through onboarding, development, deployment, and publishing. |
+| [Design Windows apps](../../hub/apps/design/index.yml) | The canonical design entry page: three starting choices, six design workflow paths, and four links that continue the app journey through onboarding, development, deployment, and publishing. |
 | [Build your first WinUI app](../../hub/apps/get-started/start-here.md) | One quickstart with winapp CLI and Visual Studio tabs, followed by a small XAML change in the same project. |
 | [About WinUI](../../hub/apps/winui/winui3/index.md) | The existing UI-framework overview, separate from setup instructions. |
 | [FAQ](../../hub/apps/get-started/windows-developer-faq.md) | Existing Windows app development questions and answers. |
 | [Terminology](../../hub/apps/get-started/windows-developer-glossary.md) | Definitions used in the first-app and platform guidance. |
-| [Resources](../../hub/apps/dev-tools/index.md) | Tools and examples with compact icon-and-text rows and a dedicated ToC. |
+| [Tools for Windows app development](../../hub/apps/tools/index.yml) | A ProductSubHub for Visual Studio, Visual Studio Code, Windows App Development CLI, WinUI Agent, testing, and automation. |
+| [Code samples](../../hub/apps/dev-tools/samples.md) | Focused examples, WinUI Gallery, and links to maintained Windows app sample repositories. |
 
-The [Essentials ToC](../../hub/apps/toc.yml) starts with a non-clickable **Build with WinUI** group. Its first link opens the focused WinUI landing page, followed by the combined quickstart and tutorials. **Understand the platform** is a separate non-clickable grouping containing About WinUI and the intact SDK collections, followed by Windows versions and compatibility. Help and guidance stays separate. Resources links to its own [ToC](../../hub/apps/dev-tools/toc.yml), not an expanded tools catalog inside Essentials.
+The [Essentials ToC](../../hub/apps/toc.yml) starts with a non-clickable **Build with WinUI** group. Its first link opens the focused WinUI landing page, followed by the combined quickstart and standalone Tutorials ToC. **Understand the platform** is a separate non-clickable grouping containing About WinUI and the intact SDK collections, followed by Windows versions and compatibility. Help and guidance stays separate. Tools opens its own [ToC](../../hub/apps/tools/toc.yml), and Code samples remains a direct destination.
 
 The standalone first-change article is removed; the quickstart includes the small edit after its stage-specific workflow tabs. On the WinUI landing page, readers can create their first app, understand WinUI, or choose a modernization path. The skill section mixes concept paths for XAML, controls and layouts, and data binding and MVVM with separate calls to action for the Notes and AI-assisted Task Tally tutorials. WinUI Gallery and Windows App SDK Samples appear in a separate final section. No new tutorial is introduced.
 
-The Develop ToC links to Resources instead of duplicating its tools tree. It retains the advanced tutorials and receives the line-of-business collection from Essentials. Coming to Windows and the persona catalog are removed from the Essentials sidebar; their existing article URLs remain available pending a separate retirement decision.
+The Develop ToC focuses on Windows capabilities instead of duplicating the tools tree. Tutorials and tools use standalone ToCs, while Code samples remains directly accessible. Coming to Windows and the persona catalog are removed from the Essentials sidebar; their existing article URLs remain available pending a separate retirement decision.
 
-The existing DocsRoot header is not edited in this repository. The coordinated DocsRoot change should point the onboarding entry directly to `get-started/index.yml`, which now serves WinUI onboarding. Approved redirects preserve requests to the retired `/windows/apps/introduction` and `/windows/apps/desktop/` URLs. Renaming the global L0 items and adding a global Resources item remain part of the separate DocsRoot change.
+The existing DocsRoot header is not edited in this repository. The coordinated DocsRoot change should point the onboarding entry directly to `get-started/index.yml`, which now serves WinUI onboarding. Approved redirects preserve requests to the retired `/windows/apps/introduction` and `/windows/apps/desktop/` URLs. Renaming the global L0 items and adding global Tools and Code samples entries remain part of the separate DocsRoot change.
 
-The WinUI and Design landing pages use the ProductSubHub schema without custom stylesheets or scripts. Their single-TOC configurations preserve the standard left ToC and group starting points, task-focused workflows, and onward navigation into structured sections. The Resources page continues to use Learn HTML media objects; its revised layout uses explicit image sizing and `media`, `media-left`, and `media-content` for compact horizontal rows.
+The WinUI, Design, Develop, API reference, and Tools landing pages use the ProductSubHub schema without custom stylesheets or scripts. Their single-TOC configurations preserve the standard left ToC and group starting points, task-focused workflows, and onward navigation into structured sections.
 
-Each ProductSubHub presents three starting points, five focused workflow paths, and four destinations that continue the Windows app journey. The schema supports custom icons but not thumbnail images. This change does not revert the quickstart, sidebar organization, Resources, or icon exporter.
+Each ProductSubHub presents focused starting points, workflow paths, and destinations that continue the Windows app journey. The schema supports custom icons but not thumbnail images. This change does not revert the quickstart, sidebar organization, or icon exporter.
 
 The former platform and Desktop landing pages are not retained as competing overviews. Links that relied on their SDK, design, and deployment sections now point directly to the canonical landing pages and content owners.
 
-The ProductSubHub cards use blue Fluent System Icons, while Resources rows continue to use graphite Fluent System Icons. Navigation and factual copy are preserved.
+The ProductSubHub cards use blue Fluent System Icons. Navigation and factual copy are preserved.
 
 The reusable [icon exporter](../../tools/export-fluent-icons.ps1) produces SVG paths and transparent PNGs from pinned, MIT-licensed sources; [usage and attribution](../../tools/fluent-icons/usage.md) accompany it. This is not Segoe Fluent font extraction: explicit approval for publishing a converted font-glyph asset set was not established, so the implementation uses the separately licensed Fluent System Icons instead.
 

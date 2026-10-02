@@ -4,7 +4,7 @@ title: Input Method Editors (IME)
 label: Input Method Editors (IME)
 template: detail.hbs
 keywords: ime, input method editor, input, interaction
-ms.date: 07/17/2025
+ms.date: 10/02/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -36,7 +36,7 @@ A third-party IME must meet these requirements:
 
 - Must be digitally signed
 - Must be [Text Services Framework (TSF)](/windows/win32/tsf/text-services-framework) aware, with appropriate IME flags set correctly
-- Must follow the guidelines described in [Input Method Editor (IME) requirements](input-method-editor-requirements.md) and [Design and code Windows apps](../../design/index.md)
+- Must follow the guidelines described in [Input Method Editor (IME) requirements](input-method-editor-requirements.md) and [Design and code Windows apps](../../design/index.yml)
 
 A third-party IME that doesn't meet these requirements is blocked from running.
 

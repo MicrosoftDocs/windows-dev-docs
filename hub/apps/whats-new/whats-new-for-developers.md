@@ -4,7 +4,7 @@ description: Explore new Windows platform capabilities, SDK and API updates, des
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
 author: GrantMeStrength
 ms.author: jken
-ms.date: 09/30/2026
+ms.date: 10/02/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -140,7 +140,7 @@ Versions below are current as of September 30, 2026. Use the release notes to re
 - **Visual layer and Composition docs for WinUI**: Documentation for the Visual layer (`Microsoft.UI.Composition`) — including visuals, animations, effects, brushes, lighting, and shadows — is available in the WinUI/Windows App SDK developer section at [Visual layer overview](../develop/composition/visual-layer.md).
 - **Command Palette extension toolkit**: New API reference documentation for the PowerToys Command Palette extension toolkit, covering built-in commands (`CopyPathCommand`, `OpenFileCommand`, `OpenInConsoleCommand`, and more) and layout types — [Command Palette extension toolkit](../../powertoys/command-palette/microsoft-commandpalette-extensions-toolkit/microsoft-commandpalette-extensions-toolkit.md).
 - **Java getting started for Windows**: New guide for setting up a Java development environment on Windows, covering JDK installation, `JAVA_HOME` configuration, editor options, and WSL considerations — [Java on Windows](../../dev-environment/java.md).
-- **Windows app platform overview**: New landing page for the Platform section of the Windows developer docs, with entry points to accessibility, AI, files, notifications, UI, and more — [Windows app platform overview](../develop/features-overview.md).
+- **Windows app development overview**: Landing page for Windows app capabilities, with entry points to accessibility, AI, files, notifications, UI, and more — [Windows app development overview](../develop/features-overview.yml).
 - **PowerToys 0.99**: New Power Display utility for controlling monitors from the system tray, Grab And Move for resizing windows from anywhere, and improvements to Command Palette and the Dock — [PowerToys 0.99 release](https://devblogs.microsoft.com/commandline/powertoys-0-99-is-here-new-monitor-controls-easier-window-management-and-dock-upgrades/) — [Microsoft PowerToys: Utilities to customize Windows](../../powertoys/index.md).
 - **Windows Terminal 1.25**: New settings page for extensions, improved multi-language Command Palette suggestions, and a completely rebuilt windowing architecture with more reliable tray icon and Quake mode — [Windows Terminal 1.25 release](https://devblogs.microsoft.com/commandline/windows-terminal-preview-1-25-release/)
 - **Segoe Fluent Icons Font updated**: The Segoe Fluent Icons Font documentation now includes the latest icon additions and usage guidance — [View icons](/windows/apps/design/style/segoe-fluent-icons-font).
@@ -174,4 +174,4 @@ Versions below are current as of September 30, 2026. Use the release notes to re
 | [Materials in Windows apps](../develop/ui/materials.md) | Overview of Mica and Acrylic materials for WinUI. |
 | [Windows notifications overview](../develop/notifications/index.md) | Which notification API to use: `AppNotificationManager` vs `ToastNotificationManager`. |
 | [Windows app performance](../develop/performance/index.md) | Performance docs for WinUI apps: startup, memory, XAML layout, and more. |
-| [Windows app platform overview](../develop/features-overview.md) | Landing page for Windows platform features: accessibility, AI, files, notifications, and more. |
+| [Windows app development overview](../develop/features-overview.yml) | Landing page for Windows app capabilities: accessibility, AI, files, notifications, and more. |

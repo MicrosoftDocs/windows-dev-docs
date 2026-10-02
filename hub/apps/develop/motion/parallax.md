@@ -4,7 +4,7 @@ description: Learn how to use the ParallaxView control to create a visual effect
 ms.assetid:
 label: Parallax View
 template: detail.hbs
-ms.date: 10/30/2025
+ms.date: 10/02/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -24,7 +24,7 @@ Parallax is a visual effect where items closer to the viewer move faster than it
 
 ## Parallax and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Parallax is a Fluent Design System component that adds motion, depth, and scale to your app. To learn more, see the [Fluent Design overview](../../design/index.md).
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Parallax is a Fluent Design System component that adds motion, depth, and scale to your app. To learn more, see the [Fluent Design overview](../../design/index.yml).
 
 ## How it works in a user interface
 

@@ -1,0 +1,104 @@
+### YamlMime:ProductSubHub
+title: API reference for Windows desktop apps
+metadata:
+  title: API reference for Windows desktop apps
+  description: Find Windows App SDK, Windows SDK, WinUI, Win32, .NET, schema, and interop API reference for Windows desktop app development.
+  author: GrantMeStrength
+  ms.author: jken
+  ms.topic: overview
+  ms.date: 10/02/2026
+  keywords: windows api reference, windows app sdk api, winui api, win32 api, windows runtime api, dotnet api
+brand: windows
+tocType: single
+productOverview:
+  title: API reference for Windows desktop apps
+  summary: Find the API surface for the Windows platform, Windows App SDK, WinUI, Win32, .NET, and app schemas.
+getStarted:
+  title: Choose an API surface
+  summary: Start with the platform or SDK that provides the capability you need.
+  items:
+    - title: Understand APIs and interop
+      description: Learn how Windows Runtime, Win32, COM, and .NET APIs work together in desktop apps.
+      url: ../develop/interop/index.md
+    - title: Explore the Windows App SDK
+      description: Learn about the independently released SDK for modern Windows app features.
+      url: ../windows-app-sdk/index.md
+    - title: Explore the Windows SDK
+      description: Find Windows platform headers, libraries, metadata, tools, downloads, and release information.
+      url: ../windows-sdk/index.md
+coreWorkflows:
+  title: Browse API reference
+  summary: Open the reference collection for the framework, language projection, or interoperability layer you use.
+  items:
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Windows App SDK APIs
+      description: Build with Windows App SDK Windows Runtime and Win32 APIs, or use the C# interop projection.
+      links:
+        - text: Windows Runtime API reference
+          url: /windows/windows-app-sdk/api/winrt/
+        - text: Win32 API reference
+          url: /windows/windows-app-sdk/api/win32
+        - text: C# interop APIs
+          url: cs-interop-apis/index.md
+    - icon:
+        src: ../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: WinUI interop and bootstrapping
+      description: Find WinUI COM and C# interop APIs, or initialize the Windows App SDK runtime from unpackaged apps.
+      links:
+        - text: COM interop APIs for WinUI
+          url: /windows/windows-app-sdk/api/win32/_winuicominterop/
+        - text: C# interop APIs for WinUI
+          url: cs-interop-apis/index.md
+        - text: Bootstrapper C# APIs
+          url: cs-bootstrapper-apis/index.md
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Windows SDK APIs
+      description: Use Windows Runtime, WinUI 2 for UWP, and Win32 APIs that ship with Windows.
+      links:
+        - text: Windows Runtime API reference
+          url: /uwp/api/
+        - text: WinUI 2 for UWP API reference
+          url: /windows/winui/api/
+        - text: Win32 API reference
+          url: /windows/win32/api/
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A code editor window.
+      title: .NET APIs, schemas, and settings
+      description: Browse .NET APIs, app schema specifications, and Windows Settings URI reference.
+      links:
+        - text: .NET API reference
+          url: /dotnet/api/
+        - text: Schema specifications
+          url: /uwp/schemas/
+        - text: Windows Settings reference
+          url: ../develop/settings/settings-common.md
+supportReference:
+  title: Related development resources
+  summary: Continue with feature guidance, SDK downloads, or data access and interoperability support.
+  items:
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Develop Windows apps
+      url: ../develop/features-overview.yml
+    - icon:
+        src: ../images/fluent-blue/package.svg
+        alt: A package with an upward arrow.
+      title: Windows App SDK downloads
+      url: ../windows-app-sdk/downloads.md
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Windows SDK downloads
+      url: ../windows-sdk/downloads.md
+    - icon:
+        src: ../images/fluent-blue/accessibility.svg
+        alt: A person with outstretched arms.
+      title: Data access and interoperability requests
+      url: https://go.microsoft.com/fwlink/?linkid=2271128&clcid=0x409

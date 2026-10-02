@@ -4,12 +4,12 @@ description: Export the bundled, licensed Fluent System Icons to SVG and PNG wit
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 09/07/2026
+ms.date: 10/02/2026
 ---
 
 # Export Fluent documentation icons
 
-Use `tools\export-fluent-icons.ps1` to create matching SVG and PNG assets from the seven bundled **Fluent System Icons**. The originals are pinned to the commit in `manifest.json`, so normal exports require no network access or package installation.
+Use `tools\export-fluent-icons.ps1` to create matching SVG and PNG assets from the eight bundled **Fluent System Icons**. The originals are pinned to the commit in `manifest.json`, so normal exports require no network access or package installation.
 
 These are Microsoft's MIT-licensed Fluent System Icons, not the **Segoe Fluent Icons** font. The exporter does not read, convert, embed, or redistribute a Windows font. Review the [Microsoft font usage FAQ](https://learn.microsoft.com/typography/fonts/font-faq) before creating a separate font-derived asset pipeline.
 
@@ -34,7 +34,7 @@ powershell.exe -NoProfile -STA -File .\tools\export-fluent-icons.ps1 `
 
 | Option | Purpose |
 |---|---|
-| `-Icon` | `all`, `apps`, `design`, `feature`, `package`, `code`, `editor`, or `terminal`. |
+| `-Icon` | `all`, `accessibility`, `apps`, `design`, `feature`, `package`, `code`, `editor`, or `terminal`. |
 | `-Size` | Logical size: 16, 20, 24, 32, 40, 48, or 64 pixels. |
 | `-Color` | An explicit six-digit RGB hex color. Check its contrast in the target page's themes. |
 | `-Format` | `Svg`, `Png`, or `Both`. |

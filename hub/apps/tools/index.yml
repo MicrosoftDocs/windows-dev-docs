@@ -1,0 +1,116 @@
+### YamlMime:ProductSubHub
+title: Tools for Windows app development
+metadata:
+  title: Tools for Windows app development
+  description: Choose tools for creating, debugging, testing, packaging, and automating Windows apps with Visual Studio, VS Code, and the command line.
+  author: GrantMeStrength
+  ms.author: jken
+  ms.topic: overview
+  ms.date: 10/02/2026
+  keywords: windows app development tools, visual studio, visual studio code, winapp cli, winui agent, ui testing
+brand: windows
+tocType: single
+productOverview:
+  title: Tools for Windows app development
+  summary: Choose an editor, command-line workflow, AI-assisted tool, or testing approach for building and maintaining Windows apps.
+getStarted:
+  title: Choose your development environment
+  summary: Start with the tool that matches how you prefer to create and manage Windows app projects.
+  items:
+    - title: Develop with Visual Studio
+      description: Create, edit, build, debug, package, and publish Windows apps in an integrated development environment.
+      url: ../dev-tools/visual-studio.md
+    - title: Use the WinApp extension for Visual Studio Code
+      description: Run Windows App Development CLI commands from the Visual Studio Code Command Palette.
+      url: ../develop/ai-assisted/vs-code-tools.md#winapp-vs-code-extension
+    - title: Work from the command line
+      description: Configure projects, package apps, manage identity and certificates, and automate workflows with the winapp CLI.
+      url: ../dev-tools/winapp-cli/index.md
+coreWorkflows:
+  title: Build your development workflow
+  summary: Combine tools for project creation, packaging, AI-assisted development, UI automation, and sample exploration.
+  items:
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A code editor window.
+      title: Create and debug apps
+      description: Use a full IDE or a lightweight editor with Windows-specific commands and project support.
+      links:
+        - text: Visual Studio
+          url: ../dev-tools/visual-studio.md
+        - text: Visual Studio Code tools
+          url: ../develop/ai-assisted/vs-code-tools.md
+        - text: Create your first WinUI app
+          url: ../get-started/start-here.md
+    - icon:
+        src: ../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: Automate with the winapp CLI
+      description: Use commands for project configuration, package identity, certificates, packaging, publishing, and execution.
+      links:
+        - text: winapp CLI overview
+          url: ../dev-tools/winapp-cli/index.md
+        - text: Commands and usage
+          url: ../dev-tools/winapp-cli/usage.md
+        - text: Debug with package identity
+          url: ../dev-tools/winapp-cli/debugging.md
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Add AI-assisted workflows
+      description: Give supported coding assistants Windows development guidance and use AI to help inspect and test your app.
+      links:
+        - text: WinUI Agent
+          url: ../develop/ai-assisted/winui-agent-plugin.md
+        - text: Set up GitHub Copilot
+          url: ../how-tos/ai-setup.md
+        - text: AI-assisted testing
+          url: ../develop/ai-assisted/testing.md
+    - icon:
+        src: ../images/fluent-blue/accessibility.svg
+        alt: A person with outstretched arms representing accessibility.
+      title: Test and inspect your app
+      description: Automate interactions with a running app and choose testing approaches for behavior, accessibility, and compatibility.
+      links:
+        - text: UI Automation with the winapp CLI
+          url: ../dev-tools/winapp-cli/ui-automation.md
+        - text: Windows app testing
+          url: ../develop/testing/index.md
+        - text: AI-assisted testing
+          url: ../develop/ai-assisted/testing.md
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Explore samples and controls
+      description: Adapt focused code samples, inspect WinUI controls, and explore Windows App SDK scenarios.
+      links:
+        - text: Windows app code samples
+          url: ../dev-tools/samples.md
+        - text: WinUI Gallery
+          url: ../dev-tools/samples.md#winui-3-gallery
+        - text: Windows App SDK samples
+          url: https://github.com/microsoft/WindowsAppSDK-Samples
+supportReference:
+  title: Continue your Windows app journey
+  summary: Move from tool selection to guided learning, platform features, API reference, packaging, and deployment.
+  items:
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Get started with WinUI
+      url: ../get-started/index.yml
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A code editor window.
+      title: Follow Windows app tutorials
+      url: ../tutorials/winui-notes/intro.md
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Develop Windows apps
+      url: ../develop/features-overview.yml
+    - icon:
+        src: ../images/fluent-blue/package.svg
+        alt: A package with an upward arrow.
+      title: Package and deploy
+      url: ../package-and-deploy/index.md

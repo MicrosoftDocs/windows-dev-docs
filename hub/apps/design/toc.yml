@@ -1,5 +1,5 @@
 items:
-  - name: Design overview
+  - name: Overview
     href: index.yml
   - name: Design principles
     href: design-principles.md

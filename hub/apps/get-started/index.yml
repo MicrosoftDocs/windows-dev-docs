@@ -6,7 +6,7 @@ metadata:
   author: GrantMeStrength
   ms.author: jken
   ms.topic: overview
-  ms.date: 09/30/2026
+  ms.date: 10/02/2026
 brand: windows
 tocType: single
 productOverview:
@@ -92,7 +92,7 @@ supportReference:
         src: ../images/fluent-blue/code.svg
         alt: Code brackets.
       title: Add Windows features
-      url: ../develop/index.md
+      url: ../develop/features-overview.yml
     - icon:
         src: ../images/fluent-blue/apps.svg
         alt: A collection of app windows.

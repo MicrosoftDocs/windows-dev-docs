@@ -4,7 +4,7 @@ title: Input Method Editor (IME) requirements
 label: Input Method Editor (IME) requirements
 template: detail.hbs
 keywords: ime, input method editor, input, interaction
-ms.date: 07/24/2020
+ms.date: 10/02/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -176,7 +176,7 @@ When alternatives are provided, the app should treat each alternative as a query
 
 ## UI design guidelines
 
-All IMEs must follow the user experience guidelines described in [Design and code Windows apps](../../design/index.md).
+All IMEs must follow the user experience guidelines described in [Design and code Windows apps](../../design/index.yml).
 
 ### Don't use sticky windows
 

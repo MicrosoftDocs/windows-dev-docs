@@ -4,7 +4,7 @@ description: Build reliable Windows apps with current guidance for user experien
 author: GrantMeStrength
 ms.author: jken
 ms.topic: best-practice
-ms.date: 09/14/2026
+ms.date: 10/02/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
@@ -30,7 +30,7 @@ Windows 11 offers a visual evolution of the Windows operating system that improv
 
 When applications adhere to Windows styles and standard Windows behaviors, users don't have to re-learn interaction patterns. This consistency makes it much easier for users to use your app. An app that looks great can create a great first impression, but an app that's also easy to use and helps the user accomplish their goals creates a great lasting impression.
 
-Windows 11 is built on the [Windows 11 design principles](../design/index.md). Following these guidelines as you build your apps helps you meet your customers' expectations of a great app experience. When thinking about incorporating the latest and recommended Windows application UI/UX patterns into your Windows applications, focus on these five areas:
+Windows 11 is built on the [Windows 11 design principles](../design/index.yml). Following these guidelines as you build your apps helps you meet your customers' expectations of a great app experience. When thinking about incorporating the latest and recommended Windows application UI/UX patterns into your Windows applications, focus on these five areas:
 
 - Layout
 - UI interaction
@@ -70,7 +70,7 @@ It's uncommon for an application's UI to fit entirely inside a single page that 
 
 ### Visual style
 
-Windows 11 is built on the [Windows 11 design principles](../design/index.md): Effortless, Calm, Personal, Familiar, and Complete + Coherent. Experiences that follow these principles bring great user experiences on Windows.
+Windows 11 is built on the [Windows 11 design principles](../design/index.yml): Effortless, Calm, Personal, Familiar, and Complete + Coherent. Experiences that follow these principles bring great user experiences on Windows.
 
 #### Materials: Acrylic and Mica
 

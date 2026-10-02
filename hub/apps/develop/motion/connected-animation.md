@@ -2,7 +2,7 @@
 description: Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.
 title: Connected animation
 template: detail.hbs
-ms.date: 07/08/2026
+ms.date: 10/02/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -28,7 +28,7 @@ In this short video, an app uses a connected animation to animate an item image 
 
 ## Connected animation and the Fluent Design System
 
- The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Connected animation is a Fluent Design System component that adds motion to your app. To learn more, see [Design for Windows apps](../../design/index.md).
+ The Fluent Design System helps you create modern, bold UI that incorporates light, depth, motion, material, and scale. Connected animation is a Fluent Design System component that adds motion to your app. To learn more, see [Design for Windows apps](../../design/index.yml).
 
 ## Why connected animation?
 

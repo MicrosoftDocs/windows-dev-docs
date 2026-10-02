@@ -2,7 +2,7 @@
 description: Learn how to design and code a Windows app that's easy to navigate and looks great on a variety of devices and screen sizes.
 title: Design basics
 keywords: uwp app layout, universal windows platform, app design, interface, windows app layout
-ms.date: 09/30/2021
+ms.date: 10/02/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -28,7 +28,7 @@ A high-level look at app patterns commonly used across our in-box applications.
         :::image type="content" source="images/signature-experiences-hero.png" alt-text="Signature experiences hero image":::
     :::column-end:::
     :::column:::
-        [**Windows 11 Signature Experiences**](../index.md)
+        [**Windows 11 Signature Experiences**](../index.yml)
 
 See what’s new for Windows 11 design elements.
     :::column-end:::

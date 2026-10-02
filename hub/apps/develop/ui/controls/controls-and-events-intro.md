@@ -4,7 +4,7 @@ title: Intro to controls and events
 ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
 label: Intro to controls and patterns
 template: detail.hbs
-ms.date: 09/19/2026
+ms.date: 10/02/2026
 ms.topic: article
 keywords: winui, xaml controls, windows app sdk
 ms.localizationpriority: medium
@@ -155,5 +155,5 @@ Button1().Click({ this, &MainPage::Button1_Click });
 - [Index of controls by function](index.md)
 - [Microsoft.UI.Xaml.Controls namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls)
 - [Layout](../../../design/layout/index.md)
-- [Style](../../../design/index.md)
+- [Style](../../../design/index.yml)
 - [Usability](../../../design/usability/index.md)

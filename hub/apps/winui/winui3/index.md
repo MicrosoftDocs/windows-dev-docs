@@ -2,7 +2,7 @@
 title: WinUI 3
 description: Provides info for WinUI and Windows app development with the Windows App SDK. 
 ms.topic: article
-ms.date: 09/12/2026
+ms.date: 10/02/2026
 ---
 
 # WinUI 3
@@ -35,7 +35,7 @@ WinUI combines the flexibility of the Win32 app model with the richness of moder
         **Modern UI**<br>
          WinUI includes a comprehensive set of modern UI controls and styles, designed for usability, adaptability, and a polished, Fluent look and feel.
         <br>
-         [Explore Fluent Design](../../design/index.md)
+         [Explore Fluent Design](../../design/index.yml)
     :::column-end:::    
 :::row-end:::
 

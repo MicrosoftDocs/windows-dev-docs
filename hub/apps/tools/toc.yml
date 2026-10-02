@@ -1,6 +1,6 @@
 items:
 - name: Overview
-  href: index.md
+  href: index.yml
 - name: Visual Studio
   href: ../dev-tools/visual-studio.md
 - name: Visual Studio Code extension

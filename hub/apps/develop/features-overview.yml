@@ -1,0 +1,128 @@
+### YamlMime:ProductSubHub
+title: Develop Windows apps
+metadata:
+  title: Develop Windows apps
+  description: Explore Windows app features for user interfaces, AI, data, devices, app lifecycle, security, performance, and platform integration.
+  author: GrantMeStrength
+  ms.author: jken
+  ms.topic: overview
+  ms.date: 10/02/2026
+  keywords: windows app development, windows app sdk, winui 3, windows features, windows api, platform integration
+brand: windows
+tocType: single
+productOverview:
+  title: Develop Windows apps
+  summary: Add Windows capabilities to your app, connect with the operating system, and build reliable experiences across devices and input methods.
+getStarted:
+  title: Choose where to start
+  summary: Start with the part of the Windows platform that matches the feature you want to build.
+  items:
+    - title: Build your user interface
+      description: Create app structure, controls, layouts, themes, and window experiences with WinUI 3.
+      url: user-interface.md
+    - title: Integrate with Windows
+      description: Connect your app to notifications, sharing, search, widgets, app services, and other Windows experiences.
+      url: windows-integration/index.md
+    - title: Understand the platform
+      description: Learn how Windows App SDK, Windows Runtime, Win32, .NET, and other platform technologies fit together.
+      url: platform/index.md
+coreWorkflows:
+  title: Explore Windows app capabilities
+  summary: Find guidance for common app development scenarios, from interaction and data to devices and reliability.
+  items:
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Create accessible interactions
+      description: Build interfaces that work across window sizes, input methods, and assistive technologies.
+      links:
+        - text: User interface
+          url: user-interface.md
+        - text: Input and interactions
+          url: input/index.md
+        - text: Accessibility
+          url: accessibility.md
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Add intelligent Windows experiences
+      description: Use AI capabilities and integrate your app with notifications and operating system experiences.
+      links:
+        - text: AI-powered features
+          url: ai-powered/ai-powered.md
+        - text: Notifications
+          url: notifications/index.md
+        - text: OS integration
+          url: windows-integration/index.md
+    - icon:
+        src: ../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: Work with data and connected services
+      description: Store and exchange data, connect to networks, and communicate with other apps and services.
+      links:
+        - text: Data and files
+          url: data-and-files.md
+        - text: Networking and web services
+          url: networking/index.md
+        - text: Communication
+          url: communication/index.md
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A code editor window.
+      title: Use media, graphics, and devices
+      description: Capture and play media, render graphics, and connect your app to hardware and sensors.
+      links:
+        - text: Audio, video, and camera
+          url: audio-video-camera.md
+        - text: Graphics
+          url: graphics.md
+        - text: Devices and sensors
+          url: devices-and-sensors.md
+    - icon:
+        src: ../images/fluent-blue/package.svg
+        alt: A package with an upward arrow.
+      title: Manage app behavior
+      description: Control activation, lifecycle, restoration, background work, and asynchronous operations.
+      links:
+        - text: App lifecycle and system services
+          url: app-lifecycle-and-system-services.md
+        - text: App restore
+          url: windows-app-restore.md
+        - text: Threading and async
+          url: threading/index.md
+    - icon:
+        src: ../images/fluent-blue/accessibility.svg
+        alt: A person with outstretched arms representing accessibility.
+      title: Build reliable and secure apps
+      description: Measure performance, protect identities and data, and verify app behavior across Windows versions.
+      links:
+        - text: Performance
+          url: performance/index.md
+        - text: Security and identity
+          url: security/index.md
+        - text: Testing
+          url: testing/index.md
+supportReference:
+  title: Continue your Windows app journey
+  summary: Move between design, platform foundations, API reference, packaging, and deployment as you build your app.
+  items:
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A design editor window.
+      title: Design Windows apps
+      url: ../design/index.yml
+    - icon:
+        src: ../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: Platform foundations
+      url: platform/index.md
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Windows app API reference
+      url: ../api-reference/index.yml
+    - icon:
+        src: ../images/fluent-blue/package.svg
+        alt: A package with an upward arrow.
+      title: Package and deploy
+      url: ../package-and-deploy/index.md
