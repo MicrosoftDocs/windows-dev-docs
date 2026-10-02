@@ -2,7 +2,7 @@
 title: Windows apps--packaging, deployment, and process
 description: This topic discusses your options around app packaging, deploy/distribute/install, and your app's run-time process.
 ms.topic: article
-ms.date: 09/30/2026
+ms.date: 10/02/2026
 keywords: intro, introduction, all-up, all, up, Windows, Windows apps, packaging, deployment, process, run-time
 ms.localizationpriority: medium
 ---
@@ -37,7 +37,7 @@ A packaged app is both packaged and installed by using MSIX. If you choose to *p
 
 Packaging matters because MSIX gives your users a clean install, uninstall, and update experience, supports incremental and automatic updates, is optimized by the Microsoft Store, works with [MSIX app attach](/azure/virtual-desktop/what-is-app-attach) for Azure Virtual Desktop, and benefits from strong anti-tampering when signed.
 
-For deployment and distribution guidance, see the [Package and deploy overview](../package-and-deploy/index.md) and [Choose a distribution path](../package-and-deploy/choose-distribution-path.md). See also the [Windows Package Manager and the WinGet client](#windows-package-manager-and-the-winget-client) section in this topic.
+For deployment and distribution guidance, see the [Package and deploy overview](../package-and-deploy/index.yml) and [Choose a distribution path](../package-and-deploy/choose-distribution-path.md). See also the [Windows Package Manager and the WinGet client](#windows-package-manager-and-the-winget-client) section in this topic.
 
 ## AppContainer or Medium IL
 

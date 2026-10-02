@@ -354,6 +354,7 @@ The initial experiment used isolated pages and an in-page navigation proposal. A
 |---|---|
 | [Getting started with WinUI](../../hub/apps/get-started/index.yml) | The canonical WinUI entry page: three starting choices, five blue-icon learning and sample paths, and four links that continue the app journey through design, development, deployment, and publishing. |
 | [Design Windows apps](../../hub/apps/design/index.yml) | The canonical design entry page: three starting choices, six design workflow paths, and four links that continue the app journey through onboarding, development, deployment, and publishing. |
+| [Package and deploy Windows apps](../../hub/apps/package-and-deploy/index.yml) | The canonical packaging and deployment entry page: separate choices for packaging mode, distribution path, and Windows App SDK deployment, followed by packaging, signing, distribution, and runtime-delivery workflows. |
 | [Build your first WinUI app](../../hub/apps/get-started/start-here.md) | One quickstart with winapp CLI and Visual Studio tabs, followed by a small XAML change in the same project. |
 | [About WinUI](../../hub/apps/winui/winui3/index.md) | The existing UI-framework overview, separate from setup instructions. |
 | [FAQ](../../hub/apps/get-started/windows-developer-faq.md) | Existing Windows app development questions and answers. |
@@ -369,7 +370,7 @@ The Develop ToC focuses on Windows capabilities instead of duplicating the tools
 
 The existing DocsRoot header is not edited in this repository. The coordinated DocsRoot change should point the onboarding entry directly to `get-started/index.yml`, which now serves WinUI onboarding. Approved redirects preserve requests to the retired `/windows/apps/introduction` and `/windows/apps/desktop/` URLs. Renaming the global L0 items and adding global Tools and Code samples entries remain part of the separate DocsRoot change.
 
-The WinUI, Design, Develop, API reference, and Tools landing pages use the ProductSubHub schema without custom stylesheets or scripts. Their single-TOC configurations preserve the standard left ToC and group starting points, task-focused workflows, and onward navigation into structured sections.
+The WinUI, Design, Develop, API reference, Package and deploy, and Tools landing pages use the ProductSubHub schema without custom stylesheets or scripts. Their single-TOC configurations preserve the standard left ToC and group starting points, task-focused workflows, and onward navigation into structured sections.
 
 Each ProductSubHub presents focused starting points, workflow paths, and destinations that continue the Windows app journey. The schema supports custom icons but not thumbnail images. This change does not revert the quickstart, sidebar organization, or icon exporter.
 

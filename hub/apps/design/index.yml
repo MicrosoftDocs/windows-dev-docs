@@ -116,7 +116,7 @@ supportReference:
         src: ../images/fluent-blue/package.svg
         alt: A package with an upward arrow.
       title: Package and deploy
-      url: ../package-and-deploy/index.md
+      url: ../package-and-deploy/index.yml
     - icon:
         src: ../images/fluent-blue/editor.svg
         alt: A design editor window.

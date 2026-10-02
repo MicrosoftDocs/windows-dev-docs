@@ -1,9 +1,7 @@
 items:
-    - name: Build Windows apps
-      href: ../desktop/index.yml
-    - name: Package and deploy overview
-      href: ../package-and-deploy/index.md
-    - name: Packaging
+    - name: Overview
+      href: ../package-and-deploy/index.yml
+    - name: Package your app
       items:
         - name: Overview
           href: ../package-and-deploy/packaging/index.md
@@ -15,7 +13,7 @@ items:
               href: ../desktop/modernize/package-identity-overview.md
             - name: Features that require package identity
               href: ../desktop/modernize/modernize-packaged-apps.md
-        - name: Package your app
+        - name: Create an app package
           items:
             - name: Package your app using single-project MSIX
               href: ../windows-app-sdk/single-project-msix.md
@@ -31,6 +29,8 @@ items:
                   href: ../desktop/modernize/grant-identity-to-nonpackaged-apps.md
             - name: Unpackage a WinUI app tutorial
               href: unpackage-winui-app.md
+            - name: "Tutorial: Set up CI for WinUI"
+              href: ci-for-winui3.md
         - name: Add Windows features to a packaged app
           items:
             - name: Integrate with package extensions
@@ -41,6 +41,20 @@ items:
               href: ../desktop/modernize/get-activation-info-for-packaged-apps.md
         - name: MSIX on Windows 10 and Windows 11
           href: msix-windows10-windows11.md
+    - name: Sign your app
+      items:
+        - name: Code signing options
+          href: code-signing-options.md
+        - name: SmartScreen reputation for developers
+          href: smartscreen-reputation.md
+    - name: Distribute your app
+      items:
+        - name: Publish your first Windows app
+          href: publish-first-app.md
+        - name: Choose a distribution path
+          href: choose-distribution-path.md
+        - name: Current status of distribution features
+          href: distribution-feature-status.md
     - name: Deploy the Windows App SDK runtime
       items:
         - name: Overview
@@ -77,21 +91,3 @@ items:
               href: ../windows-app-sdk/remove-windows-app-sdk-versions.md
         - name: Deployment guide for self-contained apps
           href: ../package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md
-    - name: Distribute your app
-      items:
-        - name: Publish your first Windows app
-          href: publish-first-app.md
-        - name: Choose a distribution path
-          href: choose-distribution-path.md
-        - name: Current status of distribution features
-          href: distribution-feature-status.md
-    - name: Sign your app
-      items:
-        - name: Code signing options
-          href: code-signing-options.md
-        - name: SmartScreen reputation for developers
-          href: smartscreen-reputation.md
-    - name: Automate and maintain
-      items:
-        - name: "Tutorial: Set up CI for WinUI"
-          href: ci-for-winui3.md

@@ -97,7 +97,7 @@ supportReference:
         src: ../images/fluent-blue/apps.svg
         alt: A collection of app windows.
       title: Package and deploy
-      url: ../package-and-deploy/index.md
+      url: ../package-and-deploy/index.yml
     - icon:
         src: ../images/fluent-blue/feature.svg
         alt: A puzzle piece representing app features.

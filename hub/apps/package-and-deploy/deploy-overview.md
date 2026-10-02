@@ -4,7 +4,7 @@ description: There are two ways in which you can deploy the Windows App SDK&mdas
 author: GrantMeStrength
 ms.author: jken
 ms.topic: concept-article
-ms.date: 09/10/2026
+ms.date: 10/02/2026
 ms.localizationpriority: medium
 keywords: windows app sdk deployment, framework-dependent, self-contained, deploy winui 3, windows app sdk self-contained
 ---
@@ -16,7 +16,7 @@ There are two ways in which you can deploy the Windows App SDK:
 * **Framework-dependent**. Your app depends on the Windows App SDK runtime and/or Framework package being present on the target machine. Framework-dependent deployment is the default deployment mode of the Windows App SDK for its efficient use of machine resources and serviceability.
 * **Self-contained**. Your app carries the Windows App SDK dependencies with it, eliminating the need for a separate runtime installation on the target machine.
 
-This topic also uses the terms *packaged app*, *packaged app with external location*, and *unpackaged app*. For explanations of those terms, see the [Deployment overview](./index.md).
+This topic also uses the terms *packaged app*, *packaged app with external location*, and *unpackaged app*. For explanations of those terms, see the [Package and deploy overview](./index.yml).
 
 | | Deploy framework-dependent | Deploy self-contained |
 | - | - | - |
@@ -34,14 +34,14 @@ Before configuring your framework-dependent app for deployment, to learn more ab
 
 ### Packaged apps
 
-If you've chosen to go with a framework-dependent packaged app (see [Deployment overview](./index.md)), then here are instructions on how to deploy the Windows App SDK runtime with the app:
+If you've chosen to go with a framework-dependent packaged app (see [Package and deploy overview](./index.yml)), then here are instructions on how to deploy the Windows App SDK runtime with the app:
 
 * [Windows App SDK deployment guide for framework-dependent packaged apps](../windows-app-sdk/deploy-packaged-apps.md)
 * [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview)
 
 ### Packaged with external location or unpackaged apps
 
-If you've chosen to go with a framework-dependent packaged app with external location, or a framework-dependent unpackaged app (see [Deployment overview](./index.md)), then here are instructions on how to deploy the Windows App SDK runtime with the app:
+If you've chosen to go with a framework-dependent packaged app with external location, or a framework-dependent unpackaged app (see [Package and deploy overview](./index.yml)), then here are instructions on how to deploy the Windows App SDK runtime with the app:
 
 * [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](../windows-app-sdk/deploy-unpackaged-apps.md)
 * [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](../windows-app-sdk/tutorial-unpackaged-deployment.md)
@@ -119,7 +119,7 @@ For Store submissions, upload architecture-specific packages or a bundle contain
 
 ## Related topics
 
-* [Deployment overview](./index.md)
+* [Package and deploy overview](./index.yml)
 * [Deployment architecture for the Windows App SDK](../windows-app-sdk/deployment-architecture.md)
 * [Windows App SDK deployment guide for framework-dependent packaged apps](../windows-app-sdk/deploy-packaged-apps.md)
 * [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview)

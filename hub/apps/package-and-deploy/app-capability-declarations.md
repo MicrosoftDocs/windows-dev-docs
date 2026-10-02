@@ -1,7 +1,7 @@
 ---
 title: App capability declarations
 description: Learn which capabilities to declare for UWP and other packaged Windows apps, including general-use, device, restricted, and custom capabilities.
-ms.date: 09/08/2026
+ms.date: 10/02/2026
 ms.topic: reference
 keywords: windows 11, windows 10, winui 3, windows app sdk, msix, packaged app, capabilities, package manifest
 author: GrantMeStrength
@@ -15,7 +15,7 @@ ms.localizationpriority: medium
 
 *Most* scenarios for app capabilities are relevant only to apps that have package identity. AppContainer-specific capability requirements apply to apps that run in an AppContainer, such as UWP apps packaged as MSIX. WinUI 3 (Windows App SDK) desktop apps packaged as MSIX typically run at medium integrity level (full trust) in a less restrictive sandbox, not in an AppContainer, unless you explicitly configure them as AppContainer apps by using `uap10:TrustLevel="appContainer"`. You can also give a Win32 desktop app package identity and configure it as an AppContainer app. So capabilities apply to packaged apps, but the specific requirements depend on your app type.
 
-* For more info about packaging and *package identity*, see [Deployment overview](index.md).
+* For more info about packaging and *package identity*, see [Package and deploy overview](index.yml).
 * For more info about AppContainer apps, see [AppContainer for legacy apps](/windows/win32/secauthz/appcontainer-for-legacy-applications-).
 
 A desktop app that's an AppContainer app can be identified by `uap10:TrustLevel="appContainer"` in its app package manifest (for more info, see [Application (Windows 10)](/uwp/schemas/appxpackage/uapmanifestschema/element-application)). Similarly, a desktop app with *mediumIL* (an integrity level of medium) has `uap10:TrustLevel="mediumIL"`. Medium IL apps&mdash;which are also known as *full trust apps*&mdash;don't run in an AppContainer.

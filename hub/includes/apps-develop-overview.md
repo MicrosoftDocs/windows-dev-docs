@@ -13,8 +13,8 @@ ms.date: 10/02/2026
         The Windows app platform provides features and APIs for building Windows desktop apps.
     :::column-end:::
     :::column:::
-       :::image type="icon" source="../apps/develop/images/tile-platforms.png" link="../apps/package-and-deploy/index.md":::<br>
-        **[Package and deploy](../apps/package-and-deploy/index.md)**<br>
+       :::image type="icon" source="../apps/develop/images/tile-platforms.png" link="../apps/package-and-deploy/index.yml":::<br>
+        **[Package and deploy](../apps/package-and-deploy/index.yml)**<br>
         Package your app with MSIX and deploy it to users.
     :::column-end:::
 :::row-end:::

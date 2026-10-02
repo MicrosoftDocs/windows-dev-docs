@@ -2,7 +2,7 @@
 title: Plan enterprise manageability for WinUI LOB apps
 description: Plan policy-aware settings, deployment configuration, audit logging, data protection, and supportability for enterprise WinUI LOB apps.
 ms.topic: concept-article
-ms.date: 09/21/2026
+ms.date: 10/02/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -39,7 +39,7 @@ The deployment channel affects how much configuration support you need to build 
 | Intune or Configuration Manager deployment | Define whether app configuration is handled by the deployment tool, a service endpoint, policy, or first-run bootstrap. |
 | Unpackaged deployment | Document how the Windows App SDK runtime, updates, and per-machine configuration are maintained. |
 
-For distribution guidance, see [Distribute LOB apps to enterprises](../../publish/distribute-lob-apps-to-enterprises.md), [Choose a distribution path for your Windows app](../../package-and-deploy/choose-distribution-path.md), and [Packaging and deployment overview](../../package-and-deploy/index.md).
+For distribution guidance, see [Distribute LOB apps to enterprises](../../publish/distribute-lob-apps-to-enterprises.md), [Choose a distribution path for your Windows app](../../package-and-deploy/choose-distribution-path.md), and [Package and deploy overview](../../package-and-deploy/index.yml).
 
 ## Protect local data and credentials
 
@@ -97,4 +97,3 @@ Before deploying to a broad enterprise audience, confirm that you can answer the
 - [Distribute LOB apps to enterprises](../../publish/distribute-lob-apps-to-enterprises.md)
 - [Choose a distribution path for your Windows app](../../package-and-deploy/choose-distribution-path.md)
 - [Security and identity](../../develop/security/index.md)
-

@@ -4,7 +4,7 @@ description: Describes the project properties that you can set in your Visual St
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
-ms.date: 09/10/2026
+ms.date: 10/02/2026
 ms.localizationpriority: medium
 ---
 
@@ -90,7 +90,7 @@ Here's an excerpt from a typical `.csproj` file for a C# WinUI 3 project, showin
 
 ## Related topics
 
-* [Deployment overview](index.md)
+* [Package and deploy overview](index.yml)
 * [Create and run a WinUI 3 project](../get-started/start-here.md)
 * [Package your app using single-project MSIX](../windows-app-sdk/single-project-msix.md)
 * [RuntimeCompatibilityOptions](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions)

@@ -2,7 +2,7 @@
 title: WinUI 3 Project Reunion 0.8 Preview (April 2021)
 description: Overview of WinUI 3 Project Reunion 0.8 Preview.
 keywords: windows 10, windows 11, Windows App SDK, Windows app development platform, desktop development, win32, WinRT, uwp, toolkit sdk, winui
-ms.date: 08/21/2026
+ms.date: 10/02/2026
 ms.topic: release-notes
 ---
 
@@ -28,7 +28,7 @@ This version of WinUI 3 is available as part of the Project Reunion 0.8 Preview.
 
 **[Install tools for preview and experimental channels of the Windows App SDK](../../get-started/start-here.md)**
 
-Since WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use the Windows App SDK](../../package-and-deploy/index.md). The Windows App SDK VSIX includes [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md) that you'll use to build your WinUI app. 
+Since WinUI ships as a part of Project Reunion, you'll download the Project Reunion Visual Studio Extension (VSIX) to get started, which includes a set of developer tools and components. For more on the Project Reunion package, see [Deploy apps that use the Windows App SDK](../../package-and-deploy/index.yml). The Windows App SDK VSIX includes [WinUI 3 templates in Visual Studio](../../dev-tools/visual-studio.md) that you'll use to build your WinUI app.
 
 > [!NOTE]
 > To see WinUI 3 controls and features in action, you can clone and build the WinUI 3 Gallery from GitHub, or download it from the [Microsoft Store](https://www.microsoft.com/en-us/p/winui-3-controls-gallery/9p3jfpwwdzrc).

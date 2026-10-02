@@ -4,7 +4,7 @@ description: Learn how to set WindowsPackageType=None for unpackaged WinUI 3 dis
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 08/29/2026
+ms.date: 10/02/2026
 keywords: windows app sdk, winappsdk, winui, unpackaged, WindowsPackageType, bootstrapper, self-contained, PublishSingleFile, single-file exe
 ms.localizationpriority: medium
 content-type: how-to
@@ -23,9 +23,9 @@ Unpackaged distribution lets you ship a WinUI 3 app without MSIX — useful for 
 > - **No package identity** — Without a package manifest, your app cannot use manifest-based Windows features: no automatic updates via App Installer or Store, no background task registration, and no file type associations or Start menu tile customization via package manifest. (Traditional Win32 mechanisms such as installer-written registry entries and shortcuts still work.)
 > - **No MSIX/package-identity Store submission** — This distribution model has no package identity; it is not eligible as an MSIX submission to the Microsoft Store. (You can submit a traditional installer to the Store via the [MSI or EXE installer submission path](../publish/publish-your-app/msi/upload-app-packages.md), but that is a separate workflow from what this article describes.)
 >
-> If these constraints are a concern, consider [packaging your app](index.md) (recommended for most apps) or [packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) to add package identity without a full MSIX conversion.
+> If these constraints are a concern, consider [packaging your app](index.yml) (recommended for most apps) or [packaging with external location](../desktop/modernize/grant-identity-to-nonpackaged-apps-overview.md) to add package identity without a full MSIX conversion.
 
-For details on all packaging options, see [Package and deploy Windows apps overview](index.md).
+For details on all packaging options, see [Package and deploy Windows apps overview](index.yml).
 
 If you choose to unpackage a new or existing WinUI app, follow these steps:
 

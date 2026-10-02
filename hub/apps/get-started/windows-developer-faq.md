@@ -4,7 +4,7 @@ description: Find answers about Windows app frameworks, SDKs, tooling, interoper
 author: GrantMeStrength
 ms.author: jken
 ms.topic: faq
-ms.date: 09/21/2026
+ms.date: 10/02/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -159,7 +159,7 @@ Topics covered include:
 
 <details><summary>How do I package or distribute my WinUI 3 app?</summary>
 
-> See [Deployment overview](../package-and-deploy/index.md).
+> See [Package and deploy overview](../package-and-deploy/index.yml).
 
 </details>
 

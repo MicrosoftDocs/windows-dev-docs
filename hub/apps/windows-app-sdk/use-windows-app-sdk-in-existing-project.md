@@ -2,7 +2,7 @@
 title: Use the Windows App SDK in an existing project
 description: Install the Windows App SDK NuGet package in an existing WPF, WinForms, or Win32 project and initialize the runtime for unpackaged deployment.
 ms.topic: how-to
-ms.date: 07/03/2026
+ms.date: 10/02/2026
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium
 zone_pivot_groups: desktop-framework
@@ -111,12 +111,12 @@ If you encounter a *Class not registered* error when you try to use a Windows Ap
 ## Next steps
 
 > [!div class="nextstepaction"]
-> [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md)
+> [Deploy apps that use the Windows App SDK](../package-and-deploy/index.yml)
 
 ## Related content
 
 - [Windows App SDK](index.md)
 - [Release channels and release notes](release-channels.md)
 - [Install tools for the Windows App SDK](set-up-your-development-environment.md)
-- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.md)
+- [Deploy apps that use the Windows App SDK](../package-and-deploy/index.yml)
 - [Windows App SDK and supported Windows releases](support.md)

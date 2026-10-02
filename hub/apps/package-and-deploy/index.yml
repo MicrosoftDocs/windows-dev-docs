@@ -1,0 +1,114 @@
+### YamlMime:ProductSubHub
+title: Package and deploy Windows apps
+metadata:
+  title: Package and deploy Windows apps
+  description: Choose packaging, distribution, signing, and Windows App SDK deployment options for your Windows app and its runtime dependencies.
+  author: GrantMeStrength
+  ms.author: jken
+  ms.topic: overview
+  ms.date: 10/02/2026
+  keywords: windows app packaging, windows app deployment, msix, package identity, code signing, app distribution, windows app sdk
+brand: windows
+tocType: single
+productOverview:
+  title: Package and deploy Windows apps
+  summary: Choose how to package your app, establish trust, distribute it, and deploy Windows App SDK runtime dependencies.
+getStarted:
+  title: Choose your packaging and deployment path
+  summary: Make separate decisions about your packaging model, distribution channel, and Windows App SDK deployment mode.
+  items:
+    - title: Compare packaging models
+      description: Compare packaged (MSIX), packaged with external location, and unpackaged apps, including package identity requirements.
+      url: packaging/index.md
+    - title: Choose a distribution path
+      description: Compare Microsoft Store, enterprise, and direct-download options for delivering and updating your app.
+      url: choose-distribution-path.md
+    - title: Choose a Windows App SDK deployment mode
+      description: Compare framework-dependent and self-contained deployment independently from how your app is packaged.
+      url: deploy-overview.md
+coreWorkflows:
+  title: Prepare and deliver your app
+  summary: Package, sign, distribute, and maintain your app while managing its Windows App SDK runtime dependencies.
+  items:
+    - icon:
+        src: ../images/fluent-blue/package.svg
+        alt: A package with an upward arrow.
+      title: Choose a packaging model
+      description: Decide whether your app uses MSIX, gains identity through packaging with external location, or remains unpackaged.
+      links:
+        - text: Packaging overview
+          url: packaging/index.md
+        - text: Package identity overview
+          url: ../desktop/modernize/package-identity-overview.md
+        - text: Features that require package identity
+          url: ../desktop/modernize/modernize-packaged-apps.md
+    - icon:
+        src: ../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: Create and automate app packages
+      description: Build an MSIX package from your project or automate package creation in continuous integration.
+      links:
+        - text: Package with single-project MSIX
+          url: ../windows-app-sdk/single-project-msix.md
+        - text: Package an app from source code
+          url: /windows/msix/desktop/source-code-overview
+        - text: Set up CI for WinUI
+          url: ci-for-winui3.md
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Sign your app and establish trust
+      description: Choose a code-signing option and understand how signing and reputation affect installation.
+      links:
+        - text: Code signing options
+          url: code-signing-options.md
+        - text: SmartScreen reputation
+          url: smartscreen-reputation.md
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Distribute your app
+      description: Deliver your app through Microsoft Store, enterprise management, or your own download and update channel.
+      links:
+        - text: Publish your first Windows app
+          url: publish-first-app.md
+        - text: Choose a distribution path
+          url: choose-distribution-path.md
+        - text: Distribution feature status
+          url: distribution-feature-status.md
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A deployment configuration window.
+      title: Deploy the Windows App SDK runtime
+      description: Choose framework-dependent or Windows App SDK self-contained deployment for any supported packaging model.
+      links:
+        - text: Deployment overview
+          url: deploy-overview.md
+        - text: Deployment architecture
+          url: ../windows-app-sdk/deployment-architecture.md
+        - text: Deploy a self-contained app
+          url: self-contained-deploy/deploy-self-contained-apps.md
+supportReference:
+  title: Continue your Windows app journey
+  summary: Connect packaging and deployment decisions to app development, Windows App SDK architecture, Store publishing, and MSIX guidance.
+  items:
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Develop Windows apps
+      url: ../develop/features-overview.yml
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A deployment configuration window.
+      title: Windows App SDK deployment architecture
+      url: ../windows-app-sdk/deployment-architecture.md
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Publish through Microsoft Store
+      url: ../publish/index.md
+    - icon:
+        src: ../images/fluent-blue/package.svg
+        alt: A package with an upward arrow.
+      title: MSIX documentation
+      url: /windows/msix/

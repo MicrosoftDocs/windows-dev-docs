@@ -2,7 +2,7 @@
 title: Windows App SDK deployment guide for self-contained apps
 description: A Windows App SDK project is framework-dependent by default. To switch to self-contained deployment, follow the steps in this article (the terms *framework-dependent* and *self-contained* are described in [Windows App SDK deployment overview](../deploy-overview.md)).
 ms.topic: article
-ms.date: 09/11/2026
+ms.date: 10/02/2026
 ms.localizationpriority: medium
 ---
 
@@ -33,7 +33,7 @@ Having set the `WindowsAppSDKSelfContained` property to `true` in your project f
 > [!NOTE]
 > C++ apps need to use the [hybrid CRT](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/Coding-Guidelines/HybridCRT.md#what-is-the-hybrid-crt) as well to be fully self-contained. Importing [HybridCRT.props](https://github.com/microsoft/WindowsAppSDK/blob/main/HybridCRT.props) from [Directory.Build.props](/visualstudio/msbuild/customize-your-build#directorybuildprops-and-directorybuildtargets) is the recommended way to configure it for all projects in a solution (see an example in [Directory.Build.props](https://github.com/microsoft/WindowsAppSDK-Samples/blob/43404afcc4e72294b3e2706d2eff12418dbb815a/Samples/SelfContainedDeployment/cpp-winui-unpackaged/Directory.Build.props#L3)). A packaged app must also set `<UseCrtSDKReferenceStaticWarning>false</UseCrtSDKReferenceStaticWarning>` in their project file. See the [Self-contained deployment](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SelfContainedDeployment/) sample app for how to use the hybrid CRT.
 
-If your app is packaged (for more info, see [Deployment overview](../index.md)), then the Windows App SDK dependencies will be included as content inside the MSIX package. Deploying the app still requires registering the MSIX package like any other packaged app.
+If your app is packaged (for more info, see [Package and deploy overview](../index.yml)), then the Windows App SDK dependencies will be included as content inside the MSIX package. Deploying the app still requires registering the MSIX package like any other packaged app.
 
 If your app is packaged with external location or unpackaged, then the Windows App SDK dependencies are copied next to the `.exe` in your build output. You can xcopy-deploy the resulting files, or include them in a custom installer.
 
@@ -63,5 +63,5 @@ The project property **WindowsAppSdkUndockedRegFreeWinRTInitialize** controls wh
 
 * [Windows App SDK deployment overview](../deploy-overview.md)
 * [Windows App SDK self-contained deployment samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SelfContainedDeployment)
-* [Deployment overview](../index.md)
+* [Package and deploy overview](../index.yml)
 * [Deployment architecture for the Windows App SDK](../../windows-app-sdk/deployment-architecture.md)
