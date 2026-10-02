@@ -2,7 +2,7 @@
 title: Build line-of-business apps with WinUI - overview
 description: A hub for developers building enterprise line-of-business apps with WinUI 3, covering data, forms, migration, design, and AI.
 ms.topic: overview
-ms.date: 09/21/2026
+ms.date: 10/02/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -97,6 +97,10 @@ Use [Add AI capabilities to a line-of-business WinUI app](ai-for-lob-apps.md) to
 ## Design for productivity
 
 Use [Design for productivity in WinUI LOB apps](design-for-lob.md) for guidance about theming, materials, accessibility, responsive layouts, and navigation.
+
+## Use the Windows LOB XAML skill
+
+Use [Windows LOB XAML skill for GitHub Copilot](windows-lob-xaml-skill.md) to help an agent create or review data-dense WinUI 3 interfaces. The guidance covers tables, dashboards, forms, task workflows, navigation, responsive layouts, theming, High Contrast, and accessibility.
 
 ## Related content
 
