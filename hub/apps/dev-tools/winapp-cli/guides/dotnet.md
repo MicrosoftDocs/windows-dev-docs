@@ -1,7 +1,7 @@
 ---
 title: Using winapp CLI with .NET
 description: Add Windows App SDK support to a .NET WPF or WinForms project with the winapp CLI, then build, add identity, and package the app as MSIX.
-ms.date: 09/26/2026
+ms.date: 10/01/2026
 ms.topic: how-to
 ---
 
@@ -317,7 +317,7 @@ The Windows App SDK NuGet package includes all the necessary assemblies for acce
 - Push notifications
 - And many more Windows App SDK components
 
-For more advanced Windows App SDK usage, check out the [Windows App SDK documentation](../../../windows-app-sdk/index.md).
+For more advanced Windows App SDK usage, check out the [Windows App SDK documentation](/windows/apps/windows-app-sdk/).
 
 ## 7. Package with MSIX
 
@@ -407,4 +407,4 @@ You can also create a custom configuration (e.g., `PackagedRelease`) by modifyin
 - **Distribute via winget**: Submit your MSIX to the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs)
 - **Publish to the Microsoft Store**: Use `winapp store` to submit your package
 - **Set up CI/CD**: Use the [`setup-WinAppCli`](https://github.com/microsoft/setup-WinAppCli) GitHub Action to automate packaging in your pipeline
-- **Explore Windows APIs**: With package identity, you can now use [Notifications](../../../develop/notifications/app-notifications/app-notifications-quickstart.md), [on-device AI](/windows/ai/apis/), and other [identity-dependent APIs](../../../desktop/modernize/desktop-to-uwp-extensions.md)
+- **Explore Windows APIs**: With package identity, you can now use [Notifications](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart), [on-device AI](/windows/ai/apis/), and other [identity-dependent APIs](/windows/apps/desktop/modernize/desktop-to-uwp-extensions)

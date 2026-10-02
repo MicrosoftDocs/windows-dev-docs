@@ -1,7 +1,7 @@
 ---
 title: Using winapp CLI with Rust
 description: Use the winapp CLI with a Rust Windows app to restore Windows App SDK headers, add package identity, and package the desktop app as MSIX.
-ms.date: 09/26/2026
+ms.date: 10/01/2026
 ms.topic: how-to
 ---
 
@@ -243,4 +243,4 @@ You should see the "Package Family Name" output, confirming it's installed and r
 - **Distribute via winget**: Submit your MSIX to the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs)
 - **Publish to the Microsoft Store**: Use `winapp store` to submit your package
 - **Set up CI/CD**: Use the [`setup-WinAppCli`](https://github.com/microsoft/setup-WinAppCli) GitHub Action to automate packaging in your pipeline
-- **Explore Windows APIs**: With package identity, you can now use [Notifications](../../../develop/notifications/app-notifications/app-notifications-quickstart.md), [on-device AI](/windows/ai/apis/), and other [identity-dependent APIs](../../../desktop/modernize/desktop-to-uwp-extensions.md)
+- **Explore Windows APIs**: With package identity, you can now use [Notifications](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart), [on-device AI](/windows/ai/apis/), and other [identity-dependent APIs](/windows/apps/desktop/modernize/desktop-to-uwp-extensions)

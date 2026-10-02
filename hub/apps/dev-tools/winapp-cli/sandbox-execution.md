@@ -1,9 +1,7 @@
 ---
 title: Windows Sandbox execution
 description: Run, debug, and UI-automate Windows applications inside a persistent Windows Sandbox using the winapp CLI --on sandbox option.
-author: GrantMeStrength
-ms.author: jken
-ms.date: 09/24/2026
+ms.date: 10/01/2026
 ms.topic: concept-article
 ---
 

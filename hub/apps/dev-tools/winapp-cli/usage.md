@@ -1,7 +1,7 @@
 ---
 title: CLI Documentation and Usage
 description: Complete command reference for the winapp CLI covering setup, packaging, identity, certificates, signing, and other utility commands.
-ms.date: 09/26/2026
+ms.date: 10/01/2026
 ms.topic: reference
 ---
 
@@ -91,7 +91,7 @@ When a `.csproj` file is found in the target directory, `init` uses a streamline
 
 **Sparse identity mode (`--exe` + `--sparse`):**
 
-Generates an identity-only [sparse package](guides/sparse.md) manifest for an existing desktop executable — the first step of the [sparse packaging workflow](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md). Unlike the full `init` flow, this **skips all SDK/package installation** (sparse identity packages have no SDK dependencies) and only generates a manifest and placeholder assets.
+Generates an identity-only [sparse package](guides/sparse.md) manifest for an existing desktop executable — the first step of the [sparse packaging workflow](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). Unlike the full `init` flow, this **skips all SDK/package installation** (sparse identity packages have no SDK dependencies) and only generates a manifest and placeholder assets.
 
 - Infers the package name, publisher, description, and version from the exe via `FileVersionInfo` (override with `--name`, `--publisher`, or interactively)
 - Writes `appxmanifest.xml` (with the exe name substituted into `Executable`) plus an `Assets/` folder to a `sparse/` folder in the current directory (or `--output-dir`)
@@ -470,7 +470,7 @@ winapp pack ./publish/x64 ./publish/arm64
 
 ### create-debug-identity
 
-Create app identity for debugging using [sparse packaging](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md). The exe stays in its original location — Windows associates identity with it via `Add-AppxPackage -ExternalLocation`.
+Create app identity for debugging using [sparse packaging](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). The exe stays in its original location — Windows associates identity with it via `Add-AppxPackage -ExternalLocation`.
 
 > **When to use this vs `winapp run`:** Use `create-debug-identity` when the exe is **separate from your app code** (e.g., Electron apps where `electron.exe` is in `node_modules`), or when specifically testing sparse package behavior. For most frameworks where the exe is in your build output folder, use [`winapp run`](#run) instead — it registers a full loose layout package and launches the app. See the [Debugging Guide](debugging.md) for a full comparison.
 
@@ -571,7 +571,7 @@ winapp manifest generate [directory] [options]
 **Templates:**
 
 - `packaged` - Standard packaged app manifest
-- `sparse` - App manifest using [sparse/external location packaging](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md)
+- `sparse` - App manifest using [sparse/external location packaging](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)
 
 #### Manifest placeholders
 
@@ -829,7 +829,7 @@ winapp run . --aot
 winapp run . --aot -c Release
 ```
 
-`--aot` supports x64 and ARM64 projects. It runs `dotnet publish` with the project's AOT configuration, then launches that output; use `-p PublishAot=true` for a one-time override. It does not perform separate runtime certification and cannot be combined with `--no-build` or `--manifest`.
+`--aot` supports x64 and ARM64 projects and requires the **.NET SDK 8.0.300 or newer**. It runs `dotnet publish` with the project's AOT configuration, then launches that output; use `-p PublishAot=true` for a one-time override. It does not perform separate runtime certification and cannot be combined with `--no-build` or `--manifest`.
 
 For apps that use package identity without a generated MSIX layout, include `Package.appxmanifest` or `appxmanifest.xml` in the project's publish output. Winapp stages the published files with that manifest. If both names are present, winapp stops instead of choosing one; remove the stale manifest and configure the project to publish only the intended manifest.
 
@@ -853,7 +853,7 @@ For apps that use package identity without a generated MSIX layout, include `Pac
 | `--verbose` | `minimal` | winapp's build decision traces |
 | `--quiet` | `quiet` | — |
 
-Native AOT publish output streams as it arrives, including MSBuild's final property JSON. Under `--json`, restore/build invocations and child output go to stderr so stdout stays pure JSON. Under `--quiet`, invocations are suppressed and dotnet's quiet restore/build output is routed to stderr so stdout stays clean. Native AOT publish output also goes to stderr under either option.
+Native AOT publish output streams as it arrives. Under `--json`, restore/build invocations and child output go to stderr so stdout stays pure JSON. Under `--quiet`, invocations are suppressed and dotnet's quiet restore/build output is routed to stderr so stdout stays clean. Native AOT publish output also goes to stderr under either option.
 
 **Option applicability:** the identity/loose-layout options (`--manifest`, `--output-appx-directory`, `--no-launch`, `--with-alias`, `--unregister-on-exit`, `--clean`, `--executable`) apply to packaged apps only. They are rejected with a clear error for unpackaged apps (which have no MSIX package). Launch/debug options (`--args`/`--`, `--detach`, `--debug-output`, `--symbols`, `--json`) work in both.
 
@@ -1528,7 +1528,7 @@ winapp az-sign ./app.msix --metadata-file ./metadata.json
 
 Generate a `CodeIntegrityExternal.cat` catalog file containing hashes of executable files from specified directories. This catalog is used with the [TrustedLaunch](/uwp/schemas/appxpackage/uapmanifestschema/element-trustedlaunch-trustedlaunch) flag in MSIX sparse package manifests ([AllowExternalContent](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent)) to allow execution of external files not included in the package itself.
 
-This is similar to how `signtool.exe` creates `AppxMetadata\CodeIntegrity.cat` when signing an MSIX package, but generates an external catalog for use with [sparse/external location packaging](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md).
+This is similar to how `signtool.exe` creates `AppxMetadata\CodeIntegrity.cat` when signing an MSIX package, but generates an external catalog for use with [sparse/external location packaging](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
 
 ```bash
 winapp create-external-catalog <input-folder> [options]

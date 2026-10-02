@@ -1,7 +1,7 @@
 ---
 title: Windows App Development CLI (winapp CLI)
 description: Command-line interface for managing Windows SDKs, packaging, app identity, manifests, certificates, and build tools for any app framework.
-ms.date: 09/26/2026
+ms.date: 10/01/2026
 ms.topic: overview
 ---
 
@@ -14,14 +14,14 @@ The Windows App Development CLI (winapp CLI) is a single command-line interface 
 
 Whether you're building with .NET/Win32, CMake, Electron, or Rust, this CLI gives you access to:
 
-- **Modern Windows APIs** - [Windows App SDK](../../windows-app-sdk/index.md) and Windows SDK with automatic setup and code generation
+- **Modern Windows APIs** - [Windows App SDK](/windows/apps/windows-app-sdk/) and Windows SDK with automatic setup and code generation
 - **Package Identity** - Debug and test by adding package identity without full packaging
 - **MSIX Packaging** - App packaging with signing and Store readiness
 - **Developer Tools** - Manifests, certificates, assets, and build integration
 
 ## Why package identity?
 
-Many Windows APIs require your app to have package identity. With identity, your app gains access to features like notifications, OS integration, and on-device AI. For a full list of what package identity unlocks and help choosing the right packaging model, see [Packaging overview](../../package-and-deploy/packaging/index.md).
+Many Windows APIs require your app to have package identity. With identity, your app gains access to features like notifications, OS integration, and on-device AI. For a full list of what package identity unlocks and help choosing the right packaging model, see [Packaging overview](/windows/apps/package-and-deploy/packaging/).
 
 ## Installation
 
@@ -111,5 +111,5 @@ winapp CLI is open source. You can find the source code, file issues, and contri
 - [NPM programmatic API](https://github.com/microsoft/WinAppCli/blob/main/docs/npm-usage.md)
 - [Framework guides](guides/dotnet.md)
 - [Get started with Electron](guides/electron-index.md)
-- [Windows App SDK documentation](../../windows-app-sdk/index.md)
+- [Windows App SDK documentation](/windows/apps/windows-app-sdk/)
 - [MSIX packaging documentation](/windows/msix/)

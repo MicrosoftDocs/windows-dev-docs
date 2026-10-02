@@ -1,7 +1,7 @@
 ---
 title: Using winapp CLI with Flutter
 description: Use the winapp CLI with a Flutter Windows app to restore Windows App SDK headers, add package identity, and package the desktop app as MSIX.
-ms.date: 09/26/2026
+ms.date: 10/01/2026
 ms.topic: how-to
 ---
 
@@ -437,7 +437,7 @@ The `.winapp/include` directory contains all the necessary headers for Windows A
 - `WindowsAppSDK-VersionInfo.h` - Version information
 - And many more Windows App SDK components
 
-For more advanced Windows App SDK usage, check out the [Windows App SDK documentation](../../../windows-app-sdk/index.md).
+For more advanced Windows App SDK usage, check out the [Windows App SDK documentation](/windows/apps/windows-app-sdk/).
 
 ## 7. Package with MSIX
 
@@ -511,4 +511,4 @@ Add-AppxPackage .\flutterapp.msix
 - **Distribute via winget**: Submit your MSIX to the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs)
 - **Publish to the Microsoft Store**: Use `winapp store` to submit your package
 - **Set up CI/CD**: Use the [`setup-WinAppCli`](https://github.com/microsoft/setup-WinAppCli) GitHub Action to automate packaging in your pipeline
-- **Explore Windows APIs**: With package identity, you can now use [Notifications](../../../develop/notifications/app-notifications/app-notifications-quickstart.md), [on-device AI](/windows/ai/apis/), and other [identity-dependent APIs](../../../desktop/modernize/desktop-to-uwp-extensions.md)
+- **Explore Windows APIs**: With package identity, you can now use [Notifications](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart), [on-device AI](/windows/ai/apis/), and other [identity-dependent APIs](/windows/apps/desktop/modernize/desktop-to-uwp-extensions)
