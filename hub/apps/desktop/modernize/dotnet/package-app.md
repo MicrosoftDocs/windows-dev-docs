@@ -2,14 +2,14 @@
 title: Package a .NET app with MSIX
 description: This topic enables you to package a WPF or WinForms app with MSIX.
 ms.topic: how-to
-ms.date: 05/07/2026
+ms.date: 10/03/2026
 keywords: windows win32, windows app development, Windows App SDK, Windows Forms, WinForms
 ms.localizationpriority: medium
 ---
 
 # Package a .NET app with MSIX
 
-Some Windows features and APIs require your app to have *package identity* at runtime (in other words, your app needs to be *packaged*). For more info, see [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps) and [WinRT APIs that require package identity](../winrt-api-desktop-app-support.md#apis-that-require-package-identity). [MSIX](/windows/msix/) packaging is also required for MSIX-based submissions to the Microsoft Store.
+Some Windows features and APIs require your app to have *package identity* at runtime (in other words, your app needs to be *packaged*). For more info, see [Features that require package identity](../modernize-packaged-apps.md) and [WinRT APIs that require package identity](../winrt-api-desktop-app-support.md#apis-that-require-package-identity). [MSIX](/windows/msix/) packaging is also required for MSIX-based submissions to the Microsoft Store.
 
 This article shows the steps to package a WPF or WinForms project in Visual Studio. For more information about app packaging, see [Packaging overview](../../../package-and-deploy/packaging/index.md) and other articles in the app packaging section of the documentation.
 
@@ -40,5 +40,5 @@ Now that you've packaged your WinForms app, you can call APIs that require packa
 - [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
 - [Windows Forms (WinForms)](/dotnet/desktop/winforms/)
 - [Call Windows Runtime APIs](../../../desktop/modernize/winrt-apis-desktop-apps.md)
-- [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps)
+- [Features that require package identity](../modernize-packaged-apps.md)
 - [WinRT APIs that require package identity](../winrt-api-desktop-app-support.md#apis-that-require-package-identity)

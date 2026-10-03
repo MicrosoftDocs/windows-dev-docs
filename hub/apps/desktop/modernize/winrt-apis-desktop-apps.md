@@ -1,7 +1,7 @@
 ---
 description: Learn how to configure your WPF, Windows Forms, or Win32 desktop app to call Windows Runtime APIs and add modern Windows experiences.
 title: Call Windows Runtime APIs in desktop apps
-ms.date: 07/03/2026
+ms.date: 10/03/2026
 ms.topic: how-to
 keywords: windows 11, windows app sdk, winrt, desktop app
 ms.localizationpriority: medium
@@ -179,12 +179,12 @@ When multi-targeting across .NET 6+ and earlier versions, use conditional compil
 
 ## Configure a C++ (Win32) project
 
-Use [C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt) to consume WinRT APIs from C++ desktop apps.
+Use [C++/WinRT](../../develop/cpp-winrt/intro-to-using-cpp-with-winrt.md) to consume WinRT APIs from C++ desktop apps.
 
 - Install the [Microsoft.Windows.CppWinRT](https://www.nuget.org/packages/Microsoft.Windows.CppWinRT/) NuGet package.
 - Because C++/WinRT uses features from the C++17 standard, ensure the project property **C/C++ > Language > C++ Language Standard** is set to **ISO C++17 Standard (/std:c++17)** or later in Visual Studio.
 
-For more details, see [Visual Studio support for C++/WinRT](/windows/apps/develop/cpp-winrt/intro-to-using-cpp-with-winrt#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
+For more details, see [Visual Studio support for C++/WinRT](../../develop/cpp-winrt/intro-to-using-cpp-with-winrt.md#visual-studio-support-for-cwinrt-xaml-the-vsix-extension-and-the-nuget-package).
 
 :::zone-end
 
@@ -199,7 +199,7 @@ To also call WinRT APIs from the _Windows App SDK_, see the following article:
 
 Some WinRT APIs require package identity. For more info see:
 
-- [Packaging overview](/windows/apps/package-and-deploy/packaging/)
+- [Packaging overview](../../package-and-deploy/packaging/index.md)
 - [Features that require package identity](modernize-packaged-apps.md)
 - [Package your app using single-project MSIX](../../windows-app-sdk/single-project-msix.md)
 - [Grant identity to a non-packaged app](grant-identity-to-nonpackaged-apps-overview.md)

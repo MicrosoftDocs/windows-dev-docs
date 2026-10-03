@@ -2,7 +2,7 @@
 title: Run code in the background in a .NET app
 description: This topic provides guidance for running background tasks in a .NET app that use the Windows App SDK.
 ms.topic: how-to
-ms.date: 05/07/2026
+ms.date: 10/03/2026
 keywords: windows win32, windows app development, Windows App SDK, Windows Forms, WinForms
 ms.localizationpriority: medium
 ---
@@ -29,4 +29,4 @@ For Windows App SDK background tasks, your .NET app registers a COM component us
 - [Windows Forms (WinForms)](/dotnet/desktop/winforms/)
 - [Call Windows Runtime APIs](../../../desktop/modernize/winrt-apis-desktop-apps.md)
 - [Packaging overview](../../../package-and-deploy/packaging/index.md)
-- [Features that require package identity](/windows/apps/desktop/modernize/modernize-packaged-apps)
+- [Features that require package identity](../modernize-packaged-apps.md)

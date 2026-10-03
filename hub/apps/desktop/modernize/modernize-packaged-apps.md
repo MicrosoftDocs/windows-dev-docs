@@ -1,7 +1,7 @@
 ---
 description: Learn how to add modern experiences for Windows users in a desktop app that you have packaged in a Windows app package.
 title: Modernize packaged desktop apps
-ms.date: 08/14/2026
+ms.date: 10/03/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -29,10 +29,10 @@ Only packaged apps (including apps packaged with external location) have package
 
 ## Notifications
 
-[Push notifications](/windows/apps/develop/notifications/push-notifications/push-quickstart) require package identity for background delivery and COM activation, which are needed in most production push notification scenarios.
+[Push notifications](../../develop/notifications/push-notifications/push-quickstart.md) require package identity for background delivery and COM activation, which are needed in most production push notification scenarios.
 
 > [!NOTE]
-> The Windows App SDK [app notifications APIs](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager) (local app notifications) work in both packaged and unpackaged apps and do **not** require package identity. For more info, see [App notifications quickstart](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart).
+> The Windows App SDK [app notifications APIs](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager) (local app notifications) work in both packaged and unpackaged apps and do **not** require package identity. For more info, see [App notifications quickstart](../../develop/notifications/app-notifications/app-notifications-quickstart.md).
 
 ## Integrate with package extensions
 
@@ -50,7 +50,7 @@ For more info, see [Get activation info for packaged apps](get-activation-info-f
 
 You can use the Windows App SDK to add modern Windows features—such as WinUI 3 controls, push notifications, and app lifecycle management—to your existing Win32 or .NET desktop app without requiring a full rewrite.
 
-For more information, see [Add Windows App SDK features to your existing project](/windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project).
+For more information, see [Add Windows App SDK features to your existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md).
 
 ## Distribute
 

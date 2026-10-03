@@ -2,7 +2,7 @@
 title: Use MRT Core to manage resources in a .NET app
 description: This topic demonstrates how to use  MRT Core from the Windows App SDK in a .NET app.
 ms.topic: how-to
-ms.date: 05/07/2026
+ms.date: 10/03/2026
 keywords: windows win32, windows app development, Windows App SDK, Windows Presentation Foundation, WPF
 ms.localizationpriority: medium
 zone_pivot_groups: dotnet-app-type
@@ -10,7 +10,7 @@ zone_pivot_groups: dotnet-app-type
 
 # Manage resources with MRT Core in a .NET app
 
-This article shows a very simple example of how to use the MRT Core feature from the Windows App SDK in a .NET app. See [Manage resources with MRT Core](/windows/apps/windows-app-sdk/mrtcore/mrtcore-overview) for complete details of the feature.
+This article shows a very simple example of how to use the MRT Core feature from the Windows App SDK in a .NET app. See [Manage resources with MRT Core](../../../windows-app-sdk/mrtcore/mrtcore-overview.md) for complete details of the feature.
 
 ## Prerequisites
 

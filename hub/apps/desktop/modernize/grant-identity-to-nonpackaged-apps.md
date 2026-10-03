@@ -1,7 +1,7 @@
 ---
 title: Grant package identity by packaging with external location manually
 description: Learn how to grant package identity to an unpackaged Win32 app so that you can use modern Windows features in that app.
-ms.date: 04/08/2026
+ms.date: 10/03/2026
 ms.topic: how-to
 keywords: windows 10, desktop, sparse package, packaging with external location, package identity, external location, MSIX, Win32, unpackaged app
 ms.localizationpriority: medium
@@ -14,11 +14,11 @@ ms.custom: RS5
 
 For more about the motivations behind adding package identity, as well as the differences between building
 identity packages in Visual Studio and building them manually, see
-[Overview](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-overview).
+[Overview](grant-identity-to-nonpackaged-apps-overview.md).
 
 This topic describes how to build and register an identity package manually.
 For info about building an identity package in Visual Studio, see
-[Grant package identity by packaging with external location in Visual Studio](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-visual-studio).
+[Grant package identity by packaging with external location in Visual Studio](grant-identity-to-nonpackaged-apps-visual-studio.md).
 
 These are the steps (which this topic describes in detail) to build and register an identity package manually:
 

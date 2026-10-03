@@ -2,7 +2,7 @@
 title: Use the dynamic dependency API to reference MSIX packages at run time
 description: Describes how to use the *dynamic dependency API* to dynamically take a dependency on different MSIX packages (other than the Windows App SDK framework package) in an unpackaged app at run time.
 ms.topic: article
-ms.date: 07/07/2026
+ms.date: 10/03/2026
 ms.localizationpriority: medium
 ---
 
@@ -12,7 +12,7 @@ ms.localizationpriority: medium
 
 There are two implementations of the *dynamic dependency API* that you can choose from, depending on your target platform and scenario:
 
-* **The Windows App SDK's dynamic dependency API**. The Windows App SDK provides C and C++ functions (in [msixdynamicdependency.h](/windows/windows-app-sdk/api/win32/msixdynamicdependency)), and Windows Runtime (WinRT) types (in the [**Microsoft.Windows.ApplicationModel.DynamicDependency**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.dynamicdependency) namespace) that implement the dynamic dependency API. You can use this implementation of the API on any version of Windows that supports the [Windows App SDK](/windows/apps/windows-app-sdk/).
+* **The Windows App SDK's dynamic dependency API**. The Windows App SDK provides C and C++ functions (in [msixdynamicdependency.h](/windows/windows-app-sdk/api/win32/msixdynamicdependency)), and Windows Runtime (WinRT) types (in the [**Microsoft.Windows.ApplicationModel.DynamicDependency**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.dynamicdependency) namespace) that implement the dynamic dependency API. You can use this implementation of the API on any version of Windows that supports the [Windows App SDK](../../../windows-app-sdk/index.md).
 * **Windows 11's dynamic dependency API**. Windows 11 also provides C and C++ functions that implement the dynamic dependency API (in [appmodel.h](/windows/win32/api/appmodel)). This implementation of the API can be used only by apps that target Windows 11, version 22H2 (10.0; Build 22621), and later.
 
 Also see [Differences between the two implementations](#differences-between-the-two-implementations).

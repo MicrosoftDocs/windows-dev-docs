@@ -1,7 +1,7 @@
 ﻿---
 description: Learn how to get certain kinds of activation info for packaged .NET and C++ desktop (Win32) apps
 title: Get activation info for packaged apps
-ms.date: 06/16/2026
+ms.date: 10/03/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -58,7 +58,7 @@ You can use the [AppInstance.GetActivatedEventArgs](/uwp/api/windows.application
 |-------------------|-----------------|-----------------------|
 | [ShareTargetActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.sharetargetactivatedeventargs) | [uap:ShareTarget](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-sharetarget) | [Receive content in your app with Windows Share](../../develop/windows-integration/integrate-sharesheet-receive.md) |
 | [ProtocolActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.protocolactivatedeventargs) | [uap:Protocol](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-protocol) | [Start your application by using a protocol](./desktop-to-uwp-extensions.md#start-your-application-by-using-a-protocol) |
-| [ToastNotificationActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.toastnotificationactivatedeventargs) | desktop:ToastNotificationActivation | [App notifications quickstart](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart). |
+| [ToastNotificationActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.toastnotificationactivatedeventargs) | desktop:ToastNotificationActivation | [App notifications quickstart](../../develop/notifications/app-notifications/app-notifications-quickstart.md). |
 | [StartupTaskActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.startuptaskactivatedeventargs)  | desktop:StartupTask | [Start an executable file when users log into Windows](./desktop-to-uwp-extensions.md#start-an-executable-file-when-users-log-into-windows) |
 | [FileActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.fileactivatedeventargs) | [uap:FileTypeAssociation](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-filetypeassociation) | [Associate your packaged application with a set of file types](./desktop-to-uwp-extensions.md#associate-your-packaged-application-with-a-set-of-file-types) |
 | [LaunchActivatedEventArgs](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs) | None |  |

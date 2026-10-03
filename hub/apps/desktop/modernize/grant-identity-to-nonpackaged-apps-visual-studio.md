@@ -1,7 +1,7 @@
 ---
 title: Grant package identity by packaging with external location in Visual Studio
 description: How to use Visual Studio to grant package identity to an unpackaged Win32 app so that you can use modern Windows features in that app.
-ms.date: 04/09/2026
+ms.date: 10/03/2026
 ms.topic: how-to
 keywords: windows 11, windows 10, desktop, sparse, package, identity, external, location, MSIX, Win32, Visual Studio
 ms.localizationpriority: medium
@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 
 For the motivations behind adding package identity, as well as the differences between building
 identity packages in Visual Studio and building them manually, see
-[Overview](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps-overview).
+[Overview](grant-identity-to-nonpackaged-apps-overview.md).
 
 This topic describes how to build and register an identity package by using Visual Studio.
 For info about building an identity package manually, see
-[Grant package identity by packaging with external location manually](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
+[Grant package identity by packaging with external location manually](grant-identity-to-nonpackaged-apps.md).
 
 These are the steps (which this topic describes in detail) to build and register an identity package by using Visual Studio:
 
@@ -54,7 +54,7 @@ scenarios where localization and images may be needed here.
 
 If you have a custom application manifest in your application project, then for info about
 synchronizing the values with the values from `Package.appxmanifest`, see
-[Add identity metadata to your desktop application manifests](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps#add-identity-metadata-to-your-desktop-application-manifests).
+[Add identity metadata to your desktop application manifests](grant-identity-to-nonpackaged-apps.md#add-identity-metadata-to-your-desktop-application-manifests).
 The **Package with External Location** extension uses **App** for the **applicationId**.
 
 If you don't have a custom application manifest, then Visual Studio will produce the appropriate
