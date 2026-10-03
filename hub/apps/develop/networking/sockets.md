@@ -1,7 +1,7 @@
 ---
 description: Sockets are a low-level data transfer technology on top of which many networking protocols are implemented. Windows offers TCP and UDP socket classes for client-server or peer-to-peer applications, whether connections are long-lived or an established connection is not required.
 title: Sockets
-ms.date: 09/27/2026
+ms.date: 10/03/2026
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
@@ -13,14 +13,14 @@ Sockets are a low-level data transfer technology on top of which many networking
 This topic focuses on how to use the Windows socket classes that are in the [**Windows.Networking.Sockets**](/uwp/api/Windows.Networking.Sockets) namespace. But you can also use [Windows Sockets 2 (Winsock)](/windows/desktop/WinSock/windows-sockets-start-page-2) in a Windows app.
 
 > [!NOTE]
-> as a consequence of network isolation, Windows disallows establishing a socket connection (Sockets or WinSock) between two Windows apps running on the same machine; whether that's via the local loopback address (127.0.0.1), or by explicitly specifying the local IP address. For details about mechanisms by which Windows apps can communicate with one another, see [App-to-app communication](/windows/apps/develop/communication/).
+> as a consequence of network isolation, Windows disallows establishing a socket connection (Sockets or WinSock) between two Windows apps running on the same machine; whether that's via the local loopback address (127.0.0.1), or by explicitly specifying the local IP address. For details about mechanisms by which Windows apps can communicate with one another, see [App-to-app communication](../communication/index.md).
 
 ## Build a basic TCP socket client and server
 A TCP (Transmission Control Protocol) socket provides low-level network data transfers in either direction for connections that are long-lived. TCP sockets are the underlying feature used by most of the network protocols used on the Internet. To demonstrate basic TCP operations, the example code below shows a [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket) and a [**StreamSocketListener**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener) sending and receiving data over TCP to form an echo client and server.
 
 To begin with as few moving parts as possible&mdash;and to sidestep network isolation issues for the present&mdash;create a new project, and put both the client and the server code below into the same project.
 
-You'll need to [declare an app capability](/windows/apps/package-and-deploy/app-capability-declarations) in your project. Open your app package manifest source file (the `Package.appxmanifest` file) and, on the Capabilities tab, check **Private Networks (Client & Server)**. This is how that looks in the `Package.appxmanifest` markup.
+You'll need to [declare an app capability](../../package-and-deploy/app-capability-declarations.md) in your project. Open your app package manifest source file (the `Package.appxmanifest` file) and, on the Capabilities tab, check **Private Networks (Client & Server)**. This is how that looks in the `Package.appxmanifest` markup.
 
 ```xml
 <Capability Name="privateNetworkClientServer" />
@@ -497,7 +497,7 @@ private:
 
 ## References to StreamSockets in C++ PPL continuations (applies to C++/CX, primarily)
 > [!NOTE]
-> If you use C++/WinRT coroutines, and you pass parameters by value, then this issue doesn't apply. For parameter-passing recommendations, see [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-winrt/concurrency#parameter-passing).
+> If you use C++/WinRT coroutines, and you pass parameters by value, then this issue doesn't apply. For parameter-passing recommendations, see [Concurrency and asynchronous operations with C++/WinRT](../cpp-winrt/concurrency.md#parameter-passing).
 
 A [**StreamSocket**](/uwp/api/Windows.Networking.Sockets.StreamSocket?branch=live) remains alive as long as there's an active read/write on its input/output stream (let's take for example the [**StreamSocketListenerConnectionReceivedEventArgs.Socket**](/uwp/api/windows.networking.sockets.streamsocketlistenerconnectionreceivedeventargs.Socket) that you have access to in your [**StreamSocketListener.ConnectionReceived**](/uwp/api/Windows.Networking.Sockets.StreamSocketListener.ConnectionReceived) event handler). When you call [**DataReader.LoadAsync**](/uwp/api/windows.storage.streams.datareader.loadasync) (or `ReadAsync/WriteAsync/StoreAsync`), then that holds a reference to the socket (via the socket's input stream) until the **Completed** event handler (if any) of the **LoadAsync** is done executing.
 
@@ -1371,8 +1371,8 @@ The [**HostName**](/uwp/api/Windows.Networking.HostName) constructor can throw a
 * [Windows.Networking.Sockets](/uwp/api/Windows.Networking.Sockets)
 
 ## Related topics
-* [App-to-app communication](/windows/apps/develop/communication/)
-* [Concurrency and asynchronous operations with C++/WinRT](/windows/apps/develop/cpp-winrt/concurrency)
+* [App-to-app communication](../communication/index.md)
+* [Concurrency and asynchronous operations with C++/WinRT](../cpp-winrt/concurrency.md)
 * [Networking basics](networking-basics.md)
 * [WebSockets](websockets.md)
 * [Windows Sockets 2 (Winsock)](/windows/desktop/WinSock/windows-sockets-start-page-2)
