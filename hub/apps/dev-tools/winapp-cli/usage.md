@@ -1,7 +1,7 @@
 ---
 title: CLI Documentation and Usage
 description: Complete command reference for the winapp CLI covering setup, packaging, identity, certificates, signing, and other utility commands.
-ms.date: 10/01/2026
+ms.date: 10/03/2026
 ms.topic: reference
 ---
 
@@ -91,7 +91,7 @@ When a `.csproj` file is found in the target directory, `init` uses a streamline
 
 **Sparse identity mode (`--exe` + `--sparse`):**
 
-Generates an identity-only [sparse package](guides/sparse.md) manifest for an existing desktop executable — the first step of the [sparse packaging workflow](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). Unlike the full `init` flow, this **skips all SDK/package installation** (sparse identity packages have no SDK dependencies) and only generates a manifest and placeholder assets.
+Generates an identity-only [sparse package](guides/sparse.md) manifest for an existing desktop executable — the first step of the [sparse packaging workflow](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md). Unlike the full `init` flow, this **skips all SDK/package installation** (sparse identity packages have no SDK dependencies) and only generates a manifest and placeholder assets.
 
 - Infers the package name, publisher, description, and version from the exe via `FileVersionInfo` (override with `--name`, `--publisher`, or interactively)
 - Writes `appxmanifest.xml` (with the exe name substituted into `Executable`) plus an `Assets/` folder to a `sparse/` folder in the current directory (or `--output-dir`)
@@ -470,7 +470,7 @@ winapp pack ./publish/x64 ./publish/arm64
 
 ### create-debug-identity
 
-Create app identity for debugging using [sparse packaging](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). The exe stays in its original location — Windows associates identity with it via `Add-AppxPackage -ExternalLocation`.
+Create app identity for debugging using [sparse packaging](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md). The exe stays in its original location — Windows associates identity with it via `Add-AppxPackage -ExternalLocation`.
 
 > **When to use this vs `winapp run`:** Use `create-debug-identity` when the exe is **separate from your app code** (e.g., Electron apps where `electron.exe` is in `node_modules`), or when specifically testing sparse package behavior. For most frameworks where the exe is in your build output folder, use [`winapp run`](#run) instead — it registers a full loose layout package and launches the app. See the [Debugging Guide](debugging.md) for a full comparison.
 
@@ -571,7 +571,7 @@ winapp manifest generate [directory] [options]
 **Templates:**
 
 - `packaged` - Standard packaged app manifest
-- `sparse` - App manifest using [sparse/external location packaging](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)
+- `sparse` - App manifest using [sparse/external location packaging](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md)
 
 #### Manifest placeholders
 
@@ -1528,7 +1528,7 @@ winapp az-sign ./app.msix --metadata-file ./metadata.json
 
 Generate a `CodeIntegrityExternal.cat` catalog file containing hashes of executable files from specified directories. This catalog is used with the [TrustedLaunch](/uwp/schemas/appxpackage/uapmanifestschema/element-trustedlaunch-trustedlaunch) flag in MSIX sparse package manifests ([AllowExternalContent](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent)) to allow execution of external files not included in the package itself.
 
-This is similar to how `signtool.exe` creates `AppxMetadata\CodeIntegrity.cat` when signing an MSIX package, but generates an external catalog for use with [sparse/external location packaging](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
+This is similar to how `signtool.exe` creates `AppxMetadata\CodeIntegrity.cat` when signing an MSIX package, but generates an external catalog for use with [sparse/external location packaging](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md).
 
 ```bash
 winapp create-external-catalog <input-folder> [options]
