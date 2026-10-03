@@ -81,7 +81,3 @@ items:
     href: get-started/windows-developer-faq.md
   - name: Terminology
     href: get-started/windows-developer-glossary.md
-- name: Tools
-  href: tools/toc.yml
-- name: Code samples
-  href: dev-tools/samples.md

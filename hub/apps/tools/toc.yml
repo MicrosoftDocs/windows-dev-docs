@@ -5,7 +5,7 @@ items:
   href: ../dev-tools/visual-studio.md
 - name: Visual Studio Code extension
   href: ../develop/ai-assisted/vs-code-tools.md#winapp-vs-code-extension
-- name: Windows App Development CLI
+- name: WinApp CLI
   href: ../dev-tools/winapp-cli/index.md
 - name: WinUI Agent
   href: ../develop/ai-assisted/winui-agent-plugin.md
