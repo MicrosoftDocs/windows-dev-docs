@@ -2,7 +2,7 @@
 title: Choose your migration path - upgrade, modernize, or rebuild
 description: Decide whether to upgrade your Windows desktop app to modern .NET, modernize it with the Windows App SDK, or rebuild the UI with WinUI 3.
 ms.topic: concept-article
-ms.date: 09/02/2026
+ms.date: 10/03/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -123,4 +123,4 @@ These issues frequently block or complicate upgrades and migrations. Each requir
 - [Modernize your desktop apps](../../desktop/modernize/index.md)
 - [GitHub Copilot upgrade](/dotnet/core/porting/github-copilot-upgrade/overview)
 - [Migrate WPF app patterns to WinUI 3](wpf-patterns-winui3.md)
-- [Overall migration strategy](overall-migration-strategy.md)
+- [Migrate and modernize Windows apps](index.yml)

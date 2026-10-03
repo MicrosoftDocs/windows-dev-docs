@@ -4,7 +4,7 @@ description: Define a WinUI-first documentation framework with evidence-based jo
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
-ms.date: 10/02/2026
+ms.date: 10/03/2026
 ---
 
 # Windows documentation experience framework
@@ -13,9 +13,9 @@ ms.date: 10/02/2026
 
 This is an internal design framework for the Windows app documentation experience. It defines how to select, organize, write, and visually present content. The draft implementation now applies the reviewed Essentials experience to canonical pages and real ToCs; it is not a new publishing schema or a requirement to rewrite every article.
 
-The intended promise is: **build a new app with WinUI 3, or bring an existing app to WinUI 3.** Readers should reach a useful result without first reconstructing the Windows platform taxonomy.
+The intended promise is: **build a new app with WinUI 3, modernize an existing desktop app in place, or migrate an app model or UI framework.** Readers should reach a useful result without first reconstructing the Windows platform taxonomy.
 
-The working navigation direction is **Getting started, Design, Add Windows features, Modernize an existing app, Package and deploy, Distribute through the Store, Tools**. Final implementation requires review. This document preserves the Windows App SDK collection, gives tools a dedicated ProductSubHub and ToC, and treats modernization as a distinct entry journey.
+The working navigation direction is **Getting started, Design, Add Windows features, Migrate and modernize, Package and deploy, Distribute through the Store, Tools, Code samples**. Final implementation requires review. This document preserves the Windows App SDK collection, gives tools a dedicated ProductSubHub and ToC, keeps code samples directly accessible, and treats modernization as a distinct entry journey.
 
 Research date: September 7, 2026. The pre-change content baseline is commit `fbd4d0833`; some source links below now resolve to revised pages in this draft. The comparison examines representative official entry pages, quickstarts, and migration guidance, not entire competing documentation sites. Observations about structure are evidence; predictions about reader confusion are hypotheses to test, not measured abandonment or conversion rates.
 
@@ -353,15 +353,16 @@ The initial experiment used isolated pages and an in-page navigation proposal. A
 |---|---|
 | [Getting started with WinUI](../../hub/apps/get-started/index.yml) | The canonical WinUI entry page: three starting choices, five blue-icon learning and sample paths, and four links that continue the app journey through design, development, deployment, and publishing. |
 | [Design Windows apps](../../hub/apps/design/index.yml) | The canonical design entry page: three starting choices, six design workflow paths, and four links that continue the app journey through onboarding, development, deployment, and publishing. |
+| [Migrate and modernize Windows apps](../../hub/apps/windows-app-sdk/migrate-to-windows-app-sdk/index.yml) | The canonical migration and modernization entry page: keep WPF, Windows Forms, or Win32 and adopt modern Windows features incrementally, or migrate an app model or UI framework to WinUI 3. |
 | [Package and deploy Windows apps](../../hub/apps/package-and-deploy/index.yml) | The canonical packaging and deployment entry page: separate choices for packaging mode, distribution path, and Windows App SDK deployment, followed by packaging, signing, distribution, and runtime-delivery workflows. |
 | [Build your first WinUI app](../../hub/apps/get-started/start-here.md) | One quickstart with winapp CLI and Visual Studio tabs, followed by a small XAML change in the same project. |
-| [About WinUI](../../hub/apps/winui/winui3/index.md) | The existing UI-framework overview, separate from setup instructions. |
+| [WinUI](../../hub/apps/winui/winui3/index.md) | The existing UI-framework overview, separate from setup instructions. |
 | [FAQ](../../hub/apps/get-started/windows-developer-faq.md) | Existing Windows app development questions and answers. |
 | [Terminology](../../hub/apps/get-started/windows-developer-glossary.md) | Definitions used in the first-app and platform guidance. |
 | [Tools for Windows app development](../../hub/apps/tools/index.yml) | A focused ProductSubHub for Visual Studio, the Visual Studio Code extension, WinApp CLI, and WinUI Agent. |
 | [Code samples](../../hub/apps/dev-tools/samples.md) | Focused examples, WinUI Gallery, and links to maintained Windows app sample repositories. |
 
-The [Essentials ToC](../../hub/apps/toc.yml) starts with a non-clickable **Build with WinUI** group. Its first link opens the focused WinUI landing page, followed by the combined quickstart and standalone Tutorials ToC. **Understand the platform** is a separate non-clickable grouping containing About WinUI and the intact SDK collections, followed by Windows versions and compatibility. Help and guidance stays separate. Tools is not nested in the Essentials ToC; its separate DocsRoot/global entry opens the standalone [Tools ToC](../../hub/apps/tools/toc.yml).
+The [Essentials ToC](../../hub/apps/toc.yml) starts with a non-clickable **Build with WinUI** group. Its first link opens the focused WinUI landing page, followed by the combined quickstart and standalone Tutorials ToC. **Understand the platform** is a separate non-clickable grouping containing About WinUI and the intact SDK collections, followed by Windows versions and compatibility. Help and guidance stays separate. API reference remains available from the relevant landing pages instead of appearing as a top-level Essentials item. Tools is not nested in the Essentials ToC; its separate DocsRoot/global entry opens the standalone [Tools ToC](../../hub/apps/tools/toc.yml), and Code samples remains a direct destination.
 
 The standalone first-change article is removed; the quickstart includes the small edit after its stage-specific workflow tabs. On the WinUI landing page, readers can create their first app, understand WinUI, or choose a modernization path. The skill section mixes concept paths for XAML, controls and layouts, and data binding and MVVM with separate calls to action for the Notes and AI-assisted Task Tally tutorials. WinUI Gallery and Windows App SDK Samples appear in a separate final section. No new tutorial is introduced.
 
@@ -369,9 +370,11 @@ The Develop ToC focuses on Windows capabilities instead of duplicating the tools
 
 The existing DocsRoot header is not edited in this repository. The coordinated DocsRoot change should point the onboarding entry directly to `get-started/index.yml`, which now serves WinUI onboarding. Approved redirects preserve requests to the retired `/windows/apps/introduction` and `/windows/apps/desktop/` URLs. Renaming the global L0 items and adding the global Tools entry remain part of the separate DocsRoot change.
 
-The WinUI, Design, Develop, API reference, Package and deploy, and Tools landing pages use the ProductSubHub schema without custom stylesheets or scripts. The Tools single-TOC page uses four starting cards and two workflow cards that group the same four tools without unrelated onward-navigation sections.
+The WinUI, Design, Develop, API reference, Migrate and modernize, Package and deploy, and Tools landing pages use the ProductSubHub schema without custom stylesheets or scripts. Their single-TOC configurations preserve the standard left ToC and group starting points and task-focused workflows. The Tools page uses four starting cards and two workflow cards that group the same four tools without unrelated onward-navigation sections.
 
 Each ProductSubHub presents focused starting points, workflow paths, and destinations that continue the Windows app journey. The schema supports custom icons but not thumbnail images. This change does not revert the quickstart, sidebar organization, or icon exporter.
+
+The migration ProductSubHub and its dedicated ToC distinguish two reader goals. **Modernize your existing app** keeps the current WPF, Windows Forms, or Win32 app model while adding Windows App SDK, Windows Runtime, WinUI interop, or packaging capabilities. **Migrate your app** changes the app model or UI framework, including UWP-to-Windows App SDK and WinUI 3 guidance, WPF and Windows Forms pattern mappings, and cross-platform migration. Windows App SDK and WinUI 3 remain separate concepts: adopting the SDK does not require replacing an existing desktop UI framework.
 
 The former platform and Desktop landing pages are not retained as competing overviews. Links that relied on their SDK, design, and deployment sections now point directly to the canonical landing pages and content owners.
 

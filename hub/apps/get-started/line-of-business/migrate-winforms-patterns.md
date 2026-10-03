@@ -2,7 +2,7 @@
 title: Windows Forms patterns and their WinUI 3 equivalents
 description: Map Windows Forms controls, data-binding patterns, application lifecycle concepts, and incremental migration decisions to WinUI 3.
 ms.topic: concept-article
-ms.date: 09/02/2026
+ms.date: 10/03/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -96,7 +96,7 @@ MVVM is useful when a screen has substantial state, commands, or testable busine
 
 - [Plan your modernization with an AI assistant](../../windows-app-sdk/migrate-to-windows-app-sdk/modernize-with-ai-assistant.md)
 - [Migration decision guide](../../windows-app-sdk/migrate-to-windows-app-sdk/migration-decision-guide.md)
-- [Migration strategy overview](../../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md)
+- [Migrate and modernize Windows apps](../../windows-app-sdk/migrate-to-windows-app-sdk/index.yml)
 - [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
 - [WPF patterns and their WinUI 3 equivalents](../../windows-app-sdk/migrate-to-windows-app-sdk/wpf-patterns-winui3.md)
 - [Display tabular data](display-tabular-data.md)

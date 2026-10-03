@@ -2,7 +2,7 @@
 title: Migrate WPF app patterns to WinUI 3
 description: WinUI 3 shares many XAML concepts with WPF and is optimized for modern Windows experiences. This topic maps common WPF patterns to their WinUI 3 equivalents to help you plan your migration.
 ms.topic: concept-article
-ms.date: 09/02/2026
+ms.date: 10/03/2026
 author: GrantMeStrength
 ms.author: jken
 keywords: windows, app, sdk, wpf, winui, winui3, migration, patterns, equivalents
@@ -94,5 +94,5 @@ For a GitHub Copilot-assisted walkthrough of WPF to WinUI 3 migration, see [Migr
 - [Choose your migration path](migration-decision-guide.md)
 - [Plan your modernization with an AI assistant](modernize-with-ai-assistant.md)
 - [Migration terminology](migration-terminology.md)
-- [Overall migration strategy](overall-migration-strategy.md)
+- [Migrate and modernize Windows apps](index.yml)
 - [AI-assisted modernization](ai-modernize.md)

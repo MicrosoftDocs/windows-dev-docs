@@ -1,0 +1,129 @@
+### YamlMime:ProductSubHub
+title: Migrate and modernize Windows apps
+metadata:
+  title: Migrate and modernize Windows apps
+  description: Choose whether to modernize an existing desktop app or migrate its app model or UI framework, with guidance for UWP, WPF, and Windows Forms.
+  author: GrantMeStrength
+  ms.author: jken
+  ms.topic: overview
+  ms.date: 10/03/2026
+  keywords: windows app migration, windows app modernization, windows app sdk, winui 3, uwp, wpf, windows forms, win32
+brand: windows
+tocType: single
+productOverview:
+  title: Migrate and modernize Windows apps
+  summary: Keep your current desktop app model and add modern Windows capabilities, or move to a different app model or UI framework.
+getStarted:
+  title: Choose your path
+  summary: Start with the goal that matches how much of your existing app you want to change.
+  items:
+    - title: Modernize an existing desktop app
+      description: Keep WPF, Windows Forms, or Win32 and add Windows App SDK, Windows Runtime, or packaging features incrementally.
+      url: ../../desktop/modernize/index.md
+    - title: Choose a migration path
+      description: Compare upgrading in place, modernizing in place, and moving your UI to WinUI 3.
+      url: migration-decision-guide.md
+    - title: Migrate from UWP
+      description: Plan a move from UWP to the Windows App SDK and WinUI 3, including app-model and API changes.
+      url: migrate-to-windows-app-sdk-ovw.md
+    - title: Migrate from another framework
+      description: Explore paths from WPF, iOS, or a cross-platform framework to WinUI 3.
+      url: ../../develop/ai-assisted/migrate/index.md
+coreWorkflows:
+  title: Modernize or migrate your app
+  summary: Follow the workflow that matches your current app model and intended destination.
+  items:
+    - icon:
+        src: ../../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: Add the Windows App SDK to an existing project
+      description: Install and initialize the Windows App SDK in an existing WPF, Windows Forms, or Win32 project without changing its UI framework.
+      links:
+        - text: Use the Windows App SDK in an existing project
+          url: ../use-windows-app-sdk-in-existing-project.md
+        - text: Windows App SDK overview
+          url: ../index.md
+        - text: Windows App SDK deployment options
+          url: ../../package-and-deploy/deploy-overview.md
+    - icon:
+        src: ../../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Modernize desktop UI and platform features
+      description: Add Windows APIs, WinUI controls, or package identity while keeping the app's existing desktop framework.
+      links:
+        - text: Modernize existing desktop apps
+          url: ../../desktop/modernize/index.md
+        - text: Host WinUI controls in desktop apps
+          url: ../../desktop/modernize/host-controls-existing-desktop-apps.md
+        - text: Package identity overview
+          url: ../../desktop/modernize/package-identity-overview.md
+    - icon:
+        src: ../../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Migrate a UWP app
+      description: Assess support, map UWP features and APIs, and work through detailed guidance for moving to the Windows App SDK and WinUI 3.
+      links:
+        - text: UWP migration overview
+          url: migrate-to-windows-app-sdk-ovw.md
+        - text: Detailed UWP migration strategy
+          url: overall-migration-strategy.md
+        - text: UWP feature-area guides
+          url: guides/feature-area-guides-ovw.md
+    - icon:
+        src: ../../images/fluent-blue/editor.svg
+        alt: A design editor window.
+      title: Migrate WPF or Windows Forms patterns
+      description: Translate desktop UI, binding, lifecycle, and control patterns when moving an app's UI to WinUI 3.
+      links:
+        - text: WPF patterns and WinUI 3 equivalents
+          url: wpf-patterns-winui3.md
+        - text: Windows Forms patterns and WinUI 3 equivalents
+          url: ../../get-started/line-of-business/migrate-winforms-patterns.md
+        - text: AI-assisted WPF migration
+          url: ../../develop/ai-assisted/migrate/wpf-to-winui.md
+    - icon:
+        src: ../../images/fluent-blue/design.svg
+        alt: A paintbrush and shape representing visual design.
+      title: Plan a cross-platform migration
+      description: Decide which business logic and services can remain shared and which Windows UI should be rebuilt with WinUI 3.
+      links:
+        - text: Cross-framework considerations
+          url: ../../develop/ai-assisted/migrate/cross-framework.md
+        - text: Migrate and port apps to WinUI 3
+          url: ../../develop/ai-assisted/migrate/index.md
+        - text: Migrate from iOS
+          url: ../../develop/ai-assisted/migrate/ios-to-winui.md
+    - icon:
+        src: ../../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: Plan and accelerate with AI
+      description: Use an AI coding assistant to investigate your app and draft or implement a migration plan that you review and validate.
+      links:
+        - text: Plan your modernization with an AI assistant
+          url: modernize-with-ai-assistant.md
+        - text: Modernize or port with GitHub Copilot
+          url: ai-modernize.md
+supportReference:
+  title: Continue your Windows app journey
+  summary: Review the destination frameworks, packaging and deployment choices, and API reference for your selected path.
+  items:
+    - icon:
+        src: ../../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Windows App SDK overview
+      url: ../index.md
+    - icon:
+        src: ../../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: WinUI overview
+      url: ../../winui/winui3/index.md
+    - icon:
+        src: ../../images/fluent-blue/package.svg
+        alt: A package with an upward arrow.
+      title: Package and deploy
+      url: ../../package-and-deploy/index.yml
+    - icon:
+        src: ../../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: Windows app API reference
+      url: ../../api-reference/index.yml

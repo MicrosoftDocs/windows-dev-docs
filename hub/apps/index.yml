@@ -6,7 +6,7 @@ metadata:
    title: Windows app development documentation
    description: Build native Windows desktop apps with Windows App SDK and WinUI 3, the recommended UI framework for new Windows apps using C# or C++.
    ms.topic: hub-page
-   ms.date: 10/02/2026
+   ms.date: 10/03/2026
    ms.localizationpriority: medium
 
 highlightedContent:
@@ -58,16 +58,18 @@ productDirectory:
         text: Windows development platform concepts
       - url: /windows/apps/api-reference/
         text: Windows App SDK API reference
-  - title: Modernize an existing app
+  - title: Migrate and modernize
     imageSrc: /windows/apps/images/hub-wasdk.svg
-    summary: "Bring Windows App SDK features to an existing desktop app or migrate a UWP app to WinUI 3."
+    summary: "Keep your current desktop app model and add modern Windows features, or migrate an app model or UI framework."
     links:
+      - url: /windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/
+        text: Migrate and modernize Windows apps
       - url: /windows/apps/desktop/modernize/
-        text: Windows desktop app modernization
-      - url: /windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy
-        text: Migrate from UWP to Windows App SDK
+        text: Modernize an existing desktop app
       - url: /windows/apps/windows-app-sdk/use-windows-app-sdk-in-existing-project
         text: Use Windows App SDK in an existing project
+      - url: /windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/migrate-to-windows-app-sdk-ovw
+        text: Migrate from UWP to Windows App SDK
   - title: Package and deploy
     imageSrc: /windows/apps/images/hub-package.svg
     summary: "Package your app with MSIX or deploy unpackaged. Choose between framework-dependent and self-contained deployment."

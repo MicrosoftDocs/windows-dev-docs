@@ -2,7 +2,7 @@
 title: A Windows App SDK migration of the UWP Photo Editor sample app (C++/WinRT)
 description: A case study of taking the C++/WinRT [UWP Photo Editor sample app](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/), and migrating it to the Windows App SDK.
 ms.topic: article
-ms.date: 05/28/2026
+ms.date: 10/03/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, C++/WinRT, Photo, Editor, UWP
 ms.localizationpriority: medium
 ---
@@ -14,7 +14,7 @@ This topic is a case study of taking the C++/WinRT [UWP Photo Editor sample app]
 * Begin by [cloning the UWP sample app's repo](https://github.com/microsoft/windows-appsample-photo-editor/tree/master/), and opening the solution in [Visual Studio](https://visualstudio.microsoft.com/downloads/).
 
 > [!IMPORTANT]
-> For considerations and strategies for approaching the migration process, and how to set up your development environment for migrating, see [Overall migration strategy](overall-migration-strategy.md).
+> For considerations and strategies for approaching the migration process, and how to set up your development environment for migrating, see [UWP migration strategy](overall-migration-strategy.md).
 
 ## Install tools for the Windows App SDK
 
@@ -439,6 +439,6 @@ From here, the remaining steps to migrate the code that you copied are the same 
 
 * [Windows App SDK and supported Windows releases](../support.md)
 * [UWP Photo Editor sample app](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/)
-* [Overall migration strategy](overall-migration-strategy.md)
+* [UWP migration strategy](overall-migration-strategy.md)
 * [Mapping UWP APIs to the Windows App SDK](api-mapping-table.md)
 * [WinUI migration](guides/winui3.md)

@@ -10,7 +10,7 @@ items:
     href: tutorials/toc.yml
 - name: Understand the platform
   items:
-  - name: About WinUI
+  - name: WinUI
     href: winui/winui3/index.md
   - name: Windows App SDK
     items:
@@ -72,8 +72,6 @@ items:
       href: windows-sdk/downloads.md
   - name: Windows versions and compatibility
     href: get-started/versioning-overview.md
-- name: API reference
-  href: api-reference/toc.yml
 - name: Help and guidance
   href: develop/support.md
   items:

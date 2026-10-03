@@ -2,7 +2,7 @@
 title: AI-assisted Windows development
 description: Use AI coding assistants with Windows development tools to create WinUI apps, add features, and generate UI Automation tests.
 ms.topic: overview
-ms.date: 09/20/2026
+ms.date: 10/03/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -77,5 +77,5 @@ Yes. You can use the `winui@awesome-copilot` plugin with GitHub Copilot or Claud
 - [Windows App Development CLI](../../dev-tools/winapp-cli/index.md)
 - [AI-assisted testing](testing.md)
 - [WinApp extension for Visual Studio Code](vs-code-tools.md#winapp-vs-code-extension)
-- [Modernize an existing app](../../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md)
+- [Migrate and modernize Windows apps](../../windows-app-sdk/migrate-to-windows-app-sdk/index.yml)
 - [AI-powered Windows features](../ai-powered/ai-powered.md)

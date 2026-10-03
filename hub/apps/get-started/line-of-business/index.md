@@ -2,7 +2,7 @@
 title: Build line-of-business apps with WinUI - overview
 description: A hub for developers building enterprise line-of-business apps with WinUI 3, covering data, forms, migration, design, and AI.
 ms.topic: overview
-ms.date: 10/02/2026
+ms.date: 10/03/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -74,7 +74,7 @@ You don't need to rewrite a working WPF or Windows Forms app to adopt every Wind
 
 - [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
 - [Migration decision guide](../../windows-app-sdk/migrate-to-windows-app-sdk/migration-decision-guide.md)
-- [Migration strategy overview](../../windows-app-sdk/migrate-to-windows-app-sdk/overall-migration-strategy.md)
+- [Migrate and modernize Windows apps](../../windows-app-sdk/migrate-to-windows-app-sdk/index.yml)
 
 ### Migrate from WPF
 

@@ -4,7 +4,7 @@ description: Plan an incremental migration for a WPF, Windows Forms, or Win32 ap
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 09/03/2026
+ms.date: 10/03/2026
 # customer intent: As a developer with an existing Windows desktop app, I want an AI coding assistant to produce a realistic modernization plan for my codebase.
 ---
 
@@ -166,7 +166,7 @@ If the assistant identifies a question that Microsoft Learn doesn't answer, use 
 ## Related content
 
 - [Choose your migration path](migration-decision-guide.md)
-- [Migration and modernization overview](overall-migration-strategy.md)
+- [Migrate and modernize Windows apps](index.yml)
 - [Modernize or port a Windows app with GitHub Copilot](ai-modernize.md)
 - [Migrate WPF app patterns to WinUI 3](wpf-patterns-winui3.md)
 - [Windows Forms patterns and their WinUI 3 equivalents](../../get-started/line-of-business/migrate-winforms-patterns.md)

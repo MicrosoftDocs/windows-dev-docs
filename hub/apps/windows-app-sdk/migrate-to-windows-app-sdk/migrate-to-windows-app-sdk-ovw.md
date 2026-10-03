@@ -1,7 +1,7 @@
 ---
 title: Migrate from UWP to the Windows App SDK
 description: How to migrate a UWP app to the Windows App SDK and WinUI 3, including strategy, feature mapping, supported features, and step-by-step feature area guides.
-ms.date: 09/10/2026
+ms.date: 10/03/2026
 ms.topic: upgrade-and-migration-article
 author: GrantMeStrength
 ms.author: jken
@@ -50,7 +50,7 @@ When transitioning to the Windows App SDK, UWP applications might lose the inher
 
 | Topic | Description |
 | - | - |
-| [Overall migration strategy](overall-migration-strategy.md) | Considerations and strategies for approaching the migration process, and how to set up your development environment for migrating. |
+| [UWP migration strategy](overall-migration-strategy.md) | Considerations and strategies for approaching the migration process, and how to set up your development environment for migrating. |
 | [Mapping UWP features to the Windows App SDK](feature-mapping-table.md) | This topic compares major feature areas in the different forms in which they appear in UWP and in the Windows App SDK. |
 | [What's supported](what-is-supported.md) | Learn what features are currently available in WinUI Desktop to evaluate whether you should attempt migrating your UWP app today. |
 | [Mapping UWP APIs and libraries to Windows App SDK](api-mapping-table.md) | This topic provides a mapping of UWP APIs and libraries to their Windows App SDK equivalents. |
@@ -68,4 +68,4 @@ When transitioning to the Windows App SDK, UWP applications might lose the inher
 - [Windows App SDK and supported Windows releases](../support.md)
 
 > [!div class="nextstepaction"]
-> [Overall migration strategy](overall-migration-strategy.md)
+> [UWP migration strategy](overall-migration-strategy.md)

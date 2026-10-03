@@ -2,7 +2,7 @@
 title: A Windows App SDK migration of the UWP PhotoLab sample app (C#)
 description: A case study of taking the C# [UWP PhotoLab sample app](https://github.com/microsoft/Windows-appsample-photo-lab), and migrating it to the Windows App SDK.
 ms.topic: article
-ms.date: 05/28/2026
+ms.date: 10/03/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, C#, PhotoLab, UWP
 ms.localizationpriority: medium
 ---
@@ -14,7 +14,7 @@ This topic is a case study of taking the C# [UWP PhotoLab sample app](https://gi
 Begin by [cloning the UWP sample app's repo](https://github.com/microsoft/windows-appsample-photo-lab/tree/master/), and opening the solution in [Visual Studio](https://visualstudio.microsoft.com/downloads/).
 
 > [!IMPORTANT]
-> For considerations and strategies for approaching the migration process, and how to set up your development environment for migrating, see [Overall migration strategy](overall-migration-strategy.md). It's particularly important to see [What's supported when porting from UWP to WinUI 3](what-is-supported.md) so that you can ensure that all the features you need for your app are supported before you attempt migration.
+> For considerations and strategies for approaching the migration process, and how to set up your development environment for migrating, see [UWP migration strategy](overall-migration-strategy.md). It's particularly important to see [What's supported when porting from UWP to WinUI 3](what-is-supported.md) so that you can ensure that all the features you need for your app are supported before you attempt migration.
 
 ## Install tools for the Windows App SDK
 
