@@ -4,7 +4,7 @@ ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: Keyboard accessibility
 label: Keyboard accessibility
 template: detail.hbs
-ms.date: 09/27/2026
+ms.date: 10/04/2026
 ms.topic: article
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -293,7 +293,7 @@ Only one state in this group explicitly modifies the focus visual. The other sta
 
 Some devices rely on a Soft Input Panel (SIP) instead of a hardware keyboard. Screen readers can detect that the user is scanning keys and announce a user's SIP key exploration, and many keyboard accessibility concepts still apply through gesture equivalents.
 
-For example, even without a physical Tab key, Narrator supports gestures that map to Tab-like traversal. That means coherent tab order is still critical. Narrator also provides gesture equivalents for directional navigation in complex controls (see [Narrator keyboard commands and touch gestures](https://support.microsoft.com/en-us/windows/appendix-b-narrator-keyboard-commands-and-touch-gestures-8bdab3f4-b3e9-4554-7f28-8b15bd37410a)).
+For example, even without a physical Tab key, Narrator supports gestures that map to Tab-like traversal. That means coherent tab order is still critical. Narrator also provides gesture equivalents for directional navigation in complex controls (see [Narrator keyboard commands and touch gestures](https://support.microsoft.com/en-us/accessibility/windows/narrator/appendix-b-narrator-keyboard-commands-and-touch-gestures)).
 
 ## Examples
 

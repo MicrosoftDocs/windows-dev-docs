@@ -3,7 +3,7 @@ description: "Learn more about: Screen readers and hardware system buttons"
 title: Screen readers and hardware button events
 label: Screen readers and hardware button events
 template: detail.hbs
-ms.date: 03/17/2026
+ms.date: 10/04/2026
 ms.topic: how-to
 keywords: windows 11, winui, winappsdk, windows app sdk, accessibility, narrator, screen reader
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Screen readers and hardware system buttons
 
-Screen-readers, such as [Narrator](https://support.microsoft.com/en-us/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1), must be able to recognize and handle hardware system button events and communicate their state to users. In some cases, the screen reader might need to handle these hardware button events exclusively and not let them bubble up to other handlers.
+Screen-readers, such as [Narrator](https://support.microsoft.com/en-us/accessibility/windows/narrator/complete-guide-to-narrator), must be able to recognize and handle hardware system button events and communicate their state to users. In some cases, the screen reader might need to handle these hardware button events exclusively and not let them bubble up to other handlers.
 
 To listen for and handle the **Fn** hardware system button events in the same way as other hardware buttons, use [SystemButtonEventController](/uwp/api/windows.ui.input.systembuttoneventcontroller) in the [Windows.UI.Input](/uwp/api/windows.ui.input) namespace of the Windows SDK.
 
