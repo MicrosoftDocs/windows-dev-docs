@@ -1,7 +1,7 @@
 ---
 title: '`info` Command'
 description: Displays metadata about the system, including version numbers, system architecture, log location, links to legal agreements, and Group Policy state.
-ms.date: 07/19/2026
+ms.date: 10/04/2026
 ms.topic: article
 no-loc: [winget, info, --info]
 ---
@@ -27,7 +27,7 @@ Result fields include:
 - MSIX package version number (WinGet is delivered as a part of the "App Installer" package)
 - WinGet Directories (Paths to directories used by WinGet)
 - Links to privacy statement, license agreement, third party notices, homepage, and store terms
-- Group policy and state - this will only appear if a policy has been manually configured. (Learn more about how to [configure Group Policies for Windows Package Manager](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/manage-windows-package-manager-with-group-policy/ba-p/2346322)).
+- Group policy and state - this will only appear if a policy has been manually configured. (Learn more about how to [configure Group Policies for Windows Package Manager](https://techcommunity.microsoft.com/blog/windows-itpro-blog/manage-windows-package-manager-with-group-policy/2346322)).
 - Admin Settings
 
 ## Related topics
