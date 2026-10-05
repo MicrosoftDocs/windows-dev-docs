@@ -2,7 +2,7 @@
 title: Use the Windows LOB XAML skill with GitHub Copilot
 description: Use an agent skill to create and review WinUI 3 line-of-business interfaces with guidance for data, layout, accessibility, and theming.
 ms.topic: how-to
-ms.date: 10/02/2026
+ms.date: 10/05/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -238,6 +238,48 @@ missing information instead of guessing.
 - Makes dashboard summaries and related records actionable.
 - Builds successfully and verifies the affected workflow at runtime.
 ```
+
+## See the skill in action
+
+The following examples show two existing sample apps before and after applying the skill and reviewing the generated changes. Your results will vary based on your app's requirements, data, controls, and existing design system.
+
+### Billing app
+
+The original billing app presents invoice totals and records, but its compact layout provides limited hierarchy or workflow guidance.
+
+**Before**
+
+:::image type="content" source="images/lob-skill-billing-before.png" alt-text="A basic billing app with summary tiles and a compact invoice table." lightbox="images/lob-skill-billing-before.png":::
+
+After applying the skill, the app uses a consistent `NavigationView` shell, clearer metric cards, and a focused list of invoices that need attention.
+
+**After**
+
+:::image type="content" source="images/lob-skill-billing-dashboard-after.png" alt-text="A redesigned billing dashboard with navigation, metric cards, and a needs-attention invoice list." lightbox="images/lob-skill-billing-dashboard-after.png":::
+
+The invoice page adds search, status filtering, a result count, and text-and-icon status labels that don't rely on color alone.
+
+:::image type="content" source="images/lob-skill-billing-invoices-after.png" alt-text="A redesigned invoices page with navigation, search, status filtering, and labeled invoice statuses." lightbox="images/lob-skill-billing-invoices-after.png":::
+
+### Sales app
+
+The original sales app combines metrics, a revenue chart, and representative performance in one dense dashboard without clear grouping.
+
+**Before**
+
+:::image type="content" source="images/lob-skill-sales-before.png" alt-text="A basic sales dashboard with summary tiles, a revenue chart, and a sales representative table." lightbox="images/lob-skill-sales-before.png":::
+
+After applying the skill, the dashboard establishes a stronger information hierarchy with KPI cards, trend indicators, revenue and pipeline visualizations, and a short list of top performers.
+
+**After**
+
+:::image type="content" source="images/lob-skill-sales-dashboard-after.png" alt-text="A redesigned sales dashboard with navigation, KPI cards, and revenue and pipeline charts." lightbox="images/lob-skill-sales-dashboard-after.png":::
+
+:::image type="content" source="images/lob-skill-sales-dashboard-details-after.png" alt-text="The redesigned sales dashboard showing revenue, pipeline stages, and top-performer progress." lightbox="images/lob-skill-sales-dashboard-details-after.png":::
+
+The representatives page separates the detailed workflow from the dashboard and adds search, filtering, quota progress, and explicit status labels.
+
+:::image type="content" source="images/lob-skill-sales-reps-after.png" alt-text="A redesigned sales representatives page with search, filtering, quota progress, revenue, and text status labels." lightbox="images/lob-skill-sales-reps-after.png":::
 
 ## Create a dashboard
 
