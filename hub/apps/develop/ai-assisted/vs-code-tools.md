@@ -2,7 +2,7 @@
 title: "VS Code tools for Windows development"
 description: Use the WinApp VS Code extension and Microsoft Learn MCP Server to build, package, and sign Windows apps without leaving VS Code.
 ms.topic: overview
-ms.date: 07/05/2026
+ms.date: 10/04/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -153,4 +153,4 @@ var file = await picker.PickSingleFileAsync();
 - [Quickstart: Build and publish a Windows app with AI](quickstart.md)
 - [WinUI agent plugin](winui-agent-plugin.md)
 - [Model Context Protocol specification](https://modelcontextprotocol.io)
-- [GitHub Copilot MCP documentation](https://docs.github.com/en/copilot/how-tos/provide-context/use-mcp-in-your-ide/extend-copilot-chat-with-mcp)
+- [GitHub Copilot MCP documentation](https://docs.github.com/en/copilot/how-tos/copilot-in-your-ide/customize-copilot/extend-copilot-with-tools-and-context/extend-copilot-chat-with-mcp)
