@@ -4,7 +4,7 @@ description: Install your tools, create and run a C# WinUI app with winapp CLI o
 author: GrantMeStrength
 ms.author: jken
 ms.topic: quickstart
-ms.date: 09/19/2026
+ms.date: 10/02/2026
 keywords: windows, desktop development, winui
 ms.localizationpriority: medium
 ms.collection: windows11
@@ -46,7 +46,7 @@ If your tools are already installed, go to [Creating your first app](#creating-y
 
    ```powershell
    winget install --id Microsoft.DotNet.SDK.10 --exact --source winget
-   winget install --id Microsoft.WinAppCLI --exact --source winget
+   winget install --id Microsoft.WinAppCli --exact --source winget
    ```
 
    Skip an installation if the required tool is already installed.

@@ -2,7 +2,7 @@
 title: "AI-assisted testing for Windows apps"
 description: Use the winui-ui-testing skill and winapp ui commands to automate UI inspection and testing of your WinUI 3 app.
 ms.topic: overview
-ms.date: 07/05/2026
+ms.date: 10/02/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -80,7 +80,7 @@ jobs:
         with:
           dotnet-version: '9.0.x'
       - name: Install winapp CLI
-        run: winget install --id Microsoft.WinAppCLI --silent --accept-package-agreements --accept-source-agreements --disable-interactivity
+        run: winget install --id Microsoft.WinAppCli --silent --accept-package-agreements --accept-source-agreements --disable-interactivity
       - name: Build
         run: dotnet build
       - name: Run UI tests
