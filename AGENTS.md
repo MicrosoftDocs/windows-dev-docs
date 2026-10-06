@@ -45,6 +45,22 @@ After you change conceptual Markdown, regenerate the catalog and commit the resu
 python tools/content_index/content_index.py build
 ```
 
+### Repair a stale content index in an existing PR
+
+If the **Conceptual content index** check fails because `.github/content-index.jsonl` is stale, update the existing PR branch. The JSONL file is generated, but committing the generator's output is required and permitted. Do not edit the JSONL manually.
+
+From the repository root, run:
+
+```console
+python tools/content_index/content_index.py build
+python tools/content_index/content_index.py check
+python -m unittest tools.content_index.test_content_index
+```
+
+Commit the regenerated `.github/content-index.jsonl` file to the PR branch. Remove `tools/content_index/__pycache__/` if Python creates it, and don't stage unrelated working-tree changes.
+
+When the check finds a stale index, the workflow uploads the corrected file as the `generated-content-index` artifact on the failed workflow run. You can download that artifact and commit its `content-index.jsonl` file as `.github/content-index.jsonl`, or use the local commands above. The workflow doesn't push the correction automatically because commits made with its GitHub token wouldn't trigger the other required PR checks.
+
 Use `python tools/content_index/content_index.py audit` to produce likely duplicate pairs for human review. Similarity is not proof of duplication; account for audience, product, language, version, and lifecycle differences before consolidating content.
 
 ## Branch naming

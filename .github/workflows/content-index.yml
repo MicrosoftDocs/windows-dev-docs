@@ -31,8 +31,20 @@ jobs:
           python-version: "3.11"
       - name: Run content index tests
         run: python -m unittest tools.content_index.test_content_index
-      - name: Check generated index
-        run: python tools/content_index/content_index.py check
+      - name: Generate content index
+        run: python tools/content_index/content_index.py build
+      - name: Compare generated index
+        id: generated-index
+        continue-on-error: true
+        run: git diff --exit-code -- .github/content-index.jsonl
+      - name: Copy stale index artifact
+        if: steps.generated-index.outcome == 'failure'
+        run: cp .github/content-index.jsonl "${RUNNER_TEMP}/content-index.jsonl"
+      - uses: actions/upload-artifact@v4
+        if: steps.generated-index.outcome == 'failure'
+        with:
+          name: generated-content-index
+          path: ${{ runner.temp }}/content-index.jsonl
       - name: Create duplicate candidate report
         run: |
           python tools/content_index/content_index.py audit \
@@ -42,3 +54,8 @@ jobs:
         with:
           name: content-duplicate-audit
           path: content-duplicate-audit.md
+      - name: Fail for stale content index
+        if: steps.generated-index.outcome == 'failure'
+        run: |
+          echo "::error::.github/content-index.jsonl is stale. Download the generated-content-index artifact or run the generator locally."
+          exit 1
