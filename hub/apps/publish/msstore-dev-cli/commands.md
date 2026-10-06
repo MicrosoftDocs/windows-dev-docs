@@ -1,7 +1,7 @@
 ---
 description: How to run the Microsoft Store Developer CLI (preview) commands for MSIX apps.
 title: Microsoft Store Developer CLI (preview) Commands (MSIX)
-ms.date: 08/30/2026
+ms.date: 10/05/2026
 ms.topic: article
 zone_pivot_groups: msstoredevcli-installer-packaging
 ---
@@ -334,6 +334,9 @@ msstore submission update <productId> <package>
 > ```
 >
 > For more context, see [Publish app updates to Microsoft Store with GitHub Actions](./github-actions.md).
+
+> [!NOTE]
+> `submission update` replaces the entire submission. The JSON must include `Pricing.PriceId` set to a valid value such as a `Tier<number>`, `Free`, or `NotAvailable`; otherwise the CLI rejects the update. For details, see [Paid apps and pricing](#paid-apps-and-pricing).
 
 #### Submission - Poll - Usage
 
@@ -953,7 +956,8 @@ msstore init https://contoso.com --output .
 | --publish                  | If supported by the app type, automatically publishes the project. Implies '--package true'                                                                                                                                    |
 | -f, --flightId | Specifies the Flight Id where the package will be published. |
 | -prp, --packageRolloutPercentage | Specifies the rollout percentage of the package. The value must be between 0 and 100. |
-| -a, --arch                 | The architecture(s) to build for. If not provided, the default architecture for the current OS, and project type, will be used. Allowed values: "x86", "x64", "arm64". Only used it used in conjunction with '--package true'. |
+| -pid, --priceId | Specifies the base price tier to set when used with `--publish`. See [Paid apps and pricing](#paid-apps-and-pricing). |
+| -a, --arch                  | The architecture(s) to build for. If not provided, the default architecture for the current OS, and project type, will be used. Allowed values: "x86", "x64", "arm64". Only used it used in conjunction with '--package true'. |
 | -o, --output               | The output directory where the packaged app will be stored. If not provided, the default directory for each different type of app will be used.                                                                                |
 | -ver, --version            | The version used when building the app. If not provided, the version from the project file will be used.                                                                                                                       |
 
@@ -1082,6 +1086,47 @@ msstore publish "C:\path\to\pwa_app"
 | -nc, --noCommit | Disables committing the submission, keeping it in draft state. |
 | -f, --flightId | Specifies the Flight Id where the package will be published. |
 | -prp, --packageRolloutPercentage | Specifies the rollout percentage of the package. The value must be between 0 and 100. |
+| -pid, --priceId | Specifies the base price tier to set on the submission, for example `Tier1012`, `Free`, or `NotAvailable`. Only needed when the Store returns a base price that the submission API doesn't accept back. See [Paid apps and pricing](#paid-apps-and-pricing). |
+
+### Paid apps and pricing
+
+When you publish an update, the CLI sends the app's existing `Pricing.PriceId` back unchanged, so you don't need `--priceId` for most paid-app updates.
+
+If the Store returns `Base`, an empty price ID, or no pricing object, the CLI stops instead of submitting pricing that could reset the app to free. This typically happens when prices are managed per market in Partner Center. In that case, publish from Partner Center, or set a base tier explicitly and review the draft before committing it:
+
+```powershell
+# Upload the package and set the base price, but keep the submission in draft.
+msstore publish 'C:\path\to\app' --priceId Tier1012 --noCommit
+
+# Inspect Pricing.PriceId and Pricing.MarketSpecificPricings.
+msstore submission get <productId>
+
+# Commit the draft after you verify the price.
+msstore submission publish <productId>
+```
+
+> [!WARNING]
+> `--priceId` sets a single base price and doesn't guarantee preservation of per-market prices. Verify all intended market prices before committing. `--noCommit` uploads the package and updates the draft; it isn't a dry run.
+
+| Price ID | Meaning |
+| --- | --- |
+| `Tier<number>` | A base-price tier, for example `Tier1012`. Not a literal currency amount. |
+| `Free` | Makes the app free. |
+| `NotAvailable` | Makes the app unavailable. |
+| `Base` | Used only in market-specific pricing to refer to the base price. Not valid for `--priceId`. |
+
+The following table maps expanded price tiers to US retail prices. The increment applies within each row only.
+
+| Tier range | Price range (USD) | Increment per tier |
+| --- | --- | --- |
+| `Tier1012` - `Tier1102` | $0.99 - $9.99 | $0.10 |
+| `Tier1103` - `Tier1282` | $10.49 - $99.99 | $0.50 |
+| `Tier1283` - `Tier1382` | $100.99 - $199.99 | $1.00 |
+| `Tier1383` - `Tier1402` | $209.99 - $399.99 | $10.00 |
+| `Tier1403` - `Tier1414` | $449.99 - $999.99 | $50.00 |
+| `Tier1415` - `Tier1424` | $1,099.99 - $1,999.99 | $100.00 |
+
+For example, `Tier1052` is $4.99. Confirm current and market-specific prices in Partner Center under **Pricing and availability** > **view table**. For the full list of tiers, see [Price tiers](/windows/uwp/monetize/manage-app-submissions#price-tiers).
 
 ## Flights Command
 
