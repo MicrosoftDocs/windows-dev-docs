@@ -1,6 +1,6 @@
 items:
 - name: Publish overview
-  href: index.md
+  href: index.yml
 - name: Get started with Microsoft Store
   href: get-started.md  
 - name: Open a developer account

@@ -6,7 +6,7 @@ metadata:
   author: GrantMeStrength
   ms.author: jken
   ms.topic: overview
-  ms.date: 10/02/2026
+  ms.date: 10/07/2026
   keywords: windows app design, fluent design, winui 3, accessibility, layout, navigation, iconography
 brand: windows
 tocType: single
@@ -121,4 +121,4 @@ supportReference:
         src: ../images/fluent-blue/editor.svg
         alt: A design editor window.
       title: Publish through Microsoft Store
-      url: ../publish/index.md
+      url: ../publish/index.yml

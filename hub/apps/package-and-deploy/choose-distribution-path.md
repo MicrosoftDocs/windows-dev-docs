@@ -4,7 +4,7 @@ description: Compare the available Windows app distribution paths — Microsoft 
 author: GrantMeStrength
 ms.author: jken
 ms.topic: concept-article
-ms.date: 09/14/2026
+ms.date: 10/07/2026
 ms.localizationpriority: medium
 ---
 
@@ -220,6 +220,6 @@ Regardless of your packaging format, you can submit a manifest to the [Windows P
 - [Packaging overview](packaging/index.md)
 - [SmartScreen reputation for Windows app developers](smartscreen-reputation.md)
 - [Current status of Windows app distribution features](distribution-feature-status.md)
-- [Publish to the Microsoft Store](../publish/index.md)
+- [Publish to the Microsoft Store](../publish/index.yml)
 - [Progressive Web Apps overview](/microsoft-edge/progressive-web-apps-chromium/)
 - [Azure Artifact Signing (formerly Trusted Signing)](/azure/trusted-signing/)

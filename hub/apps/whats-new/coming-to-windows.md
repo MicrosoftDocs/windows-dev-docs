@@ -4,7 +4,7 @@ description: A practical guide for developers new to Windows with paths for macO
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 10/02/2026
+ms.date: 10/07/2026
 ms.localizationpriority: medium
 ---
 
@@ -58,7 +58,7 @@ This installs Visual Studio 2026 with the required workloads and enables Develop
 
 - File paths use backslash (`\`) by default, but PowerShell and most tools also accept forward slashes (`/`).
 - File paths are **case-insensitive by default** on Windows (though per-directory case sensitivity can be enabled).
-- Windows supports [MSIX packages](/windows/msix/) and traditional installers such as MSI and EXE. The [Microsoft Store](../publish/index.md) accepts supported packaged and unpackaged app types.
+- Windows supports [MSIX packages](/windows/msix/) and traditional installers such as MSI and EXE. The [Microsoft Store](../publish/index.yml) accepts supported packaged and unpackaged app types.
 - Store app credentials in [Credential Locker](../develop/security/credential-locker.md). For new authentication experiences, evaluate [Windows Hello and passkeys](../develop/security/intro.md). Use Azure Key Vault for server-side or centrally managed secrets, not as a desktop credential store.
 - In Windows Terminal or PowerShell, use `explorer .` to open the current folder in File Explorer — the equivalent of `open .` in macOS Terminal.
 
@@ -177,7 +177,7 @@ You're used to a simulator, a mobile-first design mindset, and deploying through
 | Swift / Kotlin | C# (with [Windows App SDK](../windows-app-sdk/index.md)) |
 | SwiftUI / Jetpack Compose | [WinUI 3](../winui/winui3/index.md) (XAML + Fluent Design) |
 | Simulator / Emulator | Deploy and debug directly on Windows |
-| App Store / Google Play | [Microsoft Store](../publish/index.md) |
+| App Store / Google Play | [Microsoft Store](../publish/index.yml) |
 | `.ipa` / `.apk` | [MSIX](/windows/msix/) package |
 | `UserDefaults` / `SharedPreferences` | [ApplicationData](/uwp/api/windows.storage.applicationdata) (requires package identity) or local settings |
 | Push notifications (APNs / FCM) | [Windows Push Notification Services (WNS)](../develop/notifications/push-notifications/index.md) |
@@ -283,7 +283,7 @@ Choose packaging separately from your distribution channel:
 - **MSIX packaged apps** have package identity and support clean deployment through the Store or App Installer.
 - **Packaged apps with external location** add package identity while retaining an existing installer and externally located binaries.
 - **Unpackaged apps** can use MSI, EXE, ClickOnce, scripts, or xcopy deployment, but don't have package identity by default.
-- **Microsoft Store**: Submit qualifying MSIX, MSI, or EXE apps for discovery and distribution. Update responsibilities differ by package type. See [Publish Windows apps and games](../publish/index.md).
+- **Microsoft Store**: Submit qualifying MSIX, MSI, or EXE apps for discovery and distribution. Update responsibilities differ by package type. See [Publish Windows apps and games](../publish/index.yml).
 - **WinGet**: Publish to the [winget-pkgs community repository](https://github.com/microsoft/winget-pkgs) so users can install your app with `winget install`.
 
 See [Packaging overview](../package-and-deploy/packaging/index.md) for a comparison.

@@ -6,7 +6,7 @@ metadata:
   author: GrantMeStrength
   ms.author: jken
   ms.topic: overview
-  ms.date: 10/02/2026
+  ms.date: 10/07/2026
   keywords: windows app packaging, windows app deployment, msix, package identity, code signing, app distribution, windows app sdk
 brand: windows
 tocType: single
@@ -106,7 +106,7 @@ supportReference:
         src: ../images/fluent-blue/apps.svg
         alt: A collection of app windows.
       title: Publish through Microsoft Store
-      url: ../publish/index.md
+      url: ../publish/index.yml
     - icon:
         src: ../images/fluent-blue/package.svg
         alt: A package with an upward arrow.

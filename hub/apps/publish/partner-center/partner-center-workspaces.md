@@ -1,7 +1,7 @@
 ---
 description: How to use the partner center workspaces feature
 title: Partner Center workspaces
-ms.date: 10/30/2022
+ms.date: 10/07/2026
 ms.topic: how-to
 keywords: windows 10, windows 11, windows app, partner center, partner center workspaces
 ms.localizationpriority: medium
@@ -40,7 +40,7 @@ Windows & Xbox Overview page | `https://partner.microsoft.com/en-us/dashboard/wi
 
 ### Where do I find documentation for the new user experience?
 
-The Microsoft Documentation at [Publish Windows apps and games to Microsoft Store](../index.md) is updated to reflect the new experience. You can read about the changes in navigation for critical tasks such as creating and accessing products in the next section.
+The Microsoft Documentation at [Publish Windows apps and games to Microsoft Store](../index.yml) is updated to reflect the new experience. You can read about the changes in navigation for critical tasks such as creating and accessing products in the next section.
 
 ## Create a new product in the new Apps and games workspace
 
@@ -49,7 +49,7 @@ The Microsoft Documentation at [Publish Windows apps and games to Microsoft Stor
     ![Partner Center home page](../images/partner-center-home.png)
 1. On the Apps and games workspace, select + New product, and then select the type of product from the list.
     ![Partner Center Apps and games page](../images/partner-center-apps-games-search.png)
-1. Further instructions on creating and publishing specific product types are available in the Microsoft Documentation site here: [Publish Windows apps and games to Microsoft Store](../index.md)
+1. Further instructions on creating and publishing specific product types are available in the Microsoft Documentation site here: [Publish Windows apps and games to Microsoft Store](../index.yml)
 
 ## Access an existing product in the new Apps and games workspace
 
@@ -58,7 +58,7 @@ The Microsoft Documentation at [Publish Windows apps and games to Microsoft Stor
     ![Partner Center home page](../images/partner-center-home.png)
 1. On the Apps and games workspace, use the search and filter features to find the product you want.
     ![Partner Center Apps and games search](../images/partner-center-apps-games-search.png)
-1. Further instructions on publishing updates to specific product types are available in the Microsoft Documentation site here: [Publish Windows apps and games to Microsoft Store](../index.md)
+1. Further instructions on publishing updates to specific product types are available in the Microsoft Documentation site here: [Publish Windows apps and games to Microsoft Store](../index.yml)
 
 ## Navigating back to the Apps and games workspace
 

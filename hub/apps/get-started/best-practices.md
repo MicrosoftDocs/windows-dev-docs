@@ -4,7 +4,7 @@ description: Build reliable Windows apps with current guidance for user experien
 author: GrantMeStrength
 ms.author: jken
 ms.topic: best-practice
-ms.date: 10/02/2026
+ms.date: 10/07/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 ---
@@ -282,7 +282,7 @@ Reliable installation, update, and uninstallation experiences are important part
 
 ### Application discovery
 
-  - Listing your app on the [Microsoft Store](../publish/index.md) makes your app more discoverable for users.
+  - Listing your app on the [Microsoft Store](../publish/index.yml) makes your app more discoverable for users.
   - If you host your app across multiple channels (for example, on a website and on the Microsoft Store), use a consistent application identity and update mechanism across all channels.
   - [Distribute your app through the Microsoft Store](../distribute-through-store/how-to-distribute-your-win32-app-through-microsoft-store.md) to make it more discoverable for users. Note that Windows users access Store apps through the Windows Package Manager [WinGet](../../package-manager/winget/index.md). If you don't publish to the Microsoft Store, you can still make your app easily discoverable in WinGet via the [WinGet repository](../../package-manager/package/index.md).
 

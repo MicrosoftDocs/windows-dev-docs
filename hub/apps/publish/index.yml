@@ -1,0 +1,128 @@
+### YamlMime:ProductSubHub
+title: Publish Windows apps and games to Microsoft Store
+metadata:
+  title: Publish apps and games to Microsoft Store
+  description: Open a Microsoft Store developer account, submit and certify Windows apps and games, and manage listings, updates, and performance.
+  author: GrantMeStrength
+  ms.author: jken
+  ms.topic: overview
+  ms.date: 10/07/2026
+  keywords: microsoft store, publish windows app, partner center, app submission, msix, msi, exe, pwa, store certification, store policies
+brand: windows
+tocType: single
+productOverview:
+  title: Publish Windows apps and games to Microsoft Store
+  summary: Reach Windows 10 and Windows 11 customers through Microsoft Store. Set up your developer account, submit your app or game, and manage it after release.
+getStarted:
+  title: Get ready to publish
+  summary: Decide whether Microsoft Store fits your app, then create the account you need to submit it.
+  items:
+    - title: Understand the benefits of Microsoft Store
+      description: Learn how Microsoft Store helps customers discover, install, and update your apps and games.
+      url: publish-your-app/why-distribute-through-store.md
+    - title: Get started with Microsoft Store
+      description: Review the publishing process, the supported package types, and what to prepare before your first submission.
+      url: get-started.md
+    - title: Open a developer account
+      description: Create an individual or company developer account in Partner Center.
+      url: partner-center/open-a-developer-account.md
+coreWorkflows:
+  title: Submit and manage your app
+  summary: Work through submission, certification, release, and ongoing management for your app or game.
+  items:
+    - icon:
+        src: ../images/fluent-blue/package.svg
+        alt: A package with an upward arrow.
+      title: Submit your app
+      description: Reserve a name and create a submission that matches your package type.
+      links:
+        - text: Submit an MSIX app
+          url: publish-your-app/msix/reserve-your-apps-name.md
+        - text: Submit an MSI or EXE app
+          url: publish-your-app/msi/reserve-your-apps-name.md
+        - text: Submit a PWA
+          url: publish-your-app/pwa/reserve-your-apps-name.md
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Get your app certified
+      description: Understand how Microsoft Store certifies submissions and how to resolve common errors.
+      links:
+        - text: MSIX certification process
+          url: publish-your-app/msix/app-certification-process.md
+        - text: MSI or EXE certification process
+          url: publish-your-app/msi/app-certification-process.md
+        - text: Resolve MSIX submission errors
+          url: publish-your-app/msix/resolve-submission-errors.md
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Manage and update your app
+      description: Publish updates, manage packages, and control how releases reach your customers.
+      links:
+        - text: Publish an MSIX app update
+          url: publish-your-app/msix/publish-update-to-your-app-on-store.md
+        - text: Beta testing and targeted distribution
+          url: beta-testing-and-targeted-distribution.md
+        - text: Gradual package rollout
+          url: gradual-package-rollout.md
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A dashboard window showing app data.
+      title: Monitor your app performance
+      description: Use Partner Center reports to track acquisitions, usage, health, ratings, and reviews.
+      links:
+        - text: Analytics overview
+          url: analyze-app-performance/msix.md
+        - text: Health report
+          url: analyze-app-performance/health-report.md
+        - text: Insights report
+          url: actionable-analytics-insights.md
+    - icon:
+        src: ../images/fluent-blue/code.svg
+        alt: Code brackets.
+      title: Automate publishing
+      description: Script submissions and updates with the Microsoft Store Developer CLI, the submission API, and GitHub Actions.
+      links:
+        - text: Microsoft Store Developer CLI
+          url: msstore-dev-cli/overview.md
+        - text: Submission API for MSI or EXE apps
+          url: store-submission-api.md
+        - text: Publish updates with GitHub Actions
+          url: msstore-dev-cli/github-actions.md
+    - icon:
+        src: ../images/fluent-blue/accessibility.svg
+        alt: A person with outstretched arms.
+      title: Manage your account and follow policies
+      description: Manage account users and review the policies and quality expectations that apply to Store products.
+      links:
+        - text: Manage account users
+          url: partner-center/manage-account-users.md
+        - text: Microsoft Store Policies
+          url: store-policies.md
+        - text: App quality
+          url: store-app-quality.md
+supportReference:
+  title: Continue your Windows app journey
+  summary: Connect Store publishing to your app's packaging decisions, distribution options, and the latest Store updates.
+  items:
+    - icon:
+        src: ../images/fluent-blue/package.svg
+        alt: A package with an upward arrow.
+      title: Package and deploy
+      url: ../package-and-deploy/index.yml
+    - icon:
+        src: ../images/fluent-blue/apps.svg
+        alt: A collection of app windows.
+      title: Choose a distribution path
+      url: ../package-and-deploy/choose-distribution-path.md
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Publish PC games to Microsoft Store
+      url: whats-new-game-publishing.md
+    - icon:
+        src: ../images/fluent-blue/editor.svg
+        alt: A support conversation window.
+      title: Contact Microsoft Store support
+      url: contact-us.md
