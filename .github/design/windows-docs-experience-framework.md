@@ -28,7 +28,7 @@ The problem is that those assets do not consistently form one understandable exp
 | Observed condition | Evidence in this repository | Consequence to investigate | Design response |
 |---|---|---|---|
 | Background precedes the main action. | [The first ToC](../../hub/apps/toc.yml) expands Core concepts, including SDK release history, before Start here. | New readers may interpret background as prerequisite work. | Put the first-app path first; keep the SDK collection intact in a later platform group. |
-| Several pages offer similar beginnings. | The [homepage](../../hub/apps/index.yml), former platform introduction, [path chooser](../../hub/apps/get-started/index.yml), and [WinUI getting-started overview](../../hub/apps/get-started/winui-get-started-overview.md) offered overlapping orientation. | Readers may compare introductions instead of starting. | Retire the overlapping introduction and converge on one canonical first-run route. |
+| Several pages offer similar beginnings. | The [homepage](../../hub/apps/index.yml), former platform introduction, [path chooser](../../hub/apps/get-started/index.yml), and former WinUI getting-started overview offered overlapping orientation. | Readers may compare introductions instead of starting. | Retire the overlapping introduction and converge on one canonical first-run route. |
 | Setup descriptions disagree. | [Quickstart](../../hub/apps/get-started/start-here.md), homepage, and WinUI getting-started overview use different workload or template descriptions. | Readers and agents may assemble an incompatible setup. | Maintain one setup contract; distinguish supported platform versions from the tutorial's selected toolchain. |
 | A tooling promise conflicts with another article. | The quickstart advertises visual designer support; [runtime design tools](../../hub/apps/develop/ui/xaml-runtime-design-tools.md) states that the WinUI 3 XAML Designer is unavailable. | Readers may mistake a product limitation for a broken installation. | Name limitations where they affect a decision; do not imply a runtime tool is an equivalent design-time replacement. |
 | The first-run handoff changes scale abruptly. | The quickstart ends at a running window; [Notes project setup](../../hub/apps/tutorials/winui-notes/project.md) introduces project anatomy, a custom title bar, and navigation infrastructure. | Readers may lose momentum before implementing behavior. | Continue the same project with one small UI change before a larger application tutorial. |
@@ -58,7 +58,7 @@ The initial Essentials inventory is:
 |---|---|---|
 | [Coming to Windows development](../../hub/apps/whats-new/coming-to-windows.md) | **Retire from this experience; confirmed direction** | Leave it out of the PoC. Workstation migration, WSL, and broad framework selection belong in their existing hubs. WinUI app migration has its own destination. No replacement article is needed. |
 | [Windows developers and their tools](../../hub/apps/whats-new/personae.md) | **Retirement candidate** | Named developer biographies, broad technology menus, and generic tips do not establish a concrete WinUI task. Do not turn them into another set of WinUI personas merely to retain the format. |
-| Former platform introduction, [development-path chooser](../../hub/apps/get-started/index.yml), and [WinUI getting-started overview](../../hub/apps/get-started/winui-get-started-overview.md) | **Consolidate** | Use the WinUI landing page for orientation and the tabbed quickstart for setup and first success. Retire the platform introduction through an approved redirect. Keep the workflow overview as a short pointer pending its separate HTTP redirect review. |
+| Former platform introduction, [development-path chooser](../../hub/apps/get-started/index.yml), and former WinUI getting-started overview | **Consolidate** | Use the WinUI landing page for orientation and the tabbed quickstart for setup and first success. Retire the platform introduction and the workflow overview through redirects. |
 | [Windows developer FAQ](../../hub/apps/get-started/windows-developer-faq.md) | **Keep only focused questions; consolidate the rest** | Questions about the SDKs, tooling, and limitations can help. Generic advocacy such as why client apps matter in digital transformation does not help someone build a WinUI app. Link answers to authoritative owners rather than duplicate full guides. |
 | [Windows developer glossary](../../hub/apps/get-started/windows-developer-glossary.md) | **Keep and scope** | WinUI terminology and app-model distinctions support understanding. Review unrelated product definitions and duplicate explanations; it need not become an encyclopedia of the wider Microsoft ecosystem. |
 | [Windows app development best practices](../../hub/apps/get-started/best-practices.md) | **Refocus or consolidate** | Retain actionable app-quality guidance with clear criteria. Move detailed design and implementation instructions to their canonical sections and remove generic assertions that lack actionable consequences. |
@@ -251,7 +251,7 @@ Give the design team a brief containing the asset's purpose, placement, rendered
 
 ## 7. Keep content independent from the rendering choice
 
-This repository already uses image-and-column layouts, linked images, and HTML buttons, including the [WinUI overview](../../hub/apps/winui/winui3/index.md) and [shared overview content](../../hub/includes/apps-essentials-overview.md). Those are existing patterns to evaluate, not a reason to prohibit useful visual composition.
+This repository already uses image-and-column layouts, linked images, and HTML buttons, including the [WinUI overview](../../hub/apps/winui/winui3/index.md) and the former shared overview includes. Those are existing patterns to evaluate, not a reason to prohibit useful visual composition.
 
 The [Markdown reference](https://learn.microsoft.com/contribute/content/markdown-reference) supports next-step actions and other extensions, but cautions against custom column layouts and unrestricted HTML. Working examples, schema acceptance, accessibility, and publishing behavior are different questions. Do not infer that arbitrary CSS or JavaScript is available from the presence of an HTML button.
 
@@ -388,9 +388,7 @@ Inspection of the current CLI blank template showed that `MainWindow.xaml` hosts
 
 ### Workflow overview retirement
 
-`get-started/winui-get-started-overview.md` no longer contains its own framework introduction, workflow comparison, prerequisites, or AI onboarding. It is a short pointer to the combined quickstart, keeping the existing published URL usable.
-
-The intended HTTP redirect is `/windows/apps/get-started/winui-get-started-overview` to `/windows/apps/get-started/start-here`. Applying that redirect requires the publishing team's special review of `.openpublishing.redirection.json`; this pass does not modify that file. Remove the pointer page when the reviewed redirect is applied, not before.
+The former `get-started/winui-get-started-overview.md` workflow overview is removed. Its setup and workflow guidance lives in the combined quickstart, and an HTTP redirect sends `/windows/apps/get-started/winui-get-started-overview` to `/windows/apps/get-started/start-here`. The redirect requires the publishing team's special review of `.openpublishing.redirection.json`.
 
 ### Draft PR previews
 

@@ -8696,6 +8696,11 @@
       "redirect_document_id": false
     },
     {
+      "source_path": "hub/apps/get-started/winui-get-started-overview.md",
+      "redirect_url": "/windows/apps/get-started/start-here",
+      "redirect_document_id": false
+    },
+    {
       "source_path": "hub/apps/get-started/client-frameworks-faq.yml",
       "redirect_url": "/windows/apps/get-started/windows-developer-faq",
       "redirect_document_id": false
