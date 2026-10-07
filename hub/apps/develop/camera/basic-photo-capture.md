@@ -2,9 +2,9 @@
 title: Basic photo, video, and audio capture with MediaCapture
 description: Learn how to capture photos and video using the MediaCapture class.  
 ms.topic: article
-ms.date: 08/28/2026
-ms.author: drewbat
-author: drewbatgit
+ms.date: 10/07/2026
+ms.author: jken
+author: GrantMeStrength
 ms.localizationpriority: medium
 #customer intent: As a developer, I want to access the camera in a Windows app using WinUI.
 ---

@@ -2,9 +2,9 @@
 title: Resume for installed apps
 description: Learn how to implement Windows Resume using Windows Push Notification Service (WNS) raw notifications.
 #customer intent: As a Windows developer, I want to learn how to update my app to integrate application continuity with Windows Push Notifications raw notifications.
-author: drewbatgit
-ms.author: drewbat
-ms.date: 09/26/2026
+author: GrantMeStrength
+ms.author: jken
+ms.date: 10/07/2026
 ms.topic: how-to
 ---
 
