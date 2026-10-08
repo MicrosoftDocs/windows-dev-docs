@@ -1,6 +1,6 @@
 items:
   - name: Overview
-    href: features-overview.yml
+    href: index.yml
   - name: Accessibility
     items:
       - name: Overview

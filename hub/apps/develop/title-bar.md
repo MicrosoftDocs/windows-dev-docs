@@ -2,7 +2,7 @@
 description: Customize the title bar of a desktop app that uses the Windows App SDK to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 11/21/2024
+ms.date: 10/08/2026
 ms.topic: how-to
 keywords: windows 11, title bar
 ms.localizationpriority: medium
@@ -41,9 +41,9 @@ This list describes the components of the standard title bar.
 
 ## Windowing
 
-Windowing functionality in the [Windows App SDK](./index.md) is through the [Microsoft.UI.Windowing.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class, which is based on the Win32 HWND model. There's a 1:1 mapping between an AppWindow and a top-level HWND in your app. AppWindow and its related classes provide APIs that let you manage many aspects of your app's top-level windows, including customization of the title bar. You can modify the default title bar that Windows provides so that it blends with the rest of your UI, or extend your app canvas into the title bar area and provide your own title bar content.
+Windowing functionality in the [Windows App SDK](../windows-app-sdk/index.md) is through the [Microsoft.UI.Windowing.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow) class, which is based on the Win32 HWND model. There's a 1:1 mapping between an AppWindow and a top-level HWND in your app. AppWindow and its related classes provide APIs that let you manage many aspects of your app's top-level windows, including customization of the title bar. You can modify the default title bar that Windows provides so that it blends with the rest of your UI, or extend your app canvas into the title bar area and provide your own title bar content.
 
-Windowing functionality in [WinUI](./index.md) is through the [Microsoft.UI.Xaml.Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class, which is also based on the Win32 HWND model. For XAML apps that use WinUI, XAML Window APIs provide a simpler way to customize the title bar, while still letting you access the AppWindow APIs when needed.
+Windowing functionality in [WinUI](../winui/winui3/index.md) is through the [Microsoft.UI.Xaml.Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window) class, which is also based on the Win32 HWND model. For XAML apps that use WinUI, XAML Window APIs provide a simpler way to customize the title bar, while still letting you access the AppWindow APIs when needed.
 
 ### How to work with AppWindow
 

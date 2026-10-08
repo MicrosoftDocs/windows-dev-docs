@@ -20,7 +20,7 @@ highlightedContent:
       url: /windows/apps/get-started/
     - title: Explore the Windows app platform
       itemType: overview
-      url: /windows/apps/develop/features-overview
+      url: /windows/apps/develop/
 
 productDirectory:
   title: Build and ship Windows apps
@@ -52,7 +52,7 @@ productDirectory:
     imageSrc: /windows/apps/images/hub-develop.svg
     summary: "Add windowing, notifications, file access, app lifecycle, input, graphics, and other Windows capabilities."
     links:
-      - url: /windows/apps/develop/features-overview
+      - url: /windows/apps/develop/
         text: Windows app development overview
       - url: /windows/apps/develop/platform/
         text: Windows development platform concepts

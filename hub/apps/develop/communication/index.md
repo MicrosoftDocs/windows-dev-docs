@@ -2,7 +2,7 @@
 title: Communication features for Windows apps
 description: Discover communication features and APIs for Windows apps, including networking, data sharing, and interprocess communication. Learn how to implement these capabilities.
 ms.topic: concept-article
-ms.date: 07/12/2026
+ms.date: 10/08/2026
 # Customer intent: As a Windows app developer, I want to learn about communication features and APIs that I can use in my Windows apps.
 ---
 
@@ -53,6 +53,6 @@ The .NET SDK also provides APIs related to communication scenarios for WPF and W
 
 [Interprocess communication](interprocess-communication.md)
 
-[Develop Windows desktop apps](../index.md)
+[Develop Windows desktop apps](../index.yml)
 
 [Integrate Share options in your Windows app](../windows-integration/integrate-sharesheet-overview.md)

@@ -111,7 +111,7 @@ supportReference:
         src: ../images/fluent-blue/code.svg
         alt: Code brackets.
       title: Add Windows features
-      url: ../develop/features-overview.yml
+      url: ../develop/index.yml
     - icon:
         src: ../images/fluent-blue/package.svg
         alt: A package with an upward arrow.

@@ -7,7 +7,31 @@ items:
   - name: Build your first WinUI app
     href: get-started/start-here.md
   - name: Tutorials
-    href: tutorials/toc.yml
+    items:
+    - name: Build a notes app
+      items:
+      - name: Introduction
+        href: tutorials/winui-notes/intro.md
+      - name: 1. Project setup
+        href: tutorials/winui-notes/project.md
+      - name: 2. Note page
+        href: tutorials/winui-notes/note.md
+      - name: 3. View and model
+        href: tutorials/winui-notes/view-model.md
+      - name: 4. All notes
+        href: tutorials/winui-notes/all-notes.md
+      - name: 5. Navigation
+        href: tutorials/winui-notes/navigation.md
+    - name: Extend the notes app
+      items:
+      - name: Introduction
+        href: tutorials/winui-notes-pt2/0-intro.md
+      - name: 1. Navigation cache and change notification
+        href: tutorials/winui-notes-pt2/1-navigation-cache-change-notification.md
+      - name: 2. Track note state
+        href: tutorials/winui-notes-pt2/2-note-state.md
+      - name: 3. Pass navigation parameters
+        href: tutorials/winui-notes-pt2/3-navigation-parameters.md
 - name: Understand the platform
   items:
   - name: WinUI
@@ -79,3 +103,5 @@ items:
     href: get-started/windows-developer-faq.md
   - name: Terminology
     href: get-started/windows-developer-glossary.md
+- name: What's new
+  href: whats-new/whats-new-for-developers.md

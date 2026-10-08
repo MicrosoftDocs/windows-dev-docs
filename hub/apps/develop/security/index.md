@@ -2,7 +2,7 @@
 title: Security and identity
 description: This article provides an index of development features that are related to security and identity scenarios in Windows apps.
 ms.topic: overview
-ms.date: 07/16/2026
+ms.date: 10/08/2026
 #customer intent: As a Windows developer, I want to learn to use security and identity features available to Windows apps so that I can build more secure apps.
 ---
 
@@ -90,4 +90,4 @@ The following articles provide information about features related to security an
 ## Related content
 
 - [App lifecycle and system services](../app-lifecycle-and-system-services.md)
-- [Develop Windows desktop apps](../index.md)
+- [Develop Windows desktop apps](../index.yml)

@@ -4,7 +4,7 @@ description: Install your tools, create and run a C# WinUI app with winapp CLI o
 author: GrantMeStrength
 ms.author: jken
 ms.topic: quickstart
-ms.date: 10/02/2026
+ms.date: 10/08/2026
 keywords: windows, desktop development, winui
 ms.localizationpriority: medium
 ms.collection: windows11
@@ -163,4 +163,4 @@ Congratulations! You've created, run, and updated your first WinUI app. The wind
 > [!div class="nextstepaction"]
 > [Build a notes app](../tutorials/winui-notes/intro.md)
 
-The Notes tutorial uses a separate `WinUINotes` project to teach pages, navigation, data binding, and local storage. You can also find focused control examples in [Resources](../dev-tools/index.md).
+The Notes tutorial uses a separate `WinUINotes` project to teach pages, navigation, data binding, and local storage. You can also find focused control examples in [Code samples and the WinUI Gallery](../dev-tools/samples.md).

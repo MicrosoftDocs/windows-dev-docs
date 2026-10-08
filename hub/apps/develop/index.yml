@@ -1,17 +1,17 @@
 ### YamlMime:ProductSubHub
-title: Develop Windows apps
+title: Platform
 metadata:
-  title: Develop Windows apps
+  title: Platform
   description: Explore Windows app features for user interfaces, AI, data, devices, app lifecycle, security, performance, and platform integration.
   author: GrantMeStrength
   ms.author: jken
   ms.topic: overview
-  ms.date: 10/02/2026
+  ms.date: 10/08/2026
   keywords: windows app development, windows app sdk, winui 3, windows features, windows api, platform integration
 brand: windows
 tocType: single
 productOverview:
-  title: Develop Windows apps
+  title: Platform
   summary: Add Windows capabilities to your app, connect with the operating system, and build reliable experiences across devices and input methods.
 getStarted:
   title: Choose where to start

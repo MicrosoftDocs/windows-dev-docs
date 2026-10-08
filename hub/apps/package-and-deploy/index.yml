@@ -96,7 +96,7 @@ supportReference:
         src: ../images/fluent-blue/feature.svg
         alt: A puzzle piece representing app features.
       title: Develop Windows apps
-      url: ../develop/features-overview.yml
+      url: ../develop/index.yml
     - icon:
         src: ../images/fluent-blue/editor.svg
         alt: A deployment configuration window.

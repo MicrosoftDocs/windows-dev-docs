@@ -1,5 +1,5 @@
 items:
-- name: Publish overview
+- name: Overview
   href: index.yml
 - name: Get started with Microsoft Store
   href: get-started.md  
