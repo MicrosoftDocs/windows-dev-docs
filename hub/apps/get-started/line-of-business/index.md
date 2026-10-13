@@ -2,7 +2,7 @@
 title: Build line-of-business apps with WinUI - overview
 description: A hub for developers building enterprise line-of-business apps with WinUI 3, covering data, forms, migration, design, and AI.
 ms.topic: overview
-ms.date: 10/03/2026
+ms.date: 10/13/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -41,6 +41,9 @@ Use this table as a starting point. The appropriate choice depends on your app's
 - [Data binding in depth](../../develop/data-binding/data-binding-in-depth.md)
 - [Data binding and MVVM](../../develop/data-binding/data-binding-and-mvvm.md)
 - [List views and grid views](../../develop/ui/controls/listview-and-gridview.md)
+
+> [!NOTE]
+> A native `TableView` control, along with charts, `InkCanvas`, and other controls, is in preview in the experimental channel of the Windows App SDK and showcased in [WinUI Gallery 3.0](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/). These experimental APIs aren't supported for production. For guidance on what to ship today, see [Display tabular data in a WinUI app](display-tabular-data.md).
 
 ### Build forms with validation
 

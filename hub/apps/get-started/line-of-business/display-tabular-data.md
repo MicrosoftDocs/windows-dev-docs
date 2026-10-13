@@ -2,7 +2,7 @@
 title: Display tabular data in a WinUI app
 description: Choose a WinUI 3 approach for displaying collections and tabular data with ListView, ItemsView, or a supported grid control.
 ms.topic: how-to
-ms.date: 09/16/2026
+ms.date: 10/13/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -24,6 +24,9 @@ Line-of-business apps often display records that users need to scan, select, fil
 `ListView` is an established choice with selection and item-invocation behavior. `ItemsView` separates item presentation from layout and supports flexible layouts. Neither control is a drop-in DataGrid replacement. Choose based on the interactions and accessibility behavior your app requires.
 
 Don't use the older UWP Community Toolkit DataGrid in a WinUI 3 app.
+
+> [!NOTE]
+> A native `TableView` control for editable, sortable, resizable tables is now available in preview. It's one of several new controls, along with charts and `InkCanvas`, introduced for the experimental channel of the Windows App SDK and announced in [WinUI Gallery 3.0 is here](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/). You can try these controls for yourself in the [WinUI Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC) app to decide whether `TableView` fits your scenario. Because these APIs are experimental, they can change or be removed and aren't supported for production, so keep using the options in this article for line-of-business apps that you release today. Plan to adopt `TableView` after it reaches a stable Windows App SDK release.
 
 ## Bind the collection
 
