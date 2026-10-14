@@ -7,7 +7,7 @@ title: ResourceDictionary and XAML resource references
 ms.assetid: E3CBFA3D-6AF5-44E1-B9F9-C3D3EA8A25CE
 label: ResourceDictionary and XAML resource references
 template: detail.hbs
-ms.date: 08/28/2026
+ms.date: 10/13/2026
 ms.topic: article
 keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
@@ -24,6 +24,11 @@ The XAML elements you might want to declare most often as XAML resources include
 
 > [!NOTE]
 > C# and C++/WinRT are supported for both WinUI 3 / Windows App SDK and UWP apps. C++/CX applies to UWP only, and isn't supported for WinUI 3.
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see XAML resources in action](winui3gallery://item/XamlResources)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 ## Prerequisites
 

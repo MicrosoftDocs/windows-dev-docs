@@ -3,7 +3,7 @@ description: Use templates to modify the look of items in ListView or GridView c
 title: Item containers and templates
 label: Item containers and templates
 template: detail.hbs
-ms.date: 09/19/2026
+ms.date: 10/13/2026
 ms.topic: article
 keywords: winui, xaml controls
 ms.assetid: d8eb818d-b62e-4314-a612-f29142dbd93f
@@ -20,6 +20,11 @@ ms.localizationpriority: medium
 **ListView** and **GridView** controls manage how their items are arranged (horizontal, vertical, wrapping, etc…) and how a user interacts with the items, but not how the individual items are shown on the screen. Item visualization is managed by item containers. When you add items to a list view they are automatically placed in a container. The default item container for ListView is [ListViewItem](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListViewItem); for GridView, it's [GridViewItem](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridViewItem).
 
 > **Important APIs**: [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listview), [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridview), [ListViewItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.listviewitem), [GridViewItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.gridviewitem), [ItemTemplate property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemtemplate), [ItemContainerStyle property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemcontainerstyle)
+
+> [!div class="nextstepaction"]
+> Open the WinUI 3 Gallery app and see the [ListView](winui3gallery://item/ListView) or the [GridView](winui3gallery://item/GridView) in action.
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 
 > [!NOTE]

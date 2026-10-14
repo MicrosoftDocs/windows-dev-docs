@@ -5,7 +5,7 @@ label: Tree view
 template: detail.hbs
 author: GrantMeStrength
 ms.author: jken
-ms.date: 09/19/2026
+ms.date: 10/13/2026
 ms.topic: how-to
 doc-status: Published
 dev_langs:
@@ -42,6 +42,11 @@ The **TreeView** APIs support the following features:
 - Avoid using **TreeView** if highlighting the nested relationship of an item is not a priority. For most drill-in scenarios, a regular list view is appropriate.
 
 ## Create a tree view
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the TreeView in action](winui3gallery://item/TreeView)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 You can create a tree view by binding the [ItemsSource](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview.itemssource) to a hierarchical data source, or you can create and manage **TreeViewNode** objects yourself.
 

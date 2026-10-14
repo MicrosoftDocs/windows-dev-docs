@@ -4,7 +4,7 @@ title: Guidelines for date and time controls
 ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
 label: Calendar, date, and time controls
 template: detail.hbs
-ms.date: 09/19/2026
+ms.date: 10/13/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 Date and time controls give you standard, localized ways to let a user view and set date and time values in your app. This article provides design guidelines and helps you pick the right control.
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Date and Time controls in action](winui3gallery:/category/DateAndTime)
+> [Open the WinUI 3 Gallery app and see Date and Time controls in action](winui3gallery://category/DateAndTime)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 

@@ -3,7 +3,7 @@ description: Styles let you set control properties and reuse those settings for 
 MS-HAID: dev\_ctrl\_layout\_txt.styling\_controls
 MSHAttr: PreferredLib:/library/windows/apps
 Search.Product: eADQiWindows 10XVcnh
-ms.date: 08/24/2026
+ms.date: 10/13/2026
 title: XAML styles
 ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
 label: XAML styles
@@ -14,6 +14,11 @@ ms.localizationpriority: medium
 # XAML styles
 
 You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see XAML styles in action](winui3gallery://item/XamlStyles)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 ## Style basics
 

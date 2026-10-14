@@ -1,7 +1,7 @@
 ---
 description: Use multiple windows to show your app content.
 title: Use the Window class to show secondary windows for an app
-ms.date: 06/27/2025
+ms.date: 10/13/2026
 ms.topic: article
 ms.localizationpriority: medium
 no-loc: [Window, Page, AppWindow, Frame, Dictionary, WindowId]
@@ -18,7 +18,7 @@ In your WinUI 3 app, you can show your app content in secondary windows while st
 > - **Important APIs**: [Microsoft.UI.Windowing namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing), [Window class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window), [AppWindow class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see multiple windows in action](winui3gallery://item/CreateMultipleWindows)
+> [Open the WinUI 3 Gallery app and see multiple windows in action](winui3gallery://item/Windowing)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

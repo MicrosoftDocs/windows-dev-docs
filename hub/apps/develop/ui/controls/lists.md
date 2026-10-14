@@ -4,7 +4,7 @@ title: Collections and lists
 ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
 label: Collections and Lists
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 10/13/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -14,6 +14,11 @@ ms.localizationpriority: medium
 Collections and lists both refer to the representation of multiple related data items that appear together. Collections can be represented in multiple ways, by different collection controls (also may be referred to as collection views). Collection controls display and enable interactions with collection-based content, such as a list of contacts, a list of dates, a collection of images, and so on.
 
 > **Important APIs**: [ItemsView](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview), [ListView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ListView), [GridView class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.GridView), [FlipView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flipview), [TreeView class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.treeview), [ItemsRepeater class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsrepeater)
+
+> [!div class="nextstepaction"]
+> Open the WinUI 3 Gallery app and see the [ItemsView](winui3gallery://item/ItemsView), [ListView](winui3gallery://item/ListView), [GridView](winui3gallery://item/GridView), [FlipView](winui3gallery://item/FlipView), [TreeView](winui3gallery://item/TreeView), or [ItemsRepeater](winui3gallery://item/ItemsRepeater) in action.
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 The controls covered in this article include:
 

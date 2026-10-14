@@ -2,7 +2,7 @@
 description: This tutorial walks through how to create a basic application user interface. It explains and demonstrates the use of Grid and StackPanel, two of the most common XAML elements.
 title: Use Grid and StackPanel to create a simple app.
 template: detail.hbs
-ms.date: 09/24/2020
+ms.date: 10/13/2026
 ms.topic: tutorial
 ms.assetid: 9794a04d-e67f-472c-8ba8-8ebe442f6ef2
 ms.localizationpriority: medium
@@ -13,6 +13,11 @@ ms.localizationpriority: medium
 Use XAML to create the layout for a simple weather app using the **Grid** and **StackPanel** elements. With these tools you can make great looking apps that work on any device running Windows. This tutorial takes 10-20 minutes.
 
 > **Important APIs**: [Grid class](/uwp/api/windows.ui.xaml.controls.grid), [StackPanel class](/uwp/api/windows.ui.xaml.controls.stackpanel)
+
+> [!div class="nextstepaction"]
+> Open the WinUI 3 Gallery app and see the WinUI 3 versions of [Grid](winui3gallery://item/Grid) and [StackPanel](winui3gallery://item/StackPanel) in action. The gallery samples use the `Microsoft.UI.Xaml.Controls` namespace, not the UWP `Windows.UI.Xaml.Controls` namespace that this tutorial uses.
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## Prerequisites
 - Windows 10 and Microsoft Visual Studio 2015 or later. (Newest Visual Studio recommended for current development and security updates) [Install tools for the Windows App SDK](../../get-started/start-here.md).

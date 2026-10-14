@@ -2,7 +2,7 @@
 description: The Pivot control enables touch-swiping between a small set of content sections.
 title: Pivot
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 10/13/2026
 ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
@@ -102,6 +102,11 @@ This code mimics the Pivot control's built-in navigation experience, minus the t
 > - [SelectorBar](selector-bar.md) control.
 > - [NavigationView](navigationview.md) ([Use NavigationView instead of Pivot](#use-navigationview-instead-of-pivot) section for an example)
 > - [TabView](tab-view.md)
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Pivot in action](winui3gallery://item/Pivot)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 This XAML creates a basic Pivot control with 3 sections of content.
 

@@ -5,7 +5,7 @@ ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
 label: Content design basics
 template: detail.hbs
 op-migration-status: ready
-ms.date: 09/11/2026
+ms.date: 10/13/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -16,6 +16,11 @@ This article provides some practical tips and examples to help you design the co
 ## Spacing and gutters
 
 The use of consistently sized spacing and gutters semantically groups an experience into separate components. These values map to our rounded corner logic and together help create a cohesive and usable layout.
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see Spacing principles in action](winui3gallery://item/Spacing)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 :::row:::
     :::column:::

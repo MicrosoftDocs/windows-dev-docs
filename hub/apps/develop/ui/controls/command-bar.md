@@ -4,7 +4,7 @@ title: Command bar
 label: Command bar
 template: detail.hbs
 op-migration-status: ready
-ms.date: 02/26/2025
+ms.date: 10/13/2026
 ms.topic: how-to
 ms.assetid: 868b4145-319b-4a97-82bd-c98d966144db
 doc-status: Published
@@ -115,6 +115,9 @@ You can programmatically move commands between the PrimaryCommands and Secondary
 ### App bar buttons
 
 Both the PrimaryCommands and SecondaryCommands can be populated only with types that implement the [ICommandBarElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.icommandbarelement) interface, which includes [AppBarButton](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AppBarButton), [AppBarToggleButton](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AppBarToggleButton), and [AppBarSeparator](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AppBarSeparator) command elements.
+
+> [!div class="nextstepaction"]
+> Open the WinUI 3 Gallery app and see the [AppBarButton](winui3gallery://item/AppBarButton), [AppBarToggleButton](winui3gallery://item/AppBarToggleButton), or [AppBarSeparator](winui3gallery://item/AppBarSeparator) in action.
 
 If you'd like to include a different type of element in your PrimaryCommands or SecondaryCommands, you can use the [AppBarElementContainer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.appbarelementcontainer) class. This will serve as a wrapper for your element and will enable the element to display in a CommandBar.
 

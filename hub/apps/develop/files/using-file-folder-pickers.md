@@ -1,7 +1,7 @@
 ---
 title: Open files and folders with Windows App SDK pickers
 description: Use Windows App SDK file and folder pickers in your WinUI app, with FileOpenPicker and FolderPicker examples, options, and results.
-ms.date: 07/15/2026
+ms.date: 10/13/2026
 ms.topic: how-to
 keywords: windows 11, winui, windows app sdk
 dev_langs:
@@ -30,6 +30,11 @@ This article uses the following APIs:
 - [FolderPicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.folderpicker)
 - [PickFileResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfileresult)
 - [PickFolderResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfolderresult)
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see storage pickers in action](winui3gallery://item/StoragePickers)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## File picker UI
 

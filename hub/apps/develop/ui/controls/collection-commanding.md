@@ -4,7 +4,7 @@ title: Contextual commanding
 ms.assetid:
 label: Contextual commanding in collections
 template: detail.hbs
-ms.date: 07/08/2026
+ms.date: 10/13/2026
 ms.topic: article
 keywords: winui, xaml controls
 pm-contact: chigy
@@ -370,6 +370,11 @@ The buttons displayed in the hover state will only be accessible via the pointer
 
 Swipe commanding is a touch accelerator that enables users on touch devices to perform common secondary actions using touch. Swipe empowers touch users to quickly and naturally interact with content, using common actions like Swipe-to-Delete or Swipe-to-Invoke. See the [swipe commanding](swipe.md) article to learn more.
 
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the SwipeControl in action](winui3gallery://item/SwipeControl)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
+
 In order to integrate swipe into your collection, you need two components: SwipeItems, which hosts the commands; and a SwipeControl, which wraps the item and allows for swipe interaction.
 
 The SwipeItems can be defined as a Resource in the PodcastUserControl. In this example, SwipeItems contains a command to Favorite an item.
@@ -429,6 +434,9 @@ private void SwipeItem_Invoked(SwipeItem sender, SwipeItemInvokedEventArgs args)
 #### Pull to refresh
 
 Pull to refresh lets a user pull down on a collection of data using touch in order to retrieve more data. See the [pull to refresh](pull-to-refresh.md) article to learn more.
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see PullToRefresh in action](winui3gallery://item/PullToRefresh)
 
 ### Pen accelerators
 

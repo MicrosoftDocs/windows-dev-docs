@@ -2,7 +2,7 @@
 title: Commanding in Windows apps
 description: How to use the XamlUICommand and StandardUICommand classes (along with the ICommand interface) to share and manage commands across various control types, regardless of the device and input type being used.
 ms.topic: overview
-ms.date: 08/28/2026
+ms.date: 10/13/2026
 ms.localizationpriority: medium
 ---
 
@@ -82,6 +82,11 @@ To bind a control to a shared command resource, you can implement the ICommand i
 Derived from [XamlUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.xamluicommand) (derived from [Microsoft.UI.Xaml.Input.ICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.icommand) for C++ or  [System.Windows.Input.ICommand](/dotnet/api/system.windows.input.icommand) for C#), the [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) class exposes a set of standard platform commands with pre-defined properties such as icon, keyboard accelerator, and description.
 
 A [StandardUICommand](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.input.standarduicommand) provides a quick and consistent way to define common commands such as `Save` or `Delete`. All you have to do is provide the execute and canExecute functions.
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see StandardUICommand in action](winui3gallery://item/StandardUICommand)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 ### Example
 

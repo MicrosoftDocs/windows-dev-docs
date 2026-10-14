@@ -1,7 +1,7 @@
 ---
 description: This article walks you through creating a XAML templated control for WinUI 3 with C# or C++/WinRT.
 title: Build XAML templated controls
-ms.date: 09/12/2026
+ms.date: 10/13/2026
 ms.topic: how-to
 keywords: windows 11, Windows App SDK, winui, custom control, templated control
 ms.localizationpriority: high
@@ -11,6 +11,11 @@ zone_pivot_groups: winui3-language
 # Build XAML templated controls
 
 This article walks you through creating a templated XAML control for WinUI 3. Templated controls inherit from **Microsoft.UI.Xaml.Controls.Control** and have visual structure and visual behavior that can be customized using XAML control templates.
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see custom and user controls in action](winui3gallery://item/CustomUserControls)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## Prerequisites
 

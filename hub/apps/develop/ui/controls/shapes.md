@@ -2,7 +2,7 @@
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: Draw shapes
 description: Learn how to draw shapes, such as ellipses, rectangles, polygons, and paths. The Path class is the way to visualize a fairly complex vector-based drawing language in a XAML UI; for example, you can draw Bezier curves.
-ms.date: 02/26/2025
+ms.date: 10/13/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -13,6 +13,11 @@ Learn how to draw shapes, such as ellipses, rectangles, polygons, and paths. The
 > [!div class="checklist"]
 >
 > - **Important APIs**: [Path class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.path), [Microsoft.UI.Xaml.Shapes namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes), [Microsoft.UI.Xaml.Media namespace](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media)
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see shapes in action](winui3gallery://item/Shape)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 Two sets of classes define a region of space in XAML UI: [**Shape**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape) classes and [**Geometry**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.geometry) classes. The main difference between these classes is that a **Shape** has a brush associated with it and can be rendered to the screen, and a **Geometry** simply defines a region of space and is not rendered unless it helps contribute information to another UI property. You can think of a **Shape** as a [**UIElement**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement) with its boundary defined by a **Geometry**. This topic covers mainly the **Shape** classes.
 
@@ -141,6 +146,9 @@ Here's the rendered [**Polygon**](/windows/windows-app-sdk/api/winrt/microsoft.u
 ## Line
 
 A [**Line**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.line) is simply a line drawn between two points in coordinate space. A **Line** ignores any value provided for [**Fill**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape.fill), because it has no interior space. For a **Line**, make sure to specify values for the [**Stroke**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape.stroke) and [**StrokeThickness**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.shape.strokethickness) properties, because otherwise the **Line** won't render.
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Line in action](winui3gallery://item/Line)
 
 You don't use [**Point**](/uwp/api/windows.foundation.point) values to specify a [**Line**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.line) shape, instead you use discrete [**Double**](/dotnet/api/system.double) values for [**X1**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.line.x1), [**Y1**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.line.y1), [**X2**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.line.x2) and [**Y2**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.line.y2). This enables minimal markup for horizontal or vertical lines. For example, `<Line Stroke="Red" X2="400"/>` defines a horizontal line that is 400 pixels long. The other X,Y properties are 0 by default, so in terms of points this XAML would draw a line from `(0,0)` to `(400,0)`. You could then use a [**TranslateTransform**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.translatetransform) to move the entire **Line**, if you wanted it to start at a point other than (0,0).
 

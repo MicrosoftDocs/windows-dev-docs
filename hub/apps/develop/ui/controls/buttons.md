@@ -3,7 +3,7 @@ title: Buttons
 description: Learn how to use a button to give users a way to trigger immediate actions, and learn about specialized buttons for particular tasks.
 label: Buttons
 template: detail.hbs
-ms.date: 09/19/2026
+ms.date: 10/13/2026
 ms.topic: article
 ms.assetid: f04d1a3c-7dcd-4bc8-9586-3396923b312e
 doc-status: Published
@@ -241,7 +241,7 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 > - **Important APIs**: [DropDownButton class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.dropdownbutton), [Flyout property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button.flyout)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see the DropdownButton in action](winui3gallery://item/DropdownButton)
+> [Open the WinUI 3 Gallery app and see the DropDownButton in action](winui3gallery://item/DropDownButton)
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
@@ -439,6 +439,9 @@ Unlike [ToggleButton](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.contr
 - **ToggleSplitButton** does not have an **IsThreeState** property or **Indeterminate** event.
 - The [ToggleSplitButton.IsChecked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglesplitbutton.ischecked) property is just a Boolean, not a **Nullable\<bool>**.
 - **ToggleSplitButton** has only the [IsCheckedChanged](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglesplitbutton.ischeckedchanged) event; it does not have separate **Checked** and **Unchecked** events.
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the ToggleButton in action](winui3gallery://item/ToggleButton)
 
 ### Example - Toggle split button
 

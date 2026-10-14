@@ -2,7 +2,7 @@
 title: App Notifications Overview for Windows Apps
 description: Learn how to send, manage, and respond to app notifications in Windows apps using the Windows App SDK notification APIs and Notification Center.
 ms.topic: concept-article
-ms.date: 07/15/2026
+ms.date: 10/13/2026
 keywords: toast, notification
 ms.localizationpriority: medium
 no-loc: [toast, Toast, app, App]
@@ -14,6 +14,11 @@ no-loc: [toast, Toast, app, App]
 App notifications are UI popups that appear outside of your app's window, delivering timely information or actions to the user. Notifications can be purely informational, can launch your app when clicked, or can trigger a background action without bringing your app to the foreground. The [Windows App SDK](../../../windows-app-sdk/index.md) provides APIs for sending and managing app notifications, and for responding to user interaction with notifications.
 
 This section of the documentation covers local app notifications, which are created and displayed from within your app. To send notifications from a cloud service, see [Push notifications overview](../push-notifications/index.md).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see app notifications in action](winui3gallery://item/AppNotification)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 ## App notifications quickstart
 

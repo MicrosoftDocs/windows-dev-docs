@@ -7,7 +7,7 @@ title: Control templates
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
-ms.date: 09/27/2026
+ms.date: 10/13/2026
 ms.topic: how-to
 keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
@@ -17,6 +17,11 @@ ms.localizationpriority: medium
 You can customize a control's visual structure and visual behavior by creating a control template in the XAML framework. Controls have many properties, such as [**Background**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.background), [**Foreground**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.foreground), and [**FontFamily**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.fontfamily), that you can set to specify different aspects of the control's appearance. But the changes that you can make by setting these properties are limited. You can specify additional customizations by creating a template using the [**ControlTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ControlTemplate) class. Here, we show you how to create a **ControlTemplate** to customize the appearance of a [**CheckBox**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.CheckBox) control.
 
 > **Important APIs**: [**ControlTemplate class**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ControlTemplate), [**Control.Template property**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.control.template)
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see templates in action](winui3gallery://item/Templates)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 ## Custom control template example
 

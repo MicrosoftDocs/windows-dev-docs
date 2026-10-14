@@ -4,7 +4,7 @@ title: Text controls
 ms.assetid: 43DC68BF-FA86-43D2-8807-70A359453048
 label: Text controls
 template: detail.hbs
-ms.date: 10/01/2018
+ms.date: 10/13/2026
 ms.topic: article
 keywords: winui, xaml controls
 pm-contact: miguelrb
@@ -20,6 +20,11 @@ Text controls consist of text input boxes, password boxes, auto-suggest boxes, a
 - The controls for text entry and editing are: [TextBox](text-box.md), [RichEditBox](rich-edit-box.md), [AutoSuggestBox](auto-suggest-box.md), and [PasswordBox](password-box.md).
 
 > **Important APIs**: [TextBlock class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBlock), [RichTextBlock class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichTextBlock), [TextBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.TextBox), [RichEditBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.RichEditBox), [AutoSuggestBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.AutoSuggestBox), [PasswordBox class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.PasswordBox)
+
+> [!div class="nextstepaction"]
+> Open the WinUI 3 Gallery app and see the [TextBlock](winui3gallery://item/TextBlock), [RichTextBlock](winui3gallery://item/RichTextBlock), [TextBox](winui3gallery://item/TextBox), [RichEditBox](winui3gallery://item/RichEditBox), [AutoSuggestBox](winui3gallery://item/AutoSuggestBox), or [PasswordBox](winui3gallery://item/PasswordBox) in action.
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 ## Is this the right control?
 

@@ -2,7 +2,7 @@
 title: Windowing overview for WinUI and Windows App SDK
 description: Overview of windowing APIs in the Windows App SDK
 ms.topic: article
-ms.date: 09/19/2026
+ms.date: 10/13/2026
 keywords: windowing, window, AppWindow, Windows App SDK
 ms.localizationpriority: medium
 no-loc: [window handle, Effective pixels, effective pixels, Windows, Window, AppWindow]
@@ -23,7 +23,9 @@ Windowing functionality in a WinUI app is provided by a combination of the XAML 
 > - **Important APIs**: [Window class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window), [AppWindow class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow)
 
 > [!div class="nextstepaction"]
-> [Open the WinUI 3 Gallery app and see Windowing samples in action](winui3gallery:/category/MultipleWindows)
+> [Open the WinUI 3 Gallery app and see Windowing samples in action](winui3gallery://category/MultipleWindows)
+>
+> [Open the WinUI 3 Gallery app and see Window in action](winui3gallery://item/Windowing)
 
 [!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 

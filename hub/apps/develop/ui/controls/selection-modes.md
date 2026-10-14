@@ -3,7 +3,7 @@ description: Selection mode lets users select and take action on a single item o
 title: Selection mode
 label: Selection mode
 template: detail.hbs
-ms.date: 07/15/2026
+ms.date: 10/13/2026
 ms.topic: concept-article
 keywords: winui 3, windows app sdk, listview, gridview, selection mode
 pm-contact: anawish
@@ -24,6 +24,12 @@ There are three selection modes:
 - Extended: The user can select multiple items with a modifier, such as holding down the SHIFT key.
 
 ## Selection mode examples
+
+> [!div class="nextstepaction"]
+> Open the WinUI 3 Gallery app and see the [ListView](winui3gallery://item/ListView) or the [GridView](winui3gallery://item/GridView) in action.
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
+
 ### Here is a ListView with single selection mode enabled.
 ![List view with single selection mode](images/listview-selection-single.png)
 

@@ -2,7 +2,7 @@
 description: Learn how to use color effectively in your Windows app
 title: Color in Windows
 ms.assetid: 139F3A69-8C33-40A8-9FF0-76D62953339E
-ms.date: 09/19/2024
+ms.date: 10/13/2026
 ms.topic: how-to
 keywords: windows 11, design, ui, uiux, color, light mode, dark mode
 ms.localizationpriority: medium
@@ -111,4 +111,4 @@ Be aware of how colorblindness could affect the usability of your application. F
 - [Theming in Windows apps](../../develop/ui/theming.md)
 - [XAML Styles](../../develop/platform/xaml/xaml-styles.md)
 - [XAML Theme Resources](../../develop/platform/xaml/xaml-theme-resources.md)
-- [WinUI 3 Gallery - Colors](winui3gallery://item/Colors)
+- [WinUI 3 Gallery - Colors](winui3gallery://item/Color)

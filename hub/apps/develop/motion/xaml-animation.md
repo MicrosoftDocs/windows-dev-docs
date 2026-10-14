@@ -2,7 +2,7 @@
 ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
 title: Animations overview
 description: Use the animations from the Windows Runtime animation library to integrate the Windows look and feel into your app.
-ms.date: 09/05/2026
+ms.date: 10/13/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 ---
@@ -125,6 +125,11 @@ The following table summarizes our recommendations for which animation you shoul
 | For controls or if no other animation applies | [**FadeInThemeAnimation**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.fadeinthemeanimation) and [**FadeOutThemeAnimation**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.FadeOutThemeAnimation) |
 
 ## Transition animation examples
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see theme transitions in action](winui3gallery://item/ThemeTransition)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 Ideally, your app uses animations to enhance the user interface or to make it more attractive without annoying your users. One way you can do this is to apply animated transitions to UI so that when something enters or leaves the screen or otherwise changes, the animation draws the attention of the user to the change. For example, your buttons may rapidly fade in and out of view rather than just appear and disappear. We created a number of APIs that can be used to create recommended or typical animation transitions that are consistent. The example here shows how to apply an animation to a button so that it swiftly slides into view.
 

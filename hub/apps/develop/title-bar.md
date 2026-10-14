@@ -2,7 +2,7 @@
 description: Customize the title bar of a desktop app that uses the Windows App SDK to match the personality of the app.
 title: Title bar customization
 template: detail.hbs
-ms.date: 10/08/2026
+ms.date: 10/13/2026
 ms.topic: how-to
 keywords: windows 11, title bar
 ms.localizationpriority: medium
@@ -25,6 +25,11 @@ See the [Title bar](../design/basics/titlebar-design.md) design article for guid
 >
 > - **Applies to**: Windows App SDK, WinUI desktop apps
 > - **Important APIs**: [AppWindow.TitleBar property](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.titlebar), [AppWindowTitleBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindowtitlebar), [AppWindow class](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow), [Microsoft.UI.Xaml.Window class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window), [Window.ExtendsContentIntoTitleBar property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.extendscontentintotitlebar), [Window.SetTitleBar method](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.settitlebar)
+
+> [!div class="nextstepaction"]
+> Open the WinUI 3 Gallery app and see the [AppWindowTitleBar](winui3gallery://item/AppWindowTitleBar) or the [TitleBar](winui3gallery://item/TitleBar) in action.
+
+[!INCLUDE [winui-3-gallery](../../includes/winui-3-gallery.md)]
 
 ## Title bar components
 

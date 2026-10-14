@@ -3,7 +3,7 @@ description: Menus and context menus organize commands and save space by hiding 
 title: Menus and context menus
 label: Menus and context menus
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 10/13/2026
 ms.topic: article
 ms.custom: RS5, 19H1
 doc-status: Published
@@ -14,6 +14,11 @@ ms.localizationpriority: medium
 Menus and context menus are similar in how they look and what they can contain. They both display an organized list of commands or options and save space by hiding until the user needs them. However there are differences between them, such as what you should use to create them and how they are accessed by a user.
 
 ![Example of a typical context menu](images/contextmenu_rs2_icons.png)
+
+> [!div class="nextstepaction"]
+> Open the WinUI 3 Gallery app and see the [MenuFlyout](winui3gallery://item/MenuFlyout) or the [CommandBarFlyout](winui3gallery://item/CommandBarFlyout) in action.
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 ## Is this the right control?
 

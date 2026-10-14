@@ -2,7 +2,7 @@
 description: Get item templates that you can use with a GridView control to display image galleries, images and text, and images with text overlays.
 title: Item templates for grid view
 template: detail.hbs
-ms.date: 07/15/2026
+ms.date: 10/13/2026
 ms.topic: article
 keywords: winui 3, windows app sdk, gridview, item template, data template
 ---
@@ -14,6 +14,11 @@ To demonstrate data binding, these templates bind **GridViewItems** to the examp
 
 > [!NOTE] 
 > Currently, when a **DataTemplate** contains multiple controls (for example, more than a single **TextBlock**), the default accessible name for screenreaders comes from .ToString() on the item. As a convenience you can instead set the [**AutomationProperties.Name**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.automationproperties) on the root element of the **DataTemplate**. For more on accessibility, see [Accessibility overview](../../../design/accessibility/accessibility-overview.md).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the GridView in action](winui3gallery://item/GridView)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 ## Icon and text
 Use these templates to display a collection of apps in a grid with an icon and text.

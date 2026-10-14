@@ -4,7 +4,7 @@ title: Create custom media transport controls
 ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
 label: Create custom media transport controls
 template: detail.hbs
-ms.date: 09/27/2026
+ms.date: 10/13/2026
 ms.topic: how-to
 keywords: winui, xaml controls
 ms.localizationpriority: medium
@@ -16,6 +16,11 @@ ms.localizationpriority: medium
 MediaPlayerElement has customizable XAML transport controls to manage control of audio and video content within a Windows app. Here, we demonstrate how to customize the MediaTransportControls template. We'll show you how to work with the overflow menu, add a custom button and modify the slider.
 
 > **Important APIs**: [MediaPlayerElement](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement), [MediaPlayerElement.AreTransportControlsEnabled](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mediaplayerelement.aretransportcontrolsenabled), [MediaTransportControls](/uwp/api/Windows.Media.SystemMediaTransportControls)
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the MediaPlayerElement in action](winui3gallery://item/MediaPlayerElement)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
 Before starting, you should be familiar with the MediaPlayerElement and the MediaTransportControls classes. For more info, see the MediaPlayerElement control guide.
 

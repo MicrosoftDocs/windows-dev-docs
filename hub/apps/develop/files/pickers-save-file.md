@@ -1,7 +1,7 @@
 ---
 title: Save a File with a Windows App SDK Picker
 description: Use FileSavePicker in Windows App SDK to let users choose a name and location for saved files in your WinUI app, with code examples.
-ms.date: 07/15/2026
+ms.date: 10/13/2026
 ms.topic: how-to
 keywords: windows 11, winui, windows app sdk
 ms.localizationpriority: medium
@@ -38,6 +38,11 @@ The following APIs are used in this topic:
 - [PickFileResult](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.pickfileresult)
 
 Use the [FileSavePicker](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers.filesavepicker) to allow users to specify the name and location where they want your app to save a file.
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see storage pickers in action](winui3gallery://item/StoragePickers)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 ## Save a document with FileSavePicker
 
