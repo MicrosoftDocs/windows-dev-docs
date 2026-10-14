@@ -2,7 +2,7 @@
 description: This article lists and provides usage guidance for the glyphs that come with the Segoe Fluent Icons font.
 title: Segoe Fluent Icons font
 label: Segoe Fluent Icons font
-ms.date: 09/03/2026
+ms.date: 10/13/2026
 ms.topic: article
 keywords: windows 11
 ms.localizationpriority: medium
@@ -15,6 +15,194 @@ This article provides developer guidelines for using the Segoe Fluent Icons font
 **Important APIs**:
 
 * [**FontIcon class**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.fonticon)
+
+## What's new
+
+The `Segoe Fluent Icons` font has been updated to **version 1.56**. This release includes the following changes, all of which are reflected in the [Icon list](#icon-list) below:
+
+* **New icons.** 170 icons have been added since version 1.00, including `Agents`, `WindowsUpdate`, `DefenderApp`, `FindMyPhone`, and `ChatAdd`.
+* **Refreshed icon designs.** The artwork for many existing icons was redrawn to align with the latest Fluent design. The Unicode code points and names of these icons are unchanged, so no code changes are required.
+* **Corrected icon names.** A small number of existing icons were renamed to match the font's authoritative metadata (for example, `KeyboardBrightness` is now `KeyboardBrightnessHigh`).
+
+### New icons since version 1.00
+
+The following 170 icons have been added since version 1.00, the previous public release of the font. They're also included in the full [Icon list](#icon-list) below.
+
+> [!NOTE]
+> 34 other characters added since version 1.00 are below U+E700 and aren't listed in this article.
+
+| Glyph | Unicode point | Description |
+|-------|---------------|-------------|
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e733.png" alt-text="Screenshot of Blocked."::: | e733 | :::no-loc text="Blocked"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e794.png" alt-text="Screenshot of Effects."::: | e794 | :::no-loc text="Effects"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e7a1.png" alt-text="Screenshot of Contrast."::: | e7a1 | :::no-loc text="Contrast"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e7aa.png" alt-text="Screenshot of PhotoCollection."::: | e7aa | :::no-loc text="PhotoCollection"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e800.png" alt-text="Screenshot of Nav2DMapView.":::  | e800 | :::no-loc text="Nav2DMapView"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e833.png" alt-text="Screenshot of SemanticZoom."::: | e833 | :::no-loc text="SemanticZoom"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e917.png" alt-text="Screenshot of Clock.":::  | e917 | :::no-loc text="Clock"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e93a.png" alt-text="Screenshot of MiniExpand.":::  | e93a | :::no-loc text="MiniExpand"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e99c.png" alt-text="Screenshot of SidePanelOpen."::: | e99c | :::no-loc text="SidePanelOpen"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e9a3.png" alt-text="Screenshot of TextBulletListSquareSparkle.":::  | e9a3 | :::no-loc text="TextBulletListSquareSparkle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e9a4.png" alt-text="Screenshot of TextBulletListSquare."::: | e9a4 | :::no-loc text="TextBulletListSquare"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e9e3.png" alt-text="Screenshot of ArrowExpand."::: | e9e3 | :::no-loc text="ArrowExpand"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ea07.png" alt-text="Screenshot of CinematicFraming."::: | ea07 | :::no-loc text="CinematicFraming"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ea1a.png" alt-text="Screenshot of PageAdd."::: | ea1a | :::no-loc text="PageAdd"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ea6b.png" alt-text="Screenshot of GetHelpApp."::: | ea6b | :::no-loc text="GetHelpApp"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ea85.png" alt-text="Screenshot of VolumeDisabled."::: | ea85 | :::no-loc text="VolumeDisabled"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eaa1.png" alt-text="Screenshot of SignalBarsAni1.":::  | eaa1 | :::no-loc text="SignalBarsAni1"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eaa2.png" alt-text="Screenshot of SignalBarsAni2.":::  | eaa2 | :::no-loc text="SignalBarsAni2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eaa3.png" alt-text="Screenshot of SignalBarsAni3.":::  | eaa3 | :::no-loc text="SignalBarsAni3"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eaa4.png" alt-text="Screenshot of EthernetAni1.":::  | eaa4 | :::no-loc text="EthernetAni1"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eaa5.png" alt-text="Screenshot of WifiAni1.":::  | eaa5 | :::no-loc text="WifiAni1"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eaa8.png" alt-text="Screenshot of WifiAni2.":::  | eaa8 | :::no-loc text="WifiAni2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eaaa.png" alt-text="Screenshot of EmojiEdit.":::  | eaaa | :::no-loc text="EmojiEdit"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eaae.png" alt-text="Screenshot of SurfaceTypecover.":::  | eaae | :::no-loc text="SurfaceTypecover"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eab7.png" alt-text="Screenshot of ChatSparkle.":::  | eab7 | :::no-loc text="ChatSparkle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eabb.png" alt-text="Screenshot of CellFlowVertical.":::  | eabb | :::no-loc text="CellFlowVertical"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eabc.png" alt-text="Screenshot of WindowsStudioEffects.":::  | eabc | :::no-loc text="WindowsStudioEffects"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eabe.png" alt-text="Screenshot of PortraitBlur.":::  | eabe | :::no-loc text="PortraitBlur"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eac7.png" alt-text="Screenshot of DesktopLeafTwo."::: | eac7 | :::no-loc text="DesktopLeafTwo"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ead4.png" alt-text="Screenshot of Emojiplay."::: | ead4 | :::no-loc text="Emojiplay"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ead5.png" alt-text="Screenshot of EmojiBrush."::: | ead5 | :::no-loc text="EmojiBrush"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ead6.png" alt-text="Screenshot of EyeTracking."::: | ead6 | :::no-loc text="EyeTracking"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ead7.png" alt-text="Screenshot of EyeTrackingText."::: | ead7 | :::no-loc text="EyeTrackingText"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ead8.png" alt-text="Screenshot of LiveCaptionsSparkle.":::  | ead8 | :::no-loc text="LiveCaptionsSparkle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eb17.png" alt-text="Screenshot of MobBatteryUnknownCharging.":::  | eb17 | :::no-loc text="MobBatteryUnknownCharging"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eb19.png" alt-text="Screenshot of ClicktoDoOff."::: | eb19 | :::no-loc text="ClicktoDoOff"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eb1a.png" alt-text="Screenshot of BatteryUnknownCharging.":::  | eb1a | :::no-loc text="BatteryUnknownCharging"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eb1d.png" alt-text="Screenshot of ClicktoDo."::: | eb1d | :::no-loc text="ClicktoDo"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eb25.png" alt-text="Screenshot of Glasses2.":::  | eb25 | :::no-loc text="Glasses2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eb33.png" alt-text="Screenshot of StatusSquareOuter.":::  | eb33 | :::no-loc text="StatusSquareOuter"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eb34.png" alt-text="Screenshot of StatusSquarePause.":::  | eb34 | :::no-loc text="StatusSquarePause"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eb3b.png" alt-text="Screenshot of GenericApp."::: | eb3b | :::no-loc text="GenericApp"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eb78.png" alt-text="Screenshot of SummarizeSparkle.":::  | eb78 | :::no-loc text="SummarizeSparkle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ebc8.png" alt-text="Screenshot of SystemInPrivate.":::  | ebc8 | :::no-loc text="SystemInPrivate"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ebc9.png" alt-text="Screenshot of SystemInPrivateFilled.":::  | ebc9 | :::no-loc text="SystemInPrivateFilled"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ec34.png" alt-text="Screenshot of FormatText."::: | ec34 | :::no-loc text="FormatText"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ec83.png" alt-text="Screenshot of UpdateStatusDot2."::: | ec83 | :::no-loc text="UpdateStatusDot2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ec91.png" alt-text="Screenshot of Uninstall."::: | ec91 | :::no-loc text="Uninstall"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ec9c.png" alt-text="Screenshot of CloudNotSynced."::: | ec9c | :::no-loc text="CloudNotSynced"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ecf6.png" alt-text="Screenshot of ClearClipboard."::: | ecf6 | :::no-loc text="ClearClipboard"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed21.png" alt-text="Screenshot of RestartUpdate2."::: | ed21 | :::no-loc text="RestartUpdate2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed37.png" alt-text="Screenshot of SearchSparkle.":::  | ed37 | :::no-loc text="SearchSparkle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed6a.png" alt-text="Screenshot of CloseForeground."::: | ed6a | :::no-loc text="CloseForeground"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed6b.png" alt-text="Screenshot of MaximizeForeground."::: | ed6b | :::no-loc text="MaximizeForeground"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed6c.png" alt-text="Screenshot of MinimizeForeground."::: | ed6c | :::no-loc text="MinimizeForeground"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed6d.png" alt-text="Screenshot of Snapbottom."::: | ed6d | :::no-loc text="Snapbottom"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed6e.png" alt-text="Screenshot of Snaptop."::: | ed6e | :::no-loc text="Snaptop"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed6f.png" alt-text="Screenshot of Snaptopright."::: | ed6f | :::no-loc text="Snaptopright"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed70.png" alt-text="Screenshot of Snaptopleft."::: | ed70 | :::no-loc text="Snaptopleft"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed71.png" alt-text="Screenshot of Snapleft."::: | ed71 | :::no-loc text="Snapleft"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed72.png" alt-text="Screenshot of Snapright."::: | ed72 | :::no-loc text="Snapright"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed73.png" alt-text="Screenshot of Snapbottomright."::: | ed73 | :::no-loc text="Snapbottomright"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed74.png" alt-text="Screenshot of Snapbottomleft."::: | ed74 | :::no-loc text="Snapbottomleft"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee1a.png" alt-text="Screenshot of FolderSearch."::: | ee1a | :::no-loc text="FolderSearch"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee1b.png" alt-text="Screenshot of RecordStop."::: | ee1b | :::no-loc text="RecordStop"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee41.png" alt-text="Screenshot of FullHiraganaPrivateMode."::: | ee41 | :::no-loc text="FullHiraganaPrivateMode"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee42.png" alt-text="Screenshot of FullKatakanaPrivateMode."::: | ee42 | :::no-loc text="FullKatakanaPrivateMode"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee43.png" alt-text="Screenshot of HalfAlphaPrivateMode."::: | ee43 | :::no-loc text="HalfAlphaPrivateMode"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee44.png" alt-text="Screenshot of HalfKatakanaPrivateMode."::: | ee44 | :::no-loc text="HalfKatakanaPrivateMode"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee45.png" alt-text="Screenshot of FullAlphaPrivateMode."::: | ee45 | :::no-loc text="FullAlphaPrivateMode"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee4d.png" alt-text="Screenshot of DualScreen2."::: | ee4d | :::no-loc text="DualScreen2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee4e.png" alt-text="Screenshot of Snap3Left."::: | ee4e | :::no-loc text="Snap3Left"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee4f.png" alt-text="Screenshot of Snap4."::: | ee4f | :::no-loc text="Snap4"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee50.png" alt-text="Screenshot of Taskview2."::: | ee50 | :::no-loc text="Taskview2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee51.png" alt-text="Screenshot of CaptureRecord."::: | ee51 | :::no-loc text="CaptureRecord"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee7e.png" alt-text="Screenshot of FIDOPasskey."::: | ee7e | :::no-loc text="FIDOPasskey"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee95.png" alt-text="Screenshot of StopSolid."::: | ee95 | :::no-loc text="StopSolid"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eea0.png" alt-text="Screenshot of RAM."::: | eea0 | :::no-loc text="RAM"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eea1.png" alt-text="Screenshot of CPU."::: | eea1 | :::no-loc text="CPU"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ef60.png" alt-text="Screenshot of TextEdit."::: | ef60 | :::no-loc text="TextEdit"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ef91.png" alt-text="Screenshot of PauseDurationVoice.":::  | ef91 | :::no-loc text="PauseDurationVoice"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/efda.png" alt-text="Screenshot of DocumentManagement."::: | efda | :::no-loc text="DocumentManagement"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/efff.png" alt-text="Screenshot of CRMScheduleReports."::: | efff | :::no-loc text="CRMScheduleReports"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f034.png" alt-text="Screenshot of Widget.":::  | f034 | :::no-loc text="Widget"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f035.png" alt-text="Screenshot of WidgetGear.":::  | f035 | :::no-loc text="WidgetGear"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f036.png" alt-text="Screenshot of WidgetAdd.":::  | f036 | :::no-loc text="WidgetAdd"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f03d.png" alt-text="Screenshot of PasteSparkle.":::  | f03d | :::no-loc text="PasteSparkle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f03e.png" alt-text="Screenshot of AdvancedPaste.":::  | f03e | :::no-loc text="AdvancedPaste"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f06c.png" alt-text="Screenshot of PortraitLight.":::  | f06c | :::no-loc text="PortraitLight"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f08a.png" alt-text="Screenshot of DefenderApp."::: | f08a | :::no-loc text="DefenderApp"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f0c5.png" alt-text="Screenshot of WindowsUpdate."::: | f0c5 | :::no-loc text="WindowsUpdate"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f0f6.png" alt-text="Screenshot of ProjectToDeviceSettings."::: | f0f6 | :::no-loc text="ProjectToDeviceSettings"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f106.png" alt-text="Screenshot of PageList."::: | f106 | :::no-loc text="PageList"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f112.png" alt-text="Screenshot of ReadOutLoud."::: | f112 | :::no-loc text="ReadOutLoud"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f117.png" alt-text="Screenshot of ProjectToDevice."::: | f117 | :::no-loc text="ProjectToDevice"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f120.png" alt-text="Screenshot of TaskManagerApp."::: | f120 | :::no-loc text="TaskManagerApp"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f160.png" alt-text="Screenshot of Emoji3."::: | f160 | :::no-loc text="Emoji3"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f178.png" alt-text="Screenshot of StatusDiamondOuter.":::  | f178 | :::no-loc text="StatusDiamondOuter"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f179.png" alt-text="Screenshot of StatusDiamondInner.":::  | f179 | :::no-loc text="StatusDiamondInner"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f196.png" alt-text="Screenshot of Beaker."::: | f196 | :::no-loc text="Beaker"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f1a2.png" alt-text="Screenshot of FullView."::: | f1a2 | :::no-loc text="FullView"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f1b1.png" alt-text="Screenshot of PowerButtonUpdate2."::: | f1b1 | :::no-loc text="PowerButtonUpdate2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f1b9.png" alt-text="Screenshot of LassoSparkle.":::  | f1b9 | :::no-loc text="LassoSparkle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f1ba.png" alt-text="Screenshot of SquareSparkle.":::  | f1ba | :::no-loc text="SquareSparkle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f1bb.png" alt-text="Screenshot of TextCursor2.":::  | f1bb | :::no-loc text="TextCursor2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f1be.png" alt-text="Screenshot of Lasso.":::  | f1be | :::no-loc text="Lasso"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f1d4.png" alt-text="Screenshot of TranslateSparkle.":::  | f1d4 | :::no-loc text="TranslateSparkle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f1d5.png" alt-text="Screenshot of RefineSparkle.":::  | f1d5 | :::no-loc text="RefineSparkle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f1d6.png" alt-text="Screenshot of ReformatSparkle.":::  | f1d6 | :::no-loc text="ReformatSparkle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f1e8.png" alt-text="Screenshot of LeafTwo."::: | f1e8 | :::no-loc text="LeafTwo"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f207.png" alt-text="Screenshot of GridviewGroup.":::  | f207 | :::no-loc text="GridviewGroup"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f232.png" alt-text="Screenshot of GridViewSmall."::: | f232 | :::no-loc text="GridViewSmall"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f240.png" alt-text="Screenshot of PhoneSoundOff."::: | f240 | :::no-loc text="PhoneSoundOff"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f277.png" alt-text="Screenshot of ActionFramework.":::  | f277 | :::no-loc text="ActionFramework"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f27c.png" alt-text="Screenshot of Earbudsingle."::: | f27c | :::no-loc text="Earbudsingle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f27f.png" alt-text="Screenshot of HearingAid."::: | f27f | :::no-loc text="HearingAid"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f285.png" alt-text="Screenshot of MobSnooze."::: | f285 | :::no-loc text="MobSnooze"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f2a3.png" alt-text="Screenshot of MobNotificationBell."::: | f2a3 | :::no-loc text="MobNotificationBell"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f2a5.png" alt-text="Screenshot of MobNotificationBellFilled."::: | f2a5 | :::no-loc text="MobNotificationBellFilled"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f2a8.png" alt-text="Screenshot of MobSnoozeFilled."::: | f2a8 | :::no-loc text="MobSnoozeFilled"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f2ae.png" alt-text="Screenshot of CubeWithDashedOutline."::: | f2ae | :::no-loc text="CubeWithDashedOutline"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f2c1.png" alt-text="Screenshot of CameraArrowUp."::: | f2c1 | :::no-loc text="CameraArrowUp"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f2c7.png" alt-text="Screenshot of BulletedList2."::: | f2c7 | :::no-loc text="BulletedList2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f2c8.png" alt-text="Screenshot of BulletedList2Mirrored."::: | f2c8 | :::no-loc text="BulletedList2Mirrored"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f2ce.png" alt-text="Screenshot of FolderList."::: | f2ce | :::no-loc text="FolderList"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f2d9.png" alt-text="Screenshot of CirclePause."::: | f2d9 | :::no-loc text="CirclePause"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f305.png" alt-text="Screenshot of Restart3."::: | f305 | :::no-loc text="Restart3"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f353.png" alt-text="Screenshot of Emoji4.":::  | f353 | :::no-loc text="Emoji4"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f39b.png" alt-text="Screenshot of NFCBadge.":::  | f39b | :::no-loc text="NFCBadge"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f3bf.png" alt-text="Screenshot of LikeSolid.":::  | f3bf | :::no-loc text="LikeSolid"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f3c0.png" alt-text="Screenshot of DislikeSolid.":::  | f3c0 | :::no-loc text="DislikeSolid"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f40b.png" alt-text="Screenshot of FindMyPhone."::: | f40b | :::no-loc text="FindMyPhone"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f429.png" alt-text="Screenshot of ChatAdd."::: | f429 | :::no-loc text="ChatAdd"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f42f.png" alt-text="Screenshot of SpeedHigh2.":::  | f42f | :::no-loc text="SpeedHigh2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f432.png" alt-text="Screenshot of BatterySaver."::: | f432 | :::no-loc text="BatterySaver"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f470.png" alt-text="Screenshot of PhoneResumeAlert.":::  | f470 | :::no-loc text="PhoneResumeAlert"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f4bd.png" alt-text="Screenshot of Snooze."::: | f4bd | :::no-loc text="Snooze"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f539.png" alt-text="Screenshot of SpeakerShare."::: | f539 | :::no-loc text="SpeakerShare"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f53f.png" alt-text="Screenshot of GrammarOptions."::: | f53f | :::no-loc text="GrammarOptions"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f54c.png" alt-text="Screenshot of Agents."::: | f54c | :::no-loc text="Agents"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f5b4.png" alt-text="Screenshot of ShieldLock.":::  | f5b4 | :::no-loc text="ShieldLock"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f5b5.png" alt-text="Screenshot of Chess.":::  | f5b5 | :::no-loc text="Chess"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f5ca.png" alt-text="Screenshot of POILocationFound.":::  | f5ca | :::no-loc text="POILocationFound"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f67b.png" alt-text="Pen"::: | f67b | :::no-loc text="Pen"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f683.png" alt-text="TextSelect"::: | f683 | :::no-loc text="TextSelect"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f684.png" alt-text="TextNavigate"::: | f684 | :::no-loc text="TextNavigate"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f698.png" alt-text="PinyinIMELogo2"::: | f698 | :::no-loc text="PinyinIMELogo2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f69b.png" alt-text="UserRemove"::: | f69b | :::no-loc text="UserRemove"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f6c4.png" alt-text="PhoneScreen"::: | f6c4 | :::no-loc text="PhoneScreen"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f6c5.png" alt-text="AlertUrgent"::: | f6c5 | :::no-loc text="AlertUrgent"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f6c6.png" alt-text="PhoneDesktop"::: | f6c6 | :::no-loc text="PhoneDesktop"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f6c7.png" alt-text="Screenshot of PenSparkle.":::  | f6c7 | :::no-loc text="PenSparkle"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f736.png" alt-text="Screenshot of WarningSolid.":::  | f736 | :::no-loc text="WarningSolid"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f760.png" alt-text="Screenshot of ShieldTask.":::  | f760 | :::no-loc text="ShieldTask"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f7db.png" alt-text="Screenshot of LearningTools.":::  | f7db | :::no-loc text="LearningTools"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f7ec.png" alt-text="Screenshot of Task.":::  | f7ec | :::no-loc text="Task"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8b4.png" alt-text="Screenshot of CopilotVoice.":::  | f8b4 | :::no-loc text="CopilotVoice"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8c0.png" alt-text="VPNOverlay"::: | f8c0 | :::no-loc text="VPNOverlay"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8c1.png" alt-text="VPNRoamingOverly"::: | f8c1 | :::no-loc text="VPNRoamingOverly"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8c2.png" alt-text="WifiVPN3"::: | f8c2 | :::no-loc text="WifiVPN3"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8c3.png" alt-text="WifiVPN4"::: | f8c3 | :::no-loc text="WifiVPN4"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8c4.png" alt-text="WifiVPN5"::: | f8c4 | :::no-loc text="WifiVPN5"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8c5.png" alt-text="SignalBarsVPN2"::: | f8c5 | :::no-loc text="SignalBarsVPN2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8c6.png" alt-text="SignalBarsVPN3"::: | f8c6 | :::no-loc text="SignalBarsVPN3"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8c7.png" alt-text="SignalBarsVPN4"::: | f8c7 | :::no-loc text="SignalBarsVPN4"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8c8.png" alt-text="SignalBarsVPN5"::: | f8c8 | :::no-loc text="SignalBarsVPN5"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8c9.png" alt-text="SignalBarsVPNRoaming3"::: | f8c9 | :::no-loc text="SignalBarsVPNRoaming3"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8ca.png" alt-text="SignalBarsVPNRoaming4"::: | f8ca | :::no-loc text="SignalBarsVPNRoaming4"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8cb.png" alt-text="SignalBarsVPNRoaming5"::: | f8cb | :::no-loc text="SignalBarsVPNRoaming5"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f8cc.png" alt-text="EthernetVPN"::: | f8cc | :::no-loc text="EthernetVPN"::: |
 
 ## About Segoe Fluent Icons
 
@@ -90,7 +278,7 @@ Please keep in mind that the `Segoe Fluent Icons` font includes many more icons 
 The following tables display all `Segoe Fluent Icons` glyphs and their respective unicode values and descriptive names. Select a range from the following list to view glyphs according to the PUA range they belong to.
 
 * [PUA E700-E9F9](#pua-e700-e9f9)
-* [PUA EA0C-ECF3](#pua-ea0c-ecf3)
+* [PUA EA07-ECF6](#pua-ea07-ecf6)
 * [PUA ED0C-EFFF](#pua-ed0c-efff)
 * [PUA F000-F5FF](#pua-f000-f5ff)
 * [PUA F600-F8CC](#pua-f600-f8cc)
@@ -332,6 +520,7 @@ The following table of glyphs displays unicode points prefixed from E7- to E9-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e82e.png" alt-text="Screenshot of DictionaryAdd."::: | e82e | :::no-loc text="DictionaryAdd"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e82f.png" alt-text="Screenshot of ToolTip."::: | e82f | :::no-loc text="ToolTip"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e830.png" alt-text="Screenshot of ChromeBack."::: | e830 | :::no-loc text="ChromeBack"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e833.png" alt-text="Screenshot of SemanticZoom."::: | e833 | :::no-loc text="SemanticZoom"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e835.png" alt-text="Screenshot of ProvisioningPackage."::: | e835 | :::no-loc text="ProvisioningPackage"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e836.png" alt-text="Screenshot of AddRemoteDevice."::: | e836 | :::no-loc text="AddRemoteDevice"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e838.png" alt-text="Screenshot of FolderOpen."::: | e838 | :::no-loc text="FolderOpen"::: |
@@ -494,7 +683,7 @@ The following table of glyphs displays unicode points prefixed from E7- to E9-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e8d6.png" alt-text="Screenshot of Audio."::: | e8d6 | :::no-loc text="Audio"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e8d7.png" alt-text="Screenshot of Permissions."::: | e8d7 | :::no-loc text="Permissions"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e8d8.png" alt-text="Screenshot of DisableUpdates."::: | e8d8 | :::no-loc text="DisableUpdates"::: |
-| :::image type="content" border="false" source="images/segoe-fluent-icons/e8d9.png" alt-text="Screenshot of Unfavorite."::: | e8d9 | :::no-loc text="Unfavorite"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e8d9.png" alt-text="Screenshot of UnfavoriteStarSolid."::: | e8d9 | :::no-loc text="UnfavoriteStarSolid"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e8da.png" alt-text="Screenshot of OpenLocal."::: | e8da | :::no-loc text="OpenLocal"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e8db.png" alt-text="Screenshot of Italic."::: | e8db | :::no-loc text="Italic"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e8dc.png" alt-text="Screenshot of Underline."::: | e8dc | :::no-loc text="Underline"::: |
@@ -660,6 +849,7 @@ The following table of glyphs displays unicode points prefixed from E7- to E9-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e996.png" alt-text="Screenshot of BatteryUnknown."::: | e996 | :::no-loc text="BatteryUnknown"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e998.png" alt-text="Screenshot of WifiAttentionOverlay."::: | e998 | :::no-loc text="WifiAttentionOverlay"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e99a.png" alt-text="Screenshot of Robot."::: | e99a | :::no-loc text="Robot"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e99c.png" alt-text="Screenshot of SidePanelOpen."::: | e99c | :::no-loc text="SidePanelOpen"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e9a1.png" alt-text="Screenshot of TapAndSend."::: | e9a1 | :::no-loc text="TapAndSend"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e9a3.png" alt-text="Screenshot of TextBulletListSquareSparkle.":::  | e9a3 | :::no-loc text="TextBulletListSquareSparkle"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e9a4.png" alt-text="Screenshot of TextBulletListSquare."::: | e9a4 | :::no-loc text="TextBulletListSquare"::: |
@@ -690,12 +880,13 @@ The following table of glyphs displays unicode points prefixed from E7- to E9-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e9d2.png" alt-text="Screenshot of AreaChart."::: | e9d2 | :::no-loc text="AreaChart"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e9d5.png" alt-text="Screenshot of CheckList."::: | e9d5 | :::no-loc text="CheckList"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e9d9.png" alt-text="Screenshot of Diagnostic."::: | e9d9 | :::no-loc text="Diagnostic"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/e9e3.png" alt-text="Screenshot of ArrowExpand."::: | e9e3 | :::no-loc text="ArrowExpand"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e9e9.png" alt-text="Screenshot of Equalizer."::: | e9e9 | :::no-loc text="Equalizer"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e9f3.png" alt-text="Screenshot of Process."::: | e9f3 | :::no-loc text="Process"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e9f5.png" alt-text="Screenshot of Processing."::: | e9f5 | :::no-loc text="Processing"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/e9f9.png" alt-text="Screenshot of ReportDocument."::: | e9f9 | :::no-loc text="ReportDocument"::: |
 
-### PUA EA0C-ECF3
+### PUA EA07-ECF6
 
 The following table of glyphs displays unicode points prefixed from EA- to EC-.
 
@@ -703,10 +894,12 @@ The following table of glyphs displays unicode points prefixed from EA- to EC-.
 
 | Glyph | Unicode point | Description |
 |-------|---------------|-------------|
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ea07.png" alt-text="Screenshot of CinematicFraming."::: | ea07 | :::no-loc text="CinematicFraming"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea0c.png" alt-text="Screenshot of VideoSolid."::: | ea0c | :::no-loc text="VideoSolid"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea0d.png" alt-text="Screenshot of MixedMediaBadge."::: | ea0d | :::no-loc text="MixedMediaBadge"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea14.png" alt-text="Screenshot of DisconnectDisplay."::: | ea14 | :::no-loc text="DisconnectDisplay"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea18.png" alt-text="Screenshot of Shield."::: | ea18 | :::no-loc text="Shield"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ea1a.png" alt-text="Screenshot of PageAdd."::: | ea1a | :::no-loc text="PageAdd"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea1f.png" alt-text="Screenshot of Info2."::: | ea1f | :::no-loc text="Info2"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea21.png" alt-text="Screenshot of ActionCenterAsterisk."::: | ea21 | :::no-loc text="ActionCenterAsterisk"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea24.png" alt-text="Screenshot of Beta."::: | ea24 | :::no-loc text="Beta"::: |
@@ -753,6 +946,7 @@ The following table of glyphs displays unicode points prefixed from EA- to EC-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea65.png" alt-text="Screenshot of ShowResultsMirrored."::: | ea65 | :::no-loc text="ShowResultsMirrored"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea69.png" alt-text="Screenshot of Media."::: | ea69 | :::no-loc text="Media"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea6a.png" alt-text="Screenshot of SyncError."::: | ea6a | :::no-loc text="SyncError"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ea6b.png" alt-text="Screenshot of GetHelpApp."::: | ea6b | :::no-loc text="GetHelpApp"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea6c.png" alt-text="Screenshot of Devices3."::: | ea6c | :::no-loc text="Devices3"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea79.png" alt-text="Screenshot of SlowMotionOn."::: | ea79 | :::no-loc text="SlowMotionOn"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ea80.png" alt-text="Screenshot of Lightbulb."::: | ea80 | :::no-loc text="Lightbulb"::: |
@@ -800,8 +994,8 @@ The following table of glyphs displays unicode points prefixed from EA- to EC-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/eadf.png" alt-text="Screenshot of Trackers."::: | eadf | :::no-loc text="Trackers"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/eafc.png" alt-text="Screenshot of Market."::: | eafc | :::no-loc text="Market"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/eb05.png" alt-text="Screenshot of PieSingle."::: | eb05 | :::no-loc text="PieSingle"::: |
-| :::image type="content" border="false" source="images/segoe-fluent-icons/eb0f.png" alt-text="Screenshot of StockUp."::: | eb0f | :::no-loc text="StockUp"::: |
-| :::image type="content" border="false" source="images/segoe-fluent-icons/eb11.png" alt-text="Screenshot of StockDown."::: | eb11 | :::no-loc text="StockDown"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eb0f.png" alt-text="Screenshot of StockDown."::: | eb0f | :::no-loc text="StockDown"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/eb11.png" alt-text="Screenshot of StockUp."::: | eb11 | :::no-loc text="StockUp"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/eb17.png" alt-text="Screenshot of MobBatteryUnknownCharging.":::  | eb17 | :::no-loc text="MobBatteryUnknownCharging"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/eb19.png" alt-text="Screenshot of ClicktoDoOff."::: | eb19 | :::no-loc text="ClicktoDoOff"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/eb1a.png" alt-text="Screenshot of BatteryUnknownCharging.":::  | eb1a | :::no-loc text="BatteryUnknownCharging"::: |
@@ -1036,6 +1230,7 @@ The following table of glyphs displays unicode points prefixed from EA- to EC-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ecf0.png" alt-text="Screenshot of WiredUSB."::: | ecf0 | :::no-loc text="WiredUSB"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ecf1.png" alt-text="Screenshot of WirelessUSB."::: | ecf1 | :::no-loc text="WirelessUSB"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ecf3.png" alt-text="Screenshot of USBSafeConnect."::: | ecf3 | :::no-loc text="USBSafeConnect"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ecf6.png" alt-text="Screenshot of ClearClipboard."::: | ecf6 | :::no-loc text="ClearClipboard"::: |
 
 ### PUA ED0C-EFFF
 
@@ -1070,8 +1265,8 @@ The following table of glyphs displays unicode points prefixed from ED- to EF-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ed33.png" alt-text="Screenshot of Headphone3."::: | ed33 | :::no-loc text="Headphone3"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ed35.png" alt-text="Screenshot of Apps."::: | ed35 | :::no-loc text="Apps"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ed37.png" alt-text="Screenshot of SearchSparkle.":::  | ed37 | :::no-loc text="SearchSparkle"::: |
-| :::image type="content" border="false" source="images/segoe-fluent-icons/ed39.png" alt-text="Screenshot of KeyboardBrightness."::: | ed39 | :::no-loc text="KeyboardBrightness"::: |
-| :::image type="content" border="false" source="images/segoe-fluent-icons/ed3a.png" alt-text="Screenshot of KeyboardLowerBrightness."::: | ed3a | :::no-loc text="KeyboardLowerBrightness"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed39.png" alt-text="Screenshot of KeyboardBrightnessHigh."::: | ed39 | :::no-loc text="KeyboardBrightnessHigh"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed3a.png" alt-text="Screenshot of KeyboardBrightnessLow."::: | ed3a | :::no-loc text="KeyboardBrightnessLow"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ed3c.png" alt-text="Screenshot of SkipBack10."::: | ed3c | :::no-loc text="SkipBack10"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ed3d.png" alt-text="Screenshot of SkipForward30."::: | ed3d | :::no-loc text="SkipForward30"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ed41.png" alt-text="Screenshot of TreeFolderFolder."::: | ed41 | :::no-loc text="TreeFolderFolder"::: |
@@ -1102,6 +1297,17 @@ The following table of glyphs displays unicode points prefixed from ED- to EF-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ed65.png" alt-text="Screenshot of InkingCaret."::: | ed65 | :::no-loc text="InkingCaret"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ed66.png" alt-text="Screenshot of InkingColorOutline."::: | ed66 | :::no-loc text="InkingColorOutline"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ed67.png" alt-text="Screenshot of InkingColorFill."::: | ed67 | :::no-loc text="InkingColorFill"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed6a.png" alt-text="Screenshot of CloseForeground."::: | ed6a | :::no-loc text="CloseForeground"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed6b.png" alt-text="Screenshot of MaximizeForeground."::: | ed6b | :::no-loc text="MaximizeForeground"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed6c.png" alt-text="Screenshot of MinimizeForeground."::: | ed6c | :::no-loc text="MinimizeForeground"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed6d.png" alt-text="Screenshot of Snapbottom."::: | ed6d | :::no-loc text="Snapbottom"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed6e.png" alt-text="Screenshot of Snaptop."::: | ed6e | :::no-loc text="Snaptop"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed6f.png" alt-text="Screenshot of Snaptopright."::: | ed6f | :::no-loc text="Snaptopright"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed70.png" alt-text="Screenshot of Snaptopleft."::: | ed70 | :::no-loc text="Snaptopleft"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed71.png" alt-text="Screenshot of Snapleft."::: | ed71 | :::no-loc text="Snapleft"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed72.png" alt-text="Screenshot of Snapright."::: | ed72 | :::no-loc text="Snapright"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed73.png" alt-text="Screenshot of Snapbottomright."::: | ed73 | :::no-loc text="Snapbottomright"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ed74.png" alt-text="Screenshot of Snapbottomleft."::: | ed74 | :::no-loc text="Snapbottomleft"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/eda2.png" alt-text="Screenshot of HardDrive."::: | eda2 | :::no-loc text="HardDrive"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/eda3.png" alt-text="Screenshot of NetworkAdapter."::: | eda3 | :::no-loc text="NetworkAdapter"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/eda4.png" alt-text="Screenshot of Touchscreen."::: | eda4 | :::no-loc text="Touchscreen"::: |
@@ -1137,6 +1343,8 @@ The following table of glyphs displays unicode points prefixed from ED- to EF-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ede4.png" alt-text="Screenshot of CloudSearch."::: | ede4 | :::no-loc text="CloudSearch"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ede5.png" alt-text="Screenshot of PinyinIMELogo."::: | ede5 | :::no-loc text="PinyinIMELogo"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/edfb.png" alt-text="Screenshot of CalligraphyPen."::: | edfb | :::no-loc text="CalligraphyPen"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee1a.png" alt-text="Screenshot of FolderSearch."::: | ee1a | :::no-loc text="FolderSearch"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee1b.png" alt-text="Screenshot of RecordStop."::: | ee1b | :::no-loc text="RecordStop"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ee35.png" alt-text="Screenshot of ReplyMirrored."::: | ee35 | :::no-loc text="ReplyMirrored"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ee3f.png" alt-text="Screenshot of LockscreenDesktop."::: | ee3f | :::no-loc text="LockscreenDesktop"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ee40.png" alt-text="Screenshot of TaskViewSettings."::: | ee40 | :::no-loc text="TaskViewSettings"::: |
@@ -1148,6 +1356,11 @@ The following table of glyphs displays unicode points prefixed from ED- to EF-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ee47.png" alt-text="Screenshot of MiniExpand2Mirrored."::: | ee47 | :::no-loc text="MiniExpand2Mirrored"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ee49.png" alt-text="Screenshot of MiniContract2Mirrored."::: | ee49 | :::no-loc text="MiniContract2Mirrored"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ee4a.png" alt-text="Screenshot of Play36."::: | ee4a | :::no-loc text="Play36"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee4d.png" alt-text="Screenshot of DualScreen2."::: | ee4d | :::no-loc text="DualScreen2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee4e.png" alt-text="Screenshot of Snap3Left."::: | ee4e | :::no-loc text="Snap3Left"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee4f.png" alt-text="Screenshot of Snap4."::: | ee4f | :::no-loc text="Snap4"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee50.png" alt-text="Screenshot of Taskview2."::: | ee50 | :::no-loc text="Taskview2"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/ee51.png" alt-text="Screenshot of CaptureRecord."::: | ee51 | :::no-loc text="CaptureRecord"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ee56.png" alt-text="Screenshot of PenPalette."::: | ee56 | :::no-loc text="PenPalette"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ee57.png" alt-text="Screenshot of GuestUser."::: | ee57 | :::no-loc text="GuestUser"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ee63.png" alt-text="Screenshot of SettingsBattery."::: | ee63 | :::no-loc text="SettingsBattery"::: |
@@ -1193,7 +1406,7 @@ The following table of glyphs displays unicode points prefixed from ED- to EF-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/ef91.png" alt-text="Screenshot of PauseDurationVoice.":::  | ef91 | :::no-loc text="PauseDurationVoice"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/efa5.png" alt-text="Screenshot of Touchpad."::: | efa5 | :::no-loc text="Touchpad"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/efa9.png" alt-text="Screenshot of Speech."::: | efa9 | :::no-loc text="Speech"::: |
-| :::image type="content" border="false" source="images/segoe-fluent-icons/efda.png" alt-text="Screenshot of AppIconDefaultAdd."::: | efda | :::no-loc text="AppIconDefaultAdd"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/efda.png" alt-text="Screenshot of DocumentManagement."::: | efda | :::no-loc text="DocumentManagement"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/efff.png" alt-text="Screenshot of CRMScheduleReports."::: | efff | :::no-loc text="CRMScheduleReports"::: |
 
 ### PUA F000-F5FF
@@ -1216,6 +1429,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f080.png" alt-text="Screenshot of DefaultAPN."::: | f080 | :::no-loc text="DefaultAPN"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f081.png" alt-text="Screenshot of UserAPN."::: | f081 | :::no-loc text="UserAPN"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f085.png" alt-text="Screenshot of DoublePinyin."::: | f085 | :::no-loc text="DoublePinyin"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f08a.png" alt-text="Screenshot of DefenderApp."::: | f08a | :::no-loc text="DefenderApp"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f08c.png" alt-text="Screenshot of BlueLight."::: | f08c | :::no-loc text="BlueLight"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f08d.png" alt-text="Screenshot of CaretSolidLeft."::: | f08d | :::no-loc text="CaretSolidLeft"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f08e.png" alt-text="Screenshot of CaretSolidDown."::: | f08e | :::no-loc text="CaretSolidDown"::: |
@@ -1237,6 +1451,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0b7.png" alt-text="Screenshot of StatusCheckmark7."::: | f0b7 | :::no-loc text="StatusCheckmark7"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0b8.png" alt-text="Screenshot of StatusErrorCircle7."::: | f0b8 | :::no-loc text="StatusErrorCircle7"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0b9.png" alt-text="Screenshot of Connected."::: | f0b9 | :::no-loc text="Connected"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f0c5.png" alt-text="Screenshot of WindowsUpdate."::: | f0c5 | :::no-loc text="WindowsUpdate"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0c6.png" alt-text="Screenshot of PencilFill."::: | f0c6 | :::no-loc text="PencilFill"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0c7.png" alt-text="Screenshot of CalligraphyFill."::: | f0c7 | :::no-loc text="CalligraphyFill"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0ca.png" alt-text="Screenshot of QuarterStarLeft."::: | f0ca | :::no-loc text="QuarterStarLeft"::: |
@@ -1264,11 +1479,13 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0ed.png" alt-text="Screenshot of SpatialVolume2."::: | f0ed | :::no-loc text="SpatialVolume2"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0ee.png" alt-text="Screenshot of SpatialVolume3."::: | f0ee | :::no-loc text="SpatialVolume3"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0ef.png" alt-text="Screenshot of ApplicationGuard."::: | f0ef | :::no-loc text="ApplicationGuard"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f0f6.png" alt-text="Screenshot of ProjectToDeviceSettings."::: | f0f6 | :::no-loc text="ProjectToDeviceSettings"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0f7.png" alt-text="Screenshot of OutlineStarLeftHalf."::: | f0f7 | :::no-loc text="OutlineStarLeftHalf"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0f8.png" alt-text="Screenshot of OutlineStarRightHalf."::: | f0f8 | :::no-loc text="OutlineStarRightHalf"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0f9.png" alt-text="Screenshot of ChromeAnnotateContrast."::: | f0f9 | :::no-loc text="ChromeAnnotateContrast"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f0fb.png" alt-text="Screenshot of DefenderBadge12."::: | f0fb | :::no-loc text="DefenderBadge12"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f103.png" alt-text="Screenshot of DetachablePC."::: | f103 | :::no-loc text="DetachablePC"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f106.png" alt-text="Screenshot of PageList."::: | f106 | :::no-loc text="PageList"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f108.png" alt-text="Screenshot of LeftStick."::: | f108 | :::no-loc text="LeftStick"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f109.png" alt-text="Screenshot of RightStick."::: | f109 | :::no-loc text="RightStick"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f10a.png" alt-text="Screenshot of TriggerLeft."::: | f10a | :::no-loc text="TriggerLeft"::: |
@@ -1328,6 +1545,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f158.png" alt-text="Screenshot of DialShape3."::: | f158 | :::no-loc text="DialShape3"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f159.png" alt-text="Screenshot of DialShape4."::: | f159 | :::no-loc text="DialShape4"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f15f.png" alt-text="Screenshot of ClosedCaptionsInternational."::: | f15f | :::no-loc text="ClosedCaptionsInternational"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f160.png" alt-text="Screenshot of Emoji3."::: | f160 | :::no-loc text="Emoji3"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f161.png" alt-text="Screenshot of TollSolid."::: | f161 | :::no-loc text="TollSolid"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f163.png" alt-text="Screenshot of TrafficCongestionSolid."::: | f163 | :::no-loc text="TrafficCongestionSolid"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f164.png" alt-text="Screenshot of ExploreContentSingle."::: | f164 | :::no-loc text="ExploreContentSingle"::: |
@@ -1353,6 +1571,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f19d.png" alt-text="Screenshot of EyeGaze."::: | f19d | :::no-loc text="EyeGaze"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f19e.png" alt-text="Screenshot of ToggleLeft."::: | f19e | :::no-loc text="ToggleLeft"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f19f.png" alt-text="Screenshot of ToggleRight."::: | f19f | :::no-loc text="ToggleRight"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f1a2.png" alt-text="Screenshot of FullView."::: | f1a2 | :::no-loc text="FullView"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f1ad.png" alt-text="Screenshot of WindowsInsider."::: | f1ad | :::no-loc text="WindowsInsider"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f1b1.png" alt-text="Screenshot of PowerButtonUpdate2."::: | f1b1 | :::no-loc text="PowerButtonUpdate2"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f1b9.png" alt-text="Screenshot of LassoSparkle.":::  | f1b9 | :::no-loc text="LassoSparkle"::: |
@@ -1366,6 +1585,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f1d6.png" alt-text="Screenshot of ReformatSparkle.":::  | f1d6 | :::no-loc text="ReformatSparkle"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f1d8.png" alt-text="Screenshot of StatusCheckmark."::: | f1d8 | :::no-loc text="StatusCheckmark"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f1d9.png" alt-text="Screenshot of StatusCheckmarkLeft."::: | f1d9 | :::no-loc text="StatusCheckmarkLeft"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f1db.png" alt-text="Screenshot of MobQuietHoursSolid."::: | f1db | :::no-loc text="MobQuietHoursSolid"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f1e8.png" alt-text="Screenshot of LeafTwo."::: | f1e8 | :::no-loc text="LeafTwo"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f207.png" alt-text="Screenshot of GridviewGroup.":::  | f207 | :::no-loc text="GridviewGroup"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f20c.png" alt-text="Screenshot of KeyboardLeftAligned."::: | f20c | :::no-loc text="KeyboardLeftAligned"::: |
@@ -1375,6 +1595,7 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f22c.png" alt-text="Screenshot of IOT."::: | f22c | :::no-loc text="IOT"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f22e.png" alt-text="Screenshot of UnknownMirrored."::: | f22e | :::no-loc text="UnknownMirrored"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f232.png" alt-text="Screenshot of GridViewSmall."::: | f232 | :::no-loc text="GridViewSmall"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f240.png" alt-text="Screenshot of PhoneSoundOff."::: | f240 | :::no-loc text="PhoneSoundOff"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f246.png" alt-text="Screenshot of ViewDashboard."::: | f246 | :::no-loc text="ViewDashboard"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f259.png" alt-text="Screenshot of ExploitProtectionSettings."::: | f259 | :::no-loc text="ExploitProtectionSettings"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f260.png" alt-text="Screenshot of KeyboardNarrow."::: | f260 | :::no-loc text="KeyboardNarrow"::: |
@@ -1394,9 +1615,12 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f2a3.png" alt-text="Screenshot of MobNotificationBell."::: | f2a3 | :::no-loc text="MobNotificationBell"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f2a5.png" alt-text="Screenshot of MobNotificationBellFilled."::: | f2a5 | :::no-loc text="MobNotificationBellFilled"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f2a8.png" alt-text="Screenshot of MobSnoozeFilled."::: | f2a8 | :::no-loc text="MobSnoozeFilled"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f2ae.png" alt-text="Screenshot of CubeWithDashedOutline."::: | f2ae | :::no-loc text="CubeWithDashedOutline"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f2b7.png" alt-text="Screenshot of LocaleLanguage."::: | f2b7 | :::no-loc text="LocaleLanguage"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f2c1.png" alt-text="Screenshot of CameraArrowUp."::: | f2c1 | :::no-loc text="CameraArrowUp"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f2c7.png" alt-text="Screenshot of BulletedList2."::: | f2c7 | :::no-loc text="BulletedList2"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f2c8.png" alt-text="Screenshot of BulletedList2Mirrored."::: | f2c8 | :::no-loc text="BulletedList2Mirrored"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f2ce.png" alt-text="Screenshot of FolderList."::: | f2ce | :::no-loc text="FolderList"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f2d9.png" alt-text="Screenshot of CirclePause."::: | f2d9 | :::no-loc text="CirclePause"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f305.png" alt-text="Screenshot of Restart3."::: | f305 | :::no-loc text="Restart3"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f32a.png" alt-text="Screenshot of PassiveAuthentication."::: | f32a | :::no-loc text="PassiveAuthentication"::: |
@@ -1418,8 +1642,10 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f406.png" alt-text="Screenshot of ClippingTool."::: | f406 | :::no-loc text="ClippingTool"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f407.png" alt-text="Screenshot of RectangularClipping."::: | f407 | :::no-loc text="RectangularClipping"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f408.png" alt-text="Screenshot of FreeFormClipping."::: | f408 | :::no-loc text="FreeFormClipping"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f40b.png" alt-text="Screenshot of FindMyPhone."::: | f40b | :::no-loc text="FindMyPhone"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f413.png" alt-text="Screenshot of CopyTo."::: | f413 | :::no-loc text="CopyTo"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f427.png" alt-text="Screenshot of IDBadge."::: | f427 | :::no-loc text="IDBadge"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f429.png" alt-text="Screenshot of ChatAdd."::: | f429 | :::no-loc text="ChatAdd"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f42f.png" alt-text="Screenshot of SpeedHigh2.":::  | f42f | :::no-loc text="SpeedHigh2"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f432.png" alt-text="Screenshot of BatterySaver."::: | f432 | :::no-loc text="BatterySaver"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f439.png" alt-text="Screenshot of DynamicLock."::: | f439 | :::no-loc text="DynamicLock"::: |
@@ -1447,7 +1673,10 @@ The following table of glyphs displays unicode points prefixed from F0- to F5-.
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f4bf.png" alt-text="Screenshot of HoloLensSelected."::: | f4bf | :::no-loc text="HoloLensSelected"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f4c0.png" alt-text="Screenshot of Earbud."::: | f4c0 | :::no-loc text="Earbud"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f4c3.png" alt-text="Screenshot of MixVolumes."::: | f4c3 | :::no-loc text="MixVolumes"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f539.png" alt-text="Screenshot of SpeakerShare."::: | f539 | :::no-loc text="SpeakerShare"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f53f.png" alt-text="Screenshot of GrammarOptions."::: | f53f | :::no-loc text="GrammarOptions"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f540.png" alt-text="Screenshot of Safe."::: | f540 | :::no-loc text="Safe"::: |
+| :::image type="content" border="false" source="images/segoe-fluent-icons/f54c.png" alt-text="Screenshot of Agents."::: | f54c | :::no-loc text="Agents"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f552.png" alt-text="Screenshot of LaptopSecure."::: | f552 | :::no-loc text="LaptopSecure"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f56d.png" alt-text="Screenshot of PrintDefault."::: | f56d | :::no-loc text="PrintDefault"::: |
 | :::image type="content" border="false" source="images/segoe-fluent-icons/f56e.png" alt-text="Screenshot of PageMirrored."::: | f56e | :::no-loc text="PageMirrored"::: |
