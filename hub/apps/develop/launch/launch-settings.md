@@ -93,283 +93,283 @@ The following sections describe different categories of ms-settings URIs used to
 
 |Settings page| URI |
 |-------------|-----|
-| Access work or school | ms-settings:workplace |
-| Email & app accounts  | ms-settings:emailandaccounts |
-| Family & other people | ms-settings:otherusers |
-| Provisioning | ms-settings:provisioning (only available on mobile and if the enterprise has deployed a provisioning package)<br>ms-settings:workplace-provisioning (only available if enterprise has deployed a provisioning package) |
-| Repair token | ms-settings:workplace-repairtoken |
-| Set up a kiosk | ms-settings:assignedaccess |
-| Sign-in options | ms-settings:signinoptions<br>ms-settings:signinoptions-dynamiclock |
-| Sync your settings | ms-settings:sync<br>ms-settings:backup (**Backup page deprecated in Windows 11**) |
-| Windows Anywhere | ms-settings:windowsanywhere (device must be Windows Anywhere-capable) |
-| Windows Hello setup | ms-settings:signinoptions-launchfaceenrollment<br>ms-settings:signinoptions-launchfingerprintenrollment |
-| Your info | ms-settings:yourinfo |
+| Access work or school | :::no-loc text="ms-settings:workplace"::: |
+| Email & app accounts  | :::no-loc text="ms-settings:emailandaccounts"::: |
+| Family & other people | :::no-loc text="ms-settings:otherusers"::: |
+| Provisioning | :::no-loc text="ms-settings:provisioning"::: (only available on mobile and if the enterprise has deployed a provisioning package)<br>:::no-loc text="ms-settings:workplace-provisioning"::: (only available if enterprise has deployed a provisioning package) |
+| Repair token | :::no-loc text="ms-settings:workplace-repairtoken"::: |
+| Set up a kiosk | :::no-loc text="ms-settings:assignedaccess"::: |
+| Sign-in options | :::no-loc text="ms-settings:signinoptions":::<br>:::no-loc text="ms-settings:signinoptions-dynamiclock"::: |
+| Sync your settings | :::no-loc text="ms-settings:sync":::<br>:::no-loc text="ms-settings:backup"::: (**Backup page deprecated in Windows 11**) |
+| Windows Anywhere | :::no-loc text="ms-settings:windowsanywhere"::: (device must be Windows Anywhere-capable) |
+| Windows Hello setup | :::no-loc text="ms-settings:signinoptions-launchfaceenrollment":::<br>:::no-loc text="ms-settings:signinoptions-launchfingerprintenrollment"::: |
+| Your info | :::no-loc text="ms-settings:yourinfo"::: |
 
 ### Apps
 
 |Settings page| URI |
 |-------------|-----|
-| Apps & Features | ms-settings:appsfeatures |
-| App features | ms-settings:appsfeatures-app (Reset, manage add-on & downloadable content, etc. for the app) <br><br> To access this page with a URI, use the ms-settings:appsfeatures-app URI and pass an optional parameter of the *package family name* of the app.<br><br>Example: `ms-settings:appsfeatures-app?<PFN>` |
-| Apps for websites | ms-settings:appsforwebsites |
-| Default apps | ms-settings:defaultapps (**Behavior introduced in Windows 11, version 21H2 (with 2023-04 Cumulative Update) or 22H2 (with 2023-04 Cumulative Update), or later.**)<br/>Append the query string parameter in the following formats using the Uri-escaped name of an app to directly launch the default settings page for that app:<br/><br/>- registeredAppMachine=\<Uri-escaped per machine installed name of app\><br/>- registeredAppUser=\<Uri-escaped per user installed name of app\><br/>- registeredAUMID=\<Uri-escaped Application User Model ID\><br/><br/>For more information, see [Launch the Default Apps settings page](launch-default-apps-settings.md). |
-| Default browser settings | ms-settings:defaultbrowsersettings (**Deprecated in Windows 11**) |
-| Manage optional features | ms-settings:optionalfeatures |
-| Offline Maps | ms-settings:maps<br/>ms-settings:maps-downloadmaps (Download maps) |
-| Startup apps | ms-settings:startupapps |
-| Video playback | ms-settings:videoplayback |
+| Apps & Features | :::no-loc text="ms-settings:appsfeatures"::: |
+| App features | :::no-loc text="ms-settings:appsfeatures-app"::: (Reset, manage add-on & downloadable content, etc. for the app) <br><br> To access this page with a URI, use the :::no-loc text="ms-settings:appsfeatures-app"::: URI and pass an optional parameter of the *package family name* of the app.<br><br>Example: :::no-loc text="ms-settings:appsfeatures-app?<PFN>"::: |
+| Apps for websites | :::no-loc text="ms-settings:appsforwebsites"::: |
+| Default apps | :::no-loc text="ms-settings:defaultapps"::: (**Behavior introduced in Windows 11, version 21H2 (with 2023-04 Cumulative Update) or 22H2 (with 2023-04 Cumulative Update), or later.**)<br/>Append the query string parameter in the following formats using the Uri-escaped name of an app to directly launch the default settings page for that app:<br/><br/>- registeredAppMachine=\<Uri-escaped per machine installed name of app\><br/>- registeredAppUser=\<Uri-escaped per user installed name of app\><br/>- registeredAUMID=\<Uri-escaped Application User Model ID\><br/><br/>For more information, see [Launch the Default Apps settings page](launch-default-apps-settings.md). |
+| Default browser settings | :::no-loc text="ms-settings:defaultbrowsersettings"::: (**Deprecated in Windows 11**) |
+| Manage optional features | :::no-loc text="ms-settings:optionalfeatures"::: |
+| Offline Maps | :::no-loc text="ms-settings:maps":::<br/>:::no-loc text="ms-settings:maps-downloadmaps"::: (Download maps) |
+| Startup apps | :::no-loc text="ms-settings:startupapps"::: |
+| Video playback | :::no-loc text="ms-settings:videoplayback"::: |
 
 ### Control Center
 
 |Settings page| URI |
 |-------------|-----|
-| Control center | ms-settings:controlcenter |
+| Control center | :::no-loc text="ms-settings:controlcenter"::: |
 
 ### Devices
 
 |Settings page| URI |
 |-------------|-----|
-| AutoPlay | ms-settings:autoplay |
-| Bluetooth | ms-settings:bluetooth |
-| Connected Devices | ms-settings:connecteddevices |
-| Default camera | ms-settings:camera (**Behavior deprecated in Windows 10, version 1809 and later**) |
-| Camera settings | ms-settings:camera (**Behavior introduced in Windows 11, build 22000 and later**) Append the query string parameter `cameraId` set to the Uri-escaped symbolic link name of a camera device to directly launch the settings for that camera. For more information, see [Launch the camera settings page](../camera/launch-camera-settings.md).|
-| Mouse & touchpad | ms-settings:mousetouchpad (touchpad settings only available on devices that have a touchpad) |
-| Pen & Windows Ink | ms-settings:pen |
-| Pen shortcut button | ms-settings:pen-button |
-| Printers & scanners | ms-settings:printers |
-| Touch | ms-settings:devices-touch |
-| Touchpad | ms-settings:devices-touchpad (only available if touchpad hardware is present) |
-| Text Suggestions | ms-settings:devicestyping-hwkbtextsuggestions |
-| Typing | ms-settings:typing |
-| USB | ms-settings:usb |
-| Wheel | ms-settings:wheel (only available if a **Surface Dial** device is paired) |
-| Your phone | ms-settings:mobile-devices  |
+| AutoPlay | :::no-loc text="ms-settings:autoplay"::: |
+| Bluetooth | :::no-loc text="ms-settings:bluetooth"::: |
+| Connected Devices | :::no-loc text="ms-settings:connecteddevices"::: |
+| Default camera | :::no-loc text="ms-settings:camera"::: (**Behavior deprecated in Windows 10, version 1809 and later**) |
+| Camera settings | :::no-loc text="ms-settings:camera"::: (**Behavior introduced in Windows 11, build 22000 and later**) Append the query string parameter `cameraId` set to the Uri-escaped symbolic link name of a camera device to directly launch the settings for that camera. For more information, see [Launch the camera settings page](../camera/launch-camera-settings.md).|
+| Mouse & touchpad | :::no-loc text="ms-settings:mousetouchpad"::: (touchpad settings only available on devices that have a touchpad) |
+| Pen & Windows Ink | :::no-loc text="ms-settings:pen"::: |
+| Pen shortcut button | :::no-loc text="ms-settings:pen-button"::: |
+| Printers & scanners | :::no-loc text="ms-settings:printers"::: |
+| Touch | :::no-loc text="ms-settings:devices-touch"::: |
+| Touchpad | :::no-loc text="ms-settings:devices-touchpad"::: (only available if touchpad hardware is present) |
+| Text Suggestions | :::no-loc text="ms-settings:devicestyping-hwkbtextsuggestions"::: |
+| Typing | :::no-loc text="ms-settings:typing"::: |
+| USB | :::no-loc text="ms-settings:usb"::: |
+| Wheel | :::no-loc text="ms-settings:wheel"::: (only available if a **Surface Dial** device is paired) |
+| Your phone | :::no-loc text="ms-settings:mobile-devices":::  |
 
 ### Ease of access
 
 |Settings page| URI |
 |-------------|-----|
-| Audio | ms-settings:easeofaccess-audio |
-| Closed captions | ms-settings:easeofaccess-closedcaptioning |
-| Color filters | ms-settings:easeofaccess-colorfilter </br> ms-settings:easeofaccess-colorfilter-adaptivecolorlink </br> ms-settings:easeofaccess-colorfilter-bluelightlink |
-| Display | ms-settings:easeofaccess-display |
-| Eye control | ms-settings:easeofaccess-eyecontrol |
-| Hearing devices | ms-settings:easeofaccess-hearingaids (**Added in Windows 11, Version 24H2**) |
-| High contrast | ms-settings:easeofaccess-highcontrast |
-| Keyboard | ms-settings:easeofaccess-keyboard |
-| Magnifier | ms-settings:easeofaccess-magnifier |
-| Mouse | ms-settings:easeofaccess-mouse |
-| Mouse pointer & touch | ms-settings:easeofaccess-mousepointer|
-| Narrator | ms-settings:easeofaccess-narrator </br> ms-settings:easeofaccess-narrator-isautostartenabled |
-| Speech | ms-settings:easeofaccess-speechrecognition |
-| Text cursor | ms-settings:easeofaccess-cursor|
-| Visual Effects | ms-settings:easeofaccess-visualeffects |
+| Audio | :::no-loc text="ms-settings:easeofaccess-audio"::: |
+| Closed captions | :::no-loc text="ms-settings:easeofaccess-closedcaptioning"::: |
+| Color filters | :::no-loc text="ms-settings:easeofaccess-colorfilter"::: </br> :::no-loc text="ms-settings:easeofaccess-colorfilter-adaptivecolorlink"::: </br> :::no-loc text="ms-settings:easeofaccess-colorfilter-bluelightlink"::: |
+| Display | :::no-loc text="ms-settings:easeofaccess-display"::: |
+| Eye control | :::no-loc text="ms-settings:easeofaccess-eyecontrol"::: |
+| Hearing devices | :::no-loc text="ms-settings:easeofaccess-hearingaids"::: (**Added in Windows 11, Version 24H2**) |
+| High contrast | :::no-loc text="ms-settings:easeofaccess-highcontrast"::: |
+| Keyboard | :::no-loc text="ms-settings:easeofaccess-keyboard"::: |
+| Magnifier | :::no-loc text="ms-settings:easeofaccess-magnifier"::: |
+| Mouse | :::no-loc text="ms-settings:easeofaccess-mouse"::: |
+| Mouse pointer & touch | :::no-loc text="ms-settings:easeofaccess-mousepointer":::|
+| Narrator | :::no-loc text="ms-settings:easeofaccess-narrator"::: </br> :::no-loc text="ms-settings:easeofaccess-narrator-isautostartenabled"::: |
+| Speech | :::no-loc text="ms-settings:easeofaccess-speechrecognition"::: |
+| Text cursor | :::no-loc text="ms-settings:easeofaccess-cursor":::|
+| Visual Effects | :::no-loc text="ms-settings:easeofaccess-visualeffects"::: |
 
 ### Extras
 
 |Settings page| URI |
 |-------------|-----|
-| Extras | ms-settings:extras (only available if apps with these settings have been installed, for example, by a 3rd party) |
+| Extras | :::no-loc text="ms-settings:extras"::: (only available if apps with these settings have been installed, for example, by a 3rd party) |
 
 ### Family Group
 
 |Settings page| URI |
 |-------------|-----|
-| Family Group | ms-settings:family-group |
+| Family Group | :::no-loc text="ms-settings:family-group"::: |
 
 ### Gaming
 
 |Settings page| URI |
 |-------------|-----|
-| Game bar | ms-settings:gaming-gamebar |
-| Game DVR | ms-settings:gaming-gamedvr |
-| Game Mode | ms-settings:gaming-gamemode |
-| Xbox Mode | ms-settings:gaming-fullscreen |
-| Playing a game full screen | ms-settings:quietmomentsgame |
-| TruePlay | ms-settings:gaming-trueplay (**As of Windows 10, version 1809 (10.0; Build 17763), this feature is removed from Windows**) |
+| Game bar | :::no-loc text="ms-settings:gaming-gamebar"::: |
+| Game DVR | :::no-loc text="ms-settings:gaming-gamedvr"::: |
+| Game Mode | :::no-loc text="ms-settings:gaming-gamemode"::: |
+| Xbox Mode | :::no-loc text="ms-settings:gaming-fullscreen"::: |
+| Playing a game full screen | :::no-loc text="ms-settings:quietmomentsgame"::: |
+| TruePlay | :::no-loc text="ms-settings:gaming-trueplay"::: (**As of Windows 10, version 1809 (10.0; Build 17763), this feature is removed from Windows**) |
 
 | Settings page | URI |
 |---------------|-----|
-| Audio and speech | ms-settings:holographic-audio |
-| Environment | ms-settings:privacy-holographic-environment |
-| Headset display | ms-settings:holographic-headset |
-| Uninstall | ms-settings:holographic-management |
-| Startup and desktop | ms-settings:holographic-startupandesktop |
+| Audio and speech | :::no-loc text="ms-settings:holographic-audio"::: |
+| Environment | :::no-loc text="ms-settings:privacy-holographic-environment"::: |
+| Headset display | :::no-loc text="ms-settings:holographic-headset"::: |
+| Uninstall | :::no-loc text="ms-settings:holographic-management"::: |
+| Startup and desktop | :::no-loc text="ms-settings:holographic-startupandesktop"::: |
 
 ### Network and internet
 
 |Settings page| URI |
 |-------------|-----|
-| Network & internet | ms-settings:network-status |
-| Advanced settings | ms-settings:network-advancedsettings |
-| Airplane mode | ms-settings:network-airplanemode<br/>ms-settings:proximity |
-| Cellular & SIM | ms-settings:network-cellular |
-| Dial-up | ms-settings:network-dialup |
-| DirectAccess | ms-settings:network-directaccess (only available if DirectAccess is enabled) |
-| Ethernet | ms-settings:network-ethernet |
-| Manage known networks | ms-settings:network-wifisettings |
-| Mobile hotspot | ms-settings:network-mobilehotspot |
-| Proxy | ms-settings:network-proxy |
-| VPN | ms-settings:network-vpn |
-| Wi-Fi | ms-settings:network-wifi (only available if the device has a wifi adapter) |
-| Wi-Fi provisioning | ms-settings:wifi-provisioning |
+| Network & internet | :::no-loc text="ms-settings:network-status"::: |
+| Advanced settings | :::no-loc text="ms-settings:network-advancedsettings"::: |
+| Airplane mode | :::no-loc text="ms-settings:network-airplanemode":::<br/>:::no-loc text="ms-settings:proximity"::: |
+| Cellular & SIM | :::no-loc text="ms-settings:network-cellular"::: |
+| Dial-up | :::no-loc text="ms-settings:network-dialup"::: |
+| DirectAccess | :::no-loc text="ms-settings:network-directaccess"::: (only available if DirectAccess is enabled) |
+| Ethernet | :::no-loc text="ms-settings:network-ethernet"::: |
+| Manage known networks | :::no-loc text="ms-settings:network-wifisettings"::: |
+| Mobile hotspot | :::no-loc text="ms-settings:network-mobilehotspot"::: |
+| Proxy | :::no-loc text="ms-settings:network-proxy"::: |
+| VPN | :::no-loc text="ms-settings:network-vpn"::: |
+| Wi-Fi | :::no-loc text="ms-settings:network-wifi"::: (only available if the device has a wifi adapter) |
+| Wi-Fi provisioning | :::no-loc text="ms-settings:wifi-provisioning"::: |
 
 ### Personalization
 
 |Settings page| URI |
 |-------------|-----|
-| Background | ms-settings:personalization-background |
-| Choose which folders appear on Start | ms-settings:personalization-start-places |
-| Colors | ms-settings:personalization-colors<br/>ms-settings:colors |
-| Customize Copilot key on keyboard | ms-settings:personalization-textinput-copilot-hardwarekey |
-| Dynamic Lighting | ms-settings:personalization-lighting |
-| Fonts | ms-settings:fonts |
-| Glance | ms-settings:personalization-glance (**Deprecated in Windows 10, version 1809 and later**) |
-| Lock screen | ms-settings:lockscreen |
-| Navigation bar | ms-settings:personalization-navbar (**Deprecated in Windows 10, version 1809 and later**) |
-| Personalization (category) | ms-settings:personalization |
-| Start | ms-settings:personalization-start |
-| Taskbar | ms-settings:taskbar |
-| Text input | ms-settings:personalization-textinput |
-| Touch Keyboard| ms-settings:personalization-touchkeyboard |
-| Themes | ms-settings:themes |
+| Background | :::no-loc text="ms-settings:personalization-background"::: |
+| Choose which folders appear on Start | :::no-loc text="ms-settings:personalization-start-places"::: |
+| Colors | :::no-loc text="ms-settings:personalization-colors":::<br/>:::no-loc text="ms-settings:colors"::: |
+| Customize Copilot key on keyboard | :::no-loc text="ms-settings:personalization-textinput-copilot-hardwarekey"::: |
+| Dynamic Lighting | :::no-loc text="ms-settings:personalization-lighting"::: |
+| Fonts | :::no-loc text="ms-settings:fonts"::: |
+| Glance | :::no-loc text="ms-settings:personalization-glance"::: (**Deprecated in Windows 10, version 1809 and later**) |
+| Lock screen | :::no-loc text="ms-settings:lockscreen"::: |
+| Navigation bar | :::no-loc text="ms-settings:personalization-navbar"::: (**Deprecated in Windows 10, version 1809 and later**) |
+| Personalization (category) | :::no-loc text="ms-settings:personalization"::: |
+| Start | :::no-loc text="ms-settings:personalization-start"::: |
+| Taskbar | :::no-loc text="ms-settings:taskbar"::: |
+| Text input | :::no-loc text="ms-settings:personalization-textinput"::: |
+| Touch Keyboard| :::no-loc text="ms-settings:personalization-touchkeyboard"::: |
+| Themes | :::no-loc text="ms-settings:themes"::: |
 
 ### Phone
 
 |Settings page| URI |
 |-------------|-----|
-| Phone Link | ms-settings:mobile-devices<br/>ms-settings:mobile-devices-addphone<br/>ms-settings:mobile-devices-addphone-direct (Opens **Phone Link** app) |
-| Device Usage | ms-settings:deviceusage |
+| Phone Link | :::no-loc text="ms-settings:mobile-devices":::<br/>:::no-loc text="ms-settings:mobile-devices-addphone":::<br/>:::no-loc text="ms-settings:mobile-devices-addphone-direct"::: (Opens **Phone Link** app) |
+| Device Usage | :::no-loc text="ms-settings:deviceusage"::: |
 
 ### Privacy
 
 |Settings page| URI |
 |-------------|-----|
-| Accessory apps | ms-settings:privacy-accessoryapps (**Deprecated in Windows 10, version 1809 and later**) |
-| Account info | ms-settings:privacy-accountinfo |
-| Activity history | ms-settings:privacy-activityhistory |
-| Advertising ID | ms-settings:privacy-advertisingid (**Deprecated in Windows 10, version 1809 and later**) |
-| App diagnostics | ms-settings:privacy-appdiagnostics |
-| Automatic file downloads | ms-settings:privacy-automaticfiledownloads |
-| Background Apps | ms-settings:privacy-backgroundapps (**Deprecated in Windows 11, 21H2 and later**) <br><br> **Note:** In Windows 11, the background app permissions are accessed individually. To view the permissions, go to **Apps->Installed apps** and then select **"..."** on a modern app and choose **Advanced options**. The advanced page is present for modern apps, and the **Background apps permissions** section will be present unless a group policy has been set or the user’s global toggle value (the deprecated setting from Windows 10) is set. To access this page with a URI, use the `ms-settings:appsfeatures-app` URI and pass an optional parameter of the *package family name* of the app. |
-| Background Spatial Perception | ms-settings:privacy-backgroundspatialperception |
-| Calendar | ms-settings:privacy-calendar |
-| Call history | ms-settings:privacy-callhistory |
-| Camera | ms-settings:privacy-webcam |
-| Contacts | ms-settings:privacy-contacts |
-| Documents | ms-settings:privacy-documents |
-| Downloads folder | ms-settings:privacy-downloadsfolder |
-| Email | ms-settings:privacy-email |
-| Eye tracker | ms-settings:privacy-eyetracker (requires eyetracker hardware) |
-| Feedback & diagnostics | ms-settings:privacy-feedback |
-| File system | ms-settings:privacy-broadfilesystemaccess |
-| General | ms-settings:privacy or ms-settings:privacy-general |
-| Graphics | ms-settings:privacy-graphicscaptureprogrammatic </br> ms-settings:privacy-graphicscapturewithoutborder|
-| Inking & typing |ms-settings:privacy-speechtyping |
-| Location | ms-settings:privacy-location |
-| Messaging | ms-settings:privacy-messaging |
-| Microphone | ms-settings:privacy-microphone |
-| Motion | ms-settings:privacy-motion |
-| Music Library | ms-settings:privacy-musiclibrary |
-| Notifications | ms-settings:privacy-notifications |
-| Other devices | ms-settings:privacy-customdevices |
-| Phone calls | ms-settings:privacy-phonecalls |
-| Pictures | ms-settings:privacy-pictures |
-| Radios | ms-settings:privacy-radios |
-| Speech | ms-settings:privacy-speech |
-| Tasks | ms-settings:privacy-tasks |
-| Videos | ms-settings:privacy-videos |
-| Voice activation | ms-settings:privacy-voiceactivation |
+| Accessory apps | :::no-loc text="ms-settings:privacy-accessoryapps"::: (**Deprecated in Windows 10, version 1809 and later**) |
+| Account info | :::no-loc text="ms-settings:privacy-accountinfo"::: |
+| Activity history | :::no-loc text="ms-settings:privacy-activityhistory"::: |
+| Advertising ID | :::no-loc text="ms-settings:privacy-advertisingid"::: (**Deprecated in Windows 10, version 1809 and later**) |
+| App diagnostics | :::no-loc text="ms-settings:privacy-appdiagnostics"::: |
+| Automatic file downloads | :::no-loc text="ms-settings:privacy-automaticfiledownloads"::: |
+| Background Apps | :::no-loc text="ms-settings:privacy-backgroundapps"::: (**Deprecated in Windows 11, 21H2 and later**) <br><br> **Note:** In Windows 11, the background app permissions are accessed individually. To view the permissions, go to **Apps->Installed apps** and then select **"..."** on a modern app and choose **Advanced options**. The advanced page is present for modern apps, and the **Background apps permissions** section will be present unless a group policy has been set or the user’s global toggle value (the deprecated setting from Windows 10) is set. To access this page with a URI, use the :::no-loc text="ms-settings:appsfeatures-app"::: URI and pass an optional parameter of the *package family name* of the app. |
+| Background Spatial Perception | :::no-loc text="ms-settings:privacy-backgroundspatialperception"::: |
+| Calendar | :::no-loc text="ms-settings:privacy-calendar"::: |
+| Call history | :::no-loc text="ms-settings:privacy-callhistory"::: |
+| Camera | :::no-loc text="ms-settings:privacy-webcam"::: |
+| Contacts | :::no-loc text="ms-settings:privacy-contacts"::: |
+| Documents | :::no-loc text="ms-settings:privacy-documents"::: |
+| Downloads folder | :::no-loc text="ms-settings:privacy-downloadsfolder"::: |
+| Email | :::no-loc text="ms-settings:privacy-email"::: |
+| Eye tracker | :::no-loc text="ms-settings:privacy-eyetracker"::: (requires eyetracker hardware) |
+| Feedback & diagnostics | :::no-loc text="ms-settings:privacy-feedback"::: |
+| File system | :::no-loc text="ms-settings:privacy-broadfilesystemaccess"::: |
+| General | :::no-loc text="ms-settings:privacy"::: or :::no-loc text="ms-settings:privacy-general"::: |
+| Graphics | :::no-loc text="ms-settings:privacy-graphicscaptureprogrammatic"::: </br> :::no-loc text="ms-settings:privacy-graphicscapturewithoutborder":::|
+| Inking & typing |:::no-loc text="ms-settings:privacy-speechtyping"::: |
+| Location | :::no-loc text="ms-settings:privacy-location"::: |
+| Messaging | :::no-loc text="ms-settings:privacy-messaging"::: |
+| Microphone | :::no-loc text="ms-settings:privacy-microphone"::: |
+| Motion | :::no-loc text="ms-settings:privacy-motion"::: |
+| Music Library | :::no-loc text="ms-settings:privacy-musiclibrary"::: |
+| Notifications | :::no-loc text="ms-settings:privacy-notifications"::: |
+| Other devices | :::no-loc text="ms-settings:privacy-customdevices"::: |
+| Phone calls | :::no-loc text="ms-settings:privacy-phonecalls"::: |
+| Pictures | :::no-loc text="ms-settings:privacy-pictures"::: |
+| Radios | :::no-loc text="ms-settings:privacy-radios"::: |
+| Speech | :::no-loc text="ms-settings:privacy-speech"::: |
+| Tasks | :::no-loc text="ms-settings:privacy-tasks"::: |
+| Videos | :::no-loc text="ms-settings:privacy-videos"::: |
+| Voice activation | :::no-loc text="ms-settings:privacy-voiceactivation"::: |
 
 ### Search
 
 |Settings page| URI |
 |-------------|-----|
-| Search | ms-settings:search |
-| Search more details | ms-settings:search-moredetails |
-| Search Permissions | ms-settings:search-permissions |
+| Search | :::no-loc text="ms-settings:search"::: |
+| Search more details | :::no-loc text="ms-settings:search-moredetails"::: |
+| Search Permissions | :::no-loc text="ms-settings:search-permissions"::: |
 
 ### Sound
 
 |Settings page| URI |
 |-------------|-----|
-| Volume mixer | ms-settings:apps-volume |
-| Sound | ms-settings:sound |
-| Sound devices | ms-settings:sound-devices |
-| Default microphone | ms-settings:sound-defaultinputproperties |
-| Default audio output| ms-settings:sound-defaultoutputproperties |
-| Audio device properties<br/>(specific device) | ms-settings:sound-properties?endpointId={0.0.0.00000000}.{aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb}<br/><br/>**Note:** User of URI must know the `endpointId` string to use. |
-| Audio device properties<br/>(specific device) | ms-settings:sound-properties?interfaceId=\\\\?\\SWD#MMDEVAPI#{3.0.0.00000003}.{bbbbbbbb-1111-2222-3333-cccccccccccc}#{cccccccc-2222-3333-4444-dddddddddddd}<br/><br/>**Note:** User of URI must know the `interfaceId` string to use and the string must be escaped correctly before sending. |
+| Volume mixer | :::no-loc text="ms-settings:apps-volume"::: |
+| Sound | :::no-loc text="ms-settings:sound"::: |
+| Sound devices | :::no-loc text="ms-settings:sound-devices"::: |
+| Default microphone | :::no-loc text="ms-settings:sound-defaultinputproperties"::: |
+| Default audio output| :::no-loc text="ms-settings:sound-defaultoutputproperties"::: |
+| Audio device properties<br/>(specific device) | :::no-loc text="ms-settings:sound-properties?endpointId={0.0.0.00000000}.{aaaaaaaa-0000-1111-2222-bbbbbbbbbbbb}":::<br/><br/>**Note:** User of URI must know the `endpointId` string to use. |
+| Audio device properties<br/>(specific device) | :::no-loc text="ms-settings:sound-properties?interfaceId=\\\\?\\SWD#MMDEVAPI#{3.0.0.00000003}.{bbbbbbbb-1111-2222-3333-cccccccccccc}#{cccccccc-2222-3333-4444-dddddddddddd}":::<br/><br/>**Note:** User of URI must know the `interfaceId` string to use and the string must be escaped correctly before sending. |
 
 ### System
 
 |Settings page| URI |
 |-------------|-----|
-| About | ms-settings:about |
-| Advanced display settings | ms-settings:display-advanced<br/><br/>**Note:** On Windows 11, this URI opens the **System > Display** settings page; the Advanced display view is a sub-section of Display and doesn't have a dedicated URI. |
-| Battery Saver | ms-settings:batterysaver (only available on devices that have a battery, such as a tablet) |
-| Battery Saver settings | ms-settings:batterysaver-settings (only available on devices that have a battery, such as a tablet) |
-| Battery use | ms-settings:batterysaver-usagedetails (only available on devices that have a battery, such as a tablet) |
-| Clipboard | ms-settings:clipboard |
-| Default Save Locations | ms-settings:savelocations |
-| Display | ms-settings:display<br>ms-settings:screenrotation |
-| Duplicating my display | ms-settings:quietmomentspresentation |
-| During these hours | ms-settings:quietmomentsscheduled |
-| Encryption | ms-settings:deviceencryption |
-| Energy recommendations | ms-settings:energyrecommendations **(Available in February Moment update for Windows 11, Version 22H2, Build 22624 or later)** |
-| Focus assist | ms-settings:quiethours |
-| Graphics Settings | ms-settings:display-advancedgraphics (only available on devices that support advanced graphics options) |
-| Graphics Default Settings | ms-settings:display-advancedgraphics-default |
-| Multitasking | ms-settings:multitasking </br>ms-settings:multitasking-sgupdate |
-| Night light settings | ms-settings:nightlight |
-| Projecting to this PC | ms-settings:project |
-| Shared experiences | ms-settings:crossdevice |
-| Tablet mode | ms-settings:tabletmode (**Removed in Windows 11**) |
-| Taskbar | ms-settings:taskbar |
-| Notifications & actions | ms-settings:notifications |
-| Remote Desktop | ms-settings:remotedesktop |
-| Phone | ms-settings:phone (**Deprecated in Windows 10, version 1809 and later**) |
-| Power & sleep | ms-settings:powersleep |
-| Presence sensing | ms-settings:presence (**Added in May Moment update for Windows 11, Version 22H2, Build 22624**) |
-| Storage | ms-settings:storagesense |
-| Storage Sense | ms-settings:storagepolicies |
-| Storage recommendations | ms-settings:storagerecommendations |
-| Disks & volumes | ms-settings:disksandvolumes |
+| About | :::no-loc text="ms-settings:about"::: |
+| Advanced display settings | :::no-loc text="ms-settings:display-advanced":::<br/><br/>**Note:** On Windows 11, this URI opens the **System > Display** settings page; the Advanced display view is a sub-section of Display and doesn't have a dedicated URI. |
+| Battery Saver | :::no-loc text="ms-settings:batterysaver"::: (only available on devices that have a battery, such as a tablet) |
+| Battery Saver settings | :::no-loc text="ms-settings:batterysaver-settings"::: (only available on devices that have a battery, such as a tablet) |
+| Battery use | :::no-loc text="ms-settings:batterysaver-usagedetails"::: (only available on devices that have a battery, such as a tablet) |
+| Clipboard | :::no-loc text="ms-settings:clipboard"::: |
+| Default Save Locations | :::no-loc text="ms-settings:savelocations"::: |
+| Display | :::no-loc text="ms-settings:display":::<br>:::no-loc text="ms-settings:screenrotation"::: |
+| Duplicating my display | :::no-loc text="ms-settings:quietmomentspresentation"::: |
+| During these hours | :::no-loc text="ms-settings:quietmomentsscheduled"::: |
+| Encryption | :::no-loc text="ms-settings:deviceencryption"::: |
+| Energy recommendations | :::no-loc text="ms-settings:energyrecommendations"::: **(Available in February Moment update for Windows 11, Version 22H2, Build 22624 or later)** |
+| Focus assist | :::no-loc text="ms-settings:quiethours"::: |
+| Graphics Settings | :::no-loc text="ms-settings:display-advancedgraphics"::: (only available on devices that support advanced graphics options) |
+| Graphics Default Settings | :::no-loc text="ms-settings:display-advancedgraphics-default"::: |
+| Multitasking | :::no-loc text="ms-settings:multitasking"::: </br>:::no-loc text="ms-settings:multitasking-sgupdate"::: |
+| Night light settings | :::no-loc text="ms-settings:nightlight"::: |
+| Projecting to this PC | :::no-loc text="ms-settings:project"::: |
+| Shared experiences | :::no-loc text="ms-settings:crossdevice"::: |
+| Tablet mode | :::no-loc text="ms-settings:tabletmode"::: (**Removed in Windows 11**) |
+| Taskbar | :::no-loc text="ms-settings:taskbar"::: |
+| Notifications & actions | :::no-loc text="ms-settings:notifications"::: |
+| Remote Desktop | :::no-loc text="ms-settings:remotedesktop"::: |
+| Phone | :::no-loc text="ms-settings:phone"::: (**Deprecated in Windows 10, version 1809 and later**) |
+| Power & sleep | :::no-loc text="ms-settings:powersleep"::: |
+| Presence sensing | :::no-loc text="ms-settings:presence"::: (**Added in May Moment update for Windows 11, Version 22H2, Build 22624**) |
+| Storage | :::no-loc text="ms-settings:storagesense"::: |
+| Storage Sense | :::no-loc text="ms-settings:storagepolicies"::: |
+| Storage recommendations | :::no-loc text="ms-settings:storagerecommendations"::: |
+| Disks & volumes | :::no-loc text="ms-settings:disksandvolumes"::: |
 
 ### Time and language
 
 |Settings page| URI |
 |-------------|-----|
-| Date & time | ms-settings:dateandtime |
-| Japan IME settings | ms-settings:regionlanguage-jpnime (available if the Microsoft Japan input method editor is installed) |
-| Region | ms-settings:regionformatting |
-| Language | ms-settings:keyboard<br/>ms-settings:keyboard-advanced</br>ms-settings:regionlanguage<br/>ms-settings:regionlanguage-bpmfime<br/>ms-settings:regionlanguage-cangjieime<br/>ms-settings:regionlanguage-chsime-wubi-udp<br/>ms-settings:regionlanguage-quickime <br/> ms-settings:regionlanguage-korime |
-| Pinyin IME settings | ms-settings:regionlanguage-chsime-pinyin (available if the Microsoft Pinyin input method editor is installed)</br>ms-settings:regionlanguage-chsime-pinyin-domainlexicon<br/>ms-settings:regionlanguage-chsime-pinyin-keyconfig<br/>ms-settings:regionlanguage-chsime-pinyin-udp |
-| Speech | ms-settings:speech |
-| Wubi IME settings  | ms-settings:regionlanguage-chsime-wubi (available if the Microsoft Wubi input method editor is installed) |
+| Date & time | :::no-loc text="ms-settings:dateandtime"::: |
+| Japan IME settings | :::no-loc text="ms-settings:regionlanguage-jpnime"::: (available if the Microsoft Japan input method editor is installed) |
+| Region | :::no-loc text="ms-settings:regionformatting"::: |
+| Language | :::no-loc text="ms-settings:keyboard":::<br/>:::no-loc text="ms-settings:keyboard-advanced":::</br>:::no-loc text="ms-settings:regionlanguage":::<br/>:::no-loc text="ms-settings:regionlanguage-bpmfime":::<br/>:::no-loc text="ms-settings:regionlanguage-cangjieime":::<br/>:::no-loc text="ms-settings:regionlanguage-chsime-wubi-udp":::<br/>:::no-loc text="ms-settings:regionlanguage-quickime"::: <br/> :::no-loc text="ms-settings:regionlanguage-korime"::: |
+| Pinyin IME settings | :::no-loc text="ms-settings:regionlanguage-chsime-pinyin"::: (available if the Microsoft Pinyin input method editor is installed)</br>:::no-loc text="ms-settings:regionlanguage-chsime-pinyin-domainlexicon":::<br/>:::no-loc text="ms-settings:regionlanguage-chsime-pinyin-keyconfig":::<br/>:::no-loc text="ms-settings:regionlanguage-chsime-pinyin-udp"::: |
+| Speech | :::no-loc text="ms-settings:speech"::: |
+| Wubi IME settings  | :::no-loc text="ms-settings:regionlanguage-chsime-wubi"::: (available if the Microsoft Wubi input method editor is installed) |
 
 ### Update and security
 
 |Settings page| URI |
 |-------------|-----|
-| Activation | ms-settings:activation |
-| Backup | ms-settings:backup (page removed in Windows 11; opens Sync) |
-| Delivery Optimization | ms-settings:delivery-optimization </br> ms-settings:delivery-optimization-activity </br> ms-settings:delivery-optimization-advanced|
-| Find My Device | ms-settings:findmydevice |
-| For developers | ms-settings:developers |
-| Recovery | ms-settings:recovery |
-| Launch Security Key Enrollment | ms-settings:signinoptions-launchsecuritykeyenrollment |
-| Troubleshoot | ms-settings:troubleshoot |
-| Windows Security | ms-settings:windowsdefender |
-| Windows Insider Program | ms-settings:windowsinsider (only present if user is enrolled in WIP)<br/>ms-settings:windowsinsider-optin |
-| Windows Update | ms-settings:windowsupdate<br>ms-settings:windowsupdate-action |
-| Windows Update-Active hours| ms-settings:windowsupdate-activehours |
-| Windows Update-Advanced options | ms-settings:windowsupdate-options |
-| Windows Update-Optional updates| ms-settings:windowsupdate-optionalupdates |
-| Windows Update-Restart options | ms-settings:windowsupdate-restartoptions |
-| Windows Update-Seeker on demand| ms-settings:windowsupdate-seekerondemand |
-| Windows Update-View update history | ms-settings:windowsupdate-history |
+| Activation | :::no-loc text="ms-settings:activation"::: |
+| Backup | :::no-loc text="ms-settings:backup"::: (page removed in Windows 11; opens Sync) |
+| Delivery Optimization | :::no-loc text="ms-settings:delivery-optimization"::: </br> :::no-loc text="ms-settings:delivery-optimization-activity"::: </br> :::no-loc text="ms-settings:delivery-optimization-advanced":::|
+| Find My Device | :::no-loc text="ms-settings:findmydevice"::: |
+| For developers | :::no-loc text="ms-settings:developers"::: |
+| Recovery | :::no-loc text="ms-settings:recovery"::: |
+| Launch Security Key Enrollment | :::no-loc text="ms-settings:signinoptions-launchsecuritykeyenrollment"::: |
+| Troubleshoot | :::no-loc text="ms-settings:troubleshoot"::: |
+| Windows Security | :::no-loc text="ms-settings:windowsdefender"::: |
+| Windows Insider Program | :::no-loc text="ms-settings:windowsinsider"::: (only present if user is enrolled in WIP)<br/>:::no-loc text="ms-settings:windowsinsider-optin"::: |
+| Windows Update | :::no-loc text="ms-settings:windowsupdate":::<br>:::no-loc text="ms-settings:windowsupdate-action"::: |
+| Windows Update-Active hours| :::no-loc text="ms-settings:windowsupdate-activehours"::: |
+| Windows Update-Advanced options | :::no-loc text="ms-settings:windowsupdate-options"::: |
+| Windows Update-Optional updates| :::no-loc text="ms-settings:windowsupdate-optionalupdates"::: |
+| Windows Update-Restart options | :::no-loc text="ms-settings:windowsupdate-restartoptions"::: |
+| Windows Update-Seeker on demand| :::no-loc text="ms-settings:windowsupdate-seekerondemand"::: |
+| Windows Update-View update history | :::no-loc text="ms-settings:windowsupdate-history"::: |
 
 ## Related content
 
