@@ -268,6 +268,69 @@ The result looks like this.
 
 Use the Canvas panel with discretion. While it's convenient to be able to precisely control positions of elements in UI for some scenarios, a fixed positioned layout panel causes that area of your UI to be less adaptive to overall app window size changes. App window resize might come from device orientation changes, split app windows, changing monitors, and a number of other user scenarios.
 
+## WrapPanel
+
+> [!IMPORTANT]
+> `WrapPanel` is available starting in [Windows App SDK 2.0 Experimental 2](../../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-20-experimental-2-200-experimental2). [Windows App SDK 2.0 Experimental 4](../../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-20-experimental-4-200-experimental4) renamed its spacing properties to `ItemSpacing` and `LineSpacing`. The APIs are marked experimental and might change or be removed in a future release. Don't use them in production apps.
+
+[**WrapPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.wrappanel?view=windows-app-sdk-2.0-experimental&preserve-view=true) arranges its child elements one after another in a line. When the next element doesn't fit in the space that remains on the line, the panel moves it to the start of a new line. Use a WrapPanel for a small set of elements, such as tags or filter buttons, that should reflow when the available space changes. WrapPanel is a port of the [Windows Community Toolkit WrapPanel](/dotnet/communitytoolkit/windows/primitives/wrappanel).
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the WrapPanel in action](winui3gallery://item/WrapPanel)
+
+The [**Orientation**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.wrappanel.orientation?view=windows-app-sdk-2.0-experimental&preserve-view=true) property specifies the direction in which the panel adds items. The default orientation is **Horizontal**, which means the panel adds items from left to right, then wraps to a new row. When the value is **Vertical**, the panel adds items from top to bottom, then wraps to a new column. When the panel's [**FlowDirection**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.flowdirection) is **RightToLeft**, for example in an app that's localized for a right-to-left language, the panel mirrors this layout. It fills each row from right to left, and it adds each new column to the left of the previous one.
+
+Unlike VariableSizedWrapGrid, WrapPanel doesn't use cells of a fixed size. Each child keeps its desired size in the direction of the orientation. Within a row, each child gets a slot as tall as the tallest child in that row. Within a column, each child gets a slot as wide as the widest child in that column.
+
+Use these properties to add space to the layout:
+
+- [**ItemSpacing**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.wrappanel.itemspacing?view=windows-app-sdk-2.0-experimental&preserve-view=true) sets the space between adjacent items on the same line. The default is 0.
+- [**LineSpacing**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.wrappanel.linespacing?view=windows-app-sdk-2.0-experimental&preserve-view=true) sets the space between lines. The default is 0.
+- [**Padding**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.wrappanel.padding?view=windows-app-sdk-2.0-experimental&preserve-view=true) sets the space between the edges of the panel and its items.
+
+Here's how to use a WrapPanel in XAML.
+
+```xaml
+<WrapPanel Width="132" ItemSpacing="4" LineSpacing="4">
+    <Rectangle Fill="Red" Width="44" Height="44"/>
+    <Rectangle Fill="Blue" Width="80" Height="44"/>
+    <Rectangle Fill="Green" Width="44" Height="44"/>
+    <Rectangle Fill="Orange" Width="60" Height="44"/>
+</WrapPanel>
+```
+
+The result looks like this.
+
+![A WrapPanel with red and blue rectangles on the first row, and green and orange rectangles on the second row](../../design/layout/images/layout-panel-wrap-panel.png)
+
+In this example, the red and blue rectangles and the item spacing between them use 128 of the panel's 132 pixels, so they share the first row. The green rectangle doesn't fit in the remaining space, so it wraps to a second row. The orange rectangle fits next to the green rectangle on the second row.
+
+To make the last child fill the space that remains on its line, set the [**ItemsStretch**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.wrappanel.itemsstretch?view=windows-app-sdk-2.0-experimental&preserve-view=true) property to **Last**. The default value, **None**, keeps every child at its desired size. Don't set an explicit width on the last child, or an explicit height when the orientation is **Vertical**, because an explicit size prevents the child from stretching.
+
+```xaml
+<WrapPanel Width="132" ItemSpacing="4" LineSpacing="4" ItemsStretch="Last">
+    <Rectangle Fill="Red" Width="44" Height="44"/>
+    <Rectangle Fill="Blue" Width="80" Height="44"/>
+    <Rectangle Fill="Green" Width="44" Height="44"/>
+    <Rectangle Fill="Orange" Height="44"/>
+</WrapPanel>
+```
+
+The result looks like this.
+
+![A WrapPanel in which the orange rectangle stretches to fill the rest of the second row](../../design/layout/images/layout-panel-wrap-panel-items-stretch.png)
+
+In this example, the orange rectangle fills the rest of the second row. To set the value in code, use the [**WrapPanelItemsStretch**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.wrappanelitemsstretch?view=windows-app-sdk-2.0-experimental&preserve-view=true) enumeration.
+
+```csharp
+// Stretch the last child of a WrapPanel named tagPanel.
+tagPanel.ItemsStretch = WrapPanelItemsStretch.Last;
+```
+
+WrapPanel wraps its children only when the space available to it in the direction of the orientation is limited. For example, a horizontal StackPanel doesn't limit the width of its children, so a horizontal WrapPanel inside it shows all of its children in one row. The panel doesn't reserve space or add spacing for children whose **Visibility** is **Collapsed**.
+
+WrapPanel doesn't virtualize its children. It creates and lays out every child, including children that are scrolled out of view. To show a large collection that wraps, use a [GridView](controls/listview-and-gridview.md) or an [ItemsRepeater](controls/items-repeater.md) with a [UniformGridLayout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.uniformgridlayout). These controls support UI virtualization.
+
 ## Panels for ItemsControl
 
 There are several special-purpose panels that can be used only as an [**ItemsPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemscontrol.itemspanel) to display items in an [**ItemsControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ItemsControl). These are [**ItemsStackPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ItemsStackPanel), [**ItemsWrapGrid**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ItemsWrapGrid), [**VirtualizingStackPanel**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.VirtualizingStackPanel), and [**WrapGrid**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.WrapGrid). You can't use these panels for general UI layout.

@@ -2,7 +2,7 @@
 title: Manage app windows
 description: Use AppWindow APIs in the Windows App SDK
 ms.topic: article
-ms.date: 09/19/2026
+ms.date: 10/13/2026
 keywords: windowing, window, AppWindow, Windows App SDK
 ms.localizationpriority: medium
 no-loc: [AppWindow, Window]
@@ -109,6 +109,74 @@ private void MoveWindowButton_Click(object sender, RoutedEventArgs e)
     appWindow.Move(new PointInt32((area.Value.Width - appWindow.Size.Width) / 2, (area.Value.Height - appWindow.Size.Height) / 2));
 }
 ```
+
+### Set the window size in logical pixels (experimental)
+
+> [!IMPORTANT]
+> The Window sizing properties in this section are experimental APIs that were introduced in [Windows App SDK 2.3 Experimental A](../../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-23-experimental-a-232-experimentala). The APIs are marked experimental and might change or be removed in a future release. Don't use them in production apps. For download links, see [Latest Windows App SDK downloads](../../windows-app-sdk/downloads.md#experimental-release).
+
+[AppWindow.Resize](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize) and [AppWindow.ResizeClient](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resizeclient) take sizes in physical pixels. To get the same size on displays with different scale factors, you have to convert the values yourself. In experimental releases, the [Microsoft.UI.Xaml.Window](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window?view=windows-app-sdk-2.0-experimental&preserve-view=true) class has properties that get and set the size of the window's client area in logical pixels, also called device-independent pixels (DIPs). The window converts the values for the current display scale, so a client area with a `Width` of 640 is 640 physical pixels wide at 100% scale and 960 physical pixels wide at 150% scale. You can set these properties in XAML or in code, without going through the [Window.AppWindow](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.appwindow) property.
+
+| Property | Description |
+|--|--|
+| [Width](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.width?view=windows-app-sdk-2.0-experimental&preserve-view=true), [Height](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.height?view=windows-app-sdk-2.0-experimental&preserve-view=true) | The size of the client area when the window is in its restored state. |
+| [MinWidth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.minwidth?view=windows-app-sdk-2.0-experimental&preserve-view=true), [MinHeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.minheight?view=windows-app-sdk-2.0-experimental&preserve-view=true) | The smallest client area that the user can resize the window to. The default is 0. |
+| [MaxWidth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.maxwidth?view=windows-app-sdk-2.0-experimental&preserve-view=true), [MaxHeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.maxheight?view=windows-app-sdk-2.0-experimental&preserve-view=true) | The largest client area that the user can resize the window to. The default is positive infinity, which means there's no maximum. |
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see Window sizing in action](winui3gallery://item/Windowing)
+
+This example sets the initial size and the size limits of a window in its XAML file.
+
+```xaml
+<Window
+    x:Class="MyApp.SettingsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Width="640"
+    Height="480"
+    MinWidth="320"
+    MinHeight="240"
+    MaxWidth="960"
+    MaxHeight="720">
+    <TextBlock Margin="24" Text="Resize this window." />
+</Window>
+```
+
+This example sets the same values in C# for a window that it creates in code.
+
+```csharp
+Window window = new Window
+{
+    Width = 640,
+    Height = 480,
+    MinWidth = 320,
+    MinHeight = 240,
+    MaxWidth = 960,
+    MaxHeight = 720,
+    Content = new TextBlock { Margin = new Thickness(24), Text = "Resize this window." }
+};
+
+// A size that you set before the first call to Activate is applied when the window is shown.
+window.Activate();
+```
+
+This table shows how the Window properties relate to the AppWindow sizing APIs. For example, `AppWindow.Resize(new SizeInt32(1200, 800))` makes the whole window, including its border and title bar, 1200 by 800 physical pixels. Setting `Width` to 1200 and `Height` to 800 gives the client area a size of 1200 by 800 logical pixels, which is 1800 by 1200 physical pixels on a display at 150% scale.
+
+| API | What it sizes | Units |
+|--|--|--|
+| Window.Width, Window.Height (experimental) | The client area of the restored window. You can get and set the values. | Logical pixels |
+| [Window.Bounds](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.bounds) | The current client area. Read-only. | Logical pixels |
+| [AppWindow.Resize](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resize) | The whole window, including the border and title bar. | Physical pixels |
+| [AppWindow.ResizeClient](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.resizeclient) | The client area. | Physical pixels |
+| [AppWindow.Size](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.size), [AppWindow.ClientSize](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.clientsize) | The current window and client area. Read-only. | Physical pixels |
+
+Keep these behaviors in mind when you use the Window sizing properties:
+
+- **Restored size.** When the window is maximized or minimized, `Width` and `Height` return the client size that the window returns to when it's restored. If you set them in that state, the restored size changes, and the window stays maximized or minimized. If the window uses a [FullScreenPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.fullscreenpresenter) or [CompactOverlayPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.compactoverlaypresenter), a size that you set is applied when the window switches back to an OverlappedPresenter.
+- **Size limits.** `MinWidth`, `MinHeight`, `MaxWidth`, and `MaxHeight` take effect while the window uses an [OverlappedPresenter](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.overlappedpresenter), which is the default presenter. The window sets the presenter's `PreferredMinimumWidth`, `PreferredMinimumHeight`, `PreferredMaximumWidth`, and `PreferredMaximumHeight` properties for you, and updates them when the window moves to a display with a different scale. Don't set those presenter properties yourself for a dimension that you limit through the Window properties. For more about the presenter properties, see [Modify an OverlappedPresenter](#modify-an-overlappedpresenter).
+- **Maximized size.** Like the presenter's `PreferredMaximumWidth` and `PreferredMaximumHeight` properties, `MaxWidth` and `MaxHeight` limit the size of the window even when it's maximized. For example, when you maximize the window from the previous examples, its client area is no larger than 960 by 720 logical pixels, even on a larger display.
+- **Valid values.** Set `Width` and `Height` to values between the minimum and maximum limits. `Width`, `Height`, `MinWidth`, and `MinHeight` must be finite and 0 or greater. `MaxWidth` and `MaxHeight` must be 0 or greater, or positive infinity for no maximum. Other values cause the setter to throw an exception, which is an `ArgumentException` in C#.
 
 ## The AppWindowPresenter class, and subclasses
 

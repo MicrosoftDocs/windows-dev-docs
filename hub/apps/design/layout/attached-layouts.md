@@ -3,7 +3,7 @@ description: You can define a attached layouts for use with containers such as t
 title: AttachedLayout
 label: AttachedLayout
 template: detail.hbs
-ms.date: 08/29/2026
+ms.date: 10/13/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -27,7 +27,7 @@ In this topic, we cover what's involved in creating an attached layout (virtuali
 > * [LayoutContext](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutcontext)
 >     * [NonVirtualizingLayoutContext](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.nonvirtualizinglayoutcontext)
 >     * [VirtualizingLayoutContext](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.virtualizinglayoutcontext)
-> * [LayoutPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutpanel) (Preview)
+> * [LayoutPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutpanel?view=windows-app-sdk-2.0-experimental&preserve-view=true) (experimental)
 
 ## Key Concepts
 
@@ -50,8 +50,15 @@ For this reason, a Panel in XAML has often been synonymous with layout, but tech
 
 The [ItemsRepeater](../../develop/ui/controls/items-repeater.md) also behaves like Panel, but, unlike Panel, it does not expose a Children property that would allow programmatically adding or removing UIElement children.  Instead, the lifetime of its children are automatically managed by the framework to correspond to a collection of data items.  Although it is not derived from Panel, it behaves and is treated by the framework like a Panel.
 
-> [!NOTE]
-> The [LayoutPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutpanel) is a container, derived from Panel, that delegates its logic to the attached [Layout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutpanel.layout) object.  LayoutPanel is in *Preview* and is currently available only in the *Prerelease* drops of the WinUI 3 package.
+> [!IMPORTANT]
+> `LayoutPanel` is an experimental API. In Windows App SDK 2.0, it's available starting in [Windows App SDK 2.0 Experimental 1](../../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-20-experimental-1-200-experimental1). The APIs are marked experimental and might change or be removed in a future release. Don't use them in production apps. The LayoutPanel examples in this article require an experimental release of the Windows App SDK. For download links, see [Latest Windows App SDK downloads](../../windows-app-sdk/downloads.md#experimental-release).
+
+The [LayoutPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutpanel?view=windows-app-sdk-2.0-experimental&preserve-view=true) is a container, derived from Panel, that delegates its logic to the attached [Layout](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutpanel.layout?view=windows-app-sdk-2.0-experimental&preserve-view=true) object. Like other panels, it has a Children collection that you fill in XAML or code. LayoutPanel also provides [BorderBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutpanel.borderbrush?view=windows-app-sdk-2.0-experimental&preserve-view=true), [BorderThickness](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutpanel.borderthickness?view=windows-app-sdk-2.0-experimental&preserve-view=true), [CornerRadius](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutpanel.cornerradius?view=windows-app-sdk-2.0-experimental&preserve-view=true), and [Padding](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutpanel.padding?view=windows-app-sdk-2.0-experimental&preserve-view=true) properties. BorderThickness and Padding reduce the space that's available to the layout. In Windows App SDK 2.5 Experimental, LayoutPanel doesn't draw a border or round its corners, so BorderBrush and CornerRadius have no visible effect. If you don't set the Layout property, LayoutPanel places all of its children in the same area, like a Grid with a single cell.
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the LayoutPanel in action](winui3gallery://item/LayoutPanel)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
 
 #### Containers
 
@@ -121,7 +128,7 @@ First, decide whether the layout you need to create should support UI virtualiza
 **A few things to keep in mind…**
 
 1. Non-virtualizing layouts are easier to author. If the number of items will always be small then authoring a non-virtualizing layout is recommended.
-2. The platform provides a set of attached layouts that work with the [ItemsRepeater](../../develop/ui/controls/items-repeater.md#change-the-layout-of-items) and [LayoutPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutpanel) to cover common needs.  Familiarize yourself with those before deciding you need to define a custom layout.
+2. The platform provides a set of attached layouts that work with the [ItemsRepeater](../../develop/ui/controls/items-repeater.md#change-the-layout-of-items) and [LayoutPanel](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.layoutpanel?view=windows-app-sdk-2.0-experimental&preserve-view=true) to cover common needs.  Familiarize yourself with those before deciding you need to define a custom layout.
 3. Virtualizing layouts always have some additional CPU and memory cost/complexity/overhead compared to a non-virtualizing layout.  As a general rule of thumb if the children the layout will need to manage will likely fit in an area that is 3x the size of the viewport, then there may not be much gain from a virtualizing layout. The 3x size is discussed in greater detail later in this doc, but is due to the asynchronous nature of scrolling on Windows and its impact on virtualization.
 
 > [!TIP]
