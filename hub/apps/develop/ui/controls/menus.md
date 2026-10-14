@@ -3,7 +3,7 @@ description: Menus and context menus display a list of commands or options when 
 title: Menu flyout and menu bar
 label: Menu flyout and menu bar
 template: detail.hbs
-ms.date: 10/01/2026
+ms.date: 10/13/2026
 ms.topic: article
 ms.custom: RS5, 19H1
 ms.assetid: 0327d8c1-8329-4be2-84e3-66e1e9a0aa60
@@ -35,12 +35,13 @@ If a particular command will be used frequently and you have the space available
 
 [!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
 
-To create a menu flyout, you use the [MenuFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout). You define the contents of the menu by adding [MenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutitem), [MenuFlyoutSubItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutsubitem), [ToggleMenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglemenuflyoutitem), [RadioMenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiomenuflyoutitem) and [MenuFlyoutSeparator](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutseparator) objects to the MenuFlyout.
+To create a menu flyout, you use the [MenuFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout). You define the contents of the menu by adding [MenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutitem), [MenuFlyoutSubItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutsubitem), [SplitMenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitmenuflyoutitem), [ToggleMenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglemenuflyoutitem), [RadioMenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiomenuflyoutitem), and [MenuFlyoutSeparator](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutseparator) objects to the MenuFlyout.
 
 These objects are for:
 
 - [MenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutitem)—Performing an immediate action.
 - [MenuFlyoutSubItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutsubitem)—Containing a cascading list of menu items.
+- [SplitMenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitmenuflyoutitem)—Performing a default action, with related actions in a cascading list. For more info, see [Add a split menu item](#add-a-split-menu-item).
 - [ToggleMenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.togglemenuflyoutitem)—Switching an option on or off.
 - [RadioMenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.radiomenuflyoutitem)—Switching between mutually-exclusive menu items.
 - [MenuFlyoutSeparator](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutseparator)—Visually separating menu items.
@@ -112,6 +113,76 @@ private void ChangeColorItem_Click(object sender, RoutedEventArgs e)
     }
 }
 ````
+
+## Add a split menu item
+
+> [!div class="checklist"]
+>
+> - **Important APIs:** [SplitMenuFlyoutItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitmenuflyoutitem), [Items property](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitmenuflyoutitem.items)
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see SplitMenuFlyoutItem in action](winui3gallery://item/MenuFlyout)
+
+[!INCLUDE [winui-3-gallery](../../../../includes/winui-3-gallery.md)]
+
+A [SplitMenuFlyoutItem](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitmenuflyoutitem) provides a [split button](buttons.md#create-a-split-button) experience in a menu flyout. It has two parts:
+
+- The primary part performs a default action, like a MenuFlyoutItem. To respond when the user selects it, handle the [Click](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutitem.click) event or set the [Command](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyoutitem.command) property.
+- The secondary part opens a submenu of related options, like a MenuFlyoutSubItem.
+
+Use a split menu item when a command has a common default action and a few variations, such as saving a file in different formats. It keeps your menu shorter than it would be if you listed each variation as a separate item.
+
+> [!NOTE]
+> SplitMenuFlyoutItem requires Windows App SDK 1.8.6 or later.
+
+This example, from the WinUI 3 Gallery app, adds two split menu items to a MenuFlyout. The submenu items are in the [Items](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitmenuflyoutitem.items) property. Because `Items` is the XAML content property of SplitMenuFlyoutItem, you can add the submenu items directly inside the SplitMenuFlyoutItem element.
+
+```xaml
+<StackPanel Orientation="Horizontal" Spacing="12">
+    <Button Content="File Options">
+        <Button.Flyout>
+            <MenuFlyout>
+                <SplitMenuFlyoutItem Text="Save" Click="SplitMenuFlyoutItem_Click">
+                    <SplitMenuFlyoutItem.Icon>
+                        <FontIcon Glyph="&#xE74E;" />
+                    </SplitMenuFlyoutItem.Icon>
+                    <MenuFlyoutItem Text="Save as .docx" Click="SplitMenuFlyoutItem_Click" />
+                    <MenuFlyoutItem Text="Save as .pdf" Click="SplitMenuFlyoutItem_Click" />
+                    <MenuFlyoutItem Text="Save as .txt" Click="SplitMenuFlyoutItem_Click" />
+                </SplitMenuFlyoutItem>
+                <SplitMenuFlyoutItem Text="Share" Icon="Share" Click="SplitMenuFlyoutItem_Click">
+                    <MenuFlyoutItem Text="Share via email" Click="SplitMenuFlyoutItem_Click" />
+                    <MenuFlyoutItem Text="Share via link" Click="SplitMenuFlyoutItem_Click" />
+                </SplitMenuFlyoutItem>
+            </MenuFlyout>
+        </Button.Flyout>
+    </Button>
+    <TextBlock x:Name="SelectedCommandText" VerticalAlignment="Center" />
+</StackPanel>
+```
+
+```csharp
+private void SplitMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+{
+    // SplitMenuFlyoutItem derives from MenuFlyoutItem, so one handler works for both.
+    if (sender is MenuFlyoutItem selectedItem)
+    {
+        SelectedCommandText.Text = "Clicked: " + selectedItem.Text;
+    }
+}
+```
+
+The submenu can also contain MenuFlyoutSeparator objects and other SplitMenuFlyoutItem objects. If the `Items` collection is empty, the secondary part is disabled.
+
+To customize the submenu, set [SubMenuPresenterStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitmenuflyoutitem.submenupresenterstyle) to a style for the submenu's presenter, and [SubMenuItemStyle](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitmenuflyoutitem.submenuitemstyle) to a style for the items in the submenu.
+
+Users interact with the two parts separately when they use the keyboard:
+
+- When the primary part has focus, press Enter or Space to perform the default action, or press the Right arrow key to move focus to the secondary part.
+- When the secondary part has focus, press Enter or the Right arrow key to open the submenu.
+- When the submenu is open, press Esc or the Left arrow key to close it.
+
+Screen readers also announce the two parts separately. The secondary part is announced as a button that provides more options for the menu item.
 
 ## Icons
 
@@ -214,4 +285,5 @@ You use the same elements to create menus in a menu bar as in a menu flyout. How
 - [Menus and context menus](menus-and-context-menus.md)
 - [Contextual commanding for collections and lists](collection-commanding.md)
 - [MenuFlyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menuflyout)
+- [SplitMenuFlyoutItem class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.splitmenuflyoutitem)
 - [MenuBar class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.menubar)

@@ -4,12 +4,14 @@ description: Use new APIs in XAML markup while maintaining compatibility with pr
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 09/10/2026
+ms.date: 10/13/2026
 ---
 
 # Conditional XAML
 
 *Conditional XAML* provides a way to use the [ApiInformation.IsApiContractPresent](/uwp/api/windows.foundation.metadata.apiinformation.isapicontractpresent) method directly in XAML markup. You can set properties based on the presence of an OS-level API contract without writing code behind. Conditional statements are evaluated at runtime — elements qualified with a conditional XAML tag are parsed if they evaluate to `true` and ignored otherwise.
+
+Starting in Windows App SDK 2.0, you can also define your own conditions by implementing the [IXamlCondition](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.markup.ixamlcondition) interface. Custom conditions let you include or exclude markup based on app-specific state, such as feature flags or configuration settings. For more info, see [Create custom conditions](#create-custom-conditions).
 
 Conditional XAML requires Windows 10 version 1809 (build 17763) or later, which is the minimum OS version for Windows App SDK apps.
 
@@ -19,7 +21,7 @@ Conditional XAML requires Windows 10 version 1809 (build 17763) or later, which 
 - Familiarity with [Version adaptive apps](version-adaptive-apps.md) and the `ApiInformation` class.
 
 > [!IMPORTANT]
-> Conditional XAML uses `ApiInformation` methods, which check for the presence of **Windows Runtime** (`Windows.*`) API contracts and types supplied by the OS. These checks do **not** apply to WinUI 3 (`Microsoft.UI.Xaml.*`) controls, because WinUI 3 ships with your app through the Windows App SDK rather than with the OS — every WinUI 3 control your app is built against is always present at runtime, regardless of which Windows 10/11 build the device is running. `#if` preprocessor directives don't help here either: they're evaluated at compile time based on the target framework, not at runtime based on the OS or Windows App SDK version actually installed. To gate a feature on the Windows App SDK version your app is running against, check the SDK version at build time or use a try/catch around the API call. See [Version adaptive code](version-adaptive-code.md) for details.
+> The built-in conditional methods use `ApiInformation` methods, which check for the presence of **Windows Runtime** (`Windows.*`) API contracts and types supplied by the OS. These checks do **not** apply to WinUI 3 (`Microsoft.UI.Xaml.*`) controls, because WinUI 3 ships with your app through the Windows App SDK rather than with the OS — every WinUI 3 control your app is built against is always present at runtime, regardless of which Windows 10/11 build the device is running. `#if` preprocessor directives don't help here either: they're evaluated at compile time based on the target framework, not at runtime based on the OS or Windows App SDK version actually installed. To gate a feature on the Windows App SDK version your app is running against, check the SDK version at build time or use a try/catch around the API call. See [Version adaptive code](version-adaptive-code.md) for details.
 
 For background information about `ApiInformation` and API contracts, see [Version adaptive apps](version-adaptive-apps.md).
 
@@ -46,6 +48,8 @@ Conditional XAML supports these conditional methods:
 | `IsApiContractPresent(ContractName, VersionNumber)` | `IsApiContractNotPresent(ContractName, VersionNumber)` |
 | `IsTypePresent(ControlType)` | `IsTypeNotPresent(ControlType)` |
 | `IsPropertyPresent(ControlType, PropertyName)` | `IsPropertyNotPresent(ControlType, PropertyName)` |
+
+You can also use a condition that you define in your app. For more info, see [Create custom conditions](#create-custom-conditions).
 
 > [!NOTE]
 > Use `IsApiContractPresent` and `IsApiContractNotPresent` for the best design-time experience. Other conditionals are not fully supported in the Visual Studio design experience.
@@ -122,7 +126,135 @@ Then set the property twice, each with a different conditional prefix. Only one 
 >
 > If you need to gate a WinUI 3 control or API on the version of the Windows App SDK your app targets, do that check at build time (by targeting a minimum Windows App SDK package version) or wrap the runtime call in a `try`/`catch` — not with conditional XAML.
 
+To include or exclude elements based on logic that your app defines, such as a feature flag, use a [custom condition](#create-custom-conditions).
+
+## Create custom conditions
+
+Starting in Windows App SDK 2.0, you can define your own conditions and use them with the conditional namespace syntax. A custom condition lets you include or exclude markup based on app-specific state, such as feature flags, configuration settings, or device capabilities. Like the built-in conditional methods, custom conditions are evaluated when the XAML is parsed at runtime.
+
+> [!div class="checklist"]
+>
+> - **Important APIs**: [IXamlCondition interface](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.markup.ixamlcondition), [IXamlCondition.Evaluate method](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.markup.ixamlcondition.evaluate)
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see custom XAML conditionals in action](winui3gallery://item/CustomXamlConditionals)
+
+[!INCLUDE [winui-3-gallery](../../../includes/winui-3-gallery.md)]
+
+> [!NOTE]
+> `IXamlCondition` replaces the `IXamlPredicate` interface from experimental releases of the Windows App SDK 2.0.
+
+### Implement a condition
+
+To create a condition, define a class that derives from [DependencyObject](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.dependencyobject) and implements `IXamlCondition`. The XAML parser calls the [Evaluate](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.markup.ixamlcondition.evaluate) method and passes the text between the parentheses of the conditional namespace declaration as the `argument` parameter. Return `true` to include the qualified markup, or `false` to ignore it.
+
+This example, from the WinUI 3 Gallery sample, evaluates feature flags that the app stores in a dictionary:
+
+```csharp
+using System.Collections.Generic;
+using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Markup;
+
+namespace MyApp;
+
+public sealed partial class FeatureFlagCondition : DependencyObject, IXamlCondition
+{
+    public static IDictionary<string, bool> FeatureFlags { get; } = new Dictionary<string, bool>
+    {
+        ["NewExperience"] = true,
+        ["LegacyMode"] = false,
+    };
+
+    // The XAML parser calls Evaluate with the text between the parentheses
+    // in the conditional namespace declaration, for example "NewExperience".
+    public bool Evaluate(string argument)
+    {
+        return FeatureFlags.TryGetValue(argument, out bool enabled) && enabled;
+    }
+}
+```
+
+### Declare a conditional namespace for the condition
+
+First, map the namespace that contains your condition class by using a `using:` declaration. Then, after the `?` delimiter of a conditional namespace, reference the class through that prefix and pass the argument in parentheses:
+
+```xml
+xmlns:cond="using:MyApp"
+xmlns:newExp="http://schemas.microsoft.com/winfx/2006/xaml/presentation?cond:FeatureFlagCondition(NewExperience)"
+xmlns:legacy="http://schemas.microsoft.com/winfx/2006/xaml/presentation?cond:FeatureFlagCondition(LegacyMode)"
+```
+
+In this example, the parser calls `Evaluate("NewExperience")` for markup that uses the `newExp` prefix, and `Evaluate("LegacyMode")` for markup that uses the `legacy` prefix.
+
+### Use the condition on elements, attributes, and setters
+
+Use the conditional prefix the same way you use the built-in conditional namespaces. These examples are based on the WinUI 3 Gallery sample.
+
+To include an element only when a condition is `true`, prefix the element:
+
+```xml
+<StackPanel Spacing="8">
+    <!-- Included only when FeatureFlagCondition.Evaluate("NewExperience") returns true. -->
+    <newExp:InfoBar Title="New experience" IsOpen="True" Severity="Success"
+                    Message="This InfoBar is included because the NewExperience flag is true." />
+
+    <!-- Included only when FeatureFlagCondition.Evaluate("LegacyMode") returns true. -->
+    <legacy:InfoBar Title="Legacy mode" IsOpen="True" Severity="Warning"
+                    Message="This InfoBar is included because the LegacyMode flag is true." />
+</StackPanel>
+```
+
+To set a property only when a condition is `true`, prefix the attribute:
+
+```xml
+<!-- Make sure that no more than one of these conditions is true at runtime. -->
+<Button newExp:Content="Open the new editor"
+        legacy:Content="Open the classic editor" />
+```
+
+To apply a style setter only when a condition is `true`, prefix the `Setter` element:
+
+```xml
+<Page.Resources>
+    <Style x:Key="ConditionalHeadingStyle" TargetType="TextBlock">
+        <newExp:Setter Property="FontWeight" Value="SemiBold" />
+        <newExp:Setter Property="FontSize" Value="28" />
+        <legacy:Setter Property="FontWeight" Value="Normal" />
+        <legacy:Setter Property="FontSize" Value="18" />
+    </Style>
+</Page.Resources>
+```
+
+### Set the state before the XAML is parsed
+
+The parser caches the result of `Evaluate` for each combination of condition and argument for the lifetime of the process. If you change the state that a condition reads after the result is cached, markup that's already parsed doesn't change, and markup that's parsed later still uses the cached result. To use a different value, restart the app.
+
+Set the state that your condition reads before the parser evaluates it, for example at app startup or before you call `InitializeComponent` in a page constructor:
+
+```csharp
+public sealed partial class MainPage : Page
+{
+    public MainPage()
+    {
+        // Set the flags before InitializeComponent so that the XAML parser
+        // uses these values when it evaluates the conditions.
+        FeatureFlagCondition.FeatureFlags["NewExperience"] = true;
+        FeatureFlagCondition.FeatureFlags["LegacyMode"] = false;
+
+        this.InitializeComponent();
+    }
+}
+```
+
+### Limitations
+
+- Two elements can't have the same `x:Name`, even if only one of them is included at runtime.
+- If you apply more than one condition to the same attribute, make sure that only one of them evaluates to `true` at runtime. If more than one evaluates to `true`, the parser throws an exception.
+- Because conditions are evaluated at runtime, the XAML compiler can't check them for logical consistency. Test each combination of condition values that your app supports.
+- Custom conditions don't work with items from the `x:` namespace (`http://schemas.microsoft.com/winfx/2006/xaml`), such as `x:Uid` and `x:Key`.
+
 ## Related content
 
 - [Version adaptive apps](version-adaptive-apps.md)
 - [Version adaptive code](version-adaptive-code.md)
+- [IXamlCondition interface](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.markup.ixamlcondition)

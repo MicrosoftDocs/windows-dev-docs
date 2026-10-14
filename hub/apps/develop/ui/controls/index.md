@@ -59,6 +59,7 @@ The following table lists the Windows app controls available in WinUI, with link
 |---|---|---|
 | ![Dialogs](images/ContentDialog.png) | [Dialogs](dialogs-and-flyouts/dialogs.md) | A dialog box that can be customized to contain any XAML content. |
 | ![Flyouts](images/Flyout.png) | [Flyouts](dialogs-and-flyouts/flyouts.md) | Shows contextual information and enables user interaction. |
+| ![Popup icon](images/popup-control-icon.png) | [Popup](dialogs-and-flyouts/popup.md) | A general-purpose container that displays custom content on top of other UI. |
 | ![Teaching tip](images/TeachingTip.png) | [Teaching tip](dialogs-and-flyouts/teaching-tip.md) | A content-rich flyout for guiding users and enabling teaching moments. |
 
 ### Forms

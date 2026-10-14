@@ -2,7 +2,7 @@
 description: Dialogs and flyouts display transient UI elements that appear when the user requests them or when something happens that requires notification or approval.
 title: Dialogs and flyouts
 template: detail.hbs
-ms.date: 06/24/2021
+ms.date: 10/13/2026
 ms.topic: article
 ms.assetid: ad6affd9-a3c0-481f-a237-9a1ecd561be8
 doc-status: Published
@@ -50,6 +50,8 @@ Given that dialogs block interactions and flyouts do not, dialogs should be rese
 - Displaying info that's only relevant some of the time. For example, in a photo gallery app, when the user clicks an image thumbnail, you might use a flyout to display a large version of the image.
 - Displaying more information, such as details or longer descriptions of an item on the page.
 
+Dialogs and flyouts cover most scenarios. If you need custom transient UI that a dialog, flyout, or other higher-level control can't provide, you can use a [Popup](popup.md). A popup gives you full control over its content, position, and dismissal behavior, but you have to provide its appearance yourself.
+
 ## Ways to avoid using dialogs and flyouts
 
 Consider the importance of the information you want to share: is it important enough to interrupt the user? Also consider how frequently the information needs to be shown; if you're showing a dialog or notification every few minutes, you might want to allocate space for this info in the primary UI instead. For example, in a chat client, rather than showing a flyout every time a friend logs in, you might display a list of friends who are online at the moment and highlight friends as they log on.
@@ -60,9 +62,9 @@ Dialogs are frequently used to confirm an action (such as deleting a file) befor
 
 > [!div class="checklist"]
 >
-> - **Important APIs**: [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.ContentDialog), [Flyout class](/windows/windows-app-sdk/api/winrt/microsoft.UI.Xaml.Controls.Flyout)
+> - **Important APIs**: [ContentDialog class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog), [Flyout class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.flyout), [Popup class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popup)
 
-> - If you have the **WinUI 3 Gallery** app installed, click here to open the app and see the [ContentDialog](winui3gallery://item/ContentDialog) or [Flyout](winui3gallery://item/Flyout) in action. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main).
+> - If you have the **WinUI 3 Gallery** app installed, click here to open the app and see the [ContentDialog](winui3gallery://item/ContentDialog), [Flyout](winui3gallery://item/Flyout), or [Popup](winui3gallery://item/Popup) in action. Get the app from the [Microsoft Store](https://apps.microsoft.com/detail/9P3JFPWWDZRC) or get the source code on [GitHub](https://github.com/microsoft/WinUI-Gallery/tree/main).
 
 ## How to create a dialog
 
@@ -71,3 +73,7 @@ See the [Dialogs article](dialogs.md).
 ## How to create a flyout
 
 See the [Flyout article](flyouts.md).
+
+## How to create a popup
+
+See the [Popup article](popup.md).
