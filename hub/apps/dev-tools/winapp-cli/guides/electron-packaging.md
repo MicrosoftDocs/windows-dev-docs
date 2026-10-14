@@ -220,7 +220,7 @@ Submit your app to the Microsoft Store for the widest distribution and automatic
 3. Update `Package.appxmanifest` with your Store identity. No need to sign the msix, the store publishing process will sign it automatically. 
 5. Submit for certification
 
-Learn more: [Publish your app to the Microsoft Store](../../../publish/index.yml)
+Learn more: [Publish your app to the Microsoft Store](/windows/apps/publish/)
 
 ### Enterprise Distribution
 Distribute directly to enterprise customers via:

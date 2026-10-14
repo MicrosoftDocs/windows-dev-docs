@@ -4,7 +4,7 @@ description: Install your tools, create and run a C# WinUI app with winapp CLI o
 author: GrantMeStrength
 ms.author: jken
 ms.topic: quickstart
-ms.date: 10/08/2026
+ms.date: 10/13/2026
 keywords: windows, desktop development, winui
 ms.localizationpriority: medium
 ms.collection: windows11
@@ -109,6 +109,8 @@ winapp run
 
 `winapp new` creates the blank WinUI app. `winapp run` builds the project and launches it; you don't need a separate build or package-registration command.
 
+To choose another starter template, debug crashes, automate UI, or package your app from the command line, see [Using winapp CLI with WinUI](../dev-tools/winapp-cli/guides/winui.md).
+
 #### [Visual Studio](#tab/visual-studio)
 
 1. Open Visual Studio and select **Create a new project**.
@@ -163,4 +165,8 @@ Congratulations! You've created, run, and updated your first WinUI app. The wind
 > [!div class="nextstepaction"]
 > [Build a notes app](../tutorials/winui-notes/intro.md)
 
-The Notes tutorial uses a separate `WinUINotes` project to teach pages, navigation, data binding, and local storage. You can also find focused control examples in [Code samples and the WinUI Gallery](../dev-tools/samples.md).
+The Notes tutorial uses a separate `WinUINotes` project to teach pages, navigation, data binding, and local storage.
+
+If you work from the terminal, [Using winapp CLI with WinUI](../dev-tools/winapp-cli/guides/winui.md) covers the full command-line workflow: templates, `dotnet run`, debugging, UI automation, testing, and packaging.
+
+You can also find focused control examples in [Code samples and the WinUI Gallery](../dev-tools/samples.md).

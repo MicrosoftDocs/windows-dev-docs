@@ -1,7 +1,7 @@
 ---
 title: Using winapp CLI with C++ and CMake
 description: Set up a C++ CMake project with the winapp CLI to restore Windows App SDK headers, generate a certificate, and package the app as MSIX.
-ms.date: 10/03/2026
+ms.date: 10/13/2026
 ms.topic: how-to
 ---
 
@@ -12,6 +12,9 @@ This guide demonstrates how to use the `winapp` CLI with a C++ application to de
 Package identity is a core concept in the Windows app model. It allows your application to access specific Windows APIs (like Notifications, Security, AI APIs, etc), have a clean install/uninstall experience, and more.
 
 A standard executable (like one created with `cmake --build`) does not have package identity. This guide shows how to add it for debugging and then package it for distribution.
+
+> [!TIP]
+> Using a Visual Studio C++ project (`.vcxproj`) instead of CMake? Run `winapp run .` in the project folder: winapp builds it with Visual Studio's MSBuild and launches it with package identity. See [C++ projects](../usage.md#c-projects-vcxproj) and the [cpp-winui-app sample](https://github.com/microsoft/WinAppCli/tree/main/samples/cpp-winui-app).
 
 ## Prerequisites
 
@@ -301,7 +304,7 @@ The `.winapp/include` directory contains all the necessary headers for Windows A
 - `WindowsAppSDK-VersionInfo.h` - Version information
 - And many more Windows App SDK components
 
-For more advanced Windows App SDK usage, check out the [Windows App SDK documentation](../../../windows-app-sdk/index.md).
+For more advanced Windows App SDK usage, check out the [Windows App SDK documentation](/windows/apps/windows-app-sdk/).
 
 ## 7. Restore headers when needed
 
@@ -492,4 +495,4 @@ You should see the "Package Family Name" output, confirming it's installed and r
 - **Distribute via winget**: Submit your MSIX to the [Windows Package Manager Community Repository](https://github.com/microsoft/winget-pkgs)
 - **Publish to the Microsoft Store**: Use `winapp store` to submit your package
 - **Set up CI/CD**: Use the [`setup-WinAppCli`](https://github.com/microsoft/setup-WinAppCli) GitHub Action to automate packaging in your pipeline
-- **Explore Windows APIs**: With package identity, you can now use [Notifications](../../../develop/notifications/app-notifications/app-notifications-quickstart.md), [on-device AI](/windows/ai/apis/), and other [identity-dependent APIs](../../../desktop/modernize/desktop-to-uwp-extensions.md)
+- **Explore Windows APIs**: With package identity, you can now use [Notifications](/windows/apps/develop/notifications/app-notifications/app-notifications-quickstart), [on-device AI](/windows/ai/apis/), and other [identity-dependent APIs](/windows/apps/desktop/modernize/desktop-to-uwp-extensions)

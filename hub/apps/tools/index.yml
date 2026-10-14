@@ -2,17 +2,17 @@
 title: Tools for Windows app development
 metadata:
   title: Tools for Windows app development
-  description: Choose Visual Studio, the Visual Studio Code extension, WinApp CLI, or WinUI Agent for your Windows app development workflow.
+  description: Choose Visual Studio, the WinApp VS Code extension, WinApp CLI, or WinUI Agent for your Windows app development workflow.
   author: GrantMeStrength
   ms.author: jken
   ms.topic: overview
-  ms.date: 10/02/2026
-  keywords: windows app development tools, visual studio, visual studio code extension, winapp cli, winui agent
+  ms.date: 10/08/2026
+  keywords: windows app development tools, visual studio, winapp vs code extension, winapp cli, winui agent
 brand: windows
 tocType: single
 productOverview:
   title: Tools for Windows app development
-  summary: Choose Visual Studio, the Visual Studio Code extension, WinApp CLI, or WinUI Agent for your development workflow.
+  summary: Choose Visual Studio, the WinApp VS Code extension, WinApp CLI, or WinUI Agent for your development workflow.
 getStarted:
   title: Choose your tool
   summary: Start with the tool that matches how you create and manage Windows app projects.
@@ -20,7 +20,7 @@ getStarted:
     - title: Visual Studio
       description: Create, edit, build, debug, package, and publish Windows apps in an integrated development environment.
       url: ../dev-tools/visual-studio.md
-    - title: Visual Studio Code extension
+    - title: WinApp VS Code extension
       description: Run WinApp CLI commands from the Visual Studio Code Command Palette.
       url: ../develop/ai-assisted/vs-code-tools.md#winapp-vs-code-extension
     - title: WinApp CLI
@@ -41,7 +41,7 @@ coreWorkflows:
       links:
         - text: Visual Studio
           url: ../dev-tools/visual-studio.md
-        - text: Visual Studio Code extension
+        - text: WinApp VS Code extension
           url: ../develop/ai-assisted/vs-code-tools.md#winapp-vs-code-extension
     - icon:
         src: ../images/fluent-blue/code.svg

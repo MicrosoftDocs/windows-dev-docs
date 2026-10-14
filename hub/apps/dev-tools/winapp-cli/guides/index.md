@@ -1,7 +1,7 @@
 ---
 title: winapp CLI framework guides
-description: Step-by-step guides for using the winapp CLI with .NET, C++, Electron, Rust, Tauri, Flutter, and other frameworks.
-ms.date: 09/24/2026
+description: Step-by-step guides for using the winapp CLI with WinUI, .NET, .NET MAUI, C++, Electron, Rust, Tauri, Flutter, and other frameworks.
+ms.date: 10/07/2026
 ms.topic: overview
 ---
 
@@ -11,7 +11,9 @@ These guides walk you through using the winapp CLI with your app framework — f
 
 | Framework | Guide |
 |-----------|-------|
+| WinUI | [Get started with WinUI](winui.md) |
 | .NET / WPF / WinForms | [Get started with .NET](dotnet.md) |
+| .NET MAUI | [Get started with .NET MAUI](maui.md) |
 | C++ (CMake) | [Get started with C++](cpp.md) |
 | Electron | [Get started with Electron](electron-index.md) |
 | Rust | [Get started with Rust](rust.md) |

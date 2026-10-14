@@ -1,7 +1,7 @@
 ---
 title: "Getting Started: Adding Windows APIs to Your Electron App"
 description: Add Windows-native capabilities to an Electron app with the winapp CLI, from calling modern Windows APIs to testing identity and packaging.
-ms.date: 08/19/2026
+ms.date: 10/07/2026
 ms.topic: how-to
 ---
 
@@ -23,7 +23,7 @@ By the end of this guide, you'll have an Electron app that:
 Before starting, ensure you have:
 
 - **Windows 11** (Copilot+ PC if using Phi Silica)
-- **Node.js** - `winget install OpenJS.NodeJS --source winget`
+- **Node.js 22.13 or later** - `winget install OpenJS.NodeJS --source winget`. Check your version with `node --version`, and upgrade if it is older.
 - **.NET SDK v10** - `winget install Microsoft.DotNet.SDK.10 --source winget`
 - **Visual Studio with the Native Desktop Workload** - `winget install --id Microsoft.VisualStudio.Community --source winget --override "--add Microsoft.VisualStudio.Workload.NativeDesktop --includeRecommended --passive --wait"`
 

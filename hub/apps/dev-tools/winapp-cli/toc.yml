@@ -1,4 +1,4 @@
-- name: winapp CLI overview
+- name: Overview
   href: index.md
 - name: Commands and usage
   href: usage.md
@@ -11,8 +11,12 @@
 - name: Security guidance
   href: security.md
 - name: Framework guides
-  href: guides/index.md
+  expanded: true
   items:
+  - name: Overview
+    href: guides/index.md
+  - name: WinUI
+    href: guides/winui.md
   - name: .NET / WPF / WinForms
     href: guides/dotnet.md
   - name: .NET MAUI
@@ -20,8 +24,9 @@
   - name: C++ (CMake)
     href: guides/cpp.md
   - name: Electron
-    href: guides/electron-index.md
     items:
+    - name: Overview
+      href: guides/electron-index.md
     - name: Set up the environment
       href: guides/electron-setup.md
     - name: Package for distribution

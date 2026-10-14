@@ -1,11 +1,21 @@
 ---
 title: CLI Documentation and Usage
 description: Complete command reference for the winapp CLI covering setup, packaging, identity, certificates, signing, and other utility commands.
-ms.date: 10/03/2026
+ms.date: 10/08/2026
 ms.topic: reference
 ---
 
 # CLI Documentation and Usage
+
+## Version
+
+Print the installed winapp version with `--version` or its short form `-V`:
+
+```powershell
+winapp -V
+```
+
+Lowercase `-v` is the short form of `--verbose` on commands (for example, `winapp restore -v`).
 
 ## Shell Completion
 
@@ -51,6 +61,7 @@ winapp init [base-directory] [options]
 
 - Creates `winapp.yaml` configuration file (only when SDK packages are managed; skipped with `--setup-sdks none`)
 - Downloads Windows SDK and Windows App SDK packages
+- Uses the newest Windows App SDK release in the selected `--setup-sdks` channel. If that release is still being published and some of its packages aren't available yet, `init` uses the previous release instead and prints a note saying so. To move to the new release later, run `winapp update`, or for a .NET project, `dotnet add package Microsoft.WindowsAppSDK --version <new version>`.
 - Generates C++/WinRT headers and binaries
 - Creates Package.appxmanifest
 - Sets up build tools and enables developer mode
@@ -91,7 +102,7 @@ When a `.csproj` file is found in the target directory, `init` uses a streamline
 
 **Sparse identity mode (`--exe` + `--sparse`):**
 
-Generates an identity-only [sparse package](guides/sparse.md) manifest for an existing desktop executable — the first step of the [sparse packaging workflow](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md). Unlike the full `init` flow, this **skips all SDK/package installation** (sparse identity packages have no SDK dependencies) and only generates a manifest and placeholder assets.
+Generates an identity-only [sparse package](guides/sparse.md) manifest for an existing desktop executable — the first step of the [sparse packaging workflow](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). Unlike the full `init` flow, this **skips all SDK/package installation** (sparse identity packages have no SDK dependencies) and only generates a manifest and placeholder assets.
 
 - Infers the package name, publisher, description, and version from the exe via `FileVersionInfo` (override with `--name`, `--publisher`, or interactively)
 - Writes `appxmanifest.xml` (with the exe name substituted into `Executable`) plus an `Assets/` folder to a `sparse/` folder in the current directory (or `--output-dir`)
@@ -151,13 +162,13 @@ winapp new [options]
 - `-o, --output <path>` - Directory to create the app in (default: `./<name>`)
 - `--use-defaults`, `--no-prompt` - Do not prompt; use defaults (blank template, name from `--output`/`--name`, and keep the installed template pack rather than updating it)
 - `--force` - Scaffold even if the output directory already contains files
-- `--template-version <latest|installed|version>` - WinUI template pack version: `latest` installs the newest published pack, `installed` keeps whatever is already downloaded (no network), or pin an explicit version such as `1.2.3`. Default: install the latest when no pack is present, otherwise prompt to update a stale pack (kept as-is under `--use-defaults`).
+- `--template-version <latest|installed|version>` - WinUI template pack version: `latest` updates to the newest published pack without prompting (an installed pack that is already newer, such as a local prerelease build, is kept; fails if the feed can't be checked), `installed` keeps whatever is already downloaded (no network), or pin an explicit version such as `1.2.3`. Default: install the latest when no pack is present, otherwise prompt to update a stale pack (kept as-is under `--use-defaults`).
 - `--list` - List the available WinUI templates and exit (installs the latest pack first if none is installed)
 - `--json` - Format output as JSON
 
 **Templates:**
 
-The pack ships two styles of WinUI app. **XAML** templates define the UI in markup with a C# code-behind. **Reactor** templates are pure C# with no XAML, using an MVU (Model-View-Update) pattern. The template list is read live from the installed pack, so it always reflects the version you have — run `winapp new --list` to see the current set. Common templates:
+The pack ships two styles of WinUI app. **XAML** templates define the UI in markup with a C# code-behind. **Reactor** templates are pure C# with no XAML, using an MVU (Model-View-Update) pattern. The template list is read live from the installed pack, so it always reflects the version you have — run `winapp new --list` to see the current set. The interactive picker and `--list` show the WinUI templates first, then all others, each group in alphabetical order. Common templates:
 
 | Short name | Description |
 |------------|-------------|
@@ -174,11 +185,11 @@ The pack ships two styles of WinUI app. **XAML** templates define the UI in mark
 
 > **Reactor templates are experimental.** They reference the prerelease `Microsoft.UI.Reactor` packages, whose APIs can change or be removed in a future release. `winapp new` marks them **(Experimental)** in `--list` and in the interactive picker, sets `"Experimental": true` in `--json`, and prints a warning after scaffolding one. They are never chosen as the default template. Reactor also requires the **.NET 10 SDK or newer**; on an older SDK `winapp new` fails up front with the version it needs rather than scaffolding a project you can't build.
 
-Each template's canonical short name is the first alias `dotnet new` lists for it; any listed alias (e.g. `winui3`, `wasdk-single`, `winui-reactor`) is also accepted. When run inside an existing WinUI project, `dotnet new` also surfaces **item** templates (e.g. a blank page), which `winapp new` adds into the current project rather than creating a new one.
+Each template's canonical short name is the first alias `dotnet new` lists for it; any listed alias (e.g. `winui3`, `wasdk-single`, `winui-reactor`) is also accepted. If another installed template pack registers the same short name (for example, `reactor` from `Microsoft.UI.Reactor.Templates`), `winapp new` still creates the WinUI pack's template by using one of its other aliases. If another pack registers every alias the template has, `winapp new` stops and names that pack. Remove it with `dotnet new uninstall <package>` and re-run. When run inside an existing WinUI project, `dotnet new` also surfaces **item** templates (e.g. a blank page), which `winapp new` adds into the current project rather than creating a new one.
 
 **Template pack versioning:**
 
-`winapp new` no longer pins a specific template pack version. If no pack is installed it installs the **latest**. If an older pack is already installed it checks the feed and, when a newer one exists, **prompts** whether to update — except in non-interactive/`--use-defaults` runs, which keep the installed pack. Use `--template-version latest` to always take the newest without prompting, or `--template-version installed` to always use the downloaded pack without a network check. Passing an **explicit** version (e.g. `--template-version 1.2.3`) always installs exactly that version — reinstalling even when a newer pack is already present — so scaffolding is reproducible across machines.
+`winapp new` no longer pins a specific template pack version. If no pack is installed it installs the **latest**. If an older pack is already installed it checks the feed and, when a newer one exists, **prompts** whether to update — except in non-interactive/`--use-defaults` runs, which keep the installed pack. Use `--template-version latest` to always take the newest without prompting (it never replaces an installed pack with an older one, and fails if the feed can't be checked), or `--template-version installed` to always use the downloaded pack without a network check. Passing an **explicit** version (e.g. `--template-version 1.2.3`) always installs exactly that version — reinstalling even when a newer pack is already present — so scaffolding is reproducible across machines.
 
 > **A first run may take longer:** Installing or updating the template pack, or restoring missing Windows App SDK NuGet packages used by the selected template, can require additional downloads. This can also happen after a new Windows App SDK version is published. If scaffolding is still running after 10 seconds, `winapp new` updates its status message to indicate that packages may be downloading or restoring.
 
@@ -289,7 +300,7 @@ winapp update [options]
 **What it does:**
 
 - Reads existing `winapp.yaml` configuration in the current directory
-- Updates all packages to their latest available versions
+- Updates all packages to their latest available versions. A Windows App SDK release that is still being published is skipped until all its packages are available, and `update` prints a note naming the release it used instead. Run `winapp update` again later to move to the new release.
 - Updates the `winapp.yaml` file with new version numbers
 - Regenerates C++/WinRT headers and binaries
 
@@ -470,7 +481,7 @@ winapp pack ./publish/x64 ./publish/arm64
 
 ### create-debug-identity
 
-Create app identity for debugging using [sparse packaging](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md). The exe stays in its original location — Windows associates identity with it via `Add-AppxPackage -ExternalLocation`.
+Create app identity for debugging using [sparse packaging](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps). The exe stays in its original location — Windows associates identity with it via `Add-AppxPackage -ExternalLocation`.
 
 > **When to use this vs `winapp run`:** Use `create-debug-identity` when the exe is **separate from your app code** (e.g., Electron apps where `electron.exe` is in `node_modules`), or when specifically testing sparse package behavior. For most frameworks where the exe is in your build output folder, use [`winapp run`](#run) instead — it registers a full loose layout package and launches the app. See the [Debugging Guide](debugging.md) for a full comparison.
 
@@ -571,7 +582,7 @@ winapp manifest generate [directory] [options]
 **Templates:**
 
 - `packaged` - Standard packaged app manifest
-- `sparse` - App manifest using [sparse/external location packaging](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md)
+- `sparse` - App manifest using [sparse/external location packaging](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps)
 
 #### Manifest placeholders
 
@@ -706,14 +717,14 @@ Create a loose layout package from a build output folder, register it with Windo
 `winapp run` operates in one of three modes, chosen automatically from the input:
 
 - **Folder mode** — the input is a build-output folder (contains a `Package.appxmanifest`/`AppxManifest.xml`).
-- **Project mode** — the input is a `.csproj`, a `.sln`/`.slnx` solution, or a directory containing one. `winapp run` builds the project and launches it, supporting both **packaged** and **unpackaged** WinUI apps. See [Project mode](#project-mode-net-sdk-projects) below.
+- **Project mode** — the input is a `.csproj`, a C++ `.vcxproj`, a `.sln`/`.slnx` solution, or a directory containing one. `winapp run` builds the project and launches it, supporting both **packaged** and **unpackaged** apps. See [Project mode](#project-mode-net-sdk-projects) and [C++ projects](#c-projects-vcxproj) below.
 - **Single-file mode** — the input is a `.cs` [.NET file-based app](#single-file-mode-net-file-based-apps). `winapp run` builds it, generates a manifest from its `#:property` directives, and launches it with package identity.
 
 > [!TIP]
 > Mode selection is silent by default. If a directory was treated as a build-output folder when you
 > expected it to be built as a project, re-run with `--verbose` — folder mode reports why it was
-> chosen (`No .csproj/.sln/.slnx with a runnable app found in '<path>' — running it as a
-> build-output folder.`). A directory is only built as a project when a `.csproj`/`.sln`/`.slnx`
+> chosen (`No .csproj/.vcxproj/.sln/.slnx with a runnable app found in '<path>' — running it as a
+> build-output folder.`). A directory is only built as a project when a `.csproj`/`.vcxproj`/`.sln`/`.slnx`
 > with a runnable app sits at its **top level**; it is not searched recursively.
 
 > **This is the preferred command for debugging with package identity** for most frameworks (.NET, C++, Rust, Flutter, Tauri). Unlike [`create-debug-identity`](#create-debug-identity) which registers a sparse package for a single exe, `winapp run` registers the entire folder as a loose layout package, just like a real MSIX install. See the [Debugging Guide](debugging.md) for common debugging workflows.
@@ -724,7 +735,7 @@ winapp run [<input>] [options]
 
 **Arguments:**
 
-- `input` - The app to run: a build-output folder (folder mode), a `.cs` .NET file-based app (single-file mode), a `.csproj` project, a `.sln`/`.slnx` solution, or a directory containing one of those at its top level (project mode; the directory is not searched recursively). Use `.` to build/run the project in the current directory. **Optional — defaults to the current directory when omitted** (matches `dotnet run`).
+- `input` - The app to run: a build-output folder (folder mode), a `.cs` .NET file-based app (single-file mode), a `.csproj` or C++ `.vcxproj` project, a `.sln`/`.slnx` solution, or a directory containing one of those at its top level (project mode; the directory is not searched recursively). Use `.` to build/run the project in the current directory. **Optional — defaults to the current directory when omitted** (matches `dotnet run`).
 
 **Options:**
 
@@ -734,7 +745,7 @@ winapp run [<input>] [options]
 - `--no-launch` - Only create the debug identity and register the package without launching the application
 - `--with-alias` - Launch the app using its execution alias instead of AUMID activation. The app runs in the current terminal with inherited stdin/stdout/stderr. Rarely needed: an app with `OutputType=Exe` already launches this way by default. winapp adds the required `uap5:ExecutionAlias` to the manifest it stages in the AppX layout, so no change to your checked-in manifest is needed; an alias the app declares itself is used as-is. Cannot be combined with `--no-launch`, `--detach`, `--without-alias`, or `--json`.
 - `--without-alias` - Force AUMID activation for an app that would otherwise launch through an execution alias. A console app then runs without a console and prints nothing to this terminal. Cannot be combined with `--with-alias`.
-- `--debug-output` - Capture `OutputDebugString` messages and first-chance exceptions from the launched application. Framework noise (WinUI, COM, DirectX) is filtered from console output; the full log file captures everything. If the app crashes, automatically captures a minidump and analyzes it to show the exception type, message, and stack trace with source file:line numbers (resolved from PDBs in the build output folder). Managed (.NET) crashes are analyzed instantly with no external tools. Native (C++/WinRT) crashes show module names and offsets. When the crashed app is a WinUI 3 app (`Microsoft.UI.Xaml.dll` is loaded), an extra stowed-exception triage pass runs automatically to surface the originating HRESULT, its ErrorContext chain, and the full native XAML dispatch stack; the required debugger components are downloaded on first use (see [Debugging](debugging.md#winui-stowed-exception-triage), overridable via the `WINAPP_DBGTOOLS_DIR` environment variable). Only one debugger can attach to a process at a time, so other debuggers (Visual Studio, VS Code) cannot be used simultaneously. Use `--no-launch` instead if you need to attach a different debugger. Cannot be combined with `--no-launch`. Cannot be combined with `--json`.
+- `--debug-output` - Capture `OutputDebugString` messages and first-chance exceptions from the launched application. Framework noise (WinUI, COM, DirectX) is filtered from console output; the full log file captures everything. If the app crashes, automatically captures a minidump and analyzes it to show the exception type, message, and stack trace with source file:line numbers (resolved from PDBs in the build output folder). Managed (.NET) crashes are analyzed instantly with no external tools. Native (C++/WinRT) crashes show module names and offsets. When the crashed app is a WinUI 3 app (`Microsoft.UI.Xaml.dll` is loaded), an extra stowed-exception triage pass runs automatically to surface the originating HRESULT, its ErrorContext chain, and the full native XAML dispatch stack; the required debugger components are downloaded on first use (see [Debugging](debugging.md#winui-stowed-exception-triage), overridable via the `WINAPP_DBGTOOLS_DIR` environment variable). Only one debugger can attach to a process at a time, so other debuggers (Visual Studio, VS Code) cannot be used simultaneously. Use `--no-launch` instead if you need to attach a different debugger. Cannot be combined with `--no-launch`. Cannot be combined with `--json`. If you run without it and the app exits with a nonzero code, winapp prints a hint to rerun with `--debug-output`.
 - `--symbols` - Download PDB symbols from Microsoft Symbol Server for richer native crash analysis with resolved function names. Only used with `--debug-output`. If omitted and a native crash occurs, the output will suggest adding this flag. This flag also improves the WinUI stowed-exception triage stack for WinUI 3 apps. First run downloads symbols and caches them locally; subsequent runs use the cache.
 - `--unregister-on-exit` - Unregister the development package after the application exits. Only removes packages registered in development mode. Cannot be combined with `--no-launch`.
 - `--detach` - Launch the application and return immediately without waiting for it to exit. Useful for CI/automation where you need to interact with the app after launch. Local runs print the PID; target runs print the scoped UI target. JSON includes the PID and target scope. Cannot be combined with `--no-launch`, `--debug-output`, `--with-alias`, or `--unregister-on-exit`.
@@ -890,6 +901,28 @@ winapp run . --verbose
 # Launch and detach (prints PID), forwarding args to the app
 winapp run . --detach -- --my-flag value
 ```
+
+#### C++ projects (.vcxproj)
+
+Point `winapp run` at a `.vcxproj` — or at a folder or solution whose only runnable app is one — and it builds the project with Visual Studio's MSBuild, then launches it the same way as a .NET project:
+
+```powershell
+winapp run .\MyApp.vcxproj
+winapp run . -c Release --arch arm64
+winapp run . --no-build --detach --json
+```
+
+- A WinUI 3 C++/WinRT app from the Visual Studio **WinUI Blank App (Packaged)** template runs packaged. Other application projects, such as a console app or a WinUI app built with `-p WindowsPackageType=None`, run unpackaged from their built `.exe`.
+- Builds `Debug` for the current architecture by default. `--arch x64|arm64|x86` or `-p Platform=x64|ARM64|Win32` selects the architecture (passing both with different architectures is an error); a custom `-p Platform` name is passed through.
+- Restores the `packages.config` NuGet packages first (skip with `--no-restore`) and installs the Windows App Runtime version they pin. Packaged apps also get the framework packages the build references, such as the Debug VC++ runtime, installed when missing.
+- `--framework` and `--aot` apply only to .NET projects.
+- Build output shows MSBuild's warnings and errors only, with a spinner while it builds; `--verbose` shows MSBuild's full output and exact command.
+- In a folder or solution that also has a runnable C# app, the C# app is selected; use `--project <name>` to run the C++ app. C# libraries and test projects next to a C++ app don't get in the way.
+- A C# app that references a C++ project (for example a native DLL) can't be built with `dotnet`. Build it with Visual Studio or `MSBuild.exe`, then run `winapp run <app>.csproj --no-build`, or package its output folder with `winapp package <folder>`.
+
+**Prerequisites:** Visual Studio or Build Tools for Visual Studio 2022 version 17.8 or later, with the MSVC C++ build tools for the target architecture (the **Desktop development with C++** workload) and the Windows SDK the project targets. WinUI 3 apps also need **C++ WinUI app development tools**; with several installs, winapp uses the newest one that can build the project. The .NET SDK is not required. When the build tools, platform toolset (`MSB8020`), or Windows SDK (`MSB8036`) are missing, `winapp run` says what to install, including a `winget` command.
+
+See the [cpp-winui-app sample](https://github.com/microsoft/WinAppCli/tree/main/samples/cpp-winui-app).
 
 #### Single-file mode (.NET file-based apps)
 
@@ -1383,16 +1416,30 @@ winapp cert generate [options]
   "subjectName": "CN=Contoso",
   "warnings": [
     "Protected with the default password ('password'), which is public. Treat this certificate as development-only: anyone who obtains the .pfx can sign as you. Pass --password to choose your own, and use a CA-issued certificate or Azure Trusted Signing to ship."
-  ]
+  ],
+  "skipped": false
 }
 ```
 
 `publisher` is the display name and `subjectName` the full distinguished name the certificate was
-issued to. `defaultPasswordIsPublic` is always present. When it is `true`, the `.pfx` is protected by
+issued to. `defaultPasswordIsPublic` is always present when a certificate is generated. When it is `true`, the `.pfx` is protected by
 a password anyone can guess, so the certificate must only sign builds that stay on your own machines
 — check it before a script hands the certificate to anything else. `warnings` carries the same
 disclosure as text and is omitted when there is nothing to report. `publicCertificatePath` appears
 only with `--export-cer`.
+
+With `--if-exists skip`, when the certificate file already exists, the command leaves it untouched
+and returns only its path:
+
+```json
+{
+  "certificatePath": "C:\\app\\devcert.pfx",
+  "skipped": true
+}
+```
+
+Check `skipped` before reading the other fields. To inspect the existing certificate, run
+[`winapp cert info`](#cert-info).
 
 #### cert info
 
@@ -1528,7 +1575,7 @@ winapp az-sign ./app.msix --metadata-file ./metadata.json
 
 Generate a `CodeIntegrityExternal.cat` catalog file containing hashes of executable files from specified directories. This catalog is used with the [TrustedLaunch](/uwp/schemas/appxpackage/uapmanifestschema/element-trustedlaunch-trustedlaunch) flag in MSIX sparse package manifests ([AllowExternalContent](/uwp/schemas/appxpackage/uapmanifestschema/element-uap10-allowexternalcontent)) to allow execution of external files not included in the package itself.
 
-This is similar to how `signtool.exe` creates `AppxMetadata\CodeIntegrity.cat` when signing an MSIX package, but generates an external catalog for use with [sparse/external location packaging](../../desktop/modernize/grant-identity-to-nonpackaged-apps.md).
+This is similar to how `signtool.exe` creates `AppxMetadata\CodeIntegrity.cat` when signing an MSIX package, but generates an external catalog for use with [sparse/external location packaging](/windows/apps/desktop/modernize/grant-identity-to-nonpackaged-apps).
 
 ```bash
 winapp create-external-catalog <input-folder> [options]
@@ -2108,7 +2155,24 @@ In **PowerShell** and **pwsh**:
 $env:WINAPP_CLI_CACHE_DIRECTORY=d:\temp\.winapp
 ```
 
-Winapp will create this directory automatically when you run commands like `init` or `restore`.
+Winapp creates this directory when a command first needs it.
+
+#### When winapp can't write to the global cache directory
+
+Some environments, such as agent sandboxes that only allow writes to the current project, block access to `%USERPROFILE%\.winapp`. Most commands still work there, and the update check is skipped. If winapp hasn't completed its first run in that directory, each run also prints a one-line telemetry notice to stderr.
+
+These commands need to write to the cache directory and stop with an error that names the path:
+
+| Command | What it writes |
+|---------|----------------|
+| `find-api` | The API index, when it needs to be built or refreshed. An existing, up-to-date index is still read. |
+| `store` | The Microsoft Store Developer CLI, the first time it's installed. |
+
+To fix it, set `WINAPP_CLI_CACHE_DIRECTORY` to a folder winapp can write to (for example, one inside your project), then retry.
+
+`winapp ui` commands keep their turn-taking state in `%USERPROFILE%\.winapp\state\ui`. If they can't access it, they still run, but without waiting for other `winapp ui` commands on the same desktop, and print one warning (omitted with `--json` or `--quiet`). Avoid running other `winapp ui` commands on that desktop at the same time.
+
+Windows Sandbox commands keep their state in `%USERPROFILE%\.winapp\state`. If that folder isn't writable, they stop with `sandbox_state_unavailable` and name the variable to set.
 
 ### Update Checks
 
@@ -2156,7 +2220,8 @@ as a credential, and is only ever persisted as a SHA-256 hash. See
 
 ### ui
 
-Inspect and interact with running Windows app UIs using UI Automation (UIA).
+Inspect and interact with running Windows app UIs using UI Automation (UIA). Run `winapp ui --help`
+for the core workflow; see [UI automation](ui-automation.md) for the full guide.
 
 ```bash
 winapp ui [command] [options]
@@ -2170,7 +2235,7 @@ winapp ui [command] [options]
 - `get-text` / `get-value` - Read value/text from element (TextPattern, ValuePattern, or Name)
 - `screenshot` - Capture window/element as PNG (multiple windows form one labeled composite PNG; see [capture scope](ui-automation.md#screenshot))
 - `record` - Record a window/element region to an H.264 MP4 video (Windows Graphics Capture + Media Foundation)
-- `invoke` - Activate element (click, toggle, expand)
+- `invoke` - Activate element (click, toggle, expand); `--action` selects an exact operation (see [invoke](ui-automation.md#invoke))
 - `click` - Click element via mouse simulation (for controls that don't support invoke)
 - `hover` - Move mouse to element to trigger tooltips, flyouts, and hover states (default dwell: 800ms)
 - `drag` - Drag the mouse from one point to another, by element selector or screen `x,y` coordinates (reorder, resize, sliders, drag-and-drop)
@@ -2189,6 +2254,7 @@ winapp ui [command] [options]
 - `-a, --app <app>` - Target app (name, title, or PID)
 - `-w, --window <hwnd>` - Target window by HWND (stable)
 - `--on <target>` - Run any `ui` verb in `sandbox`; names, PIDs, and window handles refer to the guest. Outputs are delivered to the host. See [Sandbox UI automation](sandbox-execution.md#automating-the-ui) for setup, workflow coordination, and client requirements.
+- `--type`, `--root`, `--class-name` - Narrow a selector on the commands listed in [Scoped and typed queries](ui-automation.md#scoped-and-typed-queries)
 
 #### ui record
 
@@ -2219,10 +2285,5 @@ winapp ui record -a Calculator --frames --duration-sec 10 --fps 10 -o evidence.m
 
 With `--json`, the final result includes the output path, dimensions, codec, capture mode, cadence,
 stop reason, optional `frameArtifacts`, and warnings.
-
-> **Known limitation:** recording a *specific element* inside a popup that renders in its own
-> top-level window (WinUI/XAML flyout, teaching tip, tooltip) may capture the underlying main
-> window instead. Record the whole window, or follow the [screenshot overlay workflow](ui-automation.md#screenshot)
-> for popup stills. Tracked in [#646](https://github.com/microsoft/winappCli/issues/646).
 
 For full documentation, see [docs/ui-automation.md](ui-automation.md).
