@@ -26,7 +26,7 @@ Line-of-business apps often display records that users need to scan, select, fil
 Don't use the older UWP Community Toolkit DataGrid in a WinUI 3 app.
 
 > [!NOTE]
-> A native `TableView` control for editable, sortable, resizable tables is now available in preview. It's one of several new controls, along with charts and `InkCanvas`, introduced for the experimental channel of the Windows App SDK and announced in [WinUI Gallery 3.0 is here](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/). You can try these controls for yourself in the [WinUI Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC) app to decide whether `TableView` fits your scenario. Because these APIs are experimental, they can change or be removed and aren't supported for production, so keep using the options in this article for line-of-business apps that you release today. Plan to adopt `TableView` after it reaches a stable Windows App SDK release.
+> A native [`TableView`](../../develop/ui/controls/table-view.md) control for editable, sortable, resizable tables is now available in preview. It's one of several new controls, along with charts and `InkCanvas`, introduced for the experimental channel of the Windows App SDK and announced in [WinUI Gallery 3.0 is here](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/). You can try these controls for yourself in the [WinUI Gallery](https://apps.microsoft.com/detail/9P3JFPWWDZRC) app to decide whether `TableView` fits your scenario. Because these APIs are experimental, they can change or be removed and aren't supported for production, so keep using the options in this article for line-of-business apps that you release today. Plan to adopt `TableView` after it reaches a stable Windows App SDK release.
 
 ## Bind the collection
 
@@ -70,6 +70,7 @@ Use selection for choosing a record and a separate command for destructive actio
 ## Related content
 
 - [List views and grid views](../../develop/ui/controls/listview-and-gridview.md)
+- [TableView control (experimental)](../../develop/ui/controls/table-view.md)
 - [Data binding overview](../../develop/data-binding/data-binding-overview.md)
 - [Data binding and MVVM](../../develop/data-binding/data-binding-and-mvvm.md)
 - [List/details pattern](../../develop/ui/controls/list-details.md)

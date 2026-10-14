@@ -43,7 +43,7 @@ Use this table as a starting point. The appropriate choice depends on your app's
 - [List views and grid views](../../develop/ui/controls/listview-and-gridview.md)
 
 > [!NOTE]
-> A native `TableView` control, along with charts, `InkCanvas`, and other controls, is in preview in the experimental channel of the Windows App SDK and showcased in [WinUI Gallery 3.0](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/). These experimental APIs aren't supported for production. For guidance on what to ship today, see [Display tabular data in a WinUI app](display-tabular-data.md).
+> A native [`TableView`](../../develop/ui/controls/table-view.md) control, along with charts, `InkCanvas`, and other controls, is in preview in the experimental channel of the Windows App SDK and showcased in [WinUI Gallery 3.0](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/). These experimental APIs aren't supported for production. For guidance on what to ship today, see [Display tabular data in a WinUI app](display-tabular-data.md).
 
 ### Build forms with validation
 

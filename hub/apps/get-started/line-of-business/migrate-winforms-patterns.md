@@ -54,7 +54,7 @@ The mappings below are starting points, not automated substitutions. Re-evaluate
 | `WebBrowser` | `WebView2` | Review initialization, navigation, origin, and message-handling security. |
 
 > [!NOTE]
-> A native `TableView` control for grid-style data is in preview in the experimental channel of the Windows App SDK, shown in [WinUI Gallery 3.0](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/). Experimental APIs aren't supported for production, so for a `DataGridView` migration you ship today, follow [Display tabular data in a WinUI app](display-tabular-data.md).
+> A native [`TableView`](../../develop/ui/controls/table-view.md) control for grid-style data is in preview in the experimental channel of the Windows App SDK, shown in [WinUI Gallery 3.0](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/). Experimental APIs aren't supported for production, so for a `DataGridView` migration you ship today, follow [Display tabular data in a WinUI app](display-tabular-data.md).
 
 ## Translate startup and navigation
 
