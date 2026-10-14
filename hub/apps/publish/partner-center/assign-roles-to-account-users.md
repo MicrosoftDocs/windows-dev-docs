@@ -1,7 +1,7 @@
 ---
 title: Assign roles to account users
 description: Learn how to assign standard roles when adding users to your Partner Center account.
-ms.date: 11/09/2022
+ms.date: 10/14/2026
 ms.topic: article
 ms.localizationpriority: high
 ms.custom: sfi-ga-nochange
@@ -35,5 +35,6 @@ The table below shows some of the specific features available to each of these r
 |    **Payout account**                                     |    Can update                    |    No access                     |    No access                     |    No access               |    Can update             |    No access                     |
 |    **Tax profile**                                        |    Can update                    |    No access                     |    No access                     |    No access               |    Can update             |    No access                     |
 |    **Payout summary**                                     |    Can view                      |    No access                     |    No access                     |    No access               |    Can view               |    No access                     |
+|    **Self serve sales**                                   |    Can update                    |    No access                     |    No access                     |    No access               |    No access              |    Can update                    |
 
 If none of the standard roles are appropriate, or you wish to limit access to specific apps and/or add-ons, you can grant custom permissions to the user by selecting **Customize permissions**, as described in the next page.
