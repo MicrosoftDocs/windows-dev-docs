@@ -2,7 +2,7 @@
 description: Compare current options for distributing signed MSIX line-of-business apps with Intune, Configuration Manager, App Installer, or sideloading.
 title: Distribute LOB apps to enterprises
 ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
-ms.date: 10/12/2026
+ms.date: 10/14/2026
 ms.topic: article
 keywords: windows 11, windows 10, lob, line-of-business, enterprise apps, enterprise, intune, configuration manager
 ms.localizationpriority: medium
@@ -65,35 +65,23 @@ For internal apps that must remain private to an organization, use Intune, Confi
 
 ## Organizational licensing options
 
-You can indicate whether and how your app can be offered for volume purchases through Microsoft Store in the **Organizational licensing** section of the [Pricing and availability](publish-your-app/msix/price-and-availability.md#organizational-licensing) page of an app submission.
-
-Through these settings, you can allow your app to be made available to organizations that acquire and deploy multiple licenses for their users. This can increase your reach to organizations across Windows device types, including PCs, tablets, and IoT devices.
+Partner Center still shows **Organizational licensing** settings on the [Pricing and availability](publish-your-app/msix/price-and-availability.md#organizational-licensing) page of an app submission. These settings apply to apps that you publish publicly in Microsoft Store. They don't create a private catalog for your organization, and they don't replace the retired Microsoft Store for Business and Microsoft Store for Education volume-acquisition workflow described earlier in this article.
 
 > [!NOTE]
 > Selections for each of your apps are configured independently from each other. You can change your preferences for an app at any time by creating a new submission. Your changes take effect after the submission completes the [certification process](publish-your-app/msix/app-certification-process.md).
 
 > [!IMPORTANT]
-> Submissions that use the [Microsoft Store submission API](/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services) aren't made available to Microsoft Store. To make your app available for volume purchases by organizations, create and submit your submissions in Partner Center.
+> Submissions that use the [Microsoft Store submission API](/windows/uwp/monetize/create-and-manage-submissions-using-windows-store-services) aren't made available to Microsoft Store for volume acquisition by organizations. To use these settings, create and submit your submission in Partner Center.
 
-### Allowing your app to be offered to organizations
+### Organization-managed licensing setting
 
-By default, the box labeled **Make my app available to organizations with Store-managed (online) licensing and distribution** is checked. This means that you want your app to be available for inclusion in catalogs of apps that are made available to organizations for volume acquisition, with app licenses managed through the Store's online licensing system.
+The **Make my app available to organizations with Store-managed (online) licensing and distribution** option is a legacy setting. Because Microsoft Store for Business and Microsoft Store for Education are retired, don't rely on it to distribute an internal app to your organization. Use Intune, Configuration Manager, App Installer, or direct sideloading instead.
 
-> [!NOTE]
-> This doesn't guarantee that your app is made available to all organizations.
+If you uncheck this box, the change takes effect after the app completes the certification process. Licenses that organizations previously acquired remain valid, and people who already have the app can continue to use it.
 
-If you prefer not to allow Microsoft to offer your app to organizations for volume acquisition, uncheck this box. The change takes effect after the app completes the certification process. If any organizations previously acquired licenses to your app, those licenses remain valid, and people who already have the app can continue to use it.
+### Offline licensing setting
 
-> [!TIP]
-> Microsoft Store for Business and Microsoft Store for Education retired on March 31, 2023. To distribute an internal app exclusively to your own organization, see the other options earlier in this article.
-
-### Allowing disconnected (offline) licensing
-
-Many organizations need apps enabled for offline licensing. For example, some organizations need to deploy apps to devices that rarely or never connect to the internet. To allow your app to be made available to these customers, check the box labeled **Allow organization-managed (offline) licensing and distribution for organizations**.
-
-This box is **unchecked** by default. You must check the box to allow Microsoft to make your app available to verified organizations that install it using organization-managed (offline) licensing. Organizations must go through additional validation to install paid apps to their end users in this way.
-
-Offline licensing allows organizations to acquire your app on a volume basis, and then install the app without requiring each device to contact the Store's licensing system. The organization can download your app's package along with a license that lets them install it to devices, through their own management tools or by preloading apps on OS images, without notifying the Store when a particular license is used. Enabling this scenario greatly increases deployment flexibility, and it can substantially increase the attractiveness of your app with these customers.
+The **Allow organization-managed (offline) licensing and distribution for organizations** option is unchecked by default. It applies to apps published in Microsoft Store and doesn't provide a workflow for distributing a private LOB app.
 
 > [!IMPORTANT]
 > Offline licensing isn't supported for .xap packages.
