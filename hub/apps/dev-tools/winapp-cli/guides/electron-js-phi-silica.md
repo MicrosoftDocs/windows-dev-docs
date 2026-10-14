@@ -1,7 +1,7 @@
 ---
 title: Call Phi Silica from JavaScript (JS bindings)
 description: Call the on-device Phi Silica language model from Electron JavaScript using winapp JS bindings, with no native addon or node-gyp build step.
-ms.date: 09/24/2026
+ms.date: 10/14/2026
 ms.topic: how-to
 ---
 
@@ -13,7 +13,7 @@ This guide shows how to call the Windows App SDK Phi Silica text summarization A
 
 Before starting this guide, make sure you've:
 - Completed the [development environment setup](electron-setup.md).
-- Tested on a Copilot+ PC. Phi Silica requires hardware that supports the local language model.
+- Tested on hardware that supports Phi Silica. For current hardware, access, and transition guidance, see [Get started with Phi Silica in the Windows App SDK](/windows/ai/apis/phi-silica).
 
 ## Step 1: Add the AI capability
 
@@ -97,7 +97,7 @@ npm start
 
 Check the console output — you should see the Phi Silica summary printed!
 
-If the model is unavailable on the device, the function logs `"Summary: Model is not available"`. Make sure you're running on supported hardware (Copilot+ PC) and that the manifest includes `systemAIModels`.
+If the model is unavailable on the device, the function logs `"Summary: Model is not available"`. Make sure you're running on [supported Phi Silica hardware](/windows/ai/apis/phi-silica#supported-hardware) and that the manifest includes `systemAIModels`.
 
 From here, you can integrate the summarizer into your app however you'd like — exposing it through a preload script to the renderer, wiring it to IPC handlers, or calling it directly in the main process.
 
@@ -119,5 +119,6 @@ Or explore other guides:
 
 - **[winapp CLI Documentation](../usage.md)** — full CLI reference (`init`, `restore`, `node generate-bindings`).
 - **[Sample Electron App](https://github.com/microsoft/WinAppCli/tree/main/samples/electron)** — complete working example, including JS bindings.
+- **[Phi Silica documentation](/windows/ai/apis/phi-silica)** — current hardware requirements, readiness guidance, and API details.
 - **[@microsoft/dynwinrt](https://github.com/microsoft/dynwinrt)** — the runtime that powers the generated bindings.
 - **[@microsoft/dynwinrt-codegen](https://www.npmjs.com/package/@microsoft/dynwinrt-codegen)** — the code generator.

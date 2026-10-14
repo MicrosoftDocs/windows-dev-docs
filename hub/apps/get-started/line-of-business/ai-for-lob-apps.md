@@ -2,7 +2,7 @@
 title: Add AI capabilities to a line-of-business WinUI app
 description: Compare on-device Windows AI, ONNX Runtime, and cloud AI approaches for WinUI 3 business apps based on privacy and deployment needs.
 ms.topic: how-to
-ms.date: 09/16/2026
+ms.date: 10/14/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -31,6 +31,8 @@ WinUI 3 is delivered as part of the Windows App SDK; it isn't a separate UI fram
 | OCR, speech, or other Windows capability | The applicable Windows platform API |
 
 Don't select an on-device model from the processor name alone. Verify the current API's OS, Windows App SDK, model, and hardware requirements. Supported APIs can use different NPU or GPU configurations.
+
+For broader solution-selection guidance, see [Choose your Windows AI solution](/windows/ai/windows-ai-comparison) and [Choose between cloud-based and local AI models](/windows/ai/cloud-ai).
 
 ## Use the Windows AI language model
 
@@ -102,6 +104,8 @@ Choose and test an execution provider for the target hardware. Include model fil
 ## Related content
 
 - [Windows AI APIs overview](/windows/ai/)
+- [Choose your Windows AI solution](/windows/ai/windows-ai-comparison)
+- [Choose between cloud-based and local AI models](/windows/ai/cloud-ai)
 - [Phi Silica documentation](/windows/ai/apis/phi-silica)
 - [Windows AI troubleshooting](/windows/ai/apis/troubleshooting)
 - [Azure OpenAI Service](/azure/ai-services/openai/)

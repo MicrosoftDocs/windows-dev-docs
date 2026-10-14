@@ -1,22 +1,22 @@
 ---
 title: Creating a Phi Silica Addon
 description: Build a native Node addon for your Electron app that runs the on-device Phi Silica language model through the Windows App SDK from JavaScript.
-ms.date: 09/24/2026
+ms.date: 10/14/2026
 ms.topic: how-to
 ---
 
 # Creating a Phi Silica Addon
 
-This guide shows you how to create a C# native addon that calls the Phi Silica AI API in your Electron app. Phi Silica is a small language model that runs locally on Windows 11 devices with NPUs (Neural Processing Units).
+This guide shows you how to create a C# native addon that calls the Phi Silica AI API in your Electron app. Phi Silica is a small language model that runs locally on supported Windows 11 devices.
 
 ## Prerequisites
 
 Before starting this guide, make sure you've:
 - Completed the [development environment setup](electron-setup.md)
-- **Copilot+ PC** - Phi Silica requires a device with an NPU (Neural Processing Unit)
+- Tested on hardware that supports Phi Silica. For current hardware, access, and transition guidance, see [Get started with Phi Silica in the Windows App SDK](/windows/ai/apis/phi-silica).
 
 > [!NOTE]
-> If you are not on a Copilot+ PC, you can still follow this guide to learn the addon creation process. The code will gracefully handle devices without NPU support by returning a message indicating the model is not available.
+> If you are not on supported Phi Silica hardware, you can still follow this guide to learn the addon creation process. The code will gracefully handle unsupported devices by returning a message indicating the model is not available.
 
 ## Step 1: Create a C# Native Addon
 
@@ -109,7 +109,7 @@ namespace csAddon
 ```
 
 > [!NOTE]
-> Phi Silica requires Windows 11 with an NPU-equipped device (Copilot+ PC). If you don't have compatible hardware, the API will return a message indicating the model is not available. You can still complete this tutorial and package the app - it will gracefully handle devices without NPU support.
+> Phi Silica requires supported Windows 11 hardware. If you don't have compatible hardware, the API will return a message indicating the model is not available. You can still complete this tutorial and package the app; it will gracefully handle unsupported devices.
 
 ## Step 3: Build the C# Addon
 
