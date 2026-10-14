@@ -2,7 +2,7 @@
 title: Choose your migration path - upgrade, modernize, or rebuild
 description: Decide whether to upgrade your Windows desktop app to modern .NET, modernize it with the Windows App SDK, or rebuild the UI with WinUI 3.
 ms.topic: concept-article
-ms.date: 10/03/2026
+ms.date: 10/13/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -15,9 +15,6 @@ When you have an existing WPF, WinForms, or Win32 desktop app, you have three br
 > **You don't have to migrate to WinUI 3.** WPF and WinForms are fully supported on modern .NET and continue to receive feature updates. Many apps are best served by upgrading to modern .NET and adding Windows App SDK features incrementally — without changing the UI framework.
 
 For definitions of the terms used on this page, see [Migration terminology](migration-terminology.md).
-
-> [!TIP]
-> Before you change code, use [Plan your modernization with an AI assistant](modernize-with-ai-assistant.md) to have an AI coding assistant analyze your project and draft an incremental plan grounded in this documentation.
 
 ## Decision overview
 
@@ -97,11 +94,18 @@ This path moves your app's UI layer to WinUI 3, the native UI framework for mode
 ### How to get started
 
 - [Migrate WPF app patterns to WinUI 3](wpf-patterns-winui3.md) — control, XAML, and threading mappings
-- [Migrate WPF apps to WinUI 3 with AI](../../develop/ai-assisted/migrate/wpf-to-winui.md) — AI-assisted migration with GitHub Copilot
+- [Windows Forms patterns and their WinUI 3 equivalents](../../get-started/line-of-business/migrate-winforms-patterns.md) — layout, control, binding, and lifecycle mappings
 - [Migrate from UWP to the Windows App SDK](migrate-to-windows-app-sdk-ovw.md) — if your starting point is UWP
 
 > [!IMPORTANT]
 > A C# WinUI 3 app requires modern .NET and can't target .NET Framework. If your C# app is on .NET Framework, you need to **upgrade** first (Path 1), then **migrate** the UI. A C++/WinRT WinUI 3 app doesn't require .NET.
+
+## Framework-specific guidance
+
+- **UWP:** Start with [Migrate from UWP to the Windows App SDK](migrate-to-windows-app-sdk-ovw.md) to assess app-model, feature, API, and packaging differences.
+- **WPF:** Use [Migrate WPF app patterns to WinUI 3](wpf-patterns-winui3.md) to identify control, XAML, lifecycle, threading, tooling, and platform gaps.
+- **Windows Forms:** Use [Windows Forms patterns and their WinUI 3 equivalents](../../get-started/line-of-business/migrate-winforms-patterns.md) to evaluate layout, control, binding, and lifecycle changes.
+- **Win32 or C++ desktop UI:** The current documentation supports modernization in place and selected Windows App SDK adoption, but it doesn't provide an end-to-end Win32 UI migration guide. Start with [Modernize your desktop apps](../../desktop/modernize/index.md).
 
 ## Common migration blockers
 
@@ -119,7 +123,6 @@ These issues frequently block or complicate upgrades and migrations. Each requir
 ## See also
 
 - [Migration terminology](migration-terminology.md)
-- [Plan your modernization with an AI assistant](modernize-with-ai-assistant.md)
 - [Modernize your desktop apps](../../desktop/modernize/index.md)
 - [GitHub Copilot upgrade](/dotnet/core/porting/github-copilot-upgrade/overview)
 - [Migrate WPF app patterns to WinUI 3](wpf-patterns-winui3.md)

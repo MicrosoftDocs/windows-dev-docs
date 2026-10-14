@@ -6,7 +6,7 @@ metadata:
   author: GrantMeStrength
   ms.author: jken
   ms.topic: overview
-  ms.date: 10/03/2026
+  ms.date: 10/13/2026
   keywords: windows app migration, windows app modernization, windows app sdk, winui 3, uwp, wpf, windows forms, win32
 brand: windows
 tocType: single
@@ -17,46 +17,34 @@ getStarted:
   title: Choose your path
   summary: Start with the goal that matches how much of your existing app you want to change.
   items:
-    - title: Modernize an existing desktop app
-      description: Keep WPF, Windows Forms, or Win32 and add Windows App SDK, Windows Runtime, or packaging features incrementally.
-      url: ../../desktop/modernize/index.md
-    - title: Choose a migration path
+    - title: Choose between upgrading, modernizing, and migrating
       description: Compare upgrading in place, modernizing in place, and moving your UI to WinUI 3.
       url: migration-decision-guide.md
+    - title: Modernize WPF, Windows Forms, or Win32
+      description: Keep your current UI framework and add Windows App SDK, Windows Runtime, XAML Islands, or packaging features incrementally.
+      url: ../../desktop/modernize/index.md
     - title: Migrate from UWP
       description: Plan a move from UWP to the Windows App SDK and WinUI 3, including app-model and API changes.
       url: migrate-to-windows-app-sdk-ovw.md
-    - title: Migrate from another framework
-      description: Explore paths from WPF, iOS, or a cross-platform framework to WinUI 3.
-      url: ../../develop/ai-assisted/migrate/index.md
+    - title: Migrate WPF or Windows Forms
+      description: Compare framework-specific pattern guidance and assess the work required to rebuild a desktop UI with WinUI 3.
+      url: migration-decision-guide.md#framework-specific-guidance
 coreWorkflows:
-  title: Modernize or migrate your app
-  summary: Follow the workflow that matches your current app model and intended destination.
+  title: Framework-specific workflows
+  summary: Use the workflow for your current app framework and intended destination.
   items:
-    - icon:
-        src: ../../images/fluent-blue/code.svg
-        alt: Code brackets.
-      title: Add the Windows App SDK to an existing project
-      description: Install and initialize the Windows App SDK in an existing WPF, Windows Forms, or Win32 project without changing its UI framework.
-      links:
-        - text: Use the Windows App SDK in an existing project
-          url: ../use-windows-app-sdk-in-existing-project.md
-        - text: Windows App SDK overview
-          url: ../index.md
-        - text: Windows App SDK deployment options
-          url: ../../package-and-deploy/deploy-overview.md
     - icon:
         src: ../../images/fluent-blue/feature.svg
         alt: A puzzle piece representing app features.
-      title: Modernize desktop UI and platform features
-      description: Add Windows APIs, WinUI controls, or package identity while keeping the app's existing desktop framework.
+      title: Modernize WPF, Windows Forms, or Win32
+      description: Add selected Windows platform and UI capabilities while retaining the app's existing desktop framework.
       links:
         - text: Modernize existing desktop apps
           url: ../../desktop/modernize/index.md
-        - text: Host WinUI controls in desktop apps
+        - text: Add WinUI controls with XAML Islands
           url: ../../desktop/modernize/host-controls-existing-desktop-apps.md
-        - text: Package identity overview
-          url: ../../desktop/modernize/package-identity-overview.md
+        - text: Choose packaging and package identity
+          url: ../../package-and-deploy/packaging/index.md
     - icon:
         src: ../../images/fluent-blue/apps.svg
         alt: A collection of app windows.
@@ -72,37 +60,19 @@ coreWorkflows:
     - icon:
         src: ../../images/fluent-blue/editor.svg
         alt: A design editor window.
-      title: Migrate WPF or Windows Forms patterns
-      description: Translate desktop UI, binding, lifecycle, and control patterns when moving an app's UI to WinUI 3.
+      title: Migrate a WPF app
+      description: Assess WPF controls, XAML, lifecycle, threading, tooling, and known gaps before rebuilding the UI with WinUI 3.
       links:
         - text: WPF patterns and WinUI 3 equivalents
           url: wpf-patterns-winui3.md
-        - text: Windows Forms patterns and WinUI 3 equivalents
-          url: ../../get-started/line-of-business/migrate-winforms-patterns.md
-        - text: AI-assisted WPF migration
-          url: ../../develop/ai-assisted/migrate/wpf-to-winui.md
-    - icon:
-        src: ../../images/fluent-blue/design.svg
-        alt: A paintbrush and shape representing visual design.
-      title: Plan a cross-platform migration
-      description: Decide which business logic and services can remain shared and which Windows UI should be rebuilt with WinUI 3.
-      links:
-        - text: Cross-framework considerations
-          url: ../../develop/ai-assisted/migrate/cross-framework.md
-        - text: Migrate and port apps to WinUI 3
-          url: ../../develop/ai-assisted/migrate/index.md
-        - text: Migrate from iOS
-          url: ../../develop/ai-assisted/migrate/ios-to-winui.md
     - icon:
         src: ../../images/fluent-blue/code.svg
         alt: Code brackets.
-      title: Plan and accelerate with AI
-      description: Use an AI coding assistant to investigate your app and draft or implement a migration plan that you review and validate.
+      title: Migrate a Windows Forms app
+      description: Translate Windows Forms layout, controls, binding, and lifecycle patterns while planning a WinUI 3 UI migration.
       links:
-        - text: Plan your modernization with an AI assistant
-          url: modernize-with-ai-assistant.md
-        - text: Modernize or port with GitHub Copilot
-          url: ai-modernize.md
+        - text: Windows Forms patterns and WinUI 3 equivalents
+          url: ../../get-started/line-of-business/migrate-winforms-patterns.md
 supportReference:
   title: Continue your Windows app journey
   summary: Review the destination frameworks, packaging and deployment choices, and API reference for your selected path.

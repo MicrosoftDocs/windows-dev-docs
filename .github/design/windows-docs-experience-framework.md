@@ -4,7 +4,7 @@ description: Define a WinUI-first documentation framework with evidence-based jo
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
-ms.date: 10/03/2026
+ms.date: 10/13/2026
 ---
 
 # Windows documentation experience framework
@@ -374,7 +374,9 @@ The WinUI, Design, Develop, API reference, Migrate and modernize, Package and de
 
 Each ProductSubHub presents focused starting points, workflow paths, and destinations that continue the Windows app journey. The schema supports custom icons but not thumbnail images. This change does not revert the quickstart, sidebar organization, or icon exporter.
 
-The migration ProductSubHub and its dedicated ToC distinguish two reader goals. **Modernize your existing app** keeps the current WPF, Windows Forms, or Win32 app model while adding Windows App SDK, Windows Runtime, WinUI interop, or packaging capabilities. **Migrate your app** changes the app model or UI framework, including UWP-to-Windows App SDK and WinUI 3 guidance, WPF and Windows Forms pattern mappings, and cross-platform migration. Windows App SDK and WinUI 3 remain separate concepts: adopting the SDK does not require replacing an existing desktop UI framework.
+The migration ProductSubHub and its dedicated ToC use a framework-first structure. **Plan your approach** separates upgrading, modernizing, and migrating. **Modernize your existing app** keeps the current WPF, Windows Forms, or Win32 app model while adding Windows App SDK, Windows Runtime, WinUI XAML Islands, or packaging and identity capabilities. **Migrate to WinUI 3** provides distinct UWP, WPF, and Windows Forms routes. The UWP route groups assessment and planning, feature-area guides, and case studies. Windows App SDK and WinUI 3 remain separate concepts: adopting the SDK does not require replacing an existing desktop UI framework.
+
+Dedicated AI and broad cross-platform migration cards are not part of the migration ProductSubHub. In the canonical UWP, WPF, and Windows Forms guides, optional AI assistance is limited to inspection, draft mappings, and proposed edits that require human review and testing. The ToC includes **Cross-framework app considerations** and **From iOS** as direct peers under **Migrate to WinUI 3**, without an umbrella parent or duplicate AI-specific UWP and WPF routes. Pages whose content this change does not revise keep their existing AI framing. For example, those two pages still present AI conversion and rewrite prompts, and the UWP migration strategy and API mapping pages still link to the AI-assisted UWP guide. The current content does not support an end-to-end C++/Win32 UI migration route, so Win32 remains under modernization rather than appearing as a fabricated migration guide.
 
 The former platform and Desktop landing pages are not retained as competing overviews. Links that relied on their SDK, design, and deployment sections now point directly to the canonical landing pages and content owners.
 

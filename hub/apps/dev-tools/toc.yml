@@ -57,8 +57,6 @@ items:
       href: ../get-started/line-of-business/windows-lob-xaml-skill.md
     - name: Add AI capabilities
       href: ../get-started/line-of-business/ai-for-lob-apps.md
-    - name: Windows Forms patterns and WinUI 3 equivalents
-      href: ../get-started/line-of-business/migrate-winforms-patterns.md
   - name: Build with an AI coding assistant
     items:
     - name: Quickstart

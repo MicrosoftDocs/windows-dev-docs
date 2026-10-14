@@ -1,7 +1,7 @@
 ---
 title: Migrate from UWP to the Windows App SDK
-description: How to migrate a UWP app to the Windows App SDK and WinUI 3, including strategy, feature mapping, supported features, and step-by-step feature area guides.
-ms.date: 10/03/2026
+description: Plan a UWP migration to the Windows App SDK and WinUI 3 by assessing support, mapping features and APIs, and using feature-area guidance.
+ms.date: 10/13/2026
 ms.topic: upgrade-and-migration-article
 author: GrantMeStrength
 ms.author: jken
@@ -11,21 +11,18 @@ ms.localizationpriority: medium
 
 # Migrate from UWP to the Windows App SDK
 
-This section of the documentation covers moving a C# or C++/WinRT Universal Windows Platform (UWP) app to the [Windows App SDK](/windows/apps/windows-app-sdk) and [WinUI 3](../../winui/winui3/index.md). The guidance includes migration strategy, feature comparisons, and step-by-step feature area guides.
+This section covers moving a C# or C++/WinRT Universal Windows Platform (UWP) app to the [Windows App SDK](/windows/apps/windows-app-sdk) and [WinUI 3](../../winui/winui3/index.md). The guidance includes migration strategy, feature comparisons, and step-by-step feature-area guides.
 
-To migrate your app from UWP to the Windows App SDK, your UI code likely needs just a few namespace changes, while much of your platform code can stay the same. You'll need to adjust some code due to differences between UWP apps and desktop apps. For most apps (depending on codebase size), migration takes on the order of days rather than weeks.
+The amount of work depends on the app's UI, app-model dependencies, packaging, background activity, windowing, and use of UWP-only features. Some XAML and platform code can transfer with namespace or API changes, but other areas require redesign or have no direct WinUI 3 equivalent. Assess support and test representative features before you estimate the migration.
 
 > [!NOTE]
 > Your existing UWP app will continue to function as expected. However, to take advantage of modern features in [WinUI 3](../../winui/winui3/index.md) and the [Windows App SDK](/windows/apps/windows-app-sdk) we recommend migrating your app.
 
-> [!TIP]
-> You can also use AI tools to accelerate your migration. See [Migrate a UWP app to WinUI 3 with AI assistance](../../develop/ai-assisted/migrate/uwp-to-winui.md) for a quick-reference API substitution table and a starter prompt you can use with GitHub Copilot.
-
 Here are the high-level steps for migrating manually:
 
 1. Create a new WinUI packaged desktop project (see [Create and run a WinUI 3 project](../../get-started/start-here.md)). That could go into your project's existing solution.
-2. Copy your XAML/UI code. In many cases you can simply change namespaces (for example, **Windows.UI.\*** to **Microsoft.UI.\***).
-3. Copy your app logic code. Some APIs need tweaks, such as **Popup**, **Picker**s, and **SecondaryTile**s.
+2. Move a representative UI workflow and update its XAML namespaces, controls, resources, and app-model assumptions.
+3. Move the related app logic and replace or adapt APIs that behave differently in a desktop app, such as popups, pickers, windowing, and secondary tiles.
 
 The topics in the table below describe and demonstrate how to manually migrate your UWP application to the Windows App SDK.
 
@@ -40,7 +37,13 @@ The topics in the table below describe and demonstrate how to manually migrate y
 > [!IMPORTANT]
 > .NET Upgrade Assistant is deprecated. Don't use it to start a new migration. GitHub Copilot upgrade doesn't currently document UWP-to-WinUI 3 as a supported upgrade path.
 
-If you're maintaining a C# UWP migration that already uses .NET Upgrade Assistant, see the [legacy .NET Upgrade Assistant guidance](upgrade-assistant.md). For a new migration, use the manual steps and AI-assisted UWP guidance on this page.
+If you're maintaining a C# UWP migration that already uses .NET Upgrade Assistant, see the [legacy .NET Upgrade Assistant guidance](upgrade-assistant.md). For a new migration, use the manual guidance on this page. An AI assistant can optionally support the bounded review tasks described below.
+
+## Use an AI assistant as an optional review aid
+
+An AI coding assistant can help you inventory namespace usage, locate APIs that need desktop interop, draft a mapping for a bounded feature, or propose edits for one migration step. Treat those results as suggestions, not verified substitutions.
+
+Review every proposed API and project change against the feature mapping, API mapping, and current API reference. Build and test each bounded change, including packaging, activation, window ownership, threading, accessibility, and failure paths. An assistant can't determine whether a missing WinUI 3 feature is acceptable for your product or guarantee that generated code preserves behavior.
 
 ## Containerization benefits
 
@@ -59,7 +62,6 @@ When transitioning to the Windows App SDK, UWP applications might lose the inher
 | [Case study 2—Photo Editor (C++/WinRT)](case-study-2.md) | This topic is a case study of taking the C++/WinRT [UWP Photo Editor sample app](/samples/microsoft/windows-appsample-photo-editor/photo-editor-cwinrt-sample-application/), and migrating it to the Windows App SDK. |
 | [Additional migration guidance](misc-info.md) | This topic contains additional migration guidance not categorized into a feature area in the [feature area guides](guides/feature-area-guides-ovw.md). |
 | [Legacy .NET Upgrade Assistant guidance for UWP](upgrade-assistant.md) | Reference information for maintaining an existing C# UWP migration that used the deprecated .NET Upgrade Assistant. |
-| [Use AI to help modernize your app](./ai-modernize.md) | How to use GitHub Copilot to accelerate modernization of an existing desktop app to Windows App SDK and WinUI 3. |
 
 ## See also
 

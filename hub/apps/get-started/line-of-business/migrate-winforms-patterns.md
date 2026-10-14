@@ -13,8 +13,7 @@ Windows Forms and WinUI 3 are both .NET desktop UI frameworks, but they use diff
 
 You don't need to rewrite a working Windows Forms app solely to adopt a newer UI framework. Compare the business value, accessibility requirements, deployment constraints, test coverage, and lifetime of the existing app. You can also adopt supported non-XAML Windows App SDK capabilities without migrating every screen.
 
-> [!TIP]
-> Use [Plan your modernization with an AI assistant](../../windows-app-sdk/migrate-to-windows-app-sdk/modernize-with-ai-assistant.md) to have an AI coding assistant inspect your solution and draft an incremental plan grounded in the migration guidance.
+If you need incremental coexistence instead of a complete UI migration, [WinUI XAML Islands](../../desktop/modernize/host-controls-existing-desktop-apps.md) can host selected WinUI controls inside the existing Windows Forms app. This keeps both UI frameworks in one process and adds initialization, threading, focus, input, and deployment work, so evaluate it as a targeted modernization option rather than an automatic migration step.
 
 ## Understand the main differences
 
@@ -95,9 +94,14 @@ MVVM is useful when a screen has substantial state, commands, or testable busine
 5. Test accessibility, text scaling, theming, deployment, and failure recovery.
 6. Decide how old and new components communicate during the transition.
 
+## Use an AI assistant as an optional review aid
+
+An AI coding assistant can inventory generated designer code, identify event handlers and data-binding dependencies, draft a mapping for a bounded form, or propose XAML and C# edits. Use those results to support investigation and planning, not as verified control-for-control conversions.
+
+Review each proposed mapping against the behavior and accessibility of the original workflow. Build and test generated changes, including layout at different text scales, validation, threading, window ownership, localization, packaging, and error paths. An assistant can't determine whether a missing control or different interaction model is acceptable for your product, and it can't guarantee that generated substitutions preserve behavior.
+
 ## Related content
 
-- [Plan your modernization with an AI assistant](../../windows-app-sdk/migrate-to-windows-app-sdk/modernize-with-ai-assistant.md)
 - [Migration decision guide](../../windows-app-sdk/migrate-to-windows-app-sdk/migration-decision-guide.md)
 - [Migrate and modernize Windows apps](../../windows-app-sdk/migrate-to-windows-app-sdk/index.yml)
 - [Use the Windows App SDK in an existing project](../../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)
