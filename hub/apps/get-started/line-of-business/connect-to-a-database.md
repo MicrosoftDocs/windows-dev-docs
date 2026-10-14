@@ -2,7 +2,7 @@
 title: Connect a WinUI app to a database
 description: Connect a WinUI 3 app to local or enterprise data using Entity Framework Core, asynchronous operations, and secure service boundaries.
 ms.topic: how-to
-ms.date: 09/16/2026
+ms.date: 10/13/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -23,6 +23,8 @@ A line-of-business app can store data on the device, call an enterprise service,
 | Read-only service data | `HttpClient` and JSON deserialization, with a local cache if offline access is required |
 
 Don't embed a shared database password or privileged connection string in a desktop app. A user can inspect files and application memory on a device they control. A service layer protects database topology and provides a central authorization, validation, auditing, and versioning boundary.
+
+For an end-to-end client pattern that signs in a user and calls a protected enterprise service, see [Sign in users and call a protected enterprise API from a WinUI app](sign-in-call-api.md).
 
 ## Use EF Core
 
@@ -108,6 +110,7 @@ See [Credential locker](../../develop/security/credential-locker.md) for the Win
 ## Related content
 
 - [EF Core documentation](/ef/core/)
+- [Sign in users and call a protected enterprise API from a WinUI app](sign-in-call-api.md)
 - [HTTP client](../../develop/networking/httpclient.md)
 - [Data binding and MVVM](../../develop/data-binding/data-binding-and-mvvm.md)
 - [Credential locker](../../develop/security/credential-locker.md)

@@ -54,6 +54,7 @@ The `CommunityToolkit.Mvvm` package remains a Microsoft-maintained option for im
 
 ### Connect to data and services
 
+- [Sign in users and call a protected enterprise API from a WinUI app](sign-in-call-api.md)
 - [Connect a WinUI app to a database](connect-to-a-database.md)
 - [HTTP client](../../develop/networking/httpclient.md)
 - [Web Account Manager](../../develop/security/web-account-manager.md)
@@ -67,9 +68,10 @@ The `CommunityToolkit.Mvvm` package remains a Microsoft-maintained option for im
 ### Prepare for enterprise management
 
 - [Plan enterprise manageability for WinUI LOB apps](enterprise-manageability.md)
+- [Make a WinUI LOB app policy-aware](policy-aware-settings.md)
+- [Add diagnostics and audit logging to a WinUI LOB app](diagnostics-audit-logging.md)
 - [Distribute LOB apps to enterprises](../../publish/distribute-lob-apps-to-enterprises.md)
 - [App capability declarations](../../package-and-deploy/app-capability-declarations.md)
-- [Distribute LOB apps to enterprises](../../publish/distribute-lob-apps-to-enterprises.md)
 
 ## Modernize an existing app
 

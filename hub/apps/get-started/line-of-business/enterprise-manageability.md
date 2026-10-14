@@ -2,7 +2,7 @@
 title: Plan enterprise manageability for WinUI LOB apps
 description: Plan policy-aware settings, deployment configuration, audit logging, data protection, and supportability for enterprise WinUI LOB apps.
 ms.topic: concept-article
-ms.date: 10/02/2026
+ms.date: 10/13/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -27,6 +27,8 @@ Decide which app behavior must be controlled by the organization instead of by e
 Document the precedence order for settings. For example, an organization-managed policy value should usually override a per-user preference. If your app uses local settings, keep them separate from organization-managed configuration so the app can explain why a user can't change a setting.
 
 For user-facing settings design guidance, see [Guidelines for app settings](../../design/app-settings/guidelines-for-app-settings.md).
+
+For an implementation pattern that reads organization-managed values and disables locked settings in the UI, see [Make a WinUI LOB app policy-aware](policy-aware-settings.md).
 
 ## Choose a deployment configuration path
 
@@ -71,6 +73,8 @@ Consider logging:
 
 Keep logs useful and safe. Don't log access tokens, passwords, personal data, or full payloads unless your organization has explicitly approved that data handling.
 
+For a structured logging pattern that support teams can collect and correlate with service logs, see [Add diagnostics and audit logging to a WinUI LOB app](diagnostics-audit-logging.md).
+
 ## Validate app capabilities
 
 Review app capabilities as part of enterprise readiness. Declare only the capabilities your app needs, and document why each capability is required.
@@ -93,6 +97,9 @@ Before deploying to a broad enterprise audience, confirm that you can answer the
 ## Related content
 
 - [Build line-of-business apps with WinUI - overview](index.md)
+- [Make a WinUI LOB app policy-aware](policy-aware-settings.md)
+- [Add diagnostics and audit logging to a WinUI LOB app](diagnostics-audit-logging.md)
+- [Sign in users and call a protected enterprise API from a WinUI app](sign-in-call-api.md)
 - [Connect a WinUI app to a database](connect-to-a-database.md)
 - [Distribute LOB apps to enterprises](../../publish/distribute-lob-apps-to-enterprises.md)
 - [Choose a distribution path for your Windows app](../../package-and-deploy/choose-distribution-path.md)
