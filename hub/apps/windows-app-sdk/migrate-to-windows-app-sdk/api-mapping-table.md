@@ -2,7 +2,7 @@
 title: Mapping UWP APIs to the Windows App SDK
 description: This topic provides a mapping of UWP APIs and libraries to their Windows App SDK equivalents.
 ms.topic: concept-article
-ms.date: 05/28/2026
+ms.date: 10/13/2026
 keywords: Windows, App, SDK, migrate, migrating, migration, port, porting, api, class, mapping, mappings, uwp
 ms.localizationpriority: medium
 ---
@@ -90,7 +90,7 @@ There are differences in the names of namespaces and classes (including UI contr
 | (**Windows.UI.Xaml**) [**Window.Current**](/uwp/api/windows.ui.xaml.window.current) property | Deprecated, and returns `null`. For an alternative, see [Change Window.Current to App.Window](guides/winui3.md#change-windowsuixamlwindowcurrent-to-appwindow). |
 | (**Windows.UI.Xaml**) [**Window.Dispatcher**](/uwp/api/windows.ui.xaml.window.dispatcher) property (commonly written in C# as `Window.Current.Dispatcher`) | (**Microsoft.UI.Xaml**) [**Window.DispatcherQueue**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.window.dispatcherqueue) property |
 | (**Windows.UI.Xaml.Controls**) [**ContentDialog**](/uwp/api/windows.ui.xaml.controls.contentdialog) class | (**Microsoft.UI.Xaml.Controls**) [**ContentDialog**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog) is supported, but you must set its [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property. See [ContentDialog, and Popup](guides/winui3.md#contentdialog-and-popup). |
-| (**Windows.UI.Xaml.Controls**) [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) class | Not supported in Windows App SDK 1.0. |
+| (**Windows.UI.Xaml.Controls**) [**InkCanvas**](/uwp/api/windows.ui.xaml.controls.inkcanvas) class | (**Microsoft.UI.Xaml.Controls**) [**InkCanvas**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.inkcanvas?view=windows-app-sdk-2.0-experimental&preserve-view=true) class. Available as an experimental API in experimental releases of the Windows App SDK, not in stable releases. In experimental releases, `InkToolbar`, `InkPresenter`, and `InkStrokeContainer` are also in **Microsoft.UI.Xaml.Controls**. See [Inking controls for WinUI apps](../../develop/ui/controls/ink-controls.md). |
 | (**Windows.UI.Xaml.Controls**) [**MediaElement**](/uwp/api/windows.ui.xaml.controls.mediaelement) class | Not supported in Windows App SDK 1.0. |
 | (**Windows.UI.Xaml.Controls.Maps**) [**MapControl**](/uwp/api/windows.ui.xaml.controls.maps.mapcontrol) class | (**Microsoft.UI.Xaml.Controls**) [**MapControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.mapcontrol) class |
 | (**Windows.UI.Xaml.Controls.Primitives**) [**Popup**](/uwp/api/windows.ui.xaml.controls.primitives.popup) class | (**Microsoft.UI.Xaml.Controls.Primitives**) [**Popup**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.popup) is supported, but you must set its [XamlRoot](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentdialog#contentdialog-in-appwindow-or-xaml-islands) property. See [ContentDialog, and Popup](guides/winui3.md#contentdialog-and-popup). |

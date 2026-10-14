@@ -2,7 +2,7 @@
 title: Migrate a UWP app to WinUI 3
 description: Port a UWP app to WinUI 3 using AI assistance, with an API substitution table for namespaces, controls, threading, windowing, and notifications.
 ms.topic: how-to
-ms.date: 07/12/2026
+ms.date: 10/13/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -173,7 +173,6 @@ Some UWP controls don't exist in WinUI 3. Choose a replacement based on your sce
 | UWP control | WinUI 3 replacement | Notes |
 |-------------|---------------------|-------|
 | `Pivot` | `TabView`, `NavigationView` (top mode), or `RadioButtons` + visibility | For 2–3 fixed tabs, `RadioButtons` with visibility switching is simplest. For dynamic/closeable tabs, use `TabView`. |
-| `InkToolbar` (custom subclass) | `CommandBar` with `AppBarToggleButton` items | The built-in `InkToolbar` exists but custom subclassing patterns don't translate cleanly. Rebuild custom toolbars using `CommandBar`. |
 | `RadialController` | WinRT interop with window handle | `RadialController.CreateForCurrentView()` has no direct equivalent. Use `RadialControllerInterop` with `GetForWindow(hwnd)`. |
 | `SystemNavigationManager` | Custom back button or `NavigationView.IsBackEnabled` | `SystemNavigationManager.GetForCurrentView()` doesn't exist. Add your own back button or use `NavigationView`'s built-in back button. |
 
@@ -183,28 +182,56 @@ These subsystems require specific migration steps beyond namespace changes.
 
 ### Windows Ink
 
-The `InkCanvas` and `InkPresenter` APIs move to `Microsoft.UI.Input.Inking` but are otherwise identical. The one non-obvious change is `CoreInputDeviceTypes`:
+WinUI includes `InkCanvas`, `InkToolbar`, and `InkPresenter` as experimental APIs in experimental releases of the Windows App SDK. Stable releases don't include them. For setup, toolbar customization, and known limitations, see [Inking controls for WinUI apps](../../ui/controls/ink-controls.md).
 
-| UWP | WinUI 3 |
+In experimental releases, the controls and the types that process ink input are in `Microsoft.UI.Xaml.Controls`. Strokes and drawing attributes stay in `Windows.UI.Input.Inking`:
+
+| UWP | WinUI 3 (experimental releases) |
 |-----|---------|
-| `Windows.UI.Input.Inking.*` | `Microsoft.UI.Input.Inking.*` |
-| `Windows.UI.Core.CoreInputDeviceTypes` | `Microsoft.UI.Core.CoreInputDeviceTypes` |
+| `Windows.UI.Xaml.Controls.InkCanvas`, `InkToolbar`, and the other `InkToolbar*` types | `Microsoft.UI.Xaml.Controls`, same type names. Some members differ. |
+| `Windows.UI.Input.Inking.InkPresenter`, `InkStrokeContainer`, `InkStrokeInput`, `InkUnprocessedInput`, `InkSynchronizer`, `InkInputConfiguration`, `InkInputProcessingConfiguration`, `InkInputProcessingMode`, `InkInputRightDragAction`, `InkHighContrastAdjustment`, `InkStrokesCollectedEventArgs`, `InkStrokesErasedEventArgs` | `Microsoft.UI.Xaml.Controls`, same type names. Some members differ. |
+| `Windows.UI.Input.Inking.InkStroke`, `InkDrawingAttributes`, `InkPoint`, `InkStrokeBuilder`, `InkPersistenceFormat`, `PenTipShape` | No change |
+| `Windows.UI.Core.CoreInputDeviceTypes` | No change |
 
-`InkStrokeContainer.SaveAsync()` and `LoadAsync()` still require `IRandomAccessStream`. Bridge from `System.IO` streams:
+Every UWP type in the first two rows has a counterpart with the same name, but Windows App SDK 2.5.4-experimental doesn't include all of their members:
+
+- `InkStrokeContainer` has no public constructor, and `InkPresenter.StrokeContainer` is read-only. To switch between sets of strokes, save each set with `SaveAsync` and restore it with `LoadAsync`, which replaces the current strokes.
+- `SaveAsync` and `LoadAsync` return `IAsyncAction`, so they don't report progress, and `SaveAsync` doesn't return the number of bytes it wrote.
+- `InkStrokeContainer.GetRecognitionResults`, `InkStrokeContainer.UpdateRecognitionResults`, and `InkInputConfiguration.IsPenHapticFeedbackEnabled` aren't available.
+- `InkToolbarRulerButton.Ruler` and the `InkToolbar.IsRulerButtonCheckedChanged` event aren't available. UWP deprecated `InkToolbarRulerButton` in favor of `InkToolbarStencilButton`, so use the stencil button and the `InkToolbar.IsStencilButtonCheckedChanged` event instead.
+
+Windows App SDK 2.4.1-experimental added eraser APIs, such as `InkToolbarEraserKind` and `InkToolbarEraserButton.SelectedEraser`, that 2.5.4-experimental removed. They were never part of UWP, so don't add them to migrated code. For the full list, see [Changes from 2.4.1-experimental](../../ui/controls/ink-controls.md#changes-from-241-experimental).
+
+Because types such as `InkPresenter` and `InkStrokeContainer` exist in both namespaces, importing both `Microsoft.UI.Xaml.Controls` and `Windows.UI.Input.Inking` causes error CS0104 when you use those names. Import `Microsoft.UI.Xaml.Controls`, and add alias directives for the `Windows.UI.Input.Inking` types that you use:
 
 ```csharp
-// Saving ink strokes to a file using System.IO
-using var memoryStream = new MemoryStream();
-using var ras = memoryStream.AsRandomAccessStream();
-await inkStrokeContainer.SaveAsync(ras);
-await File.WriteAllBytesAsync(filePath, memoryStream.ToArray());
-
-// Loading ink strokes from a file
-var bytes = await File.ReadAllBytesAsync(filePath);
-using var ms = new MemoryStream(bytes);
-using var ras = ms.AsRandomAccessStream();
-await inkStrokeContainer.LoadAsync(ras);
+using Microsoft.UI.Xaml.Controls;
+using InkDrawingAttributes = Windows.UI.Input.Inking.InkDrawingAttributes;
+using InkStroke = Windows.UI.Input.Inking.InkStroke;
 ```
+
+`InkStrokeContainer.SaveAsync` writes to an `IOutputStream`, and `LoadAsync` reads from an `IInputStream`. To use `System.IO` file streams, convert them with `AsOutputStream` and `AsInputStream`. The file needs `using System;` to await these Windows Runtime methods, along with `using System.IO;` and `using Windows.Storage.Streams;`:
+
+```csharp
+// Save ink strokes to a file.
+using (FileStream fileStream = File.Create(filePath))
+using (IOutputStream output = fileStream.AsOutputStream())
+{
+    await inkStrokeContainer.SaveAsync(output);
+    await output.FlushAsync();
+}
+
+// Load ink strokes from a file.
+using (FileStream fileStream = File.OpenRead(filePath))
+using (IInputStream input = fileStream.AsInputStream())
+{
+    await inkStrokeContainer.LoadAsync(input);
+}
+```
+
+You can keep connecting the toolbar to the canvas with `InkToolbar.TargetInkCanvas`, or set `TargetInkPresenter` to connect it directly to an `InkPresenter`. To add your own tools to the toolbar, use `InkToolbarCustomToolButton` and `InkToolbarCustomToggleButton`, as shown in [Customize the ink toolbar](../../ui/controls/ink-controls.md#customize-the-ink-toolbar). Before you migrate, review the [known limitations](../../ui/controls/ink-controls.md#known-limitations), such as reported issues with the ruler and protractor stencils.
+
+If your app must use a stable release, there's no built-in inking control to migrate to. Render strokes with [Win2D](#win2d) and handle pointer input yourself, or use a third-party inking library. To replace `InkToolbar`, use a `CommandBar` with `AppBarToggleButton` items.
 
 ### Win2D
 
@@ -253,13 +280,15 @@ Apply these substitutions:
 - Windows.UI.Notifications → Microsoft.Windows.AppNotifications
 - SystemNavigationManager.BackRequested → NavigationView back handling
 - Pivot → TabView, NavigationView (top mode), or RadioButtons (no direct equivalent)
-- InkToolbar custom subclasses → rebuild as CommandBar with AppBarToggleButton
+- InkCanvas, InkToolbar, InkPresenter, InkStrokeContainer, and the other ink input types → Microsoft.UI.Xaml.Controls (experimental Windows App SDK releases only; if the project uses a stable release, flag them instead)
+- Ink members that Windows App SDK 2.5.4-experimental doesn't include (new InkStrokeContainer(), assignments to InkPresenter.StrokeContainer, GetRecognitionResults, UpdateRecognitionResults, IsPenHapticFeedbackEnabled, InkToolbarRulerButton.Ruler, IsRulerButtonCheckedChanged, and progress or byte counts from SaveAsync and LoadAsync) → flag them
 - PrintManager.GetForCurrentView → PrintManagerInterop.GetForWindow(hwnd)
 - Win2D.uwp NuGet → Microsoft.Graphics.Win2D NuGet
-- Windows.UI.Input.Inking.* → Microsoft.UI.Input.Inking.*
+- InkStroke, InkDrawingAttributes, InkPoint, InkStrokeBuilder → no change (Windows.UI.Input.Inking; use using aliases to avoid CS0104)
 
 Do not use any Windows.UI.Xaml.* namespaces in new code.
 Do not use CoreDispatcher — use DispatcherQueue.
+Do not add InkToolbarEraserKind, SelectedEraser, or other eraser APIs from Windows App SDK 2.4.1-experimental. Version 2.5.4-experimental removed them.
 x:Bind defaults to Mode=OneTime. Add Mode=OneWay for any binding that should update at runtime.
 Flag any APIs without a direct WinUI 3 equivalent rather than guessing.
 ```

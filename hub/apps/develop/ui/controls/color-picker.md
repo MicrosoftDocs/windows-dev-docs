@@ -3,7 +3,7 @@ description: Learn how to use a color picker to let users browse through and sel
 title: Color Picker
 label: Color Picker
 template: detail.hbs
-ms.date: 02/26/2025
+ms.date: 10/13/2026
 ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
@@ -18,7 +18,7 @@ A color picker is used to browse through and select colors. By default, it lets 
 
 Use the color picker to let a user select colors in your app. For example, use it to change color settings, such as font colors, background, or app theme colors.
 
-If your app is for drawing or similar tasks using pen, consider using [Inking controls](/windows/uwp/ui-input/inking-controls) along with the color picker.
+If your app is for drawing or similar tasks using pen, consider using the experimental [inking controls](ink-controls.md) along with the color picker.
 
 ## Recommendations
 
@@ -204,4 +204,4 @@ Hex values | IsHexInputVisible
 ## Related articles
 
 - [Pen and stylus interactions in Windows apps](/windows/uwp/ui-input/pen-and-stylus-interactions)
-- [Inking](/windows/uwp/ui-input/inking-controls)
+- [Inking controls for WinUI apps](ink-controls.md)
