@@ -2,7 +2,7 @@
 title: Widget providers
 description: Learn how to implement a Windows widget service provider that responds to requests from the Widgets Board and returns widget content.
 ms.topic: article
-ms.date: 07/05/2026
+ms.date: 10/19/2026
 ms.localizationpriority: medium
 author: GrantMeStrength
 ms.author: jken
@@ -33,7 +33,6 @@ For a walkthrough of the basics of creating a widget and implementing a widget p
 > [!VIDEO https://learn-video.azurefd.net/vod/player?show=tabs-vs-spaces&ep=create-widgets-for-windows-11]
 
 ## Additional resources
-- [Report an issue via email](mailto:widgetssupport@microsoft.com)
 - [Open an issue in the Windows App SDK github repo](https://github.com/microsoft/WindowsAppSDK/issues/new/choose)
 
 
