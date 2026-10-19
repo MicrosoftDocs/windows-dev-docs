@@ -2,9 +2,9 @@
 description: Developer guidance for integrating your app with Windows system components and platform features — including Connected Experiences for cross-device scenarios, Widgets, Search, and more.
 title: Integrate with Windows
 ms.topic: concept-article
-ms.date: 06/25/2026
+ms.date: 10/19/2026
 ms.localizationpriority: medium
-keywords: windows integration, connected experiences, cross-device windows, windows share, windows resume, people on windows
+keywords: windows integration, connected experiences, cross-device windows, windows share, windows resume, windows people
 author: GrantMeStrength
 ms.author: jken
 # customer intent: As a Windows developer, I want to learn how to integrate my app with Windows so that I can provide a seamless experience for my users.

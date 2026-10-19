@@ -4,7 +4,7 @@ title: Windows Share DataFormat and FileType reference
 author: GrantMeStrength
 ms.author: jken
 ms.topic: reference
-ms.date: 06/22/2026
+ms.date: 10/19/2026
 ms.localizationpriority: medium
 ---
 
@@ -49,5 +49,5 @@ Use this cheat sheet to choose the narrowest set of `<uap:FileType>` declaration
 
 - [Share content from your app](integrate-sharesheet-send.md)
 - [Receive content in your app](integrate-sharesheet-receive.md)
-- [People on Windows (Cross-device People API)](cross-device-people-api.md)
+- [Windows People](cross-device-people-api.md)
 - [Share on Windows: integrate the Windows Share Sheet](integrate-sharesheet-overview.md)

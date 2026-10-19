@@ -2,7 +2,7 @@
 description: Learn how to modernize your existing WPF, Windows Forms, or Win32 desktop app with the Windows App SDK, MSIX packaging, and modern Windows APIs—no rewrite needed.
 title: Modernize existing desktop apps
 ms.topic: concept-article
-ms.date: 10/08/2026
+ms.date: 10/19/2026
 author: GrantMeStrength
 ms.author: jken
 ms.localizationpriority: medium
@@ -104,7 +104,7 @@ The following tables list common modernization features and whether each one req
 | Feature | Windows App SDK required? | Package identity required? |
 |---|---|---|
 | [Share sheet integration](../../develop/windows-integration/integrate-sharesheet-overview.md) | No | No |
-| [Cross Device People API](../../develop/windows-integration/cross-device-people-api.md) | No | No |
+| [Windows People](../../develop/windows-integration/cross-device-people-api.md) | No | No |
 | [File associations](desktop-to-uwp-extensions.md) | No | Yes |
 | [Windows Widgets](../../develop/widgets/index.md) | No | Yes |
 

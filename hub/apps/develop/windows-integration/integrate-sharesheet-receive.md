@@ -4,7 +4,7 @@ title: "Receive content in your app - integrate Windows Share"
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 09/26/2026
+ms.date: 10/19/2026
 ms.localizationpriority: medium
 ---
 
@@ -381,6 +381,6 @@ Use `ReportCompleted(QuickLink)` when you want to return a QuickLink for future 
 
 - [Share content from your app](integrate-sharesheet-send.md)
 - [DataFormat & FileType reference](dataformat-reference.md)
-- [People on Windows (Cross-device People API)](cross-device-people-api.md)
+- [Windows People](cross-device-people-api.md)
 - [ShareTarget schema reference](/uwp/schemas/appxpackage/uapmanifestschema/element-uap-sharetarget)
 - [Web Share API (W3C)](https://www.w3.org/TR/web-share-target/)

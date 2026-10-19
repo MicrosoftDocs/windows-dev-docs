@@ -1,17 +1,17 @@
 ---
-title: People on Windows
+title: Windows People
 description: Store your app's contacts in Windows so they appear in the People Widget, Windows Search, and Share, and learn which guide covers each task.
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
 ms.date: 10/19/2026
 ms.localizationpriority: medium
-keywords: people on windows, windows people, cross-device people, contacts integration, people widget, windows search contacts
+keywords: windows people, cross-device people, contacts integration, people widget, windows search contacts
 ---
 
-# People on Windows
+# Windows People
 
-People on Windows lets apps with [package identity](../../desktop/modernize/package-identity-overview.md) store their contacts for people experiences across Windows. Those contacts can appear as suggestions in the People Widget, Windows Search, and the Share Sheet. See [How to share files in File Explorer on Windows](https://support.microsoft.com/windows/how-to-share-files-in-file-explorer-on-windows-dcf7d3dc-40f7-111a-0c9e-a8981c4bbc32) for more information about the Share Sheet.
+Windows People enables developers building WinUI, UWP, and other apps with [package identity](../../desktop/modernize/package-identity-overview.md) to store contacts that can appear as suggestions in the People Widget, Windows Search, Universal Composer, and the Share panel. See [How to share files in File Explorer on Windows](https://support.microsoft.com/windows/how-to-share-files-in-file-explorer-on-windows-dcf7d3dc-40f7-111a-0c9e-a8981c4bbc32) for more information about the Share panel.
 
 Beyond storing contacts, your app can:
 

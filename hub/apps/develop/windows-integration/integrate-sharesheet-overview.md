@@ -4,7 +4,7 @@ title: "Share on Windows: integrate the Windows Share Sheet"
 author: GrantMeStrength
 ms.author: jken
 ms.topic: overview
-ms.date: 09/26/2026
+ms.date: 10/19/2026
 ms.localizationpriority: medium
 keywords: share on windows, windows share, share sheet, windows 11 share, sharesheet, file sharing, share button, packaged apps, pwa, c++, winui 3, windows app sdk
 #customer intent: As a Windows developer, I want to learn how to integrate share options in my Windows app so that users can share content with other Windows apps.
@@ -30,14 +30,14 @@ These pages are organized by **developer task**, not by packaging model. Whether
 |--|--|
 | [Send content from your app](integrate-sharesheet-send.md) | Implement the Share contract so users can send content from your app. Covers packaged, PWA, and unpackaged apps. |
 | [Receive content in your app](integrate-sharesheet-receive.md) | Register as a Share Target and handle incoming shared content. Covers packaged, PWA, and unpackaged apps. |
-| [Appear in suggestions row](integrate-sharesheet-contacts.md) | Surface your app's contacts in the Share Sheet suggestions row by storing them with the Cross-device People API. |
-| [People on Windows (Cross-device People API)](cross-device-people-api.md) | Store your app's contacts in Windows so they surface across People experiences, including the Share Sheet. |
+| [Appear in suggestions row](integrate-sharesheet-contacts.md) | Surface your app's contacts in the Share Sheet suggestions row by storing them with Windows People. |
+| [Windows People](cross-device-people-api.md) | Store your app's contacts in Windows so they surface across people experiences, including the Share Sheet. |
 | [DataFormat & FileType reference](dataformat-reference.md) | Reference table mapping DataFormats to send/receive APIs, plus a FileType-by-app-category cheat sheet for declaring manifest capabilities. |
 
 ## See also
 
 - [Communication - Windows apps](../communication/index.md)
-- [People on Windows (Cross-device People API)](cross-device-people-api.md)
+- [Windows People](cross-device-people-api.md)
 - [DataFormat & FileType reference](dataformat-reference.md)
 - [Windows App SDK deployment overview](../../package-and-deploy/deploy-overview.md)
 - [Create and run a WinUI 3 project](../../get-started/start-here.md)

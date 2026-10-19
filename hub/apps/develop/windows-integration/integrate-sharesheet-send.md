@@ -4,7 +4,7 @@ title: "Share content from your app - integrate Windows Share"
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 09/27/2026
+ms.date: 10/19/2026
 ms.localizationpriority: medium
 ---
 
@@ -286,7 +286,7 @@ Use this checklist to keep source-side behavior predictable.
 
 - [Receive content through Windows Share](integrate-sharesheet-receive.md)
 - [DataFormat & FileType reference](dataformat-reference.md)
-- [People on Windows (Cross-device People API)](cross-device-people-api.md)
+- [Windows People](cross-device-people-api.md)
 - [DataTransferManager class](/uwp/api/windows.applicationmodel.datatransfer.datatransfermanager)
 - [DataPackage class](/uwp/api/windows.applicationmodel.datatransfer.datapackage)
 - [W3C Web Share API](https://www.w3.org/TR/web-share/)

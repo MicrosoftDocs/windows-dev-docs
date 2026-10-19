@@ -14,7 +14,7 @@ The Windows Share Sheet can display suggested contacts in the **suggestions row*
 
 ## How the suggestions row works
 
-The suggestions row appears at the top of the Share Sheet and shows contacts the user is most likely to want to share with. Windows sources these suggestions from the **People on Windows** feature, which aggregates contact information from your app and other apps on the device.
+The suggestions row appears at the top of the Share Sheet and shows contacts the user is most likely to want to share with. Windows sources these suggestions from the **Windows People** feature, which aggregates contact information from your app and other apps on the device.
 
 ## Enable contact suggestions for your app
 
@@ -29,9 +29,9 @@ The `Rank` value is a non-negative integer, and lower values take precedence wit
 
 ## Learn more
 
-For comprehensive guidance on implementing contact suggestions, see [People on Windows](cross-device-people-api.md).
+For comprehensive guidance on implementing contact suggestions, see [Windows People](cross-device-people-api.md).
 
-The People on Windows guides cover:
+The Windows People guides cover:
 - Creating a `UserDataAccount` for the People contract
 - Storing contacts in the Windows `ContactStore`
 - Required and optional contact fields
@@ -41,7 +41,7 @@ The People on Windows guides cover:
 
 ## Related content
 
-- [People on Windows (Cross-device People API)](cross-device-people-api.md)
+- [Windows People](cross-device-people-api.md)
 - [Rank contacts for Windows Share](people-rank-contacts.md)
 - [Share content from your app](integrate-sharesheet-send.md)
 - [Receive content in your app](integrate-sharesheet-receive.md)

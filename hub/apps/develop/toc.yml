@@ -763,7 +763,7 @@ items:
                 href: windows-integration/integrate-sharesheet-contacts.md
               - name: DataFormat & FileType reference
                 href: windows-integration/dataformat-reference.md
-          - name: People on Windows
+          - name: Windows People
             items:
               - name: Overview
                 href: windows-integration/cross-device-people-api.md

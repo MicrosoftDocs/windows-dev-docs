@@ -6,7 +6,7 @@ ms.author: jken
 ms.topic: how-to
 ms.date: 10/19/2026
 ms.localizationpriority: medium
-keywords: people on windows, contacts, UserDataAccount, ContactStore, people contract
+keywords: windows people, contacts, UserDataAccount, ContactStore, people contract
 ---
 
 # Contribute contacts to Windows
@@ -85,7 +85,7 @@ Your app should contribute only the contacts the user has explicitly added or au
 - Auto-sync contacts without user consent
 - Share contacts from corporate directories without explicit permission
 
-Ask for permission before storing contacts in the People system:
+Ask for permission before storing contacts in Windows People:
 
 ```csharp
 private async Task<bool> RequestContactStoreAccessAsync()
@@ -102,7 +102,7 @@ private async Task<bool> RequestContactStoreAccessAsync()
 
 Let users:
 - Choose which contacts to share with Windows
-- Opt out of the People integration
+- Opt out of the Windows People integration
 - Delete their contacts from Windows at any time
 
 ```csharp

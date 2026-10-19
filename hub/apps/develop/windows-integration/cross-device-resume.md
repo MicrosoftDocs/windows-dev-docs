@@ -1,7 +1,7 @@
 ---
 title: Resume with promoted install (for Android only)
 description: Learn how to use the Continuity SDK to implement Windows Resume with Android apps.
-ms.date: 09/26/2026
+ms.date: 10/19/2026
 ms.topic: how-to
 # customer intent: As a Windows developer, I want to learn how to integrate my app with Windows Resume so that users can continue activities from Android on Windows.
 ---
@@ -510,4 +510,4 @@ It is the responsibility of each app to deserialize and decrypt the argument rec
 
 - [Handle URI activation](../launch/handle-uri-activation.md)
 - [Integrate with Windows](index.md)
-- [Cross Device People API](cross-device-people-api.md)
+- [Windows People](cross-device-people-api.md)
