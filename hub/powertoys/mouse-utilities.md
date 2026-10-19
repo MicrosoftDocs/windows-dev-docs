@@ -12,11 +12,32 @@ no-loc: [PowerToys, Windows, Mouse, jump]
 
 Mouse utilities in PowerToys is a collection of features that enhance mouse and cursor functionality on Windows. These utilities help you locate your cursor, highlight mouse clicks, jump across screens, and display crosshairs for improved precision and productivity.
 
-:::image type="content" source="images/mouse-utilities/cursorwrap.gif" alt-text="An animated gif of the PowerToys Cursor Wrap feature of its Mouse Utilities.":::
+## CursorBrake
 
+CursorBrake stops the cursor at the edges between monitors until you push through, so targets near an edge, like a scrollbar, a close button, or the taskbar, are easier to hit. To cross, keep pushing past the edge, or hold <kbd>Ctrl</kbd> (or the key you choose in **Cross freely while**). Outer screen edges and single-monitor setups aren't affected. You can also give a single edge its own strength, turn it off, or make it a wall that you cross only by holding that key.
+
+:::image type="content" source="images/mouse-utilities/cursorbrake.gif" alt-text="An animated gif of the PowerToys CursorBrake feature of its Mouse Utilities.":::
+
+### Settings
+
+From the settings page, you can configure the following options:
+
+| Setting | Description |
+| :--- | :--- |
+| Enable CursorBrake | Toggle to enable or disable CursorBrake. |
+| Strength | How far you push past an edge left at **Default** before the cursor crosses, in pixels at 100% scale. Quick flicks count for less. **0** turns the resistance off. (default: 300) |
+| Free return | Lets you cross straight back over an edge you just crossed, without resistance. (default: on) |
+| Apply to | Choose which edges left at **Default** resist the cursor: **All edges between monitors** (default), **Side-by-side only**, or **Stacked only**. |
+| Disable resistance while dragging | Lets the cursor cross freely while you hold a mouse button. (default: off) |
+| Cross freely while | Hold this key to cross any edge without resistance, walls included. Options: **Holding Ctrl** (default) or **Holding Shift**. |
+| Full-screen apps and games | What a monitor's edges do while a full-screen app or game fills it: **Same as other apps** (default), **Wall: cross only by holding Ctrl**, or **No resistance**. The wall uses the key set in **Cross freely while**, and dragging doesn't cross it. A full-screen app covers its whole monitor and has no title bar. |
+| Edges between monitors | A map of your monitors marks each edge between them with a letter, and the list below it has a row for each edge. Set an edge to **Default**, **Custom** with its own strength, **Off**, or **Wall**, which you cross only by holding the **Cross freely while** key. **Different each way** sets each direction separately. **Show on screens** shows each edge's setting on the monitors for a few seconds. Settings for monitors that aren't connected appear under **Disconnected monitors**, where **Forget** removes them. Otherwise, they're removed 180 days after the monitors were last next to each other. |
+| Excluded apps | Turns off resistance and walls while one of these apps is in front. Add one application name per line (for example, `outlook.exe`). Names match the same way as in Find My Mouse. |
 
 ## CursorWrap
 CursorWrap helps you move your mouse faster by allowing the cursor to seamlessly wrap around the edges of the screen. When enabled, moving past the top, bottom, left, or right edge instantly brings the cursor back on the opposite side, reducing long mouse travel and making navigation smoother on both single- and multi-monitor setups.
+
+:::image type="content" source="images/mouse-utilities/cursorwrap.gif" alt-text="An animated gif of the PowerToys Cursor Wrap feature of its Mouse Utilities.":::
 
 ### Settings
 

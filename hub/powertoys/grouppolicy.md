@@ -121,6 +121,7 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Image Resizer|Image Resizer: Configure enabled state|ConfigureEnabledUtilityImageResizer|
 |Keyboard Manager|Keyboard Manager: Configure enabled state|ConfigureEnabledUtilityKeyboardManager|
 |Light Switch | Light Switch: Configure enabled state|ConfigureEnabledUtilityLightSwitch|
+|CursorBrake|CursorBrake: Configure enabled state|ConfigureEnabledUtilityCursorBrake|
 |CursorWrap|CursorWrap: Configure enabled state|ConfigureEnabledUtilityCursorWrap|
 |Find My Mouse|Find My Mouse: Configure enabled state|ConfigureEnabledUtilityFindMyMouse|
 |Mouse Highlighter|Mouse Highlighter: Configure enabled state|ConfigureEnabledUtilityMouseHighlighter|
