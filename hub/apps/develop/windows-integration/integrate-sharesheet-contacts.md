@@ -4,7 +4,7 @@ title: "Appear in suggestions row - integrate Windows Share"
 author: GrantMeStrength
 ms.author: jken
 ms.topic: how-to
-ms.date: 09/26/2026
+ms.date: 10/19/2026
 ms.localizationpriority: medium
 ---
 
@@ -22,20 +22,26 @@ To make your app's contacts appear in the suggestions row, your app needs [packa
 
 1. Create a `UserDataAccount` for the People contract
 2. Store your app's contacts in the Windows `ContactStore`
-3. Contacts surface as suggestions on the Share panel for relevant sharing scenarios
+3. Add a `ContactAnnotation` with `SupportedOperations` set to `Share` and a `Rank` provider property for each top contact
+4. Contacts surface as suggestions on the Share panel for relevant sharing scenarios
+
+The `Rank` value is a non-negative integer, and lower values take precedence within your app's list. Assign a unique rank to each contact. Your app's ranks express priority within its own list; Windows uses internal logic based on usage to order contacts across apps. For details, see [Storing ranks for contacts](people-rank-contacts.md#storing-ranks-for-contacts).
 
 ## Learn more
 
 For comprehensive guidance on implementing contact suggestions, see [People on Windows](cross-device-people-api.md).
 
-The People on Windows page covers:
+The People on Windows guides cover:
 - Creating a `UserDataAccount` for the People contract
 - Storing contacts in the Windows `ContactStore`
 - Required and optional contact fields
 - Controlling access to your contacts with `ExplictReadAccessPackageFamilyNames` (note: this is the actual API spelling)
+- Ranking contacts for the suggestions row (see [Rank contacts for Windows Share](people-rank-contacts.md))
+- Communication actions and contact activities
 
 ## Related content
 
 - [People on Windows (Cross-device People API)](cross-device-people-api.md)
+- [Rank contacts for Windows Share](people-rank-contacts.md)
 - [Share content from your app](integrate-sharesheet-send.md)
 - [Receive content in your app](integrate-sharesheet-receive.md)

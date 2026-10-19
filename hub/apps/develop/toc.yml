@@ -764,7 +764,17 @@ items:
               - name: DataFormat & FileType reference
                 href: windows-integration/dataformat-reference.md
           - name: People on Windows
-            href: windows-integration/cross-device-people-api.md
+            items:
+              - name: Overview
+                href: windows-integration/cross-device-people-api.md
+              - name: Contribute contacts
+                href: windows-integration/people-contribute-contacts.md
+              - name: Rank contacts for Share
+                href: windows-integration/people-rank-contacts.md
+              - name: Communication actions
+                href: windows-integration/people-communication-actions.md
+              - name: Contact activities
+                href: windows-integration/people-contact-activities.md
           - name: Windows Resume
             items:
               - name: Overview
