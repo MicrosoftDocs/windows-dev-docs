@@ -1,7 +1,7 @@
 ---
 title: PowerToys Environment Variables for Windows - Manage Variables
 description: Manage Windows environment variables efficiently with PowerToys Environment Variables utility. Create profiles, edit variables, and streamline your development workflow.
-ms.date: 08/20/2025
+ms.date: 10/14/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Environment Variables, Win]
 # Customer intent: As a Windows power user, I want to learn how to manage environment variables using the PowerToys Environment Variables utility.
@@ -20,6 +20,10 @@ Applying the profile adds variables to User environment variables in the backgro
 To edit or remove a variable (profile, User or System), select the **more** button (•••) on the desired variable:
 
 :::image type="content" source="images/environment-variables/edit-variable.gif" alt-text="Screenshot of editing and removing environment variables in PowerToys Environment Variables utility.":::
+
+### Remove duplicate PATH entries
+
+When you edit the **Path** variable, select **Remove duplicates** to remove repeated entries from the list. Entries are treated as duplicates even if they differ in casing, slash direction, or a trailing separator, or if one of them uses an environment variable reference (such as `%SystemRoot%`) that expands to the same folder. The first occurrence of each entry is kept, along with its original spelling, and the order of the remaining entries doesn't change.
 
 ## Add profile
 

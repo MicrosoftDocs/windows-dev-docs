@@ -1,7 +1,7 @@
 ---
 title: FancyZones Window Manager for Windows - PowerToys
 description: FancyZones is a powerful window manager utility in PowerToys that helps you arrange and snap windows into custom layouts for improved productivity. Learn how to create zones and manage windows efficiently.
-ms.date: 08/25/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
@@ -21,6 +21,19 @@ You can also trigger zone selection mode by using a non-primary mouse button if 
 If both **Hold Shift key to activate zones while dragging** and **Use non-primary mouse button to toggle zone activation** are cleared, zones will appear immediately after you start dragging the window.
 
 :::image type="content" source="images/fancyzones/fancy-zones2.png" alt-text="Screenshot of FancyZones utility showing window zones highlighted on desktop during window dragging operation.":::
+
+### Switch layouts with the mouse wheel while dragging
+
+Select **Use mouse wheel while dragging to switch between layouts** in the FancyZones settings (this option is off by default). Then, while you drag a window with the zones visible, roll the mouse wheel to change the layout applied to the monitor under the cursor. Roll down to switch to the next layout and up to switch to the previous one. The list wraps around at either end, and the window snaps into the newly selected layout when you drop it.
+
+The mouse wheel cycles through custom layouts only:
+
+- If two or more custom layouts have a quick layout switch hotkey assigned, the wheel cycles through those layouts in hotkey order.
+- Otherwise, it cycles through all custom layouts in the order they appear in the editor.
+
+If fewer than two layouts are available, or the setting is turned off, the mouse wheel scrolls normally.
+
+When the layout changes while the zones are visible, either with the mouse wheel or with a quick layout switch shortcut, FancyZones briefly shows the layout name on screen. Use the **Layout name indicator** settings to turn this indicator off or change its position, colors, text size, padding, and display duration.
 
 ## Snap to a single zone with keyboard
 
@@ -150,6 +163,7 @@ In the demo below, we start with a default template applied to the screen and tw
 | Hold Shift key to activate zones while dragging | Toggles between auto-snap mode with the <kbd>Shift</kbd> key (disabling snapping during a drag) and manual snap mode where pressing the <kbd>Shift</kbd> key during a drag enables snapping. |
 | Use a non-primary mouse button to toggle zone activation | Clicking a non-primary mouse button toggles the zones activation |
 | Use middle mouse button to toggle multiple zones spanning | Use the middle mouse button to select multiple zones |
+| Use mouse wheel while dragging to switch between layouts | While you drag a window with the zones visible, roll the mouse wheel to switch the layout on the monitor under the cursor. Off by default. For more information, see [Switch layouts with the mouse wheel while dragging](#switch-layouts-with-the-mouse-wheel-while-dragging). |
 | Show zones on all monitors while dragging a window | By default, FancyZones shows only the zones available on the focused monitor. (This feature may have a performance impact when selected) |
 | Allow zones to span across monitors (all monitors must have the same DPI scaling) | Treat all connected monitors as one large screen. To work correctly, it requires all monitors to have the same DPI scaling factor. (There might be unexpected effects when using monitors in different orientations) |
 | When multiple zones overlap | Choose how to deal with overlapping zones. |
@@ -160,6 +174,13 @@ In the demo below, we start with a default template applied to the screen and tw
 | Inactive color | The color of zones when they are not an active drop during the dragging of a window. |
 | Border color | The color of the border of active and inactive zones. |
 | Number color | The color of the number of the zone |
+| Layout name indicator | Shows the layout name when you switch layouts while dragging a window. On by default. |
+| Position on screen | Where the layout name indicator appears: **Top left**, **Top center** (default), **Top right**, **Center**, **Bottom left**, **Bottom center**, or **Bottom right**. |
+| Text color | The color of the layout name text. Default: `#FFFFFF`. |
+| Background color | The background color of the layout name indicator. Default: `#262626`. |
+| Text size | The text size of the layout name indicator, from 8 to 128. Default: 36. |
+| Padding | The space around the layout name text, from 0 to 64. Default: 12. |
+| Display duration (ms) | How long the layout name indicator stays on screen, in milliseconds, from 300 to 10000. Default: 1500. |
 | Keep windows in their zones when the screen resolution changes | FancyZones will resize and reposition windows into the zones they were previously in, after a screen resolution change. |
 | During zone layout changes, windows assigned to a zone will match new size/position | FancyZones will resize and position windows into the new zone layout by maintaining the previous zone number location of each window. |
 | Move newly created windows to the last known zone | Automatically move a newly opened window into the last zone location that application was in. |
@@ -185,35 +206,40 @@ In the demo below, we start with a default template applied to the screen and tw
 
 ## Command-line reference
 
-The FancyZones CLI lets you apply and manage window layouts directly from the command line.
+The FancyZones CLI lets you apply and manage window layouts directly from the command line. PowerToys adds its `bin` folder to your `PATH`, so you can run `PowerToys.FancyZones.CLI.exe` from any folder in Windows Terminal, PowerShell, or Command Prompt. If a terminal was already open when you installed PowerToys, open a new one so it picks up the updated `PATH`.
 
-| Command | Aliases | Description |
+| Command | Alias | Description |
 | :-- | :-- | :-- |
-| `help` | | Displays general help information for all commands |
-| `open-editor` | `editor`, `e` | Launch FancyZones layout editor |
-| `get-monitors` | `monitors`, `m` | List all monitors and their properties |
-| `get-layouts` | `layouts`, `ls` | List all available layouts with ASCII art preview |
-| `get-active-layout` | `active`, `a` | Show currently active layout |
-| `set-layout <uuid>` | `set`, `s` | Apply layout by UUID or template name |
+| `open-editor` | `e` | Launch FancyZones layout editor |
+| `get-monitors` | `m` | List monitors and FancyZones metadata |
+| `get-layouts` | `ls` | List all available layouts with ASCII art preview |
+| `get-active-layout` | `active` | Show currently active layout |
+| `set-layout <layout>` | `s` | Apply a layout by UUID or template name (for example, `focus` or `columns`). Use `--monitor <number>` (`-m`) to target one monitor, or `--all` (`-a`) to apply it to all monitors. |
 | `open-settings` | `settings` | Open FancyZones settings page |
-| `get-hotkeys` | `hotkeys`, `hk` | List all layout hotkeys |
-| `set-hotkey <key> <uuid>` | `shk` | Assign hotkey (0-9) to custom layout |
+| `get-hotkeys` | `hk` | List all layout hotkeys |
+| `set-hotkey <key> <layout>` | `shk` | Assign hotkey (0-9) to a custom layout |
 | `remove-hotkey <key>` | `rhk` | Remove hotkey assignment |
 
+Use `--help` (`-h` or `-?`) to display help, or `--version` to display the version.
+
 **Usage example**
+
 ```powershell
 # List all layouts with visual previews
-FancyZonesCLI.exe ls
+PowerToys.FancyZones.CLI.exe ls
 
 # Apply "columns" template to all monitors
-FancyZonesCLI.exe s columns --all
+PowerToys.FancyZones.CLI.exe s columns --all
 
 # Set custom layout on monitor 2
-FancyZonesCLI.exe s {uuid} --monitor 2
+PowerToys.FancyZones.CLI.exe s xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx --monitor 2
 
 # Assign hotkey Win+Ctrl+Alt+3 to a layout
-FancyZonesCLI.exe shk 3 {uuid}
+PowerToys.FancyZones.CLI.exe shk 3 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 ```
+
+> [!NOTE]
+> In PowerShell, braces define a script block. Enter layout UUIDs without braces, as shown in the examples, or put the UUID in quotes.
 
 ## Application compatibility
 

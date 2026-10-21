@@ -1,7 +1,7 @@
 ---
 title: Microsoft PowerToys - Windows Utilities for Power Users
 description: Microsoft PowerToys includes 25+ free Windows utilities including FancyZones, PowerToys Run, Color Picker, PowerRename, and more. Boost productivity for power users on Windows 10/11.
-ms.date: 09/14/2026
+ms.date: 10/14/2026
 ms.topic: overview
 ms.localizationpriority: medium
 no-loc: [PowerRename, Windows, File Explorer, PowerToys, Run, Awake, Always On Top]
@@ -134,7 +134,7 @@ The currently available utilities include:
     :::column:::
        [![Mouse utilities icon](images/mouse-utilities/mouse-utils.png)](mouse-utilities.md)<br>
         **[Mouse utilities](mouse-utilities.md)**<br>
-        Add functionality to enhance your mouse and cursor with Find My Mouse, Highlighter, Jump, and Crosshairs.
+        Add functionality to enhance your mouse and cursor with Auto Hide Cursor, CursorWrap, Find My Mouse, Mouse Button Lock, Highlighter, Jump, and Crosshairs.
     :::column-end:::
     :::column:::
        [![Mouse Without Borders icon](images/mouse-without-borders/mouse-without-borders.png)](mouse-without-borders.md)<br>

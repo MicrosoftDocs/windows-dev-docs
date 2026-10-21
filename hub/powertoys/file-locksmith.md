@@ -1,7 +1,7 @@
 ---
 title: File Locksmith Utility for Windows - PowerToys
 description: Learn how to use File Locksmith, a PowerToys utility that checks which files are in use and identifies blocking processes in Windows. Unlock files easily with this shell extension.
-ms.date: 08/20/2025
+ms.date: 10/14/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, File Locksmith, Win]
 # Customer intent: Learn how to configure and use the File Locksmith utility in PowerToys.
@@ -27,29 +27,34 @@ After scanning, a list of processes will be displayed. Select **End task** to te
 
 ## Command-line reference
 
-The File Locksmith CLI lets you identify and manage processes that are locking files from the command line.
+The File Locksmith CLI lets you identify and manage processes that are locking files from the command line. PowerToys adds its `bin` folder to your `PATH`, so you can run `PowerToys.FileLocksmith.CLI.exe` from any folder in Windows Terminal, PowerShell, or Command Prompt. If a terminal was already open when you installed PowerToys, open a new one so it picks up the updated `PATH`.
 
 | Command | Description |
 | :--- | :--- |
 | `<path>` | **Required**. One or more file or directory paths to check. You can specify multiple paths separated by spaces. |
 | `--kill` | Terminates (kills) all processes that are currently locking the specified files. |
 | `--json` | Outputs the results in structured **JSON** format instead of human-readable text. Useful for automation and scripts. |
-| `--wait` | **Blocks execution** and waits until the specified files are released. The command will not exit until the files are unlocked. |
+| `--wait` | **Blocks execution** and waits until the specified files are released. Unless you also specify `--timeout`, the command will not exit until the files are unlocked. |
+| `--timeout <milliseconds>` | Use with `--wait` to stop waiting after the specified number of milliseconds. If the files are still locked when the timeout expires, the command returns exit code `1`. |
 | `--help` | Displays the help message with usage instructions. |
 
 **Usage example**
+
 ```powershell
 # Check which processes are locking a specific file:
-FileLocksmithCLI.exe "C:\Users\Docs\report.docx"
+PowerToys.FileLocksmith.CLI.exe "C:\Users\Docs\report.docx"
 
 # Check multiple files and get the output in JSON format for parsing:
-FileLocksmithCLI.exe --json "C:\File1.txt" "C:\Folder\File2.dll"
+PowerToys.FileLocksmith.CLI.exe --json "C:\File1.txt" "C:\Folder\File2.dll"
 
 # Block script execution until a file is released (useful in build scripts):
-FileLocksmithCLI.exe --wait "C:\bin\output.exe"
+PowerToys.FileLocksmith.CLI.exe --wait "C:\bin\output.exe"
+
+# Wait up to 30 seconds for a file to be released:
+PowerToys.FileLocksmith.CLI.exe --wait --timeout 30000 "C:\bin\output.exe"
 
 # Kill all processes that are locking a specific file:
-FileLocksmithCLI.exe --kill "C:\LockedFile.dat"
+PowerToys.FileLocksmith.CLI.exe --kill "C:\LockedFile.dat"
 ```
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

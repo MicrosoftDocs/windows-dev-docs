@@ -1,7 +1,7 @@
 ---
 title: PowerToys Command Palette Utility for Windows
 description: Learn how to use PowerToys Command Palette, a quick launcher for Windows power users. Access apps, commands, and tools instantly with customizable shortcuts and extensions.
-ms.date: 08/25/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider]
 # Customer intent: Learn about the PowerToys Command Palette utility and how to use it.
@@ -16,9 +16,11 @@ Press <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>Space</kbd> and start typing. That's it
 > [!IMPORTANT]
 > Command Palette must be enabled and running in the background. You can enable or disable it from the PowerToys settings Home page, and change the activation shortcut in [Command Palette settings](settings.md).
 
-If you prefer a smaller launcher, turn on **Open with a compact search box** in [Command Palette settings](settings.md). In compact mode, Command Palette opens as a smaller search box and expands when results or nested pages need more space.
+If you prefer a smaller launcher, set **How Command Palette opens** to **Compact search box** in [Command Palette settings](settings.md#layout-and-positioning). In compact mode, Command Palette opens as a smaller search box and expands when results or nested pages need more space. You can also turn on the [quick access shelf](#quick-access-shelf) to show your pinned and recent commands below the compact search box.
 
 When compact mode shows only the search box, press <kbd>Down Arrow</kbd> or <kbd>Tab</kbd> to expand the palette and browse the top-level commands.
+
+You can also choose Command Palette as the app that opens when you press the Copilot key. For more information, see [Use Command Palette with the Copilot key](settings.md#use-command-palette-with-the-copilot-key).
 
 :::image type="content" source="../images/command-palette/cmdpal-overview1.gif" alt-text="An animated GIF of PowerToys Command Palette interface showing web search and git information features in action.":::
 
@@ -48,6 +50,36 @@ When compact mode shows only the search box, press <kbd>Down Arrow</kbd> or <kbd
 ## Home page
 
 The Home page is what you see when you first open Command Palette. It surfaces your most relevant commands, recent items, and a **Pinned commands** section that you control. Right-click any command in Command Palette and select **Pin to Home** to add it. From the Home page, use the right-click context menu to reorder your pinned commands or unpin them. Pinning to Home is independent of pinning to the Dock: use Home pins for quick access inside the palette and Dock pins for one-click access without opening the palette.
+
+To show the commands you used most recently on the Home page, set **Recent items** > **Show on Home** to **After pinned** in [Command Palette settings](settings.md#general). To remove a command from the list, right-click it and select **Remove from recent**.
+
+## Quick access shelf
+
+When Command Palette opens as a compact search box, you can turn on the quick access shelf to show your pinned and recent commands directly below the search box. The shelf appears only while the palette is collapsed and hides when the palette expands to show results. To turn it on, right-click the search box and select **Show shelf**, or turn on **Quick access shelf** in [Command Palette settings](settings.md#layout-and-positioning).
+
+The shelf shows the commands you pinned to Home, followed by recent commands if you turn on **Recent items** for the shelf. If not all items fit, the remaining items move to an overflow menu.
+
+| Action | How to do it |
+| :--- | :--- |
+| Run a shelf item | Select the item, or press <kbd>Alt</kbd>+<kbd>1</kbd> through <kbd>Alt</kbd>+<kbd>9</kbd>. |
+| Select a shelf item without running it | Press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd> through <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd>. Then press <kbd>Ctrl</kbd>+<kbd>Enter</kbd> to run the item's secondary command, or press <kbd>Ctrl</kbd>+<kbd>K</kbd> to open its context menu. |
+| Reorder pinned items | Drag a pinned item to a new position on the shelf. |
+| Pin a recent item | Drag a recent item onto **Pin to home**. |
+| Remove an item | Drag an item onto **Remove from quick access**. Removing a pinned item unpins it from Home, and removing a recent item removes it from your history. |
+
+Right-click the shelf to open **Shelf settings** or to **Hide shelf**. If the shelf has nothing to show, it stays hidden. If you select **Show shelf** while the shelf is empty, Command Palette shows a tip that explains how to pin a command to Home or change which items appear in **Shelf settings**.
+
+## Keyboard shortcuts in results
+
+Use these shortcuts to work with results in Command Palette lists:
+
+| Shortcut | Action |
+| :--- | :--- |
+| <kbd>Alt</kbd>+<kbd>1</kbd> through <kbd>Alt</kbd>+<kbd>9</kbd> | Run the corresponding visible list item, counted from the top. To select the item instead, change **Alt+number shortcuts in lists** in [Command Palette settings](settings.md#general). |
+| <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>1</kbd> through <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>9</kbd> | Select the corresponding visible list item without running it. |
+| <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Enter</kbd> | Run the selected result as administrator. This shortcut works for supported results from Run, Windows Terminal, PowerToys, Bookmarks, and file search. For bookmarks and files, it applies to `.exe`, `.bat`, `.cmd`, `.msc`, and `.cpl` files. |
+
+To share a command or start it from a script, right-click a top-level command and select **Copy command link**. For more information, see [Command links](settings.md#command-links).
 
 ## Bookmarks
 

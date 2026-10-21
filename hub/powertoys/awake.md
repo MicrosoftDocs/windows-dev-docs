@@ -1,7 +1,7 @@
 ---
 title: PowerToys Awake - Keep Windows Computer Awake Tool
 description: Learn how to use PowerToys Awake to keep your Windows computer awake without changing power settings. Configure timed, indefinite, or scheduled awake modes with CLI support.
-ms.date: 08/20/2025
+ms.date: 10/14/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 # Customer intent: As a Windows power user, I want to learn how to configure and use the PowerToys Awake utility.
@@ -16,7 +16,7 @@ PowerToys Awake is a Windows utility that keeps your computer awake without modi
 You can use PowerToys Awake directly from PowerToys Settings or as a standalone executable (`PowerToys.Awake.exe` in the PowerToys installation folder).
 
 > [!NOTE]
-> PowerToys Awake is active only when you are signed in and it is enabled. **Awake doesn't function when the lock screen is displayed.** Your normal power plan is active at other times.
+> PowerToys Awake is active only when you are signed in and it is enabled. When the lock screen is displayed, Awake doesn't keep the display on, so Windows can turn off the display based on your power plan. Your normal power plan is active at other times.
 >
 > PowerToys Awake doesn't modify any of the Windows power plan settings and doesn't depend on a custom power plan configuration. Instead, it spawns background threads that tell Windows that they require a specific state of the machine. Once PowerToys Awake exits, the threads are terminated and the computer resumes its standard power plan behavior.
 
@@ -47,10 +47,15 @@ While PowerToys Awake can keep the computer awake indefinitely or temporarily, i
 
 This feature only works when PowerToys Awake is enabled and has one of the custom power states selected. It also does not prevent any user-initiated actions, such as manually putting the computer to sleep or hibernating it.
 
-## Lock screen behavior
-PowerToys Awake doesn't work when the lock screen is displayed. This limitation exists because the lock screen operates in a separate security context from the user session. When you lock your computer, Windows transitions to this secure context, and user-mode applications like PowerToys Awake can't maintain their power requests.
+**Keep screen on** applies only while your computer is unlocked. When you lock your computer, Windows can turn off the display. For more information, see [Lock screen behavior](#lock-screen-behavior).
 
-If you need your computer to stay awake while locked, modify your Windows power plan settings directly instead of using PowerToys Awake.
+## Lock screen behavior
+
+When you lock your computer, PowerToys Awake stops keeping the display on, even if **Keep screen on** is turned on. This lets Windows turn off the display based on your power plan settings while the computer is locked. The selected keep-awake mode stays active and continues to keep the computer awake. When you unlock your computer, Awake keeps the display on again.
+
+PowerToys Awake also detects whether your computer is already locked when Awake starts.
+
+If you need the display to stay on while your computer is locked, modify your Windows power plan settings directly instead of using PowerToys Awake.
 
 ## System tray
 

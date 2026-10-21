@@ -1,7 +1,7 @@
 ---
 title: Advanced Paste Tool for Clipboard Management in PowerToys
 description: Learn how to use PowerToys Advanced Paste to transform clipboard content into any format - plain text, JSON, Markdown, or files. Includes opt-in AI-powered features and local OCR capabilities.
-ms.date: 08/25/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Paste as Plain Text, Advanced Paste, Win]
 # Customer intent: Learn how to use the Advanced Paste feature in PowerToys to paste text from your clipboard into any format needed.
@@ -303,5 +303,95 @@ Use this feature to extract audio from combined audio and video files to save di
 ### Transcode to .mp4 (H.264/AAC)
 
 The Transcode to .mp4 (H.264/AAC) feature transcodes video files to use the H.264 video codec and AAC audio codec (if audio is present) and saves the streams to an .mp4 file. Use this feature to transcode existing video files to a more widely supported format.
+
+## Command-line interface
+
+Advanced Paste includes a command-line interface that runs Advanced Paste actions without opening the Advanced Paste window. PowerToys adds its `bin` folder to your `PATH`, so you can run `PowerToys.AdvancedPaste.CLI.exe` from any folder in Windows Terminal, PowerShell, or Command Prompt. If a terminal was already open when you installed PowerToys, open a new one so it picks up the updated `PATH`.
+
+| Command | Description |
+| :--- | :--- |
+| `transform` | Transform text, HTML, images, or media by using a built-in action or a saved custom action. |
+| `actions list` | List the built-in actions and your saved custom actions, with their descriptions and custom action IDs. |
+| `providers list` | List the AI model providers configured in PowerToys Settings, with their IDs and models, the default provider, and whether policy allows them. This command doesn't show API keys, test connections, or send any AI requests. |
+
+Add `--json` to any of these commands to get machine-readable output. Use `--help` (`-h` or `-?`) to show help for the CLI or a command.
+
+### Run an action
+
+Use `transform` with one of the following options to choose what to run:
+
+| Option | Description |
+| :--- | :--- |
+| `--action <action>` | Run a built-in action. `--format` is also accepted as a compatibility alias. |
+| `--custom-action <id-or-name>` | Run a saved custom action by its numeric ID or by its name (not case-sensitive). If more than one custom action has the same name, use the numeric ID. Run `actions list` to find IDs. |
+| `--prompt <text>` | The instructions for the `paste-with-ai` action. |
+| `--provider <id>` | For AI actions only (`paste-with-ai`, `fix-spelling-and-grammar`, and custom actions), use the provider with this ID instead of the action's saved provider or the default provider. Use the ID from `providers list`, not the service name. This option doesn't configure providers or API keys. |
+
+The following built-in actions are available:
+
+| Action | Description |
+| :--- | :--- |
+| `plain-text` | Remove formatting and return plain text. |
+| `markdown` | Convert HTML content to Markdown. Plain text passes through unchanged. |
+| `json` | Convert CSV, XML, or INI to JSON. Existing JSON passes through unchanged, and other text becomes an array of lines. |
+| `fix-spelling-and-grammar` | Correct text by using a configured AI provider. |
+| `image-to-text` | Extract text from an image by using Windows OCR. No AI provider is needed. |
+| `paste-as-txt-file` | Generate a .txt file from text. |
+| `paste-as-png-file` | Generate a .png file from an image. |
+| `paste-as-html-file` | Generate an .html file from HTML content. |
+| `transcode-to-mp3` | Convert audio or video to an .mp3 file. |
+| `transcode-to-mp4` | Convert media to an .mp4 file. |
+| `paste-with-ai` | Follow the `--prompt` instructions by using a configured AI provider. |
+
+### Input and output
+
+By default, `transform` reads from the clipboard and writes the result back to the clipboard. Choose at most one input option and one output option:
+
+| Option | Description |
+| :--- | :--- |
+| `-i`, `--input <path>` | Read input from a text, image, audio, or video file. |
+| `--stdin` | Read text input from standard input. |
+| `--clipboard` | Read rich content or a single copied file from the clipboard. This is the default. |
+| `-o`, `--output <path>` | Write the transformed text or generated file to a path. |
+| `--stdout` | Write text output to standard output without changing the clipboard. |
+| `--output-clipboard` | Write the result to the clipboard. This is the default. |
+
+Actions that generate a file, such as `paste-as-png-file` or `transcode-to-mp3`, can't write to standard output. Use `--output` or the clipboard instead. Clipboard input and output require an interactive user session. Text input is limited to 16,777,216 characters. Press <kbd>Ctrl</kbd>+<kbd>C</kbd> to cancel a running command.
+
+### AI actions and policies
+
+AI actions use the model providers you configure in [Settings](#adding-a-model-provider), so turn on **Paste with AI** and add a provider before you run them from the command line. The CLI follows the same [group policies](grouppolicy.md#advanced-paste) as Advanced Paste. If Advanced Paste is disabled by policy, the CLI doesn't run any action, and providers that are blocked by policy, such as online models when **Allow using online AI models** is disabled, can't be used.
+
+### Examples
+
+```powershell
+# Convert a CSV file to JSON and print the result
+PowerToys.AdvancedPaste.CLI.exe transform --action json --input people.csv --stdout
+
+# Convert an HTML file to a Markdown file
+PowerToys.AdvancedPaste.CLI.exe transform --action markdown --input article.html --output article.md
+
+# Extract text from an image with Windows OCR
+PowerToys.AdvancedPaste.CLI.exe transform --action image-to-text --input image.png --stdout
+
+# Summarize the clipboard contents with AI and print the result
+PowerToys.AdvancedPaste.CLI.exe transform --action paste-with-ai --prompt "Summarize in one sentence" --clipboard --stdout
+
+# Run saved custom action 3 on a text file
+PowerToys.AdvancedPaste.CLI.exe transform --custom-action 3 --input notes.txt --stdout
+
+# List configured AI providers as JSON
+PowerToys.AdvancedPaste.CLI.exe providers list --json
+```
+
+### JSON output and exit codes
+
+With `--json`, `transform` writes a result object that includes `status`, `action`, `resultKind`, `outputPath`, `outputClipboard`, and, when the result is text, `output` with the transformed text. If the command fails, it writes an error object with `status`, `code`, and `message` to standard error.
+
+| Exit code | Meaning |
+| :--- | :--- |
+| `0` | Success. |
+| `1` | A runtime, input, or provider failure occurred. |
+| `2` | The arguments are invalid. |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

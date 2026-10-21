@@ -4,7 +4,7 @@ description: >-
   Learn how to configure PowerToys utilities using Microsoft Desired State
   Configuration v3 with the PowerToys.DSC.exe command-line tool. Modern
   declarative configuration for PowerToys.
-ms.date: 09/24/2026
+ms.date: 10/14/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Microsoft DSC, WinGet]
 # customer intent: As a Windows power user or IT administrator, I want to
@@ -362,6 +362,67 @@ resources:
         version: 1.0
 ```
 
+## Manage Keyboard Manager remappings
+
+The `Microsoft.PowerToys/KeyboardManagerProfile` resource deploys Keyboard
+Manager key remappings and shortcut remappings. The `KeyboardManagerSettings`
+resource manages Keyboard Manager's settings, such as its enabled state, while
+the profile resource manages the remappings themselves. To use this resource
+with `PowerToys.DSC.exe`, specify `--resource 'profile'` and
+`--module KeyboardManager`.
+
+Keys are written with readable names instead of virtual-key codes, such as
+`CapsLock`, `Esc`, `Ctrl+Shift+A`, or `Win+O, K` for a chord. Key names are
+case-insensitive and don't depend on the active keyboard layout.
+
+> [!IMPORTANT]
+> Applying the profile resource replaces the whole remapping profile. Any
+> remappings that you created in the Keyboard Manager editor and that aren't
+> part of the configuration are removed. An empty profile (`profile: {}`)
+> removes all remappings. Use `export` to capture your current remappings
+> before you start managing them with DSC.
+
+```powershell
+# Export the current remappings
+PowerToys.DSC.exe export --resource 'profile' --module KeyboardManager
+
+# Remap Caps Lock to Esc
+$input = '{"profile":{"keys":[{"from":"CapsLock","to":"Esc"}]}}'
+PowerToys.DSC.exe set --resource 'profile' --module KeyboardManager --input $input
+```
+
+The following configuration document remaps keys and shortcuts. Save it as
+`keyboardmanager-profile.dsc.config.yaml`:
+
+```yaml
+# yaml-language-server: $schema=https://aka.ms/dsc/schemas/v3/bundled/config/document.vscode.json
+$schema: https://aka.ms/dsc/schemas/v3/bundled/config/document.json
+resources:
+  - name: Deploy key remappings
+    type: Microsoft.PowerToys/KeyboardManagerProfile
+    properties:
+      profile:
+        keys:
+          - { from: CapsLock, to: Esc }
+          - { from: Insert, to: Disable }
+        shortcuts:
+          - { from: "Ctrl+Shift+A", to: "Ctrl+V" }
+          - { from: "Ctrl+Alt+N", to: "Ctrl+S", targetApp: "notepad.exe" }
+          - { from: "Ctrl+Alt+B", openUri: "https://github.com/microsoft/PowerToys" }
+```
+
+Each entry in `keys` remaps a single key to a key or shortcut (`to`) or to
+text (`toText`). Each entry in `shortcuts` remaps a shortcut to a key or
+shortcut (`to`), text (`toText`), a program (`runProgram`), or a URI
+(`openUri`). Use `targetApp` to apply a shortcut remapping to a single app.
+`Win+L` and `Ctrl+Alt+Delete` can't be remapped.
+
+If PowerToys is running, Keyboard Manager loads the new profile immediately.
+Otherwise, the profile takes effect the next time PowerToys starts. The
+remappings are active only when Keyboard Manager is enabled. For the complete
+schema and list of key names, see the
+[Keyboard Manager profile resource reference][09].
+
 ## Available resources
 
 Microsoft DSC for PowerToys provides individual resource types for each
@@ -375,9 +436,30 @@ Common resources include:
 - `Microsoft.PowerToys/AwakeSettings` - Awake keep-awake settings
 - `Microsoft.PowerToys/ColorPickerSettings` - Color Picker settings
 - `Microsoft.PowerToys/FancyZonesSettings` - FancyZones window management
+- `Microsoft.PowerToys/MouseButtonLockSettings` - Mouse Button Lock settings
 - `Microsoft.PowerToys/PowerLauncherSettings` - PowerToys Run settings
 - `Microsoft.PowerToys/PowerRenameSettings` - PowerRename bulk rename
+- `Microsoft.PowerToys/ZoomItSettings` - ZoomIt settings
 - And many more for each PowerToys utility
+
+In addition to the settings resources, the
+`Microsoft.PowerToys/KeyboardManagerProfile` resource manages Keyboard Manager
+remappings. For more information, see
+[Manage Keyboard Manager remappings](#manage-keyboard-manager-remappings).
+
+Run `PowerToys.DSC.exe modules --resource 'settings'` or
+`PowerToys.DSC.exe modules --resource 'profile'` to list the modules that each
+resource supports.
+
+> [!NOTE]
+> ZoomIt stores its settings in the registry instead of a `settings.json`
+> file. The `ZoomItSettings` resource reads and updates these registry-backed
+> settings, so `get`, `export`, and `test` report your actual ZoomIt
+> configuration. When you apply settings while ZoomIt is running, ZoomIt
+> reloads them immediately. Properties use ZoomIt's setting names, such as
+> `ToggleKey` or `BreakTimeout`, and each value is wrapped in a `value`
+> object. Run `PowerToys.DSC.exe schema --resource 'settings' --module ZoomIt`
+> to see all available properties.
 
 For a complete list of resources and their properties, see the
 [developer documentation][01].
@@ -446,3 +528,4 @@ If you're migrating from the PowerShell DSC module
 [06]: /windows/package-manager/configuration/
 [07]: https://github.com/microsoft/winget-cli/releases
 [08]: https://github.com/PowerShell/DSC/releases
+[09]: https://github.com/microsoft/PowerToys/tree/main/doc/dsc/profile-resource.md

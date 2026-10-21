@@ -1,7 +1,7 @@
 ---
 title: PowerToys Text Extractor Utility for Windows
 description: Learn how to use PowerToys Text Extractor to copy text from anywhere on your Windows screen, including images and videos. Extract text with OCR technology using simple keyboard shortcuts.
-ms.date: 08/20/2025
+ms.date: 10/14/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Text Extractor, Win]
 # customer intent: As a Windows power user, I want to learn how to use the Text Extractor utility for Windows.
@@ -115,7 +115,7 @@ $Capability | Remove-WindowsCapability -Online
 
 This section will list possible errors and solutions.
 
-### "No Possible OCR languages are installed"
+### "No OCR languages are installed."
 
 This message is shown when there are no available languages for recognition.
 

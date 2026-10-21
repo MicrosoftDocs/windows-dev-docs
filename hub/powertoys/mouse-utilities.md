@@ -1,21 +1,47 @@
 ---
 title: Mouse Utilities in PowerToys for Windows
-description: Mouse utilities in PowerToys enhance cursor functionality with Find my mouse, Mouse Highlighter, Mouse jump, and Crosshairs features for Windows users.
-ms.date: 08/25/2026
+description: Mouse utilities in PowerToys enhance cursor functionality with Auto Hide Cursor, CursorWrap, Find my mouse, Mouse Button Lock, Mouse Highlighter, Mouse jump, and Crosshairs features for Windows users.
+ms.date: 10/14/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
-no-loc: [PowerToys, Windows, Mouse, jump]
+no-loc: [PowerToys, Windows, Mouse, jump, CursorWrap, ClickLock]
 # Customer intent: As a Windows power user, I want to learn how to configure and use the Mouse utilities in PowerToys.
 ---
 
 # Mouse utilities
 
-Mouse utilities in PowerToys is a collection of features that enhance mouse and cursor functionality on Windows. These utilities help you locate your cursor, highlight mouse clicks, jump across screens, and display crosshairs for improved precision and productivity.
+Mouse utilities in PowerToys is a collection of features that enhance mouse and cursor functionality on Windows. These utilities help you hide the cursor while you type, wrap the cursor around screen edges, locate your cursor, lock mouse buttons for hands-free dragging, highlight mouse clicks, jump across screens, and display crosshairs for improved precision and productivity.
+
+## Auto Hide Cursor
+
+Auto Hide Cursor hides the mouse cursor so it doesn't get in the way while you type or read. You can hide the cursor after keyboard input, after a period of cursor inactivity, or both. The cursor reappears when you intentionally move the mouse, press a mouse button, or use the scroll wheel. Auto Hide Cursor is turned off by default.
+
+Small movements below a threshold are ignored, so minor pointer noise doesn't bring the cursor back. Movement reported by touchpads that generate simulated mouse input also restores the cursor. Modifier keys, such as <kbd>Ctrl</kbd> or <kbd>Shift</kbd>, and software-generated keyboard input don't hide the cursor.
+
+While the cursor is hidden, Auto Hide Cursor temporarily replaces the system cursor shapes. When you turn off Auto Hide Cursor or exit PowerToys, your cursor scheme is restored.
+
+> [!NOTE]
+> Apps that draw their own custom or software-rendered cursor might continue to show that cursor while Auto Hide Cursor is active.
+
+### Settings
+
+:::image type="content" source="images/mouse-utilities/auto-hide-cursor-settings.png" alt-text="Screenshot of the Auto Hide Cursor settings in PowerToys Settings, showing the enable toggle and the Activation group.":::
+
+From the settings page, you can configure the following options under **Activation**:
+
+| Setting | Description |
+| :--- | :--- |
+| Auto Hide Cursor | Toggle to enable or disable Auto Hide Cursor. |
+| Hide after keyboard input | Hides the cursor when you type. Modifier keys and software-generated input are ignored. This option is selected by default. |
+| Hide after pointer inactivity | Hides the cursor after it hasn't moved for the idle delay. The cursor reappears after intentional movement, a mouse button, or the wheel. This option isn't selected by default. |
+| Idle delay (seconds) | How long the cursor must be inactive before it's hidden, from 1 to 60 seconds. (default: 5 seconds) Available when **Hide after pointer inactivity** is selected. |
+
+If you clear both **Hide after keyboard input** and **Hide after pointer inactivity**, Auto Hide Cursor doesn't hide the cursor.
+
+## CursorWrap
 
 :::image type="content" source="images/mouse-utilities/cursorwrap.gif" alt-text="An animated gif of the PowerToys Cursor Wrap feature of its Mouse Utilities.":::
 
-
-## CursorWrap
 CursorWrap helps you move your mouse faster by allowing the cursor to seamlessly wrap around the edges of the screen. When enabled, moving past the top, bottom, left, or right edge instantly brings the cursor back on the opposite side, reducing long mouse travel and making navigation smoother on both single- and multi-monitor setups.
 
 ### Settings
@@ -57,6 +83,39 @@ From the settings page, you can configure the following options:
 | Spotlight initial zoom | The spotlight animation's zoom factor. Higher values result in more pronounced zoom animation as the spotlight closes in on the cursor position. |
 | Animation duration | Time for the spotlight animation. (default: 500ms) |
 | Excluded apps | Add an application's name, or part of the name, one per line (for example, adding `Notepad` matches both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
+
+## Mouse Button Lock
+
+Mouse Button Lock lets you keep a mouse button held down without physically pressing it, which makes long drags and selections easier. Mouse Button Lock is turned off by default.
+
+To lock a button:
+
+1. Press and hold a mouse button that's enabled for locking, without moving the mouse, for the **Hold duration (ms)** time.
+1. Release the button. The button stays held down.
+1. Move the mouse to drag or select.
+1. Press any mouse button to release the lock.
+
+If you move the mouse farther than the **Drag threshold (pixels)** distance while you hold the button, the action is treated as a normal drag and the button doesn't lock. When you release a locked right mouse button by pressing the right button again, Mouse Button Lock dismisses the context menu that would otherwise appear.
+
+Windows has a built-in ClickLock feature for the left (primary) mouse button, so Mouse Button Lock is enabled only for the right mouse button by default. To use ClickLock instead for the left button, open **Control Panel** > **Mouse** > **Buttons** and select **Turn on ClickLock**.
+
+> [!NOTE]
+> Mouse Button Lock might not work in games that use raw or exclusive mouse input. It also doesn't work over on-screen keyboards or over windows of apps running as administrator. To use Mouse Button Lock over apps running as administrator, run PowerToys as administrator.
+
+### Settings
+
+:::image type="content" source="images/mouse-utilities/mouse-button-lock-settings.png" alt-text="Screenshot of the Mouse Button Lock settings in PowerToys Settings, showing the enable toggle and the Buttons and behavior group.":::
+
+From the settings page, you can configure the following options under **Buttons and behavior**:
+
+| Setting | Description |
+| :--- | :--- |
+| Mouse Button Lock | Toggle to enable or disable Mouse Button Lock. |
+| Lock the left (primary) mouse button | Allows the left mouse button to be locked. This option isn't selected by default, because Windows already includes ClickLock for the left button. |
+| Lock the right mouse button | Allows the right mouse button to be locked. This option is selected by default. |
+| Lock the middle mouse button | Allows the middle mouse button to be locked. This option isn't selected by default. |
+| Hold duration (ms) | How long to hold a button before it locks, from 200 to 2200 milliseconds. (default: 1200ms) |
+| Drag threshold (pixels) | Moving the mouse farther than this distance while you hold a button cancels the lock, from 0 to 100 pixels. (default: 5px) |
 
 ## Mouse Highlighter
 
@@ -106,6 +165,8 @@ When you open Mouse Jump, you can click the preview to move the pointer to a spe
 Mouse Pointer Crosshairs draws crosshairs centered on the mouse pointer. This feature is particularly useful for users with visual impairments or those who need enhanced cursor visibility for precision tasks.
 
 The gliding cursor option is an accessibility feature that lets you control the mouse with a single button by using guided horizontal and vertical lines. Use the <kbd>Win</kbd>+<kbd>Alt</kbd>+<kbd>.</kbd> keyboard key combination to activate the gliding cursor, then move the mouse to control its position. Cancel the gliding cursor with the <kbd>Esc</kbd> key or by clicking the mouse.
+
+You can also turn Mouse Pointer Crosshairs on or off from the Quick Access flyout in the system tray. The flyout tooltip shows the configured activation shortcut.
 
 :::image type="content" source="images/mouse-utilities/gliding-cursor.png" lightbox="images/mouse-utilities/gliding-cursor.gif" alt-text="An animated gif of the PowerToys gliding cursor feature of its Mouse Utilities.":::
 

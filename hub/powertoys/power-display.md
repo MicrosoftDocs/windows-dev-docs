@@ -1,7 +1,7 @@
 ---
 title: PowerToys Power Display utility for Windows
 description: Learn how to use PowerToys Power Display to control external monitor brightness, contrast, volume, input source, and color temperature from a single flyout, and save settings as profiles.
-ms.date: 08/25/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Power Display, DDC/CI, VCP]
 # Customer intent: As a Windows power user with multiple external monitors, I want to learn about the Power Display utility in PowerToys so I can control brightness, volume, input source, and other monitor settings from one place.
@@ -107,6 +107,10 @@ Save your favorite combination of brightness, contrast, volume, and color temper
 
 :::image type="content" source="images/power-display/profiles.png" alt-text="Screenshot of the Edit profile dialog in PowerToys Settings, showing a Gaming profile with brightness, contrast, volume, and color temperature settings selected per monitor.":::
 
+To change the order of your profiles, go to **Profiles** on the Power Display Settings page and drag a profile by its handle to a new position. You can also select **More** next to a profile and then select **Move up** or **Move down**, which works with the keyboard. If PowerToys Settings is running as administrator, drag and drop isn't available, so use **Move up** and **Move down** instead. Reordering profiles doesn't change their numeric IDs, so scripts that use `apply-profile` and the profiles selected in Light Switch keep working.
+
+When you edit a profile while one of its monitors is disconnected, or a monitor doesn't currently report a feature, Power Display keeps the saved settings for that monitor or feature. To remove a saved setting, clear its check box in the profile editor. When you apply the profile, Power Display still only changes the settings each connected monitor supports.
+
 You can also configure Power Display to **restore monitor brightness and color temperature when Power Display launches** so your preferred settings are reapplied at startup.
 
 ## Light Switch integration
@@ -121,21 +125,30 @@ Power Display lets you define custom display names for color temperature presets
 
 ## Command-line interface
 
-Power Display includes `PowerToys.PowerDisplay.Cli.exe`. The CLI talks to the running Power Display app, so keep PowerToys running while you use it.
+Power Display includes a command-line interface. PowerToys adds its `bin` folder to your `PATH`, so you can run `PowerToys.PowerDisplay.CLI.exe` from any folder in Windows Terminal, PowerShell, or Command Prompt. If a terminal was already open when you installed PowerToys, open a new one so it picks up the updated `PATH`. The CLI talks to the running Power Display app, so keep PowerToys running while you use it.
 
 | Command | What it does |
 | :--- | :--- |
-| `PowerToys.PowerDisplay.Cli.exe list` | Discover attached monitors and print each monitor's number, stable ID, name, and transport. |
-| `PowerToys.PowerDisplay.Cli.exe capabilities --monitor-number 1` | Show the discrete VCP values a monitor reports. Add `--setting color-temperature`, `--setting input-source`, or `--setting power-state` to limit the output. |
-| `PowerToys.PowerDisplay.Cli.exe get --monitor-number 1` | Read the current value of one monitor. Add `--setting brightness`, `contrast`, `volume`, `color-temperature`, `input-source`, `power-state`, or `orientation` to limit the output. |
-| `PowerToys.PowerDisplay.Cli.exe set --monitor-number 1,2 --brightness 70` | Set exactly one value per command. Supported options are `--brightness`, `--contrast`, `--volume`, `--color-temperature 0xNN`, `--input-source 0xNN`, `--power-state 0xNN`, and `--orientation 0`, `90`, `180`, or `270`. |
-| `PowerToys.PowerDisplay.Cli.exe up --monitor-number 1 --brightness` | Raise brightness, contrast, or volume. `down` lowers the same settings. Add `--step` to override the amount. If you omit `--step`, Power Display uses the current **Mouse wheel increment** value. |
-| `PowerToys.PowerDisplay.Cli.exe profiles` | List saved Power Display profiles with their numeric IDs. |
-| `PowerToys.PowerDisplay.Cli.exe apply-profile 3` | Apply a saved profile by numeric ID. |
+| `PowerToys.PowerDisplay.CLI.exe list` | Discover attached monitors and print each monitor's number, stable ID, name, and transport. |
+| `PowerToys.PowerDisplay.CLI.exe capabilities --monitor-number 1` | Show the discrete VCP values a monitor reports. Add `--setting color-temperature`, `--setting input-source`, or `--setting power-state` to limit the output. |
+| `PowerToys.PowerDisplay.CLI.exe get --monitor-number 1` | Read the current value of one monitor. Add `--setting brightness`, `contrast`, `volume`, `color-temperature`, `input-source`, `power-state`, or `orientation` to limit the output. |
+| `PowerToys.PowerDisplay.CLI.exe set --monitor-number 1,2 --brightness 70` | Set exactly one value per command. Supported options are `--brightness`, `--contrast`, `--volume`, `--color-temperature 0xNN`, `--input-source 0xNN`, `--power-state 0xNN`, and `--orientation 0`, `90`, `180`, or `270`. |
+| `PowerToys.PowerDisplay.CLI.exe up --monitor-number 1 --brightness` | Raise brightness, contrast, or volume. `down` lowers the same settings. Add `--step` to override the amount. If you omit `--step`, Power Display uses the current **Mouse wheel increment** value. |
+| `PowerToys.PowerDisplay.CLI.exe profiles` | List saved Power Display profiles with their numeric IDs. |
+| `PowerToys.PowerDisplay.CLI.exe apply-profile 3` | Apply a saved profile by numeric ID. |
 
 Use `--monitor-number` or `-n` for 1-based monitor numbers. `set`, `up`, and `down` accept comma-separated numbers such as `1,2,3`. Use `--monitor-id` or `-i` to target a stable monitor ID instead. If you pass both, `--monitor-id` wins.
 
-For discrete settings such as input source, color temperature, and power state, use the hexadecimal values reported by `capabilities`. To blank or sleep a display with `--power-state`, add `--confirm-power-off`. Add `--quiet` to suppress CLI warning output.
+For discrete settings such as input source, color temperature, and power state, use the hexadecimal values reported by `capabilities`. To blank or sleep a display with `--power-state`, add `--confirm-power-off`. Add `--quiet` to suppress CLI warning output. Use `--version` to show the version, or `--help` (`-h` or `-?`) to show help for the CLI or a command.
+
+### JSON output
+
+Add the global `--json` option to any command to get compact [JSON Lines](https://jsonlines.org/) output for scripts and automation. Results are written to standard output, and errors, including invalid command-line arguments, are written to standard error as structured JSON. Without `--json`, the CLI writes human-readable text.
+
+```powershell
+PowerToys.PowerDisplay.CLI.exe list --json
+PowerToys.PowerDisplay.CLI.exe get --monitor-number 1 --setting brightness --json
+```
 
 ## Keyboard shortcuts in the flyout
 

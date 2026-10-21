@@ -1,7 +1,7 @@
 ---
 title: Image Resizer utility for Windows - PowerToys
 description: Resize images in bulk with PowerToys Image Resizer utility. Learn how to quickly resize multiple images using this Windows shell extension with drag-and-drop support.
-ms.date: 08/25/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
@@ -79,44 +79,49 @@ You can choose to retain the original *last modified* date on the resized image 
 
 ## Command-line reference
 
-The Image Resizer CLI lets you resize one or more images from the command line.
+The Image Resizer CLI lets you resize one or more images from the command line. PowerToys adds its `bin` folder to your `PATH`, so you can run `PowerToys.ImageResizer.CLI.exe` from any folder in Windows Terminal, PowerShell, or Command Prompt. If a terminal was already open when you installed PowerToys, open a new one so it picks up the updated `PATH`.
 
-| Command | Aliases | Description |
+| Option | Aliases | Description |
 | :--- | :--- | :--- |
-| `--help` |  | Show help |
-| `--show-config` |  | Print current effective configuration |
-| `--destination` | `-d` | Output directory (optional) |
+| `--help` | `-?`, `/?` | Show help |
+| `--show-config` | `--config` | Print current effective configuration |
+| `--destination` | `-d`, `/d` | Output directory (optional) |
 | `--width` | `-w` | Width |
 | `--height` | `-h` | Height |
 | `--unit` | `-u` | Unit (Pixel / Percent / Inch / Centimeter) |
 | `--fit` | `-f` | Fit mode (Fill / Fit / Stretch) |
-| `--size` | `-s` | Preset size index (supports `0` for Custom) |
-| `--shrink-only` |  | Only shrink (do not enlarge) |
-| `--replace` |  | Replace original |
-| `--ignore-orientation` |  | Ignore EXIF orientation |
+| `--size` |  | Use a preset size by its 0-based index in the **Sizes** list |
+| `--shrink-only` |  | Only shrink images for non-percentage sizes (do not enlarge) |
+| `--replace` | `-r` | Replace original files |
+| `--ignore-orientation` |  | Ignore image orientation |
 | `--remove-metadata` |  | Strip metadata |
 | `--quality` | `-q` | JPEG quality (1–100) |
 | `--keep-date-modified` |  | Preserve source last-write time |
-| `--file-name` |  | Output filename format |
+| `--filename` | `-n` | Output filename format (for example, `%1` for the original name and `%2` for the size name) |
+| `--progress-lines` | `--accessible` | Report progress as separate lines at 0%, 25%, 50%, 75%, and 100% for screen reader accessibility |
 
-If you use `Percent` with **Fill** or **Fit**, specify a width value. Height-only percentage resizing is only supported with **Stretch**. Also, `--size` must refer to an existing preset index; if the index is out of range, the CLI returns an error and doesn't modify the input files.
+If you specify `--width` or `--height`, the CLI resizes to those custom dimensions instead of the preset selected with `--size`. If you use `Percent` with **Fill** or **Fit**, specify a width value. Height-only percentage resizing is only supported with **Stretch**. Also, `--size` must refer to an existing preset index; if the index is out of range, the CLI returns an error and doesn't modify the input files.
 
 **Usage example**
+
 ```powershell
 # Show help
-PowerToys.ImageResizerCLI.exe --help
+PowerToys.ImageResizer.CLI.exe --help
 
 # Show current config
-PowerToys.ImageResizerCLI.exe --show-config
+PowerToys.ImageResizer.CLI.exe --show-config
 
 # Resize with explicit dimensions
-PowerToys.ImageResizerCLI.exe --width 800 --height 600 .\image.png
+PowerToys.ImageResizer.CLI.exe --width 800 --height 600 .\image.png
 
-# Use preset size 0 (Custom) and output to a folder
-PowerToys.ImageResizerCLI.exe --size 0 -d "C:\Output" .\photo.png
+# Resize all JPEG files in the current folder to 50 percent
+PowerToys.ImageResizer.CLI.exe -w 50 -h 50 -u Percent "*.jpg"
+
+# Use the first preset size and output to a folder
+PowerToys.ImageResizer.CLI.exe --size 0 -d "C:\Output" .\photo.png
 
 # Preserve source LastWriteTime
-PowerToys.ImageResizerCLI.exe --width 800 --height 600 --keep-date-modified -d "C:\Output" .\image.png
+PowerToys.ImageResizer.CLI.exe --width 800 --height 600 --keep-date-modified -d "C:\Output" .\image.png
 ```
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

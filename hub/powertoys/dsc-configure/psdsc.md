@@ -4,7 +4,7 @@ description: >-
   Learn how to configure PowerToys utilities using the PowerShell Desired State
   Configuration (DSC) module with WinGet configuration files. Complete
   reference for all available settings and properties.
-ms.date: 10/19/2025
+ms.date: 10/14/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, PSDSC, WinGet]
 # customer intent: As a Windows power user or IT administrator, I want to
@@ -215,6 +215,17 @@ configuration settings for each PowerToys utility.
 | ExcludedApps            | String       | '\r'-separated list of executable names to exclude from pinning on top. | ✅ Available |
 | RoundCornersEnabled     | Boolean      | Enable round corners.                                                   | ✅ Available |
 
+### AutoHideCursor
+
+AutoHideCursor is the internal name for Auto Hide Cursor.
+
+| Name         | Type    | Description                                                                 | Available    |
+| :----------- | :------ | :-------------------------------------------------------------------------- | :----------- |
+| Enabled      | Boolean | The enabled state for this utility.                                         | ✅ Available |
+| HideOnTyping | Boolean | Hide the cursor after keyboard input.                                       | ✅ Available |
+| HideOnIdle   | Boolean | Hide the cursor after cursor inactivity.                                    | ✅ Available |
+| IdleDelayMs  | Int     | Idle delay in milliseconds before the cursor is hidden, from 1000 to 60000. | ✅ Available |
+
 ### Awake
 
 | Name               | Type           | Description                                                                                                 | Available    |
@@ -363,7 +374,9 @@ configuration settings for each PowerToys utility.
 | KeyboardConfigurations | —       | —                                   | ❌ Not available |
 
 > [!NOTE]
-> Configuring remappings through DSC is not yet supported.
+> Configuring remappings through PowerShell DSC is not supported. To deploy
+> Keyboard Manager remappings, use the `KeyboardManagerProfile` resource in
+> [Microsoft DSC](microsoft-dsc.md#manage-keyboard-manager-remappings).
 
 ### MeasureTool
 
@@ -379,6 +392,17 @@ Measure Tool is the internal name for Screen Ruler.
 | PixelTolerance               | Int            | Pixel Tolerance for edge detection.                 | ✅ Available |
 | MeasureCrossColor            | String         | Line color in `#FFFFFFFF` format.                   | ✅ Available |
 | DefaultMeasureStyle          | Int            | Default measure style index.                        | ✅ Available |
+
+### MouseButtonLock
+
+| Name             | Type    | Description                                                                    | Available    |
+| :--------------- | :------ | :----------------------------------------------------------------------------- | :----------- |
+| Enabled          | Boolean | The enabled state for this utility.                                            | ✅ Available |
+| LmbLockEnabled   | Boolean | Allow the left (primary) mouse button to be locked.                            | ✅ Available |
+| RmbLockEnabled   | Boolean | Allow the right mouse button to be locked.                                     | ✅ Available |
+| MmbLockEnabled   | Boolean | Allow the middle mouse button to be locked.                                    | ✅ Available |
+| HoldDurationMs   | Int     | How long to hold a button, in milliseconds, before it locks.                   | ✅ Available |
+| MoveCancelPixels | Int     | Drag threshold in pixels. Moving farther than this while holding cancels lock. | ✅ Available |
 
 ### MouseHighlighter
 

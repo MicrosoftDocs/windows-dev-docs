@@ -1,7 +1,7 @@
 ---
 title: PowerToys Grab And Move utility for Windows
 description: Learn how to use PowerToys Grab And Move to move and resize windows by holding a modifier key and dragging anywhere inside the window.
-ms.date: 04/26/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Grab And Move, Win, Alt]
 # Customer intent: As a Windows power user, I want to learn about the Grab And Move utility in PowerToys so I can move and resize windows quickly without aiming for the title bar or window edges.
@@ -36,5 +36,6 @@ Grab And Move has the following settings:
 | **Do not activate when Game Mode is on** | Prevents the feature from being activated when actively playing a game on the system. |
 | **Show window geometry** | Displays the window position and size on the overlay during drag and resize operations. |
 | **Excluded apps** | Excludes an application from being moved or resized by Grab And Move. Add one application name per line. |
+| **Excluded apps (for modifier)** | Prevents Grab And Move from processing the modifier key while an excluded application is in the foreground, so the app receives the key as usual. Add one application name per line (for example, `game.exe`). |
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]

@@ -1,7 +1,7 @@
 ---
 title: Quick Accent Utility for Windows PowerToys
 description: Learn how to use Quick Accent utility in PowerToys to type accented characters on Windows when your keyboard lacks accent support. Configure settings and activation methods.
-ms.date: 08/25/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Quick Accent, Win]
 # Customer intent: As a Windows power user, I want to learn how to configure and use the Quick Accent utility in PowerToys for Windows.
@@ -89,6 +89,14 @@ Use **Characters** in PowerToys Settings to limit the available characters. Char
 - Proto Indo European
 
 For the canonical, always up-to-date list, see [`CharacterMappings.cs`](https://github.com/microsoft/PowerToys/blob/main/src/modules/poweraccent/PowerAccent.Common/CharacterMappings.cs) in the PowerToys source.
+
+### Character reference guide
+
+To see which characters each set contains, expand **Characters** in Quick Accent Settings and select **Character reference guide**. The reference guide window lists the characters available for each base letter, organized by language. Your selected sets appear first under **Selected sets**, followed by the other available sets.
+
+- Use **Search for a character…** to filter the list to the sets that include a specific character.
+- Hover over a character to see its Unicode description.
+- Select a character to copy it to the clipboard.
 
 ## Settings
 

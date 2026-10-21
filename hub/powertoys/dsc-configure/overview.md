@@ -4,7 +4,7 @@ description: >-
   Learn about the two approaches to configure PowerToys using Desired State
   Configuration: PowerShell DSC for legacy automation and Microsoft DSC for
   modern declarative configuration.
-ms.date: 09/24/2026
+ms.date: 10/14/2026
 ms.topic: overview
 no-loc: [PowerToys, Windows, DSC, WinGet]
 # customer intent: As a Windows power user or IT administrator, I want to
@@ -61,7 +61,7 @@ PowerToys offers two distinct DSC implementations:
 | **Module Name**          | `Microsoft.PowerToys.Configure`                     | Resource types under `Microsoft.PowerToys/`                                                                                                      |
 | **Command-line tool**    | PowerShell cmdlets                                  | `PowerToys.DSC.exe`                                                                                                                              |
 | **Configuration format** | YAML (WinGet configuration)                         | YAML (Microsoft DSC configuration documents), JSON or Bicep JSON                                                                                 |
-| **Resource model**       | Single `PowerToysConfigure` resource                | One settings resource per utility (for example, `AwakeSettings`), plus data resources such as `KeyboardManagerProfile` and `FancyZonesLayouts` |
+| **Resource model**       | Single `PowerToysConfigure` resource                | One settings resource per utility (for example, `AwakeSettings`), plus the `KeyboardManagerProfile` data resource                              |
 | **Platform support**     | Windows only                                        | Cross-platform ready                                                                                                                             |
 | **Schema support**       | Limited                                             | Full JSON schema generation                                                                                                                      |
 | **Manifest generation**  | No                                                  | Yes                                                                                                                                              |
@@ -90,6 +90,7 @@ Both approaches manage the settings of the following utilities:
 - Hosts File Editor
 - Image Resizer
 - Keyboard Manager
+- Mouse Button Lock
 - Mouse Highlighter
 - Mouse Jump
 - Mouse Pointer Crosshairs
@@ -103,7 +104,7 @@ Both approaches manage the settings of the following utilities:
 - Workspaces
 - ZoomIt
 
-PowerShell DSC also manages the settings of utilities that Microsoft DSC doesn't expose yet, such as Alt Window Cycle, Cursor Wrap, Grab And Move, Light Switch, and the File Explorer add-ons. Individual settings that aren't suitable for automation are skipped by both approaches.
+PowerShell DSC also manages the settings of utilities that Microsoft DSC doesn't expose yet, such as Alt Window Cycle, Auto Hide Cursor (`AutoHideCursor`), Cursor Wrap, Grab And Move, Light Switch, and the File Explorer add-ons. Individual settings that aren't suitable for automation are skipped by both approaches.
 
 > [!NOTE]
 > Microsoft DSC intentionally excludes Mouse Without Borders, PowerToys Run, and New+. Their settings contain a connection security key or absolute file paths, which aren't portable between systems.
@@ -112,12 +113,11 @@ PowerShell DSC also manages the settings of utilities that Microsoft DSC doesn't
 
 Some utilities store their configuration in dedicated files rather than in their settings. Microsoft DSC provides resources that manage this data declaratively. PowerShell DSC manages settings only.
 
-| Utility          | Data                                                                  | Microsoft DSC resource                       |
-|------------------|-----------------------------------------------------------------------|----------------------------------------------|
-| Keyboard Manager | Key remappings and shortcut remappings                                | `Microsoft.PowerToys/KeyboardManagerProfile` |
-| FancyZones       | Custom layouts, layout templates, layout hotkeys, and default layouts | `Microsoft.PowerToys/FancyZonesLayouts`      |
+| Utility          | Data                                   | Microsoft DSC resource                       |
+|------------------|----------------------------------------|----------------------------------------------|
+| Keyboard Manager | Key remappings and shortcut remappings | `Microsoft.PowerToys/KeyboardManagerProfile` |
 
-When these resources are applied while PowerToys is running, the utility picks up the change immediately. Otherwise, the change takes effect the next time PowerToys starts.
+When this resource is applied while PowerToys is running, the utility picks up the change immediately. Otherwise, the change takes effect the next time PowerToys starts. For an example, see [Manage Keyboard Manager remappings][06].
 
 ## Next steps
 
@@ -138,3 +138,4 @@ Choose your DSC approach and get started:
 [03]: ../install.md
 [04]: /windows/package-manager/configuration/
 [05]: /powershell/dsc/overview
+[06]: microsoft-dsc.md#manage-keyboard-manager-remappings

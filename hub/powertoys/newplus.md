@@ -1,7 +1,7 @@
 ---
 title: PowerToys New+ - Create Custom File Templates in Windows
 description: Create custom file and folder templates with PowerToys New+. Access personalized templates directly from File Explorer's context menu to boost productivity.
-ms.date: 08/25/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, New+, New, NewPlus, Win]
 # Customer intent: As a Windows power user, I want to learn about the New+ feature in PowerToys so that I can create files and folders from a personalized set of templates directly from the File Explorer context menu.
@@ -41,17 +41,17 @@ The default template location is in the local app data folder (`%localappdata%\M
 
 ### Display options
 
-#### Hide template filename extensions
+#### Hide the file extension in template names
 
 The option allows you to toggle the display of filename extensions. When this option is toggled off, a file named "filename.ext" will be displayed with its extension, appearing as "filename.ext". However, when this option is toggled on (the default), the template will be displayed without its extension, appearing simply as "filename".
 
-#### Hide template filename starting digits, spaces and dots
+#### Hide leading digits, spaces, and dots in template filenames
 
 The option gives you the ability to toggle the display of starting digits, spaces and dots. When this option is toggled off (the default), a file named "1. filename" will be displayed as is. However, when this option is toggled on, the template will be displayed as "filename". This is useful when using digits, spaces, and dots at the beginning of filenames to control the display order of templates.
 
 #### Hide the built-in "New" context menu
 
-When enabled, this option hides the built-in Windows "New" context menu and uses only New+ templates instead. This is useful if you want to rely exclusively on your New+ templates for creating new files and folders. Disabled by default.
+When enabled, this option hides the built-in Windows **New** menu that appears when you right-click an empty area of a folder or the desktop, so only **New+** is shown for creating files and folders from your templates. The option is off by default and applies only to your Windows user account. When you turn it off, or turn off New+, the built-in **New** menu is shown again. If your organization manages this option through Group Policy, you can't change it in PowerToys Settings.
 
 ### Behavior
 

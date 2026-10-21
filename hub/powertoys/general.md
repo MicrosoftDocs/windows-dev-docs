@@ -1,9 +1,9 @@
 ---
 title: Configure PowerToys General Settings for Windows
 description: Configure PowerToys general settings including updates, admin mode, themes, and startup behavior. Learn how to customize your Windows PowerToys experience with our step-by-step guide.
-ms.date: 08/25/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
-no-loc: [PowerToys, Windows, Insider]
+no-loc: [PowerToys, Windows, Insider, CLI]
 # Customer intent: As a Windows power user, I want to learn how to configure the general settings for PowerToys.
 ---
 
@@ -85,6 +85,52 @@ The Quick Access flyout provides a shortcut to toggle PowerToys utilities on or 
 ## Back up & restore
 
 Set a location where you want to save your PowerToys settings. You can also restore your settings from an existing backup.
+
+## Command-line tools
+
+PowerToys includes command-line tools that you can use in scripts and terminals. The installer adds the `bin` folder of the PowerToys installation folder to your `PATH` environment variable, so you can run these tools from any terminal without typing the full path. For per-user installations, PowerToys updates the user `PATH`; for machine-wide installations, it updates the system `PATH`. Open a new terminal window after you install PowerToys to pick up the change.
+
+| Command | Description |
+| :--- | :--- |
+| `PowerToys.Settings.CLI.exe` | View and change which PowerToys utilities are enabled. For more information, see [Settings CLI](#settings-cli). |
+| `PowerToys.AdvancedPaste.CLI.exe` | Run Advanced Paste actions, such as converting clipboard content to plain text, Markdown, or JSON, without opening the Advanced Paste window. |
+| `PowerToys.FancyZones.CLI.exe` | Command-line interface for FancyZones. For more information, see [FancyZones command-line reference](./fancyzones.md#command-line-reference). |
+| `PowerToys.FileLocksmith.CLI.exe` | Command-line interface for File Locksmith. For more information, see [File Locksmith command-line reference](./file-locksmith.md#command-line-reference). |
+| `PowerToys.ImageResizer.CLI.exe` | Command-line interface for Image Resizer. For more information, see [Image Resizer command-line reference](./image-resizer.md#command-line-reference). |
+| `PowerToys.LightSwitch.CLI.exe` | Check the Light Switch state, switch between light and dark themes, and turn scheduling on or off. Light Switch must be enabled. |
+| `PowerToys.PowerDisplay.CLI.exe` | Command-line interface for Power Display. For more information, see [Power Display command-line interface](./power-display.md#command-line-interface). |
+
+Each command forwards its arguments to the matching tool in the PowerToys installation folder. Run a command with `--help` to see the options that it supports.
+
+### Settings CLI
+
+Use the Settings CLI to check which utilities are enabled and to enable or disable utilities without opening the Settings app. The Settings CLI only changes whether a utility is enabled; it doesn't change a utility's other settings.
+
+| Command | Description |
+| :--- | :--- |
+| `list` | Lists all PowerToys utilities and whether each one is enabled. |
+| `status <module>` | Shows whether one utility is enabled. |
+| `enable <module>` | Enables a utility. |
+| `disable <module>` | Disables a utility. |
+
+Add `--json` to the `list` and `status` commands to get JSON output for scripts. The output shows the effective enabled state, including any state that's set by [Group Policy](./grouppolicy.md). Use `--help` to show usage information and `--version` to show the version.
+
+Utilities are identified by their internal module names, such as `FancyZones`, `AlwaysOnTop`, `MouseButtonLock`, or `PowerLauncher` for PowerToys Run. Run `list` to see the names that you can use.
+
+You can run `list` and `status` while PowerToys is running. To use `enable` or `disable`, exit PowerToys first. The new state is saved and applied the next time PowerToys starts. You can't change the state of a utility that's configured by Group Policy.
+
+```powershell
+# Show the enabled state of every utility as JSON
+PowerToys.Settings.CLI.exe list --json
+
+# Check whether FancyZones is enabled
+PowerToys.Settings.CLI.exe status FancyZones
+
+# Exit PowerToys, then disable Always On Top
+PowerToys.Settings.CLI.exe disable AlwaysOnTop
+```
+
+The command returns exit code `0` when it succeeds and `1` when it fails.
 
 ## Experimentation
 

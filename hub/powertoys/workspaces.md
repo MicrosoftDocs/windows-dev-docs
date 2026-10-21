@@ -1,7 +1,7 @@
 ---
 title: PowerToys Workspaces Utility for Windows Desktop Management
 description: Learn how to use PowerToys Workspaces utility to efficiently launch applications in custom positions and configurations. Create desktop layouts, add CLI arguments, and manage workspaces with this Windows desktop manager tool.
-ms.date: 09/14/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Win]
 # customer intent: As a Windows power user, I want to learn how to use the Workspaces utility for Windows.
@@ -69,6 +69,13 @@ You can find more information on VS Code and Terminal CLI arguments can be found
 ## Launching apps as admin
 
 To launch apps as admin, select the "Launch as Admin" box in the respective app's dropdown menu. On launch, a User Account Control (UAC) dialog will be shown for each app that has been set to launch as admin.
+
+If an app that's set to launch as admin is an EXE file and PowerToys can't verify its digital signature (for example, because the file isn't signed, its signature doesn't match its contents, or its certificate was revoked), Workspaces asks for confirmation before launching it. The **Run this app as administrator?** dialog shows the app, its location, and the reason the signature couldn't be verified. Choose one of the following options:
+
+- **Skip this app** (default): Workspaces doesn't launch the app, shows it as **Skipped** in the launch status dialog, and continues launching the other apps in the workspace. Pressing <kbd>Esc</kbd> or closing the dialog also skips the app.
+- **Run anyway**: Workspaces launches the app as admin for this launch only. Your choice isn't remembered, so you're asked again the next time you launch the workspace.
+
+Expand **Details** to see the app's command-line arguments and Windows verification status, and select **Copy details** to copy this information to the clipboard. Your choice doesn't replace User Account Control, so Windows may still ask for administrator permission. Apps that aren't EXE files, such as packaged apps, aren't checked.
 
 > [!IMPORTANT]
 > There is a known issue where apps that launch as admin are unable to be repositioned to the desired layout. The team is actively working on a fix for an upcoming release.

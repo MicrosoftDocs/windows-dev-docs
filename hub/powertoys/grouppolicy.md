@@ -1,7 +1,7 @@
 ---
 title: Configure PowerToys with Group Policy Settings
 description: Learn how to configure and manage PowerToys utilities using Group Policy settings, administrative templates, and registry configurations for enterprise environments.
-ms.date: 09/20/2026
+ms.date: 10/14/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Group Policy, Win]
 # customer intent: As a Windows power user, I want to learn how to configure PowerToys using Group Policy settings.
@@ -121,8 +121,10 @@ These policies have a higher priority than, and will override, the policy "Confi
 |Image Resizer|Image Resizer: Configure enabled state|ConfigureEnabledUtilityImageResizer|
 |Keyboard Manager|Keyboard Manager: Configure enabled state|ConfigureEnabledUtilityKeyboardManager|
 |Light Switch | Light Switch: Configure enabled state|ConfigureEnabledUtilityLightSwitch|
+|Auto Hide Cursor|Auto Hide Cursor: Configure enabled state|ConfigureEnabledUtilityAutoHideCursor|
 |CursorWrap|CursorWrap: Configure enabled state|ConfigureEnabledUtilityCursorWrap|
 |Find My Mouse|Find My Mouse: Configure enabled state|ConfigureEnabledUtilityFindMyMouse|
+|Mouse Button Lock|Mouse Button Lock: Configure enabled state|ConfigureEnabledUtilityMouseButtonLock|
 |Mouse Highlighter|Mouse Highlighter: Configure enabled state|ConfigureEnabledUtilityMouseHighlighter|
 |Mouse Jump|Mouse Jump: Configure enabled state|ConfigureEnabledUtilityMouseJump|
 |Mouse Pointer Crosshairs|Mouse Pointer Crosshairs: Configure enabled state|ConfigureEnabledUtilityMousePointerCrosshairs|

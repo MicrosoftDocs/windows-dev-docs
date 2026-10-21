@@ -1,7 +1,7 @@
 ---
 title: ZoomIt Screen Zoom and Annotation Tool by Sysinternals
 description: ZoomIt by Sysinternals is a powerful screen zoom, annotation, and recording tool for technical presentations. Download with PowerToys or standalone. Perfect for demos and screen capture.
-ms.date: 08/25/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Win]
 #Customer intent: As a Windows power user, I want to learn about the ZoomIt utility by Sysinternals, which is now available with PowerToys.
@@ -111,6 +111,8 @@ When you save a standard screenshot to a file, ZoomIt offers **Zoomed PNG**, **A
 ## Recording and trim editor
 
 After ZoomIt finishes a recording, the trim editor opens so you can shorten the clip before saving. You can append additional clips to the current recording from the editor and choose **No Transition (Hard Cut)**, **Fade to Black (0.5s)**, or **Fade to White (0.5s)** between clips. This makes it easier to stitch together multi-take demos in a single output file.
+
+If ZoomIt can't capture audio from the microphone or system audio during a recording, it doesn't stop the recording. Instead, ZoomIt turns off capture for the unavailable audio source for the rest of that recording, keeps recording the screen, and shows a warning notification.
 
 For more details on using ZoomIt, including additional hotkey information, see [ZoomIt](/sysinternals/downloads/zoomit) in the Sysinternals documentation. For information about the DemoType feature in ZoomIt, see [Make demo typing easy with DemoType in ZoomIt](https://techcommunity.microsoft.com/blog/sysinternals-blog/make-demo-typing-easy-with-demotype-in-zoomit-v8-0/4050566) on the Sysinternals blog.
 

@@ -1,7 +1,7 @@
 ---
 title: PowerToys Shortcut Guide utility for Windows
 description: Learn how to use the PowerToys Shortcut Guide to look up keyboard shortcuts for Windows, PowerToys, and popular apps in a single context-aware reference window.
-ms.date: 08/25/2026
+ms.date: 10/14/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, File Explorer, WinGet]
 # customer intent: As a Windows power user, I want to learn how to use the Shortcut Guide utility for Windows.
@@ -46,8 +46,8 @@ Shortcut Guide ships with the following built-in manifests. The exact set may ch
 | Browsers | Microsoft Edge, Google Chrome, Mozilla Firefox, Brave |
 | Communication | Microsoft Teams, Slack, Discord, Telegram Desktop, Zoom Workplace |
 | Developer tools | Visual Studio Code, Windows Terminal, IntelliJ IDEA (Community), Godot, Postman |
-| Creative | Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Adobe After Effects, DaVinci Resolve, Figma, GIMP, Greenshot, Inkscape, Blender, ON1 Photo RAW |
-| Productivity | 1Password, Obsidian |
+| Creative | Ableton Live, Adobe Photoshop, Adobe Illustrator, Adobe InDesign, Adobe After Effects, DaVinci Resolve, Figma, GIMP, Greenshot, Inkscape, Blender, ON1 Photo RAW |
+| Productivity | 1Password, Claude, Obsidian |
 
 > [!TIP]
 > Don't see an app you use? You can [open a feature request on the PowerToys repository](https://github.com/microsoft/PowerToys/issues/new?template=feature_request.yml) asking for a built-in manifest. Please include the app name and a link to the app's official keyboard shortcut documentation so the manifest can be authored accurately. If you'd rather not wait, you can add the shortcuts yourself with a [user manifest](#add-shortcuts-for-your-own-apps).
