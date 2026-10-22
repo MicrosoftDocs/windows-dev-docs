@@ -2,7 +2,7 @@
 title: What's new in Windows SDK
 description: Provides information about release notes for the Windows SDK.
 ms.topic: release-notes
-ms.date: 09/30/2026
+ms.date: 10/22/2026
 keywords: windows win32, windows app development, Windows SDK, Windows Platform SDK, windows 11
 ms.localizationpriority: medium
 ---
@@ -56,9 +56,6 @@ Released: **September, 2026** <br><br>
 > - `User.GetAgeVerificationStatusAsync`: Gets the age verification status of the user
 > - `UserAgeRange`: Class exposing the `Lower` and `Upper` bounds of a user's age range
 > - `UserAgeVerificationStatus`: Enumeration describing the user's age verification status
->
-> [!NOTE]
-> The age signal APIs (`User.GetUserAgeRangeAsync`, `User.GetAgeVerificationStatusAsync`, `UserAgeRange`, and `UserAgeVerificationStatus`) are documented ahead of availability. They aren't enabled at runtime yet, and are planned to be turned on in a future release later this year. Calls made before then return no age data, so design your app to fall back to its default behavior.
 >
 > **Windows.System.RemoteDesktop.Provider**:
 > <br/>
@@ -1177,9 +1174,6 @@ Released: **August, 2026** <br><br>
 > - `User.GetAgeVerificationStatusAsync`: Gets the age verification status of the user
 > - `UserAgeRange`: Enumeration describing the user's age range
 > - `UserAgeVerificationStatus`: Enumeration describing the user's age verification status
->
-> [!NOTE]
-> The age signal APIs (`User.GetUserAgeRangeAsync`, `User.GetAgeVerificationStatusAsync`, `UserAgeRange`, and `UserAgeVerificationStatus`) are documented ahead of availability. They aren't enabled at runtime yet, and are planned to be turned on in a future release later this year. Calls made before then return no age data, so design your app to fall back to its default behavior.
 >
 > **Windows.UI.Notifications**:
 > <br/>
