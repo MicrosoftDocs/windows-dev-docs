@@ -4,7 +4,7 @@ author: GrantMeStrength
 ms.author: jken
 description: Find Windows app development support, troubleshooting guidance, community resources, and links to current tools and SDK documentation.
 ms.topic: overview
-ms.date: 09/10/2026
+ms.date: 10/23/2026
 ms.localizationpriority: medium
 ---
 
@@ -47,7 +47,6 @@ These tools help you build, package, and ship Windows apps from any editor or fr
 - **[WinApp VS Code extension](https://devblogs.microsoft.com/ifdef-windows/announcing-the-winapp-vs-code-extension-run-debug-and-package-windows-apps-in-vs-code/)** *(preview)* - Run, debug, and package Windows apps directly in VS Code.
 - **[WinUI agent plugin for GitHub Copilot and Claude Code](https://devblogs.microsoft.com/ifdef-windows/build-native-windows-apps-with-ai-agents-for-winui-and-windows-app-sdk/)** *(open-source, preview)* - AI-assisted scaffolding, building, and iteration for WinUI apps.
 - **[AI Dev Gallery](https://github.com/microsoft/ai-dev-gallery)** *(open-source)* - Interactive samples for on-device AI on Windows, including Windows AI APIs.
-- **[Dev Home](https://github.com/microsoft/devhome)** *(open-source)* - Set up your development environment, manage dev drives, and monitor system performance.
 
 ## Debugging with GitHub Copilot
 

@@ -82,7 +82,7 @@
 
 - [Windows App SDK samples on GitHub](https://github.com/microsoft/WindowsAppSDK-Samples): Official code samples demonstrating Windows App SDK features.
 - [WinUI 3 Gallery app](https://github.com/microsoft/WinUI-Gallery): Interactive showcase of all WinUI 3 controls with source code.
-- [Windows developer tools](/windows/apps/develop/dev-tools/): Dev Home, Dev Drive, WinGet, Windows Terminal, and WSL setup.
+- [Windows developer tools](/windows/apps/develop/dev-tools/): Dev Drive, WinGet, Windows Terminal, and WSL setup.
 - [Template Studio for WinUI](https://github.com/microsoft/TemplateStudio): Project templates with pre-configured patterns (MVVM, navigation, data access).
 
 ---
