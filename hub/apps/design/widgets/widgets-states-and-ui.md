@@ -1,7 +1,7 @@
 ---
 description: Learn about the different states of a widget and the UI components that are built into the Windows widgets experience.
 title: Widget states and built-in UI components
-ms.date: 07/05/2026
+ms.date: 10/23/2026
 ms.topic: article
 author: GrantMeStrength
 ms.author: jken
@@ -48,6 +48,8 @@ This is the state with the most design flexibility. Use the guidelines in this a
 
 Some widget scenarios may require that the user must sign in or perform other actions to be able to see personalized widget content. When the user is not signed in, you should consider presenting non-personalized content.
 
+If that content is a placeholder rather than personalized or actionable information, set [WidgetUpdateRequestOptions.IsPlaceholderContent](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetupdaterequestoptions.isplaceholdercontent) to `true`. The host may prioritize widgets with customized content over widgets with placeholder content. Use the [widget host properties](../../develop/widgets/widgets-create-a-template.md#windows-widget-host-properties) to account for interaction restrictions when the user context isn't authenticated.
+
 ### Error state - system provided
 
 ![A screenshot of a widget in the error state](./images/widgets-error-state.png)
@@ -67,13 +69,13 @@ Starting with Windows App SDK 1.4, widgets can provide a customization template 
 
 ## Built-in widget UI components
 
-Some UI elements of a widget are built into the widgets experience and, while these elements are not customizable by widget providers, it's important to be aware of what these elements are and how they behave.
+The widget host supplies UI such as the context menu and default header. Providers don't control all host UI, but they can declare customization support and override the header where the host supports it.
 
 ### Context menu (system provided)
 
 ![Context menu](./images/widgets-context-menu.png)
 
-The context menu is displayed when the user clicks on the three-dot icon on the top right. This menu allows users to select their preferred widget size and access the widget's configuration state. Partners will use the same template widget register “powered by ___”. 
+The context menu opens from the widget's three-dot button. Users can choose a supported size, unpin the widget, and open its customization UI if the provider declares **IsCustomizable** in the manifest. For implementation details, see [Implementing widget customization](../../develop/widgets/implement-widget-provider-cs.md#implementing-widget-customization).
 
 
 
@@ -81,8 +83,5 @@ The context menu is displayed when the user clicks on the three-dot icon on the 
 
 ![A screenshot of a widget with a red box and label calling out the attribution area at the top of the widget containing the widget name and icon.](./images/widgets-attribution.png)
 
-The attribution area is rendered by the widgets board based on the widget name and icon provided during widget registration. For more information on registering widgets, see [Widget provider package manifest XML format](../../develop/widgets/widget-provider-manifest.md).
-
-
-
+By default, the Widgets Board renders the attribution area from the widget name and icon in the package manifest. The default title bar can navigate to the URI specified by **AdditionalInfoUri** in the manifest. Where header customization is supported, a provider can override the header text and icon, or set `header` to `null` so content can extend into that region. Content extended into an empty header isn't clickable; this restriction doesn't disable the default title bar's **AdditionalInfoUri** navigation. See [Customize the widget header area](../../develop/widgets/widget-header-customization.md) and [Widget provider package manifest XML format](../../develop/widgets/widget-provider-manifest.md).
 

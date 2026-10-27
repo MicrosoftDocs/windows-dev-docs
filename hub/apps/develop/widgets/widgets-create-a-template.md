@@ -1,7 +1,7 @@
 ---
 description: Learn how to create a Windows widget template using the Adaptive Cards Designer, with data binding and action support.
 title: Create a widget template with the Adaptive Cards Designer
-ms.date: 07/05/2026
+ms.date: 10/27/2026
 ms.topic: how-to
 keywords: windows 11, widgets
 ms.localizationpriority: medium
@@ -11,7 +11,7 @@ ms.author: jken
 
 # Create a widget template with the Adaptive Cards Designer
 
-The UI and interaction for Windows Widgets are implemented using [Adaptive Cards](https://adaptivecards.io/). Each widget provides a visual template and, optionally, a data template which are defined using JSON documents that conform to the Adaptive Cards schema. This article walks you through the steps to create a simple widget template. 
+For an Adaptive Card widget, define the UI and interactions with an [Adaptive Cards](https://adaptivecards.microsoft.com/) JSON template and, optionally, a separate JSON data payload. This article walks you through a counting-widget template with data binding and conditional layout. Windows widgets can also display HTML from a URL; for that content format, see [Web widget providers](web-widget-providers.md).
 
 ## A counting widget
 
@@ -21,15 +21,31 @@ Apps need to implement a widget provider to generate and update the widget templ
 
 ## The Adaptive Cards Designer
 
-The [Adaptive Cards Designer](https://www.adaptivecards.io/designer/) is an online interactive tool that makes it easy to generate JSON templates for Adaptive Cards. Using the designer, you can see the rendered visuals and the data binding behavior in real-time as you build your widget template. Follow the link to open the designer, which will be used for all of the steps in this walkthrough.
+The [Adaptive Cards Designer](https://adaptivecards.microsoft.com/designer) is an online tool for editing card JSON and previewing its layout and data binding. Open the Designer to work on the template.
 
-## Create an empty template from a preset
+> [!IMPORTANT]
+> The Designer uses its own renderer and host options. Don't assume that features it offers are supported by the Widgets Board, or that it supplies Windows-specific `$host` values. This walkthrough doesn't depend on a host preset or a host-data editor. Test the final template in a Windows widget provider for each supported size and theme.
 
-At the top of the page, from the **Select host app** dropdown, choose Widgets Board. This will set the container size for the Adaptive Card to have a size that is supported for widgets. Note that widgets support small, medium, and large sizes. The size of the default template preset is the correct size for a small widget. Don't worry if the content overflows the borders because we will be replacing it with content designed to fit inside the widget. 
+The images below illustrate the card's layout, not the current Designer interface.
 
-There are three text editors at the bottom of the page. The one labeled **Card Payload Editor** contains the JSON definition of your widget's UI. The editor labeled **Sample Data Editor** contains JSON that defines an optional data context for your widget. The data context is bound dynamically to the Adaptive Card when the widget is rendered. For more information about data binding in Adaptive Cards, see [Adaptive Cards Template Language](/adaptive-cards/templating/language).
+## Start with a blank card
 
-The third text editor is labeled **Sample Host Data Editor**. Note that this editor may collapse below the page's other two editors. If so, click the + to expand the editor. Widget host apps can specify host properties that you can use in your widget template to dynamically display different content based on the current property values. The Widgets Board supports the following host properties.
+The **Card payload** editor contains the JSON definition of the card. Replace its contents with this blank card:
+
+```json
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.6",
+    "body": []
+}
+```
+
+The **Sample data** editor contains an optional JSON data context. For information about binding that data to the template, see [Adaptive Cards Template Language](/adaptive-cards/templating/language).
+
+## Windows widget host properties
+
+The Widgets Board supplies host properties at runtime. Reference them through `$host` in template expressions, such as `${$host.widgetSize}`. These properties are separate from your provider's data payload; adding a `widgetSize` field to the sample data doesn't set `$host.widgetSize`.
 
 | Property | Value | Description |
 |----------|-------|-------------|
@@ -39,26 +55,20 @@ The third text editor is labeled **Sample Host Data Editor**. Note that this edi
 | host.isHeaderSupported | true or false | When this value is true, header customization is supported. For more information, see [isHeaderSupported](/windows/apps/develop/widgets/widget-header-customization). |
 | host.isHeader | true or false | When this value is true, the host is requesting a payload specifically for rendering of the widget header. |
 | host.isWebSupported | true or false | When this value is false, the host does not currently support loading a widget's web content. When this occurs, web widgets will display the fallback JSON payload supplied by the widget provider, but this value can be use to further customize the content. For more information, see [Web widget providers](/windows/apps/develop/widgets/web-widget-providers)  |
-| host.isUserContextAuthenticated | true or false | When this value is false, the only action that is supported is [Action.OpenUrl](https://adaptivecards.io/explorer/Action.OpenUrl.html). The value of *isUserContextAuthenticated* can be used to adjust widget content appropriately, given the interactivity limitations. |
+| host.isUserContextAuthenticated | true or false | When this value is false, the only action that is supported is [Action.OpenUrl](https://adaptivecards.microsoft.com/?topic=Action.OpenUrl). The value of *isUserContextAuthenticated* can be used to adjust widget content appropriately, given the interactivity limitations. |
 
 
-The **Container size** and **Theme** dropdowns next to the **Select host app** dropdown at the top of the page allow you to set these properties without manually editing the sample host JSON in the editor.
-
-## Create a new card
-
-In the upper left corner of the page, click **New card**. In the *Create* dialog, select **Blank Card**. You should now see an empty Adaptive Card. You will also notice that the JSON document in the sample data editor is empty.  
-
-The counting widget that we will create is very simple, only consisting of 4 [TextBlock](https://adaptivecards.io/explorer/TextBlock.html) elements and one action of type [Action.Execute](https://adaptivecards.io/explorer/Action.Execute.html), that defines the widget's button. 
+The counting widget uses four [TextBlock](https://adaptivecards.microsoft.com/?topic=TextBlock) elements and one [Action.Execute](https://adaptivecards.microsoft.com/?topic=Action.Execute) action for its button.
 
 ## Add TextBlock elements
 
-Add four **TextBlock** elements by dragging them from the **Card elements** pane on the left of the page onto the blank adaptive card in the preview pane. At this point, the widget preview should look like the following image. The content again overflows outside of the widget borders, but this will be fixed in the following steps.
+Add four **TextBlock** elements from the Designer's element palette, or add them directly in the card JSON. Before conditional layout is applied, the card has four lines of text, as illustrated below.
 
 :::image type="content" source="../../design/widgets/images/widgets-designer-walkthrough-1.png" alt-text="An adaptive card in progress. It shows a widget with four lines containing the text New TextBlock. The four lines of text overflow the bottom border of the widget.":::
 
 ## Implementing conditional layout
 
-The **Card Payload Editor** has been updated to reflect the **TextBlock** elements that we added. Replace the JSON string for the **body** object with the following:
+In the **Card payload** editor, replace the **body** array with the following fragment:
 
 ```json
 "body": [
@@ -86,25 +96,25 @@ The **Card Payload Editor** has been updated to reflect the **TextBlock** elemen
 
 In the Adaptive Cards Template Language, the `$when` property specifies that the containing element is displayed when the associated value evaluates to true. If the value evaluates to false, the containing element is not displayed. In the **body** element in our example, one of the three **TextBlock** elements will be shown, and the other two hidden, depending on the value of the `$host.widgetSize` property.  For more information about the conditionals supported in Adaptive Cards, see [Conditional layout with $when](/adaptive-cards/templating/language#conditional-layout-with-when).
 
-Now the preview should look like the following image:
+Without evaluating the template expressions, the card shows all four text blocks:
 
 :::image type="content" source="../../design/widgets/images/widgets-designer-walkthrough-2.png" alt-text="An adaptive card in progress. It shows a widget with four lines containing the text specified in the JSON payload shown in the previous step. Instead of conditionally hiding elements, all of the elements are visible and overflow the bottom border of the image.":::
 
-Note that the conditional statements aren't being reflected in the preview. This is because the designer isn't simulating the behavior of the widget host. Click the **Preview mode** button at the top of the page to start the simulation. The widget preview now looks like the following image:
+When the Widgets Board evaluates the template with `$host.widgetSize` set to `"small"`, only the small-size text block appears alongside the count:
 
 :::image type="content" source="../../design/widgets/images/widgets-designer-walkthrough-3.png" alt-text="An adaptive card in progress. It shows a widget with two lines containing the text specified in the JSON payload. Only the TextBlock for the small size is rendered.":::
 
-From the **Container size** dropdown, select "Medium" and note that the preview switches to only show the **TextBlock** for the medium size. The container in the preview also changes size, demonstrating how you can use the preview to make sure that your UI fits within the widget container for each supported size.
+After integrating the template with your provider, resize the pinned widget in the Widgets Board and check that the matching text block appears. Declare each size you want to test in the [widget provider manifest](widget-provider-manifest.md#size). A generic Designer preview without Windows host data can't verify these conditions.
 
 ## Bind to the data context
 
-Our example widget will use a custom state property named "count". You can see in the current template that the value for the first **TextBlock** includes the variable reference `$count`. When the widget is running in the Widgets Board, the widget provider is responsible for assembling the data payload and passing it to the widget host. At design time, you can use the **Sample Data Editor** to prototype your data payload and see how different values impact the display of your widget. Replace the empty data payload with the following JSON.
+The example uses a data property named `count`, referenced by `${count}` in the first **TextBlock**. At runtime, the provider sends the data payload to the widget host. At design time, enter the following JSON in the **Sample data** editor and enable the Designer's preview to check the count binding. This sample data doesn't supply the separate Windows host properties.
 
 ```json
 {"count": "2"}
 ```
 
-Note that the preview now inserts the value specified for the *count* property into the text for the first **TextBlock**.
+With `{"count": "2"}` as the sample data, template expansion replaces `${count}` with `2` in the first **TextBlock**. Check this binding in the Designer after enabling preview. Check the separate `$host.widgetSize` conditions in the Widgets Board, as described above.
 
 :::image type="content" source="../../design/widgets/images/widgets-designer-walkthrough-4.png" alt-text="An adaptive card in progress. The first line of text now includes the value 2 from the data payload.":::
 
@@ -124,13 +134,13 @@ With Adaptive Cards, interactive elements are defined with **action** elements. 
     }                                                               
 ]
 ```
-In this JSON string, *type* property specifies the type of action that is being represented. Widgets only support the "Action.Execute" action type. The *title* contains the text that is displayed on the button for the action. The *verb* property is an app-defined string that the widget host will send to the widget provider to communicate the intent associated with the action. A widget can have multiple actions, and the widget provider code will check the value of the verb in the request to determine what action to take.
+The *type* property selects **Action.Execute**, which the widget host forwards to your provider's **OnActionInvoked** callback. Use **Action.OpenUrl** for URL navigation instead; it doesn't invoke that provider callback. The *title* supplies the button text, and *verb* is the app-defined operation the provider handles. When `$host.isUserContextAuthenticated` is false, don't offer **Action.Execute** interactions; only **Action.OpenUrl** is supported.
 
 :::image type="content" source="../../design/widgets/images/widgets-designer-walkthrough-5.png" alt-text="The final adaptive card. A blue button with the text Increment is displayed after the two text lines.":::
 
 ## The complete widget template
 
-The following code listing shows the final version of the JSON payload.
+The following code listing shows the final template for the counting-widget interaction. Its **Action.Execute** button requires an authenticated user context. Validate it in the Widgets Board with your provider; the Designer doesn't run your provider's increment handler.
 
 ```json
 {

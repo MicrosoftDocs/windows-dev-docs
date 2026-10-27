@@ -2,7 +2,7 @@
 title: Customize the widget header area
 description: Learn how to customize the header area displayed for your Windows widget in the Widgets Board by modifying your Adaptive Card payload.
 ms.topic: how-to
-ms.date: 07/05/2026
+ms.date: 10/23/2026
 ms.localizationpriority: medium
 author: GrantMeStrength
 ms.author: jken
@@ -11,6 +11,8 @@ ms.author: jken
 # Customize the widget header area
 
 Apps that implement Windows widgets can customize the header that is displayed for their widget in the Widgets Board, overriding the default presentation. Header customization is implemented in the Adaptive Card payload you pass to the OS from your widget provider, so the steps are the same regardless of the language your widget provider is implemented in. For a walkthrough of creating a widget provider, see [Implement a widget provider in a C# Windows App](implement-widget-provider-cs.md) or [Implement a widget provider in a win32 app (C++/WinRT)](implement-widget-provider-win32.md).
+
+Header customization depends on host support. The `$host.isHeaderSupported` template property indicates whether the host supports it; see [Windows widget host properties](widgets-create-a-template.md#windows-widget-host-properties). The `header` field is a Windows widget extension to the card payload. Validate its presentation in the Widgets Board, not only in the general-purpose Adaptive Cards Designer.
 
 ## The default header
 
@@ -24,14 +26,14 @@ The following example shows a portion of the Adaptive Card JSON payload for a wi
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json", 
     "version": "1.6", 
     "body": [
-        ...
+        { "type": "TextBlock", "text": "Weather for Redmond" }
     ] 
   } 
 ```
 
 ## Override the display name string
 
-You can override the value specified in the **DisplayName** element in the app manifest by adding a `header` field to with the new display name in the JSON payload before sending it to the widget host.
+You can override the value specified by the **DisplayName** attribute in the app manifest by adding a `header` field with the new display name to the JSON payload before sending it to the widget host.
 
 The following example demonstrates overriding the display name string.
 
@@ -41,7 +43,7 @@ The following example demonstrates overriding the display name string.
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json", 
     "version": "1.6", 
     "body": [
-        ...
+        { "type": "TextBlock", "text": "Weather for Redmond" }
     ] ,
     "header": "Redmond Weather"
   } 
@@ -59,7 +61,7 @@ The following example demonstrates overriding the display name string and icon.
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json", 
     "version": "1.6", 
     "body": [
-        ...
+        { "type": "TextBlock", "text": "Weather for Redmond" }
     ] ,
     "header": { 
          "text": "Redmond weather", 
@@ -80,9 +82,8 @@ The following example demonstrates setting an empty header.
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json", 
     "version": "1.6", 
     "body": [
-        ...
+        { "type": "TextBlock", "text": "Weather for Redmond" }
     ] ,
     "header": null
 } 
 ```
-

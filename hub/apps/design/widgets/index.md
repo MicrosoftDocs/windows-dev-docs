@@ -1,7 +1,7 @@
 ---
 description: Learn how to design and build Windows widgets for the Widgets Board in Windows 11, with layout, states, and interaction guidance.
 title: Windows Widgets
-ms.date: 07/05/2026
+ms.date: 10/27/2026
 ms.topic: article
 author: GrantMeStrength
 ms.author: jken
@@ -19,15 +19,19 @@ Windows Widgets are small UI containers that display text and graphics, associat
 
 | Term | Definition |
 |------|------------|
-| Widgets host | An application that displays and manages Windows widgets. In the current release, the only Widgets host is the Widgets Board built into Windows 11. |
+| Widgets host | An application that displays and manages Windows widgets. The Widgets Board built into Windows 11 is a widget host. |
 | Widgets Board | The Widgets Board is a Windows 11 system component that is displayed over the desktop when the user clicks the Widgets icon on the taskbar, uses the Windows+W shortcut, or swipes from the left edge of the screen. The Widgets Board displays widgets and manages their layout on the board. |
-| Widget | A widget is an [Adaptive Card](https://adaptivecards.io/) that presents important content or actions from an app. It allows users to access desired information instantly without the need to launch the associated app or website. Widget content is refreshed dynamically throughout the day to provide the user with current and interesting content that can be consumed at a glance. Widgets provide basic interactive features that allow the user to launch the associated app for deeper engagement. Widgets are not intended to replace apps and websites.  |
+| Widget | A small UI container that presents content or actions from an app. You can define its content with an [Adaptive Card](https://adaptivecards.io/) or display HTML from a URL with a [web widget provider](../../develop/widgets/web-widget-providers.md). Widgets provide information and actions at a glance, with links to your app for more detailed tasks. |
 | Widget provider | A widget provider is a Windows app that provides content to be displayed in the widget. The widget provider owns the content, layout, and interactive elements of the widget.  |
 
+> [!IMPORTANT]
+> Web widgets are available only to users in the European Economic Area (EEA). Check the [web widget requirements](../../develop/widgets/web-widget-providers.md#limitations-and-requirements) before selecting HTML content.
 
 ### Widget design guidance 
 
-The visual experience of a widget includes visual elements and interaction elements that are defined using the Adaptive Cards JSON format. The [Adaptive Cards Designer](https://www.adaptivecards.io/designer/) provides a real-time editor for designing adaptive cards as well as templates for the supported widget sizes and themes. It's important that your widget's design adhere to the Windows Widget design principles to help ensure that the Widgets Board provides a consistent and familiar experience for all widgets.
+For an Adaptive Card widget, define the visual and interactive elements in an Adaptive Cards JSON template. Use the [Adaptive Cards Designer](https://adaptivecards.microsoft.com/designer) to edit the card, then validate Windows-specific host properties, sizes, themes, and actions in the Widgets Board. The Designer's renderer and host options aren't a substitute for testing in Windows. For a web widget, design the HTML content for the widget's size, theme, and interaction requirements; the Adaptive Cards Designer doesn't edit that HTML.
+
+Both rendering approaches should follow the widget design principles below. For web-content setup, resource requests, and messaging, see [Web widget providers](../../develop/widgets/web-widget-providers.md).
 
 For a high-level walkthrough of the visual elements of a widget see [Widget states and built-in UI components](widgets-states-and-ui.md).
 
@@ -63,7 +67,7 @@ A widget should surface relevant information at the right time and in the right 
 1. Your app can support multiple individual widgets. Determine the number of separate widgets you want to support so that each widget focuses on a specific purpose.
 1. Determine the content you want to include for each widget. A single widget can support three different sizes; small, medium, and large. For each widget, think about what content would bring the most value to users and your business needs. For each size from small to large, the purpose of the widget should remain the same, but the amount of information displayed should expand with larger sizes. We recommend that widget providers implement all widget sizes to give users flexibility when customizing the widget layout. 
 1. Think about the user interactions your widget will support. Users can click on the widget title or any click targets that you've defined on the widget. These interactions can activate deep-link shortcuts into your app or web site that take users directly to what they're interested in, so that they don't have to navigate from the root of your app. Consider the different navigational models offered.  
-1. Apps must implement a widget provider that implements the back-end functionality to send your widget's layout and data to the widgets board to be displayed. Currently you can implement a widget provider using a packaged Win32 desktop app or a Progressive Web App (PWA). For more information on creating a Win32 widget provider, see [Widget service providers](../../develop/widgets/widget-providers.md). For information on PWA widget providers, see [Build PWA-driven widgets](/microsoft-edge/progressive-web-apps-chromium/how-to/widgets).
+1. Choose your provider implementation and content format. A packaged Win32 desktop app can supply Adaptive Card content or use the web-widget APIs to display HTML. A Progressive Web App (PWA) uses widget definitions in its web app manifest and handles events in a service worker. See [Widget providers](../../develop/widgets/widget-providers.md), [Web widget providers](../../develop/widgets/web-widget-providers.md), or [Build PWA-driven widgets](/microsoft-edge/progressive-web-apps/how-to/widgets) for the corresponding implementation path.
 
 
 

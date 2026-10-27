@@ -1,7 +1,7 @@
 ---
 description: Learn the design requirements for integrating your app into the widget picker in the Windows 11 Widgets Board, including screenshots and icons.
 title: Integrate with the widget picker
-ms.date: 08/29/2026
+ms.date: 10/23/2026
 ms.topic: article
 author: GrantMeStrength
 ms.author: jken
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Integrate with the widget picker
 
-In the current release, the only Widgets host is the Widgets Board built into Windows 11. The Widgets Board displays widgets and manages their layout on the board. It also provides a widget picker that allows the user to select which available widgets are visible on the board. This article describes the assets required for a widget to successfully integrate into the widget picker.
+The Widgets Board built into Windows 11 displays widgets and manages their layout. Its widget picker lets users choose which available widgets to add to the board. This article describes the assets required to integrate a packaged desktop widget provider into that picker. For a PWA's manifest fields, see [Build PWA-driven widgets](/microsoft-edge/progressive-web-apps/how-to/widgets).
 
 ## Widget screenshot image
 
@@ -39,7 +39,7 @@ You may provide widget screenshots for multiple locales. The locale for each scr
 * Language-specific assets can be placed in subdirectories named after the locale to which they apply. For example: 
   * "English (United States)" assets should be placed in a subdirectory named "en-us": "Assets/en-us/Screenshot.png"
   * "French (France)" assets should be placed in a subdirectory named "fr-fr": "Assets/fr-fr/Screenshot.png"
-* Reference these images in the appxmanifest using the ms-appx: URI scheme. For example: Screenshot="ms-appx:Assets\Screenshot.png"
+* Reference the fallback asset with the package-relative **Path** attribute of a **Screenshot** element under **ThemeResources/Screenshots**. For example: `<Screenshot Path="Assets\Screenshot.png" DisplayAltText="Preview of the widget" />`. Don't use a `Screenshot` attribute or an `ms-appx:` URI in this manifest element.
 * If you don't include an image for a specific locale, then the fallback image in the root directory will be used. 
 
 The resource loader will automatically choose the language-appropriate asset to display. For more information, see: [Load images and assets tailored for scale, theme, high contrast, and others](../../windows-app-sdk/mrtcore/images-tailored-for-scale-theme-contrast.md#refer-to-an-image-file-from-your-app-package-manifest).
@@ -50,6 +50,5 @@ The resource loader will automatically choose the language-appropriate asset to 
 The following is an example of a widget screenshot image. 
 
 ![An example of a widget screenshot image.](./images/widgets-example-screenshot.png)
-
 
 

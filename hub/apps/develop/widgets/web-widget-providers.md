@@ -2,7 +2,7 @@
 title: Web widget providers
 description: Learn how to implement a Windows widget that serves its content from a remote URL, including setup, limitations, and example code.
 ms.topic: how-to
-ms.date: 07/05/2026
+ms.date: 10/23/2026
 ms.localizationpriority: medium
 author: GrantMeStrength
 ms.author: jken
@@ -10,30 +10,41 @@ ms.author: jken
 
 # Web widget providers
 
-Apps that implement Windows widgets can choose to populate the widget content with HTML served from a remote URL. Previously, the widget content could only be supplied in the Adaptive Card schema format in the JSON payload passed from the provider to the Widgets Board. Because web widget providers must still provide an Adaptive Card JSON payload, you should follow the steps for implementing a widget provider in [Implement a widget provider in a C# Windows App](implement-widget-provider-cs.md) or [Implement a widget provider in a win32 app (C++/WinRT)](implement-widget-provider-win32.md).
+You can populate a Windows widget with HTML served from a URL instead of defining its body with Adaptive Cards. Your provider still supplies an Adaptive Card JSON payload that specifies the content URL. Start with [Implement a widget provider in a C# Windows App](implement-widget-provider-cs.md) or [Implement a widget provider in a win32 app (C++/WinRT)](implement-widget-provider-win32.md), then add the web-content capabilities described here.
+
+The resource and messaging APIs in this article were introduced in [Windows App SDK 1.6.3](../../windows-app-sdk/release-notes/windows-app-sdk-1-6.md?pivots=stable#version-163-16241114003). Use a currently supported stable release from [Windows App SDK release channels](../../windows-app-sdk/release-channels.md), and test on a Windows 11 device with a widget host that supports web content.
+
+The C# examples are fragments for a packaged desktop widget provider. Add `using Microsoft.Windows.Widgets.Providers;` and `using Windows.Storage.Streams;` to the provider's source file. Continue to implement **IWidgetProvider** when you add **IWidgetResourceProvider** or **IWidgetProviderMessage**.
 
 ## Specify the content URL
 
-Widget providers pass a JSON payload to the Widgets Board with a call to [WidgetManager.UpdateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.updatewidget). For a web widget, instead of providing a **body** object defining the widget content, you should specify an empty **body** object and instead include a **metadata** object with a **webUrl** field that points to the URL that will supply the HTML content for the widget.
+Send your JSON payload with [WidgetManager.UpdateWidget](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.updatewidget). Specify a **metadata** object with a **webUrl** field that points to the HTML content. Include an Adaptive Card **body** as fallback content for hosts that don't support loading web content, rather than leaving those hosts with an empty widget.
 
 ```json
-{ 
-    "type": "AdaptiveCard", 
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json", 
-    "version": "1.6", 
-    "body": [], 
-    "metadata": 
-    { 
-        "webUrl": "https://www.contoso.com/widgetprovider.html" 
-    } 
-} 
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.6",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Open the app to view this content.",
+            "wrap": true
+        }
+    ],
+    "metadata": {
+        "webUrl": "https://contoso.com/widgetprovider.html"
+    }
+}
 ```
+
+The `$host.isWebSupported` template property indicates whether the host supports web content. Use it when you need to further adapt the fallback presentation. For details, see [Windows widget host properties](widgets-create-a-template.md#windows-widget-host-properties).
 
 ## Handle resource requests
 
 Widget providers can specify a web request filter string for a widget in the *WebRequestFilter* attribute of the **Definition** element in the provider's package manifest file. Whenever the widget content requests a resource by URI that matches the filter, the request will be intercepted and redirected to the widget provider's implementation of [IWidgetResourceProvider.OnResourceRequested](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetresourceprovider.onresourcerequested).
 
-The filter pattern is expressed using the format described in [Match Patterns](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns). The filter string in the registration must use [Punycode](https://en.wikipedia.org/wiki/Punycode) where necessary. All content types will be redirected when matched so the filter should only resolve to content intended to be obtained through the **IWidgetResourceProvider** in the application. For more information on the widget provider package manifest format, see [Widget provider package manifest XML format](/windows/apps/develop/widgets/widget-provider-manifest).
+The filter pattern uses the format described in [Match Patterns](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Match_patterns). Use [Punycode](https://en.wikipedia.org/wiki/Punycode) where necessary. The filter must match the origin specified by **webUrl**. Requests for all content types are redirected when they match, so limit the filter to resources your provider handles. For details, see [Widget provider package manifest XML format](widget-provider-manifest.md#definition).
 
 To handle resource requests, widget providers must implement the [IWidgetResourceProvider](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetresourceprovider) interface.
 
@@ -41,30 +52,25 @@ To handle resource requests, widget providers must implement the [IWidgetResourc
 internal class WidgetProvider : IWidgetProvider, IWidgetResourceProvider
 ```
 
-In the implementation of the **OnResourceRequested** method, widget providers can provide the requested resources by setting the [WidgetResourceRequestedArgs.Response](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs.response) property to a [WidgetResourceResponse](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourceresponse) object containing the requested resource. When obtaining the resource asynchronously, the provider should request a deferral by calling [WidgetResourceRequestedArgs.GetDeferral](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs.getdeferral) and then complete the deferral when the resource has been set.
+In **OnResourceRequested**, set [WidgetResourceRequestedArgs.Response](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs.response) to a [WidgetResourceResponse](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourceresponse) containing the resource. This example maps one requested URL to a packaged image. Include **Assets\image.png** as content in your app package. [RandomAccessStreamReference.CreateFromUri](/uwp/api/windows.storage.streams.randomaccessstreamreference.createfromuri) supports the **ms-appx** scheme, so you can create the stream reference without awaiting a file lookup.
 
 ```csharp
-async void IWidgetResourceProvider.OnResourceRequested(WidgetResourceRequestedArgs args)
+void IWidgetResourceProvider.OnResourceRequested(WidgetResourceRequestedArgs args)
 {
-    var deferral = args.GetDeferral();
-
-    if (args.Request.Uri.Length > 0)
+    if (args.Request.Uri == "https://contoso.com/logo-image")
     {
-        if (args.Request.Uri == "https://contoso.com/logo-image")
-        {
-            string fullPath = Windows.ApplicationModel.Package.Current.InstalledPath + "/Assets/image.png";
-            var file = await StorageFile.GetFileFromPathAsync(fullPath);
-            var response = new WidgetResourceResponse(RandomAccessStreamReference.CreateFromFile(file), "OK", 200);
-            response.Headers.Add("Content-Type", "image/png");
-            args.Response = response;
-        }
+        var imageUri = new System.Uri("ms-appx:///Assets/image.png");
+        var content = RandomAccessStreamReference.CreateFromUri(imageUri);
+        var response = new WidgetResourceResponse(content, "OK", 200);
+        response.Headers.Add("Content-Type", "image/png");
+        args.Response = response;
     }
-
-    deferral.Complete();
 }
 ```
 
-If the provider does not set a response on the **WidgetResourceRequestedArgs** object passed into the method, the system will retrieve the resource from the web. In this case, the provider can choose to modify the [Headers](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs) property of the [WidgetResourceRequestedArgs.Request](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs.request) object, such as to provide user context or tokens, and the system will use the updated headers when retrieving the resource from the web.
+This synchronous example doesn't need a deferral. If your implementation awaits work before setting the response, call [GetDeferral](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequestedargs.getdeferral) before the callback returns, and complete it in a `finally` block. Handle and report asynchronous failures according to your app's error-handling policy.
+
+If you don't set a response, the system retrieves the resource from the web. You can modify [WidgetResourceRequest.Headers](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetresourcerequest.headers) on **args.Request** before that fetch. Only add credentials to requests for origins you trust; a filter match alone isn't authorization to send a token.
 
 ## Handle messages to and from web content
 
@@ -72,28 +78,40 @@ To receive string messages from the widget's content that has been posted using 
 
 ```csharp
 internal class WidgetProvider : IWidgetProvider, IWidgetProviderMessage
-...
+```
+
+Add the callback to your provider class:
+
+```csharp
 public void OnMessageReceived(WidgetMessageReceivedArgs args)
 {
-    Console.WriteLine($"Message received from widget {args.WidgetContext.Id}: {args.Message}");
+    System.Console.WriteLine($"Message received from widget {args.WidgetContext.Id}: {args.Message}");
 }
 ```
 
-Widget providers can send a message to the web content of the widget by calling [WidgetManager.SendMessage](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager). You must provide the ID of the widget to which the message is sent, which is the value specified in the *Id* attribute of the **Definition** element in the provider's package manifest file. For more information see [Widget provider package manifest XML format](/windows/apps/develop/widgets/widget-provider-manifest). The message string can be simple text or the serialized form of an object interpreted by the web content. For more information, see [PostWebMessageAsString](/dotnet/api/microsoft.web.webview2.core.corewebview2.postwebmessageasstring).
+Send a message to a widget's web content with [WidgetManager.SendMessageToContent](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.sendmessagetocontent). Pass the widget instance ID from [WidgetContext.Id](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetcontext.id), not the definition ID from the package manifest. Multiple instances of one definition have different instance IDs.
+
+Call the following helper from a provider callback, passing the **WidgetContext** for the target instance, such as the context received by **CreateWidget** or **OnActionInvoked**. Serialize structured messages rather than constructing JSON with string interpolation, so values containing quotes or backslashes remain valid.
 
 ```csharp
-var message = $"{{ \"current_location\": \"{ location }\" }}";
-WidgetManager.GetDefault().SendMessageToContent("Weather_Widget", message);
+private static void SendLocationToWidget(WidgetContext widgetContext, string location)
+{
+    string message = System.Text.Json.JsonSerializer.Serialize(
+        new { current_location = location });
+    WidgetManager.GetDefault().SendMessageToContent(widgetContext.Id, message);
+}
 ```
+
+The web content receives the message as a string through the **window.chrome.webview** `message` event. If you serialize JSON as in this example, parse the string in your web content. For details, see [PostWebMessageAsString](/dotnet/api/microsoft.web.webview2.core.corewebview2.postwebmessageasstring) and the [WebView2 JavaScript API](/microsoft-edge/webview2/reference/javascript/webview).
 
 ## Limitations and requirements
 
 > [!IMPORTANT]
-> This feature is available only to users in the European Economic Area (EEA). In the EEA, installed apps that implement a feed provider can provide a content feed in the Widgets Board.
+> This feature is available only to users in the European Economic Area (EEA).
 
+## Related implementation paths
 
-
-
+Web widget providers aren't feed providers. For dashboard feeds and their regional requirements, see [Dashboards and feed providers](../feeds/feed-providers.md). For the separate PWA manifest and service-worker implementation path, see [Build PWA-driven widgets](/microsoft-edge/progressive-web-apps/how-to/widgets).
 
 
 

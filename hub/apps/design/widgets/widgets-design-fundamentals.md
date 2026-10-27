@@ -1,7 +1,7 @@
 ---
 description: Learn the fundamentals of designing a Windows widget, including layout, sizing, visual style, and iconography guidance for Windows 11.
 title: Widget design fundamentals
-ms.date: 08/29/2026
+ms.date: 10/23/2026
 ms.topic: article
 author: GrantMeStrength
 ms.author: jken
@@ -11,7 +11,7 @@ ms.localizationpriority: medium
 
 # Widget design fundamentals
 
-This article provides detailed guidance for designing the UI for a Windows widget.
+This article provides guidance for designing a Windows widget's layout, sizing, color, and typography. Adaptive Card examples use host-rendered controls. Apply the same design principles to HTML web widgets, but verify their layout in the target host rather than relying on an Adaptive Cards Designer preview.
 
 
 ## Widget sizes
@@ -20,7 +20,9 @@ This article provides detailed guidance for designing the UI for a Windows widge
 ![A screenshot showing examples of small, medium, and large sizes for a weather widget.](./images/widgets-sizes-2.png)
 ![A screenshot showing examples of small, medium, and large sizes for a traffic widget.](./images/widgets-sizes-3.png)
 
-Widgets provide three sizes for the user to choose from. It is recommended that you create and consider all 3 sizes and adapt your design specifically for each size. Small and medium sizes provide better discoverability as they get surfaced more often within the dynamic feed. Large sizes are useful for displaying more in-depth information. Supporting multiple sizes allows flexibility in users customizing the widgets they choose to pin to the widgets board.  
+Widgets support small, medium, and large sizes, as declared in the provider's manifest. Design for all three sizes when practical and adapt the content to each size. Large widgets can display more information, while smaller widgets should focus on the most important content or action. Supporting multiple sizes gives users flexibility when arranging their board.
+
+Small and medium sizes provide better discoverability as they get surfaced more often within the dynamic feed.
 
 
 
@@ -57,7 +59,9 @@ The Web Content Accessibility Guidelines (WCAG) 2.0 level AA requires a contrast
 
 ![A diagram of a widget with guidelines indicating the margins. Next to this is a diagram of a widget where the area inside the margins is colored blue to show the content area.](./images/widgets-margins.png)
 
-Each widget has a 16px margin around it and a 48px [Attribution area](widgets-states-and-ui.md#attribution-area) in which content cannot be placed. The only component that can live in the right side margin and bottom margin are the pagination dots. For examples of the positioning of the pagination dots, see the pagination section of [Widget interaction design guidance](widgets-interaction-design.md#pagination).
+The illustrated default layout uses a 16px margin and reserves a 48px [attribution area](widgets-states-and-ui.md#attribution-area) for the header. Keep regular content outside that area when using the default header. Where header customization is supported, a provider can set `header` to `null` to extend content into the header region, but that region isn't clickable. See [Customize the widget header area](../../develop/widgets/widget-header-customization.md).
+
+In the illustrated layout, only pagination dots occupy the right and bottom margins. For examples, see [Pagination](widgets-interaction-design.md#pagination).
 
 ![Two widget examples side by side. The left image shows guide lines dividing the widget into three columns, illustrating 4 pixel gutters between the columns. The right image shows guide lines dividing the widget into three rows, illustrating 4 pixel gutters between the rows.](./images/widgets-gutters.png)
 
@@ -84,11 +88,11 @@ For accessibility, the following table presents the text of the table shown in t
 | Subtitle | 20/28 epx | Large, Bolder |
 | Title | 28/36 epx | Extra Large, Bolder | 
 
-Segoe UI is the typeface used in Widgets and across Windows. The above type ramp includes the formulations of how to properly set the right styles in the Adaptive Cards Designer. Typeface styling should not deviate from the specified formulas above. For more information on using the Adaptive Cards Designer to create widget templates, see [Create a widget template with the Adaptive Cards Designer](../../develop/widgets/widgets-create-a-template.md).
+Use Segoe UI and the type ramp above for a consistent Windows widget presentation. The Adaptive Cards column gives the corresponding template properties; the target host controls their rendered appearance. For more information on creating widget templates, see [Create a widget template with the Adaptive Cards Designer](../../develop/widgets/widgets-create-a-template.md).
 
 ![Two example widgets with the phrase "The quick brown fox jumped over the lazy dog" and the text "Hyperlink". The left image has dark text on a light background. The right image has light text on a dark background. The hyperlink text is blue in both images.](./images/widgets-designer-default-font-colors.png)
 
-Within the Adaptive Cards Designer, titles and body copy use the default color associated with the widget theme. An additional option to differentiate title from body copy further is to use the subtle version of the default color. The accent color is only used for hyperlinks.  
+Use the default color associated with the widget theme for titles and body copy. You can use the subtle version of the default color to differentiate body copy, provided it maintains sufficient contrast. Reserve the accent color for hyperlinks in this design. Check the result in both light and dark themes in the Widgets Board.
 
 ## Profile pictures
 

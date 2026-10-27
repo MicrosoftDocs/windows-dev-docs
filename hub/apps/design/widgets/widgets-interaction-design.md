@@ -1,7 +1,7 @@
 ---
 description: Learn the interaction design patterns for Windows widgets, including tap targets, menus, custom actions, and input handling guidance.
 title: Widget interaction design guidance
-ms.date: 07/05/2026
+ms.date: 10/23/2026
 ms.topic: article
 author: GrantMeStrength
 ms.author: jken
@@ -25,11 +25,13 @@ The following are the maximum number of touch points recommended for each suppor
 | medium | 3 |
 | large | 4 |
 
-The following navigation elements are not supported in Windows Widgets:
+Don't design the widget around the following navigation patterns:
 
-- Pivots will not be supported within widgets
-- L2 Pages will not be supported within widgets
-- Vertical or horizontal scrolling will not be supported within Widgets
+- Pivots that switch between unrelated experiences.
+- Second-level pages for detailed tasks.
+- Vertical or horizontal scrolling to reach the widget's primary information.
+
+These are design constraints for a glanceable experience, not a statement that HTML web content can't implement scrolling or navigation. For a web widget, keep content usable within each supported size and move detailed tasks to the app or website.
 
 ## Containers
 
@@ -71,4 +73,4 @@ The following images show example of hyperlinks in a widget template.
 
 ![Two images of widgets that illustrate dropdown menus. In the left image the dropdown menu is collapsed. In the right image the dropdown is expanded and extends over the border of the widget](./images/widgets-dropdown-menus.png)
 
-Widgets are able to extend slightly beyond their widget size temporarily if the user is interacting with a menu or dropdown. The menu behavior should be light dismiss and close the menu if a user clicks outside of the menu / dropdown area.
+The illustration shows a host-rendered dropdown extending beyond the card boundary. Don't assume that custom HTML or a web widget's menus can render outside their content area. Test menu placement and clipping in the target host. Menus should dismiss when the user clicks outside them.

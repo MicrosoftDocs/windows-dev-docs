@@ -816,6 +816,8 @@ items:
             items:
               - name: Overview
                 href: widgets/widget-providers.md
+              - name: Create a Windows widget with GitHub Copilot
+                href: widgets/create-widget-with-copilot.md
               - name: Implement a widget provider in a Win32 app (C#)
                 href: widgets/implement-widget-provider-cs.md
               - name: Implement a widget provider in a Win32 app (C++/WinRT)
