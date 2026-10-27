@@ -2,7 +2,7 @@
 title: Widget provider ActivateApplication protocol
 description: Learn the command line activation parameters passed to a Windows widget provider app when it is activated by the Widgets Board.
 ms.topic: article
-ms.date: 07/05/2026
+ms.date: 10/23/2026
 ms.localizationpriority: medium
 author: GrantMeStrength
 ms.author: jken
@@ -23,7 +23,7 @@ When the widget provider is activated the command line will have `--widget-call=
 
 For example, the base64url part in
 
-`--widget-call=ew0KICAgICJXaWRnZXRDYWxsIjoiQ3JlYXRlV2lkZ2V0IiwNCiAgICAiV2lkZ2V0Q29udGV4dCI6ew0KICAgICAgICAiSWQiOiI5ODU4MjEwOS1jNmJmLTQzNzItODlkNi04OWY1N2ViNzU0ZjYiLA0KICAgICAgICAiRGVmaW5pdGlvbk5hbWUiOiJQV0FfQ291bnRpbmdfV2lkZ2V0IiwNCiAgICAgICAgIlNpemUiOiJMYXJnZSINCiAgICB9DQp9`
+`--widget-call=ewogICAgIldpZGdldENhbGwiOiJDcmVhdGVXaWRnZXQiLAogICAgIldpZGdldENvbnRleHQiOnsKICAgICAgICAiSWQiOiI5ODU4MjEwOS1jNmJmLTQzNzItODlkNi04OWY1N2ViNzU0ZjYiLAogICAgICAgICJEZWZpbml0aW9uSWQiOiJQV0FfQ291bnRpbmdfV2lkZ2V0IiwKICAgICAgICAiU2l6ZSI6IkxhcmdlIgogICAgfQp9`
 
 is decoded into
 
@@ -40,30 +40,23 @@ is decoded into
 
 ## Command line format details
 
-The Json command line encodes calls to the `IWidgetProvider` methods:
+The JSON command line represents calls corresponding to the [IWidgetProvider](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider) methods. The following pseudocode summarizes those methods; it isn't a compilable interface declaration.
 
 ```c++
     interface IWidgetProvider
     {
         void CreateWidget(WidgetContext widgetContext);
-        void DeleteWidget(String widgetId);
-        void OnActionInvoked(WidgetCallInvokedArgs actionInvokedArgs);
+        void DeleteWidget(String widgetId, String customState);
+        void OnActionInvoked(WidgetActionInvokedArgs actionInvokedArgs);
         void OnWidgetContextChanged(WidgetContextChangedArgs contextChangedArgs);
+        void Activate(WidgetContext widgetContext);
+        void Deactivate(String widgetId);
     }
 ```
 
-Each activation represents one method call. The Json object has a `WidgetCall` value with the method name,
-and then a value for each parameter, named as the parameter name except capitalized. Each parameter is mapped as a pair<variable name, value> to the json object. For example, for the `WidgetContext widgetContext` parameter of the `CreateWidget` method,
-the `WidgetContext` is defined like this:
+Each activation represents one method call. The JSON object has a `WidgetCall` value with the method name and properties containing the call's data. The examples below show the transport property names, including `Args` for callback argument objects.
 
-```c++
-    runtimeclass WidgetContext
-    {
-        String Id { get; };
-        String DefinitionId{ get; };
-        String Size { get; };
-    };
-```
+For a `WidgetContext`, the JSON contains `Id`, `DefinitionId`, and `Size`. `Id` identifies a widget instance, and `DefinitionId` identifies its manifest definition. The JSON represents `Size` as a string such as `"Large"`; the actual [WidgetContext.Size](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetcontext.size) API property is a **WidgetSize** enumeration, not a string.
 
 > [!Note]
 >  Widget providers should ignore unexpected parameter values to handle the case where additional parameters are added in the future.
@@ -81,7 +74,7 @@ The widget provider `CreateWidget` API call is marshalled to Json object:
 }
 ```
 
-The object will always include the `WidgetCall` value and all parameter values as specified by the `IWidgetProvider` method.
+Use the JSON transport format shown here when handling **ActivateApplication** arguments, rather than treating the JSON as a WinRT interface declaration.
 
 
 ### Marshalled objects examples

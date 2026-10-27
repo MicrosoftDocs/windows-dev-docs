@@ -2,7 +2,7 @@
 title: Implement a widget provider in a win32 app (C++/WinRT)
 description: Learn how to create a Windows widget provider in C++/WinRT, with step-by-step implementation of content, data updates, and user actions.
 ms.topic: how-to
-ms.date: 08/19/2026
+ms.date: 10/23/2026
 ms.localizationpriority: medium
 author: GrantMeStrength
 ms.author: jken
@@ -20,6 +20,7 @@ This sample code in this article is adapted from the [Windows App SDK Widgets Sa
 
 ## Prerequisites
 
+- A Windows 11 device with the Widgets Board available for testing.
 - Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
 - Visual Studio 2022 or later with the **WinUI application development** workload. Make sure to add the component for C++ (v143) from the optional dropdown.
 
@@ -29,7 +30,7 @@ In Visual Studio, create a new project. In the **Create a new project** dialog, 
 
 ## Add references to the Windows App SDK and Windows Implementation Library NuGet packages
 
-This walkthrough requires Microsoft.WindowsAppSDK version 2.3.1 or later. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select version 2.3.1, the minimum version used by this walkthrough, or a later stable version in the **Version** drop-down, and then click **Install**.
+This walkthrough uses [Microsoft.WindowsAppSDK version 2.5.1](../../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-251). In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select version 2.5.1 or a later supported stable version in the **Version** drop-down, and then click **Install**. For current support information, see [Windows App SDK release channels](../../windows-app-sdk/release-channels.md).
 
 This sample also uses the Windows Implementation Library NuGet package. In **Solution Explorer**, right-click **References** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.Windows.ImplementationLibrary". Select the latest version in the **Version** drop-down and then click **Install**.
 
@@ -147,6 +148,7 @@ Inside the **WidgetProvider** declaration in WidgetProvider.h, add a member for 
 
 ```cpp
 // WidgetProvider.h
+#include <mutex>
 #include <unordered_map>
 struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Windows::Widgets::Providers::IWidgetProvider>
 {
@@ -154,6 +156,7 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
     private:
         ...
         static std::unordered_map<winrt::hstring, CompactWidgetInfo> RunningWidgets;
+        static std::mutex RunningWidgetsMutex;
 
         
 ```
@@ -162,10 +165,10 @@ struct WidgetProvider : winrt::implements<WidgetProvider, winrt::Microsoft::Wind
 
 This example will declare some static strings to define the JSON templates for each widget. For convenience, these templates are stored in the local variables declared outside of the **WidgetProvider** class definition. If you need a general storage for the templates - they can be included as part of the application package: [Accessing Package Files](/windows/uwp/app-resources/uri-schemes#ms-appx-and-ms-appx-web). For information on creating the widget template JSON document, see [Create a widget template with the Adaptive Cards Designer](widgets-create-a-template.md).
 
-In the latest release, apps that implement Windows widgets can customize the header that is displayed for their widget in the Widgets Board, overriding the default presentation. For more information, see [Customize the widget header area](widget-header-customization.md).
+You can customize the header displayed for your widget in the Widgets Board, overriding the default presentation. For more information, see [Customize the widget header area](widget-header-customization.md).
 
 > [!NOTE]
-> In the latest release, apps that implement Windows widgets can choose to populate the widget content with HTML served from a specified URL instead of supplying content in the Adaptive Card schema format in the JSON payload passed from the provider to the Widgets Board. Widget providers must still provide an Adaptive Card JSON payload, so the implementation steps in this walkthrough are applicable to web widgets. For more information, see [Web widget providers](web-widget-providers.md).
+> Web widget support was added in [Windows App SDK 1.6.3](../../windows-app-sdk/release-notes/windows-app-sdk-1-6.md?pivots=stable#version-163-16241114003). You can display HTML served from a URL instead of defining the widget body with Adaptive Cards. You still provide an Adaptive Card JSON payload containing the content URL. For resource interception and messaging between your provider and the web content, see [Web widget providers](web-widget-providers.md). These capabilities supplement **IWidgetProvider**; they don't replace it.
 
 ```cpp
 // WidgetProvider.h
@@ -175,7 +178,7 @@ const std::string weatherWidgetTemplate = R"(
     "type": "AdaptiveCard",
     "version": "1.0",
     "speak": "<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>",
-    "backgroundImage": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg",
+    "backgroundImage": "https://raw.githubusercontent.com/microsoft/AdaptiveCards/59402c8d43f7a69a68e0b4fccc08f8a76fc98ccd/source/nodejs/adaptivecards-site/themes/adaptivecards/source/content/Mostly%20Cloudy-Background.jpg",
     "body": [
         {
             "type": "TextBlock",
@@ -199,7 +202,7 @@ const std::string weatherWidgetTemplate = R"(
                     "items": [
                         {
                             "type": "Image",
-                            "url": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png",
+                            "url": "https://raw.githubusercontent.com/microsoft/AdaptiveCards/59402c8d43f7a69a68e0b4fccc08f8a76fc98ccd/source/nodejs/adaptivecards-site/themes/adaptivecards/source/content/Mostly%20Cloudy-Square.png",
                             "size": "small",
                             "altText": "Mostly cloudy weather"
                         }
@@ -300,13 +303,18 @@ In the next few sections, we'll implement the methods of the **IWidgetProvider**
 
 ```cpp
 // WidgetProvider.cpp
+#include <optional>
+
 namespace winrt
 {
     using namespace Microsoft::Windows::Widgets::Providers;
 }
 
 std::unordered_map<winrt::hstring, CompactWidgetInfo> WidgetProvider::RunningWidgets{};
+std::mutex WidgetProvider::RunningWidgetsMutex{};
 ```
+
+All provider instances share this map. Guard every access with **RunningWidgetsMutex**, including startup recovery and customization callbacks. Copy the state needed for an update while holding the mutex, then release it before calling **UpdateWidget** so a widget-manager call doesn't hold the shared-state lock.
 
 ### CreateWidget
 
@@ -319,7 +327,10 @@ void WidgetProvider::CreateWidget(winrt::WidgetContext widgetContext)
     auto widgetId = widgetContext.Id();
     auto widgetName = widgetContext.DefinitionId();
     CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
-    RunningWidgets[widgetId] = runningWidgetInfo;
+    {
+        std::scoped_lock lock(RunningWidgetsMutex);
+        RunningWidgets[widgetId] = runningWidgetInfo;
+    }
     
     // Update the widget
     UpdateWidget(runningWidgetInfo);
@@ -334,6 +345,7 @@ The widget host calls [DeleteWidget](/windows/windows-app-sdk/api/winrt/microsof
 // WidgetProvider.cpp
 void WidgetProvider::DeleteWidget(winrt::hstring const& widgetId, winrt::hstring const& customState)
 {
+    std::scoped_lock lock(RunningWidgetsMutex);
     RunningWidgets.erase(widgetId);
 }
 ```
@@ -354,7 +366,7 @@ The widget host calls [OnActionInvoked](/windows/windows-app-sdk/api/winrt/micro
 ...
 ```
 
-In the **OnActionInvoked** method, get the verb value by checking the **Verb** property of the [WidgetActionInvokedArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetactioninvokedargs) passed into the method. If the verb is "inc", then we know we are going to increment the count in the custom state for the widget. From the **WidgetActionInvokedArgs**, get the [WidgetContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetcontext) object and then the **WidgetId** to get the ID for the widget that is being updated. Find the entry in our enabled widgets map with the specified ID and then update the custom state value that is used to store the number of increments. Finally, update the widget content with the new value with the **UpdateWidget** helper function.
+In the **OnActionInvoked** method, get the verb value by checking the **Verb** property of the [WidgetActionInvokedArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetactioninvokedargs) passed into the method. If the verb is "inc", then we know we are going to increment the count in the custom state for the widget. From the **WidgetActionInvokedArgs**, get the [WidgetContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetcontext) object and then its **Id** property to identify the widget instance being updated. Find the entry in our enabled widgets map with the specified ID and then update the custom state value that is used to store the number of increments. Finally, update the widget content with the new value with the **UpdateWidget** helper function.
 
 ```cpp
 // WidgetProvider.cpp
@@ -367,19 +379,25 @@ void WidgetProvider::OnActionInvoked(winrt::WidgetActionInvokedArgs actionInvoke
         // If you need to use some data that was passed in after
         // Action was invoked, you can get it from the args:
         auto data = actionInvokedArgs.Data();
-        if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+        std::optional<CompactWidgetInfo> widgetToUpdate;
         {
-            auto& localWidgetInfo = iter->second;
-            // Increment the count
-            localWidgetInfo.customState++;
-            UpdateWidget(localWidgetInfo);
+            std::scoped_lock lock(RunningWidgetsMutex);
+            if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+            {
+                iter->second.customState++;
+                widgetToUpdate = iter->second;
+            }
+        }
+        if (widgetToUpdate)
+        {
+            UpdateWidget(*widgetToUpdate);
         }
     }
 }
 ```
 
 
-For information about the **Action.Execute** syntax for Adaptive Cards, see [Action.Execute](https://adaptivecards.io/explorer/Action.Execute.html). For guidance about designing interaction for widgets, see [Widget interaction design guidance](/windows/apps/design/widgets/widgets-interaction-design)
+For information about the **Action.Execute** syntax for Adaptive Cards, see [Action.Execute](https://adaptivecards.microsoft.com/?topic=Action.Execute). For guidance about designing interaction for widgets, see [Widget interaction design guidance](/windows/apps/design/widgets/widgets-interaction-design).
 
 
 ### OnWidgetContextChanged
@@ -392,12 +410,17 @@ void WidgetProvider::OnWidgetContextChanged(winrt::WidgetContextChangedArgs cont
 {
     auto widgetContext = contextChangedArgs.WidgetContext();
     auto widgetId = widgetContext.Id();
-    auto widgetSize = widgetContext.Size();
-    if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+    std::optional<CompactWidgetInfo> widgetToUpdate;
     {
-        auto localWidgetInfo = iter->second;
-
-        UpdateWidget(localWidgetInfo);
+        std::scoped_lock lock(RunningWidgetsMutex);
+        if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+        {
+            widgetToUpdate = iter->second;
+        }
+    }
+    if (widgetToUpdate)
+    {
+        UpdateWidget(*widgetToUpdate);
     }
 }
     
@@ -414,17 +437,24 @@ void WidgetProvider::Activate(winrt::Microsoft::Windows::Widgets::Providers::Wid
 {
     auto widgetId = widgetContext.Id();
 
-    if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+    std::optional<CompactWidgetInfo> widgetToUpdate;
     {
-        auto& localWidgetInfo = iter->second;
-        localWidgetInfo.isActive = true;
-
-        UpdateWidget(localWidgetInfo);
+        std::scoped_lock lock(RunningWidgetsMutex);
+        if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+        {
+            iter->second.isActive = true;
+            widgetToUpdate = iter->second;
+        }
+    }
+    if (widgetToUpdate)
+    {
+        UpdateWidget(*widgetToUpdate);
     }
 }
 
 void WidgetProvider::Deactivate(winrt::hstring widgetId)
 {
+    std::scoped_lock lock(RunningWidgetsMutex);
     if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
     {
         auto& localWidgetInfo = iter->second;
@@ -466,15 +496,20 @@ void WidgetProvider::UpdateWidget(CompactWidgetInfo const& localWidgetInfo)
 
     updateOptions.Template(templateJson);
     updateOptions.Data(dataJson);
+    updateOptions.IsPlaceholderContent(localWidgetInfo.widgetName == L"Weather_Widget");
     // You can store some custom state in the widget service that you will be able to query at any time.
     updateOptions.CustomState(winrt::to_hstring(localWidgetInfo.customState));
     winrt::WidgetManager::GetDefault().UpdateWidget(updateOptions);
 }
 ```
 
+When content isn't yet personalized or actionable, set [WidgetUpdateRequestOptions.IsPlaceholderContent](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetupdaterequestoptions.isplaceholdercontent) to `true`. For example, the mock weather widget in this walkthrough displays a fixed location rather than the user's chosen location. The host may prioritize widgets with customized content over this sample weather widget. Set the property to `false` when you supply personalized content. This property was added in [Windows App SDK 1.6.6](../../windows-app-sdk/release-notes/windows-app-sdk-1-6.md?pivots=stable#version-166-16250228001).
+
 ## Initialize the list of enabled widgets on startup
 
 When our widget provider is first initialized, it's a good idea to ask **WidgetManager** if there are any running widgets that our provider is currently serving. It will help to recover the app to the previous state in case of the computer restart or the provider crash. Call **WidgetManager::GetDefault** to get the default widget manager instance for the app. Then call [GetWidgetInfos](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetmanager.getwidgetinfos), which returns an array of [WidgetInfo](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetinfo) objects. Copy the widget IDs, names, and custom state into the helper struct **CompactWidgetInfo** and save it to the **RunningWidgets** member variable. Paste the following code into the constructor for the **WidgetProvider** class.
+
+Add `#include <charconv>` and `#include <system_error>` to **WidgetProvider.cpp** for the saved-state conversion.
 
 ```cpp
 // WidgetProvider.cpp
@@ -487,35 +522,33 @@ WidgetProvider::WidgetProvider()
         auto widgetId = widgetContext.Id();
         auto widgetName = widgetContext.DefinitionId();
         auto customState = widgetInfo.CustomState();
-        if (RunningWidgets.find(widgetId) == RunningWidgets.end())
+        CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
+        if (!customState.empty())
         {
-            CompactWidgetInfo runningWidgetInfo{ widgetId, widgetName };
-            try
+            auto savedState = winrt::to_string(customState);
+            auto [end, error] = std::from_chars(
+                savedState.data(), savedState.data() + savedState.size(),
+                runningWidgetInfo.customState);
+            if (error != std::errc{} || end != savedState.data() + savedState.size())
             {
-                // If we had any save state (in this case we might have some state saved for Counting widget)
-                // convert string to required type if needed.
-                int count = std::stoi(winrt::to_string(customState));
-                runningWidgetInfo.customState = count;
+                runningWidgetInfo.customState = 0;
+                OutputDebugStringW(L"Invalid saved widget count; resetting to 0.\n");
             }
-            catch (...)
-            {
-
-            }
-            RunningWidgets[widgetId] = runningWidgetInfo;
         }
+        std::scoped_lock lock(RunningWidgetsMutex);
+        RunningWidgets.try_emplace(widgetId, runningWidgetInfo);
     }
 }
 ```
 
 ## Register a class factory that will instantiate WidgetProvider on request
 
-Add the header that defines the **WidgetProvider** class to the includes at the top of your app's `main.cpp` file. We will also be including **mutex** here.
+Add the header that defines the **WidgetProvider** class to the includes at the top of your app's `main.cpp` file.
 
 ```cpp
 // main.cpp
 ...
 #include "WidgetProvider.h"
-#include <mutex>
 ```
 
 Declare the event that will trigger our app to exit and the **SignalLocalServerShutdown** function that will set the event. Paste the following code in main.cpp.
@@ -542,33 +575,38 @@ static constexpr GUID widget_provider_clsid
 };
 ```
 
-Add the following class factory definition to `main.cpp`. This is mostly boilerplate code that is not specific to widget provider implementations. Note that **CoWaitForMultipleObjects** waits for our shutdown event to be triggered before the app exits.
+Add the following class factory definition to `main.cpp`. The factory uses **winrt::no_module_lock** and doesn't retain a provider instance, so registering the factory doesn't keep the provider's module lock held. Each activation creates a provider and returns the interface requested by COM. The factory mutex serializes construction; **RunningWidgetsMutex** separately protects the map from concurrent constructors and callbacks. Exceptions are translated to HRESULTs at the COM boundary. **CoWaitForMultipleObjects** waits for the shutdown event before the app exits.
 
 ```cpp
 // main.cpp
 template <typename T>
-struct SingletonClassFactory : winrt::implements<SingletonClassFactory<T>, IClassFactory>
+struct WidgetProviderClassFactory : winrt::implements<WidgetProviderClassFactory<T>, IClassFactory, winrt::no_module_lock>
 {
     STDMETHODIMP CreateInstance(
         ::IUnknown* outer,
         GUID const& iid,
         void** result) noexcept final
     {
+        if (!result)
+        {
+            return E_POINTER;
+        }
         *result = nullptr;
-
-        std::unique_lock lock(mutex);
 
         if (outer)
         {
             return CLASS_E_NOAGGREGATION;
         }
 
-        if (!instance)
+        try
         {
-            instance = winrt::make<WidgetProvider>();
+            std::scoped_lock lock(m_creationMutex);
+            return winrt::make<T>().as(iid, result);
         }
-
-        return instance.as(iid, result);
+        catch (...)
+        {
+            return winrt::to_hresult();
+        }
     }
 
     STDMETHODIMP LockServer(BOOL) noexcept final
@@ -577,15 +615,14 @@ struct SingletonClassFactory : winrt::implements<SingletonClassFactory<T>, IClas
     }
 
 private:
-    T instance{ nullptr };
-    std::mutex mutex;
+    std::mutex m_creationMutex;
 };
 
 int main()
 {
     winrt::init_apartment();
     wil::unique_com_class_object_cookie widgetProviderFactory;
-    auto factory = winrt::make<SingletonClassFactory<winrt::Microsoft::Windows::Widgets::Providers::IWidgetProvider>>();
+    auto factory = winrt::make<WidgetProviderClassFactory<WidgetProvider>>();
 
     winrt::check_hresult(CoRegisterClassObject(
         widget_provider_clsid,
@@ -604,10 +641,11 @@ int main()
 }
 ```
 
+The host can activate and release your provider while widgets remain pinned. Restore saved state when the provider starts, and synchronize access to shared widget state if callbacks run concurrently. For more information, see the [IWidgetProvider remarks](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider#remarks).
 
 ## Package your widget provider app
 
-In the current release, only packaged apps can be registered as widget providers. The following steps will take you through the process of packaging your app and updating the app manifest to register your app with the OS as a widget provider.
+This walkthrough registers the widget provider through an MSIX package manifest. The following steps package your app and register it with Windows as a widget provider. The example uses framework-dependent deployment of the Windows App SDK runtime. If you choose self-contained deployment instead, follow [Deploy self-contained apps](../../package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md), including the settings for both projects when you use a Windows Application Packaging Project.
 
 ### Create an MSIX packaging project 
 
@@ -622,14 +660,14 @@ You need to add a reference to the Windows App SDK nuget package to the MSIX pac
 ```xml
 <!--ExampleWidgetProviderPackage.wapproj-->
 <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.3.1">
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.5.1">
         <IncludeAssets>build</IncludeAssets>
     </PackageReference>  
 </ItemGroup>
 ```
 
 > [!NOTE]
-> The snippet uses the minimum supported version, 2.3.1. If you selected a later stable version in the previous step, update the **Version** value to match it.
+> The snippet uses version 2.5.1, not the minimum version that introduced widget APIs. If you selected a later supported stable version in the previous step, update the **Version** value to match it.
 
 
 
@@ -763,7 +801,7 @@ For information about the design requirements for screenshot images and the nami
 
 ## Testing your widget provider
 
-Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**. Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
+Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**, then right-click **ExampleWidgetProviderPackage** and select **Deploy**. Open the Widgets Board with **Windows key + W** and open the widget picker, shown as **Add widgets** or a **+** button depending on your version of the board. Find **Weather Widget** and **Microsoft Counting Widget**, pin them to the board, and test their functionality.
 
 ## Debugging your widget provider
 
@@ -822,7 +860,7 @@ The following steps summarize the process for widget customization.
 In typical Widget customization scenarios, the user will choose what data is displayed on the widget or adjust visual presentation of the widget. For simplicity, the example in this section will add customization behavior that allows the user to reset the counter of the counting widget implemented in the previous steps.
 
 > [!NOTE] 
-> Widget customization requires Windows App SDK 1.4 or later. This walkthrough uses Microsoft.WindowsAppSDK version 2.3.1.
+> Widget customization requires Windows App SDK 1.4 or later. This walkthrough uses Microsoft.WindowsAppSDK version 2.5.1.
 
 ### Update the package manifest to declare customization support
 
@@ -905,12 +943,18 @@ void WidgetProvider::OnCustomizationRequested(winrt::WidgetCustomizationRequeste
 {
     auto widgetId = args.WidgetContext().Id();
 
-    if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+    std::optional<CompactWidgetInfo> widgetToUpdate;
     {
-        auto& localWidgetInfo = iter->second;
-        localWidgetInfo.inCustomization = true;
-
-        UpdateWidget(localWidgetInfo);
+        std::scoped_lock lock(RunningWidgetsMutex);
+        if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
+        {
+            iter->second.inCustomization = true;
+            widgetToUpdate = iter->second;
+        }
+    }
+    if (widgetToUpdate)
+    {
+        UpdateWidget(*widgetToUpdate);
     }
 }
 ```
@@ -952,46 +996,36 @@ When users interact with inputs in our customization template, it calls the same
 void WidgetProvider::OnActionInvoked(winrt::WidgetActionInvokedArgs actionInvokedArgs)
 {
     auto verb = actionInvokedArgs.Verb();
-    if (verb == L"inc")
+    if (verb != L"inc" && verb != L"reset" && verb != L"exitCustomization")
     {
-        auto widgetId = actionInvokedArgs.WidgetContext().Id();
-        // If you need to use some data that was passed in after
-        // Action was invoked, you can get it from the args:
-        auto data = actionInvokedArgs.Data();
+        return;
+    }
+
+    auto widgetId = actionInvokedArgs.WidgetContext().Id();
+    std::optional<CompactWidgetInfo> widgetToUpdate;
+    {
+        std::scoped_lock lock(RunningWidgetsMutex);
         if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
         {
             auto& localWidgetInfo = iter->second;
-            // Increment the count
-            localWidgetInfo.customState++;
-            UpdateWidget(localWidgetInfo);
+            if (verb == L"inc")
+            {
+                localWidgetInfo.customState++;
+            }
+            else
+            {
+                if (verb == L"reset")
+                {
+                    localWidgetInfo.customState = 0;
+                }
+                localWidgetInfo.inCustomization = false;
+            }
+            widgetToUpdate = localWidgetInfo;
         }
     }
-    else if (verb == L"reset") 
+    if (widgetToUpdate)
     {
-        auto widgetId = actionInvokedArgs.WidgetContext().Id();
-        auto data = actionInvokedArgs.Data();
-        if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
-        {
-            auto& localWidgetInfo = iter->second;
-            // Reset the count
-            localWidgetInfo.customState = 0;
-            localWidgetInfo.inCustomization = false;
-            UpdateWidget(localWidgetInfo);
-        }
-    }
-    else if (verb == L"exitCustomization")
-    {
-        auto widgetId = actionInvokedArgs.WidgetContext().Id();
-        // If you need to use some data that was passed in after
-        // Action was invoked, you can get it from the args:
-        auto data = actionInvokedArgs.Data();
-        if (const auto iter = RunningWidgets.find(widgetId); iter != RunningWidgets.end())
-        {
-            auto& localWidgetInfo = iter->second;
-            // Stop sending the customization template
-            localWidgetInfo.inCustomization = false;
-            UpdateWidget(localWidgetInfo);
-        }
+        UpdateWidget(*widgetToUpdate);
     }
 }
 ```

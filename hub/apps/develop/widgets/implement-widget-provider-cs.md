@@ -2,7 +2,7 @@
 title: Implement a widget provider in a C# Windows App
 description: Learn how to create a Windows widget provider in C#, with step-by-step implementation of widget content, data updates, and user actions.
 ms.topic: how-to
-ms.date: 08/19/2026
+ms.date: 10/23/2026
 ms.localizationpriority: medium
 author: GrantMeStrength
 ms.author: jken
@@ -21,6 +21,7 @@ This sample code in this article is adapted from the [Windows App SDK Widgets Sa
 
 ## Prerequisites
 
+- A Windows 11 device with the Widgets Board available for testing.
 - Your device must have developer mode enabled. For more information see [Settings for developers](/windows/advanced-settings/developer-mode).
 - Visual Studio 2022 or later with the **WinUI application development** workload.
 
@@ -41,7 +42,7 @@ Note that this walkthrough uses a console app that displays the console window w
 
 ## Add references to the Windows App SDK
 
-This walkthrough requires Microsoft.WindowsAppSDK version 2.3.1 or later. In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select version 2.3.1, the minimum version used by this walkthrough, or a later stable version in the **Version** drop-down, and then click **Install**.
+This walkthrough uses **Microsoft.WindowsAppSDK 2.5.1**. In **Solution Explorer**, right-click **Dependencies** and select **Manage NuGet packages...**. In the NuGet package manager, select the **Browse** tab and search for "Microsoft.WindowsAppSDK". Select version **2.5.1**, or a later supported stable version from [Windows App SDK release channels](../../windows-app-sdk/release-channels.md), and then click **Install**. Use the same package version in the app and packaging projects. This is the version used by the walkthrough, not the minimum version that introduced widget APIs.
 
 ## Add a WidgetProvider class to handle widget operations
 
@@ -82,10 +83,10 @@ public static Dictionary<string, CompactWidgetInfo> RunningWidgets = new Diction
 
 This example will declare some static strings to define the JSON templates for each widget. For convenience, these templates are stored in the member variables of the **WidgetProvider** class. If you need a general storage for the templates - they can be included as part of the application package: [Accessing Package Files](/windows/uwp/app-resources/uri-schemes#ms-appx-and-ms-appx-web). For information on creating the widget template JSON document, see [Create a widget template with the Adaptive Cards Designer](widgets-create-a-template.md).
 
-In the latest release, apps that implement Windows widgets can customize the header that is displayed for their widget in the Widgets Board, overriding the default presentation. For more information, see [Customize the widget header area](widget-header-customization.md).
+Apps that implement Windows widgets can customize the header displayed for their widget in hosts that support header customization. For more information, see [Customize the widget header area](widget-header-customization.md).
 
 > [!NOTE]
-> In the latest release, apps that implement Windows widgets can choose to populate the widget content with HTML served from a specified URL instead of supplying content in the Adaptive Card schema format in the JSON payload passed from the provider to the Widgets Board. Widget providers must still provide an Adaptive Card JSON payload, so the implementation steps in this walkthrough are applicable to web widgets. For more information, see [Web widget providers](web-widget-providers.md).
+> A web widget can display HTML served from a URL. The provider still supplies an Adaptive Card JSON payload to specify that URL, and still implements **IWidgetProvider**. The resource and messaging APIs were introduced in Windows App SDK 1.6.3. For setup and host requirements, see [Web widget providers](web-widget-providers.md).
 
 ```csharp
 // WidgetProvider.cs
@@ -97,7 +98,7 @@ In the latest release, apps that implement Windows widgets can customize the hea
     "type": "AdaptiveCard",
     "version": "1.0",
     "speak": "<s>The forecast for Seattle January 20 is mostly clear with a High of 51 degrees and Low of 40 degrees</s>",
-    "backgroundImage": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Background.jpg",
+    "backgroundImage": "https://raw.githubusercontent.com/microsoft/AdaptiveCards/59402c8d43f7a69a68e0b4fccc08f8a76fc98ccd/source/nodejs/adaptivecards-site/themes/adaptivecards/source/content/Mostly%20Cloudy-Background.jpg",
     "body": [
         {
             "type": "TextBlock",
@@ -121,7 +122,7 @@ In the latest release, apps that implement Windows widgets can customize the hea
                     "items": [
                         {
                             "type": "Image",
-                            "url": "https://messagecardplayground.azurewebsites.net/assets/Mostly%20Cloudy-Square.png",
+                            "url": "https://raw.githubusercontent.com/microsoft/AdaptiveCards/59402c8d43f7a69a68e0b4fccc08f8a76fc98ccd/source/nodejs/adaptivecards-site/themes/adaptivecards/source/content/Mostly%20Cloudy-Square.png",
                             "size": "small",
                             "altText": "Mostly cloudy weather"
                         }
@@ -288,7 +289,7 @@ The widget host calls [OnActionInvoked](/windows/windows-app-sdk/api/winrt/micro
 ...
 ```
 
-In the **OnActionInvoked** method, get the verb value by checking the **Verb** property of the [WidgetActionInvokedArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetactioninvokedargs) passed into the method. If the verb is "inc", then we know we are going to increment the count in the custom state for the widget. From the **WidgetActionInvokedArgs**, get the [WidgetContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetcontext) object and then the **WidgetId** to get the ID for the widget that is being updated. Find the entry in our enabled widgets map with the specified ID and then update the custom state value that is used to store the number of increments. Finally, update the widget content with the new value with the **UpdateWidget** helper function.
+In the **OnActionInvoked** method, get the verb value by checking the **Verb** property of the [WidgetActionInvokedArgs](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetactioninvokedargs) passed into the method. If the verb is "inc", then we know we are going to increment the count in the custom state for the widget. From the **WidgetActionInvokedArgs**, get the [WidgetContext](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetcontext) object and then its **Id** property to identify the widget instance being updated. Find the entry in our enabled widgets map with the specified ID and then update the custom state value that is used to store the number of increments. Finally, update the widget content with the new value with the **UpdateWidget** helper function.
 
 ```csharp
 // WidgetProvider.cs
@@ -314,7 +315,7 @@ public void OnActionInvoked(WidgetActionInvokedArgs actionInvokedArgs)
 ```
 
 
-For information about the **Action.Execute** syntax for Adaptive Cards, see [Action.Execute](https://adaptivecards.io/explorer/Action.Execute.html). For guidance about designing interaction for widgets, see [Widget interaction design guidance](/windows/apps/design/widgets/widgets-interaction-design)
+For information about the **Action.Execute** syntax for Adaptive Cards, see [Action.Execute](https://adaptivecards.microsoft.com/?topic=Action.Execute). For guidance about designing interaction for widgets, see [Widget interaction design guidance](/windows/apps/design/widgets/widgets-interaction-design).
 
 
 ### OnWidgetContextChanged
@@ -403,11 +404,14 @@ void UpdateWidget(CompactWidgetInfo localWidgetInfo)
 
     updateOptions.Template = templateJson;
     updateOptions.Data = dataJson;
+    updateOptions.IsPlaceholderContent = localWidgetInfo.widgetName == "Weather_Widget";
     // You can store some custom state in the widget service that you will be able to query at any time.
     updateOptions.CustomState= localWidgetInfo.customState.ToString();
     WidgetManager.GetDefault().UpdateWidget(updateOptions);
 }
 ```
+
+Set [WidgetUpdateRequestOptions.IsPlaceholderContent](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.widgetupdaterequestoptions.isplaceholdercontent) to `true` for content that isn't yet personalized or actionable. The mock weather widget displays a fixed location, so this example marks it as placeholder content. The host may prioritize widgets with customized content over this sample weather widget. Set the property to `false` when you supply personalized content. This property was added in [Windows App SDK 1.6.6](../../windows-app-sdk/release-notes/windows-app-sdk-1-6.md?pivots=stable#version-166-16250228001).
 
 ## Initialize the list of enabled widgets on startup
 
@@ -429,16 +433,16 @@ public WidgetProvider()
         if (!RunningWidgets.ContainsKey(widgetId))
         {
             CompactWidgetInfo runningWidgetInfo = new CompactWidgetInfo() { widgetId = widgetId, widgetName = widgetName };
-            try
+            if (!string.IsNullOrEmpty(customState))
             {
-                // If we had any save state (in this case we might have some state saved for Counting widget)
-                // convert string to required type if needed.
-                int count = Convert.ToInt32(customState.ToString());
-                runningWidgetInfo.customState = count;
-            }
-            catch
-            {
-
+                if (int.TryParse(customState, out int count))
+                {
+                    runningWidgetInfo.customState = count;
+                }
+                else
+                {
+                    Console.Error.WriteLine($"Invalid saved count for widget {widgetId}; resetting to 0.");
+                }
             }
             RunningWidgets[widgetId] = runningWidgetInfo;
         }
@@ -452,7 +456,7 @@ In order for the widget host to communicate with our widget provider, we must ca
 
 In Visual Studio, right-click the `ExampleWidgetProvider` project in **Solution Explorer** and select **Add->Class**. In the **Add class** dialog, name the class "FactoryHelper" and click **Add**.
 
-Replace the contents of the FactoryHelper.cs file with the following code. This code defines the **IClassFactory** interface and implements it's two methods, [CreateInstance](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-createinstance) and [LockServer](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-lockserver). This code is typical boilerplate for implementing a class factory and is not specific to the functionality of a widget provider except that we indicate that the class object being created implements the **IWidgetProvider** interface. 
+Replace the contents of the FactoryHelper.cs file with the following code. This code defines the **IClassFactory** interface and implements its two methods, [CreateInstance](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-createinstance) and [LockServer](/windows/win32/api/unknwn/nf-unknwn-iclassfactory-lockserver). This code is typical boilerplate for implementing a class factory and is not specific to the functionality of a widget provider except that we indicate that the class object being created implements the **IWidgetProvider** interface.
 
 ```csharp
 // FactoryHelper.cs
@@ -491,22 +495,27 @@ namespace COM
 
             if (pUnkOuter != IntPtr.Zero)
             {
-                Marshal.ThrowExceptionForHR(CLASS_E_NOAGGREGATION);
+                return CLASS_E_NOAGGREGATION;
             }
 
-            if (riid == typeof(T).GUID || riid == Guid.Parse(COM.Guids.IUnknown))
+            IntPtr provider = IntPtr.Zero;
+            try
             {
-                // Create the instance of the .NET object
-                ppvObject = MarshalInspectable<IWidgetProvider>.FromManaged(new T());
+                provider = MarshalInspectable<IWidgetProvider>.FromManaged(new T());
+                return Marshal.QueryInterface(provider, in riid, out ppvObject);
             }
-            else
+            catch (Exception exception)
             {
-                // The object that ppvObject points to does not support the
-                // interface identified by riid.
-                Marshal.ThrowExceptionForHR(E_NOINTERFACE);
+                Console.Error.WriteLine(exception);
+                return Marshal.GetHRForException(exception);
             }
-
-            return 0;
+            finally
+            {
+                if (provider != IntPtr.Zero)
+                {
+                    Marshal.Release(provider);
+                }
+            }
         }
 
         int IClassFactory.LockServer(bool fLock)
@@ -515,7 +524,6 @@ namespace COM
         }
 
         private const int CLASS_E_NOAGGREGATION = -2147221232;
-        private const int E_NOINTERFACE = -2147467262;
 
     }
 }
@@ -554,36 +562,43 @@ static extern int CoRegisterClassObject(
 
 [DllImport("ole32.dll")] static extern int CoRevokeClassObject(uint dwRegister);
 
-Console.WriteLine("Registering Widget Provider");
-uint cookie;
-
+WinRT.ComWrappersSupport.InitializeComWrappers();
 Guid CLSID_Factory = Guid.Parse("XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX");
-CoRegisterClassObject(CLSID_Factory, new WidgetProviderFactory<WidgetProvider>(), 0x4, 0x1, out cookie);
-Console.WriteLine("Registered successfully. Press ENTER to exit.");
-Console.ReadLine();
+var factory = new WidgetProviderFactory<WidgetProvider>();
+Marshal.ThrowExceptionForHR(
+    CoRegisterClassObject(CLSID_Factory, factory, 0x4, 0x1, out uint cookie));
 
-if (GetConsoleWindow() != IntPtr.Zero)
+try
 {
-    Console.WriteLine("Registered successfully. Press ENTER to exit.");
-    Console.ReadLine();
-}
-else
-{
-    // Wait until the manager has disposed of the last widget provider.
-    using (var emptyWidgetListEvent = WidgetProvider.GetEmptyWidgetListEvent())
+    if (GetConsoleWindow() != IntPtr.Zero)
     {
-        emptyWidgetListEvent.WaitOne();
+        Console.WriteLine("Registered successfully. Press ENTER to exit.");
+        Console.ReadLine();
     }
-
-    CoRevokeClassObject(cookie);
+    else
+    {
+        WidgetProvider.GetEmptyWidgetListEvent().WaitOne();
+    }
+}
+finally
+{
+    int revokeResult = CoRevokeClassObject(cookie);
+    if (revokeResult < 0)
+    {
+        System.Diagnostics.Trace.TraceError($"CoRevokeClassObject failed: 0x{revokeResult:X8}");
+    }
+    GC.KeepAlive(factory);
 }
 ```
 
-Note that this code example imports the [GetConsoleWindow](/windows/console/getconsolewindow) function to determine if the app is running as a console application, the default behavior for this walkthrough. If function returns a valid pointer, we write debug information to the console. Otherwise, the app is running as a Windows app. In that case, we wait for the event that we set in [DeleteWidget](#deletewidget) method when the list of enabled widgets is empty, and the we exit the app. For information on converting the example console app to a Windows app, see [Convert your console app to a Windows app](#convert-your-console-app-to-a-windows-app).
+Note that this code example imports the [GetConsoleWindow](/windows/console/getconsolewindow) function to determine if the app is running as a console application, the default behavior for this walkthrough. If the function returns a valid pointer, we write debug information to the console. Otherwise, the app is running as a Windows app. In that case, we wait for the event that we set in the [DeleteWidget](#deletewidget) method when the list of enabled widgets is empty, and then we exit the app. For information on converting the example console app to a Windows app, see [Convert your console app to a Windows app](#convert-your-console-app-to-a-windows-app).
+
+> [!NOTE]
+> Waiting for the last widget to be deleted is a simplified lifetime policy for this example, not a requirement of **IWidgetProvider**. The host can activate and release a provider while widgets remain pinned. In a production provider, manage the COM server's lifetime independently, restore saved widget state on startup, and synchronize access to shared state if callbacks run concurrently. See the [IWidgetProvider remarks](/windows/windows-app-sdk/api/winrt/microsoft.windows.widgets.providers.iwidgetprovider#remarks).
 
 ## Package your widget provider app
 
-In the current release, only packaged apps can be registered as widget providers. The following steps will take you through the process of packaging your app and updating the app manifest to register your app with the OS as a widget provider.
+This walkthrough registers the desktop widget provider through an MSIX package manifest and uses framework-dependent deployment of the Windows App SDK runtime. The following steps package your app and register its provider. If you choose self-contained deployment instead, follow [Deploy self-contained apps](../../package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md), including the settings for both projects when you use a Windows Application Packaging Project.
 
 ### Create an MSIX packaging project 
 
@@ -598,14 +613,14 @@ You need to add a reference to the Windows App SDK nuget package to the MSIX pac
 ```xml
 <!--ExampleWidgetProviderPackage.wapproj-->
 <ItemGroup>
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.3.1">
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="2.5.1">
         <IncludeAssets>build</IncludeAssets>
     </PackageReference>  
 </ItemGroup>
 ```
 
 > [!NOTE]
-> The snippet uses the minimum supported version, 2.3.1. If you selected a later stable version in the previous step, update the **Version** value to match it.
+> The snippet uses version 2.5.1, not the minimum version that introduced widget APIs. If you selected a later supported stable version in the previous step, update the **Version** value to match it.
 
 
 
@@ -701,7 +716,7 @@ Next, add the extension that registers the app as a widget provider. Paste the [
                         </Definition>
                         <Definition Id="Counting_Widget"
                                 DisplayName="Microsoft Counting Widget"
-                                Description="Couting Widget Description">
+                                Description="Counting Widget Description">
                             <Capabilities>
                                 <Capability>
                                     <Size Name="small" />
@@ -739,7 +754,27 @@ For information about the design requirements for screenshot images and the nami
 
 ## Testing your widget provider
 
-Make sure you have selected the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**.  Once this is done, right-click your **ExampleWidgetProviderPackage** and select **Deploy**. In the current release, the only supported widget host is the Widgets Board. To see the widgets you will need to open the Widgets Board and select **Add widgets** in the top right. Scroll to the bottom of the available widgets and you should see the mock **Weather Widget** and **Microsoft Counting Widget** that were created in this tutorial. Click on the widgets to pin them to your widgets board and test their functionality.
+Select the architecture that matches your development machine from the **Solution Platforms** drop-down, for example "x64". In **Solution Explorer**, right-click your solution and select **Build Solution**, then right-click **ExampleWidgetProviderPackage** and select **Deploy**. On Windows 11, open the Widgets Board with **Windows+W**, open the widget picker, and find **Weather Widget** and **Microsoft Counting Widget**. Add them to the board and test their functionality. Picker controls and placement can vary with Windows and Widgets Board updates.
+
+The Adaptive Cards Designer doesn't supply Windows `$host` values, invoke your provider callbacks, or enforce the Widgets Board's rendered bounds. Complete these checks in the Widgets Board:
+
+1. Confirm that the widget appears in the picker with the expected name, icon, screenshot, and description.
+1. Pin the widget and verify its initial template and data.
+1. Resize it to every size declared in the package manifest. Check for clipped, hidden, or overflowing content at each size.
+1. Test each **Action.Execute** operation when `$host.isUserContextAuthenticated` is true. When it is false, hide unsupported actions and provide an appropriate fallback; only **Action.OpenUrl** is supported in that context.
+1. Stop and restart the provider process, then confirm that each pinned widget is restored from its custom state.
+1. Unpin the widget and confirm that **DeleteWidget** is called.
+
+For a CLI-first C# project that uses single-project MSIX instead of the separate packaging project in this walkthrough, place `Package.appxmanifest` in the provider project, set `EnableMsixTooling` to `true`, and use [Windows App Development CLI](../../dev-tools/winapp-cli/index.md) to build and register a development package:
+
+> [!IMPORTANT]
+> The Windows App Development CLI is currently in **public preview**. Features and commands may change before the final release. Check the installed version's `winapp run --help` output before using this command.
+
+```powershell
+winapp run ExampleWidgetProvider.csproj --configuration Release --arch x64 --no-launch
+```
+
+The command registers the package without launching the app directly. Open the Widgets Board to activate the COM server through the widget host.
 
 ## Debugging your widget provider
 
@@ -763,6 +798,14 @@ In order to automatically attach the debugger to the process when it's initially
 To convert the console app created in this walkthrough to a Windows app, right-click the **ExampleWidgetProvider** project in **Solution Explorer** and select **Properties**. Under Application->General change the **Output type** from "Console Application" to "Windows Application".
 
 :::image type="content" source="images/convert-to-windows-app-cs.png" alt-text="A screenshot showing the C# widget provider project properties with the output type set to Windows Application":::
+
+For a project-file edit, set **OutputType** to `WinExe`:
+
+```xml
+<OutputType>WinExe</OutputType>
+```
+
+Do this before validating the final user experience or publishing. A console provider can open a terminal window whenever the widget host activates its COM server.
 
 ## Publishing your widget
 
@@ -797,7 +840,7 @@ The following steps summarize the process for widget customization.
 In typical Widget customization scenarios, the user will choose what data is displayed on the widget or adjust visual presentation of the widget. For simplicity, the example in this section will add customization behavior that allows the user to reset the counter of the counting widget implemented in the previous steps.
 
 > [!NOTE]
-> Widget customization requires Windows App SDK 1.4 or later. This walkthrough uses Microsoft.WindowsAppSDK version 2.3.1.
+> Widget customization requires Windows App SDK 1.4 or later. This walkthrough uses Microsoft.WindowsAppSDK version 2.5.1.
 
 ### Update the package manifest to declare customization support
 
@@ -909,7 +952,7 @@ void UpdateWidget(CompactWidgetInfo localWidgetInfo)
 
 ### Respond to customization actions
 
-When users interact with inputs in our customization template, it calls the same **OnActionInvoked** handler as when the user interacts with the regular widget experience. To support customization, we look for the verbs "reset" and "exitCustomization" from our customization JSON template. If the action is for the "Reset counter" button, we reset the counter held in the **customState** field of our helper struct to 0. If the action is for the "Exit customization" button, we set the **inCustomization** field to false so that when we call **UpdateWidget**, our helper method will send the regular JSON templates and not the customization template.
+When users interact with inputs in our customization template, it calls the same **OnActionInvoked** handler as when the user interacts with the regular widget experience. To support customization, we look for the verbs "reset" and "exitCustomization" from our customization JSON template. The "Reset counter" action resets **customState** to 0 and exits customization. The "Exit customization" action exits without resetting the counter. Both set **inCustomization** to false so that **UpdateWidget** sends the regular widget template.
 
 ```csharp
 // WidgetProvider.cs

@@ -2,7 +2,7 @@
 title: Widget provider package manifest XML format
 description: Learn the package manifest XML format for registering a Windows widget provider, including element definitions and example markup. 
 ms.topic: article
-ms.date: 07/05/2026
+ms.date: 10/23/2026
 ms.localizationpriority: medium
 author: GrantMeStrength
 ms.author: jken
@@ -89,7 +89,7 @@ The root element of the widget provider registration information.
 
 ![A screenshot of the Add Widget dialog in the Widgets board. It shows two columns of entries, each with an icon and an app name, with a plus sign indicating that a widget can be added](images/widget-picker.png)
 
-## WidgetProviderIcons
+## ProviderIcons
 
 Specifies icons representing the widget provider app.
 
@@ -119,7 +119,7 @@ Represents the registration for a single widget.
 
 | Attribute | Type | Required | Description | Default value |
 |---|---|---|---|---|
-| **Id**| string | Yes | An ID that identifies the widget. This value is also displayed in the navigation bar of the widget picker. Widget provider implementations use this string to determine or specify which of the app's widgets is being referenced for each operation. This string must be unique for all widgets defined within the app manifest file.  | N/A |
+| **Id**| string | Yes | An ID that identifies this widget definition. It must be unique among the definitions in the app manifest and is exposed to the provider as **WidgetContext.DefinitionId**. Each pinned instance has a separate **WidgetContext.Id**, which you use for instance-specific updates and messages. | N/A |
 | **DisplayName** | string | Yes | The name of the widget that is displayed on the widgets host. | N/A |
 | **Description** | string | Yes | Short description of the widget. | N/A |
 | **AllowMultiple** | boolean | No | Set to false if only one instance of this widget is supported. This attribute is optional and the default value is true. | true |
@@ -204,7 +204,7 @@ The following code example illustrates the usage of the widget package manifest 
             DisplayName="Microsoft Weather Widget"
             Description="Weather Widget Description"
             AdditionalInfoUri="https://contoso.com/widgets/Weather"
-            ExclusiveRegions="US,UK"
+            ExclusiveRegions="US,GB"
             AllowMultiple="true">
             <Capabilities>
               <Capability>
