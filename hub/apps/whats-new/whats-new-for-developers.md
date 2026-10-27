@@ -4,7 +4,7 @@ description: Explore new Windows platform capabilities, SDK and API updates, des
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
 author: GrantMeStrength
 ms.author: jken
-ms.date: 10/14/2026
+ms.date: 10/27/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -19,15 +19,15 @@ This section curates the latest platform capabilities, SDK and API additions, AI
 
 Find the latest downloads, release notes, and updates for the Windows SDK, Windows App SDK, and WinUI 3.
 
-Versions below are current as of October 14, 2026. Use the release notes to review the changes and requirements for each channel or SDK build.
+Versions below are current as of October 27, 2026. Use the release notes to review the changes and requirements for each channel or SDK build.
 
 :::row:::
     :::column:::
         ![Windows App SDK icon](images/wasdk-hero.png)<br>
         **Windows App SDK**<br>
-        Latest stable: 2.5.1<br>
+        Latest stable: 2.6.4<br>
         Latest experimental: 2.5.4-experimental<br>
-        [Stable release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-251)<br>
+        [Stable release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-264)<br>
         [Experimental release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-25-experimental-254-experimental)<br>
         [View downloads](../windows-app-sdk/downloads.md)
     :::column-end:::
@@ -47,6 +47,10 @@ Versions below are current as of October 14, 2026. Use the release notes to revi
 
 ### SDK releases and developer blog posts
 
+- **Windows App SDK 2.6.4**: The October 27 stable release removes the Limited Access Feature unlock requirement for the Language Model APIs, updates ONNX Runtime to 1.27.1, and includes reliability and diagnostics fixes across WinUI 3, app lifecycle, notifications, composition, and Windows AI. Apps using earlier Windows App SDK versions must continue to follow the Language Model LAF requirements for their target Windows versions. See the [Windows App SDK 2.6.4 release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-264).
+- **Microsoft.UI.Reactor (experimental)**: The October 21 post introduces a C#-first Model-View-Update framework that renders WinUI controls without XAML. Reactor is experimental, has no support policy or API guarantees, and isn't a replacement for XAML or MVVM. See [Microsoft.UI.Reactor: a C#-first way to build WinUI apps](https://devblogs.microsoft.com/ifdef-windows/microsoft-ui-reactor-a-c-first-way-to-build-winui-apps/).
+- **PowerToys 0.102**: The October 21 release adds Mouse Button Lock and CursorHide, a Command Palette quick-access shelf, ZoomIt snip dictation, and command-line automation for more utilities. Color Picker and Text Extractor also move to WinUI 3. See [PowerToys 0.102 is here](https://devblogs.microsoft.com/commandline/powertoys-0-102-is-here-new-mouse-utilities-command-palette-improvements-and-much-more/).
+- **Inside MSIX: external location and activation**: Learn how a package with external location supplements an existing installer, and how activatable extension points start packaged processes with package identity. See [External Location](https://devblogs.microsoft.com/insidemsix/msix-external-location/) (October 27) and [Activatable Extension Points](https://devblogs.microsoft.com/insidemsix/activatable-extension-points/) (October 20).
 - **Microsoft Execution Containers is generally available**: The October 7 post describes policy-driven containment for AI agents, where developers and IT administrators define the files and network destinations an agent can use, and Windows enforces those policies at runtime. See [Microsoft Execution Containers: Policy-driven containment for AI agents](https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/).
 - **WinUI Gallery 3.0**: The October 13 release is built on the experimental Windows App SDK (currently 2.5.4-experimental) and adds samples for the experimental TableView control and other upcoming WinUI controls and APIs. See [WinUI Gallery 3.0 is here](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/).
 - **.NET 11 Release Candidate 2**: The October 13 prerelease includes improvements across libraries, runtime, SDK, MSBuild, NuGet, ASP.NET Core, .NET MAUI, and Windows Forms. See [Announcing .NET 11 Release Candidate 2](https://devblogs.microsoft.com/dotnet/dotnet-11-rc-2/).
@@ -55,6 +59,15 @@ Versions below are current as of October 14, 2026. Use the release notes to revi
 - **WSL 3.0.3**: A new release is available on GitHub. See the [WSL 3.0.3 release notes](https://github.com/microsoft/WSL/releases/tag/3.0.3).
 - **Windows SDK September builds**: Builds 10.0.28000.2957 and 10.0.26100.9457 add the `Windows.ApplicationModel.Overlay` namespace. See the [Windows SDK release notes](../windows-sdk/release-notes.md).
 - **Building Windows for hybrid intelligence**: The October 7 Windows Experience Blog post covers the platform direction for agents that operate both locally and in the cloud. See [Building Windows for hybrid intelligence](https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/).
+
+### Documentation highlights
+
+- **Windows widget design and development**: Refreshed guidance helps you choose between packaged desktop providers and PWA widgets, build Adaptive Card templates, and validate sizes, themes, authentication states, and actions in the Widgets Board. Web widgets remain available only to users in the European Economic Area (EEA). Start with [Develop Windows Widgets](../develop/widgets/index.md) and the [widget design overview](../design/widgets/index.md).
+- **Create a widget with GitHub Copilot**: A new guide provides a reusable, copy-and-paste prompt to select a supported architecture, generate provider code and package registration, and build and validate the widget. The prompt is included in the article, not distributed as a separately installable skill. See [Create a Windows widget with GitHub Copilot](../develop/widgets/create-widget-with-copilot.md).
+- **Experimental WinUI controls**: New guidance covers [TableView](../develop/ui/controls/table-view.md), [PagerControl](../develop/ui/controls/pager-control.md), [WrapPanel](../develop/ui/layout-panels.md#wrappanel), and [InkCanvas and InkToolbar](../develop/ui/controls/ink-controls.md). These APIs require an experimental Windows App SDK package, might change or be removed, and aren't intended for production apps.
+- **Microsoft Execution Containers SDK guides**: New conceptual articles cover .NET, TypeScript, and Rust SDK integration, resource policies, containment backends, and Learning Mode for Windows ProcessContainer workloads. Start with the [MXC overview](../develop/mxc/index.md) and [SDK quickstart](../develop/mxc/quickstart.md); available controls depend on the backend and host.
+- **Windows People integration**: A task-based overview links to guides for contributing contacts, ranking Windows Share suggestions, enabling communication actions, and recording contact activities. Review the activity guide's availability caveats before depending on those APIs. See [Windows People](../develop/windows-integration/cross-device-people-api.md).
+- **Focus session detection**: Updated WinUI 3 examples check API availability, distinguish focus sessions from Do not disturb, marshal UI updates, and unsubscribe from state-change events. `FocusSessionManager` is a Windows Runtime API, not a Windows App SDK API. See [Detect and react to focus session state](../windows-app-sdk/applifecycle/focus-session.md).
 
 ---
 
@@ -98,5 +111,4 @@ Versions below are current as of October 14, 2026. Use the release notes to revi
 - **Intelligent Terminal 0.2**: The biggest release yet of the experimental AI-powered terminal, adding local model support in the Agent Pane, per-tab agent selection with `/agent`, OpenCode in the built-in agent lineup, WSL agent execution, and a richer Agent Pane UI — [Intelligent Terminal 0.2 announcement](https://devblogs.microsoft.com/commandline/intelligent-terminal-0-2-is-here-with-local-model-support/) | Install: `winget install Microsoft.IntelligentTerminal`
 - **Inside MSIX – Package Lifetime**: How MSIX uses a garbage-collection design for staged package lifetime — why destaging is not a direct result of a single API call, what holds a reference, and when payloads are automatically removed from disk — [MSIX Package Lifetime](https://devblogs.microsoft.com/insidemsix/msix-package-lifetime/)
 - **The Old New Thing**: Raymond Chen's long-running blog on practical Windows development — internals, Win32, shell behavior, and the history behind platform decisions — [The Old New Thing](https://devblogs.microsoft.com/oldnewthing/)
-
 
