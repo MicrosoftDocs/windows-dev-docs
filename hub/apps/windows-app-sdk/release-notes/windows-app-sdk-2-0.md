@@ -2,7 +2,7 @@
 title: Windows App SDK 2.0 release notes
 description: Release notes for Windows App SDK 2.0 across the Stable, Preview, and Experimental channels, with feature highlights, bug fixes, and API changes.
 ms.topic: release-notes
-ms.date: 09/29/2026
+ms.date: 10/27/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -13,6 +13,81 @@ zone_pivot_groups: wasdk-release-channels
 [!INCLUDE [wasdk-releasenotes](../../../includes/wasdk-release-notes.md)]
 
 :::zone pivot="stable"
+
+## Version 2.6.4
+
+Released: **October 27, 2026** <br><br>
+
+<details><summary>Updated Language Model Access Requirements</summary>
+
+>
+> The Language Model APIs no longer require apps to unlock the Language Model Limited Access Feature
+> before use. Apps using earlier Windows App SDK versions must continue to follow the LAF
+> requirements for their target Windows versions.
+> ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): LanguageModel_RemoveLimitedAccessFeatureRequirement)
+>
+
+</details>
+
+<details><summary>Updated ONNX Runtime</summary>
+
+>
+> The version of ONNX Runtime has been updated to 1.27.1. See [ONNX Runtime versions](/windows/ai/new-windows-ml/onnx-versions) for more info.
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> - Fixed an access violation crash that could occur during app shutdown when a text control, such
+>   as a `TextBox` or `RichEditBox`, was still alive while the XAML core was being torn down.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): CCoreServices_InputServicesTeardownOrder)
+> - Fixed an issue where `AppInstance.GetInstances` could fail with `E_INVALIDARG` while enumerating
+>   application instances.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): AppLifecycle_GetInstancesProcessHandleFix)
+> - Fixed a crash when calling some `AppNotificationManager` and `AppInstance` APIs.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): AppNotification_AppInstance_FixStackOverflowCrash)
+> - Fixed an issue where self-contained apps could fail to load
+>   `Microsoft.WindowsAppRuntime.Insights.Resource.dll` when using the `VersionInfo` APIs or
+>   registering an `AppNotification` callback. For more info, see GitHub issues
+>   [#6071](https://github.com/microsoft/WindowsAppSDK/issues/6071) and
+>   [#6387](https://github.com/microsoft/WindowsAppSDK/issues/6387).
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): VersionInfo_MissingInsightsResourceDll)
+> - Fixed an issue where an unhandled exception in a `DispatcherQueue` callback (for example, one
+>   queued with `TryEnqueue`) could produce a crash dump with only the error code (HRESULT),
+>   omitting the app's original exception type, message, and stack trace.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DispatcherQueue_CaptureCallbackErrorContext)
+> - Fixed the same crash dump issue for unhandled exceptions in `DispatcherQueueTimer.Tick` event
+>   handlers.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): DispatcherQueueTimer_CaptureTickErrorContext)
+> - Fixed an issue where a failure while creating a `ContentIsland` or other Content object (for
+>   example, due to low memory or creating the object on the wrong thread) immediately terminated
+>   the app. The original error is now returned to the calling code instead.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ContentIsland_InitializationFailureCleanup)
+> - Fixed system backdrop support for lifted content islands and XAML windows when using the
+>   System Composition Engine.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): SwitcherSystemBackdropBrushSupport)
+> - Fixed projection of compatible `Windows.UI.Composition` objects into `Microsoft.UI.Composition`,
+>   preserving object identity, when using the System Composition Engine.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): SwitcherColdWrappingWUCToMUC)
+> - Fixed a crash in `ItemsView` when the target of `StartBringItemIntoView` was collapsed or
+>   recycled before the scroll completed. For more info, see GitHub issue
+>   [#11865](https://github.com/microsoft/microsoft-ui-xaml/issues/11865).
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ItemsView_InvalidBringIntoViewAnchor)
+> - Fixed a crash that could occur when a `WebView2` control received focus while still
+>   initializing and its parent window was temporarily disabled when initialization finished. The
+>   focus request is now ignored in that case.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WebView2_HandleMoveFocusInvalidArgument)
+> - Improved diagnosability for Windows AI model initialization APIs.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): AIFabric_Tip_APIClassName_ReasonName)
+> - Fixed false IntelliSense errors on XAML-generated members, such as `InitializeComponent` and
+>   `x:Name` fields, in WinUI 3 C# projects edited in VS Code with C# Dev Kit. To opt out, set the
+>   `EnableWinUIDesignTimeGeneratedXamlCompileItems` property to `false`.
+>   ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, build .targets change)
+>
+
+</details>
 
 ## Version 2.5.1
 
