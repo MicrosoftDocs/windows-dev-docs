@@ -1,26 +1,38 @@
 ---
-description: Describes how to detect and react to the current focus session state.
+description: Learn how to detect Windows focus session state and respond to changes in a WinUI 3 app, with API checks and event cleanup.
 title: Detect and react to focus session state
 ms.topic: how-to
-ms.date: 07/14/2025
+ms.date: 10/23/2026
+author: GrantMeStrength
+ms.author: jken
 keywords: AppLifecycle, Windows, ApplicationModel, focus
 ms.localizationpriority: medium
 ---
 
 # Detect and react to focus session state
 
-Windows 11 introduced the Focus feature which helps users minimize distractions by turning on Do Not Disturb and silencing icon flashing and badge notifications for apps in the taskbar. This article shows you how to use the [FocusSessionManager](/uwp/api/windows.ui.shell.focussessionmanager) API to detect whether a Focus session is currently active or receive updates when the Focus session state changes, allowing you to customize your app's behavior to minimize distractions when a Focus session is active. For more information on the Focus feature, see [How to use focus in Windows 11](https://support.microsoft.com/en-us/windows/how-to-use-focus-in-windows-11-aaaabbbb-0000-cccc-1111-dddd2222eeee).
+The Focus feature in Windows 11 helps users minimize distractions. By default, a focus session turns on Do not disturb and hides flashing and badges for apps on the taskbar. Users can change these options in **Settings > System > Focus**. For more information, see [Focus: stay on task without distractions in Windows](https://support.microsoft.com/en-us/windows/experience/focus-stay-on-task-without-distractions-in-windows).
+
+This article shows you how to use [FocusSessionManager](/uwp/api/windows.ui.shell.focussessionmanager) to detect an active focus session and respond to state changes. The focus session state isn't the same as the Do not disturb state: Do not disturb can be enabled independently and can remain on after a focus session ends.
+
+## Prerequisites
+
+The examples are code fragments for a WinUI 3 app built with [Windows SDK 10.0.26100.0 or later](../../windows-sdk/index.md). **FocusSessionManager** is a Windows Runtime API in **Windows.UI.Shell**, not a Windows App SDK API. Keep that namespace when you use it from WinUI 3.
+
+If your app runs on Windows versions that don't expose this API, check [ApiInformation.IsTypePresent](/uwp/api/windows.foundation.metadata.apiinformation.istypepresent) before accessing **FocusSessionManager**. Then check **IsSupported** before getting a manager instance. The presence of the Focus feature in Windows 11 doesn't guarantee that this API is available.
 
 ## Get the current Focus session state
 
-Before accessing the properties of the **FocusSessionManager**, make sure it's supported on the current device by checking the [IsSupported](/uwp/api/windows.ui.shell.focussessionmanager.issupported) property. After verifying that the feature is supported you can determine if a Focus session is currently active by checking the [IsFocusActive](/uwp/api/windows.ui.shell.focussessionmanager.isfocusactive) property.
+After checking API availability and [IsSupported](/uwp/api/windows.ui.shell.focussessionmanager.issupported), call **GetDefault** and read [IsFocusActive](/uwp/api/windows.ui.shell.focussessionmanager.isfocusactive). Call the following helper on the UI thread. It assumes your page contains a text block named **StatusTextBlock**.
 
 #### [C#](#tab/csharp)
 ```csharp
 private void UpdateStatusBar(string message)
 {
     var focusActive = false;
-    if (Windows.UI.Shell.FocusSessionManager.IsSupported)
+    if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent(
+            "Windows.UI.Shell.FocusSessionManager") &&
+        Windows.UI.Shell.FocusSessionManager.IsSupported)
     {
         var manager = Windows.UI.Shell.FocusSessionManager.GetDefault();
         focusActive = manager.IsFocusActive;
@@ -28,7 +40,7 @@ private void UpdateStatusBar(string message)
 
     if (!focusActive)
     {
-        statusTextBlock.Text = message;
+        StatusTextBlock.Text = message;
     }
 }
 ```
@@ -38,21 +50,24 @@ private void UpdateStatusBar(string message)
 // pch.h
 ...
 #include <winrt/Windows.UI.Shell.h>
+#include <winrt/Windows.Foundation.Metadata.h>
 
 
-// MainWindow.xaml.h
+// MainPage.xaml.h
 ...
-Windows::UI::Shell::FocusSessionManager m_focusSessionManager = Windows::UI::Shell::FocusSessionManager::GetDefault();
 void UpdateStatusBar(winrt::hstring const& message);
 
-// MainWindow.xaml.cpp
+// MainPage.xaml.cpp
 ...
-void MainWindow::UpdateStatusBar(winrt::hstring const& message)
+void MainPage::UpdateStatusBar(winrt::hstring const& message)
 {
     auto focusActive = false;
-    if (Windows::UI::Shell::FocusSessionManager::IsSupported())
+    if (Windows::Foundation::Metadata::ApiInformation::IsTypePresent(
+            L"Windows.UI.Shell.FocusSessionManager") &&
+        Windows::UI::Shell::FocusSessionManager::IsSupported())
     {
-        focusActive = m_focusSessionManager.IsFocusActive();
+        auto manager = Windows::UI::Shell::FocusSessionManager::GetDefault();
+        focusActive = manager.IsFocusActive();
     }
 
     if (!focusActive)
@@ -66,29 +81,51 @@ void MainWindow::UpdateStatusBar(winrt::hstring const& message)
 
 ## Continuously monitor focus state
 
-You can subscribe to be notified when the Focus session state on the device changes by registering for the [IsFocusActiveChanged](/uwp/api/windows.ui.shell.focussessionmanager.isfocusactivechanged) event. In the following example **SetAnimatedGifAutoPlay** is an app-implemented helper method that changes whether the app auto-plays animated gifs based on the current Focus session state.
+Register for [IsFocusActiveChanged](/uwp/api/windows.ui.shell.focussessionmanager.isfocusactivechanged) to receive state changes. Marshal UI work through your page's **DispatcherQueue**, and unsubscribe when you leave the page. The following fragments belong to a WinUI 3 **Page**, not a **Window**, because navigation callbacks are page methods.
+
+In these examples, **SetAnimatedGifAutoPlay** is a helper you implement to enable or disable animated GIF playback. Read the initial state after subscribing, and read it again on the UI thread when an event arrives.
 
 #### [C#](#tab/csharp)
 ```csharp
+// MainPage.xaml.cs
+private Windows.UI.Shell.FocusSessionManager? _focusSessionManager;
+
 protected override void OnNavigatedTo(NavigationEventArgs e)
 {
-    if (Windows.UI.Shell.FocusSessionManager.IsSupported)
+    base.OnNavigatedTo(e);
+
+    if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent(
+            "Windows.UI.Shell.FocusSessionManager") &&
+        Windows.UI.Shell.FocusSessionManager.IsSupported)
     {
-        var manager = Windows.UI.Shell.FocusSessionManager.GetDefault();
-        manager.IsFocusActiveChanged += Manager_IsFocusActiveChanged;
-        SetAnimatedGifAutoPlay(!manager.IsFocusActive);
+        _focusSessionManager = Windows.UI.Shell.FocusSessionManager.GetDefault();
+        _focusSessionManager.IsFocusActiveChanged += Manager_IsFocusActiveChanged;
+        SetAnimatedGifAutoPlay(!_focusSessionManager.IsFocusActive);
     }
+}
+
+protected override void OnNavigatedFrom(NavigationEventArgs e)
+{
+    if (_focusSessionManager is not null)
+    {
+        _focusSessionManager.IsFocusActiveChanged -= Manager_IsFocusActiveChanged;
+        _focusSessionManager = null;
+    }
+
+    base.OnNavigatedFrom(e);
 }
 
 private void Manager_IsFocusActiveChanged(Windows.UI.Shell.FocusSessionManager sender, object args)
 {
-    if(sender.IsFocusActive)
+    if (!DispatcherQueue.TryEnqueue(() =>
+        {
+            if (_focusSessionManager is not null)
+            {
+                SetAnimatedGifAutoPlay(!_focusSessionManager.IsFocusActive);
+            }
+        }))
     {
-        SetAnimatedGifAutoPlay(false);
-    }
-    else
-    {
-        SetAnimatedGifAutoPlay(true);
+        System.Diagnostics.Debug.WriteLine("Focus update wasn't queued because the dispatcher is shutting down.");
     }
 }
 ```
@@ -98,37 +135,63 @@ private void Manager_IsFocusActiveChanged(Windows.UI.Shell.FocusSessionManager s
 // pch.h
 ...
 #include <winrt/Windows.UI.Shell.h>
+#include <winrt/Windows.Foundation.Metadata.h>
 #include <winrt/Microsoft.UI.Xaml.Navigation.h>
+#include <winrt/Microsoft.UI.Dispatching.h>
 
-// MainWindow.xaml.h
+// MainPage.xaml.h
 ...
 void OnNavigatedTo(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const&);
+void OnNavigatedFrom(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const&);
 
-Windows::UI::Shell::FocusSessionManager m_focusSessionManager = Windows::UI::Shell::FocusSessionManager::GetDefault();
-winrt::event_token m_focusStateChangedToken;
+Windows::UI::Shell::FocusSessionManager m_focusSessionManager{ nullptr };
+Windows::UI::Shell::FocusSessionManager::IsFocusActiveChanged_revoker m_focusStateChangedRevoker;
 
 void OnFocusStateChanged(Windows::UI::Shell::FocusSessionManager const& sender, Windows::Foundation::IInspectable const&);
 
-// MainWindow.xaml.cpp
+// MainPage.xaml.cpp
 ...
-void MainWindow::OnNavigatedTo(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const&)
+void MainPage::OnNavigatedTo(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const&)
 {
-    if (Windows::UI::Shell::FocusSessionManager::IsSupported())
+    if (Windows::Foundation::Metadata::ApiInformation::IsTypePresent(
+            L"Windows.UI.Shell.FocusSessionManager") &&
+        Windows::UI::Shell::FocusSessionManager::IsSupported())
     {
-
-        m_focusStateChangedToken = m_focusSessionManager.IsFocusActiveChanged(
-            { get_weak(), &MainWindow::OnFocusStateChanged });
+        m_focusSessionManager = Windows::UI::Shell::FocusSessionManager::GetDefault();
+        m_focusStateChangedRevoker = m_focusSessionManager.IsFocusActiveChanged(
+            winrt::auto_revoke, { get_weak(), &MainPage::OnFocusStateChanged });
 
         SetAnimatedGifAutoPlay(!m_focusSessionManager.IsFocusActive());
     }
 }
 
-void MainWindow::OnFocusStateChanged(Windows::UI::Shell::FocusSessionManager const& sender,
+void MainPage::OnNavigatedFrom(Microsoft::UI::Xaml::Navigation::NavigationEventArgs const&)
+{
+    m_focusStateChangedRevoker.revoke();
+    m_focusSessionManager = nullptr;
+}
+
+void MainPage::OnFocusStateChanged(Windows::UI::Shell::FocusSessionManager const&,
         Windows::Foundation::IInspectable const&)
 {
-    auto temp = m_focusSessionManager.IsFocusActive();
-    SetAnimatedGifAutoPlay(!m_focusSessionManager.IsFocusActive());
+    auto weakThis = get_weak();
+    if (!DispatcherQueue().TryEnqueue([weakThis]()
+        {
+            if (auto page = weakThis.get(); page && page->m_focusSessionManager)
+            {
+                page->SetAnimatedGifAutoPlay(!page->m_focusSessionManager.IsFocusActive());
+            }
+        }))
+    {
+        ::OutputDebugStringW(L"Focus update wasn't queued because the dispatcher is shutting down.\n");
+    }
 }
 ```
 
 ---
+
+For C#, add `using Microsoft.UI.Xaml.Navigation;` for **NavigationEventArgs**. If you monitor focus state from a window instead of a page, subscribe after initializing the window and unsubscribe in its **Closed** handler.
+
+## Starting or ending focus sessions
+
+Detecting focus state doesn't grant permission to control sessions. [TryStartFocusSession](/uwp/api/windows.ui.shell.focussessionmanager.trystartfocussession) and [DeactivateFocus](/uwp/api/windows.ui.shell.focussessionmanager.deactivatefocus) are Limited Access Feature APIs. You must obtain approval and an unlock token before using them. For details, see [LimitedAccessFeatures](/uwp/api/windows.applicationmodel.limitedaccessfeatures) and the access-token request link in the API reference.
