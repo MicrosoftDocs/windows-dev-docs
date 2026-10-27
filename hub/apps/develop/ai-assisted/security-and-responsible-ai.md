@@ -2,7 +2,7 @@
 title: "Security and responsible AI for Windows development"
 description: Review AI-generated code for security risks, use AI tools responsibly, and ship safe Windows apps that incorporate AI features.
 ms.topic: overview
-ms.date: 07/05/2026
+ms.date: 10/08/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -81,6 +81,10 @@ Common over-broad capabilities to watch for:
 - `documentsLibrary` — requires Store special approval; avoid unless necessary
 - `userAccountInformation` — only if you need the user's name or photo
 
+### Use containment for runtime access
+
+When your app runs AI-generated code, scripts, plugins, or tools, consider using a containment mechanism to restrict the workload's resources and capabilities according to the principle of least privilege. For example, [Microsoft Execution Containers (MXC)](../mxc/index.md) lets you declare the files, network destinations, user interface access, and other capabilities that a workload needs.
+
 ## Code review checklist
 
 Before shipping AI-generated code, verify:
@@ -151,6 +155,7 @@ Learn more at [microsoft.com/ai/responsible-ai](https://www.microsoft.com/en-us/
 
 ## Related content
 
+- [Microsoft Execution Containers overview](../mxc/index.md)
 - [Microsoft Security Response Center](https://msrc.microsoft.com/)
 - [Microsoft Responsible AI principles](https://www.microsoft.com/en-us/ai/responsible-ai)
 - [Azure AI Content Safety](https://learn.microsoft.com/azure/ai-services/content-safety/overview)

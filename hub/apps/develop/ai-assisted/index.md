@@ -2,7 +2,7 @@
 title: AI-assisted Windows development
 description: Use AI coding assistants with Windows development tools to create WinUI apps, add features, and generate UI Automation tests.
 ms.topic: overview
-ms.date: 10/03/2026
+ms.date: 10/08/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -45,6 +45,7 @@ The Windows App Development CLI handles project and packaging tasks, while the W
 | **[Windows App Development CLI](../../dev-tools/winapp-cli/index.md)** | Create, run, package, sign, and publish Windows apps from the command line |
 | **[WinApp extension for Visual Studio Code](vs-code-tools.md#winapp-vs-code-extension)** | Run Windows App Development CLI commands from the Visual Studio Code Command Palette |
 | **[WinUI agent plugin](winui-agent-plugin.md)** | 8 skills for end-to-end WinUI development in GitHub Copilot or Claude Code |
+| **[Microsoft Execution Containers (MXC)](../mxc/index.md)** | Understand execution boundaries, choose a containment model, and refine policies for generated code and agent tools |
 
 ---
 

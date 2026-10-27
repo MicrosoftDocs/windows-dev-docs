@@ -914,6 +914,24 @@ items:
                 href: security/encode-decode-data.md
       - name: Fingerprint biometrics
         href: security/fingerprint-biometrics.md
+      - name: Microsoft Execution Containers (MXC)
+        items:
+          - name: Overview
+            href: mxc/index.md
+          - name: Quickstart
+            href: mxc/quickstart.md
+          - name: Architecture and containment models
+            href: mxc/architecture.md
+          - name: Containment options and platform support
+            href: mxc/platform-support.md
+          - name: Author and validate a policy
+            href: mxc/policy.md
+          - name: Learning Mode
+            href: mxc/learning-mode.md
+          - name: Policy examples
+            href: mxc/examples.md
+          - name: Releases
+            href: mxc/releases.md
       - name: OAuth 2.0
         href: security/oauth2.md
       - name: Web Account Manager
