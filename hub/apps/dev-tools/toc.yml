@@ -57,6 +57,10 @@ items:
       href: ../get-started/line-of-business/windows-lob-xaml-skill.md
     - name: Add AI capabilities
       href: ../get-started/line-of-business/ai-for-lob-apps.md
+    - name: Make your app usable by AI agents
+      href: ../get-started/line-of-business/agent-ready-lob-apps.md
+    - name: Govern agent-initiated actions
+      href: ../get-started/line-of-business/govern-agent-actions.md
   - name: Build with an AI coding assistant
     items:
     - name: Quickstart

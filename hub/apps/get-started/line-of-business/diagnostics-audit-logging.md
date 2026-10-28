@@ -2,7 +2,7 @@
 title: Add diagnostics and audit logging to a WinUI LOB app
 description: Add safe diagnostic and audit signals to a WinUI line-of-business app so administrators and support teams can troubleshoot deployments.
 ms.topic: how-to
-ms.date: 10/13/2026
+ms.date: 10/28/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -185,6 +185,14 @@ For each audit event, define:
 
 Avoid logging full names, email addresses, or business payloads when a stable identifier is enough.
 
+## Log agent-initiated actions
+
+When an agent can invoke business actions, record the authenticated user or workload, verified integration identifier, tool or business operation, outcome, and shared correlation ID. Derive the integration channel from trusted service context, not an agent-supplied label.
+
+Distinguish draft creation, approval, commit, denial, and reversal. For actions that require approval, record the authorized approver and approved draft version. Keep the service's authoritative audit trail separate from optional client diagnostics, and don't suppress required audit events when an administrator reduces diagnostic verbosity.
+
+Apply the same data-minimization and retention rules as other business audit events. For the governance decisions and audit fields to plan, see [Govern agent-initiated actions in WinUI line-of-business apps](govern-agent-actions.md). For MCP integration, see [Make a WinUI line-of-business app usable by AI agents](agent-ready-lob-apps.md).
+
 ## Let administrators change logging detail
 
 Use a managed setting for the diagnostic level so support can increase logging detail during an incident. If your app gates event emission itself, validate the configured level before applying it.
@@ -234,7 +242,7 @@ Test these cases before broad deployment:
 - Service failures include a correlation ID that the service also records.
 - Authentication failures don't include tokens or credentials.
 - Policy conflicts are visible in diagnostics and in the app UI.
-- Audit events are emitted only for approved business actions.
+- Audit events distinguish successful, denied, and approval-required business actions.
 - Increasing the logging level doesn't expose sensitive payloads.
 - Support staff can collect and interpret logs on a standard managed device.
 

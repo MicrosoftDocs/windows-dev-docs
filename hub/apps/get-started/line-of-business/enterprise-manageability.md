@@ -2,7 +2,7 @@
 title: Plan enterprise manageability for WinUI LOB apps
 description: Plan policy-aware settings, deployment configuration, audit logging, data protection, and supportability for enterprise WinUI LOB apps.
 ms.topic: concept-article
-ms.date: 10/13/2026
+ms.date: 10/28/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -23,6 +23,7 @@ Decide which app behavior must be controlled by the organization instead of by e
 - Logging level and diagnostic upload behavior.
 - Data-retention and cache-retention limits.
 - Whether preview or optional app experiences are enabled.
+- Whether agents can access business actions, which operations they can invoke, and which actions require human approval.
 
 Document the precedence order for settings. For example, an organization-managed policy value should usually override a per-user preference. If your app uses local settings, keep them separate from organization-managed configuration so the app can explain why a user can't change a setting.
 
@@ -92,7 +93,12 @@ Before deploying to a broad enterprise audience, confirm that you can answer the
 - How can support staff collect diagnostics?
 - Which data is cached locally, and how is it removed?
 - Which app actions are auditable?
+- Which business actions can agents invoke, and whose identity and permissions apply?
+- Can IT disable agent access or restrict operations at the service boundary?
+- How are agent-initiated actions approved, audited, and reviewed by users?
 - Which dependencies, runtimes, and services must be available for the app to start?
+
+If your app exposes business actions to agents, see [Make a WinUI line-of-business app usable by AI agents](agent-ready-lob-apps.md) for integration guidance and [Govern agent-initiated actions](govern-agent-actions.md) for identity, approval, and service-enforced policy.
 
 ## Related content
 

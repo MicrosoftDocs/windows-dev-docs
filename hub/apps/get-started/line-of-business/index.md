@@ -2,7 +2,7 @@
 title: Build line-of-business apps with WinUI - overview
 description: A hub for developers building enterprise line-of-business apps with WinUI 3, covering data, forms, migration, design, and AI.
 ms.topic: overview
-ms.date: 10/13/2026
+ms.date: 10/28/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -30,6 +30,7 @@ Use this table as a starting point. The appropriate choice depends on your app's
 | Meet enterprise manageability requirements | Plan policy-aware settings, deployment configuration, audit logging, data protection, and supportability before rollout. |
 | Keep the UI responsive | Use asynchronous APIs and avoid blocking the UI thread. Dispatch UI updates only when work completes on another thread. |
 | Add AI features | Choose an on-device Windows AI API, ONNX Runtime, or a cloud AI service based on privacy, hardware, connectivity, and model requirements. |
+| Let AI agents use your app | [Expose selected business actions as MCP tools](agent-ready-lob-apps.md), with authorization, approval, and audit controls. |
 | Package and deploy | Choose packaged with MSIX, packaged with external location, or unpackaged. Separately choose a framework-dependent or self-contained Windows App SDK deployment. |
 
 ## Build a new app
@@ -70,6 +71,7 @@ The `CommunityToolkit.Mvvm` package remains a Microsoft-maintained option for im
 - [Plan enterprise manageability for WinUI LOB apps](enterprise-manageability.md)
 - [Make a WinUI LOB app policy-aware](policy-aware-settings.md)
 - [Add diagnostics and audit logging to a WinUI LOB app](diagnostics-audit-logging.md)
+- [Govern agent-initiated actions in WinUI LOB apps](govern-agent-actions.md)
 - [Distribute LOB apps to enterprises](../../publish/distribute-lob-apps-to-enterprises.md)
 - [App capability declarations](../../package-and-deploy/app-capability-declarations.md)
 
@@ -98,6 +100,12 @@ You don't need to rewrite a working WPF or Windows Forms app to adopt every Wind
 ## Add AI to your app
 
 Use [Add AI capabilities to a line-of-business WinUI app](ai-for-lob-apps.md) to compare on-device Windows AI, ONNX Runtime, and cloud AI approaches.
+
+## Let agents use your app
+
+Use [Make a WinUI line-of-business app usable by AI agents](agent-ready-lob-apps.md) to expose business actions as MCP tools. Plan user authorization, approval for consequential changes, enterprise policy, and audit logging before connecting an agent host.
+
+Use [Govern agent-initiated actions in WinUI line-of-business apps](govern-agent-actions.md) to define identity, action risk tiers, verifiable human approval, and service-enforced enterprise controls.
 
 ## Design for productivity
 
