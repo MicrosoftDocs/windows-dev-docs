@@ -1,7 +1,7 @@
 ---
 title: Steps to open a Microsoft Store developer account in Partner Center
 description: Here's an overview of how to open a Microsoft Store developer account in Partner Center.
-ms.date: 9/17/2025
+ms.date: 10/29/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -37,9 +37,7 @@ For more details, you can refer to the steps below:
 
 3. Select **Individual developer**.
 
-   > **Note for Company developers:** Selecting **Company account** will redirect you to the new onboarding flow for Company developers. Learn more about Company account setup [here](/windows/apps/publish/partner-center/open-a-developer-account?tabs=company).
-
-![Choose account type](../images/whats-new-company-account-2.png)
+![Choose account type with Individual developer selected](../images/individual-developer-image.png)
 
 4. **Sign in** with your Microsoft account (MSA) or create a new one.
 
