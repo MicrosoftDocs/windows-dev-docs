@@ -194,15 +194,16 @@ Additional guides:
 
 | Category | Commands |
 |----------|----------|
-| **Create & set up** | [new](usage.md#new), [init](usage.md#init), [restore](usage.md#restore), [update](usage.md#update) |
-| **Run & debug** | [run](usage.md#run), [create-debug-identity](usage.md#create-debug-identity), [embed-identity](usage.md#embed-identity), [unregister](usage.md#unregister) |
-| **Packaging** | [pack](usage.md#pack) |
-| **Manifests** | [manifest generate](usage.md#manifest-generate), [manifest update-assets](usage.md#manifest-update-assets), [manifest add-alias](usage.md#manifest-add-alias) |
-| **Certificates & Signing** | [cert generate](usage.md#cert-generate), [cert install](usage.md#cert-install), [sign](usage.md#sign), [az-sign](usage.md#az-sign), [create-external-catalog](usage.md#create-external-catalog) |
-| **Code search for agents** | [find-ui](usage.md#find-ui), [find-api](usage.md#find-api) |
-| **UI automation & Sandbox** | [ui](usage.md#ui), [target](usage.md#target) |
-| **Utilities** | [tool](usage.md#tool), [store](usage.md#store), [get-winapp-path](usage.md#get-winapp-path), [complete](usage.md#shell-completion) |
-| **Node.js/Electron** | [node create-addon](usage.md#node-create-addon), [node generate-bindings](usage.md#node-generate-bindings), [node add-electron-debug-identity](usage.md#node-add-electron-debug-identity), [node clear-electron-debug-identity](usage.md#node-clear-electron-debug-identity) |
+| **Create & set up** | [:::no-loc text="new":::](usage.md#new), [:::no-loc text="init":::](usage.md#init), [:::no-loc text="restore":::](usage.md#restore), [:::no-loc text="update":::](usage.md#update) |
+| **Run & debug** | [:::no-loc text="run":::](usage.md#run), [:::no-loc text="create-debug-identity":::](usage.md#create-debug-identity), [:::no-loc text="embed-identity":::](usage.md#embed-identity), [:::no-loc text="unregister":::](usage.md#unregister) |
+| **Packaging** | [:::no-loc text="pack":::](usage.md#pack) |
+| **Manifests** | [:::no-loc text="manifest generate":::](usage.md#manifest-generate), [:::no-loc text="manifest update-assets":::](usage.md#manifest-update-assets), [:::no-loc text="manifest add-alias":::](usage.md#manifest-add-alias) |
+| **Certificates & Signing** | [:::no-loc text="cert generate":::](usage.md#cert-generate), [:::no-loc text="cert install":::](usage.md#cert-install), [:::no-loc text="sign":::](usage.md#sign), [:::no-loc text="az-sign":::](usage.md#az-sign), [:::no-loc text="create-external-catalog":::](usage.md#create-external-catalog) |
+| **Code search for agents** | [:::no-loc text="find-ui":::](usage.md#find-ui), [:::no-loc text="find-api":::](usage.md#find-api) |
+| **UI automation & Sandbox** | [:::no-loc text="ui":::](usage.md#ui), [:::no-loc text="target":::](usage.md#target) |
+| **Utilities** | [:::no-loc text="tool":::](usage.md#tool), [:::no-loc text="store":::](usage.md#store), [:::no-loc text="get-winapp-path":::](usage.md#get-winapp-path), [:::no-loc text="complete":::](usage.md#shell-completion) |
+| **Node.js/Electron** | [:::no-loc text="node create-addon":::](usage.md#node-create-addon), [:::no-loc text="node generate-bindings":::](usage.md#node-generate-bindings), [:::no-loc text="node add-electron-debug-identity":::](usage.md#node-add-electron-debug-identity), [:::no-loc text="node clear-electron-debug-identity":::](usage.md#node-clear-electron-debug-identity) |
+
 
 For the full CLI reference, see [CLI reference](usage.md).
 
@@ -212,18 +213,18 @@ The [samples folder](https://github.com/microsoft/WinAppCli/tree/main/samples) o
 
 | Sample | Description |
 |--------|-------------|
-| [WinUI app](https://github.com/microsoft/WinAppCli/tree/main/samples/winui-app) | Packaged WinUI app registered and launched with `winapp run` |
-| [WinUI unpackaged app](https://github.com/microsoft/WinAppCli/tree/main/samples/winui-unpackaged-app) | Unpackaged WinUI app launched with `winapp run` |
-| [WinUI solution](https://github.com/microsoft/WinAppCli/tree/main/samples/winui-solution) | Multi-project solution (app and test project) that shows how `winapp run` selects the app project |
-| [C++ WinUI app](https://github.com/microsoft/WinAppCli/tree/main/samples/cpp-app-winui) | WinUI window built in C++ with CMake, without XAML or MSBuild |
-| [WPF app](https://github.com/microsoft/WinAppCli/tree/main/samples/wpf-app) | WPF desktop app |
-| [.NET MAUI app](https://github.com/microsoft/WinAppCli/tree/main/samples/maui-app) | .NET MAUI Windows project packaged and signed with winapp CLI |
-| [C++ app](https://github.com/microsoft/WinAppCli/tree/main/samples/cpp-app) | Native C++ Win32 app built with CMake |
-| [Electron](https://github.com/microsoft/WinAppCli/tree/main/samples/electron) | Electron Forge app with a manifest, assets, and native C++ and C# addons |
-| [Rust app](https://github.com/microsoft/WinAppCli/tree/main/samples/rust-app) | Rust app that calls Windows APIs |
-| [Tauri app](https://github.com/microsoft/WinAppCli/tree/main/samples/tauri-app) | Tauri app with a Rust backend |
-| [Flutter app](https://github.com/microsoft/WinAppCli/tree/main/samples/flutter-app) | Flutter desktop app with package identity and the Windows App SDK |
-| [Sparse app](https://github.com/microsoft/WinAppCli/tree/main/samples/sparse-app) | WPF app with sparse packaging (identity-only MSIX) and an installer |
+| [:::no-loc text="WinUI app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/winui-app) | Packaged WinUI app registered and launched with `winapp run` |
+| [:::no-loc text="WinUI unpackaged app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/winui-unpackaged-app) | Unpackaged WinUI app launched with `winapp run` |
+| [:::no-loc text="WinUI solution":::](https://github.com/microsoft/WinAppCli/tree/main/samples/winui-solution) | Multi-project solution (app and test project) that shows how `winapp run` selects the app project |
+| [:::no-loc text="C++ WinUI app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/cpp-app-winui) | WinUI window built in C++ with CMake, without XAML or MSBuild |
+| [:::no-loc text="WPF app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/wpf-app) | WPF desktop app |
+| [:::no-loc text=".NET MAUI app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/maui-app) | .NET MAUI Windows project packaged and signed with winapp CLI |
+| [:::no-loc text="C++ app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/cpp-app) | Native C++ Win32 app built with CMake |
+| [:::no-loc text="Electron":::](https://github.com/microsoft/WinAppCli/tree/main/samples/electron) | Electron Forge app with a manifest, assets, and native C++ and C# addons |
+| [:::no-loc text="Rust app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/rust-app) | Rust app that calls Windows APIs |
+| [:::no-loc text="Tauri app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/tauri-app) | Tauri app with a Rust backend |
+| [:::no-loc text="Flutter app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/flutter-app) | Flutter desktop app with package identity and the Windows App SDK |
+| [:::no-loc text="Sparse app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/sparse-app) | WPF app with sparse packaging (identity-only MSIX) and an installer |
 
 ## Why package identity?
 
