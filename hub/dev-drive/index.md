@@ -285,7 +285,7 @@ The following filters may be used with Dev Drive:
 | Docker:  Running containers out of Dev Drive | bindFlt, wcifs |
 | Windows Performance Recorder:  Measure file system operations | FileInfo |
 | Resource Monitor: Shows resource usage. Required to show file names in Disk Activity | FileInfo |
-| Process Monitor - Sysinternals:  Monitor file system activities | ProcMon24 |
+| Process Monitor - Sysinternals:  Monitor file system activities ATTENTION, see correct <number> at %systemroot%System32\drivers\PROCMON##.sys, currently ## is 25 | ProcMon## |
 | Windows Upgrade: Used during OS Upgrade. Required if user moves TEMP environment variable to Dev Drive | WinSetupMon |
 | [Windows Defender Application Control (WDAC)](/windows/security/application-security/application-control/windows-defender-application-control/design/configure-authorized-apps-deployed-with-a-managed-installer#configure-managed-installer-tracking-with-applocker-and-wdac): Managed installer tracking with AppLocker identity services | applockerfltr |
 
