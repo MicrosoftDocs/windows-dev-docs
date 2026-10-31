@@ -1,168 +1,169 @@
 ---
 title: PowerToys Text Expander utility for Windows
-description: Learn how to create and manage PowerToys Text Expander snippets, use dynamic values and prompts, edit the snippet file, and store snippets in a synced folder.
-ms.date: 10/22/2026
+description: Learn how to use PowerToys Text Expander to insert text snippets by typing short triggers, manage snippets in the snippet editor, and use your snippets on several PCs.
+ms.date: 10/31/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
-no-loc: [PowerToys, Windows, Text Expander, OneDrive, PowerToysTextExpanderSnippets.txt, snippets.txt]
+no-loc: [PowerToys, Windows, Text Expander, OneDrive, PowerToysTextExpanderSnippets.json]
 # Customer intent: As a Windows power user, I want to replace short triggers with reusable text snippets so that I can enter frequently used text more quickly.
 ---
 
 # Text Expander utility
 
-PowerToys Text Expander replaces short triggers that you type with reusable text snippets. A replacement can include multiple lines, dates and times, clipboard text, questions that Text Expander asks when the snippet runs, and a final cursor position.
+PowerToys Text Expander inserts text that you use often, such as an email signature or a standard reply, when you type a short trigger in any app. A snippet can include several lines, dates and times, clipboard text, your answers to questions, and a cursor position.
 
 ## Enable Text Expander
-
-To use Text Expander:
 
 1. Open PowerToys Settings.
 1. Select **Text Expander**.
 1. Turn on **Enable Text Expander**.
 
-PowerToys must remain running in the background for triggers to expand.
+PowerToys must keep running in the background for triggers to expand.
 
-## Create and manage snippets
+## Manage snippets
 
-To create a snippet:
+On the **Text Expander** page in PowerToys Settings, select **Manage snippets** to open the snippet editor, **PowerToys Text Expander - Manage snippets**. You can manage snippets even while Text Expander is turned off.
 
-1. In PowerToys Settings, select **Text Expander**.
-1. Select **New snippet**.
-1. Enter a **Trigger**, such as `!mysig`.
-1. Enter the **Replacement** text.
-1. Optionally, select **Insert variable** to add a dynamic value.
-1. Select **Save**.
+Each row shows a trigger, then "inserts" and a preview of the snippet. If the snippet asks questions, the row reads "asks" followed by the questions and "then inserts".
 
-Start triggers with a symbol such as `!`, `#`, or `:` to reduce accidental matches in ordinary words.
+- To find snippets, use **Search snippets** at the top of the window, or press <kbd>Ctrl</kbd>+<kbd>F</kbd>. Search matches triggers and replacement text.
+- To edit a snippet, select its row, or move to it with the arrow keys and press <kbd>Enter</kbd>.
+- Select **More options** on a row to **Edit**, **Duplicate**, or **Delete** the snippet. **Duplicate** opens an unsaved copy with a new trigger.
+- Select **Good to know** (the information icon) for notes about privacy, undo, input methods, and where snippets don't expand.
 
-The snippets list provides these management options:
+If a row shows **Never expands**, the row explains why its trigger can't fire.
 
-- Select a snippet row or **Edit** to change its trigger or replacement.
-- Use the search box to search both triggers and replacement text.
-- Select **Duplicate** to create a copy with a new trigger.
-- Select **Delete** to permanently remove a snippet.
+### Create a snippet
 
-### Configure a Prompt window
+1. In the snippet editor, select **New snippet**.
+1. In **Trigger**, type a short trigger, such as `!mysig`.
+1. In **Replacement**, type the text to insert. Press <kbd>Enter</kbd> for a new line.
+1. Optionally, select **Insert variable** to add a value that's filled in when the snippet runs.
+1. Check the **Preview**, then select **Save**.
 
-Select **Insert variable** > **Prompt window** in the replacement editor to immediately open the Prompt window editor. Enter the question that Text Expander should ask, and choose whether an answer is required.
+Start triggers with a symbol such as `!` so that they don't fire while you type ordinary words. Each trigger must be unique and can't start or end with a space.
 
-When the snippet expands, Text Expander opens a Prompt window over the app where you were typing. Your answer is inserted into the replacement. When **Require an answer** is selected, you must enter text before you can accept the prompt. Pressing <kbd>Esc</kbd> cancels the prompt, leaves that value empty, and continues the snippet. Clear **Require an answer** to allow an empty response.
+Text Expander types a backslash as is, so `\n` in a replacement isn't a new line. Because <kbd>Tab</kbd> moves to the next control, add a tab by pasting one, or by writing `\t` in the [snippets database](#edit-the-snippets-database).
 
-You can also select an existing Prompt window token in the replacement editor to change its question or required state.
+### Insert variables
+
+Select **Insert variable** to add one of these values, or type the value. Values are case-sensitive. Dates and times use your Windows regional format, except `{{isodate}}`. The examples use the English (United States) format.
+
+| Value | Insert variable item | Inserts |
+| :--- | :--- | :--- |
+| `{{date}}` | **Date** | The current date, such as `6/1/2026`. |
+| `{{time}}` | **Time** | The current time, such as `2:30 PM`. |
+| `{{datetime}}` | **Date and time** | The current date and time, such as `6/1/2026 2:30 PM`. |
+| `{{isodate}}` | **ISO date** | The current date as `yyyy-MM-dd`, such as `2026-06-01`. |
+| `{{date:FORMAT}}` | **Custom date format** | The current date and time in a custom format. For example, `{{date:dddd, MMMM d}}` inserts `Monday, June 1`. |
+| `{{clipboard}}` | **Clipboard contents** | The text on the clipboard. |
+| `{{prompt:Question}}` | **Ask a question**, with **Required** on | Your answer to *Question*, asked when the snippet runs. An answer is required. |
+| `{{prompt?:Question}}` | **Ask a question**, with **Required** off | Your answer to *Question*, which can be empty. |
+
+**Cursor position** adds `$|$`, which marks where the cursor ends up after the snippet is inserted. Only the first `$|$` in a snippet counts.
+
+A custom format uses [.NET custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings) or `strftime` codes, such as `{{date:%Y-%m-%d}}`. **Custom date format** offers ready-made formats, and **Date format codes** under **Replacement** lists common codes while you edit one.
+
+### Ask a question when a snippet runs
+
+1. In the snippet dialog, select **Insert variable** > **Ask a question**.
+1. In **Ask when the snippet runs**, type your question, such as `Ticket number`.
+1. If the answer can be empty, turn off **Required**.
+1. Select **Add**.
+
+To change a question, select it in **Replacement**, or put the cursor in it and press <kbd>F2</kbd>.
+
+When the snippet runs, a **PowerToys Text Expander** window asks the question. Type your answer, then press <kbd>Enter</kbd> or select **OK**. For a required question, **OK** isn't available until you type an answer. To leave the answer blank and continue, press <kbd>Esc</kbd> or select **Cancel**.
 
 ## Control when triggers expand
 
-Text Expander uses the following matching settings:
+The **Advanced** group on the **Text Expander** page in PowerToys Settings has these matching settings:
 
 | Setting | Behavior |
 | :--- | :--- |
-| **Wait for space or punctuation** | Waits until you type a space, punctuation mark, or symbol after a trigger. This setting is on by default for a clean setup, and new snippets use this behavior. It prevents a shorter trigger from expanding while you are still typing a longer word or trigger. You can turn it off to expand immediately after the last trigger character. An existing saved choice remains unchanged. |
-| **Case-sensitive snippets** | Requires capitalization to match the saved trigger. This setting is on by default. Turn it off to ignore capitalization. |
-| **Use PowerToys Keyboard Manager remaps when matching triggers** | Treats the output of a Keyboard Manager remap as typed text. For example, if Keyboard Manager remaps <kbd>A</kbd> to <kbd>B</kbd>, pressing <kbd>A</kbd> can match a trigger that contains `B`. This setting is on by default. Turn it off to match only the physical keys you press. |
-
-When **Wait for space or punctuation** is on, Text Expander keeps the character that completed the trigger. For example, typing `!mysig,` inserts the replacement followed by the comma.
-
-## Use dynamic values
-
-Add the following values to replacement text:
-
-| Value | Result |
-| :--- | :--- |
-| `{{date}}` | The current date, such as `06/01/26`. |
-| `{{time}}` | The current time, such as `02:30 PM`. |
-| `{{datetime}}` | The current date and time, such as `06/01/26 02:30 PM`. |
-| `{{isodate}}` | The current date in `yyyy-MM-dd` format, such as `2026-06-01`. |
-| `{{date:FORMAT}}` | The current date and time using a custom format, such as `{{date:dddd, MMMM d}}`. The editor provides common [.NET custom date and time format strings](/dotnet/standard/base-types/custom-date-and-time-format-strings). Existing `strftime`-style formats that contain `%` are also supported. |
-| `{{clipboard}}` | The text currently on the clipboard. |
-| `{{prompt:Question}}` | Opens a Prompt window and requires a nonempty answer to accept the prompt. Canceling the prompt leaves the value empty. |
-| `{{prompt?:Question}}` | Opens a Prompt window but allows an empty answer. |
-| `$|$` | Places the cursor at this position after insertion. The first cursor marker controls the final position. |
-| `\n` | Inserts a new line. |
-| `\t` | Inserts a tab. |
-
-Values are case-sensitive and must use the spelling shown in the table.
+| **Wait for space or punctuation** | On by default. A trigger expands after you type a space, punctuation mark, or symbol, which stays after the snippet. For example, typing `!mysig,` inserts the snippet and a comma. <kbd>Enter</kbd> and <kbd>Tab</kbd> don't expand a trigger. Turn off this setting to expand a trigger as soon as you type its last character. |
+| **Case-sensitive snippets** | On by default. A trigger must match the capitalization you saved. Turn off this setting to ignore capitalization. |
+| **Use PowerToys Keyboard Manager remaps when matching triggers** | On by default. A key that [Keyboard Manager](keyboard-manager.md) remaps counts as the key it produces. For example, if <kbd>A</kbd> is remapped to <kbd>B</kbd>, pressing <kbd>A</kbd> can match a trigger that contains `B`. Turn off this setting to match only the physical keys you press. |
 
 ## Choose an insertion method
 
-The **Insertion method** setting controls how replacement text reaches the focused app:
+**Insertion method**, also in the **Advanced** group, controls how a snippet reaches the app you're typing in:
 
 | Method | Behavior |
 | :--- | :--- |
-| **Automatic** | Types short, one-line replacements and pastes longer replacements. The default **Minimum length to paste** is 5 characters. Replacements with multiple lines are pasted. |
-| **Always paste** | Uses a paste operation for every replacement. |
-| **Always type** | Types every replacement. Use this option if an app blocks synthetic paste operations, or if you don't want Text Expander to use the clipboard for insertion. |
+| **Automatic** | The default. Types one-line snippets shorter than **Minimum length to paste**, 5 characters by default, and pastes the rest. Snippets with several lines are always pasted. |
+| **Always paste** | Pastes every snippet. |
+| **Always type** | Types every snippet, about one character every 25 milliseconds. Use this method for apps that block pasting, or to keep snippets off your clipboard. |
 
-When Text Expander pastes a replacement, it temporarily uses the clipboard and then attempts to restore the previous clipboard contents. A snippet that contains `{{clipboard}}` still reads clipboard text even when **Always type** is selected.
+When Text Expander pastes a snippet, it restores your clipboard after the app takes the paste, and the snippet isn't added to clipboard history. If the app stops responding for 5 seconds, the snippet stays on the clipboard, and Text Expander tells you that it couldn't restore your clipboard. A snippet that uses `{{clipboard}}` reads your clipboard with any method.
 
-Immediately after most snippets expand, you can press <kbd>Ctrl</kbd>+<kbd>Z</kbd> to restore the trigger. This undo behavior isn't available for snippets that use `{{clipboard}}` or a Prompt window.
+You can keep typing right after a trigger. Text Expander holds your keystrokes and sends them after the snippet. With **Always type**, let a long snippet finish before you type more.
 
-## Edit the snippets file
+Right after a snippet expands, press <kbd>Ctrl</kbd>+<kbd>Z</kbd> to change it back to the trigger you typed. Undo isn't available for snippets that use `{{clipboard}}` or ask a question.
 
-The active snippet file is named `PowerToysTextExpanderSnippets.txt`. Its default location is:
+## Edit the snippets database
 
-```text
-%LOCALAPPDATA%\Microsoft\PowerToys\TextExpander\PowerToysTextExpanderSnippets.txt
-```
-
-Text Expander also recognizes the legacy file name `snippets.txt`. When the legacy file is the active database, Text Expander continues to use it rather than renaming it.
-
-In **Save snippets to a folder**, use:
-
-- **Open snippets file** to open the active file in your default text editor.
-- **Reload file** to read the active file again after another device, app, or text editor changes it.
-
-Text Expander watches the active file and normally reloads changes after you save it. **Reload file** provides a manual refresh if an external change doesn't appear.
-
-### Single-line syntax
-
-Write one snippet per line with an equals sign between the trigger and replacement:
+Text Expander saves your snippets in a JSON file, which the snippet editor calls the *snippets database*. By default, it's here:
 
 ```text
-!hello=Hello, thanks for reaching out.
-!today=Today is {{date:dddd, MMMM d}}.
+%LOCALAPPDATA%\Microsoft\PowerToys\TextExpander\PowerToysTextExpanderSnippets.json
 ```
 
-Lines that start with `//` are comments and aren't loaded as snippets. Blank lines and comments are preserved when you edit other snippets in PowerToys Settings.
+When there's no database in this location, Text Expander creates one with six starter snippets: `!ddate`, `!ttime`, `!ddt`, `!isodate`, `!mysig`, and `!myemail`. It never adds starter snippets to an existing database, even an empty one, or to a database in another location.
 
-### Multiline syntax
+In the snippet editor, select **Saved on this PC** to see the database's location and snippet count. When the database is somewhere else, the button says **Saved in OneDrive**, or **Saved in** and a folder name. Select **Open in text editor** to open the database in your default app for JSON files, or in Notepad. Text Expander picks up the changes you save automatically. To read the database again, select **Refresh**.
 
-For a replacement with several lines, add `<<<` directly after the trigger. End the replacement with `>>>` on its own line:
+The database looks like this:
 
-```text
-!meeting<<<
-Meeting notes - {{date:dddd, MMMM d, yyyy}}
-Attendees: $|$
-Next steps:
->>>
+```json
+{
+  "version": 1,
+  "snippets": [
+    { "trigger": "!mysig", "replacement": "Best regards,\nYour name" },
+    { "trigger": "!hello", "replacement": "Hello, and thanks for reaching out." }
+  ]
+}
 ```
 
-A multiline replacement can't contain another line that consists only of `>>>`, because that line ends the block.
+- Write a line break as `\n` and a tab as `\t`. Write a quotation mark as `\"` and a backslash as `\\`.
+- Comments and trailing commas are allowed. The snippet editor doesn't keep comments or your formatting, so it backs up such a file before it first saves over it. Backups are saved next to the database, with `.backup-` and the date and time added to the file name.
+- If several snippets use the same trigger, the last one wins.
 
-## Store snippets in a synced folder
+If the snippet editor can't load the database, it shows an error above the list:
 
-Text Expander doesn't provide a synchronization service. To use the same snippet database on multiple devices, choose a folder managed by OneDrive or another sync provider:
+- If the error says "Your snippets database has a mistake on line *N*," fix that line in a text editor, then select **Retry**. Until then, Text Expander keeps using the snippets it last read.
+- If the error says "Can't find your snippets database," the database was moved, renamed, or deleted. Put it back and select **Retry**, or select **Sync from another PC** to choose it again.
+- If the error says "Can't reach your snippets in OneDrive" or in another folder, check that OneDrive is running and that you're signed in, or that the drive or network folder is available. Then select **Retry**.
 
-1. Open PowerToys Settings and select **Text Expander**.
-1. Expand **Save snippets to a folder**.
-1. Select **Choose folder...** and choose the provider-managed folder.
+If a newer version of PowerToys saved the database, this version can use its snippets but can't change them. Update PowerToys on this PC, then try again.
 
-If the folder already contains `PowerToysTextExpanderSnippets.txt` or `snippets.txt`, choose one of these actions:
+## Use your snippets on several PCs
 
-- **Use folder file** adopts the database already in the selected folder. Text Expander creates a backup of the previously active file.
-- **Replace folder file** replaces the database in the selected folder with the snippets currently open on this PC. Text Expander creates a backup of the file being replaced.
+Text Expander doesn't sync snippets itself, but OneDrive or another sync service can sync your snippets database:
 
-Text Expander doesn't merge the two databases automatically. Review the backup if you need snippets from both files.
+1. On the PC that has your snippets, open the snippet editor and select **Saved on this PC** > **Move snippets database**. Save the database in OneDrive or another synced folder.
+1. On each of your other PCs, open the snippet editor, select **Saved on this PC** > **Sync from another PC**, and pick that database.
+
+**Move snippets database** saves your snippets to the file you choose and uses that file from then on, leaving the previous database where it was. If the file already has snippets, Text Expander says "This database already has snippets" and asks what to do:
+
+- **Use its snippets** switches to that database without changing it.
+- **Replace them** backs up that database, then replaces its snippets with this PC's snippets.
+- **Cancel** changes nothing.
+
+**Sync from another PC** switches to an existing snippets database without changing it. Text Expander doesn't merge databases.
 
 > [!WARNING]
-> Avoid editing the same snippet database on multiple devices at the same time. A sync provider can create conflicts or apply one device's changes over another device's changes. Let the provider finish syncing and resolve any provider-reported conflict before you continue editing.
+> Avoid editing your snippets on several PCs at the same time. A sync service can create conflicting copies or apply one PC's changes over another's. Let it finish syncing before you edit on another PC. If the database changes after the snippet editor loads it, the editor reloads the database instead of saving your change, so you can try again.
 
-Starter snippets and commented guidance are added only when neither supported file exists in a new database folder. Existing `PowerToysTextExpanderSnippets.txt`, legacy `snippets.txt`, synced, or intentionally empty files are preserved and aren't populated or merged automatically.
+## Privacy and limitations
 
-## Accessibility, privacy, and limitations
+> [!IMPORTANT]
+> Don't save passwords, Social Security numbers, credit card numbers, or other sensitive info in snippets. The snippets database is plain text and isn't encrypted. PowerToys also shows this warning in the snippet editor and in **Welcome to PowerToys**.
 
-- The runtime Prompt window follows the Windows theme and high-contrast setting, resizes for larger text, and supports <kbd>Enter</kbd> to accept and <kbd>Esc</kbd> to cancel.
-- Text Expander requires PowerToys to run without administrator elevation. You also can't edit snippets while PowerToys Settings runs as administrator.
-- Snippets don't expand in elevated apps or standard Windows password boxes. They can still expand in password fields on websites and in some apps, so don't store or trigger sensitive text where it could be exposed.
-- Some remote desktop, terminal, or security-hardened apps can block synthetic paste operations. Change **Insertion method** to **Always type** if automatic insertion doesn't work in an app.
+- Snippets don't expand in apps running as administrator or in standard Windows password boxes. They can still expand in password fields on websites and in some apps.
+- If you type with an input method editor (IME), for example for Japanese, Chinese, or Korean, switch it to direct input or English before you type a trigger.
+- You can't manage snippets while PowerToys [runs as administrator](administrator.md), but snippets still expand in apps that don't. To manage snippets, restart PowerToys without administrator rights. If **Always run as administrator** is on in **General**, turn it off first.
+- Some apps, such as some remote desktop and terminal apps, block pasting. If a snippet doesn't appear in an app, set **Insertion method** to **Always type**.
+- Administrators can turn Text Expander on or off with the `ConfigureEnabledUtilityTextExpander` [Group Policy](grouppolicy.md#configure-enabled-state-for-individual-utilities) setting. When the policy turns Text Expander off, the snippet editor doesn't open either.
 
 [!INCLUDE [install-powertoys.md](../includes/install-powertoys.md)]
