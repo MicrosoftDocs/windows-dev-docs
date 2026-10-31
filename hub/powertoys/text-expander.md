@@ -73,7 +73,7 @@ A custom format uses [.NET custom date and time format strings](/dotnet/standard
 
 To change a question, select it in **Replacement**, or put the cursor in it and press <kbd>F2</kbd>.
 
-When the snippet runs, a **PowerToys Text Expander** window asks the question. Type your answer, then press <kbd>Enter</kbd> or select **OK**. For a required question, **OK** isn't available until you type an answer. To leave the answer blank and continue, press <kbd>Esc</kbd> or select **Cancel**.
+When the snippet runs, a **PowerToys Text Expander** window asks the question. Type your answer, then press <kbd>Enter</kbd> or select **OK**. For a required question, **OK** isn't available until you type an answer. To cancel the snippet, press <kbd>Esc</kbd> or select **Cancel**. Nothing is inserted, and what you typed stays as it is.
 
 ## Control when triggers expand
 
