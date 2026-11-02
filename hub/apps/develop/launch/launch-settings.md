@@ -1,7 +1,7 @@
 ---
 title: Launch Windows Settings
 description: Learn how to launch Windows Settings from your Windows apps using the ms-settings URI scheme.
-ms.date: 09/26/2026
+ms.date: 11/02/2026
 ms.topic: concept-article
 keywords: windows 10, windows, settings, windows 11, uwp, uri
 ms.localizationpriority: medium
@@ -102,7 +102,7 @@ The following sections describe different categories of ms-settings URIs used to
 | Sign-in options | :::no-loc text="ms-settings:signinoptions":::<br>:::no-loc text="ms-settings:signinoptions-dynamiclock"::: |
 | Sync your settings | :::no-loc text="ms-settings:sync":::<br>:::no-loc text="ms-settings:backup"::: (**Backup page deprecated in Windows 11**) |
 | Windows Anywhere | :::no-loc text="ms-settings:windowsanywhere"::: (device must be Windows Anywhere-capable) |
-| Windows Hello setup | :::no-loc text="ms-settings:signinoptions-launchfaceenrollment":::<br>:::no-loc text="ms-settings:signinoptions-launchfingerprintenrollment"::: |
+| Windows Hello setup | :::no-loc text="ms-settings:signinoptions-launchfaceenrollment":::<br>:::no-loc text="ms-settings:signinoptions-launchfingerprintenrollment":::<br>:::no-loc text="ms-settings:signinoptions-launchpinenrollment"::: |
 | Your info | :::no-loc text="ms-settings:yourinfo"::: |
 
 ### Apps
