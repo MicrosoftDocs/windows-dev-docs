@@ -1,7 +1,7 @@
 ---
 title: WinGet Configuration
 description: WinGet Configuration uses the winget configure command, PowerShell, and a YAML-formatted configuration file listing all of the software versions, packages, tools, and settings required to achieve the set up the desired state of the development environment on your Windows machine. Minimizing manual project setup and onboarding to a single command that is reliable and repeatable.
-ms.date: 11/21/2024
+ms.date: 11/02/2026
 ms.topic: overview
 ms.custom: sfi-image-nochange
 ---
@@ -75,6 +75,8 @@ We recommend ALWAYS validating the integrity of a WinGet Configuration file befo
 ### Where can I find sample WinGet Configuration files?
 
 You can find sample WinGet Configuration files in the WinGet DSC repository: [https://aka.ms/dsc.yaml](https://aka.ms/dsc.yaml).
+
+For curated setups for a Windows developer workstation, WSL shell, or individual language toolchain, see [Windows Developer Configurations](../../dev-configs/index.md). The overview links to the WindowsDeveloperConfig repository for current setup commands and options.
 
 ### Where can I find examples of PowerShell modules containing DSC resources?
 

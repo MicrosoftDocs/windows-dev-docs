@@ -6,7 +6,7 @@ ms.author: jken
 ms.topic: how-to
 keywords: Mac to Windows, shortcut key mapping, move from Unix to Windows, transition from Mac to Windows, help moving from MacBook to Surface, how to use Windows for a Macintosh user, switching from Macintosh to Windows, Mac OS X to Windows, help moving from Mac to PC
 ms.localizationpriority: medium
-ms.date: 09/12/2026
+ms.date: 11/02/2026
 ---
 
 # Moving from Mac (Unix) to Windows
@@ -26,6 +26,8 @@ Start with these Windows 11 features:
     ```powershell
     winget configure -f <path-to-configuration-file>
     ```
+
+    For curated workstation and language toolchain setups, see [Windows Developer Configurations](../dev-configs/index.md). Its WSL Comfort setup helps you configure a Linux shell and Windows Terminal profile.
 
 1. **Consider a Dev Drive.** [Dev Drive](../dev-drive/index.md) is a ReFS volume optimized for development workloads. Use it for source repositories, package caches, and build output rather than general documents. Create one from **Settings > System > Storage > Advanced storage settings > Disks & volumes**.
 
