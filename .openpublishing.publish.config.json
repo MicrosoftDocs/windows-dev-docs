@@ -99,7 +99,7 @@
   ],
   "branches_to_filter": [],
   "git_repository_url_open_to_public_contributors": "https://github.com/MicrosoftDocs/windows-dev-docs",
-  "git_repository_branch_open_to_public_contributors": "docs",
+  "git_repository_branch_open_to_public_contributors": "main",
   "need_preview_pull_request": true,
   "resolve_user_profile_using_github": true,
   "dependent_repositories": [
