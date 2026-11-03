@@ -42,6 +42,8 @@ The following APIs support different scenarios:
 
 No. Age verification provides **verified adult status**, not a verified status for any age or age group. For account-based verification, a user who claims to be an adult must go through a flow that checks whether that person is an adult. The flow checks the adult claim; it doesn't establish a verified age for a child or teenager.
 
+For information about verifying your age for a Microsoft account, see [Verify your age for a Microsoft account](https://support.microsoft.com/en-us/accounts-billing/manage/verify-your-age-microsoft-account).
+
 `GetAgeVerificationStatusAsync` reports the adult-verification status. A `Verified` result reports verified adult status. Other results don't establish that the user is a minor: your app must distinguish an `Unverified` result, an `OptedOut` result, and unavailable or indeterminate results.
 
 ### Are the Windows Age APIs generally available?
