@@ -1,7 +1,7 @@
 ---
 title: PowerToys Awake - Keep Windows Computer Awake Tool
 description: Learn how to use PowerToys Awake to keep your Windows computer awake without changing power settings. Configure timed, indefinite, or scheduled awake modes with CLI support.
-ms.date: 08/20/2025
+ms.date: 11/03/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 # Customer intent: As a Windows power user, I want to learn how to configure and use the PowerToys Awake utility.
@@ -16,7 +16,7 @@ PowerToys Awake is a Windows utility that keeps your computer awake without modi
 You can use PowerToys Awake directly from PowerToys Settings or as a standalone executable (`PowerToys.Awake.exe` in the PowerToys installation folder).
 
 > [!NOTE]
-> PowerToys Awake is active only when you are signed in and it is enabled. **Awake doesn't function when the lock screen is displayed.** Your normal power plan is active at other times.
+> PowerToys Awake is active only when you are signed in and it is enabled. While Windows is locked, Awake keeps requesting that the computer stays awake, but whether the displays stay on depends on the **Allow screen to turn off while locked** setting. Your normal power plan is active at other times.
 >
 > PowerToys Awake doesn't modify any of the Windows power plan settings and doesn't depend on a custom power plan configuration. Instead, it spawns background threads that tell Windows that they require a specific state of the machine. Once PowerToys Awake exits, the threads are terminated and the computer resumes its standard power plan behavior.
 
@@ -45,12 +45,21 @@ PowerToys Awake supports a variety of modes that can be used to control computer
 
 While PowerToys Awake can keep the computer awake indefinitely or temporarily, in its default state the displays connected to the machine will turn off even if the computer stays awake. If you need the displays to be available, use the **Keep screen on** switch, which will keep displays active.
 
-This feature only works when PowerToys Awake is enabled and has one of the custom power states selected. It also does not prevent any user-initiated actions, such as manually putting the computer to sleep or hibernating it.
+This feature only works when PowerToys Awake is enabled and has one of the custom power states selected. It also does not prevent any user-initiated actions, such as manually putting the computer to sleep or hibernating it. To control this behavior while Windows is locked, see [Lock screen behavior](#lock-screen-behavior).
 
 ## Lock screen behavior
-PowerToys Awake doesn't work when the lock screen is displayed. This limitation exists because the lock screen operates in a separate security context from the user session. When you lock your computer, Windows transitions to this secure context, and user-mode applications like PowerToys Awake can't maintain their power requests.
 
-If you need your computer to stay awake while locked, modify your Windows power plan settings directly instead of using PowerToys Awake.
+When you lock Windows, PowerToys Awake keeps the computer awake, but whether the displays stay on is controlled by the **Allow screen to turn off while locked** setting. This setting is available when **Keep screen on** is turned on.
+
+| Allow screen to turn off while locked | Behavior while Windows is locked |
+| :------------------------------------ | :------------------------------- |
+| On (default)                          | Awake stops requesting that the displays stay on, so Windows can turn them off according to your power plan and lock screen timeout. The computer itself stays awake. |
+| Off                                   | Awake keeps requesting that the displays stay on, so **Keep screen on** stays in effect while Windows is locked. |
+
+> [!NOTE]
+> On Modern Standby systems, Windows controls how the displays and the system behave while locked. Awake requests the selected state, but Windows might still turn off the displays, for example after resuming from hibernation. Awake doesn't prevent user-initiated actions such as sleeping or hibernating the computer.
+
+If you need guaranteed behavior while the computer is locked, also configure your Windows power plan settings directly.
 
 ## System tray
 
@@ -108,6 +117,7 @@ For example, the following `settings.json` file contains custom tray time shortc
     "properties":
     {
         "keepDisplayOn": true,
+        "allowDisplayOffWhileLocked": true,
         "mode": 1,
         "intervalHours": 2,
         "intervalMinutes": 0,
