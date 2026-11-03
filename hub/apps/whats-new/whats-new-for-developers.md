@@ -4,7 +4,7 @@ description: Explore new Windows platform capabilities, SDK and API updates, des
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
 author: GrantMeStrength
 ms.author: jken
-ms.date: 10/27/2026
+ms.date: 11/03/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -19,15 +19,15 @@ This section curates the latest platform capabilities, SDK and API additions, AI
 
 Find the latest downloads, release notes, and updates for the Windows SDK, Windows App SDK, and WinUI 3.
 
-Versions below are current as of October 27, 2026. Use the release notes to review the changes and requirements for each channel or SDK build.
+Versions below are current as of November 3, 2026. Use the release notes to review the changes and requirements for each channel or SDK build.
 
 :::row:::
     :::column:::
         ![Windows App SDK icon](images/wasdk-hero.png)<br>
         **Windows App SDK**<br>
-        Latest stable: 2.6.4<br>
+        Latest stable: 2.6.5<br>
         Latest experimental: 2.5.4-experimental<br>
-        [Stable release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-264)<br>
+        [Stable release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-265)<br>
         [Experimental release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-25-experimental-254-experimental)<br>
         [View downloads](../windows-app-sdk/downloads.md)
     :::column-end:::
@@ -40,6 +40,14 @@ Versions below are current as of October 27, 2026. Use the release notes to revi
         [View downloads](../windows-sdk/downloads.md)
     :::column-end:::
 :::row-end:::
+
+---
+
+## Highlights – November 2026
+
+### SDK releases
+
+- **Windows App SDK 2.6.5**: The November 2 stable release fixes rendering corruption on systems with multiple graphics adapters or monitors, composition crashes and unexpected window transparency, and an app-extension registration issue that could prevent packaged apps from installing. It also reverts the system backdrop change introduced in 2.6.4: system backdrops for content islands and XAML windows aren't supported when using the System Composition Engine in this release. See the [Windows App SDK 2.6.5 release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-265).
 
 ---
 
@@ -111,4 +119,3 @@ Versions below are current as of October 27, 2026. Use the release notes to revi
 - **Intelligent Terminal 0.2**: The biggest release yet of the experimental AI-powered terminal, adding local model support in the Agent Pane, per-tab agent selection with `/agent`, OpenCode in the built-in agent lineup, WSL agent execution, and a richer Agent Pane UI — [Intelligent Terminal 0.2 announcement](https://devblogs.microsoft.com/commandline/intelligent-terminal-0-2-is-here-with-local-model-support/) | Install: `winget install Microsoft.IntelligentTerminal`
 - **Inside MSIX – Package Lifetime**: How MSIX uses a garbage-collection design for staged package lifetime — why destaging is not a direct result of a single API call, what holds a reference, and when payloads are automatically removed from disk — [MSIX Package Lifetime](https://devblogs.microsoft.com/insidemsix/msix-package-lifetime/)
 - **The Old New Thing**: Raymond Chen's long-running blog on practical Windows development — internals, Win32, shell behavior, and the history behind platform decisions — [The Old New Thing](https://devblogs.microsoft.com/oldnewthing/)
-
