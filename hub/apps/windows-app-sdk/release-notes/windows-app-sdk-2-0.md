@@ -2,7 +2,7 @@
 title: Windows App SDK 2.0 release notes
 description: Release notes for Windows App SDK 2.0 across the Stable, Preview, and Experimental channels, with feature highlights, bug fixes, and API changes.
 ms.topic: release-notes
-ms.date: 10/27/2026
+ms.date: 11/02/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -13,6 +13,22 @@ zone_pivot_groups: wasdk-release-channels
 [!INCLUDE [wasdk-releasenotes](../../../includes/wasdk-release-notes.md)]
 
 :::zone pivot="stable"
+
+## Version 2.6.5
+
+Released: **November 2, 2026** <br><br>
+
+<details><summary>Bug fixes</summary>
+
+>
+> - Fixed rendering corruption that could occur on systems with multiple graphics adapters or monitors. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, rendering-region fix)
+> - Fixed an `E_NOINTERFACE` crash when enabling the System Composition Engine on Windows builds that lack the required interfaces. The runtime now uses the lifted compositor on those builds. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, operating system capability detection fix)
+> - Fixed an issue where window backgrounds and GDI controls could become unexpectedly transparent on Windows 10, including apps hosting XAML islands. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, window composition ABI fix)
+> - Reverted the system backdrop change introduced in 2.6.4 to address wrong-thread exceptions. System backdrops for content islands and XAML windows are not supported when using the System Composition Engine in this release. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, revert of a previously contained change)
+> - Fixed an issue where app-extension registration metadata generation returned `E_NOTIMPL`, which could prevent packaged apps from installing. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, missing implementation fix)
+>
+
+</details>
 
 ## Version 2.6.4
 
