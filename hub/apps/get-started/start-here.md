@@ -4,7 +4,7 @@ description: Install your tools, create and run a C# WinUI app with winapp CLI o
 author: GrantMeStrength
 ms.author: jken
 ms.topic: quickstart
-ms.date: 10/13/2026
+ms.date: 11/04/2026
 keywords: windows, desktop development, winui
 ms.localizationpriority: medium
 ms.collection: windows11
@@ -160,6 +160,15 @@ Congratulations! You've created, run, and updated your first WinUI app. The wind
 | Deployment reports that Developer Mode is disabled. | Enable [Developer Mode](../../advanced-settings/developer-mode.md), then run the app again. |
 | Your new message does not appear. | Save the XAML file and relaunch the project. In templates with a `MainPage.xaml`, add the message to that page rather than replacing the window's hosting frame. |
 
+## Share your app
+
+When you're ready to put your app in other people's hands, you choose how to distribute it. You don't have to use Microsoft Store; it's one option among several:
+
+- **Share it directly**: Distribute an MSIX package, an installer, or a .zip file from your own website or GitHub Releases. You can also make your app installable with `winget install`. You handle code signing and updates.
+- **Publish through Microsoft Store**: Get discovery in the Store, a trusted install experience, free signing for MSIX packages, and automatic updates.
+
+[Publish your first Windows app](../package-and-deploy/publish-first-app.md) walks through both options, including code signing, packaging, and what your first users see. To compare every option side by side, see [Choose a distribution path](../package-and-deploy/choose-distribution-path.md).
+
 ## Next steps
 
 > [!div class="nextstepaction"]
@@ -170,3 +179,5 @@ The Notes tutorial uses a separate `WinUINotes` project to teach pages, navigati
 If you work from the terminal, [Using winapp CLI with WinUI](../dev-tools/winapp-cli/guides/winui.md) covers the full command-line workflow: templates, `dotnet run`, debugging, UI automation, testing, and packaging.
 
 You can also find focused control examples in [Code samples and the WinUI Gallery](../dev-tools/samples.md).
+
+When you're ready for others to use your app, [Publish your first Windows app](../package-and-deploy/publish-first-app.md) shows how to share it directly or through Microsoft Store.

@@ -6,7 +6,7 @@ metadata:
   author: GrantMeStrength
   ms.author: jken
   ms.topic: overview
-  ms.date: 10/07/2026
+  ms.date: 11/04/2026
 brand: windows
 tocType: single
 productOverview:
@@ -81,7 +81,7 @@ coreWorkflows:
           url: https://github.com/microsoft/WindowsAppSDK-Samples
 supportReference:
   title: Continue your Windows app journey
-  summary: Move from your first app to design, platform features, deployment, and publishing.
+  summary: Move from your first app to design, platform features, deployment, and sharing your app with others.
   items:
     - icon:
         src: ../images/fluent-blue/editor.svg
@@ -99,7 +99,7 @@ supportReference:
       title: Package and deploy
       url: ../package-and-deploy/index.yml
     - icon:
-        src: ../images/fluent-blue/feature.svg
-        alt: A puzzle piece representing app features.
-      title: Publish through Microsoft Store
-      url: ../publish/index.yml
+        src: ../images/fluent-blue/package.svg
+        alt: A package representing a distributable app.
+      title: Share your app with or without Microsoft Store
+      url: ../package-and-deploy/publish-first-app.md
