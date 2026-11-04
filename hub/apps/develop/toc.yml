@@ -1100,6 +1100,8 @@ items:
                 href: ui/controls/custom-transport-controls.md
               - name: Shapes
                 href: ui/controls/shapes.md
+              - name: Inking controls
+                href: ui/controls/ink-controls.md
           - name: Menus and toolbars
             items:
               - name: Menus and context menus
