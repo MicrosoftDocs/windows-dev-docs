@@ -884,10 +884,12 @@ items:
     items:
       - name: Overview
         href: security/index.md
-      - name: Age signals
-        href: security/age-signals/index.md
-      - name: Age signals FAQ
-        href: security/age-signals/faq.md
+      - name: Age Signals
+        items:
+          - name: Overview
+            href: security/age-signals/index.md
+          - name: FAQ
+            href: security/age-signals/faq.md
       - name: Credential locker
         href: security/credential-locker.md
       - name: Cryptography

@@ -2,7 +2,7 @@
 title: Security and identity
 description: This article provides an index of development features that are related to security and identity scenarios in Windows apps.
 ms.topic: overview
-ms.date: 10/08/2026
+ms.date: 11/03/2026
 #customer intent: As a Windows developer, I want to learn to use security and identity features available to Windows apps so that I can build more secure apps.
 ---
 
@@ -45,6 +45,7 @@ The following articles provide information about features available via WinRT AP
 |---------|-------------|
 | [Security](/windows/uwp/security) | Learn about the breadth of security features for Windows apps.  |
 | [Authentication and user identity](/windows/uwp/security/authentication-and-user-identity) | Windows apps have several options for user authentication, ranging from simple single sign-on (SSO) using Web authentication broker to highly secure two-factor authentication. |
+| [Age signals](age-signals/index.md) | Learn how to use Windows Age APIs to retrieve age-group signals and verified adult status for age-appropriate app experiences. |
 | [Credential locker](credential-locker.md) | This article describes how Windows apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account. |
 | [Cryptography](/windows/uwp/security/cryptography) | Learn about cryptography features available to Windows apps. |
 | [Fingerprint biometrics](fingerprint-biometrics.md) | This article explains how to add fingerprint biometrics to your Windows app, including a request for fingerprint authentication when the user must consent to a particular action increases the security of your app. |
