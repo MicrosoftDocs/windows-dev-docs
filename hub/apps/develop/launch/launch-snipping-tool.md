@@ -1,7 +1,7 @@
 ---
 title: Launch Snipping Tool
 description: This topic describes how to use the protocol launch framework for Snipping Tool. Your app can use these URI schemes to launch Snipping Tool's capture overlay to create a new snip or recording.
-ms.date: 11/03/2026
+ms.date: 11/04/2026
 ms.topic: concept-article
 keywords: windows 11, uri, snipping tool, capture
 ms.localizationpriority: medium
@@ -394,9 +394,9 @@ private void HandleDiscoverResponse(Uri uri)
 
 ### Receive an image result directly
 
-`LaunchUriForResultsAsync` returns the response in a `ValueSet`, so your app doesn't need a callback protocol or a `redirect-uri`. You can use this approach from packaged, packaged with external location, and unpackaged apps.
+[Launcher.LaunchUriForResultsAsync](/uwp/api/windows.system.launcher.launchuriforresultsasync) returns the response in a `ValueSet`, so your app doesn't need a callback protocol or a `redirect-uri`. You can use this approach from packaged apps, packaged apps with external location, and unpackaged apps.
 
-Direct results support `ms-screenclip://capture/image` requests only. Video capture, the `discover` host, and legacy request forms aren't supported and return code `501`.
+Direct results support `ms-screenclip://capture/image` requests only. Video capture, the `discover` host, and legacy recording requests aren't supported and return code `501`.
 
 `LaunchUriResult.Status` indicates whether Windows successfully launched the target and received a result. When that status is `Success`, inspect the `code` value in `LaunchUriResult.Result` for the outcome of the capture operation. The result also contains `reason`, `x-request-correlation-id`, and, for a successful capture, `file-access-token`.
 
@@ -407,6 +407,7 @@ using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.DataTransfer;
+using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.System;
 
@@ -438,10 +439,10 @@ private async Task<StorageFile?> CaptureImageAsync()
         return null;
     }
 
-    string? code = launchResult.Result["code"] as string;
-    string? reason = launchResult.Result["reason"] as string;
+    string? code = GetString(launchResult.Result, "code");
+    string? reason = GetString(launchResult.Result, "reason");
     string? responseCorrelationId =
-        launchResult.Result["x-request-correlation-id"] as string;
+        GetString(launchResult.Result, "x-request-correlation-id");
 
     if (responseCorrelationId != correlationId)
     {
@@ -455,7 +456,7 @@ private async Task<StorageFile?> CaptureImageAsync()
         return null;
     }
 
-    string? token = launchResult.Result["file-access-token"] as string;
+    string? token = GetString(launchResult.Result, "file-access-token");
     if (string.IsNullOrEmpty(token))
     {
         Debug.WriteLine("Snipping Tool didn't return a file access token.");
@@ -464,6 +465,9 @@ private async Task<StorageFile?> CaptureImageAsync()
 
     return await SharedStorageAccessManager.RedeemTokenForFileAsync(token);
 }
+
+private static string? GetString(ValueSet values, string key) =>
+    values.TryGetValue(key, out object? value) ? value as string : null;
 ```
 
 > [!NOTE]
