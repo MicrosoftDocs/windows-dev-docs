@@ -12,10 +12,8 @@ ms.localizationpriority: medium
 
 This article specifies the protocol for integrating first and third-party applications with the Windows Snipping Tool using the **ms-screenclip:** URI (Uniform Resource Identifier) scheme. The protocol supports the capture of images and video (with audio) via Snipping Tool, and app callers can choose which Snipping Tool features their app will display.
 
-You can receive a capture result in either of these ways:
-
-- Use `Launcher.LaunchUriAsync` with a `redirect-uri`. This callback approach requires a packaged Windows app (MSIX) and a registered protocol handler.
-- Use `Launcher.LaunchUriForResultsAsync` to receive the result directly. This approach supports packaged and unpackaged apps and doesn't require a callback protocol. Direct results support image capture only.
+> [!IMPORTANT]
+> The `LaunchUriAsync` callback flow requires a **packaged Windows app** (MSIX). When your app is packaged, the operating system automatically provides your app's identity to Snipping Tool, which uses it to securely route the capture response back to your app. Unpackaged (Win32) callers cannot receive responses via `redirect-uri`. To receive an image capture result directly from a packaged or unpackaged app, use `LaunchUriForResultsAsync` as described in [Receive an image result directly](#receive-an-image-result-directly).
 
 > [!NOTE]
 > This protocol replaces the experience documented in [Launch screen snipping (Deprecated)](launch-screen-snipping.md), which is now deprecated.
@@ -207,14 +205,11 @@ ms-screenclip://capture/image?freeform&enabledModes=RectangleSnip,RectangleRecor
 
 _Since freeform is specified in the URI, it will be pre-selected. Users can switch between freeform, rectangle snip, and rectangle recording._
 
-## Response fields
+## Responses
 
-After the user completes or cancels a capture, Snipping Tool returns the same response fields through either integration approach:
+After the user completes or cancels a capture, Snipping Tool sends a response back to your application via the `redirect-uri`. The response is structured as URI query parameters appended to your redirect URI.
 
-- With `LaunchUriAsync`, the fields are URI query parameters appended to the `redirect-uri`.
-- With `LaunchUriForResultsAsync`, the fields are string values in the `LaunchUriResult.Result` `ValueSet`.
-
-If your `redirect-uri` already includes query parameters (for example, `my-app://response?sessionId=abc`), those parameters are preserved and the response parameters are appended with `&`. You can use this to round-trip caller-specific state through the callback. The value `sessionId=abc` is echoed back in the response URI along with `code`, `reason`, `x-request-correlation-id`, and, for a successful capture, `file-access-token`.
+If your `redirect-uri` already includes query parameters (for example, `my-app://response?sessionId=abc`), those parameters are preserved and the response parameters are appended with `&`. You can use this to round-trip caller-specific state through the callback — the value `sessionId=abc` is echoed back in the response URI along with `code`, `reason`, `x-request-correlation-id`, and (for a successful capture) `file-access-token`.
 
 ### Response parameters
 
@@ -235,9 +230,8 @@ If your `redirect-uri` already includes query parameters (for example, `my-app:/
 | 408 | Request Timeout - Operation Took Too Long | The operation timed out before completion. |
 | 499 | Client Closed Request - User Cancelled the Snip | The user cancelled the capture by pressing Escape or clicking away. Applies to `/image` and `/video` only. |
 | 500 | Internal Server Error - Processing Failed | An unexpected error occurred during capture. |
-| 501 | Not Implemented - Unsupported Feature | The requested operation isn't supported by the selected integration approach. `LaunchUriForResultsAsync` returns this status for video capture and discovery requests. |
 
-### Callback response examples
+### Example responses
 
 **Successful capture:**
 
@@ -271,18 +265,9 @@ my-app://response?code=400&reason=Bad%20Request%20-%20Invalid%20or%20Missing%20P
 
 ## Launching from your app
 
-Choose the launch API based on how your app receives the result:
+For the callback flow, you must use [Launcher.LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) to launch Snipping Tool from your packaged app. Other launch methods (such as `Process.Start` or shell execution) will not provide your app's identity, and Snipping Tool will not deliver the response.
 
-- Use [Launcher.LaunchUriAsync](/uwp/api/windows.system.launcher.launchuriasync) and a callback URI when your packaged app needs image capture, video capture, or capability discovery.
-- Use [Launcher.LaunchUriForResultsAsync](/uwp/api/windows.system.launcher.launchuriforresultsasync) when your packaged or unpackaged app needs an image capture result returned directly from the asynchronous call.
-
-Other launch methods, such as `Process.Start` or shell execution, don't support returning the capture result.
-
-### Receive the result through callback activation
-
-The callback approach requires a packaged Windows app. Windows provides the caller's package identity to Snipping Tool, which uses it to securely route the response back to your app.
-
-#### Step 1: Register a protocol handler
+### Step 1: Register a protocol handler
 
 Register a custom protocol in your `Package.appxmanifest` so your app can receive the callback response. The protocol name must match the scheme used in your `redirect-uri`.
 
@@ -298,7 +283,7 @@ Register a custom protocol in your `Package.appxmanifest` so your app can receiv
 
 See [Handle URI activation](/windows/apps/windows-app-sdk/migrate-to-windows-app-sdk/guides/applifecycle#protocol-activation) for more details on registering and handling protocol activations.
 
-#### Step 2: Launch Snipping Tool
+### Step 2: Launch Snipping Tool
 
 ```csharp
 // Capture a screenshot in rectangle mode
@@ -332,7 +317,7 @@ var uri = new Uri(
 await Launcher.LaunchUriAsync(uri);
 ```
 
-#### Step 3: Handle the response
+### Step 3: Handle the response
 
 When the capture completes (or the user cancels), Snipping Tool activates your app via your `redirect-uri` with result parameters appended as query strings. Most integrations are already running when the response arrives — the caller launched Snipping Tool, then waited for the callback — so your app must handle both cold-start activation (the app wasn't running) and warm re-activation (the app is already running). Subscribe to both paths in `App.xaml.cs`.
 
@@ -413,6 +398,8 @@ private void HandleDiscoverResponse(Uri uri)
 
 Direct results support `ms-screenclip://capture/image` requests only. Video capture, the `discover` host, and legacy request forms aren't supported and return code `501`.
 
+`LaunchUriResult.Status` indicates whether Windows successfully launched the target and received a result. When that status is `Success`, inspect the `code` value in `LaunchUriResult.Result` for the outcome of the capture operation. The result also contains `reason`, `x-request-correlation-id`, and, for a successful capture, `file-access-token`.
+
 The following C# example is for a WinUI 3 window. It associates `LauncherOptions` with the window's HWND, targets Snipping Tool, requests a rectangle capture, validates the protocol response, and redeems the returned file token.
 
 ```csharp
@@ -482,7 +469,7 @@ private async Task<StorageFile?> CaptureImageAsync()
 > [!NOTE]
 > A UWP app has an implicit window association and doesn't need the two HWND initialization lines. Desktop apps, including WinUI 3, WPF, and WinForms apps, must associate `LauncherOptions` with an owner window before launching UI.
 
-### Retrieve captured media using the token
+### Retrieving captured media using the token
 
 Use the [SharedStorageAccessManager](/uwp/api/windows.applicationmodel.datatransfer.sharedstorageaccessmanager) class to redeem the `file-access-token` and access the captured file.
 
@@ -503,19 +490,16 @@ using (var stream = await file.OpenReadAsync())
     MyImage.Source = bitmap;
 }
 
-// Or, for an app with package identity, copy to its local storage
+// Or copy to your app's local storage
 var localFolder = ApplicationData.Current.LocalFolder;
 await file.CopyAsync(localFolder, file.Name, NameCollisionOption.GenerateUniqueName);
 ```
-
-An unpackaged app doesn't have access to `ApplicationData.Current.LocalFolder`. Copy the redeemed file to a location your unpackaged app manages instead.
 
 ## Security considerations
 
 Snipping Tool validates all `redirect-uri` values before launching them. The following protections are enforced:
 
-- **Packaged callback callers**: When your app is a packaged Windows app (MSIX), the operating system securely routes the callback response back to your app, ensuring only your app can receive it.
-- **Direct-result callers**: `LaunchUriForResultsAsync` associates the response with the originating call and doesn't require a separately registered callback protocol.
+- **Packaged app callers**: When your app is a packaged Windows app (MSIX), the operating system securely routes the capture response back to your app, ensuring only your app can receive it. This is the recommended integration path.
 - **Input validation**: Snipping Tool rejects redirect URIs that contain UNC paths, leading/trailing whitespace, or control characters.
 - **No fragments**: Redirect URIs that contain a URL fragment (for example, `my-app://response#section`) are rejected. Snipping Tool appends the response parameters as a query string, and a fragment would swallow them.
 - **Self-referencing protection**: Redirect URIs that would cause recursive activation of Snipping Tool are blocked.
@@ -523,9 +507,9 @@ Snipping Tool validates all `redirect-uri` values before launching them. The fol
 > [!IMPORTANT]
 > **For calling applications:**
 >
-> - If you use callback activation, register a protocol handler for your redirect URI scheme so your app can receive the response.
+> - Register a protocol handler for your redirect URI scheme so your app can receive the response.
 > - Validate and sanitize all parameters received in the response before processing them.
-> - Verify that the response's `x-request-correlation-id` matches your in-flight request to avoid handling a stale response or mixing up concurrent requests. The correlation ID prevents mix-ups but doesn't establish token provenance. Callback responses are secured by package identity, and direct responses are associated with the originating `LaunchUriForResultsAsync` call.
+> - Verify that the response's `x-request-correlation-id` matches your in-flight request to avoid handling a stale response or mixing up concurrent requests. Correlation-id prevents mix-ups; it doesn't establish token provenance — secure token routing comes from the packaged-app callback channel.
 
 ## Related content
 
