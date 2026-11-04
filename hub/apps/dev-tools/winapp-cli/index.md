@@ -1,7 +1,7 @@
 ---
 title: Windows App Development CLI (winapp CLI)
 description: Use winapp CLI to create, run, debug, test, and package WinUI apps, and to add Windows APIs, identity, and MSIX to apps on any framework.
-ms.date: 10/08/2026
+ms.date: 10/26/2026
 ms.topic: overview
 ---
 
@@ -160,7 +160,8 @@ Install the winapp plugin to give your agent skills for the winapp CLI workflow:
 
 ```powershell
 # GitHub Copilot CLI
-copilot plugin install microsoft/WinAppCli
+copilot plugin marketplace add microsoft/WinAppCli
+copilot plugin install winappcli@winappcli
 
 # Claude Code
 claude plugin marketplace add microsoft/WinAppCli
