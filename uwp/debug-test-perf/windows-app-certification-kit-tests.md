@@ -2,7 +2,7 @@
 ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
 title: Windows App Certification Kit tests
 description: The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Microsoft Store.
-ms.date: 07/14/2025
+ms.date: 11/05/2026
 ms.topic: article
 keywords: windows 10, uwp, app certification
 ms.localizationpriority: medium
@@ -85,8 +85,6 @@ This verifies that an app package (.msix, .appx, or app bundle) contains one app
 This test was implemented as per Store policy.
 
 ### Test details
-
-For Windows Phone 8.1 apps the test verifies the total number of .appx packages in the bundle is &lt; 512, there is only one main package in the bundle, and that the architecture of the main package in the bundle is marked as Arm or neutral.
 
 For Windows 10 apps the test verifies that the revision number in the version of the bundle is set to 0.
 

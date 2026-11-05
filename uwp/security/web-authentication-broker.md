@@ -2,7 +2,7 @@
 title: Web authentication broker
 description: This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth.
 ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
-ms.date: 02/08/2017
+ms.date: 11/05/2026
 ms.topic: how-to
 keywords: windows 10, uwp, security
 ms.localizationpriority: medium
@@ -81,7 +81,7 @@ catch (Exception ex)
 ```
 
 >[!WARNING]
->In addition to [**AuthenticateAsync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync), the [**Windows.Security.Authentication.Web**](/uwp/api/Windows.Security.Authentication.Web) namespace contains an [**AuthenticateAndContinue**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods) method. Do not call this method. It is designed for apps targeting Windows Phone 8.1 only and is deprecated starting with Windows 10.
+>In addition to [**AuthenticateAsync**](/uwp/api/windows.security.authentication.web.webauthenticationbroker.authenticateasync), the [**Windows.Security.Authentication.Web**](/uwp/api/Windows.Security.Authentication.Web) namespace contains an [**AuthenticateAndContinue**](/uwp/api/Windows.Security.Authentication.Web.WebAuthenticationBroker#methods) method. Do not call this method. It is deprecated starting with Windows 10. Use **AuthenticateAsync** instead.
 
 ## Connecting with single sign-on (SSO).
 

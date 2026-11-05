@@ -2,7 +2,7 @@
 title: Using cloud services for UWP games
 description: When developing UWP games across platforms and devices, use a cloud backend to help scale your games according to demand.
 ms.assetid: 1a7088e0-0d7b-11e6-8e05-0002a5d5c51b
-ms.date: 03/27/2018
+ms.date: 11/05/2026
 ms.topic: concept-article
 keywords: windows 10, uwp, games, cloud services
 ms.localizationpriority: medium
@@ -191,7 +191,6 @@ Following are some ways that Azure cloud offerings can be used for a game. Azure
 | Engage users to increase usage and retention| Send targeted push notifications to any platform from any back end to generate interest and encourage specific game actions | [Azure Notification Hubs](https://azure.microsoft.com/services/notification-hubs/)| Fast broadcast push to reach millions of mobile devices on all major platforms &mdash; iOS, Android, Windows, Kindle, Baidu. Your game can be hosted on any back end &mdash; cloud or on-premises.|
 | Stream media content to your local and worldwide audiences while protecting your content| Broadcast quality game trailers and cinematic clips can be watched from all devices| [Azure Media Services](https://azure.microsoft.com/services/media-services/)| On-demand and live video streaming with integrated Content Delivery Network capabilities. Use one player for all of your playback needs, includes content protection and encryption.| 
 | Develop, distribute, and beta-test your mobile apps | Test and distribute your mobile app. App performance and user experience management. | [HockeyApp](https://azure.microsoft.com/services/hockeyapp/)| Integrates crash reporting and user metrics with an app distribution and user feedback platform. Supports Android, Cordova, iOS, OS X, Unity, Windows, and Xamarin apps. Also, consider [Visual Studio Mobile Center](https://visualstudio.microsoft.com/app-center/) &mdash; mission control for apps that combines rich analytics, crash reporting, push notifications, app distribution, and more. |
-| Create marketing campaigns to increase usage and retention  |    Send push notifications to targeted players to generate interest and encourage specific game actions according to data analysis | [Mobile engagement](https://azure.microsoft.com/services/mobile-engagement/) - will be retired March 2018 and is currently only available to existing customers |  Increase gameplay time and user retention on all major platforms—iOS, Android, Windows, Windows Phone |
 
 
 ##  Startup and developer resources

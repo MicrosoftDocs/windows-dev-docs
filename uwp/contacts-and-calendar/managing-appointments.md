@@ -2,7 +2,7 @@
 description: Through the Windows.ApplicationModel.Appointments namespace, you can create and manage appointments in a user's calendar app.
 title: Manage appointments
 ms.assetid: 292E9249-07C3-4791-B32C-6EC153C2B538
-ms.date: 02/08/2017
+ms.date: 11/05/2026
 ms.topic: how-to
 keywords: windows 10, uwp, appointments, calendar
 ms.localizationpriority: medium
@@ -275,8 +275,6 @@ private async void Add-Click(object sender, RoutedEventArgs e)
     }
 }
 ```
-
-**Note**  For Windows Phone Store apps, [**ShowAddAppointment**](/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showaddappointmentasync) functions just like [**ShowEditNewAppointment**](/uwp/api/windows.applicationmodel.appointments.appointmentmanager.showeditnewappointmentasync) in that the dialog displayed for adding the appointment is editable.
 
 ## Replace an appointment in the user's calendar
 

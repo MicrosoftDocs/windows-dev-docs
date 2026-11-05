@@ -2,7 +2,7 @@
 
 title: Enable device capabilities
 description: This topic explains how to declare device capabilities in Microsoft Visual Studio to use cameras, microphones, location sensors, and other devices in a Windows app.
-ms.date: 03/18/2026
+ms.date: 11/05/2026
 ms.topic: article
 keywords: windows 10, windows 11, uwp, winui, windows app sdk, device capabilities
 ms.localizationpriority: medium
@@ -49,7 +49,7 @@ You must declare in the app package manifest specific types of devices being use
 | Videos Library | ![Available in Manifest Designer](images/ap-tools.png) | Provides the capability to add, change, or delete files in the **Videos Library** for the local PC and **HomeGroup** PCs. | 
 | VOIP Calling | ![Available in Manifest Designer](images/ap-tools.png) | Allows apps to access the VOIP calling APIs. | 
 | Webcam | ![Available in Manifest Designer](images/ap-tools.png) | Provides access to the built-in camera or attached webcam's video feed. This allows the app to capture snapshots and movies. | 
-| USB | | Provides access to custom USB devices. This capability requires child elements. This feature is not supported on Windows Phone. | 
+| USB | | Provides access to custom USB devices. This capability requires child elements. |
 | Human Interface Device (HID) | | Provides access to Human Interface Devices (HID). This capability requires child elements. For more info, see [How to specify device capabilities for HID](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-hid). | 
 | Bluetooth GATT | | Provides access to Bluetooth LE devices through a collection of primary services, included services, characteristics, and descriptors. This capability requires child elements. For more info, see [How to specify device capabilities for Bluetooth](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-bluetooth). | 
 | Bluetooth RFCOMM |  | Provides access to APIs that support the Basic Rate/Extended Data Rate (BR/EDR) transport and also lets your app access a device that implements Serial Port Profile (SPP). This capability requires child elements. For more info, see [How to specify device capabilities for Bluetooth](/uwp/schemas/appxpackage/how-to-specify-device-capabilities-for-bluetooth). |

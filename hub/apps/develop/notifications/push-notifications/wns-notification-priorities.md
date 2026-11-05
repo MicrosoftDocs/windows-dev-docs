@@ -1,7 +1,7 @@
 ---
 title: WNS Notification Priorities
 description: Description of the various priorities that you can set on a notification
-ms.date: 01/10/2017
+ms.date: 11/05/2026
 ms.topic: article
 keywords: windows 10, uwp, WinRT API, WNS
 localizationpriority: medium
@@ -57,7 +57,7 @@ More specific recommended behaviors for each priority are listed below. This is 
 |    Battery Saver enabled    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    Cache     |
 |    On battery + battery saver enabled + screen off    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    If user exempted: deliver        Else: cache    |    Cache    |
 
-Note that low priority notifications will be delivered by default for screen off and battery only for Windows Phone based devices. This is to maintain compatibility with preexisting MPNS policy. Also note that the fourth and fifth rows are the same, just calling out different scenarios.
+Note that the fourth and fifth rows are the same, just calling out different scenarios.
 
 To exempt an app in battery saver, users must go to the "Battery Usage by App" in Settings and select "Allow the app to run background tasks." This user selection exempts the app from battery saver for high, medium, and low priority notifications. You can also call [BackgroundExecutionManager API](/uwp/api/windows.applicationmodel.background.backgroundexecutionmanager.requestaccesskindasync#Windows_ApplicationModel_Background_BackgroundExecutionManager_RequestAccessKindAsync_Windows_ApplicationModel_Background_BackgroundAccessRequestKind_System_String_) to programmatically ask for the user's permission.  
 

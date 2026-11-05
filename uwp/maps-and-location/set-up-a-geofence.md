@@ -2,7 +2,7 @@
 title: Set up a geofence
 description: Set up a Geofence in your app, and learn how to handle notifications in the foreground and background.
 ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
-ms.date: 06/21/2024
+ms.date: 11/05/2026
 ms.topic: how-to
 keywords: windows 10, uwp, location, geofence, notifications
 ms.localizationpriority: medium
@@ -453,7 +453,7 @@ Testing and debugging geofencing apps can be a challenge because they depend on 
 
 Before your app can access location, **Location** must be enabled on the device. In **Settings**, check that the following **location privacy settings** are turned on:
 
--   **Location for this device...** is turned **on** (not applicable in Windows 10 Mobile)
+-   **Location for this device...** is turned **on**
 -   The location services setting, **Location**, is turned **on**
 -   Under **Choose apps that can use your location**, your app is set to **on**
 

@@ -1,7 +1,7 @@
 ---
 title: App development for Windows as a service
 description: Learn about the Windows as a service (WaaS) approach to innovation, development, and delivery, and the community-centric Windows Insider testing program.
-ms.date: 02/08/2017
+ms.date: 11/05/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.assetid: f384ca56-f2b2-4793-b251-f7f5735376bb
@@ -12,7 +12,6 @@ ms.localizationpriority: medium
 **Applies to**
 - Windows 11
 - Windows 10
-- Windows 10 Mobile
 - Windows 10 IoT Core
 
 In today’s environment, where user expectations frequently are set by device-centric experiences, complete product cycles need to be measured in months, not years. Additionally, new releases must be made available on a continual basis, and must be deployable with minimal impact on users. Microsoft designed Windows 10 to meet these requirements by implementing a new approach to innovation, development, and delivery called [Windows as a service (WaaS)](/windows/deployment/update/waas-overview). The key to enabling significantly shorter product cycles while maintaining high quality levels is an innovative community-centric approach to testing that Microsoft has implemented for Windows 10. The community, known as Windows Insiders, is comprised of millions of users around the world. When Windows Insiders opt in to the community, they test many builds over the course of a product cycle and provide feedback to Microsoft through an iterative methodology called flighting.
@@ -33,8 +32,8 @@ The following table shows describes the various servicing channels and their key
 
 | Servicing option | Availability of new feature upgrades for installation | Servicing lifetime | Key benefits | Supported editions |
 | --- | --- | --- | --- | --- |
-| Semi-Annual Channel (Targeted) | Immediately after first published by Microsoft | 18 months | Makes new features available to users as soon as possible | Home, Pro, Education, Enterprise, Mobile, IoT Core, Windows 10 IoT Core Pro (IoT Core Pro) |
-| Semi-Annual Channel | Approximately 4 months after first published by Microsoft | 18 months from when first published | Provides additional time to test new feature upgrades before deployment | Pro, Education, Enterprise, Mobile Enterprise, IoT Core Pro |
+| Semi-Annual Channel (Targeted) | Immediately after first published by Microsoft | 18 months | Makes new features available to users as soon as possible | Home, Pro, Education, Enterprise, IoT Core, Windows 10 IoT Core Pro (IoT Core Pro) |
+| Semi-Annual Channel | Approximately 4 months after first published by Microsoft | 18 months from when first published | Provides additional time to test new feature upgrades before deployment | Pro, Education, Enterprise, IoT Core Pro |
 | Long-Term Servicing Channel (LTSC) | Immediately after published by Microsoft | 10 Years | Enables long-term deployment of selected Windows 10 releases in low-change configurations | Enterprise LTSB |
 
 For more information, see [Windows 10/11 servicing options for updates and upgrades](/windows/deployment/update/waas-overview#servicing-channels).
@@ -121,7 +120,7 @@ If your app is in the Store, you can flight your app via the Store, which means 
 
 As a [Windows Insider,](https://insider.windows.com/) you can help shape the future of Windows—your feedback will help us improve features and functionality in the platform. This is a vibrant community where you can connect with other enthusiasts, join forums, trade advice, and learn about upcoming Insider-only events.
 
-Since you’ll have access to preview builds of Windows 10, Windows 10 Mobile, and the latest Windows SDK and Emulator, you’ll have all the tools at your disposal to develop great apps and explore what's new in the Universal Windows Platform and the Microsoft Store.
+With Windows Insider preview builds and the latest Windows SDK, you can develop apps and explore what's new in the Universal Windows Platform and the Microsoft Store.
 
 This is also a great opportunity to build great hardware, with preview builds of the hardware development kits so you can develop universal drivers for Windows. The IoT Core Insider Preview is also available on supported IoT development boards, so you can build amazing connected solutions using the Universal Windows Platform.
 

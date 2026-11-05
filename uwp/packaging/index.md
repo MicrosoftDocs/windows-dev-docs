@@ -2,7 +2,7 @@
 ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
 title: Packaging apps
 description: This section contains or links to articles about packaging for Universal Windows Platform (UWP) apps.
-ms.date: 07/22/2019
+ms.date: 11/05/2026
 ms.topic: concept-article
 keywords: windows 10, uwp, packaging
 ms.localizationpriority: medium
@@ -24,7 +24,6 @@ This section contains or links to articles about packaging Universal Windows Pla
 | [Optional packages and related set authoring](/windows/msix/package/optional-packages) | Optional packages contain content that can be integrated with a main package. These are useful for downloadable content (DLC), dividing a large app for size restraints, or for shipping any additional content for separate from your original app. |
 | [Optional packages with executable code](/windows/msix/package/optional-packages-with-executable-code) | Learn how to use Visual Studio to create an optional package with executable code. |
 | [Install Windows apps with App Installer](/windows/msix/app-installer/app-installer-root) | App Installer allows for Windows apps to be installed by double clicking the app package. |
-| [Install apps with the WinAppDeployCmd.exe tool](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows Application Deployment (WinAppDeployCmd.exe) is a command line tool that can use to deploy a UWP app from a Windows 10 machine to any Windows 10 Mobile device. You can use this tool to deploy an app package when the Windows 10 Mobile device is connected by USB or available on the same subnet without needing Microsoft Visual Studio or the solution for that app. This article describes how to install UWP apps using this tool. |
 | [Set up automated builds for your UWP app](auto-build-package-uwp-apps.md) | If you want to package your app as part of an automated build process, this topic shows you how to use Visual Studio Team Services (VSTS) to do it. |
 | [App capability declarations](app-capability-declarations.md) | Capabilities must be declared in your app's [package manifest](/uwp/schemas/appxpackage/appx-package-manifest) to access certain API or resources like pictures, music, or devices like the camera or the microphone. |
 | [Download and install package updates from the Store](self-install-package-updates.md) | Your UWP app can programmatically check for package updates and install the updates. Your app can also query for packages that have been marked as mandatory in Partner Center and disable functionality until the mandatory update is installed.  |

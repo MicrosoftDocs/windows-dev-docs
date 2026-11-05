@@ -2,7 +2,7 @@
 title: Handle app suspend
 description: Learn how to save important application data when the system suspends your app.
 ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
-ms.date: 07/06/2018
+ms.date: 11/05/2026
 ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -136,7 +136,7 @@ If you make an asynchronous call within your handler, control returns immediatel
 A deferral doesn't increase the amount of time you have to run your code before your app is terminated. It only delays termination until either the deferral's *Complete* method is called, or the deadline passes-*whichever comes first*. To extend time in the Suspending state use [**ExtendedExecutionSession**](run-minimized-with-extended-execution.md)
 
 > [!NOTE]
-> To improve system responsiveness in Windows 8.1, apps are given low priority access to resources after they are suspended. To support this new priority, the suspend operation timeout is extended so that the app has the equivalent of the 5-second timeout for normal priority on Windows or between 1 and 10 seconds on Windows Phone. You cannot extend or alter this timeout window.
+> To improve system responsiveness in Windows 8.1, apps are given low priority access to resources after they are suspended. To support this new priority, the suspend operation timeout is extended so that the app has the equivalent of the 5-second timeout for normal priority on Windows. You cannot extend or alter this timeout window.
 
 **A note about debugging using Visual Studio:** Visual Studio prevents Windows from suspending an app that is attached to the debugger. This is to allow the user to view the Visual Studio debug UI while the app is running. When you're debugging an app, you can send it a suspend event using Visual Studio. Make sure the **Debug Location** toolbar is being shown, then click the **Suspend** icon.
 

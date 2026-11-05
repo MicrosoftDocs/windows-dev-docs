@@ -3,7 +3,7 @@ title: Universal Windows Platform (UWP) application lifecycle
 description: This topic describes the lifecycle of a Universal Windows Platform (UWP) application from the time it is activated until it is closed.
 keywords: app lifecycle suspended resume launch activate
 ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
-ms.date: 09/13/2023
+ms.date: 11/05/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -177,7 +177,7 @@ For general guidelines, see [Guidelines for app suspend and resume](./index.md).
 
 ## App close
 
-Generally, users don't need to close apps, they can let Windows manage them. However, users can choose to close an app using the close gesture or by pressing Alt+F4 or by using the task switcher on Windows Phone.
+Generally, users don't need to close apps, they can let Windows manage them. However, users can choose to close an app using the close gesture or by pressing Alt+F4.
 
 There is not an event to indicate that the user closed the app. When an app is closed by the user, it is first suspended to give you an opportunity to save its state. In Windows 8.1 and later, after an app has been closed by the user, the app is removed from the screen and switch list but not explicitly terminated.
 

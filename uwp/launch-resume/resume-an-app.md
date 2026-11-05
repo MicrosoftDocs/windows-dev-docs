@@ -2,7 +2,7 @@
 title: Handle app resume
 description: Learn how to refresh displayed content when the system resumes your app.
 ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
-ms.date: 07/06/2018
+ms.date: 11/05/2026
 ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -115,8 +115,6 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 ## Remarks
 
 When your app is attached to the Visual Studio debugger, it will not be suspended. You can suspend it from the debugger, however, and then send it a **Resume** event so that you can debug your code. Make sure the **Debug Location toolbar** is visible and click the drop-down next to the **Suspend** icon. Then choose **Resume**.
-
-For Windows Phone Store apps, the [**Resuming**](/uwp/api/windows.ui.xaml.application.resuming) event is always followed by [**OnLaunched**](/uwp/api/windows.ui.xaml.application.onlaunched), even when your app is currently suspended and the user re-launches your app from a primary tile or app list. Apps can skip initialization if there is already content set on the current window. You can check the [**LaunchActivatedEventArgs.TileId**](/uwp/api/windows.applicationmodel.activation.launchactivatedeventargs.tileid) property to determine if the app was launched from a primary or a secondary tile and, based on that information, decide whether you should present a fresh or resume app experience.
 
 ## Related topics
 

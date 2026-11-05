@@ -2,7 +2,7 @@
 title: Support your app with background tasks
 description: The topics in this section show you how to make lightweight code run in the background in response to triggers.
 ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
-ms.date: 08/21/2017
+ms.date: 11/05/2026
 ms.topic: article
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
@@ -69,7 +69,7 @@ You can control when the background task runs, even after it is triggered, by ad
 
 Add the **InternetAvailable** condition to your background task [BackgroundTaskBuilder.AddCondition](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to delay triggering the background task until the network stack is running. This condition saves power because the background task won't execute until the network is available. This condition does not provide real-time activation.
 
-If your background task requires network connectivity, set [IsNetworkRequested](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to ensure that the network stays up while the background task runs. This tells the background task infrastructure to keep the network up while the task is executing, even if the device has entered Connected Standby mode. If your background task does not set **IsNetworkRequested**, then your background task will not be able to access the network when in Connected Standby mode (for example, when a phone's screen is turned off.)
+If your background task requires network connectivity, set [IsNetworkRequested](/uwp/api/Windows.ApplicationModel.Background.BackgroundTaskBuilder) to ensure that the network stays up while the background task runs. This tells the background task infrastructure to keep the network up while the task is executing, even if the device has entered Connected Standby mode. If your background task does not set **IsNetworkRequested**, then your background task will not be able to access the network when in Connected Standby mode.
  
 For more info about background task conditions, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
 
@@ -83,7 +83,7 @@ The following real-time triggers can be used to run lightweight custom code in t
 
 | Real-time trigger  | Description |
 |--------------------|-------------|
-| **Control Channel** | Background tasks can keep a connection alive, and receive messages on the control channel, by using the [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger). If your app is listening to a socket, you can use the Socket Broker instead of the **ControlChannelTrigger**. For more details on using the Socket Broker, see [SocketActivityTrigger](/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger). The **ControlChannelTrigger** is not supported on Windows Phone. |
+| **Control Channel** | Background tasks can keep a connection alive, and receive messages on the control channel, by using the [**ControlChannelTrigger**](/uwp/api/Windows.Networking.Sockets.ControlChannelTrigger). If your app is listening to a socket, you can use the Socket Broker instead of the **ControlChannelTrigger**. For more details on using the Socket Broker, see [SocketActivityTrigger](/uwp/api/Windows.ApplicationModel.Background.SocketActivityTrigger). |
 | **Timer** | Background tasks can run as frequently as every 15 minutes, and they can be set to run at a certain time by using the [**TimeTrigger**](/uwp/api/Windows.ApplicationModel.Background.TimeTrigger). For more info see [Run a background task on a timer](run-a-background-task-on-a-timer-.md). |
 | **Push Notification** | Background tasks respond to the [**PushNotificationTrigger**](/uwp/api/Windows.ApplicationModel.Background.PushNotificationTrigger) to receive raw push notifications. |
 

@@ -2,7 +2,7 @@
 title: Create an add-on submission
 description: Learn how to create an add-on in Partner Center and start its submission so you can tell the Microsoft Store about your app's add-on.
 ms.topic: article
-ms.date: 08/05/2026
+ms.date: 11/05/2026
 ai-usage: ai-assisted
 ---
 
@@ -65,7 +65,6 @@ Here are a few things to keep in mind when choosing a product ID:
 - A product ID can't be more than 100 characters in length.
 - A product ID can't include any of the following characters: **&lt; &gt; \* % & : \\ ? + ,**
 - Customers won't see the product ID. (Later, you can enter a [title and description](./create-app-store-listing.md) to show to customers.)
-- If your previously published app supports Windows Phone 8.1 or earlier, you must only use alphanumeric characters, periods, or underscores in your product ID. If you use any other types of characters, the add-on won't be available for purchase to customers running Windows Phone 8.1 or earlier.
 
 After you select the **Create add-on** button, you see the Submissions page.
 

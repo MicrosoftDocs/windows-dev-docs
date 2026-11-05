@@ -2,7 +2,7 @@
 title: Access sensors and devices from a background task
 description: DeviceUseTrigger lets your Universal Windows app access sensors and peripheral devices in the background, even when your foreground app is suspended.
 ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
-ms.date: 02/08/2017
+ms.date: 11/05/2026
 ms.topic: how-to
 keywords: windows 10, uwp, background task
 ms.localizationpriority: medium
@@ -14,7 +14,7 @@ ms.localizationpriority: medium
 
 [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) lets your Universal Windows app access sensors and peripheral devices in the background, even when your foreground app is suspended. For example, depending on where your app is running, it could use a background task to synchronize data with devices or monitor sensors. To help preserve battery life and ensure the appropriate user consent, the use of [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) is subject to policies that are described in this topic.
 
-To access sensors or peripheral devices in the background, create a background task that uses the [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger). For an example that shows how this is done on a PC, see the [Custom USB device sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomUsbDeviceAccess). For an example on a phone, see the [Background Sensors sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundSensors).
+To access sensors or peripheral devices in the background, create a background task that uses the [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger). For an example that shows how this is done on a PC, see the [Custom USB device sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomUsbDeviceAccess).
 
 > [!Important]
 > **DeviceUseTrigger** cannot be used with in-process background tasks. The info in this topic only applies to background tasks that run out-of-process.
@@ -78,15 +78,13 @@ To use the [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.D
 **Important**  
 Consider these important points when using the [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger):
 
--   The ability to programmatically trigger background tasks that use the [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) was first introduced in Windows 8.1 and Windows Phone 8.1.
-
 -   Certain policies are enforced by Windows to ensure user consent when updating peripheral devices on the PC.
 
 -   Additional polices are enforced to preserve user battery life when syncing and updating peripheral devices.
 
 -   Background tasks that use [**DeviceUseTrigger**](/uwp/api/Windows.ApplicationModel.Background.DeviceUseTrigger) might be canceled by Windows when certain policy requirements are no longer met, including a maximum amount of background time (wall clock time). It's important to consider these policy requirements when using these background tasks to interact with your peripheral device.
 
-**Tip**  To see how these background tasks work, download a sample. For an example that shows how this is done on a PC, see the [Custom USB device sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomUsbDeviceAccess). For an example on a phone, see the [Background Sensors sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/BackgroundSensors).
+**Tip**  To see how these background tasks work, download a sample. For an example that shows how this is done on a PC, see the [Custom USB device sample](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/CustomUsbDeviceAccess).
  
 ## Frequency and foreground restrictions
 

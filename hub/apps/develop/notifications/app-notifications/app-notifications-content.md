@@ -4,7 +4,7 @@ title: App notification content
 ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
 label: App notification content
 template: detail.hbs
-ms.date: 07/15/2026
+ms.date: 11/05/2026
 ms.topic: article
 keywords: windows 10, windows 11, windows app sdk, toast notifications, interactive toasts, adaptive toasts, toast content, toast payload, app notifications
 ms.localizationpriority: medium
@@ -788,7 +788,7 @@ To create important notifications, alarms, reminders, and incoming call notifica
 
 ### Reminders
 
-In the reminder scenario, the notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the app notification will also show pre-expanded. A reminder sound will be played. You must provide at least one button on your app notification. Otherwise, the notification will be treated as a normal notification.
+In the reminder scenario, the notification will stay on screen until the user dismisses it or takes action. A reminder sound will be played. You must provide at least one button on your app notification. Otherwise, the notification will be treated as a normal notification.
 
 #### [Windows App SDK](#tab/appsdk)
 
@@ -846,7 +846,7 @@ var builder = new AppNotificationBuilder()
 
 
 ### Incoming calls
-Incoming call notifications are displayed pre-expanded in a special call format and stay on the user's screen till dismissed. Ringtone audio will loop by default. On Windows Mobile devices, they display full screen.
+Incoming call notifications are displayed pre-expanded in a special call format and stay on the user's screen till dismissed. Ringtone audio will loop by default.
 
 ![Incoming call app notification](images/toast-content-incoming-call.png)
 

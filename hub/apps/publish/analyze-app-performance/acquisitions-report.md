@@ -3,7 +3,7 @@ description: The acquisitions report in Partner Center lets you see who acquired
 title: Acquisitions report
 author: Sankalpm-1
 ms.author: sankalpm
-ms.date: 07/15/2026
+ms.date: 11/05/2026
 ms.topic: article
 keywords: windows 10, windows 11, windows, windows store, store, analytics, installs, acquisitions, page views, conversion, campaign, gross sales
 ms.localizationpriority: medium
@@ -83,7 +83,7 @@ The install total includes:
 
 The install total doesn't include or reflect:
 
-- **Installs on non-Windows 10 or Windows 11 devices**. If your app supports earlier OS versions such as Windows 8.x or Windows Phone 8.x, we don't count any installs on those devices.
+- **Installs on non-Windows 10 or Windows 11 devices**. We don't count installs on devices running other OS versions.
 
 - **Uninstalls**: When a customer uninstalls your app from their device, we don't subtract that from the total number of installs.
 - **Updates**: For example, if a customer installs your app today, and then installs an app update a week later, that only counts as one install.

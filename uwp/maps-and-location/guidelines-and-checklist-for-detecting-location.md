@@ -2,7 +2,7 @@
 description: This topic describes performance guidelines for apps that require access to a user's location.
 title: Guidelines for location-aware apps
 ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
-ms.date: 06/21/2024
+ms.date: 11/05/2026
 ms.topic: article
 keywords: windows 10, uwp, location, geolocation
 ms.localizationpriority: medium
@@ -72,7 +72,7 @@ This topic describes performance guidelines for apps that require access to a us
         -   Set [**desiredAccuracy**](/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) to **HIGH** to enable the GPS to acquire data.
         -   Set [**desiredAccuracy**](/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy) to **Default** and use only a single-shot call pattern to minimize power consumption if your app uses location info solely for ad targeting.
 
-        If your app has specific needs around accuracy, you may want to use the [**DesiredAccuracyInMeters**](/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracyinmeters) property instead of using [**DesiredAccuracy**](/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy). This is particularly useful on Windows Phone, where position can usually be obtained based on cellular beacons, Wi-Fi beacons and satellites. Picking a more specific accuracy value will help the system identify the right technologies to use with the lowest power cost when providing a position.
+        If your app has specific needs around accuracy, you may want to use the [**DesiredAccuracyInMeters**](/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracyinmeters) property instead of using [**DesiredAccuracy**](/uwp/api/windows.devices.geolocation.geolocator.desiredaccuracy). Picking a more specific accuracy value will help the system identify the right technologies to use with the lowest power cost when providing a position.
 
         For example:
 

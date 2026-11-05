@@ -2,7 +2,7 @@
 
 title: Pair devices
 description: This topic describes how to pair devices using the Windows.Devices.Enumeration namespace.
-ms.date: 05/04/2023
+ms.date: 11/05/2026
 ms.topic: article
 
 ms.localizationpriority: medium
@@ -39,7 +39,7 @@ In order to implement custom pairing, you will need to obtain the [DeviceInforma
 
 To support custom pairing, you will need to create a handler for the [PairingRequested](/uwp/api/windows.devices.enumeration.deviceinformationcustompairing.pairingrequested) event. This handler needs to make sure to account for all the different [DevicePairingKinds](/uwp/api/Windows.Devices.Enumeration.DevicePairingKinds) that might be used in a custom pairing scenario. The appropriate action to take will depend on the **DevicePairingKinds** provided as part of the event arguments.
 
-It is important to be aware that custom pairing is always a system-level operation. Because of this, when you are operating on Desktop or Windows Phone, a system dialog will always be shown to the user when pairing is going to happen. This is because both of those platforms posses a user experience that requires user consent. Since that dialog is automatically generated, you will not need to create your own dialog when you are opting for a [DevicePairingKinds](/uwp/api/Windows.Devices.Enumeration.DevicePairingKinds) of **ConfirmOnly** when operating on these platforms. For the other **DevicePairingKinds**, you will need to perform some special handling depending on the specific **DevicePairingKinds** value. See the sample for examples of how to handle custom pairing for different **DevicePairingKinds** values.
+It is important to be aware that custom pairing is always a system-level operation. On Windows desktop, a system dialog will always be shown to obtain user consent when pairing is going to happen. Since that dialog is automatically generated, you will not need to create your own dialog when you are opting for a [DevicePairingKinds](/uwp/api/Windows.Devices.Enumeration.DevicePairingKinds) of **ConfirmOnly** on desktop. For the other **DevicePairingKinds**, you will need to perform some special handling depending on the specific **DevicePairingKinds** value. See the sample for examples of how to handle custom pairing for different **DevicePairingKinds** values.
 
 Starting with Windows 10, version 1903, a new **DevicePairingKinds** is supported, **ProvidePasswordCredential**. This value means that the app must request a user name and password from the user in order to authenticate with the paired device. To handle this case, call the [AcceptWithPasswordCredential](/uwp/api/windows.devices.enumeration.devicepairingrequestedeventargs.acceptwithpasswordcredential?branch=release-19h1) method of the event args of the **PairingRequested** event handler to accept the pairing. Pass in a [PasswordCredential](/uwp/api/windows.security.credentials.passwordcredential) object that encapsulates the user name and password as a parameter. Note that the username and password for the remote device are distinct from and often not the same as the credentials for the locally signed-in user.
 

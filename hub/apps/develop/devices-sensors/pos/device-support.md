@@ -1,7 +1,7 @@
 ---
 title: Point of Service Hardware Support
 description: This article contains information about hardware support for each of the Point of Service device classes.
-ms.date: 05/04/2023
+ms.date: 11/05/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -75,24 +75,6 @@ This topic describes the hardware support for each of the Point of Service devic
 | Manufacturer   | Model | Operating System |
 |----------------|-------|------------------|
 | Innowi         | ChecOut-M | Windows 10   |
-
-### Windows Mobile devices with built-in barcode scanner
-| Manufacturer   | Model | Operating System |
-|----------------|-------|------------------|
-| Bluebird       | EF400 | Windows Mobile   |
-| Bluebird       | EF500 | Windows Mobile   |
-| Bluebird       | EF500R | Windows Mobile   |
-| Honeywell      | CT50   | Windows Mobile   |
-| Honeywell      | D75e | Windows Mobile   |
-| Janam          | XT2      | Windows Mobile   |
-| Panasonic      | FZ-E1 | Windows Mobile   |
-| Panasonic      | FZ-F1 |Windows Mobile   |
-| PointMobile    | PM80 | Windows Mobile   |
-| Zebra          | TC700j | Windows Mobile   |
-| HP             | Elite X3 Jacket | Windows Mobile   |
-
-
-
 
 ## Cash Drawer
 | Connectivity | Support |

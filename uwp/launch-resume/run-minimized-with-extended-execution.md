@@ -1,7 +1,7 @@
 ---
 description: Learn how to use extended execution to keep your app running while it is minimized
 title: Postpone app suspension with extended execution
-ms.date: 02/08/2017
+ms.date: 11/05/2026
 ms.topic: how-to
 keywords: windows 10, uwp, extended execution, minimized, ExtendedExecutionSession, background task, application lifecycle, lock screen
 ms.assetid: e6a6a433-5550-4a19-83be-bbc6168fe03a
@@ -35,13 +35,13 @@ Request the extension when starting a long running operation in order to defer t
 
 A tablet or laptop user can get the same long running behavior--at the expense of battery life--when the **Allow the app to run background tasks** option is selected in **Battery usage by app** settings. (To find this option on a laptop, go to **Settings** > **System** > **Battery** > **Battery usage by App** (the link under the percent of battery power remaining) > select an app > turn off **Managed By Windows** > select **Allow app to run background tasks**.  
 
-On all OS editions this kind of extended execution session stops when the device enters Connected Standby. On mobile devices running Windows 10 Mobile, this kind of extended execution session will run as long as the screen is on. When the screen turns off, the device immediately attempts to enter the low-power Connected-Standby mode. On desktop devices, the session will continue running if the lock screen appears. The device does not enter Connected Standby for a period of time after the screen turns off. On the Xbox OS Edition, the device enters Connect Standby after one hour unless the user changes the default.
+On all OS editions this kind of extended execution session stops when the device enters Connected Standby. On desktop devices, the session will continue running if the lock screen appears. The device does not enter Connected Standby for a period of time after the screen turns off. On the Xbox OS Edition, the device enters Connect Standby after one hour unless the user changes the default.
 
 ## Track the user's location
 
 Specify **ExtendedExecutionReason.LocationTracking** when you create an **ExtendedExecutionSession** if your app needs to regularly log the location from the [GeoLocator](/uwp/api/windows.devices.geolocation.geolocator). Apps for fitness tracking and navigation that need to regularly monitor the user's location and should use this reason.
 
-A location tracking extended execution session can run as long as needed, including while the screen is locked on a mobile device. However, there can only be one such session running per device. A location tracking extended execution session can only be requested in the foreground, and the app must be in the **Running** state. This ensures that the user is aware that the app has initiated an extended location tracking session. It is still possible to use the GeoLocator while the app is in the background by using a background task, or an app service, without requesting a location tracking extended execution session.
+A location tracking extended execution session can run as long as needed. However, there can only be one such session running per device. A location tracking extended execution session can only be requested in the foreground, and the app must be in the **Running** state. This ensures that the user is aware that the app has initiated an extended location tracking session. It is still possible to use the GeoLocator while the app is in the background by using a background task, or an app service, without requesting a location tracking extended execution session.
 
 ## Save Critical Data Locally
 

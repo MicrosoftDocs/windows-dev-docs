@@ -2,7 +2,7 @@
 title: Get the user's location
 description: Find the user's location and respond to changes in location. Access to the user's location is managed by privacy settings in Windows Settings. This topic also shows how to check if your app has permission to access the user's location.
 ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
-ms.date: 07/06/2026
+ms.date: 11/05/2026
 ms.topic: how-to
 keywords: windows 10, uwp, location, geolocation, location capability
 ms.localizationpriority: medium
@@ -246,7 +246,7 @@ bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-locatio
 
 Before your app can access the user's location, **Location** must be enabled on the device. In **Settings**, check that the following **location privacy settings** are turned on:
 
--   **Location for this device...** is turned **on** (not applicable in Windows 10 Mobile)
+-   **Location for this device...** is turned **on**
 -   The location services setting, **Location**, is turned **on**
 -   Under **Choose apps that can use your location**, your app is set to **on**
 

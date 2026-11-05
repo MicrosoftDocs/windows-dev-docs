@@ -2,7 +2,7 @@
 ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
 title: Create a "Hello, World!" UWP app using C++/CX
 description: With Microsoft Visual Studio, you can use C++/CX to develop an app that runs on Windows. These apps have a UI that is defined in Extensible Application Markup Language (XAML).
-ms.date: 06/11/2018
+ms.date: 11/05/2026
 ms.topic: how-to
 keywords: uwp, windows 10, windows 11
 ms.localizationpriority: medium
@@ -52,11 +52,11 @@ If you're coming from a background in Windows desktop programming in C++, then y
 
 -   Your app is compiled into a package that also contains metadata about the types that your app contains, the resources that it uses, and the capabilities that it requires (file access, internet access, camera access, and so forth).
 
--   In the Microsoft Store and Windows Phone Store your app is verified as safe by a certification process and made discoverable to millions of potential customers.
+-   In the Microsoft Store your app is verified as safe by a certification process and made discoverable to millions of potential customers.
 
 ## Hello World Store app in C++/CX
 
-Our first app is a "Hello World" that demonstrates some basic features of interactivity, layout, and styles. We'll create an app from the Windows Universal app project template. If you've developed apps for Windows 8.1 and Windows Phone 8.1 before, you might remember that you had to have three projects in Visual Studio, one for the Windows app, one for the phone app, and another with shared code. The Windows Universal Windows Platform (UWP) makes it possible to have just one project, which runs on all devices, including desktop and laptop computers running Windows, devices such as tablets, mobile phones, VR devices and so on.
+Our first app is a "Hello World" that demonstrates some basic features of interactivity, layout, and styles. We'll create an app from the Windows Universal app project template. The Universal Windows Platform (UWP) lets you use a single project for your app's code and XAML and run the app on Windows desktop and laptop computers and tablets.
 
 We'll start with the basics:
 
@@ -392,6 +392,6 @@ Congratulations, you've completed the first tutorial! It taught how to add conte
 
 ## Next steps
 
-If you have a Windows Universal app project that targets Windows 8.1 and/or Windows Phone 8.1, you can port it to Windows 10 or Windows 11. There is no automatic process for this, but you can do it manually. Start with a new Windows Universal project to get the latest project system structure and manifest files, copy your code files into the project's directory structure, add the items to your project, and rewrite your XAML using the [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) according to the guidance in this topic. For more information, see [Porting a Windows Runtime 8 project to a Universal Windows Platform (UWP) project](../porting/w8x-to-uwp-porting-to-a-uwp-project.md) and [Porting to the Universal Windows Platform (C++)](/cpp/porting/porting-to-the-universal-windows-platform-cpp).
+To port an older Windows Runtime app project to Windows 10 or Windows 11, start with a new Windows Universal project to get the latest project system structure and manifest files, copy your code files into the project's directory structure, add the items to your project, and rewrite your XAML using the [**VisualStateManager**](/uwp/api/Windows.UI.Xaml.VisualStateManager) according to the guidance in this topic. For more information, see [Porting a Windows Runtime 8 project to a Universal Windows Platform (UWP) project](../porting/w8x-to-uwp-porting-to-a-uwp-project.md) and [Porting to the Universal Windows Platform (C++)](/cpp/porting/porting-to-the-universal-windows-platform-cpp).
 
 If you have existing C++ code that you want to integrate with a UWP app, such as to create a new UWP UI for an existing application, see [How to: Use existing C++ code in a Universal Windows project](/cpp/porting/how-to-use-existing-cpp-code-in-a-universal-windows-platform-app).

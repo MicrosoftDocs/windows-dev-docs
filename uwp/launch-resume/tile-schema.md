@@ -4,7 +4,7 @@ title: Tile content schema
 ms.assetid: 7CBC3BD5-D9C3-4781-8BD0-1F28039E1FA8
 label: Tile content schema
 template: detail.hbs
-ms.date: 08/08/2024
+ms.date: 11/05/2026
 ms.topic: article
 keywords: windows 10, uwp, tile, tile notification, tile content, schema, tile payload
 ms.localizationpriority: medium
@@ -272,7 +272,7 @@ Text stacking specifies the vertical alignment of the content.
 
 ## TileBindingContentIconic
 
-Supported on Small and Medium. Enables an iconic tile template, where you can have an icon and badge display next to each other on the tile, in true classic Windows Phone style. The number next to the icon is achieved through a separate badge notification.
+Supported on Small and Medium. Enables an iconic tile template, where you can have an icon and badge display next to each other on the tile. The number next to the icon is achieved through a separate badge notification.
 
 | Property | Type | Required |Description |
 |---|---|---|---|
