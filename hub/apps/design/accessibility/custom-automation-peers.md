@@ -4,7 +4,7 @@ ms.assetid: AA8DA53B-FE6E-40AC-9F0A-CB09637C87B4
 title: Custom automation peers
 label: Custom automation peers
 template: detail.hbs
-ms.date: 08/21/2026
+ms.date: 11/05/2026
 ms.topic: article
 keywords: windows 11, winui, winapp sdk
 ms.localizationpriority: medium
@@ -43,7 +43,7 @@ Even if base behavior is functionally acceptable, defining your own peer is stil
 
 ## Automation peer classes
 
-WinUI and related XAML frameworks build on established UI Automation conventions from earlier managed UI stacks such as Windows Forms, WPF, and Silverlight. Many control and peer concepts follow these established patterns.
+WinUI and related XAML frameworks build on established UI Automation conventions from earlier managed UI stacks such as Windows Forms and WPF. Many control and peer concepts follow these established patterns.
 
 By convention, peer class names begin with the control class name and end with "AutomationPeer". For example, [**ButtonAutomationPeer**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.automation.peers.buttonautomationpeer) is the peer class for the [**Button**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.button) control class.
 

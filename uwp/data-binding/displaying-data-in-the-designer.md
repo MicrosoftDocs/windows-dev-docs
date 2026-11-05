@@ -3,7 +3,7 @@
 ms.assetid: 089660A2-7CAE-4911-9994-F619C5D22287
 title: Sample data on the design surface, and for prototyping
 description: It may be impossible or undesirable (perhaps for reasons of privacy or performance) for your app to display live data on the design surface in Microsoft Visual Studio or Blend for Visual Studio.
-ms.date: 02/08/2017
+ms.date: 11/05/2026
 ms.topic: how-to
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -93,7 +93,7 @@ All you need to do is to specify a class for the command to use. The command the
 
 The various xmlns declarations mean that attributes with the **d:** prefix are interpreted only at design-time and are ignored at run-time. So the **d:DataContext** attribute only affects the value of the [**DataContext**](/uwp/api/windows.ui.xaml.frameworkelement.datacontext) property at design-time; it has no effect at run-time. You can even set both **d:DataContext** and **DataContext** in markup if you like. **d:DataContext** will override at design-time, and **DataContext** will override at run-time. These same override rules apply to all design-time and run-time attributes.
 
-The **d:DataContext** attribute, and all other design-time attributes, are documented in the [Design-Time Attributes](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff602277(v=vs.95)) topic, which is still valid for Universal Windows Platform (UWP) apps.
+For more information about design-time data and the **d:** namespace in UWP projects, see [Use design-time data with the XAML Designer](/visualstudio/xaml-tools/xaml-designtime-data).
 
 [**CollectionViewSource**](/uwp/api/Windows.UI.Xaml.Data.CollectionViewSource) doesn't have a **DataContext** property, but it does have a **Source** property. Consequently, there's a **d:Source** property that you can use to set design-time-only sample data on a **CollectionViewSource**.
 

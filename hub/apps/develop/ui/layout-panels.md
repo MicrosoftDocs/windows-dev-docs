@@ -1,7 +1,7 @@
 ---
 description: Learn how to use built-in XAML layout panels like RelativePanel, StackPanel, Grid, and Canvas to arrange and group UI elements in your app.
 title: Layout panels for Windows apps
-ms.date: 10/13/2026
+ms.date: 11/05/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -143,7 +143,7 @@ The [**Grid**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Gri
 
 To position objects in specific cells of the Grid, use the [**Grid.Column**](/dotnet/api/system.windows.controls.grid.column) and [**Grid.Row**](/dotnet/api/system.windows.controls.grid.row) attached properties.
 
-To make content span across multiple rows and columns, use the [**Grid.RowSpan**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ms605035(v=vs.95)) and [**Grid.ColumnSpan**](/dotnet/api/system.windows.controls.grid.columnspan) attached properties.
+To make content span across multiple rows and columns, use the [**Grid.RowSpan**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.grid.rowspan) and [**Grid.ColumnSpan**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.grid.columnspan) attached properties.
 
 This XAML example shows how to create a Grid with two rows and two columns.
 
@@ -247,7 +247,7 @@ The [**Canvas**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.C
 > [!div class="nextstepaction"]
 > [Open the WinUI 3 Gallery app and see the Canvas in action](winui3gallery://item/Canvas)
 
-Objects in a Canvas can overlap, where one object is drawn on top of another object. By default, the Canvas renders child objects in the order in which they’re declared, so the last child is rendered on top (each element has a default z-index of 0). This is the same as other built-in panels. However, Canvas also supports the [**Canvas.ZIndex**](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc190397(v=vs.95)) attached property that you can set on each of the child elements. You can set this property in code to change the draw order of elements during run time. The element with the highest Canvas.ZIndex value draws last and therefore draws over any other elements that share the same space or overlap in any way. Note that alpha value (transparency) is respected, so even if elements overlap, the contents shown in overlap areas might be blended if the top one has a non-maximum alpha value.
+Objects in a Canvas can overlap, where one object is drawn on top of another object. By default, the Canvas renders child objects in the order in which they’re declared, so the last child is rendered on top (each element has a default z-index of 0). This is the same as other built-in panels. However, Canvas also supports the [**Canvas.ZIndex**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.canvas.zindex) attached property that you can set on each of the child elements. You can set this property in code to change the draw order of elements during run time. The element with the highest Canvas.ZIndex value draws last and therefore draws over any other elements that share the same space or overlap in any way. Note that alpha value (transparency) is respected, so even if elements overlap, the contents shown in overlap areas might be blended if the top one has a non-maximum alpha value.
 
 The Canvas does not do any sizing of its children. Each element must specify its size.
 

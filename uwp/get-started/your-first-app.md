@@ -2,7 +2,7 @@
 ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
 title: Create your first app
 description: Create a Universal Windows Platform (UWP) app for Windows using your favorite programming language.
-ms.date: 10/13/2020
+ms.date: 11/05/2026
 ms.topic: article
 keywords: windows 10, uwp, first app, c#, c++, JavaScript
 ms.localizationpriority: medium
@@ -20,7 +20,7 @@ To get started, choose your favorite language.
 
 ## C# and XAML
 
-Use your .NET, WPF, or Silverlight skills to build apps using C# with Extensible Application Markup Language (XAML).
+Use your .NET or WPF skills to build apps using C# with Extensible Application Markup Language (XAML).
 
 * [Create a "Hello, World!" app using XAML with C#](create-a-hello-world-app-xaml-universal.md)
 

@@ -2,7 +2,7 @@
 description: Learn about the move and draw commands (a mini-language) that you can use to specify path geometries as a XAML attribute value.
 title: Move and draw commands syntax
 ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
-ms.date: 07/27/2026
+ms.date: 11/05/2026
 ms.topic: how-to
 keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
@@ -222,7 +222,7 @@ Using the **Pen** tool and other drawing tools in Blend for Microsoft Visual Stu
 
 You might see existing move and draw command data in some of the control parts defined in the Windows Runtime XAML default templates for controls. For example, some controls use a [**PathIcon**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.PathIcon) that has the data defined as move and draw commands.
 
-There are exporters or plug-ins available for other commonly used vector-graphics design tools that can output the vector in XAML form. These usually create [**Path**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Shapes.Path) objects in a layout container, with move and draw commands for [**Path.Data**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.path.data). There may be multiple **Path** elements in the XAML so that different brushes can be applied. Many of these exporters or plug-ins were originally written for Windows Presentation Foundation (WPF)  XAML or Silverlight, but the XAML path syntax is identical with Windows Runtime XAML. Usually, you can use chunks of XAML from an exporter and paste them right into a Windows Runtime XAML page. (However, you won't be able to use a **RadialGradientBrush**, if that was part of the converted XAML, because Windows Runtime XAML doesn't support that brush.)
+There are exporters or plug-ins available for other commonly used vector-graphics design tools that can output the vector in XAML form. These usually create [**Path**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Shapes.Path) objects in a layout container, with move and draw commands for [**Path.Data**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.path.data). There may be multiple **Path** elements in the XAML so that different brushes can be applied. Many of these exporters or plug-ins were originally written for Windows Presentation Foundation (WPF) XAML, but the XAML path syntax is identical with Windows Runtime XAML. Usually, you can use chunks of XAML from an exporter and paste them right into a Windows Runtime XAML page. (However, you won't be able to use a **RadialGradientBrush**, if that was part of the converted XAML, because Windows Runtime XAML doesn't support that brush.)
 
 ## Related topics
 

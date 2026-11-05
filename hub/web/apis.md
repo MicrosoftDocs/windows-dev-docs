@@ -3,7 +3,7 @@ title: APIs for web development
 description: A broad list of APIs that can be used for web development from products across Microsoft.
 ms.topic: article
 keywords: web development, web dev, web on windows, apis, edge
-ms.date: 11/01/2023
+ms.date: 11/05/2026
 ---
 
 # APIs for web development
@@ -15,8 +15,6 @@ This list covers a broad spectrum of APIs from across Microsoft that may interes
 - **[ASP.NET Web APIs](https://dotnet.microsoft.com/apps/aspnet/apis)**: Build secure REST APIs on any platform with C#.
 
 - **[Azure DevOps Services REST API](/rest/api/azure/devops/)**: Azure DevOps enables collaboration on software development through source control, work tracking, and continuous integration and delivery, both on-premises and in the cloud.
-
-- **[Azure Media Player](https://azure.microsoft.com/services/media-services/media-player/)**: A web-friendly media player that automatically chooses the best playback format, includes fallback for Flash and Silverlight, and offers integrated content protection.
 
 - **[Bing Ads API](/advertising/guides/)**: Bing Ads is a pay-per-click (PPC) advertising platform used to display ads based on the keywords used in a user’s search query.
 

@@ -2,7 +2,7 @@
 ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
 title: Storyboarded animations
 description: Learn how to use storyboarded animations to change the value of a dependency property as a function of time.
-ms.date: 09/05/2026
+ms.date: 11/05/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -294,7 +294,7 @@ The run behavior for a [**Storyboard**](/windows/windows-app-sdk/api/winrt/micro
 
 ### **Storyboard** and **EventTrigger**
 
-There is one way to start an animation that can be declared entirely in XAML. However, this technique isn't widely used anymore. It's a legacy syntax from WPF and early versions of Silverlight prior to [**VisualStateManager**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.visualstatemanager) support. This [**EventTrigger**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.EventTrigger) syntax still works in Windows Runtime XAML for import/compatibility reasons, but only works for a trigger behavior based on the [**FrameworkElement.Loaded**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.loaded) event; attempting to trigger off other events will throw exceptions or fail to compile. For more info, see [**EventTrigger**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.EventTrigger) or [**BeginStoryboard**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.BeginStoryboard).
+You can also start an animation entirely in XAML by using [**EventTrigger**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.EventTrigger). This legacy syntax is supported in Windows Runtime XAML for compatibility, but only works for a trigger behavior based on the [**FrameworkElement.Loaded**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.loaded) event; attempting to trigger off other events will throw exceptions or fail to compile. For more info, see [**EventTrigger**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.EventTrigger) or [**BeginStoryboard**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.Animation.BeginStoryboard).
 
 ## Animating XAML attached properties
 

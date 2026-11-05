@@ -2,7 +2,7 @@
 description: This topic explains the XML/XAML namespace (xmlns) mappings as found in the root element of most XAML files. It also describes how to produce similar mappings for custom types and assemblies.
 title: XAML namespaces and namespace mapping
 ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
-ms.date: 07/27/2026
+ms.date: 11/05/2026
 ms.topic: article
 keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
@@ -84,11 +84,9 @@ The "d:" XAML namespace is intended for designer support, specifically designer 
 
 - **d:DesignHeight and d:DesignWidth attributes:** These attributes are sometimes applied to the root of a XAML file that Visual Studio or another XAML designer surface creates for you. For example, these attributes are set on the [**UserControl**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.UserControl) root of the XAML that is created if you add a new **UserControl** to your app project. These attributes make it easier to design the composition of the XAML content, so that you have some anticipation of the layout constraints that might exist once that XAML content is used for a control instance or other part of a larger UI page.
 
-   **Note**  If you are migrating XAML from Microsoft Silverlight you might have these attributes on root elements that represent an entire UI page. You might want to remove the attributes in this case. Other features of the XAML designers such as the simulator are probably more useful for designing page layouts that handle scaling and view states well than is a fixed size page layout using **d:DesignHeight** and **d:DesignWidth**.
-
 - **d:DataContext attribute:** You can set this attribute on a page root or a control to override any explicit or inherited [**DataContext**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.datacontext) that object otherwise has.
 - **d:DesignSource attribute:** Specifies a design-time data source for a [**CollectionViewSource**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Data.CollectionViewSource), overriding [**Source**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.data.collectionviewsource.source).
-- **d:DesignInstance and d:DesignData markup extensions:** These markup extensions are used to provide the design-time data resources for either **d:DataContext** or **d:DesignSource**. We won't fully document how to use design-time data resources here. For more info, see [Design-Time Attributes](/previous-versions/windows/silverlight/dotnet-windows-silverlight/ff602277(v=vs.95)). For some usage examples, see [Sample data on the design surface, and for prototyping](/windows/uwp/data-binding/displaying-data-in-the-designer).
+- **d:DesignInstance and d:DesignData markup extensions:** These markup extensions are used to provide the design-time data resources for either **d:DataContext** or **d:DesignSource**. For UWP usage examples, see [Sample data on the design surface, and for prototyping](/windows/uwp/data-binding/displaying-data-in-the-designer).
 
 ### **mc: (`http://schemas.openxmlformats.org/markup-compatibility/2006`)**
 
@@ -100,7 +98,7 @@ The "d:" XAML namespace is intended for designer support, specifically designer 
 
 ### **vsm:**
 
-Do not use. "vsm:" is a prefix that is sometimes seen in older XAML templates imported from other Microsoft technologies. The namespace originally addressed a legacy namespace tooling issue. You should delete XAML namespace definitions for "vsm:" in any XAML you use for the Windows Runtime, and change any prefix usages for [**VisualState**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.VisualState), [**VisualStateGroup**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.VisualStateGroup) and related objects to use the default XAML namespace instead. For more info on XAML migration, see [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](/previous-versions/windows/apps/br229571(v=win.10)).
+Do not use. "vsm:" is a prefix that is sometimes seen in older XAML templates imported from other Microsoft technologies. The namespace originally addressed a legacy namespace tooling issue. You should delete XAML namespace definitions for "vsm:" in any XAML you use for the Windows Runtime, and change any prefix usages for [**VisualState**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.VisualState), [**VisualStateGroup**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.VisualStateGroup) and related objects to use the default XAML namespace instead.
 
 ## Mapping custom types to XAML namespaces and prefixes
 
@@ -136,4 +134,3 @@ If you are referencing attached properties, the owner-type portion of the attach
 * [XAML syntax guide](xaml-syntax-guide.md)
 * [Creating Windows Runtime components in C#](/previous-versions/windows/apps/hh441572(v=vs.140))
 * [C#, VB, and C++ project templates for Windows Runtime apps](/previous-versions/windows/apps/hh768232(v=win.10))
-* [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](/previous-versions/windows/apps/br229571(v=win.10))

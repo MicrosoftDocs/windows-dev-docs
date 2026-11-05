@@ -2,7 +2,7 @@
 ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
 title: Transforms overview
 description: Learn how to use transforms in the Windows Runtime&\#160;API, by changing the relative coordinate systems of elements in the UI.
-ms.date: 07/27/2026
+ms.date: 11/05/2026
 ms.topic: concept-article
 keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
@@ -30,7 +30,7 @@ You can combine transforms, and there are two Windows Runtime classes that suppo
 
 In XAML layout, transforms are applied after the layout pass is complete, so available space calculations and other layout decisions have been made before the transforms are applied. Because layout comes first, you'll sometimes get unexpected results if you transform elements that are in a [**Grid**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Grid) cell or similar layout container that allocates space during layout. The transformed element may appear truncated or obscured because it's trying to draw into an area that didn't calculate the post-transform dimensions when dividing space within its parent container. You may need to experiment with the transform results and adjust some settings. For example, instead of relying on adaptive layout and star sizing, you may need to change the **Center** properties or declare fixed pixel measurements for layout space to make sure the parent allots enough space.
 
-**Migration note:**  Windows Presentation Foundation (WPF) had a **LayoutTransform** property that applied transforms prior to the layout pass. But Windows Runtime XAML doesn't support a **LayoutTransform** property. (Microsoft Silverlight didn't have this property either.)
+**Migration note:**  Windows Presentation Foundation (WPF) had a **LayoutTransform** property that applied transforms prior to the layout pass. But Windows Runtime XAML doesn't support a **LayoutTransform** property.
 
 > [!TIP]
 > As an alternative, the Windows Community Toolkit provides the [LayoutTransformControl](/dotnet/communitytoolkit/windows/layouttransformcontrol) that applies Matrix transformations on any FrameworkElement of your application.
