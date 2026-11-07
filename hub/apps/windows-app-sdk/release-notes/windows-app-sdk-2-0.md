@@ -2,7 +2,7 @@
 title: Windows App SDK 2.0 release notes
 description: Release notes for Windows App SDK 2.0 across the Stable, Preview, and Experimental channels, with feature highlights, bug fixes, and API changes.
 ms.topic: release-notes
-ms.date: 11/02/2026
+ms.date: 11/06/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -1278,11 +1278,180 @@ Released: **February 13, 2026** <br><br>
 
 :::zone pivot="experimental"
 
+## Version 2.6 Experimental (2.6.6-Experimental)
+
+Released: **November 6, 2026**
+
+This experimental release follows [Windows App SDK 2.6.5 stable](#version-265) and generally brings over the changes from that release; see the [2.6.5 stable notes](#version-265) for those details. The sections below describe the experimental-only additions. <br><br>
+
+<details><summary>TableView Updates</summary>
+
+>
+> The experimental **TableView** control adds hierarchical rows and live data operations. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): TableView_TabularBinaryActivation)
+>
+> - **TableViewSource.ParentBy** builds a row hierarchy from item and parent keys, and **ClearParentBy** removes that relationship. **TableViewRow.Level**, **IsExpandable**, and **IsExpanded** expose row depth and expansion state. **TableView.ExpandAllRows** and **CollapseAllRows** expand or collapse the hierarchy.
+> - **TableViewSource.IsLiveShaping** lets apps opt in to automatically updating sorting, filtering, grouping, and hierarchy when item properties change.
+> - New **TableViewColumn.CellContextFlyout** and **TableViewColumn.HeaderContextFlyout** properties let apps provide context menus for cells and column headers.
+> - **TableViewRowAutomationPeer** exposes row expansion and collapse to UI Automation clients. This release also improves high-contrast rendering, column resizing, and column headers.
+>
+
+</details>
+
+<details><summary>Chart Accessibility</summary>
+
+>
+> The experimental **Chart** control adds UI Automation support through **ChartAutomationPeer** and chart parts.
+> ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Charts_ExperimentalControlApi)
+>
+
+</details>
+
+<details><summary>Zero-Copy Resource Access</summary>
+
+>
+> The new **ResourceCandidate.ValueAsMemoryBuffer** API provides access to embedded resource bytes without copying them. New native **MrmLoadStringOrEmbeddedResourceAsView** and **MrmLoadStringOrEmbeddedResourceByIndexAsView** APIs provide resource views for C and C++ callers. For more info, see the [API proposal](https://github.com/microsoft/WindowsAppSDK/pull/6659).
+> ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): ResourceCandidate_ValueAsMemoryBuffer)
+>
+
+</details>
+
+<details><summary>Scrolling Content Outside Bounds</summary>
+
+>
+> The new experimental **ScrollView.CanContentRenderOutsideBounds** and **ScrollPresenter.CanContentRenderOutsideBounds** properties let apps allow content to render outside the framework's viewport clipping. Both properties default to **false**.
+>
+
+</details>
+
+<details><summary>Video Scaling API Updates</summary>
+
+>
+> **VideoScaler.CreateAsync** adds an overload that accepts **VideoScalerCreationOptions**, letting apps request an execution device, video scenario, and performance or quality preference when creating a scaler. **VideoScalerOptions.InputColorMatrix** and **VideoScalerOptions.InputColorRange** let apps describe the input frames' color encoding, with BT.601 or BT.709 matrices and full or limited color ranges.
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> - Improved **Window.Width** and **Window.Height** behavior after a window closes. These properties retain the last restored client size, and an explicitly set height is preserved when title-bar settings change on a restored window. Native size requests are limited to 65,535 physical pixels per dimension. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WinUI_WindowWidthHeight)
+> - Added UI Automation selection support for **InkToolbar** flyout items and **InkToolbarStrokeWidthSlider** with an automation peer that lets Narrator announce stroke widths instead of percentages. Fixed **InkCanvas** input clipping at display scaling above 100%. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InkCanvas_InkingSupport)
+> - Fixed an issue where custom dependency properties and metadata could be lost when shutting down and restarting XAML. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WinUI_EnableShutdownRestart)
+> - Added clearer debugger guidance when **XamlChartsResources** is missing. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Charts_ExperimentalControlApi)
+> - **ContentDialog** entrance animations now play when **XamlChangeId.OptimizeApplyStyles** is enabled. **MenuFlyout** items with keyboard accelerators no longer show unwanted tooltips when this optimization is enabled. For more info, see GitHub issue [#11257](https://github.com/microsoft/microsoft-ui-xaml/issues/11257). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_OptimizeApplyStylesApplyTemplate)
+> - Fixed a reference cycle during input teardown by closing the system **InputSite**. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): LiftedInput_CloseSystemInputSite)
+> - Fixed a crash when a **Flyout** theme changes before its presenter is available. For more info, see GitHub issue [#12089](https://github.com/microsoft/microsoft-ui-xaml/issues/12089). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WinUI_FlyoutCheckForNullPresenter)
+> - Fixed missing **InkToolbar** translations for accessible names, color descriptions, and pen configuration text. For more info, see GitHub pull request [#12162](https://github.com/microsoft/microsoft-ui-xaml/pull/12162). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, shared localization-resource update)
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new and updated APIs compared to the **[2.5 Experimental](#version-25-experimental-254-experimental)** release:
+>
+> ```console
+> Microsoft.UI.Xaml.Automation.Peers
+>
+>     InkToolbarFlyoutItemAutomationPeer
+>         AddToSelection
+>         IsSelected
+>         RemoveFromSelection
+>         Select
+>         SelectionContainer
+>
+>     InkToolbarStrokeWidthSliderAutomationPeer
+> ```
+>
+> ```console
+> Microsoft.UI.Xaml.Controls
+>
+>     ScrollView
+>         CanContentRenderOutsideBounds
+>         CanContentRenderOutsideBoundsProperty
+> ```
+>
+> ```console
+> Microsoft.UI.Xaml.Controls.Charts
+>
+>     ChartAutomationPeer
+> ```
+>
+> ```console
+> Microsoft.UI.Xaml.Controls.Primitives
+>
+>     InkToolbarStrokeWidthSlider
+>     ScrollPresenter
+>         CanContentRenderOutsideBounds
+>         CanContentRenderOutsideBoundsProperty
+> ```
+>
+> ```console
+> Microsoft.UI.Xaml.Controls.Tabular
+>
+>     TableView
+>         CollapseAllRows
+>         ExpandAllRows
+>
+>     TableViewColumn
+>         CellContextFlyout
+>         CellContextFlyoutProperty
+>         HeaderContextFlyout
+>         HeaderContextFlyoutProperty
+>
+>     TableViewRow
+>         IsExpandable
+>         IsExpandableProperty
+>         IsExpanded
+>         IsExpandedProperty
+>         Level
+>         LevelProperty
+>
+>     TableViewRowAutomationPeer
+>         Collapse
+>         Expand
+>         ExpandCollapseState
+>
+>     TableViewSource
+>         ClearParentBy
+>         IsLiveShaping
+>         ParentBy
+> ```
+>
+> ```console
+> Microsoft.Windows.AI.Video
+>
+>     VideoColorMatrix
+>     VideoColorRange
+>     VideoScaler
+>         CreateAsync
+>
+>     VideoScalerContract
+>     VideoScalerCreationOptions
+>     VideoScalerExecutionDevice
+>     VideoScalerOptions
+>         InputColorMatrix
+>         InputColorRange
+>
+>     VideoScalerQualityPreference
+>     VideoScalerScenario
+> ```
+>
+> ```console
+> Microsoft.Windows.ApplicationModel.Resources
+>
+>     ResourceCandidate
+>         ValueAsMemoryBuffer
+> ```
+>
+</details>
+
 ## Version 2.5 Experimental (2.5.4-Experimental)
 
-Released: **September 29, 2026** <br><br>
+Released: **September 29, 2026**
 
-This experimental release follows [Windows App SDK 2.5.1 stable](#version-251) and generally brings over the changes from that release; see the [2.5.1 stable notes](#version-251) for those details. The sections below describe the experimental-only additions.
+This experimental release follows [Windows App SDK 2.5.1 stable](#version-251) and generally brings over the changes from that release; see the [2.5.1 stable notes](#version-251) for those details. The sections below describe the experimental-only additions. <br><br>
 
 <details><summary>Windows AI updates</summary>
 
