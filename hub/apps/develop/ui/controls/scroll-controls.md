@@ -1,10 +1,12 @@
 ---
-description: Panning and scrolling allows users to reach content that extends beyond the bounds of the screen.
+description: Learn how to use ScrollView and ScrollViewer in WinUI apps to scroll, pan, and zoom content that extends beyond the viewport.
 title: Scroll viewer controls
+author: GrantMeStrength
+ms.author: jken
 ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
 label: Scrollbars
 template: detail.hbs
-ms.date: 09/19/2026
+ms.date: 11/08/2026
 ms.topic: how-to
 doc-status: Published
 ms.localizationpriority: medium
@@ -417,6 +419,9 @@ To constrain the image to the ScrollView's viewport, set the [ContentOrientation
 In the [ScrollViewer](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer), you have to set scrollbar visibility to `Disabled` in order to constrain the image to the viewport size. However, this means the user will not be able to scroll the image after they have zoomed in.
 
 To enable the desired behavior in ScrollViewer, you need to keep the scrollbars enabled, then insert a [Viewbox](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.viewbox) and bind its [MaxHeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.maxheight)/[MaxWidth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.frameworkelement.maxwidth) to the [ViewportHeight](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.viewportheight)/[ViewportWidth](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.scrollviewer.viewportwidth) of the ScrollViewer. This constrains the layout of the Viewbox to the size of the viewport, but still lets the user scroll when zoomed in.
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Viewbox in action](winui3gallery://item/Viewbox)
 
 ```xaml
  <ScrollViewer x:Name="scrollControl" Width="500" Height="400"

@@ -1,8 +1,10 @@
 ---
 ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
 title: Draw shapes
-description: Learn how to draw shapes, such as ellipses, rectangles, polygons, and paths. The Path class is the way to visualize a fairly complex vector-based drawing language in a XAML UI; for example, you can draw Bezier curves.
-ms.date: 10/13/2026
+description: Learn how to draw ellipses, rectangles, polygons, and paths in a WinUI app, and when to use a Border to frame other content.
+author: GrantMeStrength
+ms.author: jken
+ms.date: 11/08/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -102,6 +104,9 @@ Here's the rendered [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft
 ![A rendered Rectangle.](images/shapes-rectangle.jpg)
 
 There are some scenarios for UI definitions where instead of using a [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.rectangle), a [**Border**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Border) might be more appropriate. If your intention is to create a rectangle shape around other content, it might be better to use **Border** because it can have child content and will automatically size around that content, rather than using the fixed dimensions for height and width like **Rectangle** does. A **Border** also has the option of having rounded corners if you set the [**CornerRadius**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.border.cornerradius) property.
+
+> [!div class="nextstepaction"]
+> [Open the WinUI 3 Gallery app and see the Border in action](winui3gallery://item/Border)
 
 On the other hand, a [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.rectangle) is probably a better choice for control composition. A **Rectangle** shape is seen in many control templates because it's used as a "FocusVisual" part for focusable controls. Whenever the control is in a "Focused" visual state, this rectangle is made visible, in other states it's hidden.
 
@@ -323,4 +328,3 @@ Here's the rendered [**Path**](/windows/windows-app-sdk/api/winrt/microsoft.ui.x
 ![Screenshot of a complex rendered path.](images/shapes-path-2.png)
 
 Using [**PathGeometry**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Media.PathGeometry) may be more readable than populating a [**Path.Data**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.path.data) string. On the other hand, [**Path.Data**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.shapes.path.data) uses a syntax compatible with Scalable Vector Graphics (SVG) image path definitions so it may be useful for porting graphics from SVG, or as output from a tool like Blend.
-
