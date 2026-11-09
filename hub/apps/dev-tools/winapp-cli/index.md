@@ -1,97 +1,49 @@
 ---
-title: Windows App Development CLI (winapp CLI)
-description: Use winapp CLI to create, run, debug, test, and package WinUI apps, and to add Windows APIs, identity, and MSIX to apps on any framework.
-ms.date: 10/26/2026
+title: Windows App Development CLI (WinApp CLI)
+description: Use WinApp CLI to create, run, debug, test, and package WinUI apps, and to add Windows APIs, identity, and MSIX to apps on any framework.
+ms.date: 11/07/2026
 ms.topic: overview
 ---
 
-# Windows App Development CLI (winapp CLI)
+# Windows App Development CLI (WinApp CLI)
 
 > [!IMPORTANT]
 > The Windows App Development CLI is currently in **public preview**. Features and commands may change before the final release. Share your feedback by [creating an issue](https://github.com/microsoft/WinAppCli/issues).
 
-The Windows App Development CLI (winapp CLI) is a command-line tool for building Windows apps with the framework you choose. It works from a terminal, the editor you prefer, or an AI coding agent.
+The Windows App Development CLI (WinApp CLI) is a command-line tool for building Windows apps with the framework you choose. It works from a terminal, the editor you prefer, or an AI coding agent.
 
 - **WinUI apps:** create, run, debug, test, and package [WinUI](/windows/apps/winui/winui3/) apps without opening Visual Studio.
-- **Cross-platform and other frameworks:** bring Windows features to your existing Electron, Flutter, Tauri, Rust, .NET, or C++ app without changing frameworks. winapp CLI sets up the [Windows App SDK](/windows/apps/windows-app-sdk/) and Windows SDK, gives your app package identity so you can call APIs like notifications and on-device AI, and packages it as MSIX for the Microsoft Store or your own distribution.
+- **Cross-platform and other frameworks:** bring Windows features to your existing Electron, Flutter, Tauri, Rust, .NET, or C++ app without changing frameworks. WinApp CLI sets up the [Windows App SDK](/windows/apps/windows-app-sdk/) and Windows SDK, gives your app package identity so you can call APIs like notifications and on-device AI, and packages it as MSIX for the Microsoft Store or your own distribution.
 
-## Key benefits of winapp CLI
+## Key benefits of WinApp CLI
 
-:::row:::
-    :::column:::
-        ![A command prompt icon on a raised tile over a blue pixel wave](media/card-create-and-run.png)
-    :::column-end:::
-    :::column span="2":::
-        **Create and run WinUI apps from the terminal**<br>
-         `winapp new` creates a WinUI app from the official templates, including blank, NavigationView, TabView, and MVVM starters. `winapp run` builds the project, installs the matching Windows App Runtime, and launches the app, whether it's packaged or unpackaged.
-         <br>
-         [Build your first WinUI app](/windows/apps/get-started/start-here)
-    :::column-end:::
-:::row-end:::
+**Create and run WinUI apps from the terminal**
 
-:::row:::
-    :::column:::
-        ![A bug icon on a raised tile over a diagonal band of blue pixels](media/card-debugging.png)
-    :::column-end:::
-    :::column span="2":::
-        **Debug with package identity and crash diagnostics**<br>
-         Run your app with package identity so you can test notifications, on-device AI, and other APIs that require identity. Add `--debug-output` to capture debug messages and crash dumps. For WinUI crashes, winapp decodes stowed exceptions to point you at the XAML event handler that failed.
-         <br>
-         [Debugging with package identity](debugging.md)
-    :::column-end:::
-:::row-end:::
+`winapp new` creates a WinUI app from the official templates, including blank, NavigationView, TabView, and MVVM starters. `winapp run` builds the project, installs the matching Windows App Runtime, and launches the app, whether it's packaged or unpackaged. [Build your first WinUI app](/windows/apps/get-started/start-here)
 
-:::row:::
-    :::column:::
-        ![A chat bubble with sparkles icon on a raised tile over a blue pixel wave](media/card-coding-agents.png)
-    :::column-end:::
-    :::column span="2":::
-        **Ground AI coding agents in real WinUI code**<br>
-         `winapp find-ui` returns working XAML and C# from the WinUI 3 Gallery and the Windows Community Toolkit. `winapp find-api` inspects the Windows Runtime APIs your project references. Agents use them to generate code from real samples and metadata instead of guessing.
-         <br>
-         [Use winapp CLI with AI agents](#use-winapp-cli-with-ai-agents)
-    :::column-end:::
-:::row-end:::
+**Debug with package identity and crash diagnostics**
 
-:::row:::
-    :::column:::
-        ![A pointer and touch icon on a raised tile over a diagonal band of blue pixels](media/card-automated-testing.png)
-    :::column-end:::
-    :::column span="2":::
-        **Automate and test your app's UI**<br>
-         `winapp ui` inspects and interacts with running apps through UI Automation, and captures screenshots and recordings. Run your app in Windows Sandbox to test it in a clean environment.
-         <br>
-         [UI automation](ui-automation.md)
-    :::column-end:::
-:::row-end:::
+Run your app with package identity so you can test notifications, on-device AI, and other APIs that require identity. Add `--debug-output` to capture debug messages and crash dumps. For WinUI crashes, WinApp CLI decodes stowed exceptions to point you at the XAML event handler that failed. [Debugging with package identity](debugging.md)
 
-:::row:::
-    :::column:::
-        ![A package icon on a raised tile over a blue pixel wave](media/card-packaging.png)
-    :::column-end:::
-    :::column span="2":::
-        **Package, sign, and ship**<br>
-         `winapp pack` builds your project, packages it as MSIX, and signs it in one step. Generate development certificates locally, sign release builds with Azure Trusted Signing, and install winapp CLI on GitHub Actions or Azure DevOps runners.
-         <br>
-         [Package your app](usage.md#pack)
-    :::column-end:::
-:::row-end:::
+**Ground AI coding agents in real WinUI code**
 
-:::row:::
-    :::column:::
-        ![A puzzle piece icon on a raised tile over a diagonal band of blue pixels](media/card-any-framework.png)
-    :::column-end:::
-    :::column span="2":::
-        **Bring Windows features to any framework**<br>
-         Add the Windows SDK and Windows App SDK, package identity, and MSIX packaging to apps built with .NET, C++, Electron, Flutter, Rust, or Tauri, without changing your build system.
-         <br>
-         [See supported frameworks](#supported-frameworks)
-    :::column-end:::
-:::row-end:::
+`winapp find-ui` returns working XAML and C# from the WinUI 3 Gallery and the Windows Community Toolkit. `winapp find-api` inspects the Windows Runtime APIs your project references. Agents use them to generate code from real samples and metadata instead of guessing. [Use WinApp CLI with AI agents](#use-winapp-cli-with-ai-agents)
+
+**Automate and test your app's UI**
+
+`winapp ui` inspects and interacts with running apps through UI Automation, and captures screenshots and recordings. Run your app in Windows Sandbox to test it in a clean environment. [UI automation](ui-automation.md)
+
+**Package, sign, and ship**
+
+`winapp pack` builds your project, packages it as MSIX, and signs it in one step. Generate development certificates locally, sign release builds with Azure Trusted Signing, and install WinApp CLI on GitHub Actions or Azure DevOps runners. [Package your app](usage.md#pack)
+
+**Bring Windows features to any framework**
+
+Add the Windows SDK and Windows App SDK, package identity, and MSIX packaging to apps built with .NET, C++, Electron, Flutter, Rust, or Tauri, without changing your build system. [See supported frameworks](#supported-frameworks)
 
 ## Get started with WinUI
 
-After you [install winapp CLI](#installation) and the [.NET SDK](https://dotnet.microsoft.com/download), create and run a WinUI app:
+After you [install WinApp CLI](#installation) and the [.NET SDK](https://dotnet.microsoft.com/download), create and run a WinUI app:
 
 ```powershell
 winapp new --name MyWinUIApp --template winui-navview --use-defaults
@@ -108,7 +60,7 @@ winapp pack ./MyWinUIApp.csproj -c Release --cert ./devcert.pfx
 
 The development certificate uses a default password and is for local testing only. Before you distribute your app, sign it with a trusted certificate, for example with [`winapp az-sign`](usage.md#az-sign). For more information, see [Security](security.md#the-default-password).
 
-For a step-by-step walkthrough that includes setup and your first UI change, see [Build your first WinUI app](/windows/apps/get-started/start-here). To see all available templates, run `winapp new --list`. For the complete workflow, including debugging, UI automation, and packaging, see [Using winapp CLI with WinUI](guides/winui.md).
+For a step-by-step walkthrough that includes setup and your first UI change, see [Build your first WinUI app](/windows/apps/get-started/start-here). To see all available templates, run `winapp new --list`. For the complete workflow, including debugging, UI automation, and packaging, see [Using WinApp CLI with WinUI](guides/winui.md).
 
 ## Installation
 
@@ -152,27 +104,37 @@ Or if using Electron/Node.js:
 npx winapp --help
 ```
 
-## Use winapp CLI with AI agents
+## Use WinApp CLI with AI agents
 
-winapp CLI is designed to work well with AI coding agents. Commands such as `find-ui` and `find-api` return machine-readable output with `--json`, so an agent can look up real WinUI samples and Windows Runtime APIs before it writes code.
+WinApp CLI is designed to work well with AI coding agents. Commands such as `find-ui` and `find-api` return machine-readable output with `--json`, so an agent can look up real WinUI samples and Windows Runtime APIs before it writes code.
 
-Install the winapp plugin to give your agent skills for the winapp CLI workflow:
+Install the agent plugins to give your agent skills for WinApp CLI and WinUI:
+
+- `winappcli`: an agent and skills for WinApp CLI commands, workflows, and troubleshooting.
+- `winui`: skills for building, packaging, and testing WinUI 3 apps.
 
 ```powershell
 # GitHub Copilot CLI
 copilot plugin marketplace add microsoft/WinAppCli
 copilot plugin install winappcli@winappcli
+copilot plugin install winui@winappcli
 
 # Claude Code
 claude plugin marketplace add microsoft/WinAppCli
 claude plugin install winappcli@winappcli
+claude plugin install winui@winappcli
+
+# OpenAI Codex
+codex plugin marketplace add microsoft/WinAppCli
+codex plugin add winappcli@winappcli
+codex plugin add winui@winappcli
 ```
 
-If you work in Visual Studio Code, the [WinApp VS Code extension](/windows/apps/develop/ai-assisted/vs-code-tools#winapp-vs-code-extension) runs winapp CLI commands from the editor and launches your app with package identity when you press **F5**. Install it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinAppCLI.winapp).
+If you work in Visual Studio Code, the [WinApp VS Code extension](/windows/apps/develop/ai-assisted/vs-code-tools#winapp-vs-code-extension) runs WinApp CLI commands from the editor and launches your app with package identity when you press **F5**. Install it from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Microsoft-WinAppCLI.winapp).
 
 ## Supported frameworks
 
-winapp CLI works with WinUI and other app frameworks:
+WinApp CLI works with WinUI and other app frameworks:
 
 | Framework | Guide |
 |-----------|-------|
@@ -187,24 +149,25 @@ winapp CLI works with WinUI and other app frameworks:
 
 Additional guides:
 - [Packaging an EXE/CLI](guides/packaging-cli.md): step-by-step guide for packaging an existing EXE/CLI as MSIX
+- [.NET file-based apps](guides/dotnet-file-based.md): run a single `.cs` file with package identity, no project file or manifest required
 - [Sparse packaging](guides/sparse.md): give an unpackaged app package identity with an identity-only (sparse) MSIX and external content
 - [Shell Completion](guides/shell-completion.md): enable tab completion for commands, options, and values in PowerShell, bash, zsh, and fish
+- [DevTools](https://github.com/microsoft/WinAppCli/blob/main/docs/guides/devtools.md): inspect a running WinUI 3 app, try live property changes, and leave comments for an agent ([advanced](https://github.com/microsoft/WinAppCli/blob/main/docs/guides/devtools-advanced.md))
 - [Security guidance](security.md): what development certificates and Developer Mode change on your machine, how to handle `devcert.pfx`, and how to sign for production
 
 ## Commands overview
 
 | Category | Commands |
 |----------|----------|
-| **Create & set up** | [:::no-loc text="new":::](usage.md#new), [:::no-loc text="init":::](usage.md#init), [:::no-loc text="restore":::](usage.md#restore), [:::no-loc text="update":::](usage.md#update) |
-| **Run & debug** | [:::no-loc text="run":::](usage.md#run), [:::no-loc text="create-debug-identity":::](usage.md#create-debug-identity), [:::no-loc text="embed-identity":::](usage.md#embed-identity), [:::no-loc text="unregister":::](usage.md#unregister) |
-| **Packaging** | [:::no-loc text="pack":::](usage.md#pack) |
-| **Manifests** | [:::no-loc text="manifest generate":::](usage.md#manifest-generate), [:::no-loc text="manifest update-assets":::](usage.md#manifest-update-assets), [:::no-loc text="manifest add-alias":::](usage.md#manifest-add-alias) |
-| **Certificates & Signing** | [:::no-loc text="cert generate":::](usage.md#cert-generate), [:::no-loc text="cert install":::](usage.md#cert-install), [:::no-loc text="sign":::](usage.md#sign), [:::no-loc text="az-sign":::](usage.md#az-sign), [:::no-loc text="create-external-catalog":::](usage.md#create-external-catalog) |
-| **Code search for agents** | [:::no-loc text="find-ui":::](usage.md#find-ui), [:::no-loc text="find-api":::](usage.md#find-api) |
-| **UI automation & Sandbox** | [:::no-loc text="ui":::](usage.md#ui), [:::no-loc text="target":::](usage.md#target) |
-| **Utilities** | [:::no-loc text="tool":::](usage.md#tool), [:::no-loc text="store":::](usage.md#store), [:::no-loc text="get-winapp-path":::](usage.md#get-winapp-path), [:::no-loc text="complete":::](usage.md#shell-completion) |
-| **Node.js/Electron** | [:::no-loc text="node create-addon":::](usage.md#node-create-addon), [:::no-loc text="node generate-bindings":::](usage.md#node-generate-bindings), [:::no-loc text="node add-electron-debug-identity":::](usage.md#node-add-electron-debug-identity), [:::no-loc text="node clear-electron-debug-identity":::](usage.md#node-clear-electron-debug-identity) |
-
+| **Create & set up** | [new](usage.md#new), [init](usage.md#init), [restore](usage.md#restore), [update](usage.md#update) |
+| **Run & debug** | [run](usage.md#run), [create-debug-identity](usage.md#create-debug-identity), [embed-identity](usage.md#embed-identity), [unregister](usage.md#unregister) |
+| **Packaging** | [pack](usage.md#pack) |
+| **Manifests** | [manifest generate](usage.md#manifest-generate), [manifest update-assets](usage.md#manifest-update-assets), [manifest add-alias](usage.md#manifest-add-alias) |
+| **Certificates & Signing** | [cert generate](usage.md#cert-generate), [cert install](usage.md#cert-install), [sign](usage.md#sign), [az-sign](usage.md#az-sign), [create-external-catalog](usage.md#create-external-catalog) |
+| **Code search for agents** | [find-ui](usage.md#find-ui), [find-api](usage.md#find-api) |
+| **UI automation & Sandbox** | [ui](usage.md#ui), [devtools](usage.md#devtools), [target](usage.md#target) |
+| **Utilities** | [tool](usage.md#tool), [store](usage.md#store), [get-winapp-path](usage.md#get-winapp-path), [config](usage.md#config), [complete](usage.md#shell-completion) |
+| **Node.js/Electron** | [node create-addon](usage.md#node-create-addon), [node generate-bindings](usage.md#node-generate-bindings), [node add-electron-debug-identity](usage.md#node-add-electron-debug-identity), [node clear-electron-debug-identity](usage.md#node-clear-electron-debug-identity) |
 
 For the full CLI reference, see [CLI reference](usage.md).
 
@@ -214,18 +177,18 @@ The [samples folder](https://github.com/microsoft/WinAppCli/tree/main/samples) o
 
 | Sample | Description |
 |--------|-------------|
-| [:::no-loc text="WinUI app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/winui-app) | Packaged WinUI app registered and launched with `winapp run` |
-| [:::no-loc text="WinUI unpackaged app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/winui-unpackaged-app) | Unpackaged WinUI app launched with `winapp run` |
-| [:::no-loc text="WinUI solution":::](https://github.com/microsoft/WinAppCli/tree/main/samples/winui-solution) | Multi-project solution (app and test project) that shows how `winapp run` selects the app project |
-| [:::no-loc text="C++ WinUI app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/cpp-app-winui) | WinUI window built in C++ with CMake, without XAML or MSBuild |
-| [:::no-loc text="WPF app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/wpf-app) | WPF desktop app |
-| [:::no-loc text=".NET MAUI app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/maui-app) | .NET MAUI Windows project packaged and signed with winapp CLI |
-| [:::no-loc text="C++ app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/cpp-app) | Native C++ Win32 app built with CMake |
-| [:::no-loc text="Electron":::](https://github.com/microsoft/WinAppCli/tree/main/samples/electron) | Electron Forge app with a manifest, assets, and native C++ and C# addons |
-| [:::no-loc text="Rust app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/rust-app) | Rust app that calls Windows APIs |
-| [:::no-loc text="Tauri app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/tauri-app) | Tauri app with a Rust backend |
-| [:::no-loc text="Flutter app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/flutter-app) | Flutter desktop app with package identity and the Windows App SDK |
-| [:::no-loc text="Sparse app":::](https://github.com/microsoft/WinAppCli/tree/main/samples/sparse-app) | WPF app with sparse packaging (identity-only MSIX) and an installer |
+| [WinUI app](https://github.com/microsoft/WinAppCli/tree/main/samples/winui-app) | Packaged WinUI app registered and launched with `winapp run` |
+| [WinUI unpackaged app](https://github.com/microsoft/WinAppCli/tree/main/samples/winui-unpackaged-app) | Unpackaged WinUI app launched with `winapp run` |
+| [WinUI solution](https://github.com/microsoft/WinAppCli/tree/main/samples/winui-solution) | Multi-project solution (app and test project) that shows how `winapp run` selects the app project |
+| [C++ WinUI app](https://github.com/microsoft/WinAppCli/tree/main/samples/cpp-app-winui) | WinUI window built in C++ with CMake, without XAML or MSBuild |
+| [WPF app](https://github.com/microsoft/WinAppCli/tree/main/samples/wpf-app) | WPF desktop app |
+| [.NET MAUI app](https://github.com/microsoft/WinAppCli/tree/main/samples/maui-app) | .NET MAUI Windows project packaged and signed with WinApp CLI |
+| [C++ app](https://github.com/microsoft/WinAppCli/tree/main/samples/cpp-app) | Native C++ Win32 app built with CMake |
+| [Electron](https://github.com/microsoft/WinAppCli/tree/main/samples/electron) | Electron Forge app with a manifest, assets, and native C++ and C# addons |
+| [Rust app](https://github.com/microsoft/WinAppCli/tree/main/samples/rust-app) | Rust app that calls Windows APIs |
+| [Tauri app](https://github.com/microsoft/WinAppCli/tree/main/samples/tauri-app) | Tauri app with a Rust backend |
+| [Flutter app](https://github.com/microsoft/WinAppCli/tree/main/samples/flutter-app) | Flutter desktop app with package identity and the Windows App SDK |
+| [Sparse app](https://github.com/microsoft/WinAppCli/tree/main/samples/sparse-app) | WPF app with sparse packaging (identity-only MSIX) and an installer |
 
 ## Why package identity?
 
@@ -233,7 +196,7 @@ Many Windows APIs require your app to have package identity. With identity, your
 
 ## Open source
 
-winapp CLI is open source. You can find the source code, file issues, and contribute on [GitHub](https://github.com/microsoft/WinAppCli). For help, see [Support](https://github.com/microsoft/WinAppCli/blob/main/SUPPORT.md).
+WinApp CLI is open source. You can find the source code, file issues, and contribute on [GitHub](https://github.com/microsoft/WinAppCli). For help, see [Support](https://github.com/microsoft/WinAppCli/blob/main/SUPPORT.md).
 
 ## Related topics
 

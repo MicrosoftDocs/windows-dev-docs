@@ -19,6 +19,8 @@
     href: guides/winui.md
   - name: .NET / WPF / WinForms
     href: guides/dotnet.md
+  - name: .NET file-based apps
+    href: guides/dotnet-file-based.md
   - name: .NET MAUI
     href: guides/maui.md
   - name: C++ (CMake)

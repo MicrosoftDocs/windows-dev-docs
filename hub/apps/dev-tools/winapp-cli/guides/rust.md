@@ -1,7 +1,7 @@
 ---
 title: Using winapp CLI with Rust
 description: Use the winapp CLI with a Rust Windows app to restore Windows App SDK headers, add package identity, and package the desktop app as MSIX.
-ms.date: 10/07/2026
+ms.date: 11/07/2026
 ms.topic: how-to
 ---
 
@@ -126,6 +126,7 @@ run it by name from any terminal. The manifest registers an alias like `rust-app
 project's exe name), invoked as `rust-app` or `rust-app.exe`. The alias winapp stages for a development
 run is generated from your package identity instead, so it is not a name you'd want to publish.
 
+> [!NOTE]
 > **Skip this step if you're building a UI app** (a Rust app that renders its own window). Those apps work fine with the default AUMID launch.
 
 Add the alias:

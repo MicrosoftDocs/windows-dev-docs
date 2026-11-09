@@ -1,7 +1,7 @@
 ---
 title: Run WinML from JavaScript (JS bindings)
 description: Run machine learning inference with Windows ML from Electron JavaScript using winapp JS bindings, with no native addon or node-gyp build step.
-ms.date: 08/19/2026
+ms.date: 11/07/2026
 ms.topic: how-to
 ---
 
@@ -27,6 +27,7 @@ npm install onnxruntime-node@1.24.3
 
 The Windows App SDK transitively depends on `Microsoft.WindowsAppSDK.ML`, so the WinML APIs are already in your generated bindings. Verify:
 
+> [!IMPORTANT]
 > **Requires `@microsoft/dynwinrt-codegen` ≥ `0.1.0-preview.8`** — see [Get started with Electron](electron-index.md#2-call-windows-apis-from-javascript) for older-project fallbacks.
 
 ```bash

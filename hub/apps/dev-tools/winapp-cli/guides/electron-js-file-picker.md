@@ -1,7 +1,7 @@
 ---
 title: Call Windows APIs from JavaScript (JS bindings)
 description: Open a native Windows file picker and inspect images from Electron JavaScript using winapp JS bindings, with no native addon or node-gyp build.
-ms.date: 08/19/2026
+ms.date: 11/07/2026
 ms.topic: how-to
 ---
 
@@ -67,6 +67,7 @@ npx winapp node generate-bindings
 
 All generated classes are exported through `#winapp/bindings`:
 
+> [!IMPORTANT]
 > **Requires `@microsoft/dynwinrt-codegen` ≥ `0.1.0-preview.8`** — see [Get started with Electron](electron-index.md#2-call-windows-apis-from-javascript) for older-project fallbacks.
 
 ```js

@@ -1,7 +1,7 @@
 ---
 title: Using winapp CLI with C++ and CMake
 description: Set up a C++ CMake project with the winapp CLI to restore Windows App SDK headers, generate a certificate, and package the app as MSIX.
-ms.date: 10/13/2026
+ms.date: 11/07/2026
 ms.topic: how-to
 ---
 
@@ -14,7 +14,7 @@ Package identity is a core concept in the Windows app model. It allows your appl
 A standard executable (like one created with `cmake --build`) does not have package identity. This guide shows how to add it for debugging and then package it for distribution.
 
 > [!TIP]
-> Using a Visual Studio C++ project (`.vcxproj`) instead of CMake? Run `winapp run .` in the project folder: winapp builds it with Visual Studio's MSBuild and launches it with package identity. See [C++ projects](../usage.md#c-projects-vcxproj) and the [cpp-winui-app sample](https://github.com/microsoft/WinAppCli/tree/main/samples/cpp-winui-app).
+> **Using a Visual Studio C++ project (`.vcxproj`) instead of CMake?** Run `winapp run .` in the project folder: winapp builds it with Visual Studio's MSBuild and launches it with package identity. Run `winapp package .\MyApp.vcxproj` to build it and create an MSIX. See [C++ projects](../usage.md#c-projects-vcxproj) and the [cpp-winui-app sample](https://github.com/microsoft/WinAppCli/tree/main/samples/cpp-winui-app).
 
 ## Prerequisites
 

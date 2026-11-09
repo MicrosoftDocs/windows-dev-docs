@@ -1,7 +1,7 @@
 ---
 title: Show a Notification from JavaScript (JS bindings)
 description: Show native Windows toast notifications directly from your Electron app JavaScript using winapp JS bindings, with no native addon required.
-ms.date: 08/19/2026
+ms.date: 11/07/2026
 ms.topic: how-to
 ---
 
@@ -18,6 +18,7 @@ Before starting this guide, make sure you've:
 
 Import the generated bindings through the `#winapp/bindings` package import, build an app notification, and show it with the default notification manager:
 
+> [!IMPORTANT]
 > **Requires `@microsoft/dynwinrt-codegen` ≥ `0.1.0-preview.8`.** Older projects can either upgrade with `npm i -D @microsoft/dynwinrt-codegen@latest && npx winapp init --add-js-bindings` to have `winapp init` wire the `#winapp/bindings` imports map, or keep the relative form `require('../.winapp/bindings/index.js')` (path is relative to `src/index.js`; adjust it if your entry file lives elsewhere).
 
 ```js

@@ -1,7 +1,7 @@
 ---
 title: Debugging with Package Identity
 description: Register temporary package identity for an unpackaged app so you can debug identity-dependent Windows features directly from your build output.
-ms.date: 10/07/2026
+ms.date: 11/07/2026
 ms.topic: how-to
 ---
 
@@ -9,9 +9,13 @@ ms.topic: how-to
 
 Many Windows APIs (push notifications, background tasks, share target, startup tasks, Windows AI APIs) require your app to have **package identity**. During development, you don't want to build a full MSIX installer every time you test — winapp provides two commands to give your app identity on the fly.
 
+> [!TIP]
 > **Using Visual Studio with a packaging project?** If you are already using Visual Studio for your packaged project, you likely don't need winapp for debugging. Visual Studio already handles package registration, identity, AUMID activation, debugger attachment, and activation-code debugging — all from F5. It also offers **Debug → Other Debug Targets → Debug Installed App Package** for advanced scenarios. The workflows below are most useful for **VS Code users, terminal-based workflows, and frameworks that VS doesn't natively package** (Rust, Flutter, Tauri, Electron, plain C++).
 
 ## Two approaches: `winapp run` vs `create-debug-identity`
+
+For slow WinUI layout or scrolling rather than crashes or identity setup, use the
+[WinUI performance recording and query workflow](https://github.com/microsoft/WinAppCli/blob/main/docs/guides/winui-performance.md).
 
 | | `winapp run` | `create-debug-identity` |
 |---|---|---|
@@ -34,6 +38,16 @@ Use `winapp run` for most development workflows. It simulates a real MSIX instal
 # Build your app, then:
 winapp run .\build\output
 ```
+
+For parallel worktrees of a packaged app:
+
+```powershell
+winapp run . --unique-identity --no-launch --json
+```
+
+Each worktree gets its own package name and alias names; configure your debugger with
+the AUMID or alias the command returns. See
+[unique identity for parallel checkouts](usage.md#unique-identity-for-parallel-checkouts).
 
 ### Use `create-debug-identity` when:
 
@@ -79,6 +93,7 @@ Then in your IDE:
 - **VS Code**: Run and Debug → select "Attach" configuration (see [IDE setup](#ide-setup) below)
 - **WinDbg**: `windbg -p 12345`
 
+> [!NOTE]
 > **Limitation:** You'll miss any code that runs before you attach. For startup debugging, use Scenario D (`create-debug-identity`).
 
 ### Scenario C: Register identity, then launch via AUMID or alias from your IDE
@@ -93,9 +108,10 @@ winapp run .\build\Debug --no-launch
 
 **Step 2:** Configure your IDE to launch via the AUMID or the **execution alias** (not the exe directly). 
 * Launching with AUMID: Use the command `start shell:AppsFolder\<AUMID>`. `winapp run` outputs the AUMID when the app is registered.
-* Launching with the alias: The alias must be defined in your manifest (`Package.appxmanifest` preferred, `appxmanifest.xml` also supported).
+* Launching with the alias: Use the alias name `run` prints. With `--unique-identity`, it differs from the one in your manifest.
 
-> **Important:** Simply launching the exe in the build folder will **not** give it identity. The app must be started via AUMID activation or its execution alias. This is how loose layout packages work - identity is tied to the activation path, not the exe file.
+> [!IMPORTANT]
+> Simply launching the exe in the build folder will **not** give it identity. The app must be started via AUMID activation or its execution alias. This is how loose layout packages work - identity is tied to the activation path, not the exe file.
 
 ### Scenario D: Launch from your IDE with identity (startup debugging)
 
@@ -107,6 +123,7 @@ winapp create-debug-identity .\build\Debug\myapp.exe
 
 Now launch the exe any way you like — from the terminal, from VS Code's F5, from a script. The exe has identity because Windows registered a **sparse package** pointing directly at it.
 
+> [!NOTE]
 > **How it differs from `winapp run`:** With `create-debug-identity`, identity is tied to the exe itself (via `Add-AppxPackage -ExternalLocation`). With `winapp run`, identity is tied to the loose layout package — the app must be launched through AUMID or an alias. This makes `create-debug-identity` the better choice when you need your IDE to launch and debug the exe directly.
 
 > This is also the best approach for **Electron apps** where the exe path differs from your source directory.
@@ -127,13 +144,14 @@ On crash, the output includes the exception type, message, and stack trace with 
 winapp run .\build\Debug --debug-output --symbols
 ```
 
-> **Important:** This attaches winapp as the debugger. Windows only allows one debugger per process, so you **cannot** also attach Visual Studio, VS Code, or WinDbg.
+> [!IMPORTANT]
+> This attaches winapp as the debugger. Windows only allows one debugger per process, so you **cannot** also attach Visual Studio, VS Code, or WinDbg.
 
 #### WinUI stowed-exception triage
 
 Most WinUI crashes start inside a XAML event handler and surface as a **stowed exception** (`0xC000027B`) that is re-raised later from the dispatcher, so the normal stack no longer points at the real cause. When the crashed app loaded `Microsoft.UI.Xaml.dll`, winapp automatically runs an extra triage pass that decodes the stowed exception and the native XAML dispatch chain (`Microsoft.UI.Xaml` → `CXcpDispatcher` → `CoreMessagingXP` → CLR host). The result is appended to the debug log. No flag is needed — it is enabled automatically for WinUI dumps. Add `--symbols` for fully resolved function names in the dispatch chain.
 
-To make this work, winapp captures the crash dump with the terminating stowed exception's record (and its parameters, which point at the stowed-exception array) while keeping the first-chance thread context, so the standard managed analysis still recovers your original user frame *and* the triage pass can locate the stowed exception.
+To make this work, winapp captures the crash dump with the terminating stowed exception's record and its parameters, which point at the stowed-exception array, so the triage pass can locate the stowed exception. The dump uses the context of the thread that crashed. If an earlier exception on that thread is still on its stack, winapp uses that exception's context instead, so the managed analysis can recover the user frame that threw. Exceptions your app already handled are listed in the debug log but are not reported as the crash.
 
 This pass hosts DbgEng with the WinUI team's WinDbg JavaScript extension. The debugging engine comes from NuGet; `JsProvider.dll` (the JavaScript host, not published on NuGet) is fetched on first use from the official WinDbg download. Both are version-pinned and checked against SHA-512 content hashes when downloaded. Each time triage runs, every debugger DLL it loads (the engine files and `JsProvider.dll`) must also carry a valid Microsoft Authenticode signature. Those files, and the WinUI extension script, stay locked until the pass finishes. Any verification failure skips triage rather than loading unverified code. A cached engine file that fails the signature check is downloaded again on the next run. Everything is cached under the winapp global directory, so later runs are offline.
 
@@ -175,7 +193,8 @@ When you press **F5**:
 
 Once the debugger attaches, you get the full VS Code debugging experience — set breakpoints by clicking the gutter, step through code line-by-line (`F10`), step into functions (`F11`), inspect variables in the **Variables** pane, and evaluate expressions in the **Debug Console**. The app runs with package identity throughout, so identity-dependent APIs behave exactly as they would in production.
 
-> **Important:** The `winapp` debug type does **not** build your project automatically. After making code changes, rebuild before pressing F5.
+> [!IMPORTANT]
+> The `winapp` debug type does **not** build your project automatically. After making code changes, rebuild before pressing F5.
 
 #### Automate builds with `preLaunchTask`
 
