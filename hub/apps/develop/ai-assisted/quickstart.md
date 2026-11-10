@@ -2,7 +2,7 @@
 title: "Quickstart: Build and publish a Windows app with AI"
 description: Build and publish a WinUI 3 app with Visual Studio Code, the WinUI Agent, .NET templates, and the Windows App Development CLI.
 ms.topic: quickstart
-ms.date: 09/20/2026
+ms.date: 11/10/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -157,20 +157,32 @@ dotnet publish -o ./publish
 winapp pack ./publish --generate-cert --install-cert
 ```
 
-`--generate-cert --install-cert` creates and installs a local development certificate for testing. For Store submission, use your Partner Center certificate instead.
+`--generate-cert --install-cert` creates and installs a local development certificate so you can install and test the package. Don't distribute packages signed with this certificate.
+
+You don't need your own code-signing certificate to publish to the Microsoft Store, because the Store signs your package. Before you submit, make sure the package identity in your manifest matches your app's identity in Partner Center. Work through the [Store readiness checklist](../../publish/store-readiness-checklist.md) to catch common upload and certification problems.
 
 ---
 
 ## Step 5: Publish to the Microsoft Store
 
-Submit your app directly from the command line:
+Publishing has two parts: a one-time setup in Partner Center, and then command-line submissions for updates.
 
-```powershell
-winapp store publish ./*.msix --appId <your-app-id>
-```
+1. **Set up your developer account.** Registration and verification can take several days, so [start early](../../publish/prepare-developer-account.md), ideally before you begin this quickstart.
+1. **Make your first submission in Partner Center.** [Reserve your app's name](../../publish/publish-your-app/msix/reserve-your-apps-name.md), then complete the first submission of your app in [Partner Center](https://partner.microsoft.com/dashboard). See [Create an app submission](../../publish/publish-your-app/msix/create-app-submission.md). Packaged desktop apps, including WinUI 3 apps, need a privacy policy URL in the submission.
+1. **Submit updates from the command line.** After your app is published, you can submit updated packages:
+
+   ```powershell
+   winapp store publish ./*.msix --appId <your-app-id>
+   ```
 
 > [!NOTE]
 > Publishing requires a [Partner Center account](https://partner.microsoft.com/dashboard). App certification typically takes 1–3 business days.
+>
+> Before you use `winapp store` for updates:
+>
+> - `winapp store` runs the [Microsoft Store Developer CLI](../../publish/msstore-dev-cli/overview.md), which can't make your app's first submission. Complete the first submission in Partner Center.
+> - Your Partner Center account must have an associated Microsoft Entra ID tenant, and you sign in to the CLI with your Microsoft Entra ID credentials, not a personal Microsoft account. See the [Microsoft Store Developer CLI prerequisites](../../publish/msstore-dev-cli/overview.md#prerequisites).
+> - Updates through the CLI are currently supported for free products only.
 
 ---
 

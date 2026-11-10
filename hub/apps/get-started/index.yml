@@ -2,7 +2,7 @@
 title: Getting started with WinUI
 metadata:
   title: Getting started with WinUI
-  description: Learn how WinUI and the Windows App SDK work together, create your first app, and continue with guided Windows app projects.
+  description: Build a Windows app with help from an AI agent or step by step, learn how WinUI and the Windows App SDK work together, and continue with guided projects.
   author: GrantMeStrength
   ms.author: jken
   ms.topic: overview
@@ -11,17 +11,20 @@ brand: windows
 tocType: single
 productOverview:
   title: Getting started with WinUI
-  summary: Discover WinUI, create your first Windows app, and keep building with practical, guided projects.
+  summary: Build the Windows app you've always wanted. Describe your idea to an AI agent and get help building, testing, and publishing it, even if you've never written a Windows app before.
 getStarted:
   title: Start here
-  summary: Create and run your first app, or learn how WinUI fits into the Windows App SDK.
+  summary: Build an app with help from an AI agent, create your first app step by step, or learn how WinUI fits into the Windows App SDK.
   items:
+    - title: Build an app with an AI agent
+      description: Describe the app you want, and let an agent help you build, test, and publish it.
+      url: build-with-agent.md
+    - title: Your path from idea to the Microsoft Store
+      description: Follow the full journey from planning and building your app to testing, publishing, and shipping updates.
+      url: app-journey.md
     - title: Create your first WinUI app
       description: Choose the winapp CLI or Visual Studio path, install your tools, and create a working app.
       url: start-here.md
-    - title: Understand WinUI
-      description: Learn what WinUI provides and how it works with the Windows App SDK.
-      url: ../winui/winui3/index.md
     - title: Migrate an existing app to WinUI
       description: Plan how to move an existing app's UI to WinUI 3.
       url: ../windows-app-sdk/migrate-to-windows-app-sdk/migration-decision-guide.md
@@ -72,13 +75,27 @@ coreWorkflows:
     - icon:
         src: ../images/fluent-blue/apps.svg
         alt: A collection of app windows.
-      title: Explore apps and samples
-      description: See WinUI controls in a working app or adapt Windows App SDK code samples for your project.
+      title: Explore WinUI, apps, and samples
+      description: Understand WinUI, see controls in a working app, or adapt Windows App SDK code samples for your project.
       links:
+        - text: Understand WinUI
+          url: ../winui/winui3/index.md
         - text: WinUI Gallery
           url: ../dev-tools/samples.md#winui-3-gallery
         - text: Windows App SDK Samples
           url: https://github.com/microsoft/WindowsAppSDK-Samples
+    - icon:
+        src: ../images/fluent-blue/feature.svg
+        alt: A puzzle piece representing app features.
+      title: Plan, test, and ship
+      description: Plan your app, test it before release, and get it into the Microsoft Store.
+      links:
+        - text: Your path from idea to the Microsoft Store
+          url: app-journey.md
+        - text: Test before you ship
+          url: ../develop/test-before-you-ship.md
+        - text: Fix submission failures
+          url: ../publish/fix-submission-failures.md
 supportReference:
   title: Continue your Windows app journey
   summary: Move from your first app to design, platform features, deployment, and sharing your app with others.

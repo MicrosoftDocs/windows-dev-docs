@@ -1,17 +1,32 @@
 ### YamlMime:Hub
 title: Windows app development documentation
-summary: "Build native Windows desktop apps with the Windows App SDK and WinUI 3, the recommended UI framework for new Windows apps."
+summary: "Build native Windows apps with WinUI 3, the recommended UI framework for new Windows apps, on your own or with help from an AI agent, and follow the path from your first app to the Microsoft Store."
 brand: windows
 metadata:
    title: Windows app development documentation
    description: Build native Windows desktop apps with Windows App SDK and WinUI 3, the recommended UI framework for new Windows apps using C# or C++.
    ms.topic: hub-page
-   ms.date: 10/03/2026
+   ms.date: 10/30/2026
    ms.localizationpriority: medium
 
 highlightedContent:
   # itemType: architecture | concept | deploy | download | get-started | how-to-guide | learn | overview | quickstart | reference | tutorial | video | whats-new
    items:
+    - title: Your path from idea to the Microsoft Store
+      itemType: overview
+      url: /windows/apps/get-started/app-journey
+    - title: Build an app with an AI agent
+      itemType: get-started
+      url: /windows/apps/get-started/build-with-agent
+    - title: Plan your Windows app
+      itemType: concept
+      url: /windows/apps/get-started/plan-your-app
+    - title: Test your app before you ship
+      itemType: how-to-guide
+      url: /windows/apps/develop/test-before-you-ship
+    - title: Publish your first Windows app
+      itemType: deploy
+      url: /windows/apps/package-and-deploy/publish-first-app
     - title: What's new for Windows developers
       itemType: whats-new
       url: /windows/apps/whats-new/whats-new-for-developers
@@ -23,12 +38,12 @@ highlightedContent:
       url: /windows/apps/develop/
 
 productDirectory:
-  title: Build and ship Windows apps
-  summary: "Choose the part of the app development journey that matches what you want to do."
+  title: From idea to the Microsoft Store
+  summary: "Plan and build your app, design it, add Windows features, then package, test, and publish it. New to Windows apps? Start with Your path from idea to the Microsoft Store, above."
   items:
   - title: Getting started
     imageSrc: /windows/apps/images/hub-essentials.svg
-    summary: "Learn how WinUI and the Windows App SDK work together, create your first app, and continue with a guided project."
+    summary: "Build an app with help from an AI agent or step by step, plan how you'll distribute it, and continue with a guided project."
     links:
       - url: /windows/apps/get-started
         text: Getting started with WinUI
@@ -94,6 +109,8 @@ productDirectory:
         text: Open a Microsoft Store developer account
       - url: /windows/apps/publish/publish-your-app/msix/reserve-your-apps-name
         text: Submit your app to the Microsoft Store
+      - url: /windows/apps/publish/fix-submission-failures
+        text: Fix submission and certification failures
 
 tools:
   title: Tools and samples

@@ -4,7 +4,7 @@ description: Compare code signing options for Windows apps distributed outside t
 author: GrantMeStrength
 ms.author: jken
 ms.topic: concept-article
-ms.date: 08/29/2026
+ms.date: 10/29/2026
 ms.localizationpriority: medium
 ---
 
@@ -95,6 +95,11 @@ A self-signed certificate is not trusted by Windows by default and will trigger 
 ## Open source: SignPath Foundation
 
 If your project is open source, [SignPath Foundation](https://signpath.io) offers free code signing for qualifying open-source projects. The program provides OV-level certificate signing through a managed pipeline. Check the SignPath Foundation website for eligibility requirements and the application process.
+
+## Signing and AI agents
+
+- If your app registers a packaged MCP server so that agents on Windows can use it, production releases must be signed with a certificate that is part of the Microsoft Trusted Root Program. A development certificate is fine for local testing. MCP server registration on Windows is a pre-release feature, so check the current [registration prerequisites](/windows/ai/mcp/servers/mcp-windows-identity#prerequisites), and see [Make your line-of-business app usable by agents](../get-started/line-of-business/agent-ready-lob-apps.md).
+- Don't let an AI agent create, export, or commit release certificates or signing credentials. Keep them in a secrets manager or your build system's secure storage. An agent can create and use a development certificate for local testing.
 
 ## Related content
 

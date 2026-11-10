@@ -4,6 +4,12 @@ items:
   items:
   - name: Get started
     href: get-started/index.yml
+  - name: Your path from idea to the Microsoft Store
+    href: get-started/app-journey.md
+  - name: Build an app with an AI agent
+    href: get-started/build-with-agent.md
+  - name: Plan your Windows app
+    href: get-started/plan-your-app.md
   - name: Build your first WinUI app
     href: get-started/start-here.md
   - name: Tutorials
@@ -32,6 +38,8 @@ items:
         href: tutorials/winui-notes-pt2/2-note-state.md
       - name: 3. Pass navigation parameters
         href: tutorials/winui-notes-pt2/3-navigation-parameters.md
+  - name: Test your app before you ship
+    href: develop/test-before-you-ship.md
 - name: Understand the platform
   items:
   - name: WinUI

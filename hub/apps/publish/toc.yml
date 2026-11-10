@@ -3,8 +3,14 @@ items:
   href: index.yml
 - name: Get started with Microsoft Store
   href: get-started.md  
-- name: Open a developer account
-  href: partner-center/open-a-developer-account.md  
+- name: Developer account
+  items:
+    - name: Set up your developer account early
+      href: prepare-developer-account.md
+    - name: Open a developer account
+      href: partner-center/open-a-developer-account.md
+- name: Store readiness checklist
+  href: store-readiness-checklist.md  
 - name: Choose your distribution options
   items: 
     - name: How to distribute your win32 app in Store
@@ -189,6 +195,8 @@ items:
             href: publish-your-app/add-on/create-app-store-listing.md
           - name: Manage submission options
             href: publish-your-app/add-on/manage-submission-options.md
+- name: Fix submission and certification failures
+  href: fix-submission-failures.md
 - name: Get your app certified
   items: 
     - name: MSIX
