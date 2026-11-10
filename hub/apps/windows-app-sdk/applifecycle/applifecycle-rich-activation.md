@@ -2,7 +2,7 @@
 description: Describes how to use rich activation features with the app lifecycle API in unpackaged apps (Windows App SDK).
 title: Rich activation with the app lifecycle API (Windows App SDK)
 ms.topic: article
-ms.date: 09/10/2026
+ms.date: 11/10/2026
 keywords: AppLifecycle, Windows, activation, activation contracts, rich activation, win32, win32 activation, unpackaged app, unpackaged app activation
 ms.localizationpriority: medium
 ---
@@ -53,6 +53,8 @@ All apps support the `Launch` activation kind by default. Unlike UWP, the Window
 Activation registrations are per-user. If your app is installed for multiple users, you will need to re-register activations for each user.
 
 ## Examples
+
+For complete C# and C++ examples across different app frameworks and packaging modes, see the [Windows App SDK Activation samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/Activation).
 
 ### Register for rich activation
 

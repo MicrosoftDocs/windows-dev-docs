@@ -4,7 +4,7 @@ title: Panning
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
-ms.date: 09/27/2026
+ms.date: 11/10/2026
 ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -185,7 +185,7 @@ This guidance is also useful for apps such as photo albums or mapping apps that 
 - [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicInput)
 - [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LowLatencyInput)
 - [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/UserInteractionMode)
-- [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlFocusVisuals)
+- [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals)
 - [Windows App SDK GestureRecognizer sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui)
 - [WinUI Gallery ScrollViewer sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ScrollViewer)
 - [WinUI Gallery ScrollView sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ScrollView)

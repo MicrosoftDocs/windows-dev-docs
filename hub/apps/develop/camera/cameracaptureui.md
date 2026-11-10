@@ -2,7 +2,7 @@
 title: Capture photos and video in a desktop app with the Windows built-in camera UI
 description: Learn how to capture photos and video using the camera UI built into Windows.  
 ms.topic: how-to
-ms.date: 10/07/2026
+ms.date: 11/10/2026
 ms.author: jken
 author: GrantMeStrength
 ms.localizationpriority: medium
@@ -16,6 +16,8 @@ This article describes how to use the [CameraCaptureUI](/windows/windows-app-sdk
 If you want to provide your own camera UI, or if your scenario requires more robust, low-level control of the capture operation, then you should use the [MediaCapture](/uwp/api/windows.media.capture.mediacapture) class, and implement your own capture experience. For more information, see [Basic photo, video, and audio capture with MediaCapture](basic-photo-capture.md).
 
 ## Use the CameraCaptureUI class to capture photos
+
+For complete C# and C++/WinRT examples of photo and video capture, see the [Windows App SDK CameraCaptureUI sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/CameraCaptureUI).
 
 Create a new instance of **CameraCaptureUI**, passing in the [AppWindow.Id](/windows/windows-app-sdk/api/winrt/microsoft.ui.windowing.appwindow.id) property of your app window. The [PhotoSettings](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture.cameracaptureui.photosettings) property allows you to specify some constraints on the captured photo, including the file format and maximum resolution and whether UI allows the user to crop the photo after it's captured. The [VideoSettings](/windows/windows-app-sdk/api/winrt/microsoft.windows.media.capture.cameracaptureui.videosettings) property provides similar properties for video capture, such as the maximum resolution and duration and whether the UI allows the user to trim the video after it's captured.
 

@@ -5,7 +5,7 @@ ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 keywords: visual feedback, focus feedback, touch feedback, contact visualization, input, interaction
-ms.date: 09/27/2026
+ms.date: 11/10/2026
 ms.topic: article
 
 
@@ -121,11 +121,11 @@ To change the colors on a per-control basis, just edit the focus visual properti
 - [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicInput)
 - [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LowLatencyInput)
 - [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/UserInteractionMode)
-- [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlFocusVisuals)
 
 > [!NOTE]
 > The samples above are from the UWP Windows-universal-samples repository. For WinUI 3 examples, see the [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery).
 
+- [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals)
 - [Windows App SDK GestureRecognizer sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui)
 - [Win32 touch hit-testing sample](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/TouchHitTesting)
 

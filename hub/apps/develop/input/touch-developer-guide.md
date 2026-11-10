@@ -4,7 +4,7 @@ title: Touch interactions developer guide
 label: Touch interactions developer guide
 template: detail.hbs
 keywords: touch, pointer, input, user interaction
-ms.date: 09/27/2026
+ms.date: 11/10/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -578,7 +578,7 @@ All of the pointer events, gesture events and manipulation events mentioned here
 - [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicInput)
 - [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LowLatencyInput)
 - [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/UserInteractionMode)
-- [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlFocusVisuals)
+- [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals)
 - [Windows App SDK GestureRecognizer sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui)
 - [WinUI Gallery ScrollViewer sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ScrollViewer)
 

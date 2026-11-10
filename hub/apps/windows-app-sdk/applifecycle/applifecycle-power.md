@@ -2,7 +2,7 @@
 description: Describes how to use power management and notification features with the app lifecycle API (Windows App SDK).
 title: Power management with the app lifecycle API (Windows App SDK)
 ms.topic: how-to
-ms.date: 09/10/2026
+ms.date: 11/10/2026
 keywords: AppLifecycle, Windows, ApplicationModel, power, battery,
 ms.localizationpriority: medium
 ---
@@ -21,6 +21,8 @@ To use the app lifecycle API in the Windows App SDK:
 2. Follow the instructions to [Create and run a WinUI 3 project](../../get-started/start-here.md) or to [use the Windows App SDK in an existing project](../use-windows-app-sdk-in-existing-project.md).
 
 ## Subscribe and respond to events
+
+For complete C# and C++ examples of subscribing to and unsubscribing from power and system state notifications, see the [Windows App SDK State Notifications samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/StateNotifications).
 
 The following example demonstrates how to subscribe and respond to [PowerManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager) events. This code subscribes to the [BatteryStatusChanged](/windows/windows-app-sdk/api/winrt/microsoft.windows.system.power.powermanager.batterystatuschanged) event during startup. The app then responds to changes by checking the current power level and adjusting its resource usage appropriately. For example, if the battery discharges at a low power state, the app might defer any non-critical background work.
 

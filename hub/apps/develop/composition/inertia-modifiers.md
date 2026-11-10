@@ -1,7 +1,7 @@
 ---
 title: Use inertia modifiers to create snap points
 description: Learn how to use an InteractionTracker's InertiaModifier feature in WinUI to create motion experiences that snap to a specified point.
-ms.date: 03/16/2026
+ms.date: 11/10/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -50,6 +50,8 @@ When entering Inertia, InteractionTracker evaluates each of the InertiaModifiers
 > The condition aspect of the InertiaModifiers are only evaluated once when InteractionTracker enters Inertia. However, only for InertiaMotion, the motion Expression is evaluated every frame for the modifier whose condition is true.
 
 ## Example
+
+For a complete WinUI 3 example that configures `InteractionTrackerInertiaRestingValue` modifiers to create snap points, see the [SwipeScroller sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SceneGraph/SampleGalleryApp/Samples/SwipeScroller).
 
 Now let’s look at how you can use InertiaModifiers to create some snap point experiences to recreate the scrolling canvas of images. In this example, each manipulation is meant to potentially move through a single image – this is often referred to as Single Mandatory Snap Points.
 

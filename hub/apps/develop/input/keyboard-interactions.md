@@ -5,7 +5,7 @@ ms.assetid: FF819BAC-67C0-4EC9-8921-F087BE188138
 label: Keyboard interactions
 template: detail.hbs
 keywords: keyboard, accessibility, navigation, focus, text, input, user interactions, gamepad, remote
-ms.date: 09/27/2026
+ms.date: 11/10/2026
 ms.topic: article
 pm-contact: chigy
 design-contact: kimsea
@@ -506,7 +506,7 @@ Test your app with all supported input devices to ensure UI elements can be navi
 * [Keyboard events](keyboard-events.md)
 * [Identify input devices](identify-input-devices.md)
 * [Respond to the presence of the touch keyboard](respond-to-the-presence-of-the-touch-keyboard.md)
-* [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlFocusVisuals)
+* [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals)
 * [NavigationView control keyboarding specifics](../ui/controls/navigationview.md#hierarchical-navigation)
 * [Keyboard accessibility](../../design/accessibility/keyboard-accessibility.md)
 

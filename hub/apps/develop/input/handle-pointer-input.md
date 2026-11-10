@@ -5,7 +5,7 @@ ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
 keywords: pen, mouse, touchpad, touch, pointer, input, user interaction
-ms.date: 09/27/2026
+ms.date: 11/10/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -889,7 +889,7 @@ Finally, we define our basic pointer event handlers in the MainPage.xaml.cs code
 - [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicInput)
 - [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LowLatencyInput)
 - [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/UserInteractionMode)
-- [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlFocusVisuals)
+- [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals)
 - [Windows App SDK GestureRecognizer sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui)
 - [Win32 touch hit-testing sample](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/TouchHitTesting)
 

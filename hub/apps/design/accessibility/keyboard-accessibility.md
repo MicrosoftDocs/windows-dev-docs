@@ -4,7 +4,7 @@ ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
 title: Keyboard accessibility
 label: Keyboard accessibility
 template: detail.hbs
-ms.date: 10/04/2026
+ms.date: 11/10/2026
 ms.topic: article
 keywords: windows 11, winui, winappsdk, windows app sdk
 ms.localizationpriority: medium
@@ -231,6 +231,8 @@ Custom key behavior is commonly implemented by overriding [**OnKeyDown**](/windo
 Any focusable custom control should expose a clear visual focus indicator. A common template pattern uses a [**Rectangle**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Shapes.Rectangle) overlay that starts hidden via [**Visibility**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.uielement.visibility) and appears when focus enters.
 
 Built-in XAML controls already provide focus indicators. The exact appearance can vary with theme settings, including high contrast mode. If you retemplate controls, preserve equivalent focus visibility behavior.
+
+For a complete WinUI 3 app that demonstrates custom focus visual states and system focus visuals for a custom control, see the [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals).
 
 The following example is adapted from the default [**Button**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Button) template.
 

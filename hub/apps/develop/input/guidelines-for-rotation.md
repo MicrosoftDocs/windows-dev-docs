@@ -4,7 +4,7 @@ title: Rotation
 ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
 label: Rotation
 template: detail.hbs
-ms.date: 09/27/2026
+ms.date: 11/10/2026
 ms.topic: article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -99,7 +99,7 @@ Windows 10 supports three types of rotation: free, constrained, and combined.
 - [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicInput)
 - [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LowLatencyInput)
 - [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/UserInteractionMode)
-- [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlFocusVisuals)
+- [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals)
 - [Windows App SDK GestureRecognizer sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui)
 - [Win32 touch hit-testing sample](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/TouchHitTesting)
 

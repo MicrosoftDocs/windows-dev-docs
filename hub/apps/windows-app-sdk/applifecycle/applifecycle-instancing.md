@@ -2,7 +2,7 @@
 description: Describes how to use app instancing features with the app lifecycle API in WinUI with the Windows App SDK.
 title: App instancing with the app lifecycle API (WinUI)
 ms.topic: concept-article
-ms.date: 09/10/2026
+ms.date: 11/10/2026
 keywords: AppLifecycle, Windows, ApplicationModel, instancing, single instance, multi instance
 #customer intent: As a Windows developer, I want to learn how to use app instancing features with the app lifecycle API in WinUI with the Windows App SDK so that I can control how many instances of my app can run at the same time.
 ---
@@ -93,6 +93,8 @@ In order to handle reactivation, the app can register for an Activated event.
 - **Windows App SDK**: The event passes a [Microsoft.Windows.AppLifecycle.AppActivationArguments](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.appactivationarguments) instance to the app, which contains one of the `-ActivatedEventArgs` instances.
 
 ## Examples
+
+For complete C# and C++ examples of instance registration and activation redirection, see the [Windows App SDK Instancing samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/AppLifecycle/Instancing).
 
 ### Handling activations
 

@@ -5,7 +5,7 @@ ms.assetid: d973ffd8-602e-47b5-ab0b-4b2a964ec53d
 label: Selecting text and images
 template: detail.hbs
 keywords: keyboard, text, input, user interactions
-ms.date: 09/27/2026
+ms.date: 11/10/2026
 ms.topic: concept-article
 
 
@@ -111,7 +111,7 @@ For example, grippers can also be used in image processing apps that support res
 - [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicInput)
 - [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LowLatencyInput)
 - [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/UserInteractionMode)
-- [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlFocusVisuals)
+- [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals)
 - [Win32 touch hit-testing sample](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/TouchHitTesting)
 
 ### Archive samples

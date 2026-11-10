@@ -2,7 +2,7 @@
 title: Use the dynamic dependency API to reference MSIX packages at run time
 description: Describes how to use the *dynamic dependency API* to dynamically take a dependency on different MSIX packages (other than the Windows App SDK framework package) in an unpackaged app at run time.
 ms.topic: article
-ms.date: 10/03/2026
+ms.date: 11/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -25,6 +25,8 @@ And there are different kinds of MSIX packages, including *framework*, *resource
 Specifically, the dynamic dependency API provides ways to manage the *install-time references* and *run-time references* for MSIX packages. For more info, see [Servicing model for framework packages](framework-packages-overview.md#servicing-model-for-framework-packages).
 
 ## Use the dynamic dependency API
+
+For a complete C++ example that uses the Windows App SDK dynamic dependency API to load the DirectX Runtime framework package, see the [Dynamic Dependencies sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/DynamicDependenciesSample/DynamicDependencies). See the sample README for its DirectX SDK and framework package prerequisites.
 
 To use the dynamic dependency API in your unpackaged app to take a dependency on an MSIX package, follow this general pattern in your code:
 

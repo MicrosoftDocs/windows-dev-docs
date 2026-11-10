@@ -2,7 +2,7 @@
 title: Use the Windows App SDK runtime for apps packaged with external location or unpackaged
 description: If your app isn't installed by using MSIX (that is, it's packaged with external location or unpackaged), then you must initialize the Windows App SDK for use before you can call Windows App SDK features such as WinUI, App Lifecycle, MRT Core, and DWriteCore.
 ms.topic: article
-ms.date: 09/11/2026
+ms.date: 11/10/2026
 ms.localizationpriority: medium
 ---
 
@@ -17,6 +17,8 @@ If your app isn't installed by using MSIX (that is, it's packaged with external 
 * But if you have advanced needs (such as handling errors by showing your own custom UI or logging, or if you need to load a version of the Windows App SDK that's different from the version you built with), then continue reading this topic. In those scenarios, instead of auto-initialization, you can call the bootstrapper API explicitly.
 
 Either of the two techniques above allows an app that doesn't use MSIX to take a dynamic dependency on the Windows App SDK at run time.
+
+For C# and C++ console apps that use auto-initialization, see the [Windows App SDK Unpackaged samples](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Unpackaged).
 
 For background information about dynamic dependencies, see [MSIX framework packages and dynamic dependencies](../desktop/modernize/framework-packages/framework-packages-overview.md).
 

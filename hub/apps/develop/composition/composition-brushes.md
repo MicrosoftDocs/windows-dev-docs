@@ -1,7 +1,7 @@
 ---
 title: Composition brushes in WinUI
 description: A composition brush paints the area of a Visual with its output in WinUI and Windows App SDK apps.
-ms.date: 03/16/2026
+ms.date: 11/10/2026
 ms.topic: article
 ms.custom: 19H1
 ms.localizationpriority: medium
@@ -82,6 +82,8 @@ _container.Children.InsertAtBottom(_colorVisual2);
 ### Paint with a linear gradient
 
 A [CompositionLinearGradientBrush](/windows/windows-app-sdk/api/winrt/microsoft.ui.composition.compositionlineargradientbrush) paints an area with a linear gradient. A linear gradient blends two or more colors across a line, the gradient axis. You use GradientStop objects to specify the colors in the gradient and their positions.
+
+For a complete WinUI 3 example that creates a linear gradient brush and configures its color stops, see the [LinearGradients sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SceneGraph/SampleGalleryApp/Samples/LinearGradients).
 
 The following illustration and code shows a SpriteVisual painted with a LinearGradientBrush with 2 stops using a red and yellow color.
 

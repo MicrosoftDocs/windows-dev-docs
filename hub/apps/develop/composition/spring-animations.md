@@ -1,7 +1,7 @@
 ---
 title: Spring animations
 description: Learn how to create spring motion experiences in WinUI and Windows App SDK apps by using the NaturalMotionAnimation APIs.
-ms.date: 03/16/2026
+ms.date: 11/10/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -36,6 +36,8 @@ In each of these cases, the spring motion can be triggered either by "springing 
 ![Spring animation oscillation](images/animation/spring-animation-diagram.png)
 
 ## Defining your spring motion
+
+For a complete WinUI 3 example that animates an image's scale and lets you adjust the damping ratio and period, see the [SpringyImage sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/SceneGraph/SampleGalleryApp/Samples/SpringyImage).
 
 You create a spring experience by using the NaturalMotionAnimation APIs. Specifically, you create a SpringNaturalMotionAnimation by using the Create* methods off the Compositor. You are then able to define the following properties of the motion:
 

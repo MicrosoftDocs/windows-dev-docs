@@ -5,7 +5,7 @@ ms.assetid: ac500772-d6ed-4a3a-825b-210a9c3c8f59
 label: Keyboard events
 template: detail.hbs
 keywords: keyboard, gamepad, remote, accessibility, navigation, focus, text, input, user interactions, key up, key down
-ms.date: 09/27/2026
+ms.date: 11/10/2026
 ms.topic: article
 pm-contact: chigy
 design-contact: kimsea
@@ -383,7 +383,7 @@ You can make it much faster and easier for users to enter data in your app by se
 - [Touch keyboard sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/TouchKeyboard)
 - [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicInput)
 - [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LowLatencyInput)
-- [Focus visuals sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlFocusVisuals)
+- [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals)
 
 ### Archive Samples
 
