@@ -4,7 +4,7 @@ description: Explore new Windows platform capabilities, SDK and API updates, des
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
 author: GrantMeStrength
 ms.author: jken
-ms.date: 11/03/2026
+ms.date: 11/10/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -19,16 +19,16 @@ This section curates the latest platform capabilities, SDK and API additions, AI
 
 Find the latest downloads, release notes, and updates for the Windows SDK, Windows App SDK, and WinUI 3.
 
-Versions below are current as of November 3, 2026. Use the release notes to review the changes and requirements for each channel or SDK build.
+Versions below are current as of November 10, 2026. Use the release notes to review the changes and requirements for each channel or SDK build.
 
 :::row:::
     :::column:::
         ![Windows App SDK icon](images/wasdk-hero.png)<br>
         **Windows App SDK**<br>
         Latest stable: 2.6.5<br>
-        Latest experimental: 2.5.4-experimental<br>
+        Latest experimental: 2.6.6-experimental<br>
         [Stable release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-265)<br>
-        [Experimental release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-25-experimental-254-experimental)<br>
+        [Experimental release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-26-experimental-266-experimental)<br>
         [View downloads](../windows-app-sdk/downloads.md)
     :::column-end:::
     :::column:::
@@ -45,9 +45,20 @@ Versions below are current as of November 3, 2026. Use the release notes to revi
 
 ## Highlights – November 2026
 
-### SDK releases
+### SDK releases and developer blog posts
 
+- **Windows App Development CLI 0.8**: The November 9 release of this public-preview CLI adds WinUI DevTools in experimental preview, local ETW-based performance profiling, and build, run, and MSIX packaging support for C++ `.vcxproj` projects. DevTools lets you inspect a running WinUI 3 app, try property changes, and leave element-specific comments for a coding agent. Live property edits don't persist in source. See [Windows App Development CLI v0.8: WinUI DevTools Experimental Preview](https://devblogs.microsoft.com/ifdef-windows/windows-app-development-cli-v0-8/).
+- **Windows App SDK 2.6 Experimental (2.6.6-experimental)**: The November 6 release adds TableView row hierarchies and live data shaping, Chart accessibility, zero-copy resource access, and VideoScaler creation and input-color options. Experimental APIs can change and aren't intended for production apps. See the [Windows App SDK 2.6 experimental release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-26-experimental-266-experimental).
+- **Intelligent Terminal 0.3 (experimental)**: The November 4 update adds a sidebar with agent status, search across tabs and recent agent sessions, automatic profiles for installed agent CLIs, and headless tabs that continue running after you close the terminal window. See [Intelligent Terminal 0.3: A new way to manage your tabs and agents](https://devblogs.microsoft.com/commandline/intelligent-terminal-v0-3-a-new-way-to-see-and-manage-your-tabs-and-agents/).
+- **WinApp VS Code extension 0.4 (public preview)**: The November 3 release adds experimental, project-aware WinUI XAML IntelliSense, app creation, and project-based build and run workflows. Full project-aware XAML support requires a C# WinUI project and the .NET 10 SDK; C++/WinRT support is limited to basic editing and syntax diagnostics in this release. See [Announcing XAML IntelliSense Support in the WinApp VS Code Extension](https://devblogs.microsoft.com/ifdef-windows/xaml-intellisense-support-in-winapp-extension/).
+- **Inside MSIX: sparse packages**: The November 3 post explains how a sparse package can omit payload installed by another installer, and why external location is the feature that enables this deployment model. A sparse package isn't a separate package type or a synonym for external location. See [Sparse Package](https://devblogs.microsoft.com/insidemsix/sparse-package/).
 - **Windows App SDK 2.6.5**: The November 2 stable release fixes rendering corruption on systems with multiple graphics adapters or monitors, composition crashes and unexpected window transparency, and an app-extension registration issue that could prevent packaged apps from installing. It also reverts the system backdrop change introduced in 2.6.4: system backdrops for content islands and XAML windows aren't supported when using the System Composition Engine in this release. See the [Windows App SDK 2.6.5 release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-265).
+
+### Documentation highlights
+
+- **WinApp CLI documentation refresh**: Updated guides cover project-based workflows, debugging, UI automation, and Windows Sandbox execution. A new .NET file-based app guide shows how to run a single `.cs` file with package identity without authoring a project or manifest. Start with the [WinApp CLI overview](../dev-tools/winapp-cli/index.md) and [file-based app guide](../dev-tools/winapp-cli/guides/dotnet-file-based.md).
+- **Windows.UI.Palettes metadata and extension guidance**: A new guide provides complete IDL and a version header, metadata-generation steps, a C++/WinRT example, and extension registration requirements. Generated metadata doesn't provide the runtime or establish Windows support; confirm the target runtime and host, and review regional availability. See [Use Windows.UI.Palettes with locally generated metadata](../api-reference/compliance/windows-ui-palettes.md).
+- **Windows Age APIs FAQ**: New guidance explains age-range signals versus verified adult status, supported Windows and SDK builds, account behavior, privacy, and fallback handling. An unavailable or unverified result doesn't establish that a user is a minor. See the [Windows Age APIs FAQ](../develop/security/age-signals/faq.md).
 
 ---
 
@@ -58,9 +69,10 @@ Versions below are current as of November 3, 2026. Use the release notes to revi
 - **Windows App SDK 2.6.4**: The October 27 stable release removes the Limited Access Feature unlock requirement for the Language Model APIs, updates ONNX Runtime to 1.27.1, and includes reliability and diagnostics fixes across WinUI 3, app lifecycle, notifications, composition, and Windows AI. Apps using earlier Windows App SDK versions must continue to follow the Language Model LAF requirements for their target Windows versions. See the [Windows App SDK 2.6.4 release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-264).
 - **Microsoft.UI.Reactor (experimental)**: The October 21 post introduces a C#-first Model-View-Update framework that renders WinUI controls without XAML. Reactor is experimental, has no support policy or API guarantees, and isn't a replacement for XAML or MVVM. See [Microsoft.UI.Reactor: a C#-first way to build WinUI apps](https://devblogs.microsoft.com/ifdef-windows/microsoft-ui-reactor-a-c-first-way-to-build-winui-apps/).
 - **PowerToys 0.102**: The October 21 release adds Mouse Button Lock and CursorHide, a Command Palette quick-access shelf, ZoomIt snip dictation, and command-line automation for more utilities. Color Picker and Text Extractor also move to WinUI 3. See [PowerToys 0.102 is here](https://devblogs.microsoft.com/commandline/powertoys-0-102-is-here-new-mouse-utilities-command-palette-improvements-and-much-more/).
+- **Python 3.15 on Windows on Arm**: The October 14 post describes native Arm64 runtime selection with Python Install Manager 26.4, CPython Tier 2 support, and expanded native package and development-tool availability. Check your complete dependency graph, particularly native extensions, before migrating an app. See [Python 3.15 delivers a native-by-default experience on Windows on Arm](https://blogs.windows.com/windowsdeveloper/2026/10/14/python-3-15-delivers-native-by-default-experience-on-windows-arm/).
 - **Inside MSIX: external location and activation**: Learn how a package with external location supplements an existing installer, and how activatable extension points start packaged processes with package identity. See [External Location](https://devblogs.microsoft.com/insidemsix/msix-external-location/) (October 27) and [Activatable Extension Points](https://devblogs.microsoft.com/insidemsix/activatable-extension-points/) (October 20).
 - **Microsoft Execution Containers is generally available**: The October 7 post describes policy-driven containment for AI agents, where developers and IT administrators define the files and network destinations an agent can use, and Windows enforces those policies at runtime. See [Microsoft Execution Containers: Policy-driven containment for AI agents](https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/).
-- **WinUI Gallery 3.0**: The October 13 release is built on the experimental Windows App SDK (currently 2.5.4-experimental) and adds samples for the experimental TableView control and other upcoming WinUI controls and APIs. See [WinUI Gallery 3.0 is here](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/).
+- **WinUI Gallery 3.0**: The October 13 release is built on the experimental Windows App SDK (2.5.4-experimental at release) and adds samples for the experimental TableView control and other upcoming WinUI controls and APIs. See [WinUI Gallery 3.0 is here](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/).
 - **.NET 11 Release Candidate 2**: The October 13 prerelease includes improvements across libraries, runtime, SDK, MSBuild, NuGet, ASP.NET Core, .NET MAUI, and Windows Forms. See [Announcing .NET 11 Release Candidate 2](https://devblogs.microsoft.com/dotnet/dotnet-11-rc-2/).
 - **Inside MSIX: find package identity with existing tools**: Learn how to use `TASKLIST.EXE /APPS` and PowerShell to find a packaged process's package and application identity. See [Is it MSIX? Part 3](https://devblogs.microsoft.com/insidemsix/find-msix-package-application-identity/).
 - **Windows App Development CLI 0.7.1**: The October 1 release is a maintenance update that hides MSBuild property JSON from `winapp run --aot` output. See the [v0.7.1 release notes](https://github.com/microsoft/winappCli/releases/tag/v0.7.1).
