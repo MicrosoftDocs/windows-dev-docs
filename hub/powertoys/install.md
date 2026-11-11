@@ -2,7 +2,7 @@
 title: How to Install PowerToys on Windows 11 and Windows 10
 description: Install PowerToys, a set of utilities for customizing Windows, using an executable file or package manager (WinGet, Chocolatey, Scoop).
 ms.custom: copilot-scenario-highlight
-ms.date: 08/20/2025
+ms.date: 11/11/2026
 ms.topic: how-to
 ms.localizationpriority: high
 no-loc: [PowerToys, Windows, Chocolatey, Scoop]
@@ -156,7 +156,9 @@ cd $Env:WIX\"bin"
 ```
 ---
 
-### Troubeshooting
+<a id="troubeshooting"></a>
+
+### Troubleshooting
 #### Fixes for uninstalling 0.51 and earlier builds issues
 
 If you have an issue with the MSI being inaccessible, you can download the installer that corresponds with the installed version via the [PowerToys releases page](https://github.com/microsoft/PowerToys/releases) and run the following command. You'll need to change EXECUTABLE_INSTALLER_NAME to the actual file name.
