@@ -4,7 +4,7 @@ title: Windows Controls and patterns - Windows app development
 keywords: winui controls, user interface, app controls, windows controls
 label: Controls & patterns
 template: detail.hbs
-ms.date: 10/13/2026
+ms.date: 11/13/2026
 ms.topic: article
 ms.assetid: ce2e611c-c419-4a14-9095-b88ac711d1b8
 ms.localizationpriority: medium
@@ -49,6 +49,7 @@ The following table lists the Windows app controls available in WinUI, with link
 | ![Flip view](images/FlipView.png) | [Flip view](flipview.md) | Presents a collection of items that the user can flip through, one item at a time. |
 | ![Pips pager](images/PipsPager.png) | [Pips pager](pipspager.md) | A control to let the user navigate through a paginated collection when the page numbers do not need to be visually known. |
 | ![Tree view](images/TreeView.png) | [Tree view](tree-view.md) | A hierarchical list pattern with expanding and collapsing nodes that contain nested items. |
+| | [Table view](table-view.md) | Displays data in editable, sortable, resizable rows and columns. Experimental: available in experimental releases of the Windows App SDK. |
 | ![Items repeater](images/ListView.png) | [Items repeater](items-repeater.md) | A flexible, primitive control for data-driven layouts. |
 | ![Swipe](images/SwipeControl.png) | [Swipe](swipe.md) | Touch gesture for quick menu actions on items. |
 | ![Pull-to-refresh](images/PullToRefresh.png) | [Pull-to-refresh](pull-to-refresh.md) | Provides the ability to pull on a collection of items in a list/grid to refresh the contents of the collection. |
@@ -76,6 +77,7 @@ The following table lists the Windows app controls available in WinUI, with link
 | ![Animated icons](images/AnimatedIcon.png) | [Animated icons](animated-icon.md) | An element that displays and controls an icon that animates when the user interacts with the control. |
 | ![Images and image brushes](images/Image.png) | [Images and image brushes](images-imagebrushes.md) | A control to display image content. |
 | ![Media playback](images/MediaPlayerElement.png) | [Media playback](media-playback.md) | A control to display video and image content. |
+| | [Chart](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.charts.chart?view=windows-app-sdk-2.0-experimental&preserve-view=true) | Presents Cartesian data as line, area, and bar series. Experimental: available in experimental releases of the Windows App SDK. |
 | ![Shapes](images/Shape.png) | [Shapes](shapes.md) | Draw shapes such as ellipses, rectangles, and polygons. |
 | ![Inking controls](images/inking-controls-icon.png) | [Inking controls](ink-controls.md) | Draw and write with pen, touch, or mouse on an ink canvas, and choose ink tools from an ink toolbar. Experimental: available in experimental releases of the Windows App SDK. |
 
