@@ -63,6 +63,11 @@ When the check finds a stale index, the workflow uploads the corrected file as t
 
 Use `python tools/content_index/content_index.py audit` to produce likely duplicate pairs for human review. Similarity is not proof of duplication; account for audience, product, language, version, and lifecycle differences before consolidating content.
 
+## Review and triage skills
+
+- When asked to clean up PR discussions or reconcile SME feedback, use `.github/skills/pr-review-cleanup/SKILL.md`. A review-only request does not authorize discussion changes.
+- When asked for morning issue and PR triage, use `.github/skills/windows-docs-daily-triage/SKILL.md`. Read its run profile and action limits first; installing the skill does not schedule or authorize a run.
+
 ## Branch naming
 
 Always create a new branch before making changes. Never commit directly to `main`.
