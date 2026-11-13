@@ -2,7 +2,7 @@
 title: Build line-of-business apps with WinUI - overview
 description: A hub for developers building enterprise line-of-business apps with WinUI 3, covering data, forms, migration, design, and AI.
 ms.topic: overview
-ms.date: 10/28/2026
+ms.date: 11/13/2026
 author: GrantMeStrength
 ms.author: jken
 ---
@@ -22,7 +22,8 @@ Use this table as a starting point. The appropriate choice depends on your app's
 | Requirement | Starting point |
 |---|---|
 | Display a collection of records | Use `ListView` or `ItemsView` with a `DataTemplate`. |
-| Display dense tabular data | Use a columnar list for simple read-only scenarios, or evaluate a supported third-party grid when you need grid features such as column resizing, grouping, or spreadsheet-style editing. |
+| Display dense tabular data | Use a columnar list for simple read-only scenarios. To evaluate a first-party control with sorting, filtering, grouping, column resizing, and editing, try the experimental [`TableView`](../../develop/ui/controls/table-view.md). |
+| Visualize trends and comparisons | Try the experimental [`Chart`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.charts.chart?view=windows-app-sdk-2.0-experimental&preserve-view=true) control for Cartesian line, area, and bar series. |
 | Validate form input | Choose a validation strategy that fits your architecture. WinUI 3 doesn't provide a complete built-in form-validation framework. |
 | Authenticate users | Prefer an identity library and OS broker, such as MSAL with Web Account Manager (WAM), instead of implementing an OAuth flow directly. |
 | Store structured data locally | Consider EF Core with SQLite. |
@@ -42,9 +43,11 @@ Use this table as a starting point. The appropriate choice depends on your app's
 - [Data binding in depth](../../develop/data-binding/data-binding-in-depth.md)
 - [Data binding and MVVM](../../develop/data-binding/data-binding-and-mvvm.md)
 - [List views and grid views](../../develop/ui/controls/listview-and-gridview.md)
+- [TableView control (experimental)](../../develop/ui/controls/table-view.md)
+- [Chart control (experimental)](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.charts.chart?view=windows-app-sdk-2.0-experimental&preserve-view=true)
 
 > [!NOTE]
-> A native [`TableView`](../../develop/ui/controls/table-view.md) control, along with charts, `InkCanvas`, and other controls, is in preview in the experimental channel of the Windows App SDK and showcased in [WinUI Gallery 3.0](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/). These experimental APIs aren't supported for production. For guidance on what to ship today, see [Display tabular data in a WinUI app](display-tabular-data.md).
+> The [`TableView`](../../develop/ui/controls/table-view.md) and [`Chart`](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.charts.chart?view=windows-app-sdk-2.0-experimental&preserve-view=true) controls are available in the experimental channel of the Windows App SDK. Experimental APIs can change or be removed and aren't supported for production apps. For current production guidance, see [Display tabular data in a WinUI app](display-tabular-data.md). For an overview of the new controls, see [WinUI Gallery 3.0 is here: TableView, charts, InkCanvas, and more](https://devblogs.microsoft.com/ifdef-windows/winui-gallery-3-0-is-here-tableview-charts-inkcanvas-and-more/).
 
 ### Build forms with validation
 
