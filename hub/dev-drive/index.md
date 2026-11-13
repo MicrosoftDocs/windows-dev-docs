@@ -2,7 +2,7 @@
 title: Set up a Dev Drive on Windows 11
 description: Learn about the new Dev Drive storage available to improve file system performance for development scenarios using the ReFS volume format, including how to set it up, designate trust to use performance mode for Microsoft Defender Antivirus, customized filters, and FAQs.
 ms.topic: how-to
-ms.date: 08/27/2024
+ms.date: 11/12/2026
 ---
 
 # Set up a Dev Drive on Windows 11
@@ -285,11 +285,14 @@ The following filters may be used with Dev Drive:
 | Docker:  Running containers out of Dev Drive | bindFlt, wcifs |
 | Windows Performance Recorder:  Measure file system operations | FileInfo |
 | Resource Monitor: Shows resource usage. Required to show file names in Disk Activity | FileInfo |
-| Process Monitor - Sysinternals:  Monitor file system activities | ProcMon24 |
+| Process Monitor (Sysinternals): Monitor file system activity. To find the version-specific driver filename, check `%SystemRoot%\System32\drivers\PROCMON*.sys`. | `ProcMon##`, where `##` is the number in the driver filename |
 | Windows Upgrade: Used during OS Upgrade. Required if user moves TEMP environment variable to Dev Drive | WinSetupMon |
 | [Windows Defender Application Control (WDAC)](/windows/security/application-security/application-control/windows-defender-application-control/design/configure-authorized-apps-deployed-with-a-managed-installer#configure-managed-installer-tracking-with-applocker-and-wdac): Managed installer tracking with AppLocker identity services | applockerfltr |
 
 The `WdFilter` is attached by default. The following command is an example demonstrating how to attach all of these additional filters to a Dev Drive:
+
+> [!TIP]
+> The Process Monitor filter name varies by version. Before you run this example, start Process Monitor and run `fltmc filters` to find its filter name. Replace `ProcMon24` in the command with that name.
 
 ```powershell
 fsutil devdrv setfiltersallowed "PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, FileInfo, ProcMon24, WinSetupMon, applockerfltr"
@@ -297,9 +300,6 @@ fsutil devdrv setfiltersallowed "PrjFlt, MsSecFlt, WdFilter, bindFlt, wcifs, Fil
 
 > [!TIP]
 > To determine the filters required for a specific scenario, you may need to temporarily mark a Dev Drive as *untrusted*. Then, run the scenario and make note of all filters that attached to the volume. Designate the Dev Drive as [*trusted*](#how-do-i-designate-a-dev-drive-as-trusted) again and then add the filters to the Allow list for that Dev Drive to ensure the scenario succeeds. Finally, remove any filters that may not be needed, one at a time, while ensuring that the scenario works as expected.
-
-> [!TIP]
-> The filter name for Process Monitor may change. If adding the filter name "ProcMon24" doesn't seem to capture file system activities on a Dev Drive, list the filters using the command `fltmc filters`, find the filter name for Process Monitor, and use that name instead of "ProcMon24".
 
 ## Block Cloning Support
 
