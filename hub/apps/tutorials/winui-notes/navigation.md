@@ -82,7 +82,7 @@ Now you'll add navigation for existing notes. Currently, when you click the note
 1. Add a handler for the [ItemInvoked](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.itemsview.iteminvoked) event.
 
     ```xaml
-    <ItemsView ItemsSource="{x:Bind notesModel.Notes}"
+    <ItemsView ItemsSource="{x:Bind notesModel.Notes, Mode=OneTime}"
                Grid.Row="1" Margin="24" 
                ItemTemplate="{StaticResource NoteItemTemplate}"
                <!-- ↓ Add this. ↓ -->
@@ -148,7 +148,8 @@ The WinUI 3 [TitleBar](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.cont
 
     Finally, the [BackRequested](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.titlebar.backrequested) event handler is added. This is where you put the code to navigate back.
 
-1. In **MainWindow.xaml.cs**, add this code to the `AppTitleBar_BackRequested` method:
+1. In **MainWindow.xaml.cs**, add `using Microsoft.UI.Xaml.Controls;` at the top of the file so the `TitleBar` type is available.
+1. Add this code to the `AppTitleBar_BackRequested` method:
 
     ```csharp
     private void AppTitleBar_BackRequested(TitleBar sender, object args)
@@ -172,10 +173,7 @@ Next, you need to update the code in `NotePage` to navigate back after the note 
     ```csharp
     private async void DeleteButton_Click(object sender, RoutedEventArgs e)
     {
-        if (noteModel is not null)
-        {
-            await noteModel.DeleteAsync();
-        }
+        await noteModel.DeleteAsync();
         // ↓ Add this. ↓
         if (Frame.CanGoBack == true)
         {

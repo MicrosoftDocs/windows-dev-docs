@@ -3,7 +3,7 @@ title: Build a WinUI 3 notes app
 description: Learn XAML and C# fundamentals by building a two-page WinUI 3 notes app with local file storage, data binding, and navigation.
 author: GrantMeStrength
 ms.author: jken
-ms.date: 09/10/2026
+ms.date: 11/13/2026
 ms.topic: tutorial
 ms.localizationpriority: medium
 ---
@@ -43,15 +43,10 @@ _NotePage_
 
 ## Create the Visual Studio project
 
-Follow the Visual Studio path in [Quickstart: Create and run a WinUI 3 project](../../get-started/start-here.md?tabs=visual-studio) for tool installation and project creation. Use a packaged C# project with these tutorial-specific settings:
+Follow the Visual Studio path in [Build your first WinUI app](../../get-started/start-here.md?tabs=visual-studio) to install your tools and create a packaged C# project with these settings:
 
-- **Project Name**
-
-  This must be set to `WinUINotes`. If the project is named something different, the code you copy and paste from this tutorial may result in build errors. This is because Visual Studio uses the project name as the default _namespace_ for your app code.
-
-- **Windows App SDK**
-
-  This tutorial uses features that are available in Windows App SDK 1.7 and later. Make sure the Windows App SDK NuGet package is updated to version 1.7 or later.  
+- **Project name:** `WinUINotes`. Use this exact name so the project's namespace matches the tutorial code.
+- **Windows App SDK:** In **Solution Explorer**, right-click the **WinUINotes** project and select **Manage NuGet Packages**. Install or update `Microsoft.WindowsAppSDK` to version **2.6.5**. For details, see the [release notes](../../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-265).
 
 Build and launch the blank `WinUINotes` project before continuing. You should see an empty window that looks like this:
 

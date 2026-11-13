@@ -117,7 +117,8 @@ Currently, the model (the data) is embedded in the note view. You'll create a ne
     {
         public class Note
         {
-            private StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
+            private readonly StorageFolder storageFolder =
+                Microsoft.Windows.Storage.ApplicationData.GetDefault().LocalFolder;
             public string Filename { get; set; } = string.Empty;
             public string Text { get; set; } = string.Empty;
             public DateTime Date { get; set; } = DateTime.Now;
@@ -130,7 +131,8 @@ Currently, the model (the data) is embedded in the note view. You'll create a ne
             public async Task SaveAsync()
             {
                 // Save the note to a file.
-                StorageFile noteFile = (StorageFile)await storageFolder.TryGetItemAsync(Filename);
+                StorageFile? noteFile =
+                    await storageFolder.TryGetItemAsync(Filename) as StorageFile;
                 if (noteFile is null)
                 {
                     noteFile = await storageFolder.CreateFileAsync(Filename, CreationCollisionOption.ReplaceExisting);
@@ -141,7 +143,8 @@ Currently, the model (the data) is embedded in the note view. You'll create a ne
             public async Task DeleteAsync()
             {
                 // Delete the note from the file system.
-                StorageFile noteFile = (StorageFile)await storageFolder.TryGetItemAsync(Filename);
+                StorageFile? noteFile =
+                    await storageFolder.TryGetItemAsync(Filename) as StorageFile;
                 if (noteFile is not null)
                 {
                     await noteFile.DeleteAsync();
@@ -179,7 +182,8 @@ Now you can update the `NotePage` view to use the `Note` data model and delete c
 1. Delete these lines from the class:
 
     ```csharp
-    private StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
+    private readonly StorageFolder storageFolder =
+        Microsoft.Windows.Storage.ApplicationData.GetDefault().LocalFolder;
     private StorageFile? noteFile = null;
     private string fileName = "note.txt";
     ```
@@ -187,7 +191,7 @@ Now you can update the `NotePage` view to use the `Note` data model and delete c
 1. Instead, add a `Note` object named `noteModel` in their place. This represents the note data that `NotePage` provides a view of.
 
     ```csharp
-    private Note? noteModel;
+    private Note noteModel = new Note();
     ```
 
 1. You also don't need the `NotePage_Loaded` event handler anymore. You won't be reading text directly from the text file into the TextBox. Instead, the note text will be read into `Note` objects. You'll add the code for this when you add the `AllNotesPage` in a later step. Delete these lines.
@@ -199,7 +203,7 @@ Now you can update the `NotePage` view to use the `Note` data model and delete c
 
     private async void NotePage_Loaded(object sender, RoutedEventArgs e)
     {
-        noteFile = (StorageFile)await storageFolder.TryGetItemAsync(fileName);
+        noteFile = await storageFolder.TryGetItemAsync(fileName) as StorageFile;
         if (noteFile is not null)
         {
           NoteEditor.Text = await FileIO.ReadTextAsync(noteFile);
@@ -210,26 +214,20 @@ Now you can update the `NotePage` view to use the `Note` data model and delete c
 1. Replace the code in the `SaveButton_Click` method with this:
 
     ```csharp
-    if (noteModel is not null)
-    {
-        await noteModel.SaveAsync();
-    }
+    await noteModel.SaveAsync();
     ```
 
 1. Replace the code in the `DeleteButton_Click` method with this:
 
     ```csharp
-    if (noteModel is not null)
-    {
-        await noteModel.DeleteAsync();
-    }
+    await noteModel.DeleteAsync();
     ```
 
 Now you can update the XAML file to use the `Note` model. Previously, you read the text directly from the text file into the `TextBox.Text` property in the code-behind file. Now, you use data binding for the `Text` property.
 
 1. Open the **Views\NotePage.xaml** file if it's not already open in the editor.
 1. Add a `Text` attribute to the `TextBox` control. Bind it to the `Text` property of `noteModel`: `Text="{x:Bind noteModel.Text, Mode=TwoWay}"`.
-1. Update the `Header` to bind to the `Date` property of `noteModel`: `Header="{x:Bind noteModel.Date.ToString()}"`.
+1. Update the `Header` to bind to the `Date` property of `noteModel`: `Header="{x:Bind noteModel.Date.ToString(), Mode=OneTime}"`.
 
     ```xaml
     <TextBox x:Name="NoteEditor"
@@ -239,7 +237,7 @@ Now you can update the XAML file to use the `Note` model. Previously, you read t
              TextWrapping="Wrap"
              PlaceholderText="Enter your note"
              <!-- ↓ Update this line. ↓ -->
-             Header="{x:Bind noteModel.Date.ToString()}"
+             Header="{x:Bind noteModel.Date.ToString(), Mode=OneTime}"
              ScrollViewer.VerticalScrollBarVisibility="Auto"
              Width="400"
              Grid.Column="1"/>

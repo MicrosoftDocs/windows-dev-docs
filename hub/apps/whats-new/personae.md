@@ -2,7 +2,7 @@
 title: Choose tools and frameworks for your Windows app
 description: Compare common Windows developer profiles and application types to choose suitable frameworks, technologies, and development tools.
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
-ms.date: 10/02/2026
+ms.date: 11/13/2026
 author: GrantMeStrength
 ms.author: jken
 ms.reviewer: jken
@@ -10,15 +10,11 @@ ms.topic: overview
 ms.localizationpriority: medium
 ---
 
-# Choose Windows development tools and frameworks
-
-Windows supports desktop apps, web experiences, games, cross-platform solutions, and other development workflows. Use the developer profiles and application types on this page to identify technologies that fit your goals.
-
-## Explore developer profiles
+# Explore developer profiles
 
 These profiles represent common Windows development scenarios. Your project might combine technologies and tools from more than one profile.
 
-### Emily: Desktop app developer
+## Emily: Desktop app developer
 
 :::row:::
     :::column:::
@@ -38,7 +34,7 @@ These profiles represent common Windows development scenarios. Your project migh
     :::column-end:::
 :::row-end:::
 
-### Carlos: Web app developer
+## Carlos: Web app developer
 
 :::row:::
     :::column:::
@@ -58,7 +54,7 @@ These profiles represent common Windows development scenarios. Your project migh
     :::column-end:::
 :::row-end:::
 
-### Aisha: Game developer
+## Aisha: Game developer
 
 :::row:::
     :::column:::
@@ -78,7 +74,7 @@ These profiles represent common Windows development scenarios. Your project migh
     :::column-end:::
 :::row-end:::
 
-### David: Enterprise and line-of-business developer
+## David: Enterprise and line-of-business developer
 
 :::row:::
     :::column:::
@@ -100,7 +96,7 @@ These profiles represent common Windows development scenarios. Your project migh
     :::column-end:::
 :::row-end:::
 
-### Pradeep: Cross-platform app developer
+## Pradeep: Cross-platform app developer
 
 :::row:::
     :::column:::
@@ -120,7 +116,7 @@ These profiles represent common Windows development scenarios. Your project migh
     :::column-end:::
 :::row-end:::
 
-### Liam: Open-source and community developer
+## Liam: Open-source and community developer
 
 :::row:::
     :::column:::

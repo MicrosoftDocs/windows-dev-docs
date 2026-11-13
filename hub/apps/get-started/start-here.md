@@ -4,7 +4,7 @@ description: Install your tools, create and run a C# WinUI app with winapp CLI o
 author: GrantMeStrength
 ms.author: jken
 ms.topic: quickstart
-ms.date: 11/04/2026
+ms.date: 11/13/2026
 keywords: windows, desktop development, winui
 ms.localizationpriority: medium
 ms.collection: windows11
@@ -14,9 +14,7 @@ ms.collection: windows11
 
 Build your first WinUI app and see it come to life on Windows. This quickstart takes you from tool setup to a running app, then guides you through your first interface update.
 
-## Before you start
-
-### What you'll learn
+## What you'll learn
 
 > [!div class="checklist"]
 >
@@ -24,7 +22,7 @@ Build your first WinUI app and see it come to life on Windows. This quickstart t
 > - Create and run a WinUI app.
 > - Update the interface and see your change in the running app.
 
-### Choose your development tools
+## Choose your development tools
 
 Follow either recommended path through this quickstart:
 

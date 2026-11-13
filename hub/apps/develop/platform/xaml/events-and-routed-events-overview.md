@@ -1,8 +1,10 @@
 ---
 description: We describe the programming concept of events and routed events in WinUI 3 and UWP apps, when using XAML for your UI definition.
 title: Events and routed events overview
+author: GrantMeStrength
+ms.author: jken
 ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
-ms.date: 11/05/2026
+ms.date: 11/13/2026
 ms.topic: concept-article
 keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
@@ -31,7 +33,9 @@ When you create a WinUI (or UWP) app, the UI is defined in markup (XAML). In XAM
 
 One of the most common programming tasks for a WinUI app is to capture user input to the UI. For example, your UI might have a button that the user must click to submit info or to change state.
 
-You define the UI for your WinUI app by generating XAML. This XAML is usually the output from a design surface in Visual Studio. You can also write the XAML in a plain-text editor or a third-party XAML editor. While generating that XAML, you can wire event handlers for individual UI elements at the same time that you define all the other XAML attributes that establish property values of that UI element.
+Define your WinUI 3 UI in XAML using Visual Studio or another text editor. Attach event handlers by adding event attributes to UI elements.
+
+Use XAML Hot Reload and Live Visual Tree to inspect and adjust the running app. Visual Studio doesn't provide a XAML Designer for WinUI 3. For details, see [XAML runtime design tools](../../ui/xaml-runtime-design-tools.md).
 
 To wire the events in XAML, you specify the string-form name of the handler method that you've already defined or will define later in your code-behind. For example, this XAML defines a [**Button**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.Button) object with other properties ([x:Name attribute](x-name-attribute.md), [**Content**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.contentcontrol.content)) assigned as attributes, and wires a handler for the button's [**Click**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.primitives.buttonbase.click) event by referencing a method named `ShowUpdatesButton_Click`:
 

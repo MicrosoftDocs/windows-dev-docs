@@ -119,7 +119,8 @@ Now you're going to add code to the **NotePage.xaml.cs** code-behind file to han
     ```csharp
     public sealed partial class NotePage : Page
     {
-        private StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
+        private readonly StorageFolder storageFolder =
+            Microsoft.Windows.Storage.ApplicationData.GetDefault().LocalFolder;
         private StorageFile? noteFile = null;
         private string fileName = "note.txt";
     ```
@@ -141,7 +142,7 @@ Now you're going to add code to the **NotePage.xaml.cs** code-behind file to han
     // ↓ Add this event handler method. ↓
     private async void NotePage_Loaded(object sender, RoutedEventArgs e)
     {
-        noteFile = (StorageFile)await storageFolder.TryGetItemAsync(fileName);
+        noteFile = await storageFolder.TryGetItemAsync(fileName) as StorageFile;
         if (noteFile is not null)
         {
             NoteEditor.Text = await FileIO.ReadTextAsync(noteFile);
@@ -242,7 +243,8 @@ namespace WinUINotes
 {
     public sealed partial class NotePage : Page
     {
-        private StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
+        private readonly StorageFolder storageFolder =
+            Microsoft.Windows.Storage.ApplicationData.GetDefault().LocalFolder;
         private StorageFile? noteFile = null;
         private string fileName = "note.txt";
 
@@ -254,7 +256,7 @@ namespace WinUINotes
 
         private async void NotePage_Loaded(object sender, RoutedEventArgs e)
         {
-            noteFile = (StorageFile)await storageFolder.TryGetItemAsync(fileName);
+            noteFile = await storageFolder.TryGetItemAsync(fileName) as StorageFile;
             if (noteFile is not null)
             {
                 NoteEditor.Text = await FileIO.ReadTextAsync(noteFile);

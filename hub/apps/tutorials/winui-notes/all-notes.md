@@ -44,17 +44,12 @@ The new data model represents the data required to display multiple notes. Here,
             public ObservableCollection<Note> Notes { get; set; } = 
                                         new ObservableCollection<Note>();
     
-            public AllNotes()
-            {
-                LoadNotes();
-            }
-    
-            public async void LoadNotes()
+            public async Task LoadNotesAsync()
             {
                 Notes.Clear();
                 // Get the folder where the notes are stored.
-                StorageFolder storageFolder = 
-                              ApplicationData.Current.LocalFolder;
+                StorageFolder storageFolder =
+                    Microsoft.Windows.Storage.ApplicationData.GetDefault().LocalFolder;
                 await GetFilesInFolderAsync(storageFolder);
             }
     
@@ -87,10 +82,7 @@ The new data model represents the data required to display multiple notes. Here,
     }
     ```
 
-The previous code declares a collection of `Note` items, named `Notes`, and uses the `LoadNotes` method to load notes from the app's local storage.
-
-> [!NOTE]
-> The `LoadNotes` method uses `async void` instead of `async Task` because it's called from the constructor, which cannot be `async`. This fire-and-forget pattern is acceptable here since the method is an event-like initialization routine.
+The previous code declares a collection of `Note` items, named `Notes`, and uses the `LoadNotesAsync` method to load notes from the app's local storage. The method returns a `Task` so callers can await the file operations and handle any errors.
 
 The `Notes` collection uses an [ObservableCollection](/dotnet/api/system.collections.objectmodel.observablecollection-1), which is a specialized collection that works well with data binding. When a control that lists multiple items, such as an [ItemsView](../../develop/ui/controls/itemsview.md), is bound to an `ObservableCollection`, the two work together to automatically keep the list of items in sync with the collection. If an item is added to the collection, the control is automatically updated with the new item. If an item is added to the list, the collection is updated.
 
@@ -105,18 +97,24 @@ Now that the `AllNotes` model is ready to provide data for the view, you need to
 1. In the `AllNotesPage` class, add this code to create an `AllNotes` model named _notesModel_:
 
     > [!NOTE]
-    > You'll need to add `using WinUINotes.Models;` at the top of the file to reference the `AllNotes` class.
+    > You'll need to add `using Microsoft.UI.Xaml;` and `using WinUINotes.Models;` at the top of the file to reference `RoutedEventArgs` and the `AllNotes` class.
 
     ```csharp
     public sealed partial class AllNotesPage : Page
     {
         // ↓ Add this. ↓
-        private AllNotes notesModel = new AllNotes();
+        private readonly AllNotes notesModel = new AllNotes();
         // ↑ Add this. ↑
 
         public AllNotesPage()
         {
             this.InitializeComponent();
+            Loaded += AllNotesPage_Loaded;
+        }
+
+        private async void AllNotesPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            await notesModel.LoadNotesAsync();
         }
     }
     ```
@@ -143,7 +141,7 @@ Next, you need to design the view to support the `AllNotes` model.
             </CommandBar.Content>
         </CommandBar>
 
-        <ItemsView ItemsSource="{x:Bind notesModel.Notes}" 
+        <ItemsView ItemsSource="{x:Bind notesModel.Notes, Mode=OneTime}"
                Grid.Row="1" Padding="16" >
             <ItemsView.Layout>
                 <UniformGridLayout MinItemWidth="200"
@@ -163,7 +161,7 @@ The previous XAML introduces a few new concepts:
 Now that you've created `AllNotesPage`, you need to update `MainWindow.xaml` one last time so that it loads `AllNotesPage` instead of an individual `NotePage`.
 
 1. In the **Solution Explorer** pane, open the **MainWindow.xaml** file.
-1. Update the `rootFrame` element so that the `SourcePageType` points to `views.AllNotesPage`, like this:
+1. Update the `rootFrame` element so that the `SourcePageType` points to `views:AllNotesPage`, like this:
 
     ```xaml
     <Frame x:Name="rootFrame" Grid.Row="1"
@@ -210,12 +208,12 @@ You need to specify a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsof
                         <RowDefinition Height="120"/>
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
-                    <TextBlock Text="{x:Bind Text}" Margin="12,8"
+                    <TextBlock Text="{x:Bind Text, Mode=OneTime}" Margin="12,8"
                                TextWrapping="Wrap"
                                TextTrimming="WordEllipsis"/>
                     <Border Grid.Row="1" Padding="8,6,0,6"
                             Background="Gray">
-                        <TextBlock Text="{x:Bind Date}"
+                        <TextBlock Text="{x:Bind Date, Mode=OneTime}"
                                    Foreground="White"/>
                     </Border>
                 </Grid>
@@ -228,7 +226,7 @@ You need to specify a [DataTemplate](/windows/windows-app-sdk/api/winrt/microsof
 1. In the XAML for `ItemsView`, change `Padding="16"` to `Margin="24"` and assign the `ItemTemplate` property to the data template you just created:
 
     ```xaml
-    <ItemsView ItemsSource="{x:Bind notesModel.Notes}"
+    <ItemsView ItemsSource="{x:Bind notesModel.Notes, Mode=OneTime}"
                Grid.Row="1" Margin="24"
                <!-- ↓ Add this. ↓ -->
                ItemTemplate="{StaticResource NoteItemTemplate}">
@@ -273,14 +271,14 @@ WinUI includes a variety of built-in resources that you can use to make your app
                     <RowDefinition Height="120"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <TextBlock Text="{x:Bind Text}" Margin="12,8"
+                <TextBlock Text="{x:Bind Text, Mode=OneTime}" Margin="12,8"
                            TextWrapping="Wrap"
                            TextTrimming="WordEllipsis"/>
 
     <!-- ↓ Update this. ↓ -->
                 <Border Grid.Row="1" Padding="8,6,0,6"
                         Background="{ThemeResource SubtleFillColorSecondaryBrush}">
-                    <TextBlock Text="{x:Bind Date}"
+                    <TextBlock Text="{x:Bind Date, Mode=OneTime}"
                         Style="{StaticResource CaptionTextBlockStyle}"
                         Foreground="{ThemeResource TextFillColorSecondaryBrush}"/>
     <!-- ↑ Update this. ↑ -->
