@@ -1,7 +1,7 @@
 ---
 title: ZoomIt Screen Zoom and Annotation Tool by Sysinternals
-description: ZoomIt by Sysinternals is a powerful screen zoom, annotation, and recording tool for technical presentations. Download with PowerToys or standalone. Perfect for demos and screen capture.
-ms.date: 10/14/2026
+description: Learn to zoom, annotate, record, and capture screenshots with ZoomIt in PowerToys, including on-device snip dictation.
+ms.date: 11/16/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Win]
 #Customer intent: As a Windows power user, I want to learn about the ZoomIt utility by Sysinternals, which is now available with PowerToys.
@@ -99,6 +99,7 @@ In addition to enabling or disabling ZoomIt in the PowerToys Settings, you can c
 | Save snip to file | Save a snip directly to a file. The default hotkey is <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>6</kbd>. |
 | Copy to clipboard when saving | Also copy the snip to the clipboard whenever you save it to a file. This setting is off by default. |
 | Text recognition and extraction | Copy text from the selected region to the clipboard. The default hotkey is <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>6</kbd>. |
+| Snip with dictation | Enable speech transcription while selecting a snip. Press <kbd>Space</kbd> during the drag to start listening. This setting is off by default. |
 | Scrolling screenshot | Capture a scrolling screenshot (panorama) from a selected region. The default hotkey is <kbd>Ctrl</kbd>+<kbd>8</kbd>. |
 | Save scrolling screenshot to file | Save a scrolling screenshot directly to a file. The default hotkey is <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>8</kbd>. |
 
@@ -107,6 +108,18 @@ In addition to enabling or disabling ZoomIt in the PowerToys Settings, you can c
 ZoomIt 0.101 adds **DemoMirror**, which mirrors the full screen, a selected region, or the window under your pointer to a second monitor, including the mouse pointer. While the mirrored view is active, you can still use ZoomIt zoom and draw to annotate the mirrored content.
 
 When you save a standard screenshot to a file, ZoomIt offers **Zoomed PNG**, **Actual size PNG**, **Zoomed WebP**, **Actual size WebP**, **Zoomed JPG**, and **Actual size JPG**. When you save a scrolling screenshot to a file, the save dialog offers **PNG**, **WebP**, or **JPEG**.
+
+## Snip with dictation
+
+Starting with PowerToys 0.102, ZoomIt can put a screenshot and a spoken annotation on the clipboard together. Speech recognition runs on your device.
+
+1. In ZoomIt settings, turn on **Snip with dictation**.
+2. Under **Record**, select the microphone you want to use.
+3. Press your snip activation shortcut, <kbd>Ctrl</kbd>+<kbd>6</kbd> by default, and drag to select a region.
+4. While you hold the mouse button, press <kbd>Space</kbd> and speak your annotation.
+5. Release the mouse button and wait for transcription to finish, then press <kbd>Ctrl</kbd>+<kbd>V</kbd> to paste into an app that accepts images and text.
+
+Dictation uses the same microphone selection as recording, but you don't need to enable microphone capture for recordings. If no speech is transcribed, the clipboard contains the image only.
 
 ## Recording and trim editor
 
