@@ -2,7 +2,7 @@
 title: "Quickstart: Build and publish a Windows app with AI"
 description: Build and publish a WinUI 3 app with Visual Studio Code, the WinUI Agent, .NET templates, and the Windows App Development CLI.
 ms.topic: quickstart
-ms.date: 11/10/2026
+ms.date: 11/16/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -64,7 +64,6 @@ winget install GitHub.cli
 
 ```powershell
 gh auth login
-gh extension install github/gh-copilot
 ```
 
 **6. WinUI agent plugin for GitHub Copilot**
@@ -190,7 +189,7 @@ Publishing has two parts: a one-time setup in Partner Center, and then command-l
 
 You've built and published a Windows app using only free tools and AI assistance. Here's where to go next:
 
-- **Go deeper on AI**: [WinUI agent plugin](winui-agent-plugin.md) — learn all 8 skills and when to use each
+- **Go deeper on AI**: [WinUI agent plugin](winui-agent-plugin.md) — learn all 7 skills and when to use each
 - **Use VS Code fully**: [VS Code tools](vs-code-tools.md) — run, debug, package, and sign without the terminal
 - **Have an existing app?**: [Migrate from WPF](migrate/wpf-to-winui.md) or [migrate from UWP](migrate/uwp-to-winui.md) with AI assistance
 - **Write better tests**: [AI-assisted testing](testing.md) — generate and automate UI tests

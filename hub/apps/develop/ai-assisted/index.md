@@ -2,7 +2,7 @@
 title: AI-assisted Windows development
 description: Use AI coding assistants with Windows development tools to create WinUI apps, add features, and generate UI Automation tests.
 ms.topic: overview
-ms.date: 10/08/2026
+ms.date: 11/16/2026
 ms.author: jken
 author: GrantMeStrength
 ---
@@ -44,7 +44,7 @@ The Windows App Development CLI handles project and packaging tasks, while the W
 |------|-------------|
 | **[Windows App Development CLI](../../dev-tools/winapp-cli/index.md)** | Create, run, package, sign, and publish Windows apps from the command line |
 | **[WinApp extension for Visual Studio Code](vs-code-tools.md#winapp-vs-code-extension)** | Run Windows App Development CLI commands from the Visual Studio Code Command Palette |
-| **[WinUI agent plugin](winui-agent-plugin.md)** | 8 skills for end-to-end WinUI development in GitHub Copilot or Claude Code |
+| **[WinUI agent plugin](winui-agent-plugin.md)** | 7 skills for end-to-end WinUI development in AI coding agents such as GitHub Copilot, Claude Code, and Codex |
 | **[Microsoft Execution Containers (MXC)](../mxc/index.md)** | Understand execution boundaries, choose a containment model, and refine policies for generated code and agent tools |
 
 ---
@@ -69,7 +69,7 @@ Yes. The Windows App Development CLI, WinApp extension, and `dotnet new` templat
 
 ### Does this work with Claude Code as well as GitHub Copilot?
 
-Yes. You can use the `winui@awesome-copilot` plugin with GitHub Copilot or Claude Code.
+Yes. The WinUI agent plugin works with AI coding agents such as GitHub Copilot, Claude Code, and Codex. For install steps, see [Install the plugin](winui-agent-plugin.md#install-the-plugin).
 
 ---
 
