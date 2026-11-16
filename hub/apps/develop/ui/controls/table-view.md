@@ -3,7 +3,7 @@ title: TableView control for WinUI apps
 description: Learn how to display, sort, filter, group, and edit tabular data with the experimental TableView control in the Windows App SDK.
 author: GrantMeStrength
 ms.author: jken
-ms.date: 10/13/2026
+ms.date: 11/16/2026
 ms.topic: how-to
 ms.localizationpriority: medium
 ---
@@ -72,7 +72,12 @@ TableView requires theme resources that aren't included in `XamlControlsResource
 </Application.Resources>
 ```
 
-If you don't merge these resources, your app throws a XAML parse exception when it first lays out a TableView.
+If you don't merge these resources, your app throws a XAML parse exception when it first lays out a TableView. The exception message includes `Cannot find a Resource with the Name/Key` followed by the name of a TableView resource. It doesn't mention `TabularControlsResources`.
+
+If you override TableView resources in your own merged dictionaries, add those dictionaries after `TabularControlsResources`.
+
+> [!TIP]
+> Starting in Windows App SDK 2.6.6-experimental, if `TabularControlsResources` isn't merged when a TableView is created, TableView writes a message that starts with `TableView setup:` to the Visual Studio **Output** window. The message shows the entry to add to *App.xaml*. To see it, debug with native or mixed-mode debugging. In a C# project, select **Enable native code debugging** in the project's debug launch profile.
 
 To use TableView in markup, declare the `Microsoft.UI.Xaml.Controls.Tabular` namespace. The examples in this article use the `tabular` prefix for this namespace and the `local` prefix for the app's own namespace:
 
