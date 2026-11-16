@@ -1044,6 +1044,10 @@ items:
                 href: ui/controls/tree-view.md
               - name: Items repeater
                 href: ui/controls/items-repeater.md
+              - name: Table view (experimental)
+                href: ui/controls/table-view.md
+              - name: Chart (experimental)
+                href: ui/controls/chart.md
               - name: Item containers and templates
                 items:
                   - name: Item containers and templates
