@@ -1,7 +1,7 @@
 ---
 title: FancyZones Window Manager for Windows - PowerToys
 description: FancyZones is a powerful window manager utility in PowerToys that helps you arrange and snap windows into custom layouts for improved productivity. Learn how to create zones and manage windows efficiently.
-ms.date: 10/14/2026
+ms.date: 11/17/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, FancyZones, Fancy, Zone, Zones, Win]
@@ -206,7 +206,9 @@ In the demo below, we start with a default template applied to the screen and tw
 
 ## Command-line reference
 
-The FancyZones CLI lets you apply and manage window layouts directly from the command line. PowerToys adds its `bin` folder to your `PATH`, so you can run `PowerToys.FancyZones.CLI.exe` from any folder in Windows Terminal, PowerShell, or Command Prompt. If a terminal was already open when you installed PowerToys, open a new one so it picks up the updated `PATH`.
+The FancyZones CLI lets you apply and manage window layouts directly from the command line. PowerToys adds its `bin` folder to your `PATH`, so you can run `PowerToys.FancyZones.CLI.exe` from any folder in Windows Terminal, PowerShell, or Command Prompt. If a terminal was already open when you installed PowerToys, open a new one so it picks up the updated `PATH`. For installation paths and command discovery, see [PowerToys command-line tools](general.md#command-line-tools).
+
+Before you run a command, start PowerToys and enable FancyZones in PowerToys Settings. The `PowerToys.FancyZones.exe` process must be running for operational commands, including commands that list layouts, monitors, or hotkeys and `open-settings`. Displaying `--help` or `--version` doesn't require FancyZones to be running.
 
 | Command | Alias | Description |
 | :-- | :-- | :-- |
@@ -240,6 +242,10 @@ PowerToys.FancyZones.CLI.exe shk 3 xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 
 > [!NOTE]
 > In PowerShell, braces define a script block. Enter layout UUIDs without braces, as shown in the examples, or put the UUID in quotes.
+
+### Missing layout data
+
+If `PowerToys.FancyZones.CLI.exe ls` reports `Error: File not found: layout-templates.json`, the command has started but can't read the layout data. This is a known issue tracked in [microsoft/PowerToys#52186](https://github.com/microsoft/PowerToys/issues/52186), not a command discovery or `PATH` error. Creating settings JSON files manually isn't a required CLI setup step, and changing `PATH` doesn't resolve this error.
 
 ## Application compatibility
 

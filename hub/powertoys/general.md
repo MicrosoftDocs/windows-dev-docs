@@ -1,7 +1,7 @@
 ---
 title: Configure PowerToys General Settings for Windows
 description: Configure PowerToys general settings including updates, admin mode, themes, and startup behavior. Learn how to customize your Windows PowerToys experience with our step-by-step guide.
-ms.date: 10/14/2026
+ms.date: 11/17/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Insider, CLI]
 # Customer intent: As a Windows power user, I want to learn how to configure the general settings for PowerToys.
@@ -88,7 +88,9 @@ Set a location where you want to save your PowerToys settings. You can also rest
 
 ## Command-line tools
 
-PowerToys includes command-line tools that you can use in scripts and terminals. The installer adds the `bin` folder of the PowerToys installation folder to your `PATH` environment variable, so you can run these tools from any terminal without typing the full path. For per-user installations, PowerToys updates the user `PATH`; for machine-wide installations, it updates the system `PATH`. Open a new terminal window after you install PowerToys to pick up the change.
+PowerToys includes command-line tools that you can use in scripts and terminals. The installer adds the `bin` folder of the PowerToys installation folder to your `PATH` environment variable, so you can run the commands in the following table without typing the full path. For per-user installations, PowerToys updates the user `PATH`; for machine-wide installations, it updates the system `PATH`. Open a new terminal window after you install PowerToys to pick up the change.
+
+The default `bin` folder is `$env:LOCALAPPDATA\PowerToys\bin` for a per-user installation or `$env:ProgramFiles\PowerToys\bin` for a machine-wide installation, using PowerShell environment variable syntax. If you choose a custom installation folder, use its `bin` subfolder instead.
 
 | Command | Description |
 | :--- | :--- |
@@ -100,7 +102,36 @@ PowerToys includes command-line tools that you can use in scripts and terminals.
 | `PowerToys.LightSwitch.CLI.exe` | Check the Light Switch state, switch between light and dark themes, and turn scheduling on or off. Light Switch must be enabled. |
 | `PowerToys.PowerDisplay.CLI.exe` | Command-line interface for Power Display. For more information, see [Power Display command-line interface](./power-display.md#command-line-interface). |
 
-Each command forwards its arguments to the matching tool in the PowerToys installation folder. Run a command with `--help` to see the options that it supports.
+These executables are launchers, also called *shims*, that forward arguments to the matching tool elsewhere in the PowerToys installation. Keep them in their installed `bin` folder; copying a shim on its own doesn't copy the tool it launches. Run a command with `--help` to see the options that it supports. Command availability depends on your installed version; preview releases can include commands that aren't available in the stable release.
+
+The `PowerToys.Workspaces.CLI.exe` shim is available in preview releases only, not in the stable release. For its commands and prerequisites, see the [Workspaces command-line reference](workspaces.md).
+
+Not every PowerToys executable has a `bin` shim. Invoke [Awake](awake.md#command-line-interface-cli), [Peek](peek.md#use-peek-from-the-command-line), and [PowerToys.DSC.exe](dsc-configure/microsoft-dsc.md) by their executable paths as described in their documentation. Adding `bin` to `PATH` doesn't make these separate executables available by name. Don't add the installation root or `WinUI3Apps` folder to `PATH` to discover the shim commands.
+
+### Find and troubleshoot commands
+
+In PowerShell, check which executable a command resolves to:
+
+```powershell
+Get-Command PowerToys.FancyZones.CLI.exe
+```
+
+To list the installed shims or invoke one by its full path, use your installation's `bin` folder. This example uses the default per-user installation:
+
+```powershell
+Get-ChildItem "$env:LOCALAPPDATA\PowerToys\bin\*.exe"
+& "$env:LOCALAPPDATA\PowerToys\bin\PowerToys.FancyZones.CLI.exe" --help
+```
+
+For a machine-wide installation, replace `$env:LOCALAPPDATA` with `$env:ProgramFiles`. For a custom installation, substitute its actual path.
+
+| Symptom | What to check |
+| :--- | :--- |
+| Your shell reports that the command isn't recognized or wasn't found. | Open a new terminal after installation. Check that the command exists in your installation's `bin` folder and that this folder is on `PATH`. Try its full path to distinguish command discovery from a tool error. |
+| The shim starts but reports that its target executable is missing. | Check that you're using the shim from the current PowerToys installation, not a copied shim or one from an old installation. Reinstall PowerToys if the installation is incomplete; adding more folders to `PATH` doesn't restore a missing target. |
+| The tool reports that a utility is disabled or isn't running. | Follow that utility's prerequisites. For example, [FancyZones operational commands](fancyzones.md#command-line-reference) require PowerToys to be running with FancyZones enabled. Finding the command on `PATH` doesn't start or enable the utility. |
+
+An error about a settings file is different from a missing executable. For example, see [FancyZones missing layout data](fancyzones.md#missing-layout-data) for the `layout-templates.json` error.
 
 ### Settings CLI
 
