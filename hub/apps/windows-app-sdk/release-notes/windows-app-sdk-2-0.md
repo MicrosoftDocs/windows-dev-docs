@@ -2,7 +2,7 @@
 title: Windows App SDK 2.0 release notes
 description: Release notes for Windows App SDK 2.0 across the Stable, Preview, and Experimental channels, with feature highlights, bug fixes, and API changes.
 ms.topic: release-notes
-ms.date: 11/06/2026
+ms.date: 11/16/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -13,6 +13,65 @@ zone_pivot_groups: wasdk-release-channels
 [!INCLUDE [wasdk-releasenotes](../../../includes/wasdk-release-notes.md)]
 
 :::zone pivot="stable"
+
+## Version 2.7.0
+
+Released: **November 17, 2026** <br><br>
+
+<details><summary>Windows AI Updates</summary>
+
+>
+> - Added LoRA adapter compatibility status and Language Model name/version properties to help apps select adapters and identify compatibility warnings or loading failures. Availability of model identity and detailed compatibility results depends on the installed AI components. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): LanguageModel_LowRankAdapterCompatibility)
+> - Added **LanguageModelResponseStatus.InsufficientVideoRam** and **LanguageModelResponseStatus.BlockedByGameMode** so apps can tell when GPU inference stops because video memory is low or Game Mode is active. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): LanguageModel_ResourceContentionErrors)
+> - Enabled LanguageModel to run on devices with compatible GPU. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): LanguageModelGpuSupport)
+>
+
+</details>
+
+<details><summary>Updated ONNX Runtime</summary>
+
+>
+> The version of ONNX Runtime has been updated to 1.28.3. See [ONNX Runtime versions](/windows/ai/new-windows-ml/onnx-versions) for more info. The Windows ML dependency has been updated to version 2.5.96.
+>
+
+</details>
+
+<details><summary>Bug fixes</summary>
+
+>
+> - Fixed an input offset in DPI-aware apps when **CompositionEngineType.System** is selected. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): InputPointerSource_SystemEngineDPIOffset)
+> - Fixed the Text Cursor Indicator not appearing immediately when an empty **TextBox** or **RichEditBox** receives focus. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): WinUI_TextCursorIndicatorForEmptyTextControl)
+> - Fixed **ContentDialog** entrance animations not playing and **MenuFlyout** items incorrectly showing tooltips when **XamlChangeId.OptimizeApplyStyles** is enabled. For more info, see GitHub issue [#11257](https://github.com/microsoft/microsoft-ui-xaml/issues/11257). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Xaml_OptimizeApplyStylesApplyTemplate)
+> - Fixed a crash when reading **Window.DispatcherQueue** from a background thread after the window's XAML thread shuts down. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): Window_DispatcherQueueAfterXamlShutdown)
+> - Fixed a **LanguageModel** streaming crash when the session host terminates and improved recovery for eligible requests that fail before any response is returned. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): LanguageModel_StreamingAndHostExitRecovery)
+> - Fixed an issue that prevented ARM64EC applications from starting on ARM64 Windows because the runtime could not resolve the **TransformPoint** entry point. For more info, see GitHub issue [#6911](https://github.com/microsoft/WindowsAppSDK/issues/6911). ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, DLL import resolution occurs before runtime containment can execute)
+> - Fixed first-chance exceptions in default **ScrollBar** templates when **DefaultStyleOptimizations** is enabled. ([RuntimeCompatibilityChange](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions.disabledchanges): N/A, default template change in a .xaml file)
+>
+
+</details>
+
+<details><summary>New or updated APIs</summary>
+
+>
+> This release includes the following new APIs compared to the 2.6.5 release:
+> ```text
+> Microsoft.Windows.AI.Text
+>
+>     LanguageModel
+>         ModelName
+>         ModelVersion
+>
+>     LanguageModelLowRankAdapterResult
+>         Status
+>
+>     LanguageModelLowRankAdapterStatus
+>     LanguageModelResponseStatus
+>         BlockedByGameMode
+>         InsufficientVideoRam
+> ```
+>
+
+</details>
 
 ## Version 2.6.5
 
