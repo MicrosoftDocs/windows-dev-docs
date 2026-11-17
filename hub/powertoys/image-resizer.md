@@ -1,7 +1,7 @@
 ---
 title: Image Resizer utility for Windows - PowerToys
 description: Resize images in bulk with PowerToys Image Resizer utility. Learn how to quickly resize multiple images using this Windows shell extension with drag-and-drop support.
-ms.date: 10/14/2026
+ms.date: 11/17/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 no-loc: [PowerToys, Windows, File Explorer, Image Resizer]
@@ -98,7 +98,9 @@ The Image Resizer CLI lets you resize one or more images from the command line. 
 | `--quality` | `-q` | JPEG quality (1–100) |
 | `--keep-date-modified` |  | Preserve source last-write time |
 | `--filename` | `-n` | Output filename format (for example, `%1` for the original name and `%2` for the size name) |
-| `--progress-lines` | `--accessible` | Report progress as separate lines at 0%, 25%, 50%, 75%, and 100% for screen reader accessibility |
+| `--progress-lines` | `--accessible` | Report actual progress as separate lines for screen reader accessibility, with updates throttled to 25% milestone intervals |
+
+Progress percentages reflect the number of images processed, so they might skip exact milestone values. For example, a three-image batch reports 33%, 66%, and 100%; a one-image batch reports only 100%.
 
 If you specify `--width` or `--height`, the CLI resizes to those custom dimensions instead of the preset selected with `--size`. If you use `Percent` with **Fill** or **Fit**, specify a width value. Height-only percentage resizing is only supported with **Stretch**. Also, `--size` must refer to an existing preset index; if the index is out of range, the CLI returns an error and doesn't modify the input files.
 
