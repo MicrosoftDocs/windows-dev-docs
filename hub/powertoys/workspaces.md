@@ -1,7 +1,9 @@
 ---
 title: PowerToys Workspaces Utility for Windows Desktop Management
-description: Learn how to use PowerToys Workspaces utility to efficiently launch applications in custom positions and configurations. Create desktop layouts, add CLI arguments, and manage workspaces with this Windows desktop manager tool.
-ms.date: 10/14/2026
+description: Use PowerToys Workspaces to save desktop layouts, launch and position apps, and list or launch saved workspaces from the command line.
+author: GrantMeStrength
+ms.author: jken
+ms.date: 11/17/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Win]
 # customer intent: As a Windows power user, I want to learn how to use the Workspaces utility for Windows.
@@ -44,6 +46,61 @@ While the workspace launches, PowerToys will display a dialog box presenting the
 | ![Red X](images/workspaces/failed.png) | The app has failed to launch. |
 
 The dialog box will dismiss itself once all apps have properly launched and been arranged in their desired positions. You can also dismiss the dialog yourself at any time, or use it to cancel the launch.
+
+## Command-line interface (preview)
+
+> [!IMPORTANT]
+> The Workspaces CLI is available in PowerToys preview builds that include `PowerToys.Workspaces.CLI.exe`. Don't assume that your installed stable release includes it. For preview update options, see [PowerToys update channels](update-channel.md).
+
+Use the CLI to list saved workspaces, inspect their configuration, or launch one. It doesn't capture, create, import, edit, or delete workspaces. To create or change a layout, use the Workspaces editor.
+
+Enable Workspaces in **PowerToys Settings** before you run `list` or `launch`. Group Policy overrides the user setting. The CLI doesn't enable the module, and PowerToys doesn't need to be running when Workspaces is enabled. Help and version commands work even when the module is disabled.
+
+The installer adds the PowerToys installation's `bin` folder to `PATH`. Open a new terminal after installation, and run:
+
+```powershell
+PowerToys.Workspaces.CLI.exe --help
+PowerToys.Workspaces.CLI.exe --version
+PowerToys.Workspaces.CLI.exe list
+```
+
+If Windows can't find the command, check that your preview installation includes `bin\PowerToys.Workspaces.CLI.exe`. Don't add the installation root or `WinUI3Apps` folder to `PATH`; those folders contain application and runtime DLLs.
+
+### Select and launch a workspace
+
+Use `list` to find workspace names and IDs. For a selected workspace, specify exactly one of `--id` or `--name`. Names match the whole saved name, ignoring case. If multiple workspaces have the same name, use the ID. GUIDs accept either case, with or without braces.
+
+The following examples use a saved workspace named `Development`. Replace it with your workspace name.
+
+```powershell
+PowerToys.Workspaces.CLI.exe list --name "Development" --details --json
+PowerToys.Workspaces.CLI.exe launch --name "Development" --timeout 120 --json
+```
+
+You can replace `--name "Development"` with `--id "{workspace-guid}"`, using an ID returned by `list`. The `--details` option requires a selector and is available only with `list`. Detail output includes saved paths and command-line arguments, so protect any output you save or share.
+
+Launch waits for the engine's final result. The default timeout is 120 seconds; `--timeout` accepts 1 through 600 seconds. Launch uses the saved **Move existing windows** and per-app administrator settings. It suppresses the editor and launch-progress windows, but application windows, Windows UAC prompts, and Workspaces signature-confirmation dialogs can still appear. Run it in an interactive desktop session, not as an unattended operation that assumes prompts can't occur.
+
+Press <kbd>Ctrl</kbd>+<kbd>C</kbd> to request cancellation. Already-started apps remain open, and window positions aren't rolled back. Don't automatically retry a timed-out launch: the outcome can be unknown, and another attempt can open additional apps.
+
+### JSON output and errors
+
+Add `--json` to `list` or `launch` for one UTF-8 JSON document. Successful lists have top-level `view` and `workspaces` properties. The `workspaces` array remains an array for a selected workspace and is empty when there are no saved workspaces. A failed query returns an error, not an empty successful list.
+
+Launch responses and errors use an envelope with `schemaVersion`, `command`, `state`, and `result` or `error`. In scripts, check the process exit code and `error.code` rather than matching localized messages. In PowerShell, read `$LASTEXITCODE` immediately after the command.
+
+| Exit code | Meaning |
+| :--- | :--- |
+| `0` | The operation completed. For launch, the engine confirmed arrangement for every app; this doesn't confirm that documents or tabs finished loading. |
+| `2` | The command, options, or selector syntax is invalid. |
+| `3` | No workspace matches the selector. |
+| `4` | The name matches multiple workspaces. Select by ID instead. |
+| `6` | Workspaces is disabled by the user or policy, policy lookup failed, or a required component is unavailable. Inspect `error.code`, such as `disabledByUser` or `disabledByPolicy`. |
+| `9` | The deadline expired or the outcome is unknown. Don't automatically relaunch. |
+| `10` | One or more apps failed, were skipped, or don't have confirmed window arrangement. |
+| `12` | Cancellation was acknowledged. |
+
+Other nonzero exit codes also indicate failure. For the complete exit-code and output contract, see the [Workspaces CLI reference on GitHub](https://github.com/microsoft/PowerToys/blob/main/doc/devdocs/modules/workspaces-cli.md).
 
 ## Editing a workspace
 
