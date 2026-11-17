@@ -4,7 +4,7 @@ description: >-
   Learn how to configure PowerToys utilities using Microsoft Desired State
   Configuration v3 with the PowerToys.DSC.exe command-line tool. Modern
   declarative configuration for PowerToys.
-ms.date: 10/14/2026
+ms.date: 11/17/2026
 ms.topic: how-to
 no-loc: [PowerToys, Windows, Microsoft DSC, WinGet]
 # customer intent: As a Windows power user or IT administrator, I want to
@@ -51,15 +51,32 @@ If you want to use orchestration tools to manage PowerToys configuration:
 
 ## Location
 
-The `PowerToys.DSC.exe` executable is installed with PowerToys:
+The `PowerToys.DSC.exe` executable is in the PowerToys installation directory.
+The default locations are:
 
 - **Per-user installation:**
   `%LOCALAPPDATA%\PowerToys\PowerToys.DSC.exe`
 - **Machine-wide installation:**
   `%ProgramFiles%\PowerToys\PowerToys.DSC.exe`
 
-You can add the PowerToys directory to your `PATH` environment variable for
-easier access, or use the full path to the executable.
+Unlike the command-line tools in the PowerToys `bin` directory,
+`PowerToys.DSC.exe` doesn't have a `bin` shim. Use its full path instead of
+adding the PowerToys installation directory to `PATH`.
+
+The PowerShell examples on this page use `$powerToysDsc` to hold that path.
+For a default per-user installation, run:
+
+```powershell
+$powerToysDsc = "$env:LOCALAPPDATA\PowerToys\PowerToys.DSC.exe"
+```
+
+For a default machine-wide installation, use
+`$powerToysDsc = "$env:ProgramFiles\PowerToys\PowerToys.DSC.exe"` instead.
+If you chose a custom installation directory, set the variable to the executable
+in that directory, for example,
+`$powerToysDsc = 'D:\Apps\PowerToys\PowerToys.DSC.exe'`.
+Run this setup in the same PowerShell session as the examples. The call operator
+(`&`) runs the executable at that path, including paths that contain spaces.
 
 ## Usage
 
@@ -71,14 +88,14 @@ Execute DSC operations directly using the `PowerToys.DSC.exe` tool:
 
 ```powershell
 # Get current settings for a module
-PowerToys.DSC.exe get --resource 'settings' --module Awake
+& $powerToysDsc get --resource 'settings' --module Awake
 
 # Set settings for a module
 $input = '{"settings":{"properties":{"keepDisplayOn":true,"mode":1},"name":"Awake","version":"0.0.1"}}'
-PowerToys.DSC.exe set --resource 'settings' --module Awake --input $input
+& $powerToysDsc set --resource 'settings' --module Awake --input $input
 
 # Test if settings match desired state
-PowerToys.DSC.exe test --resource 'settings' --module Awake --input $input
+& $powerToysDsc test --resource 'settings' --module Awake --input $input
 ```
 
 ### 2. Microsoft DSC configuration documents
@@ -147,7 +164,7 @@ winget configure powertoys.dsc.config.winget
 List all PowerToys utilities that can be configured:
 
 ```powershell
-PowerToys.DSC.exe modules --resource 'settings'
+& $powerToysDsc modules --resource 'settings'
 ```
 
 ### Get current configuration
@@ -156,10 +173,10 @@ Retrieve the current state of a module's settings:
 
 ```powershell
 # Get settings for a specific module
-PowerToys.DSC.exe get --resource 'settings' --module FancyZones
+& $powerToysDsc get --resource 'settings' --module FancyZones
 
 # Format output for readability
-PowerToys.DSC.exe get --resource 'settings' --module Awake | ConvertFrom-Json | ConvertTo-Json -Depth 10
+& $powerToysDsc get --resource 'settings' --module Awake | ConvertFrom-Json | ConvertTo-Json -Depth 10
 ```
 
 ### Apply configuration
@@ -181,7 +198,7 @@ $config = @{
 } | ConvertTo-Json -Depth 10 -Compress
 
 # Apply configuration
-PowerToys.DSC.exe set --resource 'settings' --module FancyZones --input $config
+& $powerToysDsc set --resource 'settings' --module FancyZones --input $config
 ```
 
 ### Test configuration
@@ -201,7 +218,7 @@ $desired = @{
 } | ConvertTo-Json -Depth 10 -Compress
 
 # Test for drift
-$result = PowerToys.DSC.exe test --resource 'settings' --module Awake --input $desired | ConvertFrom-Json
+$result = & $powerToysDsc test --resource 'settings' --module Awake --input $desired | ConvertFrom-Json
 
 if ($result._inDesiredState) {
     Write-Host "Configuration matches desired state"
@@ -216,44 +233,45 @@ Get the JSON schema for a module to understand available properties:
 
 ```powershell
 # Get schema for a module
-PowerToys.DSC.exe schema --resource 'settings' --module ColorPicker
+& $powerToysDsc schema --resource 'settings' --module ColorPicker
 
 # Format for readability
-PowerToys.DSC.exe schema --resource 'settings' --module ColorPicker | ConvertFrom-Json | ConvertTo-Json -Depth 10
+& $powerToysDsc schema --resource 'settings' --module ColorPicker | ConvertFrom-Json | ConvertTo-Json -Depth 10
 ```
 
 ### Generate Microsoft DSC resource manifests
 
-Create Microsoft DSC resource manifest files for PowerToys modules:
+Create Microsoft DSC resource manifest files for PowerToys modules.
+The `--outputDir` directory must exist and be writable. Create it before you
+generate manifests; `-Force` preserves the directory's existing contents.
 
 ```powershell
+# Create the output directory if it doesn't exist
+New-Item -ItemType Directory -Path 'C:\manifests' -Force -ErrorAction Stop | Out-Null
+
 # Generate manifest for a specific module
-PowerToys.DSC.exe manifest --resource 'settings' --module Awake --outputDir C:\manifests
+& $powerToysDsc manifest --resource 'settings' --module Awake --outputDir 'C:\manifests'
 
 # Generate manifests for all modules
-PowerToys.DSC.exe manifest --resource 'settings' --outputDir C:\manifests
+& $powerToysDsc manifest --resource 'settings' --outputDir 'C:\manifests'
 
 # Print manifest to console
-PowerToys.DSC.exe manifest --resource 'settings' --module FancyZones
+& $powerToysDsc manifest --resource 'settings' --module FancyZones
 ```
 
 > [!NOTE]
 > Microsoft DSC discovers resource manifests in directories listed in the `PATH`
-> environment variable by default. Add your output directory to `PATH`, or generate
-> manifests in the PowerToys installation directory if it is already on `PATH`:
+> environment variable by default. If `DSC_RESOURCE_PATH` is defined, Microsoft
+> DSC searches those directories instead of `PATH`. For orchestration, use the
+> manifests installed in the `DSCModules` subdirectory of your PowerToys
+> installation and include that subdirectory in `DSC_RESOURCE_PATH`, preserving
+> any existing entries. Don't add the PowerToys installation root to `PATH`.
 >
-> ```powershell
-> # Get the directory containing the PowerToys executable
-> $powerToysDirectory = Split-Path -Path (Get-Command PowerToys.DSC.exe -ErrorAction Stop).Source -Parent
->
-> # Generate manifests in that directory
-> PowerToys.DSC.exe manifest --resource 'settings' --outputDir $powerToysDirectory
-> ```
->
-> This example requires the PowerToys installation directory to be on `PATH` and
-> write permission to that directory. If `DSC_RESOURCE_PATH` is defined, Microsoft
-> DSC searches those directories instead of `PATH`. Include your manifest directory
-> in that variable instead.
+> Generated manifests reference `..\PowerToys.DSC.exe`. The `C:\manifests`
+> examples demonstrate file generation, not a ready-to-use relocated resource.
+> Check the executable paths before using manifests from another location.
+> Direct execution with `& $powerToysDsc` doesn't require changing either
+> environment variable.
 
 ## Configuration examples
 
@@ -384,11 +402,11 @@ case-insensitive and don't depend on the active keyboard layout.
 
 ```powershell
 # Export the current remappings
-PowerToys.DSC.exe export --resource 'profile' --module KeyboardManager
+& $powerToysDsc export --resource 'profile' --module KeyboardManager
 
 # Remap Caps Lock to Esc
 $input = '{"profile":{"keys":[{"from":"CapsLock","to":"Esc"}]}}'
-PowerToys.DSC.exe set --resource 'profile' --module KeyboardManager --input $input
+& $powerToysDsc set --resource 'profile' --module KeyboardManager --input $input
 ```
 
 The following configuration document remaps keys and shortcuts. Save it as
@@ -447,8 +465,8 @@ In addition to the settings resources, the
 remappings. For more information, see
 [Manage Keyboard Manager remappings](#manage-keyboard-manager-remappings).
 
-Run `PowerToys.DSC.exe modules --resource 'settings'` or
-`PowerToys.DSC.exe modules --resource 'profile'` to list the modules that each
+Run `& $powerToysDsc modules --resource 'settings'` or
+`& $powerToysDsc modules --resource 'profile'` to list the modules that each
 resource supports.
 
 > [!NOTE]
@@ -458,7 +476,7 @@ resource supports.
 > configuration. When you apply settings while ZoomIt is running, ZoomIt
 > reloads them immediately. Properties use ZoomIt's setting names, such as
 > `ToggleKey` or `BreakTimeout`, and each value is wrapped in a `value`
-> object. Run `PowerToys.DSC.exe schema --resource 'settings' --module ZoomIt`
+> object. Run `& $powerToysDsc schema --resource 'settings' --module ZoomIt`
 > to see all available properties.
 
 For a complete list of resources and their properties, see the
@@ -472,12 +490,12 @@ Export all module configurations for backup:
 
 ```powershell
 # Get list of all modules
-$modules = PowerToys.DSC.exe modules --resource 'settings'
+$modules = & $powerToysDsc modules --resource 'settings'
 
 # Export each module
 $backup = @{}
 foreach ($module in $modules) {
-    $config = PowerToys.DSC.exe export --resource 'settings' --module $module | ConvertFrom-Json
+    $config = & $powerToysDsc export --resource 'settings' --module $module | ConvertFrom-Json
     $backup[$module] = $config
 }
 
@@ -488,7 +506,7 @@ $backup | ConvertTo-Json -Depth 10 | Out-File powertoys-backup.json
 $restore = Get-Content powertoys-backup.json | ConvertFrom-Json
 foreach ($module in $restore.PSObject.Properties.Name) {
     $input = $restore.$module | ConvertTo-Json -Depth 10 -Compress
-    PowerToys.DSC.exe set --resource 'settings' --module $module --input $input
+    & $powerToysDsc set --resource 'settings' --module $module --input $input
 }
 ```
 
