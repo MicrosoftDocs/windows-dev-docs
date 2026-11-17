@@ -1,7 +1,7 @@
 ---
 title: PowerToys Awake - Keep Windows Computer Awake Tool
 description: Learn how to use PowerToys Awake to keep your Windows computer awake without changing power settings. Configure timed, indefinite, or scheduled awake modes with CLI support.
-ms.date: 10/14/2026
+ms.date: 11/17/2026
 ms.topic: concept-article
 ms.localizationpriority: medium
 # Customer intent: As a Windows power user, I want to learn how to configure and use the PowerToys Awake utility.
@@ -94,10 +94,14 @@ When setting the value for the `--time-limit` parameter, both of these formats w
 - `PowerToys.Awake.exe --time-limit 36000`
 - `PowerToys.Awake.exe --time-limit=36000`
 
-When setting the value for the `--expire-at` parameter, the following formats will be accepted:
+For `--expire-at`, use a future date and time. Awake parses the value using your current culture. A time-only value such as `PowerToys.Awake.exe --expire-at=17:00:00` means 5 PM today, so use it only before that time.
 
-- `PowerToys.Awake.exe --expire-at=17:00:00` will expire at 5PM of the current day, based on the computer clock.
-- `PowerToys.Awake.exe --expire-at="4/13/2023 17:00:00"` will expire at 5PM on April 13, 2023, based on the computer clock.
+To keep your computer awake for the next 30 minutes, run this example in PowerShell from the PowerToys installation folder. It generates an ISO 8601 timestamp with your local time zone offset and passes it as a single argument.
+
+```powershell
+$expiration = [DateTimeOffset]::Now.AddMinutes(30).ToString('o', [System.Globalization.CultureInfo]::InvariantCulture)
+.\PowerToys.Awake.exe --expire-at="$expiration"
+```
 
 ## Custom settings
 
