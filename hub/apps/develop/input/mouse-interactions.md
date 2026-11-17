@@ -4,7 +4,7 @@ title: Mouse interactions
 ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
 label: Mouse
 template: detail.hbs
-ms.date: 11/10/2026
+ms.date: 11/16/2026
 ms.topic: article
 ms.localizationpriority: medium
 ---
@@ -76,7 +76,7 @@ Most mouse input can be handled through the common routed input events supported
 
 However, you can take advantage of the specific capabilities of each device (such as mouse wheel events) using the pointer, gesture, and manipulation events in [Microsoft.UI.Input](/windows/windows-app-sdk/api/winrt/Microsoft.UI.Input).
 
-**Samples:** See our [BasicInput sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicInput), for .
+For examples of pointer events and gesture recognition, see the [Windows App SDK Input sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui).
 
 ## Guidelines for visual feedback
 
@@ -111,7 +111,7 @@ If you need to customize the mouse cursor:
 
 ### Samples
 
-- [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicInput)
+- [Windows App SDK Input sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui)
 - [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LowLatencyInput)
 - [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/UserInteractionMode)
 - [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals)

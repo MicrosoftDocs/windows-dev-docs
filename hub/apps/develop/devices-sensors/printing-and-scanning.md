@@ -2,7 +2,7 @@
 
 title: Printing and scanning
 description: This section describes how to print and scan from your Windows app.
-ms.date: 09/11/2024
+ms.date: 11/16/2026
 ms.topic: concept-article
 author: GrantMeStrength
 ms.author: jken
@@ -21,5 +21,5 @@ Windows apps can integrate with printers and scanners to let users print documen
 
 ## Related topics
 
-- [Print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing)
+- [WinUI 3 Printing sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Printing)
 - [Customize the print workflow](/windows/uwp/devices-sensors/print-workflow-customize)

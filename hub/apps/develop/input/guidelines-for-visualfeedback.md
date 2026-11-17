@@ -5,7 +5,7 @@ ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 keywords: visual feedback, focus feedback, touch feedback, contact visualization, input, interaction
-ms.date: 11/10/2026
+ms.date: 11/16/2026
 ms.topic: article
 
 
@@ -25,7 +25,7 @@ Use visual feedback to show users when their interactions are detected, interpre
 - Try to limit modifications of a control template to those directly related to your design intent, as extensive changes can impact the performance and accessibility of both the control and your application. 
     - See [XAML styles](../platform/xaml/xaml-styles.md) for more info on customizing the properties of a control, including visual state properties.
     - See the [UserControl Class](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.controls.usercontrol) for details on making changes to a control template
-    - Consider creating your own custom templated control if you need to make significant changes to a control template. For an example of a custom templated control, see the [Custom Edit Control sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CustomEditControl) (UWP sample).
+    - Consider creating your own custom templated control if you need to make significant changes to a control template. For an example, see the [CounterControl example in the WinUI Gallery](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/CustomUserControls).
 - Don't use touch visualizations in situations where they might interfere with the use of the app. For more info, see [**ShowGestureFeedback**](/windows/windows-app-sdk/api/winrt/microsoft.ui.input.gesturerecognizer.showgesturefeedback).
 - Don't display feedback unless it is absolutely necessary. Keep the UI clean and uncluttered by not showing visual feedback unless you are adding value that is not available elsewhere.
 - Try not to dramatically customize the visual feedback behaviors of the built-in Windows gestures, as this can create an inconsistent and confusing user experience.
@@ -118,16 +118,14 @@ To change the colors on a per-control basis, just edit the focus visual properti
 
 ### Samples
 
-- [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicInput)
+- [Windows App SDK Input sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui)
 - [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LowLatencyInput)
 - [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/UserInteractionMode)
+- [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals)
+- [Win32 touch hit-testing sample](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/TouchHitTesting)
 
 > [!NOTE]
-> The samples above are from the UWP Windows-universal-samples repository. For WinUI 3 examples, see the [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery).
-
-- [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals)
-- [Windows App SDK GestureRecognizer sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui)
-- [Win32 touch hit-testing sample](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/TouchHitTesting)
+> The low latency input and user interaction mode samples above are UWP examples. For more WinUI 3 examples, see the [WinUI Gallery](https://github.com/microsoft/WinUI-Gallery).
 
 ### Archive samples
 

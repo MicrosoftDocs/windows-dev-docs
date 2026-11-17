@@ -7,7 +7,7 @@ title: Control templates
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
-ms.date: 10/13/2026
+ms.date: 11/16/2026
 ms.topic: how-to
 keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
@@ -199,4 +199,4 @@ For some of the attributes in the XAML examples, you may have noticed resource r
 ## Get the sample code
 
 * [WinUI 3 Gallery sample](https://github.com/Microsoft/WinUI-Gallery)
-* [Custom text edit control sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/CustomEditControl)
+* [WinUI Gallery control template examples](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/Templates)

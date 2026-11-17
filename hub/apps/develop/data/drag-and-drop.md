@@ -1,7 +1,7 @@
 ---
 description: This article explains how to add dragging and dropping in your Windows app.
 title: Drag and drop
-ms.date: 09/27/2026
+ms.date: 11/16/2026
 ms.topic: how-to
 keywords: windows 11, winui 3, windows app sdk, drag and drop, data transfer
 ms.localizationpriority: medium
@@ -114,7 +114,7 @@ private void DraggableText_DropCompleted(UIElement sender, DropCompletedEventArg
 }
 ```
 
-For a complete working example of custom drag-and-drop with a data package, see the [XAML drag-and-drop sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/XamlDragAndDrop) on GitHub.
+For an example of using a custom data package to move items between lists, see the [drag-and-drop example in the WinUI Gallery ListView sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ListView).
 
 ## Enable dropping
 

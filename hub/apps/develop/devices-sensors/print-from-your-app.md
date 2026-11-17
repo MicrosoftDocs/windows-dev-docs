@@ -2,7 +2,7 @@
 
 title: Print from your app
 description: Learn how to print documents from a Windows app. This topic also shows how to print specific pages.
-ms.date: 09/11/2024
+ms.date: 11/16/2026
 ms.topic: how-to
 author: GrantMeStrength
 ms.author: jken
@@ -26,7 +26,7 @@ The first step to add printing to your app is to register for printing by gettin
 Your app must do this on every screen from which you want your user to be able to print. Only the screen that is displayed to the user can be registered for printing. If one screen of your app has registered for printing, it must unregister for printing when it exits. If it is replaced by another screen, the next screen must register for printing when it opens.
 
 > [!TIP]
-> If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. For an example of how to do this, see the `PrintHelper` class in the [Print sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/Printing).
+> If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. For an example, see the `PrintHelper` class in the [WinUI 3 Printing sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Printing). The helper uses `Microsoft.UI.Xaml.Printing.PrintDocument` and associates the `PrintManager` and print UI with the desktop window handle.
 
 After a user has initiated printing, you use a [PrintDocument](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.printing.printdocument) to prepare the pages to be sent to the printer.The `PrintDocument` type is in the [**Microsoft.UI.Xaml.Printing**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.printing) namespace along with other types that support preparing XAML content for printing.
 

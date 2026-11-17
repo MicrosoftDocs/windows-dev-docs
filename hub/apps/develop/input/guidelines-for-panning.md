@@ -4,7 +4,7 @@ title: Panning
 ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
 label: Panning
 template: detail.hbs
-ms.date: 11/10/2026
+ms.date: 11/16/2026
 ms.topic: concept-article
 keywords: windows 10, uwp
 ms.localizationpriority: medium
@@ -182,11 +182,10 @@ This guidance is also useful for apps such as photo albums or mapping apps that 
 - [Keyboard accessibility](../../design/accessibility/keyboard-accessibility.md)
 
 **Samples**
-- [Basic input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/BasicInput)
+- [Windows App SDK Input sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui)
 - [Low latency input sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/LowLatencyInput)
 - [User interaction mode sample](https://github.com/Microsoft/Windows-universal-samples/tree/main/Samples/UserInteractionMode)
 - [Windows App SDK Focus Visuals sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/FocusVisuals)
-- [Windows App SDK GestureRecognizer sample](https://github.com/microsoft/WindowsAppSDK-Samples/tree/main/Samples/Input/cs-winui)
 - [WinUI Gallery ScrollViewer sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ScrollViewer)
 - [WinUI Gallery ScrollView sample](https://github.com/microsoft/WinUI-Gallery/tree/main/WinUIGallery/Samples/ScrollView)
 - [Win32 touch hit-testing sample](https://github.com/microsoft/Windows-classic-samples/tree/main/Samples/TouchHitTesting)
