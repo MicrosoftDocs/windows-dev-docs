@@ -1,7 +1,7 @@
 ---
 title: Advanced Paste Tool for Clipboard Management in PowerToys
 description: Learn how to use PowerToys Advanced Paste to transform clipboard content into any format - plain text, JSON, Markdown, or files. Includes opt-in AI-powered features and local OCR capabilities.
-ms.date: 10/14/2026
+ms.date: 11/17/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Paste as Plain Text, Advanced Paste, Win]
 # Customer intent: Learn how to use the Advanced Paste feature in PowerToys to paste text from your clipboard into any format needed.
@@ -329,6 +329,9 @@ Use `transform` with one of the following options to choose what to run:
 
 The following built-in actions are available:
 
+> [!NOTE]
+> The `paste-as-jpg-file` action is a preview feature and isn't available in all released builds. Run `PowerToys.AdvancedPaste.CLI.exe actions list --json` to check whether your installed build includes it.
+
 | Action | Description |
 | :--- | :--- |
 | `plain-text` | Remove formatting and return plain text. |
@@ -338,9 +341,10 @@ The following built-in actions are available:
 | `image-to-text` | Extract text from an image by using Windows OCR. No AI provider is needed. |
 | `paste-as-txt-file` | Generate a .txt file from text. |
 | `paste-as-png-file` | Generate a .png file from an image. |
+| `paste-as-jpg-file` | Generate a .jpg file from an image by using the JPEG quality configured in Settings (preview). |
 | `paste-as-html-file` | Generate an .html file from HTML content. |
 | `transcode-to-mp3` | Convert audio or video to an .mp3 file. |
-| `transcode-to-mp4` | Convert media to an .mp4 file. |
+| `transcode-to-mp4` | Convert a video file to an .mp4 file with H.264 video and AAC audio (if present). |
 | `paste-with-ai` | Follow the `--prompt` instructions by using a configured AI provider. |
 
 ### Input and output
@@ -373,6 +377,9 @@ PowerToys.AdvancedPaste.CLI.exe transform --action markdown --input article.html
 
 # Extract text from an image with Windows OCR
 PowerToys.AdvancedPaste.CLI.exe transform --action image-to-text --input image.png --stdout
+
+# Generate a JPG file from an image (preview; check actions list first)
+PowerToys.AdvancedPaste.CLI.exe transform --action paste-as-jpg-file --input image.png --output image.jpg
 
 # Summarize the clipboard contents with AI and print the result
 PowerToys.AdvancedPaste.CLI.exe transform --action paste-with-ai --prompt "Summarize in one sentence" --clipboard --stdout
