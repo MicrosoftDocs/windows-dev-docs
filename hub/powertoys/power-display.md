@@ -1,7 +1,7 @@
 ---
 title: PowerToys Power Display utility for Windows
 description: Learn how to use PowerToys Power Display to control external monitor brightness, contrast, volume, input source, and color temperature from a single flyout, and save settings as profiles.
-ms.date: 10/14/2026
+ms.date: 11/17/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Power Display, DDC/CI, VCP]
 # Customer intent: As a Windows power user with multiple external monitors, I want to learn about the Power Display utility in PowerToys so I can control brightness, volume, input source, and other monitor settings from one place.
@@ -125,7 +125,9 @@ Power Display lets you define custom display names for color temperature presets
 
 ## Command-line interface
 
-Power Display includes a command-line interface. PowerToys adds its `bin` folder to your `PATH`, so you can run `PowerToys.PowerDisplay.CLI.exe` from any folder in Windows Terminal, PowerShell, or Command Prompt. If a terminal was already open when you installed PowerToys, open a new one so it picks up the updated `PATH`. The CLI talks to the running Power Display app, so keep PowerToys running while you use it.
+Power Display includes a command-line interface. PowerToys adds its `bin` folder to your `PATH`, so you can run `PowerToys.PowerDisplay.CLI.exe` from any folder in Windows Terminal, PowerShell, or Command Prompt. If a terminal was already open when you installed PowerToys, open a new one so it picks up the updated `PATH`.
+
+Enable **Power Display** in PowerToys Settings and keep its app running while you use commands that query monitors, change settings, or work with profiles. Running the PowerToys Runner alone isn't sufficient if the module is disabled or its app isn't running. The `--help` and `--version` options don't require the Power Display app, so their success confirms that you can launch the CLI, not that its provider is available.
 
 | Command | What it does |
 | :--- | :--- |
@@ -149,6 +151,31 @@ Add the global `--json` option to any command to get compact [JSON Lines](https:
 PowerToys.PowerDisplay.CLI.exe list --json
 PowerToys.PowerDisplay.CLI.exe get --monitor-number 1 --setting brightness --json
 ```
+
+### Exit codes and automation
+
+Check the process exit code before treating a command as successful. In PowerShell, capture `$LASTEXITCODE` immediately after running the CLI. Keep standard output and standard error separate when parsing JSON results so an error isn't mistaken for a monitor reading.
+
+The CLI defines the following [process exit codes](https://github.com/microsoft/PowerToys/blob/82bd57f5d23ee19a98b0c46f42c304742a7db426/src/modules/powerdisplay/PowerDisplay.Contracts/CliExitCodes.cs). With `--json`, errors include the corresponding string in `error.code`.
+
+| Exit code | JSON error code | Meaning |
+| :--- | :--- | :--- |
+| `0` | Not applicable | The command completed without a command-level error. Profile application is best-effort, as described below. |
+| `1` | `MONITOR_NOT_FOUND` | No monitor matches the specified number or ID. |
+| `2` | `OUT_OF_RANGE` | A value is outside the allowed range. |
+| `3` | `INVALID_DISCRETE_VALUE` | A discrete setting value is invalid or isn't in the supported set. |
+| `4` | `UNSUPPORTED_FEATURE` | The requested setting or operation isn't supported. |
+| `5` | `HARDWARE_FAILURE` | A hardware operation failed. |
+| `6` | `SELECTOR_MISSING` | The command requires a monitor number or ID. |
+| `7` | `ARGUMENT_ERROR` | The arguments are invalid, including a profile ID that doesn't exist. |
+| `8` | `TIMEOUT` | The operation timed out or was canceled. |
+| `9` | `INTERNAL_ERROR` | An internal error occurred, such as a response that the CLI couldn't deserialize. |
+| `10` | `PROVIDER_UNAVAILABLE` | The Power Display app/provider isn't running or couldn't be reached. |
+
+If you receive `PROVIDER_UNAVAILABLE`, check that Power Display is enabled and its app is running before retrying. This error means the CLI couldn't reach its provider; it doesn't establish whether a monitor supports the requested setting. These exit codes belong to the CLI, not to the monitor's VCP values or native Windows error codes.
+
+> [!IMPORTANT]
+> `apply-profile` processes an existing profile on a best-effort basis and can return exit code `0` without applying every saved setting. It doesn't report per-setting outcomes. If your script needs to verify the resulting state, use `get` to read back the settings you depend on.
 
 ## Keyboard shortcuts in the flyout
 
