@@ -2,7 +2,7 @@
 title: Windows App SDK deployment overview
 description: There are two ways in which you can deploy the Windows App SDK&mdash;framework-dependent or self-contained.
 ms.topic: concept-article
-ms.date: 05/29/2026
+ms.date: 11/18/2026
 ms.localizationpriority: medium
 keywords: windows app sdk deployment, framework-dependent, self-contained, deploy winui 3, windows app sdk self-contained
 ---
@@ -39,10 +39,10 @@ If you've chosen to go with a framework-dependent packaged app (see [Deployment 
 
 ### Packaged with external location or unpackaged apps
 
-If you've chosen to go with a framework-dependent packaged app with external location, or a framework-dependent unpackaged app (see [Deployment overview](./index.md)), then here are instructions on how to deploy the Windows App SDK runtime with the app:
+For framework-dependent apps packaged with external location or unpackaged apps, you can deploy the required Windows App SDK runtime packages using your existing installer. This shared installation guidance doesn't mean that both packaging options require Bootstrapper initialization: apps packaged with external location can declare a static Framework dependency in their package manifest.
 
-* [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](../windows-app-sdk/deploy-unpackaged-apps.md)
-* [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](../windows-app-sdk/tutorial-unpackaged-deployment.md)
+* [Windows App SDK deployment guide for framework-dependent unpackaged apps](../windows-app-sdk/deploy-unpackaged-apps.md)
+* For unpackaged apps that need explicit initialization, see [Tutorial: Use the bootstrapper API in an unpackaged app](../windows-app-sdk/tutorial-unpackaged-deployment.md).
 
 ## More info about self-contained deployment
 
@@ -53,21 +53,21 @@ See [Windows App SDK deployment guide for self-contained apps](./self-contained-
 
 ## Initialize the Windows App SDK
 
-The way that you should initialize the Windows App SDK depends on whether, and how, you package your app; and on the way in which you deploy relative to the Windows App SDK runtime. Use the section below that applies to your app.
+Framework-dependent apps need the Framework package in their process package graph. Packaged apps can declare it statically in their package manifest; unpackaged apps use Bootstrapper initialization to add it dynamically. Self-contained apps carry the Framework binaries app-locally and don't need a Framework MSIX dependency or Bootstrapper initialization for those binaries. Initialization for additional Main/Singleton functionality is separate.
 
-### Packaged apps
-
-|How your app deploys|How to initialize|
-|-|-|
-|Framework-dependent|See [Call the Deployment API](../windows-app-sdk/deploy-packaged-apps.md#call-the-deployment-api).|
-|Self-contained|No initialization necessary.|
-
-### Unpackaged apps, and apps packaged with external location
+### Packaged apps, including apps packaged with external location
 
 |How your app deploys|How to initialize|
 |-|-|
-|Framework-dependent|See [Use the bootstrapper API in an app packaged with external location or unpackaged](../windows-app-sdk/tutorial-unpackaged-deployment.md).|
-|Self-contained|See [Opting out of (or into) automatic UndockedRegFreeWinRT support](./self-contained-deploy/deploy-self-contained-apps.md#opting-out-of-or-into-automatic-undockedregfreewinrt-support).|
+|Framework-dependent|Declare a Framework `<PackageDependency>` in `AppxManifest.xml`. Bootstrapper initialization isn't required for that dependency. If the app needs Main/Singleton functionality, see [Call the Deployment API](../windows-app-sdk/deploy-packaged-apps.md#call-the-deployment-api).|
+|Self-contained|No Framework package dependency or Bootstrapper initialization is necessary for the app-local Framework binaries. Check API-specific requirements for other initialization or dependencies.|
+
+### Unpackaged apps
+
+|How your app deploys|How to initialize|
+|-|-|
+|Framework-dependent|Use the Bootstrapper auto-initializer or explicit Bootstrapper calls to add the Framework dependency dynamically. See [Initialize the Windows App SDK Framework package dynamically](../windows-app-sdk/use-windows-app-sdk-run-time.md).|
+|Self-contained|No Framework package dependency or Bootstrapper initialization is necessary. For registration-free WinRT activation, see [Opting out of (or into) automatic UndockedRegFreeWinRT support](./self-contained-deploy/deploy-self-contained-apps.md#opting-out-of-or-into-automatic-undockedregfreewinrt-support).|
 
 ## Related topics
 
@@ -75,8 +75,8 @@ The way that you should initialize the Windows App SDK depends on whether, and h
 * [Deployment architecture for the Windows App SDK](../windows-app-sdk/deployment-architecture.md)
 * [Windows App SDK deployment guide for framework-dependent packaged apps](../windows-app-sdk/deploy-packaged-apps.md)
 * [Manage your MSIX deployment](/windows/msix/desktop/managing-your-msix-deployment-overview)
-* [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](../windows-app-sdk/deploy-unpackaged-apps.md)
-* [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](../windows-app-sdk/tutorial-unpackaged-deployment.md)
+* [Windows App SDK deployment guide for framework-dependent unpackaged apps](../windows-app-sdk/deploy-unpackaged-apps.md)
+* [Tutorial: Use the bootstrapper API in an unpackaged app](../windows-app-sdk/tutorial-unpackaged-deployment.md)
 * [Windows App SDK deployment guide for self-contained apps](./self-contained-deploy/deploy-self-contained-apps.md)
 * [Create your first WinUI project](/windows/apps/get-started/start-here)
 * [Use the Windows App SDK in an existing project](../windows-app-sdk/use-windows-app-sdk-in-existing-project.md)

@@ -2,7 +2,7 @@
 description: Describes how to use rich activation features with the app lifecycle API in unpackaged apps (Windows App SDK).
 title: Rich activation with the app lifecycle API (Windows App SDK)
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 11/18/2026
 keywords: AppLifecycle, Windows, activation, activation contracts, rich activation, win32, win32 activation, unpackaged app, unpackaged app activation
 ms.localizationpriority: medium
 ---
@@ -64,10 +64,10 @@ This example shows how an unpackaged app can use the following static methods of
 - [RegisterForProtocolActivation](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.registerforprotocolactivation)
 - [RegisterForStartupActivation](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager.registerforstartupactivation)
 
-This example also demonstrates how to use the [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) and [MddBootstrapShutdown](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) functions to initialize and clean up references to the Windows App SDK framework package. All unpackaged app must do this to use APIs provided by the Windows App SDK. For more information, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../use-windows-app-sdk-run-time.md).
+This example uses explicit [MddBootstrapInitialize2](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize2) and [MddBootstrapShutdown](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapshutdown) calls for an unpackaged framework-dependent app. Disable the Bootstrapper auto-initializer when managing initialization explicitly. Packaged apps, including apps packaged with external location, can declare the Framework dependency statically in their package manifest instead. Self-contained apps don't need Bootstrapper initialization for their app-local Framework binaries and can use App Lifecycle subject to API-specific restrictions. For more information, see [Initialize the Windows App SDK Framework package dynamically](../use-windows-app-sdk-run-time.md).
 
 > [!NOTE]
-> This example registers associations with three image file types at once. This is convenient, but the outcome is the same as registering each file type individually; registering new image types does not overwrite previous registrations. However, if an app re-registers an already registered file type with a different set of verbs, the previous set of verbs will be overwritten for that file type.
+> Initialize COM on the calling thread before running the Bootstrapper initialization shown below, and balance it with COM uninitialization after Bootstrapper shutdown. This example registers associations with three image file types at once. This is convenient, but the outcome is the same as registering each file type individually; registering new image types does not overwrite previous registrations. However, if an app re-registers an already registered file type with a different set of verbs, the previous set of verbs will be overwritten for that file type.
 
 ```c++
 const UINT32 majorMinorVersion{ WINDOWSAPPSDK_RELEASE_MAJORMINOR };
@@ -83,11 +83,11 @@ int APIENTRY wWinMain(
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
 
-    // Initialize Windows App SDK framework package for unpackaged apps.
-    HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) };
+    // Initialize the Framework dependency for this framework-dependent unpackaged app.
+    HRESULT hr{ MddBootstrapInitialize2(majorMinorVersion, versionTag, minVersion, MddBootstrapInitializeOptions_None) };
     if (FAILED(hr))
     {
-        wprintf(L"Error 0x%X in MddBootstrapInitialize(0x%08X, %s, %hu.%hu.%hu.%hu)\n",
+        wprintf(L"Error 0x%X in MddBootstrapInitialize2(0x%08X, %s, %hu.%hu.%hu.%hu)\n",
             hr, majorMinorVersion, versionTag, minVersion.Major, 
             minVersion.Minor, minVersion.Build, minVersion.Revision);
         return hr;
