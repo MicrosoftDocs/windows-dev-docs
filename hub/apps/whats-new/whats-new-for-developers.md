@@ -4,7 +4,7 @@ description: Explore new Windows platform capabilities, SDK and API updates, des
 keywords: what's new, Windows 11, Windows, developers, WinUI, sdk, tools
 author: GrantMeStrength
 ms.author: jken
-ms.date: 11/10/2026
+ms.date: 11/18/2026
 ms.topic: whats-new
 ms.localizationpriority: medium
 ---
@@ -19,15 +19,15 @@ This section curates the latest platform capabilities, SDK and API additions, AI
 
 Find the latest downloads, release notes, and updates for the Windows SDK, Windows App SDK, and WinUI 3.
 
-Versions below are current as of November 10, 2026. Use the release notes to review the changes and requirements for each channel or SDK build.
+Versions below are current as of November 18, 2026. Use the release notes to review the changes and requirements for each channel or SDK build.
 
 :::row:::
     :::column:::
         ![Windows App SDK icon](images/wasdk-hero.png)<br>
         **Windows App SDK**<br>
-        Latest stable: 2.6.5<br>
+        Latest stable: 2.7.0<br>
         Latest experimental: 2.6.6-experimental<br>
-        [Stable release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-265)<br>
+        [Stable release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-270)<br>
         [Experimental release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-26-experimental-266-experimental)<br>
         [View downloads](../windows-app-sdk/downloads.md)
     :::column-end:::
@@ -47,12 +47,23 @@ Versions below are current as of November 10, 2026. Use the release notes to rev
 
 ### SDK releases and developer blog posts
 
+- **Windows App SDK 2.7.0**: The November 17 stable release enables the Language Model APIs on devices with a compatible GPU, adds model name and version properties and low-rank adaptation (LoRA) adapter compatibility status, and adds response statuses for insufficient video memory and Game Mode. It updates ONNX Runtime to 1.28.3 and includes WinUI, input, and ARM64EC startup fixes. GPU support requires compatible hardware; model identity and detailed adapter compatibility results also depend on the installed AI components. See the [Windows App SDK 2.7.0 release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-270).
+- **.NET 11 (generally available)**: The November 10 release adds C# 15, runtime and library improvements, and SDK tooling updates, including a Native AOT CLI host and an MSBuild server enabled by default to reduce repeated startup work. .NET 11 is a Standard Term Support (STS) release; .NET 10 remains a supported Long Term Support (LTS) option. Review the support policy and breaking changes before upgrading. See [Announcing .NET 11](https://devblogs.microsoft.com/dotnet/announcing-dotnet-11/).
 - **Windows App Development CLI 0.8**: The November 9 release of this public-preview CLI adds WinUI DevTools in experimental preview, local ETW-based performance profiling, and build, run, and MSIX packaging support for C++ `.vcxproj` projects. DevTools lets you inspect a running WinUI 3 app, try property changes, and leave element-specific comments for a coding agent. Live property edits don't persist in source. See [Windows App Development CLI v0.8: WinUI DevTools Experimental Preview](https://devblogs.microsoft.com/ifdef-windows/windows-app-development-cli-v0-8/).
 - **Windows App SDK 2.6 Experimental (2.6.6-experimental)**: The November 6 release adds TableView row hierarchies and live data shaping, Chart accessibility, zero-copy resource access, and VideoScaler creation and input-color options. Experimental APIs can change and aren't intended for production apps. See the [Windows App SDK 2.6 experimental release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=experimental#version-26-experimental-266-experimental).
 - **Intelligent Terminal 0.3 (experimental)**: The November 4 update adds a sidebar with agent status, search across tabs and recent agent sessions, automatic profiles for installed agent CLIs, and headless tabs that continue running after you close the terminal window. See [Intelligent Terminal 0.3: A new way to manage your tabs and agents](https://devblogs.microsoft.com/commandline/intelligent-terminal-v0-3-a-new-way-to-see-and-manage-your-tabs-and-agents/).
 - **WinApp VS Code extension 0.4 (public preview)**: The November 3 release adds experimental, project-aware WinUI XAML IntelliSense, app creation, and project-based build and run workflows. Full project-aware XAML support requires a C# WinUI project and the .NET 10 SDK; C++/WinRT support is limited to basic editing and syntax diagnostics in this release. See [Announcing XAML IntelliSense Support in the WinApp VS Code Extension](https://devblogs.microsoft.com/ifdef-windows/xaml-intellisense-support-in-winapp-extension/).
 - **Inside MSIX: sparse packages**: The November 3 post explains how a sparse package can omit payload installed by another installer, and why external location is the feature that enables this deployment model. A sparse package isn't a separate package type or a synonym for external location. See [Sparse Package](https://devblogs.microsoft.com/insidemsix/sparse-package/).
 - **Windows App SDK 2.6.5**: The November 2 stable release fixes rendering corruption on systems with multiple graphics adapters or monitors, composition crashes and unexpected window transparency, and an app-extension registration issue that could prevent packaged apps from installing. It also reverts the system backdrop change introduced in 2.6.4: system backdrops for content islands and XAML windows aren't supported when using the System Composition Engine in this release. See the [Windows App SDK 2.6.5 release notes](../windows-app-sdk/release-notes/windows-app-sdk-2-0.md?pivots=stable#version-265).
+
+### Microsoft Ignite 2026 announcements
+
+The November 17 announcements include the following updates for Windows developers. Availability differs by feature.
+
+- **Windows endpoint security platform (generally available)**: Microsoft announced general availability of user-mode APIs that security providers can use to monitor system activity and apply protections through Windows-managed capabilities, reducing reliance on their own kernel-mode components. Review the [requirements, signing, and enrollment guidance](/windows/win32/wesp/wesp-requirements) before integrating the platform. See [What's next: Windows endpoint security platform and driver quality](https://techcommunity.microsoft.com/blog/windows-itpro-blog/whats-next-windows-endpoint-security-platform-and-driver-quality/4572663).
+- **Microsoft Execution Containers updates (mixed availability)**: Learning and permissive modes are now generally available for Windows process-contained workloads. Learning mode blocks and records ungranted access; permissive mode allows and records it, so use permissive mode only in controlled testing. Process container improvements are in preview, and local Micro VMs are experimental. See [Create and refine MXC policies with Learning Mode](../develop/mxc/learning-mode.md) and the [Ignite containment announcements](https://blogs.windows.com/windowsexperience/2026/11/17/microsoft-ignite-2026-building-windows-for-the-next-era-of-work/).
+- **Windows baseline protection (preview)**: The Windows Insider preview combines foundational protections, including secure boot, virtualization-based security, and memory integrity, into a versioned, verifiable device security state. App developers can use the state to assess device security requirements and should test apps with the baseline protections enabled. See [A verifiable security state with Windows baseline protection](https://techcommunity.microsoft.com/blog/windows-itpro-blog/a-verifiable-security-state-with-windows-baseline-protection/4572654) for preview details.
+- **Hybrid Intelligence in GitHub Copilot (preview)**: Copilot Fusion can route coding tasks to local models on supported Windows developer PCs through the GitHub Copilot app, CLI, and VS Code. This is a preview with hardware and model requirements, not general availability on all Windows PCs. See the [Windows Ignite announcement](https://blogs.windows.com/windowsexperience/2026/11/17/microsoft-ignite-2026-building-windows-for-the-next-era-of-work/).
 
 ### Documentation highlights
 
