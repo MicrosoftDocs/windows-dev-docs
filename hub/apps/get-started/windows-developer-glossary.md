@@ -2,7 +2,7 @@
 title: Windows developer glossary
 description:  A glossary of terms related to Windows application development.
 ms.topic: glossary
-ms.date: 12/05/2025
+ms.date: 11/18/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -28,7 +28,7 @@ Describes the way in which your app is packaged before being deployed and instal
 
 #### Bootstrapper
 
-A redistributable component that provides an API to find and load the Windows App SDK framework package for the calling process. In a packaged-with-external-location or unpackaged app, you can load the Windows App SDK framework package explicitly by calling Bootstrapper APIs such as [MddBootstrapInitialize](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize). See [Reference the Windows App SDK framework package at run time](../windows-app-sdk/use-windows-app-sdk-run-time.md).
+A redistributable component that finds an installed Windows App SDK Framework package and adds it dynamically to an unpackaged process's package graph. Framework-dependent unpackaged apps can use Bootstrapper auto-initialization or explicit calls such as [MddBootstrapInitialize2](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize2). Packaged apps, including apps packaged with external location, can declare the Framework dependency statically in their package manifest instead. Self-contained apps don't need Bootstrapper initialization for their app-local Framework binaries. See [Initialize the Windows App SDK Framework package dynamically](../windows-app-sdk/use-windows-app-sdk-run-time.md).
 
 #### C++/WinRT
 

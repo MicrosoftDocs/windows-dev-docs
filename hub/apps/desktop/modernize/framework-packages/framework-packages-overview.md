@@ -2,7 +2,7 @@
 description: Learn about the package graph and servicing model for MSIX framework packages.
 title: MSIX framework packages and dynamic dependencies
 ms.topic: article
-ms.date: 07/30/2021
+ms.date: 11/18/2026
 ms.localizationpriority: medium
 ---
 
@@ -23,9 +23,9 @@ This static package graph restriction is lifted with the introduction of the dyn
 
 ## Primary scenarios for dynamic dependencies
 
-Although dynamic dependencies enables any app to add a package framework dependency at run time, this feature is primarily intended to be used by apps packaged with external location or unpackaged apps. Packaged apps can still continue to add static dependencies via the [PackageDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency) element in their package manifest.
+Dynamic dependencies let apps add framework package dependencies at runtime and are especially useful for unpackaged apps, which can't declare static package dependencies. Packaged apps, including apps packaged with external location (sparse packages), can declare static dependencies via the [PackageDependency](/uwp/schemas/appxpackage/uapmanifestschema/element-packagedependency) element in their package manifest. External-location packaging doesn't require a dynamic dependency in place of a static one.
 
-- Most developers will use dynamic dependencies only to reference the [Windows App SDK](../../../windows-app-sdk/index.md) framework package in a packaged with external location or unpackaged app, so that the app can call APIs provided by the Windows App SDK runtime. For more information about this scenario, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../../windows-app-sdk/use-windows-app-sdk-run-time.md).
+- A common use of dynamic dependencies is to reference the [Windows App SDK](../../../windows-app-sdk/index.md) Framework package in an unpackaged framework-dependent app, so that the app can call APIs provided by that package. The Bootstrapper API establishes this dependency, either automatically or through explicit calls. Packaged apps that declare the Framework dependency statically don't need Bootstrapper initialization for it, and self-contained apps don't need it for their app-local Framework binaries. See [Initialize the Windows App SDK Framework package dynamically](../../../windows-app-sdk/use-windows-app-sdk-run-time.md).
 - In some cases, developers may want to use dynamic dependencies to reference a different framework package (other than the Windows App SDK framework package) from an unpackaged app, such as the framework package for [WinUI2](/windows/uwp/get-started/winui2/) or the DirectX Runtime. For more information about this scenario, see [Use the dynamic dependency API to reference MSIX packages at run time](use-the-dynamic-dependency-api.md).
 
 ## Servicing model for framework packages
@@ -48,8 +48,8 @@ For packaged apps that use the [PackageDependency](/uwp/schemas/appxpackage/uapm
 
 ## Related topics
 
-- [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../../windows-app-sdk/use-windows-app-sdk-run-time.md)
+- [Initialize the Windows App SDK Framework package dynamically](../../../windows-app-sdk/use-windows-app-sdk-run-time.md)
 - [Use the dynamic dependency API to reference MSIX packages at run time](use-the-dynamic-dependency-api.md)
-- [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](../../../windows-app-sdk/deploy-unpackaged-apps.md)
+- [Windows App SDK deployment guide for framework-dependent unpackaged apps](../../../windows-app-sdk/deploy-unpackaged-apps.md)
 - [Runtime architecture for the Windows App SDK](../../../windows-app-sdk/deployment-architecture.md)
-- [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](../../../windows-app-sdk/tutorial-unpackaged-deployment.md)
+- [Tutorial: Use the bootstrapper API in an unpackaged app](../../../windows-app-sdk/tutorial-unpackaged-deployment.md)

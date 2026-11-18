@@ -2,7 +2,7 @@
 title: Windows App SDK app lifecycle
 description: This article provides an overview of managing the lifecycle of Windows App SDK apps.
 ms.topic: article
-ms.date: 07/14/2025
+ms.date: 11/18/2026
 keywords: windows, desktop development, Windows App SDK, .net, windows 10, windows 11, winui, app lifecycle
 ms.localizationpriority: medium
 ---
@@ -19,7 +19,7 @@ The application lifecycle of a Windows App SDK app is not that same as a UWP app
 
 The [Application](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application) object is the main entry point for a Windows App SDK app. It's similar to the UWP [Application](/uwp/api/windows.ui.xaml.application) class, but with some important differences. The `Application` object is created by the Windows App SDK framework and is accessible from the `Microsoft.UI.Xaml.Application.Current` property.
 
-The `Application` class in Windows App SDK has only one lifecycle method, [OnLaunched](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched), which is called when the app is launched. The `OnLaunched` method is responsible for creating the app's main window and displaying it. The `OnLaunched` method is also responsible for initializing the Windows App SDK framework and starting the app. When you create a new Windows App SDK app, the `OnLaunched` method is automatically generated for you.
+The `Application` class in Windows App SDK has only one lifecycle method, [OnLaunched](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.application.onlaunched), which is called when the app is launched. The `OnLaunched` method is responsible for creating the app's main window and displaying it. For a framework-dependent app, the Framework package dependency must already be established before WinUI APIs run, either statically through the package manifest or dynamically through Bootstrapper initialization. `OnLaunched` isn't the place to establish that dependency. When you create a new Windows App SDK app, the `OnLaunched` method is automatically generated for you.
 
 In contrast, the UWP `Application` class has several activation-related lifecycle methods, including [OnLaunched](/uwp/api/windows.ui.xaml.application.onlaunched), [OnActivated](/uwp/api/windows.ui.xaml.application.onactivated), and [OnBackgroundActivated](/uwp/api/windows.ui.xaml.application.onbackgroundactivated). The `OnActivated` and `OnBackgroundActivated` methods are called when the app is activated. The `OnActivated` method is called when the app is activated by the user, and the `OnBackgroundActivated` method is called when the app is activated by the system.
 

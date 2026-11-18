@@ -324,7 +324,7 @@ This release supports all [stable channel features](../../windows-app-sdk/releas
 > - Standalone installer for Windows App SDK.
 > - MSIX package bundle that includes dynamic dependencies functionality.
 >
-> For more info, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](../../windows-app-sdk/deploy-unpackaged-apps.md).
+> For more info, see [Windows App SDK deployment guide for framework-dependent unpackaged apps](../../windows-app-sdk/deploy-unpackaged-apps.md).
 
 </details>
 
