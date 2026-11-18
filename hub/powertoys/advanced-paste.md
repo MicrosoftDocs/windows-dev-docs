@@ -1,7 +1,7 @@
 ---
 title: Advanced Paste Tool for Clipboard Management in PowerToys
 description: Learn how to use PowerToys Advanced Paste to transform clipboard content into any format - plain text, JSON, Markdown, or files. Includes opt-in AI-powered features and local OCR capabilities.
-ms.date: 11/12/2025
+ms.date: 11/18/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Paste as Plain Text, Advanced Paste, Win]
 # Customer intent: Learn how to use the Advanced Paste feature in PowerToys to paste text from your clipboard into any format needed.
@@ -9,7 +9,7 @@ no-loc: [PowerToys, Windows, Paste as Plain Text, Advanced Paste, Win]
 
 # Advanced Paste tool for clipboard management
 
-PowerToys **Advanced Paste** is a powerful clipboard management tool that transforms your clipboard content into any format you need. This tool enables you to paste content as plain text, markdown, JSON, or various file formats (.txt, .html, .png) by using either the interface or keyboard shortcuts. Advanced Paste can extract text from images by using local OCR technology and transcode audio and video files to .mp3 or .mp4 formats. All processing happens locally on your machine, with an optional AI-powered feature that requires either an API key for a cloud AI service or a local model configured in Foundry Local or Ollama.
+PowerToys **Advanced Paste** is a powerful clipboard management tool that transforms your clipboard content into any format you need. This tool enables you to paste content as plain text, markdown, JSON, or various file formats (.txt, .html, .png, .jpg) by using either the interface or keyboard shortcuts. Advanced Paste can extract text from images by using local OCR technology and transcode audio and video files to .mp3 or .mp4 formats. All processing happens locally on your machine, with an optional AI-powered feature that requires either an API key for a cloud AI service or a local model configured in Foundry Local or Ollama.
 
 ## Get started with Advanced Paste
 
@@ -42,7 +42,8 @@ From the Settings menu, configure the following options:
 | Paste as Markdown directly shortcut | The customizable keyboard command to paste as Markdown without opening the **Advanced Paste** window. |
 | Paste as JSON directly shortcut | The customizable keyboard command to paste as JSON without opening the **Advanced Paste** window. |
 | Additional actions \| Image to Text | Turn on/off the Image to text paste action and configure the customizable keyboard command. |
-| Additional actions \| Paste as file | Turn on/off the set of Paste as File actions which include Paste as .txt file, Paste as .png file, Paste as .html file. Optionally configure the customizable keyboard command for each of these actions. |
+| Additional actions \| Paste as file | Turn on/off the set of Paste as File actions which include Paste as .txt file, Paste as .png file, Paste as .jpg file, Paste as .html file. Optionally configure the customizable keyboard command for each of these actions. |
+| Additional actions \| JPEG quality level | Set the image quality used by **Paste as .jpg file**, from 1 to 100 (default: 90). Higher values produce better image quality but larger files. |
 | Additional actions \| Transcode audio / video | Turn on/off both the Transcode audio and video paste actions. The transcode settings are all enabled by default. |
 | Additional actions \| Transcode to .mp3 | Turn on/off the Transcode to .mp3 paste action and configure the customizable keyboard command to transcode audio or video on the clipboard without opening the **Advanced Paste** window. |
 | Additional actions \| Transcode to .mp4 (H.264/AAC) | Turn on/off the Transcode to .mp4 (H.264/AAC) paste action and configure the customizable keyboard command to transcode video on the clipboard without opening the **Advanced Paste** window. |
@@ -229,12 +230,12 @@ Advanced Paste includes several image-based paste options. You can find these op
 > [!NOTE]
 > Paste as Image to text is a feature that runs locally by using local OCR.
 
-### Paste as .png file
+### Paste as .png or .jpg file
 
-**Paste as .png file** enables you to quickly paste an image format, like a bitmap, to a .png file. You can optionally create a quick key shortcut to invoke this paste action.
+**Paste as .png file** and **Paste as .jpg file** enable you to quickly paste an image format, like a bitmap, to a .png or .jpg file. For .jpg files, you can set the **JPEG quality level** in [Settings](#settings), from 1 to 100 (default: 90). Higher values produce better image quality but larger files. You can optionally create a quick key shortcut to invoke these paste actions.
 
 > [!NOTE]
-> Paste as .png file is a feature that runs locally and doesn't use AI.
+> Paste as .png/.jpg file is a feature that runs locally and doesn't use AI.
 
 ## Transcode to audio or video
 
