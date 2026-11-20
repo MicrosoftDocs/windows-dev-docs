@@ -1,25 +1,56 @@
 # Windows Developer Docs — Agent Instructions
 
-This file is read automatically by GitHub Copilot CLI, VS Code Copilot, and the GitHub Copilot coding agent. It provides context for AI agents working in the `windows-dev-docs-pr` repository.
+This file is read automatically by GitHub Copilot CLI, VS Code Copilot, and the GitHub Copilot cloud agent. It provides context for AI agents working in the `windows-dev-docs-pr` repository.
 
 ## What this repo is
 
 This is the **private preview** source for Windows developer documentation published at [learn.microsoft.com/windows/apps/](https://learn.microsoft.com/windows/apps/) and related paths. Changes here go through review before publishing.
 
 > [!IMPORTANT]
-> **API reference content is NOT in this repo.** API reference for WinRT, Win32, and Windows App SDK lives in separate Azure DevOps repositories. If a user asks you to edit API reference pages (namespaces, classes, methods, properties), stop and direct them to the docs team at jkendirs@microsoft.com.
+> **API reference content is NOT in this repo.** API reference for WinRT, Win32, and Windows App SDK lives in separate Azure DevOps repositories. If a user asks you to edit API reference pages (namespaces, classes, methods, properties, parameters, or types), stop and direct them to John Kennedy at jken@microsoft.com.
 
 ## Directory structure
 
 | Directory | Content |
 |-----------|---------|
-| `hub/` | **Primary content** — WinAppSDK, WinUI 3, tools, design, get-started, tutorials |
-| `uwp/` | Legacy UWP content — migration to `hub/` is in progress; do not edit without checking |
+| `hub/` | **Primary content** — Windows App SDK, WinUI 3, tools, design, get-started, tutorials |
+| `uwp/` | Legacy UWP content — migration to `hub/` is in progress; do not edit |
 | `terminal/` | Windows Terminal documentation |
 | `WSL/` | Windows Subsystem for Linux documentation |
 | `landing/` | Landing pages (index.yml files) |
 
 Most new and updated conceptual content goes in `hub/`.
+
+## Requests that start from a learn.microsoft.com URL
+
+Most change requests give you the URL of a published page, not a file path. To find the source file:
+
+1. If you can fetch the page, read its `original_content_git_url` meta tag. It contains the source path.
+2. Otherwise, map the URL path to the repo:
+   - `/windows/apps/...` → `hub/apps/...`
+   - `/windows/terminal/...` → `terminal/...`
+   - `/windows/wsl/...` → `WSL/...`
+   - `/windows/uwp/...` → `uwp/...` (do not edit; see "When to stop instead of editing")
+   - A URL that ends in `/` maps to `index.md` or `index.yml` in that folder.
+3. Confirm the match: the file's `title` metadata must match the published page title.
+4. If you can't find a confident match, stop and report what you searched. Never edit a different file instead.
+
+## Scope rules for change requests
+
+- Change only what the request describes. Don't rewrite, reorganize, or restyle other content.
+- If you notice other problems, list them under **Other issues noticed** in the PR description. Don't fix them in the same PR.
+- On existing files, keep `author` and `ms.author` as they are. Update `ms.date` only.
+- Include the requester's source of truth (spec, header file, PR, release notes, or "PM confirmation") in the PR description.
+
+## When to stop instead of editing
+
+Don't make the change. Instead, explain why in a draft PR or an issue comment when:
+
+- The source file is in `uwp/`
+- The change requires edits to `toc.yml`, `docfx.json`, or `.openpublishing.redirection.json`
+- The request is about API reference content (signatures, parameters, types, or API reference pages)
+- The requested change contradicts other content in this repo
+- You can't identify the source file with confidence
 
 ## Check for existing content before adding a topic
 
@@ -39,11 +70,15 @@ For a new topic, also search the available catalogs from `MicrosoftDocs/win32-pr
 
 When you create a topic, include the catalog search terms and the reason existing pages do not meet the reader need in the pull request description. Do not copy an explanation or procedure into multiple articles when a link to canonical coverage is sufficient.
 
+New topics need a table of contents entry, but you must not edit `toc.yml`. In the PR description, propose the TOC entry: the `toc.yml` file, the parent node, and the entry name and `href`.
+
 After you change conceptual Markdown, regenerate the catalog and commit the result:
 
 ```console
 python tools/content_index/content_index.py build
 ```
+
+If Python isn't available in your environment, don't edit the index manually. Instead, note in the PR description that the index needs regenerating. The **Conceptual content index** check uploads a corrected file that can be committed (see the next section).
 
 ### Repair a stale content index in an existing PR
 
@@ -75,16 +110,25 @@ Always create a new branch before making changes. Never commit directly to `main
 Pattern: `{your-alias}-main/{brief-description}`
 
 Examples:
+
 - `jken-main/fix-winui3-quickstart`
 - `pmsmith-main/update-drag-drop-sample`
 - `aliasname-main/add-notificationmanager-overview`
+
+Exception: branches created by the GitHub Copilot cloud agent can use its default naming (for example, `copilot/...`).
 
 ## Pull request requirements
 
 - **Target branch:** `main`
 - **PR title:** brief, imperative ("Fix broken link in quickstart", "Add drag-and-drop overview")
-- **PR description:** include the `learn.microsoft.com` URL(s) affected, and a one-line summary of what changed and why
-- **After opening PR:** email jkendirs@microsoft.com so the docs team can review
+- **PR description:** include:
+  - the affected `learn.microsoft.com` URL(s)
+  - a one-line summary of what changed and why
+  - the source of truth for the change
+  - **Other issues noticed**, if any
+- **Review:** John Kennedy is added as reviewer automatically through CODEOWNERS. Don't attempt to send email.
+- **Requester:** the person who asked for the change confirms technical accuracy on the PR before it's reviewed.
+- **Urgent changes:** the requester emails jken@microsoft.com.
 
 ## Required YAML front-matter
 
@@ -92,7 +136,7 @@ Every `.md` file must have this metadata block at the top:
 
 ```yaml
 ---
-title: Title here (10–65 characters)
+title: Title here (–65 characters)
 description: One-sentence summary (115–145 characters, no quotes)
 author: GrantMeStrength
 ms.author: jken
@@ -103,7 +147,8 @@ ms.date: MM/DD/YYYY
 
 Common `ms.topic` values: `overview`, `how-to`, `tutorial`, `article`, `reference`
 
-When updating an existing file, always update `ms.date` to today's date.
+- **New files:** use the block above.
+- **Existing files:** update `ms.date` to today's date. Keep all other existing values, including `author` and `ms.author`, unless the request is specifically to change them.
 
 ## Writing style rules
 
@@ -111,7 +156,7 @@ When updating an existing file, always update `ms.date` to today's date.
 - **Neutral and instructional tone** — no marketing language ("powerful", "seamless", "easy")
 - **Short paragraphs** — 3–4 sentences maximum
 - **Procedural steps** — 7 or fewer; consolidate trivial actions into one step
-- **Code blocks** — always include a language tag (` ```csharp `, ` ```cpp `, ` ```powershell `, ` ```console `)
+- **Code blocks** — always include a language tag (`csharp`, `cpp`, `powershell`, `console`)
 - **Exact product names** — `Windows App SDK`, `Win32 API`, `WinUI 3`, `Windows Runtime`, `IntelliSense`
 - **Do not abbreviate** namespaces in prose — write `Microsoft.UI.Xaml`, not `MUX`
 - **Images** — always include descriptive `alt` text; never generate AI images
@@ -119,7 +164,7 @@ When updating an existing file, always update `ms.date` to today's date.
 ## What you can change
 
 - ✅ Conceptual `.md` files in `hub/`, `terminal/`, `WSL/`
-- ✅ Updating outdated version numbers, API names, or step-by-step instructions
+- ✅ Updating outdated version numbers, API names in conceptual content, or step-by-step instructions
 - ✅ Fixing broken links (use relative paths within the repo when linking to other articles)
 - ✅ Adding code examples (C# or C++, with language tags and explanatory comments)
 - ✅ Fixing typos and grammar
@@ -127,28 +172,48 @@ When updating an existing file, always update `ms.date` to today's date.
 
 ## What you must NOT change
 
-- ❌ Files in `uwp/` — active migration in progress; check with the docs team first
+- ❌ Files in `uwp/` — active migration in progress; check with John Kennedy first
 - ❌ `.openpublishing.redirection.json` — redirects require special review
 - ❌ `docfx.json` — repo configuration; do not touch
-- ❌ `toc.yml` files — table of contents changes require docs team approval
-- ❌ Files that look like API reference stubs (YAML-only, or tiny files with just metadata and parameter tables) — these belong in the DevOps API-ref repos, not here
+- ❌ `toc.yml` files — table of contents changes require John Kennedy's approval; propose them in the PR description instead
+- ❌ Files that look like API reference stubs (YAML-only, or tiny files with just metadata and parameter tables) — these belong in the DevOps API reference repos, not here
 
 ## Publish timing
 
-- Merges to `main` publish **nightly at approximately 10 PM Pacific time**
+- Merges to `main` publish **automatically after PR has been merged**
 - Preview your changes at `review.learn.microsoft.com` before the PR is merged
-- For urgent changes, email jkendirs@microsoft.com
+- For urgent changes, email jken@microsoft.com
 
 ## Pre-written prompts
 
-Use these prompts with GitHub Copilot CLI or VS Code Copilot to perform common tasks. Fill in the bracketed placeholders.
+Use these prompts with GitHub Copilot on github.com, GitHub Copilot CLI, or VS Code Copilot. Fill in the bracketed placeholders.
+
+### Request a doc fix (recommended for PMs and feature owners)
+
+```
+Update a published Windows developer docs topic. Follow the AGENTS.md instructions in this repo.
+
+Topic URL: [learn.microsoft.com URL]
+
+What's wrong:
+[Describe the problem.]
+
+What it should say:
+[The correct information. Exact wording is optional.]
+
+Source of truth:
+[Spec, header file, PR, release notes, or "PM confirmation".]
+
+Change only what's described above. Open a pull request targeting main, and list any other issues you notice in the PR description instead of fixing them.
+```
 
 ### Fix outdated content
 
 ```
 The page at [URL] has outdated information. Specifically: [describe what is wrong and what the correct information is].
+Source of truth: [spec link, header file path, release notes, or "PM confirmation"]
 
-Find the markdown source file in this repo, make only the necessary changes, create a branch named [alias]-main/fix-[description], commit the changes with a clear message, and open a pull request targeting main. Include the affected URL in the PR description.
+Find the markdown source file in this repo, make only the necessary changes, create a branch named [alias]-main/fix-[description], commit the changes with a clear message, and open a pull request targeting main. Include the affected URL and the source of truth in the PR description.
 ```
 
 ### Add missing information
@@ -180,14 +245,14 @@ Key points to cover: [list the main things the page should explain]
 Related pages to link to: [URLs of related articles]
 File location: hub/apps/[appropriate-subdirectory]/[filename].md
 
-Generate the markdown file with proper YAML front-matter (title 10–65 chars, description 115–145 chars, author: GrantMeStrength, ms.author: jken, ms.topic: overview, ms.date: today's date). Use active voice, present tense, second person. No marketing language. Include at least one C# or C++ code example with a language tag and explanatory comments. Create a branch named [alias]-main/add-[description], commit, and open a PR targeting main.
+First, search the content catalog as described in AGENTS.md and confirm no existing article covers this. Generate the markdown file with proper YAML front-matter (title 10–65 chars, description 115–145 chars, author: GrantMeStrength, ms.author: jken, ms.topic: overview, ms.date: today's date). Use active voice, present tense, second person. No marketing language. Where a code example helps the reader, include C# or C++ with a language tag and explanatory comments. Don't edit toc.yml; propose the TOC entry in the PR description. Create a branch named [alias]-main/add-[description], commit, and open a PR targeting main.
 ```
 
 ## Contacts
 
 | Area | Contact |
 |------|---------|
-| Windows Developer docs | John Kennedy — jkendirs@microsoft.com |
+| Windows developer docs, including API reference questions (Win32, WinRT, Windows App SDK) | John Kennedy — jken@microsoft.com |
 | Drivers / Server docs | Robin Harwood |
 
-For questions about API reference repos (Win32, WinRT, Windows App SDK), contact jkendirs@microsoft.com — do not attempt to edit those files here.
+Do not attempt to edit API reference files in this repo.
