@@ -2,7 +2,7 @@
 title: Windows App SDK 1.1 release notes
 description: Provides information about what's new in Windows App SDK 1.1.
 ms.topic: release-notes
-ms.date: 08/21/2026
+ms.date: 11/18/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -132,7 +132,7 @@ zone_pivot_groups: wasdk-release-channels
 > - Packaged apps can now force deploy the Windows App SDK runtime packages using the [**DeploymentManager.Initialize(DeploymentInitializeOptions) API**](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.deploymentmanager.initialize#microsoft-windows-applicationmodel-windowsappruntime-deploymentmanager-initialize(microsoft-windows-applicationmodel-windowsappruntime-deploymentinitializeoptions)) or using the --force option with the Windows App Runtime installer.
 > - There are additional functional extension categories, UnlockedDEHs, available for packaged apps. Check out the 1.1 Preview 3 release notes for more details. These require the Windows App SDK framework package to be installed. See [Latest Windows App SDK downloads](../../windows-app-sdk/downloads.md) to install the runtime.
 > - Self-contained deployment is supported. Check out the [Windows App SDK deployment overview](../../package-and-deploy/deploy-overview.md) for the differences between framework-dependent and self-contained deployment, and how to get started.
-> - The Bootstrapper API required for apps that don't deploy with MSIX include new options for improved usability and troubleshooting. Please view our documentation for C# apps, [Bootstrapper C# APIs](/windows/apps/api-reference/cs-bootstrapper-apis/) and for C++ apps, [mddbootstrapheader.h header](/windows/windows-app-sdk/api/win32/mddbootstrap). For more details, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../windows-app-sdk/use-windows-app-sdk-run-time.md).
+> - The Bootstrapper API for dynamically referencing the Framework package in unpackaged apps includes new options for improved usability and troubleshooting. Please view our documentation for C# apps, [Bootstrapper C# APIs](/windows/apps/api-reference/cs-bootstrapper-apis/) and for C++ apps, [mddbootstrapheader.h header](/windows/windows-app-sdk/api/win32/mddbootstrap). For more details, see [Initialize the Windows App SDK Framework package dynamically](../../windows-app-sdk/use-windows-app-sdk-run-time.md).
 >
 > **Known limitations:**
 >
@@ -384,7 +384,7 @@ zone_pivot_groups: wasdk-release-channels
 > **New features:**
 >
 > - Packaged apps can now force deploy the Windows App SDK runtime packages using the **DeploymentManager.Initialize** API.
-> - The Bootstrapper API now includes new options for improved usability and troubleshooting. For more details, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../windows-app-sdk/use-windows-app-sdk-run-time.md) and [Rich information on Bootstrap initialization failure](https://github.com/microsoft/WindowsAppSDK/pull/2316).
+> - The Bootstrapper API now includes new options for improved usability and troubleshooting. For more details, see [Initialize the Windows App SDK Framework package dynamically](../../windows-app-sdk/use-windows-app-sdk-run-time.md) and [Rich information on Bootstrap initialization failure](https://github.com/microsoft/WindowsAppSDK/pull/2316).
 >
 > **Known limitations:**
 >

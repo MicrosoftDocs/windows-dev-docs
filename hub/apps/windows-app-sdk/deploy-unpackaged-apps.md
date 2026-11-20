@@ -1,30 +1,32 @@
 ---
-title: Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged
-description: This topic provides guidance about deploying apps that are packaged with external location, or are unpackaged, and that use the Windows App SDK.
+title: Windows App SDK deployment guide for framework-dependent unpackaged apps
+description: Learn how to deploy the Windows App SDK runtime and initialize its Framework dependency in an unpackaged desktop app.
 ms.topic: article
-ms.date: 05/29/2026
+ms.date: 11/18/2026
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
 
-# Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged
+# Windows App SDK deployment guide for framework-dependent unpackaged apps
 
-This topic provides guidance about deploying apps that are packaged with external location, or are unpackaged, and that use the Windows App SDK.
+This topic describes how to deploy the Windows App SDK runtime and initialize its Framework dependency for framework-dependent unpackaged desktop apps.
 
 * Such apps are desktop apps (not UWP apps).
 * They can be written in a .NET language such as C#, or in C++.
 * For their user-interface, they can use WinUI 3, or WPF, or WinForms, or another UI framework.
 
+For packaged apps, including apps packaged with external location (sparse packages), see [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md). For apps that carry the Framework binaries app-locally instead of depending on the Framework MSIX package, see [Windows App SDK deployment guide for self-contained apps](../package-and-deploy/self-contained-deploy/deploy-self-contained-apps.md).
+
 ## Overview
 
-Developers of packaged with external location and unpackaged apps are responsible for deploying required Windows App SDK runtime packages to their end users. This can be done either by running the installer or by installing the MSIX packages directly. These options are described in more detail in the [Deploy Windows App SDK runtime](#deploy-windows-app-sdk-runtime) section below.
+You're responsible for deploying the required Windows App SDK runtime packages with your unpackaged app, either by running the runtime installer or by installing the MSIX packages directly. These options are described in [Deploy Windows App SDK runtime](#deploy-windows-app-sdk-runtime).
 
-Packaged with external location and unpackaged apps also have extra runtime requirements. You must initialize access to the Windows App SDK runtime using the Bootstrapper API. In addition, the Dynamic Dependencies API can be used if your app makes use of other framework packages aside from the Windows App SDK. These requirements are described in more detail in the [Runtime requirements for apps packaged with external location or unpackaged](#runtime-requirements-for-apps-packaged-with-external-location-or-unpackaged) section below.
+Your app must also use the Bootstrapper API, either automatically or explicitly, to add the Framework package to its process package graph before using Windows App SDK APIs. If your app uses other MSIX framework packages, it can reference them through the Dynamic Dependencies API. See [Windows App SDK runtime dependencies and initialization](#windows-app-sdk-runtime-dependencies-and-initialization).
 
 ## Prerequisites
 
 * [Download the latest installer & MSIX packages](downloads.md).
-* For apps that are packaged with external location or unpackaged, the Visual C++ Redistributable is a requirement. For more info, see [Microsoft Visual C++ Redistributable latest supported downloads](/cpp/windows/latest-supported-vc-redist).
+* The Visual C++ Redistributable is a requirement. For more info, see [Microsoft Visual C++ Redistributable latest supported downloads](/cpp/windows/latest-supported-vc-redist).
 * **C#**. .NET 6 or later is required. For more info, see [.NET Downloads](https://dotnet.microsoft.com/download/dotnet/).
 
 ### Additional prerequisites 
@@ -42,7 +44,7 @@ Packaged with external location and unpackaged apps also have extra runtime requ
 
 ## Deploy Windows App SDK runtime
 
-Packaged with external location and unpackaged apps have two options to deploy the Windows App SDK runtime:
+You have two options to deploy the Windows App SDK runtime with your unpackaged app:
 
 - **[Option 1: Use the Installer](#option-1-use-the-installer)**: The silent installer distributes all Windows App SDK MSIX packages. A separate installer is available for each of the `X64`,`X86` and `Arm64` architectures.
 - **[Option 2: Install the packages directly](#option-2-deploy-windows-app-sdk-runtime-packages-directly)**: You can have your existing setup or MSI tool carry and install the MSIX packages for the Windows App SDK.
@@ -91,7 +93,7 @@ WindowsAppRuntimeInstall.exe --force
 
 To see all installer command line options, run `WindowsAppRuntimeInstall --h`.
 
-After the installation is complete, you can run your packaged with external location or unpackaged app. For an example of how to build and run a packaged with external location or unpackaged app that uses the Windows App SDK, see [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
+After installation, your app must add the Framework dependency to its process package graph through Bootstrapper initialization. For an example that uses explicit calls, see [Tutorial: Use the bootstrapper API in an unpackaged app](tutorial-unpackaged-deployment.md).
 
 #### Chain the Windows App SDK installer to your app's setup
 
@@ -285,7 +287,7 @@ private static bool IsDDLMRegistered(ProcessorArchitecture systemArchitecture,
 }
 ```
 
-The info and code above covers the basic detection scenario. To detect whether the runtime is provisioned for all users, or to do the above from an App Container, and/or do it from a packaged `mediumIL` process, additional logic is needed.
+The info and code above covers the basic detection scenario for the current user. Additional logic is needed to detect whether the runtime is provisioned for all users.
 
 ## Deployment scenarios
 
@@ -297,28 +299,33 @@ The info and code above covers the basic detection scenario. To detect whether t
 
 - **One or more of the Windows App SDK MSIX packages are not installed on the computer**: When deploying the Windows App SDK, always attempt to install all the MSIX packages (framework, main, singleton, DDLM) to ensure that all dependencies are installed and you avoid disruption to the end-user experience.
 
-## Runtime requirements for apps packaged with external location or unpackaged
+## Windows App SDK runtime dependencies and initialization
 
-Apps that are packaged with external location or unpackaged have extra runtime requirements to use the Windows App SDK runtime. This involves referencing and initializing the Windows App SDK Framework package at runtime. In addition, the Dynamic Dependencies API can be used to reference other framework packages outside of the Windows App SDK.
+Framework-dependent unpackaged apps must establish the Framework package dependency dynamically before using Windows App SDK APIs. Installing the runtime packages doesn't, by itself, add the Framework package to your app's process package graph.
 
-### Use the Windows App SDK runtime
+### Using the Windows App SDK runtime
 
-Packaged with external location and unpackaged apps must call the Bootstrapper API to use the Windows App SDK at run time. This is required before the app can use Windows App SDK features such as WinUI, App Lifecycle, MRT Core, and DWriteCore. A bootstrapper component enables packaged with external location and unpackaged apps to perform these important tasks:
+The Bootstrapper API performs two important tasks:
 
-- Find and load the Windows App SDK framework package to the app's package graph.
-- Initialize the Dynamic Dependency Lifetime Manager (DDLM) for the Windows App SDK framework package. The purpose of the DDLM is to prevent servicing of the Windows App SDK framework package while it is in use by a packaged with external location or unpackaged app. 
+- Finds the installed Windows App SDK Framework package and adds it to the application's process package graph.
+- Initializes the Dynamic Dependency Lifetime Manager (DDLM) where required by the operating system. The DDLM keeps the dynamically referenced Framework package in use while the application is using it; supported versions of Windows 11 can provide this lifetime management through OS-native dynamic dependencies instead.
 
-The simplest way to load the Windows App SDK runtime for packaged with external location and unpackaged apps is by setting the `<WindowsPackageType>None</WindowsPackageType>` property in your project file (.csproj or .vcxproj). You may also call the bootstrapper API directly in your app's startup code for more control over the initialization. For more details, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md) and [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
+For a framework-dependent executable, setting `<WindowsPackageType>None</WindowsPackageType>` in the project file (`.csproj` or `.vcxproj`) enables the Bootstrapper auto-initializer by default.
 
-Dynamic Dependencies support allows packaged with external location and unpackaged apps to keep their existing deployment mechanism, such as MSI or any installer, and be able to leverage the Windows App SDK in their application. Dynamic dependencies can be used by packaged, packaged with external location, and unpackaged apps; although it is primarily intended to be used by packaged with external location and unpackaged apps.
+An explicit call to the Bootstrapper API isn't required when the auto-initializer performs this operation. If you need more control, such as custom error handling or selection of a particular Framework version, disable the auto-initializer and call the Bootstrapper API directly.
 
-There is one DDLM for each version and architecture of the Windows App SDK framework package. This means on an `x64` computer, you may have both an `x86` and an `x64` version of the DDLM to support apps of both architectures.
+For more details, see [Initialize the Windows App SDK Framework package dynamically](use-windows-app-sdk-run-time.md) and [Tutorial: Use the bootstrapper API in an unpackaged app](tutorial-unpackaged-deployment.md).
+
+There is one DDLM for each version and architecture of the Windows App SDK Framework package. This means that on an `x64` computer, both `x86` and `x64` DDLM versions may be present to support applications of both architectures.
+
+> [!NOTE]
+> Additional feature dependencies are separate from the Framework dependency. Push notifications can require the Singleton package. For framework-dependent unpackaged apps, app-notification registration with `AppNotificationManager` also requires Singleton, even after Framework initialization succeeds. App notifications in self-contained apps don't require Singleton, but API-specific requirements still apply. See [Deployment architecture for the Windows App SDK](deployment-architecture.md#singleton-package).
 
 ### Reference other framework packages using Dynamic Dependencies API
 
-If you want to use features in other framework packages outside of the Windows App SDK (e.g., DirectX), packaged with external location and unpackaged apps can call the Dynamic Dependencies API. In addition to the bootstrapper component, the Windows App SDK also provides a broader set of C/C++ functions and WinRT classes that implement the *dynamic dependency API*. This API is designed to be used to reference any framework package dynamically at run time. 
+To reference MSIX framework packages other than the Windows App SDK Framework package, your unpackaged app can use the Dynamic Dependencies API. The Windows App SDK provides C/C++ functions and WinRT classes that implement this API.
 
-For more information, see [Use MSIX framework packages dynamically from your desktop app](../desktop/modernize/framework-packages/index.md) and the [Dynamic Dependencies sample](/samples/microsoft/windowsappsdk-samples/dynamicdependencies/)
+For more information, see [Use MSIX framework packages dynamically from your desktop app](../desktop/modernize/framework-packages/index.md) and the [Dynamic Dependencies sample](/samples/microsoft/windowsappsdk-samples/dynamicdependencies/).
 
 ## Deploy .winmd files to the target machine
 
@@ -328,7 +335,7 @@ Along with your app, we recommend that you go ahead and deploy Windows Metadata 
 
 * [Deployment architecture for the Windows App SDK](deployment-architecture.md)
 * [Windows App SDK deployment guide for framework-dependent packaged apps](deploy-packaged-apps.md)
-* [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md)
+* [Tutorial: Use the bootstrapper API in an unpackaged app](tutorial-unpackaged-deployment.md)
 * [Check for installed versions of the Windows App SDK runtime](check-windows-app-sdk-versions.md)
 * [Remove outdated Windows App SDK runtime versions from your development computer](remove-windows-app-sdk-versions.md)
 * [What is MSIX?](/windows/msix/overview)

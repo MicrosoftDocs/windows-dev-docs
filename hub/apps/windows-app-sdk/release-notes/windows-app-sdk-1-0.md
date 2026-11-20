@@ -2,7 +2,7 @@
 title: Windows App SDK 1.0 release notes
 description: Provides information about what's new in Windows App SDK 1.0.
 ms.topic: release-notes
-ms.date: 09/22/2025
+ms.date: 11/18/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -291,7 +291,7 @@ This is a servicing release of the Windows App SDK that includes critical bug fi
 > **New Features and updates:**
 >
 > - You can auto-initialize the Windows App SDK through the `WindowsPackageType project` property to load the Windows App SDK runtime and call the Windows App SDK APIs. See [Create your first WinUI 3 (Windows App SDK) project](../../get-started/start-here.md) for instructions.
-> - Unpackaged apps can deploy Windows App SDK by integrating in the standalone Windows App SDK `.exe` installer into your existing MSI or setup program. For more info, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](../../windows-app-sdk/deploy-unpackaged-apps.md).
+> - Unpackaged apps can deploy Windows App SDK by integrating in the standalone Windows App SDK `.exe` installer into your existing MSI or setup program. For more info, see [Windows App SDK deployment guide for framework-dependent unpackaged apps](../../windows-app-sdk/deploy-unpackaged-apps.md).
 > - Unpackaged .NET apps can also use .NET wrapper for the [bootstrapper API](../../windows-app-sdk/use-windows-app-sdk-run-time.md) to dynamically take a dependency on the Windows App SDK framework package at run time. For more info about the .NET wrapper, see [.NET wrapper library](../../windows-app-sdk/use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api).
 > - Packaged apps can use the deployment API to verify and ensure that all required packages are installed on the machine. For more info about how the deployment API works, see [Windows App SDK deployment guide for framework-dependent packaged apps](../../windows-app-sdk/deploy-packaged-apps.md).
 >
@@ -545,7 +545,7 @@ For more info, see [Manage app windows (Windows App SDK)](../../develop/ui/manag
 
 **New features**:
 
-- Windows App SDK 1.0 Preview 2 introduces a .NET wrapper for the bootstrapper API (see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../windows-app-sdk/use-windows-app-sdk-run-time.md)). The bootstrapper API is a set of native C/C++ functions that unpackaged apps must use to dynamically take a dependency on the Windows App SDK framework package at run time. The .NET wrapper provides an easier way to call the bootstrapper API from .NET apps, including Windows Forms and WPF apps. The .NET wrapper for the bootstrapper API is available in the Microsoft.WindowsAppRuntime.Bootstrap.Net.dll assembly, which is local to your app project. For more info about the .NET wrapper, see [.NET wrapper library](../../windows-app-sdk/use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api).
+- Windows App SDK 1.0 Preview 2 introduces a .NET wrapper for the bootstrapper API (see [Initialize the Windows App SDK Framework package dynamically](../../windows-app-sdk/use-windows-app-sdk-run-time.md)). The bootstrapper API is a set of native C/C++ functions that unpackaged apps must use to dynamically take a dependency on the Windows App SDK framework package at run time. The .NET wrapper provides an easier way to call the bootstrapper API from .NET apps, including Windows Forms and WPF apps. The .NET wrapper for the bootstrapper API is available in the Microsoft.WindowsAppRuntime.Bootstrap.Net.dll assembly, which is local to your app project. For more info about the .NET wrapper, see [.NET wrapper library](../../windows-app-sdk/use-windows-app-sdk-run-time.md#net-wrapper-for-the-bootstrapper-api).
 - Packaged apps can now use the deployment API to get the main and singleton MSIX packages installed on the machine. The main and singleton packages are part of the framework package that is installed with the app, but due to a limitation with the Windows application model, packaged apps will need to take this additional step in order to get those packages installed. For more info about how the deployment API works, see [Windows App SDK deployment guide for framework-dependent packaged apps](../../windows-app-sdk/deploy-packaged-apps.md).
 
 **Important limitations**:
@@ -784,7 +784,7 @@ Starting in version 1.0 Preview 1, MRT Core APIs have moved from the [Microsoft.
 > For more information, see the following articles:
 >
 > - [MSIX framework packages and dynamic dependencies](../../desktop/modernize/framework-packages/framework-packages-overview.md)
-> - [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../windows-app-sdk/use-windows-app-sdk-run-time.md)
+> - [Initialize the Windows App SDK Framework package dynamically](../../windows-app-sdk/use-windows-app-sdk-run-time.md)
 >
 
 </details>

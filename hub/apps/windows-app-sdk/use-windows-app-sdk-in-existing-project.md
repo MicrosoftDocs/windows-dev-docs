@@ -2,7 +2,7 @@
 title: Use the Windows App SDK in an existing project
 description: Install the Windows App SDK NuGet package in an existing WPF, WinForms, or Win32 project and initialize the runtime for unpackaged deployment.
 ms.topic: how-to
-ms.date: 10/02/2026
+ms.date: 11/18/2026
 keywords: windows win32, desktop development, Windows App SDK
 ms.localizationpriority: medium
 zone_pivot_groups: desktop-framework
@@ -47,9 +47,11 @@ Before you install and use the Windows App SDK NuGet package in your app, be sur
     > [!NOTE]
     > The Windows App SDK NuGet package contains other sub-packages (including **Microsoft.WindowsAppSDK.Foundation**, **Microsoft.WindowsAppSDK.WinUI**, and others) that contain the implementations for specific components in the Windows App SDK. In general, we recommend that you install the main Windows App SDK NuGet package, which includes all of the components. In some cases, you can install a sub-package individually in order to reference only certain components in your project. For example, see [Install and deploy Windows ML](/windows/ai/new-windows-ml/distributing-your-app).
 
-### Additional steps for unpackaged apps
+### Additional steps for framework-dependent unpackaged apps
 
-If your app is unpackaged (which desktop apps are by default), then there are some additional steps needed to use the Windows App SDK.
+If your app is unpackaged and framework-dependent, follow the additional steps below to install the runtime and establish a dynamic Framework dependency.
+
+Packaged apps, including apps packaged with external location (sparse packages), can declare the Framework dependency statically with `<PackageDependency>` in `AppxManifest.xml`; they don't need Bootstrapper initialization for that dependency. Self-contained apps carry the Framework binaries app-locally and don't need a Framework MSIX dependency or Bootstrapper initialization for those binaries. See [Windows App SDK deployment overview](../package-and-deploy/deploy-overview.md).
 
 For more info about the terms *packaged* and *unpackaged*, see [Packaging overview](/windows/apps/package-and-deploy/packaging/).
 
@@ -66,11 +68,11 @@ For your development machine, we recommend that you visit [Latest Windows App SD
 Choose the appropriate Installer option for your machine’s architecture.
 
 > [!IMPORTANT]
-> When your app is deployed, you will be responsible for deploying required Windows App SDK runtime packages to your end users. For more information, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md#prerequisites). 
+> When your app is deployed, you will be responsible for deploying required Windows App SDK runtime packages to your end users. For more information, see [Windows App SDK deployment guide for framework-dependent unpackaged apps](deploy-unpackaged-apps.md#prerequisites).
 
 #### 2. Initialize the Windows App SDK Runtime
 
-By default, a WPF, WinForms, or Win32 desktop app is unpackaged. An unpackaged app must initialize the Windows App SDK runtime before using any other feature of the Windows App SDK. 
+An unpackaged framework-dependent app must add the Framework package to its process package graph before using APIs from that package.
 
 You can do that automatically when your app starts via *auto-initialization*.
 
@@ -91,7 +93,7 @@ When you build your project, these files are added to your project in Visual Stu
 
 :::zone pivot="win32"
 
-1. Manually edit your .vcxproj file.
+1. Manually edit your `.vcxproj` file.
 
 2. Inside the `<PropertyGroup Label="Globals">` element, add a `WindowsPackageType` element set to `None`. 
 
@@ -102,11 +104,11 @@ When you build your project, these files are added to your project in Visual Stu
 :::zone-end
 
 > [!NOTE]
-> If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then instead of *auto-initialization* you can call the bootstrapper API explicitly&mdash;for more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) and [Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK](tutorial-unpackaged-deployment.md).
+> If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then instead of *auto-initialization* you can call the bootstrapper API explicitly&mdash;for more info, see [Initialize the Windows App SDK Framework package dynamically](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) and [Tutorial: Use the bootstrapper API in an unpackaged app](tutorial-unpackaged-deployment.md).
 
 ## Further info
 
-If you encounter a *Class not registered* error when you try to use a Windows App SDK component, then you might have to add to your project a dynamic dependency on the Windows App SDK Framework package. For more info, see [MSIX framework packages and dynamic dependencies](../desktop/modernize/framework-packages/framework-packages-overview.md).
+If you encounter a *Class not registered* error when using a Windows App SDK component, check that your deployment configuration supplies that component. A framework-dependent app must have a Framework dependency in its process package graph, either statically through its package manifest or dynamically through Bootstrapper initialization. A self-contained app must deploy the required app-local binaries. For more info, see [Initialize the Windows App SDK](../package-and-deploy/deploy-overview.md#initialize-the-windows-app-sdk).
 
 ## Next steps
 

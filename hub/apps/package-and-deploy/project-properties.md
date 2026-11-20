@@ -4,7 +4,7 @@ description: Describes the project properties that you can set in your Visual St
 author: GrantMeStrength
 ms.author: jken
 ms.topic: article
-ms.date: 10/02/2026
+ms.date: 11/18/2026
 ms.localizationpriority: medium
 ---
 
@@ -21,8 +21,8 @@ In the Windows App SDK, there are several routines whose job it is to ensure tha
 
 All of the auto-initializers are conditionally enabled by default, based on your app's packaging and deployment configuration. Here are details about them:
 
-* Bootstrapper (also known as dynamic dependencies) auto-initializer. This auto-initializer calls the bootstrapper API automatically at app startup. It's required for framework-dependent unpackaged apps, in order to ensure that the Windows App Runtime is added to the app's package graph. For info about framework-dependent (and self-contained) apps, see [Windows App SDK deployment overview](deploy-overview.md). For info about unpackaged (and packaged) apps, see [Windows apps: packaging, deployment, and process](../get-started/intro-pack-dep-proc.md).
-  * For a packaged app, you don't need the bootstrapper/dynamic dependencies auto-initializer because the `appxmanifest.xml` file expresses the framework dependency. And for a self-contained app, you don't need the bootstrapper/dynamic dependencies auto-initializer because those apps don't use the framework.
+* Bootstrapper (also known as dynamic dependencies) auto-initializer. This auto-initializer calls the Bootstrapper API automatically at app startup to add the Framework package to a framework-dependent unpackaged app's package graph. You can use explicit Bootstrapper calls instead if you need control over initialization. For info about framework-dependent (and self-contained) apps, see [Windows App SDK deployment overview](deploy-overview.md). For info about unpackaged (and packaged) apps, see [Windows apps: packaging, deployment, and process](../get-started/intro-pack-dep-proc.md).
+  * For a packaged app, including an app packaged with external location (a sparse package), declare the Framework dependency statically with `<PackageDependency>` in `AppxManifest.xml`; you don't need Bootstrapper initialization for that dependency. A self-contained app doesn't need Bootstrapper initialization because it carries the Framework binaries app-locally rather than referencing the Framework MSIX package.
   * You can opt out of the bootstrapper/dynamic dependencies auto-initializer in your `.csproj` or `.vcxproj` file via `<WindowsAppSdkBootstrapInitialize>false</WindowsAppSdkBootstrapInitialize>`.
 * Deployment Manager auto-initializer. This is required for framework-dependent packaged apps that make use of main/singleton functionality (for example, push notifications), because the `appxmanifest.xml` file can't express those dependencies.
   * For a self-contained app, you don't need the Deployment Manager auto-initializer because those apps don't support main/singleton functionality.
@@ -63,12 +63,12 @@ In the table below are the properties that you can set in your app's project fil
 |**UseCrtSDKReferenceStaticWarning**. Suppresses the build warning that fires when a C++ packaged app links the CRT statically (which is required for self-contained deployment using the hybrid CRT). Set to *false* in packaged app projects that opt into the [hybrid CRT](https://github.com/microsoft/WindowsAppSDK/blob/main/docs/Coding-Guidelines/HybridCRT.md).|*false* (to suppress the warning in packaged self-contained apps), or absent (default, warning enabled)|[Windows App SDK deployment guide for self-contained apps](./self-contained-deploy/deploy-self-contained-apps.md)|
 |**UseWinUI**. Specifies whether you're using the WinUI user interface framework in your app.|*true*, or absent (for *false*)|[WinUI in the Windows App SDK (WinUI)](../winui/winui3/index.md)|
 |**WindowsAppSDKSingleFileVerifyConfiguration**. Controls whether the SDK runs a build-time validation target when `PublishSingleFile` is set. When enabled (the default), the target emits **errors** if required properties are missing (`EnableMsixTooling`, `WindowsPackageType=None`, `IncludeAllContentForSelfExtract`) and **warnings** if self-contained settings are absent (`WindowsAppSDKSelfContained`, `SelfContained`). Set to *false* only to suppress all checks — for example, in CI pipelines where you have verified compliance manually.|*true* (the default — validation runs), *false* (suppress all checks)|Defined in `Microsoft.WindowsAppSDK.SingleFile.targets` (included automatically by the NuGet package when `PublishSingleFile` is set)|
-|**WindowsAppSdkBootstrapInitialize**. Determines whether or not the Windows App SDK leverages the bootstrapper/dynamic dependencies auto-initializer.|*true* (the default for executables), *false* (the default for non-executables)|[Opting out of (or into) auto-initializers](../windows-app-sdk/use-windows-app-sdk-run-time.md)|
+|**WindowsAppSdkBootstrapInitialize**. Determines whether or not the Windows App SDK leverages the bootstrapper/dynamic dependencies auto-initializer.|*true* by default for framework-dependent executables with `WindowsPackageType=None`; not enabled by default for self-contained, packaged, or non-executable projects|[Opting out of (or into) auto-initializers](../windows-app-sdk/use-windows-app-sdk-run-time.md#opting-out-of-or-into-auto-initializers)|
 |**WindowsAppSdkDeploymentManagerInitialize**. Determines whether or not the Windows App SDK leverages the Deployment Manager auto-initializer.|*true* (the default), *false*||
 |**WindowsAppSDKRuntimePatchLevel1**, **WindowsAppSDKRuntimePatchLevel2**, and **WindowsAppSDKDisabledChanges**. Determines whether or not the Windows App SDK leverages the compatibility auto-initializer, and configures any desired compatibility options for Windows App Runtime behavior of changes added in servicing updates.|Various, or absent (to disable the auto-initializer)|[RuntimeCompatibilityOptions](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions)|
 |**WindowsAppSDKSelfContained**. Determines whether or not an app is deployed *self-contained*.|*true*, or absent (for *false*)|[Windows App SDK deployment guide for self-contained apps](self-contained-deploy/deploy-self-contained-apps.md)|
 |**WindowsAppSdkUndockedRegFreeWinRTInitialize**. Determines whether or not the Windows App SDK leverages the Registration-free activation auto-initializer.|*true* (the default for executables), *false* (the default for non-executables)|[Opting out of (or into) automatic UndockedRegFreeWinRT support](self-contained-deploy/deploy-self-contained-apps.md#opting-out-of-or-into-automatic-undockedregfreewinrt-support)|
-|**WindowsPackageType**. Setting `<WindowsPackageType>None</WindowsPackageType>` for an unpackaged app causes the bootstrapper/dynamic dependencies auto-initializer to locate and load a version of the Windows App SDK that's most appropriate for your app.|*None*, or absent (to disable the auto-initializer)|[Unpackage a WinUI app](unpackage-winui-app.md)<br/><br/>[Behind the scenes, and opting out of auto-initializers](../windows-app-sdk/use-windows-app-sdk-run-time.md)|
+|**WindowsPackageType**. Setting `<WindowsPackageType>None</WindowsPackageType>` for an unpackaged framework-dependent executable enables the Bootstrapper auto-initializer by default. It doesn't enable Bootstrapper initialization for self-contained deployment.|*None* for unpackaged apps, or absent for packaged apps|[Unpackage a WinUI app](unpackage-winui-app.md)<br/><br/>[Behind the scenes, and opting out of auto-initializers](../windows-app-sdk/use-windows-app-sdk-run-time.md#behind-the-scenes-and-opting-out-of-auto-initializers)|
 
 ## Example
 
@@ -94,7 +94,7 @@ Here's an excerpt from a typical `.csproj` file for a C# WinUI 3 project, showin
 * [Create and run a WinUI 3 project](../get-started/start-here.md)
 * [Package your app using single-project MSIX](../windows-app-sdk/single-project-msix.md)
 * [RuntimeCompatibilityOptions](/windows/windows-app-sdk/api/winrt/microsoft.windows.applicationmodel.windowsappruntime.runtimecompatibilityoptions)
-* [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../windows-app-sdk/use-windows-app-sdk-run-time.md)
+* [Initialize the Windows App SDK Framework package dynamically](../windows-app-sdk/use-windows-app-sdk-run-time.md)
 * [Windows App SDK deployment guide for self-contained apps](self-contained-deploy/deploy-self-contained-apps.md)
 * [Windows App SDK deployment overview](deploy-overview.md)
 * [Windows apps: packaging, deployment, and process](../get-started/intro-pack-dep-proc.md)

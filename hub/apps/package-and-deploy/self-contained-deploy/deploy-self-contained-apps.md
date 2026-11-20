@@ -2,7 +2,7 @@
 title: Windows App SDK deployment guide for self-contained apps
 description: A Windows App SDK project is framework-dependent by default. To switch to self-contained deployment, follow the steps in this article (the terms *framework-dependent* and *self-contained* are described in [Windows App SDK deployment overview](../deploy-overview.md)).
 ms.topic: article
-ms.date: 10/02/2026
+ms.date: 11/18/2026
 ms.localizationpriority: medium
 ---
 
@@ -25,6 +25,8 @@ For sample apps, see [Windows App SDK self-contained deployment samples](https:/
 
 Having set the `WindowsAppSDKSelfContained` property to `true` in your project file, the contents of the Windows App SDK Framework package will be extracted to your build output, and deployed as part of your application.
 
+For packaged, packaged-with-external-location, and unpackaged apps, these app-local Framework binaries don't require a Framework MSIX dependency or Bootstrapper initialization. Other initialization, such as registration-free WinRT activation, and API-specific requirements still apply.
+
 > [!NOTE]
 > .NET apps need to be [published as self-contained](/dotnet/core/deploying/#publish-self-contained) as well to be fully self-contained. See [this sample](https://github.com/microsoft/WindowsAppSDK-Samples/blob/f1a30c2524c785739fee842d02a1ea15c1362f8f/Samples/SelfContainedDeployment/cs-winui-unpackaged/SelfContainedDeployment.csproj#L12) for how to configure .NET self-contained with publish profiles.
 >
@@ -39,17 +41,19 @@ If your app is packaged with external location or unpackaged, then the Windows A
 
 ## Dependencies on additional MSIX packages
 
-A small number of APIs in the Windows App SDK rely on additional MSIX packages that represent critical operating system (OS) functionality.
+A small number of Windows App SDK features rely on additional MSIX packages or operating system (OS) functionality. These requirements are separate from the Framework package dependency and aren't supplied by copying Framework binaries app-locally.
 
-* For example, push notification APIs ([PushNotificationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager)) have a dependency on the *Singleton* package (app notification APIs such as [AppNotificationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager) do not require this package). See [Deployment architecture for the Windows App SDK](../../windows-app-sdk/deployment-architecture.md).
+* Push notification scenarios that use the *Singleton* package require that package to be deployed separately. Use [PushNotificationManager.IsSupported](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.issupported) to check support for the calling app. For example, an unpackaged self-contained app isn't supported by that API; installing Singleton alone doesn't remove that restriction.
+* App notifications ([AppNotificationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager)) don't require Singleton and can be used with self-contained deployment, subject to the API's requirements. Use [AppNotificationManager.IsSupported](/windows/windows-app-sdk/api/winrt/microsoft.windows.appnotifications.appnotificationmanager.issupported) to check support.
+* App Lifecycle supports self-contained deployment. Individual APIs still have packaging and OS restrictions. For example, packaged apps declare activation registrations in their package manifest, rather than calling the registration methods of [ActivationRegistrationManager](/windows/windows-app-sdk/api/winrt/microsoft.windows.applifecycle.activationregistrationmanager).
 
-To use APIs that depend on additional MSIX packages in a self-contained app, you have the following options:
+For features that require additional packages, you have the following options:
 
-1. You could make your functionality optional, and light it up *only if and when possible*. Calling the APIs' **IsSupported** method ([PushNotificationManager.IsSupported](/windows/windows-app-sdk/api/winrt/microsoft.windows.pushnotifications.pushnotificationmanager.issupported)) will let you check dynamically at runtime whether or not the APIs are available to the calling app on the system it's running on.
+1. Make the functionality optional. Where available, call the API's **IsSupported** method to check whether the calling app and system support the feature.
     * This enables safe, conditional, optional use of the APIs without compromising the simplicity of your self-contained deployment.
-    * Only if the OS services are installed outside of your app deployment will your app light up the appropriate functionality. But in fact there are *some* cases where the APIs will work even without the Singleton package being present; so calling **IsSupported** to check is often a good idea.
+    * Availability can depend on packaging and OS support as well as installed packages.
 2. Deploy the required MSIX packages as part of your app installation.
-    * This allows you to depend on the API in all scenarios. But requiring MSIX package deployment of dependencies as part of your app deployment can compromise the simplicity of self-contained deployment.
+    * Do this only for supported configurations. Installing a package doesn't override API-specific restrictions on self-contained deployment.
 3. Don't use the API.
     * Consider alternative APIs that provide similar functionality without additional deployment requirements.
 

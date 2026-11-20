@@ -2,14 +2,16 @@
 title: Windows App SDK deployment guide for framework-dependent packaged apps
 description: This article provides guidance about deploying framework-dependent packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK.
 ms.topic: article
-ms.date: 07/22/2026
+ms.date: 11/18/2026
 keywords: windows win32, windows app development, Windows App SDK 
 ms.localizationpriority: medium
 ---
 
 # Windows App SDK deployment guide for framework-dependent packaged apps
 
-This article provides guidance about deploying framework-dependent packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK. The equivalent topic for other framework-dependent packaging options is [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md).
+This article provides guidance about deploying framework-dependent packaged apps (see [What is MSIX?](/windows/msix/overview)) that use the Windows App SDK. If you use a custom installer, the [runtime installer and direct MSIX deployment options](deploy-unpackaged-apps.md#deploy-windows-app-sdk-runtime) described in the unpackaged deployment guide also apply to installing the required runtime packages.
+
+Packaged apps, including apps packaged with external location (sparse packages), can declare the Framework dependency statically with `<PackageDependency>` in `AppxManifest.xml`. Windows resolves it as part of the process package graph, so Bootstrapper initialization isn't required for that dependency. For an example, see the [Windows AI Foundry sparse-package sample manifest](https://github.com/microsoft/WindowsAppSDK-Samples/blob/main/Samples/WindowsAIFoundry/cs-winforms-sparse/WinForms/AppxManifest.xml). Use dependency values that match your app's Windows App SDK version and channel rather than copying the sample's experimental version. Ensure that the referenced Framework package is installed when you deploy the app.
 
 ## Overview
 
@@ -103,7 +105,7 @@ If you encounter errors that you can't diagnose, then file an issue in the [Wind
 ## Related topics
 
 * [Deployment architecture for the Windows App SDK](deployment-architecture.md)
-* [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md)
+* [Windows App SDK deployment guide for framework-dependent unpackaged apps](deploy-unpackaged-apps.md)
 * [Release channels](release-channels.md)
 * [Package your app using single-project MSIX](./single-project-msix.md)
 * [What is MSIX?](/windows/msix/overview)

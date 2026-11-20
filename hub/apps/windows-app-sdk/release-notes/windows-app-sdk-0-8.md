@@ -2,7 +2,7 @@
 title: Windows App SDK 0.8 release notes
 description: Provides information about what's new in Windows App SDK 0.8.
 ms.topic: release-notes
-ms.date: 09/22/2025
+ms.date: 11/18/2026
 keywords: windows win32, windows app development, Windows App SDK, release notes
 ms.localizationpriority: medium
 zone_pivot_groups: wasdk-release-channels
@@ -324,7 +324,7 @@ This release supports all [stable channel features](../../windows-app-sdk/releas
 > - Standalone installer for Windows App SDK.
 > - MSIX package bundle that includes dynamic dependencies functionality.
 >
-> For more info, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](../../windows-app-sdk/deploy-unpackaged-apps.md).
+> For more info, see [Windows App SDK deployment guide for framework-dependent unpackaged apps](../../windows-app-sdk/deploy-unpackaged-apps.md).
 
 </details>
 

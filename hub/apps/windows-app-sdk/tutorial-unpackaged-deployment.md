@@ -1,29 +1,31 @@
 ---
-title: Tutorial--Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK
-description: This article shows how to configure an app that's not installed by using MSIX (that is, it's packaged with external location or unpackaged) to use the bootstrapper API so that it explicitly loads the Windows App SDK runtime, and calls Windows App SDK APIs. Apps that are not installed via MSIX include apps packaged with external location, and unpackaged apps.
+title: Tutorial--Use the bootstrapper API in an unpackaged app
+description: Configure an unpackaged framework-dependent app to establish its Windows App SDK Framework dependency dynamically with explicit Bootstrapper API calls.
 ms.topic: tutorial
-ms.date: 09/10/2026
+ms.date: 11/18/2026
 keywords: windows win32, windows app development, Windows App SDK
 ms.localizationpriority: medium
 ---
 
-# Tutorial: Use the bootstrapper API in an app packaged with external location or unpackaged that uses the Windows App SDK
+# Tutorial: Use the bootstrapper API in an unpackaged app
 
-This article shows how to configure an app that's not installed by using MSIX (that is, it's packaged with external location or unpackaged) to use the bootstrapper API so that it explicitly loads the Windows App SDK runtime, and calls Windows App SDK APIs. Apps that are not installed via MSIX include apps packaged with external location, and unpackaged apps.
+This article shows how to configure an unpackaged framework-dependent app to use the Bootstrapper API explicitly. The Bootstrapper adds an installed Windows App SDK Framework package to the process package graph before the app calls APIs from that package.
+
+Packaged apps, including apps packaged with external location (sparse packages), can declare this dependency statically with `<PackageDependency>` in `AppxManifest.xml` instead. They don't need Bootstrapper initialization for that dependency. Self-contained apps carry the Framework binaries app-locally and don't need a Framework MSIX dependency or Bootstrapper initialization for those binaries.
 
 > [!IMPORTANT]
-> Beginning in the Windows App SDK 1.0, the default approach to loading the Windows App SDK from a packaged with external location or unpackaged app is to use *auto-initialization* via the `<WindowsPackageType>` project property (as well as making additional configuration changes). For the steps involved in auto-initialization in the context of WinUI 3 project, see [Create and run a WinUI 3 project](../get-started/start-here.md). Or, if have an existing project that's not WinUI, then see [Use the Windows App SDK in an existing project](./use-windows-app-sdk-in-existing-project.md).
+> For an unpackaged framework-dependent executable, setting `<WindowsPackageType>None</WindowsPackageType>` enables Bootstrapper *auto-initialization* by default. For the steps involved in a WinUI 3 project, see [Distribute an unpackaged WinUI 3 app](../package-and-deploy/unpackage-winui-app.md). For an existing project that doesn't use WinUI, see [Use the Windows App SDK in an existing project](./use-windows-app-sdk-in-existing-project.md).
 >
-> If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. And that's the approach that this topic demonstrates. Also, for more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](./use-windows-app-sdk-run-time.md).
+> If you have advanced needs (such as custom error handling, or to load a specific version of the Windows App SDK), then you can instead call the bootstrapper API explicitly. And that's the approach that this topic demonstrates. Also, for more info, see [Initialize the Windows App SDK Framework package dynamically](./use-windows-app-sdk-run-time.md).
 
 This topic demonstrates explicitly calling the bootstrapper API from a basic Console app project; but the steps apply to any unpackaged desktop app that uses the Windows App SDK.
 
-Before completing this tutorial, we recommend that you review [Runtime architecture](./deployment-architecture.md) to learn more about the *Framework* package dependency that your app takes when it uses the Windows App SDK, and the additional components required to work in a packaged with external location or unpackaged app.
+Before completing this tutorial, review [Runtime architecture](./deployment-architecture.md) to learn how static manifest dependencies, dynamic Bootstrapper dependencies, and self-contained deployment differ.
 
 ## Prerequisites
 
 1. [Install tools for the Windows App SDK](../get-started/start-here.md#set-up-your-development-environment).
-1. Ensure that all dependencies for packaged with external location and unpackaged apps are installed (see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](./deploy-unpackaged-apps.md#prerequisites)). An easy way to do that is to run the Windows App SDK runtime installer. 
+1. Install the dependencies for an unpackaged framework-dependent app (see [Windows App SDK deployment guide for framework-dependent unpackaged apps](./deploy-unpackaged-apps.md#prerequisites)). You can do this by running the Windows App SDK runtime installer.
 
 ## Instructions
 
@@ -34,7 +36,7 @@ You can follow this tutorial using a C# or a C++ project.
 
 ### [C#](#tab/csharp)
 
-Follow these instructions to configure a C# WinUI project that's either packaged with external location, or unpackaged.
+Follow these instructions to configure an unpackaged C# console project for explicit Bootstrapper initialization.
 
 1. In Visual Studio, create a new C# **Console App** project. Name the project **DynamicDependenciesTest**. After you create the project, you should have a "Hello, World!" C# console app.
 
@@ -45,6 +47,13 @@ Follow these instructions to configure a C# WinUI project that's either packaged
 
     ```xml
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    ```
+
+    1. In the same `PropertyGroup` in the `.csproj` file, identify the project as unpackaged and disable automatic Bootstrapper initialization so that the sample controls initialization and shutdown.
+
+    ```xml
+    <WindowsPackageType>None</WindowsPackageType>
+    <WindowsAppSdkBootstrapInitialize>false</WindowsAppSdkBootstrapInitialize>
     ```
 
     1. Save and close the project file.
@@ -62,7 +71,7 @@ Follow these instructions to configure a C# WinUI project that's either packaged
     1. In **Solution Explorer**, right-click the **Dependencies** node and choose **Manage Nuget Packages**.
     1. In the **NuGet Package Manager** window, select the **Browse** tab, and install the **Microsoft.WindowsAppSDK** package.
 
-1. You're now ready to use the bootstrapper API (see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](use-windows-app-sdk-run-time.md)) to dynamically take a dependency on the Windows App SDK framework package. This enables you to use the Windows App SDK APIs in your app.
+1. You're now ready to use the bootstrapper API (see [Initialize the Windows App SDK Framework package dynamically](use-windows-app-sdk-run-time.md)) to dynamically take a dependency on the Windows App SDK framework package. This enables you to use the Windows App SDK APIs in your app.
 
     Open the **Program.cs** code file, and replace the default code with the following code to call the [**Bootstrap.Initialize**](../api-reference/cs-bootstrapper-apis/microsoft.windows.applicationmodel.dynamicdependency/microsoft.windows.applicationmodel.dynamicdependency.bootstrap.md#initialize-methods) method to initialize the bootstrapper. This code defines what version of the Windows App SDK the app is dependent upon when initializing the bootstrapper.
 
@@ -118,7 +127,7 @@ Follow these instructions to configure a C# WinUI project that's either packaged
 
 ### [C++](#tab/cpp)
 
-Follow these instructions to configure a C++ WinUI project that's either packaged with external location, or unpackaged.
+Follow these instructions to configure an unpackaged C++ console project for explicit Bootstrapper initialization.
 
 1. In Visual Studio, create a new C++ **Console App** project. Name the project **DynamicDependenciesTest**.
     ![Screenshot of creating a new C++ app in Visual Studio](images/tutorial-deploy-create-project.png)
@@ -127,37 +136,53 @@ Follow these instructions to configure a C++ WinUI project that's either package
 
     After you create the project, you should have a "Hello, World!" C++ console app.
 
+1. In the `.vcxproj` file, add the following properties to `<PropertyGroup Label="Globals">` so that the sample controls Bootstrapper initialization and shutdown.
+
+    ```xml
+    <WindowsPackageType>None</WindowsPackageType>
+    <WindowsAppSdkBootstrapInitialize>false</WindowsAppSdkBootstrapInitialize>
+    ```
+
 1. Next, install the Windows App SDK NuGet package in your project. 
 
     1. In **Solution Explorer**, right-click the **References** node and choose **Manage Nuget Packages**. 
     1. In the **NuGet Package Manager** window, select the **Browse** tab, and search for **Microsoft.WindowsAppSDK**.
 
-1. You're now ready to use the bootstrapper API (see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](./use-windows-app-sdk-run-time.md)) to initialize the Windows App SDK runtime in your app. This enables you to use the Windows App SDK APIs in the app.
+1. You're now ready to use the bootstrapper API (see [Initialize the Windows App SDK Framework package dynamically](./use-windows-app-sdk-run-time.md)) to initialize the Windows App SDK runtime in your app. This enables you to use the Windows App SDK APIs in the app.
 
     1. Add the following include files to the top of your **DynamicDependenciesTest.cpp** file. The [mddbootstrap.h](/windows/windows-app-sdk/api/win32/mddbootstrap) header is available via the Windows App SDK NuGet package.
 
     ```cpp
     #include <windows.h>
+    #include <objbase.h>
     #include <MddBootstrap.h>
+    #pragma comment(lib, "ole32.lib")
     ```
 
-    1. Next, add this code at the beginning of your **main** method to call the [**MddBootstrapInitialize**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) function to initialize the bootstrapper, and handle any errors. This code defines what version of the Windows App SDK the app is dependent upon when initializing the bootstrapper.
+    1. Next, add this code at the beginning of your **main** method to initialize COM and call [**MddBootstrapInitialize2**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize2). This code defines the Framework version criteria and handles initialization errors.
 
     > [!IMPORTANT]
-    > You'll need to edit the code below to suit your specific configuration. See the descriptions of the parameters of the [**MddBootstrapInitialize**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize) function so that you can specify one of the versions of the Windows App SDK that you have installed.
+    > You'll need to edit the code below to suit your specific configuration. See the descriptions of the parameters of [**MddBootstrapInitialize2**](/windows/windows-app-sdk/api/win32/mddbootstrap/nf-mddbootstrap-mddbootstrapinitialize2) so that you can specify a version of the Windows App SDK that you have installed.
 
     ```cpp
-    const UINT32 majorMinorVersion{ 0x00010005 }; 
+    const HRESULT comHr{ CoInitializeEx(nullptr, COINIT_MULTITHREADED) };
+    if (FAILED(comHr))
+    {
+        return comHr;
+    }
+
+    const UINT32 majorMinorVersion{ 0x00010005 };
     PCWSTR versionTag{ L"" }; 
     const PACKAGE_VERSION minVersion{};
 
-    const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
+    const HRESULT hr{ MddBootstrapInitialize2(majorMinorVersion, versionTag, minVersion, MddBootstrapInitializeOptions_None) };
 
     // Check the return code for errors. If there is an error, display the result.
     if (FAILED(hr)) 
     { 
-        wprintf(L"Error 0x%X in MddBootstrapInitialize(0x%08X, %s, %hu.%hu.%hu.%hu)\n", 
+        wprintf(L"Error 0x%X in MddBootstrapInitialize2(0x%08X, %s, %hu.%hu.%hu.%hu)\n",
             hr, majorMinorVersion, versionTag, minVersion.Major, minVersion.Minor, minVersion.Build, minVersion.Revision); 
+        CoUninitialize();
         return hr; 
     } 
     ```
@@ -169,6 +194,7 @@ Follow these instructions to configure a C++ WinUI project that's either package
     
     // Release the DDLM and clean up.
     MddBootstrapShutdown(); 
+    CoUninitialize();
     ```
 
     1. Your final code should look like this.
@@ -176,22 +202,31 @@ Follow these instructions to configure a C++ WinUI project that's either package
     ```cpp
     #include <iostream> 
     #include <windows.h> 
+    #include <objbase.h>
     #include <MddBootstrap.h>
+    #pragma comment(lib, "ole32.lib")
        
     int main() 
     { 
+        const HRESULT comHr{ CoInitializeEx(nullptr, COINIT_MULTITHREADED) };
+        if (FAILED(comHr))
+        {
+            return comHr;
+        }
+
         // Take a dependency on Windows App SDK Stable.
         const UINT32 majorMinorVersion{ 0x00010005 }; 
         PCWSTR versionTag{ L"" }; 
         const PACKAGE_VERSION minVersion{};
 
-        const HRESULT hr{ MddBootstrapInitialize(majorMinorVersion, versionTag, minVersion) }; 
+        const HRESULT hr{ MddBootstrapInitialize2(majorMinorVersion, versionTag, minVersion, MddBootstrapInitializeOptions_None) };
         
         // Check the return code. If there is a failure, display the result.
         if (FAILED(hr)) 
         { 
-            wprintf(L"Error 0x%X in MddBootstrapInitialize(0x%08X, %s, %hu.%hu.%hu.%hu)\n", 
+            wprintf(L"Error 0x%X in MddBootstrapInitialize2(0x%08X, %s, %hu.%hu.%hu.%hu)\n",
                 hr, majorMinorVersion, versionTag, minVersion.Major, minVersion.Minor, minVersion.Build, minVersion.Revision); 
+            CoUninitialize();
             return hr; 
         } 
         
@@ -199,6 +234,7 @@ Follow these instructions to configure a C++ WinUI project that's either package
       
         // Release the DDLM and clean up.
         MddBootstrapShutdown(); 
+        CoUninitialize();
     } 
     ```
 
@@ -212,5 +248,5 @@ For a Windows Presentation Foundation (WPF) app, see [Use the Windows App SDK in
 
 ## Related topics
 
-* [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](./deploy-unpackaged-apps.md)
+* [Windows App SDK deployment guide for framework-dependent unpackaged apps](./deploy-unpackaged-apps.md)
 * [Runtime architecture](./deployment-architecture.md)

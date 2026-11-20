@@ -2,7 +2,7 @@
 title: Quickstart Push notifications in the Windows App SDK
 description: Send push notifications using the Windows App SDK
 ms.topic: quickstart
-ms.date: 09/10/2026
+ms.date: 11/18/2026
 keywords: push, notification
 ms.localizationpriority: medium
 ms.custom:
@@ -112,20 +112,21 @@ In the Package Manager, add the following packages:
 * Microsoft.Windows.CppWinRT, (minimum version 2.0.210930.14)
 * Microsoft.Windows.ImplementationLibrary, (minimum version 1.0.210930.1)
 
-If this is the first time you are using Windows App SDK in your project and it is packaged with external location or unpackaged, initialize the Windows App SDK by adding the following property to your project file:
+For a framework-dependent packaged app, including an app packaged with external location, declare the Windows App SDK Framework dependency statically with `<PackageDependency>` in `AppxManifest.xml`. Bootstrapper initialization isn't required for that dependency.
+
+For an unpackaged framework-dependent C++ executable, enable Bootstrapper auto-initialization by adding the following property to `<PropertyGroup Label="Globals">` in your `.vcxproj` file:
 
 ```xml
-<!-- your .vcxproj or .proj file -->
 <PropertyGroup Label="Globals">
     <!-- Other properties -->
     <WindowsPackageType>None</WindowsPackageType>
 </PropertyGroup>
 ```
 
-or use the bootstrapper API. See [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) for more details.
+Alternatively, disable the Bootstrapper auto-initializer and call the Bootstrapper API explicitly. See [Initialize the Windows App SDK Framework package dynamically](/windows/apps/windows-app-sdk/use-windows-app-sdk-run-time) for details. Push notifications can require additional packages such as Singleton; establishing the Framework dependency doesn't deploy those packages.
 
 > [!NOTE]
-> If the SDK is not initialized, the app will throw `System.Runtime.InteropServices.COMException (0x80040154): Class not registered (0x80040154 (REGDB_E_CLASSNOTREG))` and will not run.
+> If a framework-dependent app hasn't established its Framework dependency, either statically or dynamically, Windows App SDK API activation can fail with `0x80040154 (REGDB_E_CLASSNOTREG)`.
 
 ### Step 2: Add namespaces
 

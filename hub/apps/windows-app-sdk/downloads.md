@@ -2,7 +2,7 @@
 title: Latest Windows App SDK downloads
 description: This page provides links to the latest downloads of the Windows App SDK for all three release channels (stable, preview, and experimental).
 ms.topic: article
-ms.date: 11/11/2026
+ms.date: 11/18/2026
 keywords: windows, winrt, win32, windows app development, Windows App SDK
 ms.localizationpriority: medium
 ---
@@ -76,7 +76,7 @@ Depending on your development scenario, you might also require the following.
 
 ### Runtime downloads
 
-Apps packaged with external location, and unpackaged apps, that use the Windows App SDK can use the standalone `.exe` runtime installer or MSIX packages to deploy the Windows App SDK package dependencies with them. For setup instructions, see [Windows App SDK deployment guide for framework-dependent apps packaged with external location or unpackaged](deploy-unpackaged-apps.md).
+Apps packaged with external location, and unpackaged apps, that use the Windows App SDK can use the standalone `.exe` runtime installer or MSIX packages to deploy the Windows App SDK package dependencies with them. For these shared installation options, see [Deploy Windows App SDK runtime](deploy-unpackaged-apps.md#deploy-windows-app-sdk-runtime).
 
 | Tool&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Description                                                                                                                                                                                                                                         |
 | :--------------------------------------------------------------------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

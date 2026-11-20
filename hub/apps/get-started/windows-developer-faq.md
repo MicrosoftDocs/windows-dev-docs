@@ -4,7 +4,7 @@ description: Find answers about Windows app frameworks, SDKs, tooling, interoper
 author: GrantMeStrength
 ms.author: jken
 ms.topic: faq
-ms.date: 10/02/2026
+ms.date: 11/18/2026
 ms.localizationpriority: medium
 ms.collection: windows11
 audience: new-desktop-app-developers
@@ -110,8 +110,8 @@ Topics covered include:
 > This error usually occurs in **unpackaged** app scenarios where the Windows App SDK runtime hasn't been installed on the machine. Try the following:
 >
 > - If you're running a **packaged** app (the recommended default), ensure you're launching via Visual Studio with the **MsixPackage** launch profile selected (not the plain executable profile). The MSIX packaging step installs the required runtime components.
-> - If you're running a framework-dependent **unpackaged** app, install the matching [Windows App SDK runtime](../windows-app-sdk/downloads.md). A self-contained deployment includes its Windows App SDK dependencies.
-> - Confirm that your project matches your deployment model. For a normal .NET unpackaged app, setting `<WindowsPackageType>None</WindowsPackageType>` enables Windows App SDK runtime auto-initialization. Use the bootstrapper API directly only when you need explicit control over dynamic dependency initialization.
+> - If you're running a **framework-dependent unpackaged** app, install the [Windows App SDK runtime](../windows-app-sdk/downloads.md) separately before running the app outside Visual Studio. A **self-contained** app carries the Framework binaries app-locally instead.
+> - If the error occurs during development, open your `.csproj` and confirm that your configuration matches your deployment model. For **framework-dependent packaged** apps, including apps **packaged with external location**, ensure the package manifest declares the Framework dependency. For **framework-dependent unpackaged** executables, `<WindowsPackageType>None</WindowsPackageType>` enables Bootstrapper auto-initialization by default; an additional explicit `Bootstrap.Initialize()` call isn't required. Use explicit calls only when you disable the auto-initializer and manage initialization yourself.
 >
 > See [Deploy apps that use the Windows App SDK](../package-and-deploy/deploy-overview.md) for more details on deployment requirements.
 

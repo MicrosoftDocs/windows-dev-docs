@@ -2,7 +2,7 @@
 title: Use the dynamic dependency API to reference MSIX packages at run time
 description: Describes how to use the *dynamic dependency API* to dynamically take a dependency on different MSIX packages (other than the Windows App SDK framework package) in an unpackaged app at run time.
 ms.topic: article
-ms.date: 11/10/2026
+ms.date: 11/18/2026
 ms.localizationpriority: medium
 ---
 
@@ -92,7 +92,7 @@ The main package must have correctly configured its app package manifest source 
 
 ### Reference the Windows App SDK framework package (Windows App SDK limitation)
 
-In an unpackaged app, you can't use the Windows App SDK's dynamic dependency API to reference the [Windows App SDK framework package](../../../windows-app-sdk/deployment-architecture.md#framework-package) (like you *can* reference other MSIX packages with it). Instead, you need to use the [bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/) provided by the Windows App SDK. The bootstrapper API is a specialized form of the dynamic dependency API that's designed to take dependencies on the Windows App SDK framework package. For more info, see [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../../windows-app-sdk/use-windows-app-sdk-run-time.md).
+In an unpackaged app, you can't use the Windows App SDK's dynamic dependency API to reference the [Windows App SDK framework package](../../../windows-app-sdk/deployment-architecture.md#framework-package) (like you *can* reference other MSIX packages with it). Instead, you need to use the [bootstrapper API](/windows/windows-app-sdk/api/win32/_bootstrap/) provided by the Windows App SDK. The bootstrapper API is a specialized form of the dynamic dependency API that's designed to take dependencies on the Windows App SDK framework package. For more info, see [Initialize the Windows App SDK Framework package dynamically](../../../windows-app-sdk/use-windows-app-sdk-run-time.md).
 
 Windows 11's dynamic dependency API doesn't have this limitation.
 
@@ -101,4 +101,4 @@ Windows 11's dynamic dependency API doesn't have this limitation.
 * [MSIX framework packages and dynamic dependencies](framework-packages-overview.md)
 * [Dynamic dependencies specification](https://github.com/microsoft/WindowsAppSDK/blob/main/specs/dynamicdependencies/DynamicDependencies.md)
 * [Runtime architecture for the Windows App SDK](../../../windows-app-sdk/deployment-architecture.md)
-* [Use the Windows App SDK runtime for apps packaged with external location or unpackaged](../../../windows-app-sdk/use-windows-app-sdk-run-time.md)
+* [Initialize the Windows App SDK Framework package dynamically](../../../windows-app-sdk/use-windows-app-sdk-run-time.md)
