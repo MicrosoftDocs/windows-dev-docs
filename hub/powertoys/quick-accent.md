@@ -30,8 +30,8 @@ The first press of the activation key selects a character in the toolbar:
 | Activation key | The first character to be selected |
 | :--- | :--- |
 | Space | The leftmost character. Press <kbd>Shift</kbd>+<kbd>Space</kbd> to start at the rightmost character instead. |
-| Left arrow | The character just left of the middle. |
-| Right arrow | The middle character. |
+| Left arrow key | The character just left of the middle. |
+| Right arrow key | The middle character. |
 
 If **Start selection from the left** is turned on, the Left and Right arrow keys also start from the leftmost character.
 
