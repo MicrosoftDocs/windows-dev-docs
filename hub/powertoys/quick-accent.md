@@ -1,7 +1,7 @@
 ---
 title: Quick Accent Utility for Windows PowerToys
 description: Learn how to use Quick Accent utility in PowerToys to type accented characters on Windows when your keyboard lacks accent support. Configure settings and activation methods.
-ms.date: 08/20/2025
+ms.date: 11/21/2026
 ms.topic: concept-article
 no-loc: [PowerToys, Windows, Quick Accent, Win]
 # Customer intent: As a Windows power user, I want to learn how to configure and use the Quick Accent utility in PowerToys for Windows.
@@ -22,6 +22,20 @@ Activate by holding the key for the character you want to add an accent to, then
 For example: If you want "à", press and hold <kbd>A</kbd> and press <kbd>Space</kbd>.
 
 With the dialog enabled, keep pressing your activation key.
+
+### Where the selection starts
+
+The first press of the activation key selects a character in the toolbar:
+
+| Activation key | The first character to be selected |
+| :--- | :--- |
+| Space | The leftmost character. Press <kbd>Shift</kbd>+<kbd>Space</kbd> to start at the rightmost character instead. |
+| Left arrow key | The character just left of the middle. |
+| Right arrow key | The middle character. |
+
+If **Start selection from the left** is turned on, the Left and Right arrow keys also start from the leftmost character.
+
+After that, <kbd>Right</kbd> and <kbd>Space</kbd> move the selection to the right, and <kbd>Left</kbd> and <kbd>Shift</kbd>+<kbd>Space</kbd> move it to the left. The selection wraps around at either end.
 
 ## Character sets
 
@@ -74,7 +88,7 @@ From the Settings menu, the following options can be configured:
 | Character set | Show only characters that are in the chosen sets. |
 | Toolbar location | Position of the toolbar. |
 | Show the Unicode code and name of the currently selected character | Shows the Unicode code (in hexadecimal) and name of the currently selected character under the selector. |
-| Sort characters by usage frequency | |
+| Sort characters by usage frequency | Orders characters by how often you select them, most used first. Ties are ordered by most recent use. |
 | Start selection from the left | Starts the selection from the leftmost character for all activation keys (including Left/Right arrow). |
 | Input delay | The delay in milliseconds before the dialog appears. |
 | Excluded apps | Add an application's name, or part of the name, one per line (e.g. adding `Notepad` will match both `Notepad.exe` and `Notepad++.exe`; to match only `Notepad.exe` add the `.exe` extension). |
