@@ -2,7 +2,7 @@
 title: Graphics
 description: This article provides an index of development features that are related to scenarios involving graphics in Windows apps.
 ms.topic: article
-ms.date: 07/15/2026
+ms.date: 11/23/2026
 author: GrantMeStrength
 ms.author: jken
 keywords: 
@@ -26,7 +26,7 @@ The [Windows App SDK](../windows-app-sdk/index.md) provides the following featur
 
 ## Windows OS features
 
-Windows 10 and later OS releases provide a wide variety of APIs related to graphics scenarios for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk).
+Windows 10 and later OS releases provide a wide variety of APIs related to graphics scenarios for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](../windows-sdk/index.md).
 
 #### WinRT APIs
 

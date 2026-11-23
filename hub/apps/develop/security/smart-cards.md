@@ -2,7 +2,7 @@
 title: Using smart cards in Windows apps
 description: This topic explains how packaged Windows apps can use smart cards to connect users to secure network services.
 ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
-ms.date: 07/15/2026
+ms.date: 11/23/2026
 ms.topic: how-to
 #customer intent: As a Windows developer, I want to learn how to use smart cards in my Windows apps so that I can connect users to secure network services.
 ---
@@ -11,7 +11,7 @@ ms.topic: how-to
 
 This topic explains how Windows apps can use smart cards to connect users to secure network services, including how to access physical smart card readers, create virtual smart cards, communicate with smart cards, authenticate users, reset user PINs, and remove or disconnect smart cards.
 
-The Windows Runtime (WinRT) APIs for smart cards are part of the [Windows Software Development Kit (SDK)](https://developer.microsoft.com/windows/downloads/windows-sdk/). These APIs can be used in WinUI as well as other desktop apps, such as WPF and WinForms. For more information about using WinRT APIs in your Windows desktop app, see [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+The Windows Runtime (WinRT) APIs for smart cards are part of the [Windows Software Development Kit (SDK)](../../windows-sdk/index.md). These APIs can be used in WinUI as well as other desktop apps, such as WPF and WinForms. For more information about using WinRT APIs in your Windows desktop app, see [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
 ## Configure the app manifest
 

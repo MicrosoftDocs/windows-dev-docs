@@ -1,7 +1,7 @@
 ---
 title: Credential locker for Windows apps
 description: This article describes how Windows apps can use the Credential Locker to securely store and retrieve user credentials.
-ms.date: 08/05/2024
+ms.date: 11/23/2026
 ms.topic: how-to
 #customer intent: As a Windows developer, I want to learn how I can integrate the Credential Locker APIs into my native apps to store and retrieve user credentials.
 ---
@@ -10,7 +10,7 @@ ms.topic: how-to
 
 This article describes how Windows apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account.
 
-The Windows Runtime (WinRT) APIs for Credential Locker access are part of the [Windows Software Development Kit (SDK)](https://developer.microsoft.com/windows/downloads/windows-sdk/). These APIs can be used in WinUI as well as other desktop apps, such as WPF and WinForms. For more information about using WinRT APIs in your Windows desktop app, see [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
+The Windows Runtime (WinRT) APIs for Credential Locker access are part of the [Windows Software Development Kit (SDK)](../../windows-sdk/index.md). These APIs can be used in WinUI as well as other desktop apps, such as WPF and WinForms. For more information about using WinRT APIs in your Windows desktop app, see [Call Windows Runtime APIs in desktop apps](/windows/apps/desktop/modernize/desktop-to-uwp-enhance).
 
 ## Overview of the sample scenario
 

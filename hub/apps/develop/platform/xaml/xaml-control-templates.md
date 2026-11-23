@@ -7,7 +7,7 @@ title: Control templates
 ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
 label: Control templates
 template: detail.hbs
-ms.date: 11/16/2026
+ms.date: 11/23/2026
 ms.topic: how-to
 keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
@@ -52,7 +52,7 @@ This XAML creates a [**ControlTemplate**](/windows/windows-app-sdk/api/winrt/mic
 A [TemplateBinding](templatebinding-markup-extension.md) is a special binding that links the value of a property in a control template to the value of some other exposed property on the templated control. TemplateBinding can only be used within a ControlTemplate definition in XAML. See [TemplateBinding markup extension](templatebinding-markup-extension.md) for more info.
 
 > [!NOTE]
-> Starting with Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)), you can use [**x:Bind**](x-bind-markup-extension.md) markup extensions in places you use [TemplateBinding](/windows/apps/develop/platform/xaml/templatebinding-markup-extension). See [TemplateBinding markup extension](templatebinding-markup-extension.md) for more info.
+> Starting with Windows 10, version 1809 ([SDK 17763](../../../windows-sdk/index.md)), you can use [**x:Bind**](x-bind-markup-extension.md) markup extensions in places you use [TemplateBinding](/windows/apps/develop/platform/xaml/templatebinding-markup-extension). See [TemplateBinding markup extension](templatebinding-markup-extension.md) for more info.
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">

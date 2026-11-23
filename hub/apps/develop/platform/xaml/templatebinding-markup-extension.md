@@ -2,7 +2,7 @@
 description: Links the value of a property in a control template to the value of some other exposed property on the templated control. TemplateBinding can only be used within a ControlTemplate definition in XAML.
 title: TemplateBinding markup extension
 ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
-ms.date: 07/27/2026
+ms.date: 11/23/2026
 ms.topic: concept-article
 keywords: winui, windows app sdk, uwp, xaml
 ms.localizationpriority: medium
@@ -51,7 +51,7 @@ A **TemplateBinding** is always a one-way binding. Both properties involved must
 ### x:Bind in ControlTemplate
 
 > [!NOTE]
-> Using x:Bind in a ControlTemplate requires Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)) or later. For more info about target versions, see [Version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code).
+> Using x:Bind in a ControlTemplate requires Windows 10, version 1809 ([SDK 17763](../../../windows-sdk/index.md)) or later. For more info about target versions, see [Version adaptive code](/windows/uwp/debug-test-perf/version-adaptive-code).
 
 Starting with Windows 10, version 1809, you can use the **x:Bind** markup extension anywhere you use **TemplateBinding** in a [**ControlTemplate**](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.Controls.ControlTemplate).
 

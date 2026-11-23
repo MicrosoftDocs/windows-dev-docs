@@ -1,7 +1,7 @@
 ---
 title: App lifecycle, background tasks, and system services in Windows apps
 description: This article provides an index of development features that are related to scenarios involving managing the lifecycle of Windows apps and system-level services.
-ms.date: 02/13/2025
+ms.date: 11/23/2026
 ms.topic: concept-article
 keywords: windows 11, winui, background task, app service, connected devices, remote systems, app lifecycle
 ms.localizationpriority: medium
@@ -29,7 +29,7 @@ The [Windows App SDK](../windows-app-sdk/index.md) provides the following featur
 
 ## Windows OS features
 
-Windows 10 and later OS releases provide a wide variety of APIs related to app lifecycle and system services for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk).
+Windows 10 and later OS releases provide a wide variety of APIs related to app lifecycle and system services for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](../windows-sdk/index.md).
 
 ### WinRT APIs
 

@@ -2,7 +2,7 @@
 ms.assetid: 33d8df1e-898d-48b7-9399-1aee673490d9
 title: Windows App SDK File Management - Read, Write, and Access Files
 description: Learn how to read and write files, use file pickers, and access sandboxed libraries in Windows App SDK apps. Get code examples and best practices for file management.
-ms.date: 09/10/2025
+ms.date: 11/23/2026
 ms.topic: concept-article
 keywords: windows 10, windows 11, windows, winui, windows app sdk, winrt, dotnet
 ms.localizationpriority: medium
@@ -13,7 +13,7 @@ ms.localizationpriority: medium
 
 Windows App SDK provides powerful file management capabilities for packaged apps. You can use APIs from the [Windows.Storage](/uwp/api/Windows.Storage), [Windows.Storage.Streams](/uwp/api/Windows.Storage.Streams), and [Microsoft.Windows.Storage.Pickers](/windows/windows-app-sdk/api/winrt/microsoft.windows.storage.pickers) namespaces to efficiently read and write various data formats in files, as well as manage files and folders.
 
-There are a wide variety of APIs related to files, folders, libraries, and settings for Windows desktop apps beginning in Windows 10. These features are available via a combination of Windows App SDK, Windows Runtime (WinRT), and .NET APIs provided by the [Windows App SDK](/windows/apps/windows-app-sdk/downloads), [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk), and [.NET SDK](https://dotnet.microsoft.com/en-us/download).
+There are a wide variety of APIs related to files, folders, libraries, and settings for Windows desktop apps beginning in Windows 10. These features are available via a combination of Windows App SDK, Windows Runtime (WinRT), and .NET APIs provided by the [Windows App SDK](/windows/apps/windows-app-sdk/downloads), [Windows SDK](../../windows-sdk/index.md), and [.NET SDK](https://dotnet.microsoft.com/en-us/download).
 
 ## Use Windows App SDK pickers to read and write data
 

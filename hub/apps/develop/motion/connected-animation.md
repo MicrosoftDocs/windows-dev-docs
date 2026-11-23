@@ -2,7 +2,7 @@
 description: Connected animations let you create a dynamic and compelling navigation experience by animating the transition of an element between two different views.
 title: Connected animation
 template: detail.hbs
-ms.date: 10/02/2026
+ms.date: 11/23/2026
 ms.topic: article
 doc-status: Published
 ms.localizationpriority: medium
@@ -56,7 +56,7 @@ This table describes the available configurations. For more information about th
 
 | [BasicConnectedAnimationConfiguration](/windows/windows-app-sdk/api/winrt/microsoft.ui.xaml.media.animation.basicconnectedanimationconfiguration) |
 | - |
-| This is the default (and only) animation used in versions prior to Windows 10, version 1809 ([SDK 17763](https://developer.microsoft.com/windows/downloads/windows-10-sdk)). |
+| This is the default (and only) animation used in versions prior to Windows 10, version 1809 ([SDK 17763](../../windows-sdk/index.md)). |
 
 ### ConnectedAnimationService configuration
 

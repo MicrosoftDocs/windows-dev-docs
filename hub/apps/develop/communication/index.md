@@ -2,7 +2,7 @@
 title: Communication features for Windows apps
 description: Discover communication features and APIs for Windows apps, including networking, data sharing, and interprocess communication. Learn how to implement these capabilities.
 ms.topic: concept-article
-ms.date: 10/08/2026
+ms.date: 11/23/2026
 # Customer intent: As a Windows app developer, I want to learn about communication features and APIs that I can use in my Windows apps.
 ---
 
@@ -16,7 +16,7 @@ For sharing data between apps, Windows 11 also supports integration with the [Wi
 
 ## Windows OS features
 
-Windows 10 and later OS releases provide a wide variety of APIs related to communication scenarios for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk).
+Windows 10 and later OS releases provide a wide variety of APIs related to communication scenarios for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](../../windows-sdk/index.md).
 
 #### WinRT APIs
 

@@ -2,7 +2,7 @@
 title: Security and identity
 description: This article provides an index of development features that are related to security and identity scenarios in Windows apps.
 ms.topic: overview
-ms.date: 11/03/2026
+ms.date: 11/23/2026
 #customer intent: As a Windows developer, I want to learn to use security and identity features available to Windows apps so that I can build more secure apps.
 ---
 
@@ -12,7 +12,7 @@ This article provides an index of development features that are related to scena
 
 ## Windows OS features
 
-Windows provides a wide variety of APIs related to security and identity scenarios for apps. These features are available via a combination of Windows App SDK, Windows Runtime (WinRT), and Win32 (C++ and COM) APIs provided by the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk).
+Windows provides a wide variety of APIs related to security and identity scenarios for apps. These features are available via a combination of Windows App SDK, Windows Runtime (WinRT), and Win32 (C++ and COM) APIs provided by the [Windows SDK](../../windows-sdk/index.md).
 
 ### Windows App SDK APIs
 

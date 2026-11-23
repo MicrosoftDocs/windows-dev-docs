@@ -2,7 +2,7 @@
 title: Audio, video, and camera
 description: This article provides an index of development features that are related to scenarios involving audio, video, and camera in Windows apps.
 ms.topic: article
-ms.date: 07/22/2025
+ms.date: 11/23/2026
 author: GrantMeStrength
 ms.author: jken
 keywords: 
@@ -18,7 +18,7 @@ This article provides an index of development features that are related to scena
 
 ## Windows OS features
 
-Windows 10 and later OS releases provide a wide variety of APIs related to audio, video, and camera scenarios for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](https://developer.microsoft.com/windows/downloads/windows-sdk).
+Windows 10 and later OS releases provide a wide variety of APIs related to audio, video, and camera scenarios for apps. These features are available via a combination of WinRT and Win32 (C++ and COM) APIs provided by the [Windows SDK](../windows-sdk/index.md).
 
 #### WinRT APIs
 
