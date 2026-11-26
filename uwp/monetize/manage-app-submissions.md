@@ -2,7 +2,9 @@
 ms.assetid: C7428551-4B31-4259-93CD-EE229007C4B8
 description: Use these methods in the Microsoft Store submission API to manage submissions for apps that are registered to your Partner Center account.
 title: Manage app submissions
-ms.date: 04/30/2018
+author: GrantMeStrength
+ms.author: jken
+ms.date: 11/09/2026
 ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store submission API, app submissions
 ms.localizationpriority: medium
@@ -47,6 +49,11 @@ Use the following methods to get, create, update, commit, or delete an app submi
 <td align="left">GET</td>
 <td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/status</td>
 <td align="left"><a href="get-status-for-an-app-submission.md">Get the status of an existing app submission</a></td>
+</tr>
+<tr>
+<td align="left">GET</td>
+<td align="left">https://manage.devcenter.microsoft.com/v1.0/my/applications/{applicationId}/submissions/{submissionId}/priceTiers</td>
+<td align="left"><a href="get-price-tiers-for-an-app-submission.md">Get the legacy price tiers and market-specific retail prices for an app submission</a></td>
 </tr>
 <tr>
 <td align="left">POST</td>
@@ -363,6 +370,8 @@ This resource has the following values.
 ### Pricing resource
 
 This resource contains pricing info for the app. This resource has the following values.
+
+Use [Get price tiers for an app submission](get-price-tiers-for-an-app-submission.md) to look up supported *priceId* values and their market-specific retail prices before updating the submission.
 
 | Value           | Type    | Description        |
 |-----------------|---------|------|
@@ -712,6 +721,8 @@ These methods use the following enums.
 ### Price tiers
 
 The following values represent available price tiers in the [pricing resource](#pricing-object) resource for an app submission.
+
+To retrieve the legacy price table programmatically, use [Get price tiers for an app submission](get-price-tiers-for-an-app-submission.md). Use a non-null *priceId* returned for the submission rather than constructing one from a displayed tier label or price. This lookup does not add support for Pricing Version 2.
 
 | Value           | Description        |
 |-----------------|------|

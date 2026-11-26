@@ -1,8 +1,10 @@
 ---
 ms.assetid: 8C63D33B-557D-436E-9DDA-11F7A5BFA2D7
-description: Use this method in the Microsoft Store submission API to update an existing add-on submission.
+description: Use this method in the Microsoft Store submission API to update an add-on submission, including its privacy policy declaration and URL.
 title: Update an add-on submission
-ms.date: 04/17/2018
+author: GrantMeStrength
+ms.author: jken
+ms.date: 11/09/2026
 ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store submission API, add-on submission, update, in-app product, IAP
 ms.localizationpriority: medium
@@ -57,6 +59,8 @@ The request body has the following parameters.
 | lifetime           | string  |  The lifetime of the add-on. This can be one of the following values: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | object  | An object that contains listing info for the add-on. For more information, see [Listing resource](manage-add-on-submissions.md#listing-object).  |
 | pricing           | object  | An object that contains pricing info for the add-on. For more information, see [Pricing resource](manage-add-on-submissions.md#pricing-object).  |
+| privacyPolicyRequired | boolean or null | Whether the add-on accesses, collects, or transmits personal information. Optional. Omit this value or set it to null to preserve the existing declaration. If you change either privacy field and the resulting declaration is true, a non-blank *privacyPolicyUrl* is required. |
+| privacyPolicyUrl | string or null | The add-on's privacy policy URL. Optional. New or changed non-empty values must be absolute HTTP or HTTPS URLs of at most 2,048 characters. Omit this value or set it to null to preserve the existing URL. Set it to an empty string to clear the URL only when the resulting *privacyPolicyRequired* value is not true. Providing a URL does not automatically set *privacyPolicyRequired* to true. |
 | targetPublishMode           | string  | The publish mode for the submission. This can be one of the following values: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | The publish date for the submission in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
 | tag           | string  |  The [custom developer data](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-add-on#custom-developer-data) for the add-on (this information was previously called the *tag*).   |
@@ -67,10 +71,13 @@ The request body has the following parameters.
 
 The following example demonstrates how to update an add-on submission.
 
-```json
+Preserve the other submission fields when you update the privacy policy fields; this method does not accept a privacy-only partial update. An unchanged saved URL can be left unchanged or sent back in an update even if it does not meet the requirements for a new URL. Requests that change neither privacy field preserve the existing privacy values.
+
+```http
 PUT https://manage.devcenter.microsoft.com/v1.0/my/inappproducts/9NBLGGH4TNMP/submissions/1152921504621230023 HTTP/1.1
 Authorization: Bearer <your access token>
 Content-Type: application/json
+
 {
   "contentType": "EMagazine",
   "keywords": [
@@ -98,21 +105,25 @@ Content-Type: application/json
   "pricing": {
     "marketSpecificPricings": {
       "RU": "Tier3",
-      "US": "Tier4",
+      "US": "Tier4"
     },
     "sales": [],
     "priceId": "Free"
   },
+  "privacyPolicyRequired": true,
+  "privacyPolicyUrl": "https://contoso.com/privacy",
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
   "tag": "SampleTag",
-  "visibility": "Public",
+  "visibility": "Public"
 }
 ```
 
 ## Response
 
 The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the updated submission. For more details about the values in the response body, see [Add-on submission resource](manage-add-on-submissions.md#add-on-submission-object).
+
+If both privacy fields are omitted or null in the request, they are omitted from the update response. Use [Get an add-on submission](get-an-add-on-submission.md) to read the saved values.
 
 ```json
 {
@@ -143,11 +154,13 @@ The following example demonstrates the JSON response body for a successful call 
   "pricing": {
     "marketSpecificPricings": {
       "RU": "Tier3",
-      "US": "Tier4",
+      "US": "Tier4"
     },
     "sales": [],
     "priceId": "Free"
   },
+  "privacyPolicyRequired": true,
+  "privacyPolicyUrl": "https://contoso.com/privacy",
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
   "tag": "SampleTag",
@@ -182,8 +195,9 @@ If the request cannot be successfully completed, the response will contain one o
 
 | Error code |  Description   |
 |--------|------------------|
-| 400  | The submission could not be updated because the request is invalid. |
+| 400  | The submission could not be updated because the request is invalid, including an invalid or overlong new privacy policy URL, or a missing URL when a changed privacy declaration requires one. |
 | 409  | The submission could not be updated because of the current state of the add-on, or the add-on uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 503 | The request explicitly sets a privacy policy field while privacy policy updates are temporarily unavailable. Retry later. |
 
 
 ## Related topics
