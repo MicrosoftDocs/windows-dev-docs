@@ -2,7 +2,9 @@
 ms.assetid: 66400066-24BF-4AF2-B52A-577F5C3CA474
 description: Use these methods in the Microsoft Store submission API to manage add-on submissions for apps that are registered to your Partner Center account.
 title: Manage add-on submissions
-ms.date: 04/17/2018
+author: GrantMeStrength
+ms.author: jken
+ms.date: 11/09/2026
 ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store submission API, add-on submissions, in-app product, IAP
 ms.localizationpriority: medium
@@ -186,12 +188,14 @@ This resource describes an add-on submission.
   "pricing": {
     "marketSpecificPricings": {
       "RU": "Tier3",
-      "US": "Tier4",
+      "US": "Tier4"
     },
     "sales": [],
     "priceId": "Free",
     "isAdvancedPricingModel": true
   },
+  "privacyPolicyRequired": true,
+  "privacyPolicyUrl": "https://contoso.com/privacy",
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
   "tag": "SampleTag",
@@ -230,6 +234,8 @@ This resource has the following values.
 | lifetime           | string  |  The lifetime of the add-on. This can be one of the following values: <ul><li>Forever</li><li>OneDay</li><li>ThreeDays</li><li>FiveDays</li><li>OneWeek</li><li>TwoWeeks</li><li>OneMonth</li><li>TwoMonths</li><li>ThreeMonths</li><li>SixMonths</li><li>OneYear</li></ul> |
 | listings           | object  |  A dictionary of key and value pairs, where each key is a two-letter ISO 3166-1 alpha-2 country code and each value is a [listing resource](#listing-object) that contains listing info for the add-on.  |
 | pricing           | object  | A [pricing resource](#pricing-object) that contains pricing info for the add-on.   |
+| privacyPolicyRequired | boolean or null | Whether the add-on accesses, collects, or transmits personal information. Optional on input. Omit this value or set it to null to preserve the existing declaration. If you change either privacy field and the resulting declaration is true, a non-blank *privacyPolicyUrl* is required. |
+| privacyPolicyUrl | string or null | The add-on's privacy policy URL. Optional on input. New or changed non-empty values must be absolute HTTP or HTTPS URLs of at most 2,048 characters. Omit this value or set it to null to preserve the existing URL. Set it to an empty string to clear the URL only when the resulting *privacyPolicyRequired* value is not true. Providing a URL does not automatically set *privacyPolicyRequired* to true. |
 | targetPublishMode           | string  | The publish mode for the submission. This can be one of the following values: <ul><li>Immediate</li><li>Manual</li><li>SpecificDate</li></ul> |
 | targetPublishDate           | string  | The publish date for the submission in ISO 8601 format, if the *targetPublishMode* is set to SpecificDate.  |
 | tag           | string  |  The [custom developer data](/windows/apps/publish/publish-your-app/enter-app-properties?pivots=store-installer-add-on#custom-developer-data) for the add-on (this information was previously called the *tag*).   |

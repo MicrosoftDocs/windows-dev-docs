@@ -2,7 +2,9 @@
 ms.assetid: C09F4B7C-6324-4973-980A-A60035792EFC
 description: Use this method in the Microsoft Store submission API to create a new add-on submission for an app that is registered to Partner Center.
 title: Create an add-on submission
-ms.date: 02/08/2017
+author: GrantMeStrength
+ms.author: jken
+ms.date: 11/09/2026
 ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store submission API, create add-on submission, in-app product, IAP
 ms.localizationpriority: medium
@@ -47,7 +49,9 @@ This method has the following syntax. See the following sections for usage examp
 
 ### Request body
 
-Do not provide a request body for this method.
+The request body is optional. Omit it to create a submission from the existing submission data, including its privacy policy values.
+
+To supply submission data when you create the submission, provide a JSON body using the fields described in [Update an add-on submission](update-an-add-on-submission.md#request-body), including the optional *privacyPolicyRequired* and *privacyPolicyUrl* fields. Any supplied non-empty privacy policy URL must be an absolute HTTP or HTTPS URL of at most 2,048 characters. To inherit an existing URL without validating it as a new value, omit *privacyPolicyUrl* or set it to null.
 
 ### Request example
 
@@ -91,7 +95,7 @@ The following example demonstrates the JSON response body for a successful call 
   "pricing": {
     "marketSpecificPricings": {
       "RU": "Tier3",
-      "US": "Tier4",
+      "US": "Tier4"
     },
     "sales": [
       {
@@ -107,6 +111,8 @@ The following example demonstrates the JSON response body for a successful call 
     "priceId": "Free",
     "isAdvancedPricingModel": true
   },
+  "privacyPolicyRequired": true,
+  "privacyPolicyUrl": "https://contoso.com/privacy",
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
   "tag": "SampleTag",
@@ -142,7 +148,9 @@ If the request cannot be successfully completed, the response will contain one o
 | Error code |  Description   |
 |--------|------------------|
 | 400  | The submission could not be created because the request is invalid. |
-| 409  | The submission could not be created because of the current state of the app, or the app uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |   
+| 409  | The submission could not be created because of the current state of the app, or the app uses a Partner Center feature that is [currently not supported by the Microsoft Store submission API](create-and-manage-submissions-using-windows-store-services.md#not_supported). |
+| 500 | An internal error occurred. If the error message identifies a created submission, delete that submission before retrying. |
+| 503 | The request explicitly sets a privacy policy field while privacy policy updates are temporarily unavailable. Retry later. |
 
 ## Related topics
 

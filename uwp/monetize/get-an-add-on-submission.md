@@ -1,8 +1,10 @@
 ---
 ms.assetid: E3DF5D11-8791-4CFC-8131-4F59B928A228
-description: Use this method in the Microsoft Store submission API to get data for an existing add-on submission.
+description: Use this method in the Microsoft Store submission API to get an existing add-on submission and its available privacy policy values.
 title: Get an add-on submission
-ms.date: 04/17/2018
+author: GrantMeStrength
+ms.author: jken
+ms.date: 11/09/2026
 ms.topic: how-to
 keywords: windows 10, uwp, Microsoft Store submission API, add-on submission, in-app product, IAP
 ms.localizationpriority: medium
@@ -60,6 +62,8 @@ Authorization: Bearer <your access token>
 
 The following example demonstrates the JSON response body for a successful call to this method. The response body contains information about the specified submission. For more details about the values in the response body, see [add-on submission resource](manage-add-on-submissions.md#add-on-submission-object).
 
+The *privacyPolicyRequired* and *privacyPolicyUrl* fields contain the saved privacy policy values when available. They can be omitted when no value is set or privacy policy support is temporarily unavailable.
+
 ```json
 {
   "id": "1152921504621243680",
@@ -89,12 +93,14 @@ The following example demonstrates the JSON response body for a successful call 
   "pricing": {
     "marketSpecificPricings": {
       "RU": "Tier3",
-      "US": "Tier4",
+      "US": "Tier4"
     },
     "sales": [],
     "priceId": "Free",
     "isAdvancedPricingModel": true
   },
+  "privacyPolicyRequired": true,
+  "privacyPolicyUrl": "https://contoso.com/privacy",
   "targetPublishDate": "2016-03-15T05:10:58.047Z",
   "targetPublishMode": "Immediate",
   "tag": "SampleTag",
